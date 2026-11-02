@@ -14,3 +14,5 @@ C03	4	earliest-event check batch 3 (12 milestones)	sonnet	89328	27	1225
 C02	4	earliest-event check batch 2 (12 milestones)	sonnet	96941	29	1422
 C04	4	earliest-event check batch 4 (12 milestones)	sonnet	113830	38	1700
 C05	4	earliest-event check batch 5 (12 milestones)	sonnet	106169	38	2033
+J06	5	judge batch 6 (150 pairs)	sonnet	77626	6	72
+J07	5	judge batch 7 (140 pairs)	sonnet	75936	6	75
