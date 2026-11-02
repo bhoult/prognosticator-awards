@@ -11,14 +11,15 @@ sources, and a ranked list of authors and books.
 **Status (2026-11-02):**
 - **Design:** done.
 - **Model comparison:** done on the gold set; Sonnet was chosen for extraction.
-- **Stage 1 extraction:** in progress on 2,979 public-domain science-fiction books and
-  predictive texts. 167 of 1,413 batches are done, with 11,359 claims verified against
-  the text.
+- **Stage 1 extraction:** done for 2,979 public-domain science-fiction books and
+  predictive texts, apart from 7 of 9,419 passages. 115,398 claims are verified against
+  the text ([report](runs/stage1/report.md)).
 - **Not started yet:** matching claims to real events, and scoring.
 
 ## How it works
 
-1. **Extract.** Claude Code subagents (Sonnet) read each book in 6,000-word passages,
+1. **Extract.** Sonnet reads each book in 6,000-word passages (as Claude Code subagents,
+   or through the Message Batches API on a promotional credit),
    with the author and title blanked out so a model can't fall back on what it knows
    about famous books. For every speculative claim they record a verbatim quote and a
    set of fields (category, domain, polarity, hedging, stated date…).
@@ -42,14 +43,15 @@ changing a scoring rule re-ranks everything without calling a model again.
 |---|---|
 | [DESIGN.md](DESIGN.md) | The plan: corpus, pipeline, scoring formula, model tests, licensing, decisions |
 | [schema.sql](schema.sql) | SQLite schema for the working database |
-| [prompts/](prompts/) | `extract_subagent.md` is the extraction prompt in use; `extract.md` and `judge.md` are drafts |
+| [prompts/](prompts/) | `extract_subagent.md` and `extract_api.md` are the extraction prompts in use (subagents, Batch API); `extract.md` and `judge.md` are drafts |
 | [pipeline/extract.py](pipeline/extract.py) | Extraction driver: plans passages and batches, verifies results, tracks usage; can be stopped and restarted at any point |
+| [pipeline/batch_api.py](pipeline/batch_api.py) | The same extraction through the Message Batches API, one request per passage, within a dollar budget |
 | [pipeline/quotes.py](pipeline/quotes.py) | Quote verification (exact, or ≥ 90% fuzzy match) |
 | [pipeline/corpus.py](pipeline/corpus.py) | Reads library books with the author and title blanked; splits them into passages |
 | [pipeline/gold.py](pipeline/gold.py), [pipeline/evaluate.py](pipeline/evaluate.py), [pipeline/make_prompts.py](pipeline/make_prompts.py) | Builds the gold set, writes its prompts, and scores model runs against it |
 | [pipeline/prefilter.py](pipeline/prefilter.py) | Rule-based passage pre-filter: tested and not used ([report](runs/prefilter/report.md)) |
 | [gold/](gold/) | Gold-set answer key and passage map |
-| [runs/](runs/) | Gold-set model comparison ([findings](runs/findings.md)), [pilot report](runs/pilot/report.md), pre-filter tuning |
+| [runs/](runs/) | Gold-set model comparison ([findings](runs/findings.md), [report](runs/report.md)), [pilot report](runs/pilot/report.md), [Stage 1 report](runs/stage1/report.md), pre-filter tuning |
 | [lists/predictive-texts.txt](lists/predictive-texts.txt) | The non-fiction and prophetic texts included in Stage 1 |
 
 ## What is not here
@@ -75,6 +77,15 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 `next` prints one prompt file per batch. Each prompt is given to a subagent ("Read
 <file> and follow its instructions exactly"); the driver verifies the results as they
 arrive. See the docstring at the top of `pipeline/extract.py` for details.
+
+With an API key in `~/.config/prognosticator/anthropic-key`, the same run can go through
+the Message Batches API instead, up to a dollar budget:
+
+```sh
+.venv/bin/python -I pipeline/batch_api.py count work/extract/<run> 40     # free: check the key, count tokens
+.venv/bin/python -I pipeline/batch_api.py auto work/extract/<run> <dollars>
+.venv/bin/python -I pipeline/batch_api.py status work/extract/<run>
+```
 
 ## License
 

@@ -259,6 +259,12 @@ def verify(run):
             bad += 1
             continue
         c = chunks[cid]
+        # Passages extracted through the Batch API (pipeline/batch_api.py) carry their own settings.
+        # A reply it could not use leaves no out/ file, so a later result there came from a subagent.
+        meta_path = os.path.join(run, 'api', 'meta', name)
+        meta = json.load(open(meta_path, encoding='utf-8')) if os.path.exists(meta_path) else {}
+        if meta.get('problem'):
+            meta = {}
         counts = {'claims': 0, 'exact': 0, 'fuzzy': 0, 'rejected': 0, 'found_in_other': 0, 'field_issues': 0}
         checked = []
         for cl in claims:
@@ -280,8 +286,10 @@ def verify(run):
                             'book_offset': None if at is None else c['start'] + at, 'found_in': found_in,
                             'field_issues': issues})
         record = {'chunk': cid, 'book': c['book'], 'year': c['year'], 'words': c['words'],
-                  'model': cfg['model'], 'prompt_sha256': cfg['prompt_sha256'], 'passage_sha256': c['sha256'],
-                  'chunk_field_ok': result.get('chunk') == cid, 'json_repaired': repaired, 'verified_at': time.strftime('%Y-%m-%d %H:%M:%S'),
+                  'method': meta.get('method', 'subagent'), 'model': meta.get('model', cfg['model']),
+                  'prompt_sha256': meta.get('prompt_sha256', cfg['prompt_sha256']), 'passage_sha256': c['sha256'],
+                  'chunk_field_ok': result.get('chunk') == cid, 'json_repaired': repaired or meta.get('json_repaired', False),
+                  'verified_at': time.strftime('%Y-%m-%d %H:%M:%S'),
                   'counts': counts, 'claims': checked}
         write_atomic(dest, json.dumps(record, ensure_ascii=False, indent=1))
         done += 1
@@ -358,6 +366,11 @@ def status(run, stage_words=None):
     print(f"{run}  model {cfg['model']}  prompt {cfg['prompt_sha256'][:12]}")
     print(f"books {cfg['books']}, passages {len(recs)}/{len(chunks)} verified, "
           f"words {words_done:,}/{cfg['words']:,}, batches {sum(not p for p in pending(run))}/{len(batches)} done")
+    methods = {}
+    for r in recs:
+        methods[r.get('method', 'subagent')] = methods.get(r.get('method', 'subagent'), 0) + 1
+    if len(methods) > 1 or 'subagent' not in methods:
+        print('passages by method: ' + ', '.join(f'{m} {n}' for m, n in sorted(methods.items())))
     if recs:
         print(f"claims {tot['claims']} ({10000 * tot['claims'] / max(1, words_done):.1f} per 10K words); quotes "
               f"{tot['exact']} exact, {tot['fuzzy']} fuzzy, {tot['rejected']} rejected "

@@ -1,0 +1,103 @@
+{
+ "chunk": "c006",
+ "claims": [
+  {
+   "quote": "Seventy-five thousand tons—dead-weight—rushing through the fog at the rate of fifty feet a second, had hurled itself at an iceberg.",
+   "description": "A transatlantic liner of 75,000 tons, far larger than any ship then existing, crossing the ocean at about 34 mph.",
+   "category": "technology",
+   "specificity": 4,
+   "speculative_at_time": true,
+   "stated_time": null,
+   "polarity": "will",
+   "confidence": "asserted",
+   "valence": "neutral",
+   "voice": "narrator",
+   "domain": "transport",
+   "second_order": false
+  },
+  {
+   "quote": "The holding-down bolts of twelve boilers and three triple-expansion engines, unintended to hold such weights from a perpendicular flooring, snapped",
+   "description": "A giant steamship powered by twelve boilers and three triple-expansion engines driving triple screws, on a scale beyond contemporary ships.",
+   "category": "technology",
+   "specificity": 4,
+   "speculative_at_time": true,
+   "stated_time": null,
+   "polarity": "will",
+   "confidence": "asserted",
+   "valence": "neutral",
+   "voice": "narrator",
+   "domain": "transport",
+   "second_order": false
+  },
+  {
+   "quote": "Twenty-four boats for three thousand people—lashed down with tarred gripe-lashings—thirty men to clear them away, and not an axe on the boat-deck or a sheath-knife on a man.",
+   "description": "A liner carrying about 3,000 people with lifeboat capacity for only a small fraction, a disaster-causing safety shortfall.",
+   "category": "event",
+   "specificity": 4,
+   "speculative_at_time": true,
+   "stated_time": null,
+   "polarity": "will",
+   "confidence": "asserted",
+   "valence": "negative",
+   "voice": "sympathetic",
+   "domain": "transport",
+   "second_order": true
+  },
+  {
+   "quote": "the invincible *Titan*, with nearly all of her people, unable to climb vertical floors and ceilings, was beneath the surface of the sea.",
+   "description": "The supposedly unsinkable liner Titan strikes an iceberg in the North Atlantic and sinks with nearly all aboard.",
+   "category": "event",
+   "specificity": 5,
+   "speculative_at_time": true,
+   "stated_time": null,
+   "polarity": "will",
+   "confidence": "asserted",
+   "valence": "negative",
+   "voice": "narrator",
+   "domain": "transport",
+   "second_order": false
+  },
+  {
+   "quote": "Curse them, with their water-tight compartments, and their logging of the lookouts.",
+   "description": "Watertight compartments fail to save an enormous ship once its hull is breached by ice.",
+   "category": "technology",
+   "specificity": 3,
+   "speculative_at_time": true,
+   "stated_time": null,
+   "polarity": "will",
+   "confidence": "asserted",
+   "valence": "negative",
+   "voice": "sympathetic",
+   "domain": "transport",
+   "second_order": true
+  },
+  {
+   "quote": "They'll run their boats in the other Lane after this, I think—the money-grabbing wretches.",
+   "description": "Steamship lines will move their transatlantic routes to a more southerly lane after the disaster.",
+   "category": "economy",
+   "specificity": 3,
+   "speculative_at_time": true,
+   "stated_time": "after this",
+   "polarity": "will",
+   "confidence": "hedged",
+   "valence": "negative",
+   "voice": "sympathetic",
+   "domain": "transport",
+   "second_order": true
+  },
+  {
+   "quote": "She would have backed off, and, slightly down by the head, finished the voyage at reduced speed, to rebuild on insurance money, and benefit, largely, in the end, by the consequent advertising of her indestructibility.",
+   "description": "Counterfactual in which the ship survives a head-on iceberg collision and the owners profit from advertising its indestructibility.",
+   "category": "other",
+   "specificity": 2,
+   "speculative_at_time": true,
+   "stated_time": null,
+   "polarity": "will",
+   "confidence": "hedged",
+   "valence": "neutral",
+   "voice": "narrator",
+   "domain": "transport",
+   "second_order": false
+  }
+ ]
+}

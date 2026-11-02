@@ -451,6 +451,21 @@ claim):
 >     sci-fi stage, that is about 1,500 subagents, 221M reported tokens and
 >     57 agent-hours.
 >
+> **Exception (2026-11-02): a promotional API credit, through the Batch API.**
+> A $200 promotional credit (API and Batch API, not Claude Code; it expires
+> 2026-11-21) paid for most of Stage 1, so that it did not use the Claude plan.
+> No paid API use.
+>
+> - **Driver:** `pipeline/batch_api.py`. One Message Batches request per passage,
+>   with `prompts/extract_api.md` (the subagent prompt without the file and
+>   tool instructions) as the system prompt. Sonnet 5.5 with thinking off.
+> - **Same checks:** replies are written to the run's `out/` and verified by
+>   `extract.py`. Each verified record says which method produced it.
+> - **Budget:** `auto` sends a first round to measure the cost per word, then
+>   as many passages as fit in the budget, and stops on a billing error.
+>   Passages it doesn't reach stay pending for subagents.
+> - **Result:** 8,312 passages for $178.33; `runs/stage1/report.md`.
+>
 > **Editorial matter.** Modern editions add introductions that explain the
 > book's predictions after the fact (the 1993 Bantam Verne: "Florida won, as
 > […] predicted"). These are not the author's predictions. The extractor marks
@@ -615,9 +630,11 @@ The questions, each with its accepted default:
 11. **Other prophecy texts**: Nostradamus, the Sibylline Oracles, the
     Prophecy of the Popes? Default: yes, as a `prophecy` group.
 12. **Scope of the first run**: decided 2026-11-02. The run is staged,
-    using Sonnet subagents. Stage 1 is the 3,234 Gutenberg sci-fi books
+    using Sonnet. Stage 1 is the 3,234 Gutenberg sci-fi books
     (54.1M words) and the 47 predictive texts, after a 20-book pilot
-    (`pipeline/extract.py`, §9).
+    (`pipeline/extract.py`, §9). Done 2026-11-02 apart from 7 passages:
+    12% by subagents, the rest through the Batch API on a promotional
+    credit (`runs/stage1/report.md`).
 
 **Publishing**
 
