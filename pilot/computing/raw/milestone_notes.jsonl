@@ -1,0 +1,132 @@
+{"concept_id": "electronic-digital-computer", "note": "No wikidata URL seen. Public ENIAC unveiling Feb 1946 not searched.", "wikidata": null}
+{"concept_id": "analog-computer", "note": "Practical-use date not searched.", "wikidata": null}
+{"concept_id": "punched-card-tabulation", "note": "1888 Baltimore health trial not verified; 1890 census chosen.", "wikidata": null}
+{"concept_id": "stored-program-control", "note": "Jacquard loom (1804) is an earlier tape/card-driven machine but was not verified by search; 1952 NC demo only.", "wikidata": null}
+{"concept_id": "integrated-circuit", "note": "First commercial use not searched.", "wikidata": null}
+{"concept_id": "superconducting-computer", "note": "Buck's cryotron (1953-55) was a single superconducting switching element; no working cryotron computer confirmed in searches, so no milestones given.", "wikidata": null}
+{"concept_id": "magnetic-data-storage", "note": "Poulsen 1898 and UNIVAC tape 1951 not verified by search; RAMAC only.", "wikidata": null}
+{"concept_id": "microform-storage", "note": "Dancer 1839 microphotography is a loose fit to film-storage-with-viewer; Recordak 1928 is the first commercial use.", "wikidata": null}
+{"concept_id": "artificial-neural-network", "note": "Date of public Mark I demo disputed (1958 vs 1960).", "wikidata": null}
+{"concept_id": "biological-computer", "note": "Only laboratory demonstrations; no practical use.", "wikidata": null}
+{"concept_id": "pocket-calculator", "note": "Bowmar 901B date uncertain (1971/1972); HP-35 1972 and TI Cal-Tech 1967 are alternate candidates.", "wikidata": null}
+{"concept_id": "personal-computer", "note": "Altair 8800 chosen as first practical use; 1977 trinity as mass adoption.", "wikidata": null}
+{"concept_id": "wearable-computer", "note": "Organiser vs Organiser II (1986) dating disputed.", "wikidata": null}
+{"concept_id": "supercomputer-scientific-calculation", "note": "Atlas 1962 and IBM 7030 are contenders; 'first supercomputer' contested.", "wikidata": null}
+{"concept_id": "computer-simulation", "note": "No milestone confirmed by search (ENIAC Monte Carlo 1948 / SAGE not verified), so none given.", "wikidata": null}
+{"concept_id": "computer-aided-design", "note": "GM DAC-1 / Hanratty (from 1961) not confirmed as a milestone.", "wikidata": null}
+{"concept_id": "machine-scientific-discovery", "note": "DENDRAL (1965) not verified by search.", "wikidata": null}
+{"concept_id": "computer-network", "note": "Practical use (SABRE 1960, CTSS time-sharing 1961) not verified by search.", "wikidata": null}
+{"concept_id": "internet-global-information-network", "note": "Mass adoption (mid-1990s) not verified by search, so omitted.", "wikidata": null}
+{"concept_id": "electronic-mail", "note": "Mass adoption not searched.", "wikidata": null}
+{"concept_id": "information-retrieval", "note": "Archie 1990 and Google 1998 seen in results; Dialog launch year unverified.", "wikidata": null}
+{"concept_id": "question-answering-computer", "note": "BASEBALL (1961) and Siri (2011) not verified by search; Watson 2011 chosen.", "wikidata": null}
+{"concept_id": "electronic-book-reader", "note": "No Wikidata QID seen in results. Tablet alias not separately dated.", "wikidata": null}
+{"concept_id": "electronic-paper-display", "note": "Gyricon date is 1974 or 1975 depending on source. E Ink itself was not a continuation of Gyricon.", "wikidata": null}
+{"concept_id": "holographic-3d-display", "note": "Only a volumetric display (not a true hologram) was found. Earlier volumetric prototypes were not searched and the date is low confidence.", "wikidata": null}
+{"concept_id": "computer-video-display", "note": "No mass-adoption milestone sourced. CHM hedges 'may have been the first'.", "wikidata": null}
+{"concept_id": "real-time-tactical-display", "note": "Whirlwind and SAGE prototype displays predate 1958 and are not separately dated.", "wikidata": null}
+{"concept_id": "touch-gesture-interface", "note": "Johnson's design saw little use until the 1990s. Data gloves and gesture control were not researched.", "wikidata": null}
+{"concept_id": "optical-character-recognition", "note": "Reading-machine origins before 1965 were not searched. The Detroit detail is only from a weak source, so the Smithsonian page supports 1965 generally.", "wikidata": null}
+{"concept_id": "computer-security-hacking", "note": "Mapping to the kinds is loose. Creeper (1971), Brain (1986) and Morris (1988) are all candidates.", "wikidata": null}
+{"concept_id": "emp-electronics-vulnerability", "note": "Starfish Prime is the first observed large-scale damage. Earlier EMP effects (1945 onward) were not confirmed.", "wikidata": null}
+{"concept_id": "speech-recognition", "note": "Voice-operated doors and locks were not researched.", "wikidata": null}
+{"concept_id": "speech-to-text-dictation", "note": "DragonDictate 1990 unverified. No demonstration milestone sourced.", "wikidata": null}
+{"concept_id": "speech-synthesis", "note": "Voder was human-operated. The 1961 IBM Daisy Bell computer-synthesized speech is a later milestone.", "wikidata": null}
+{"concept_id": "conversational-ai", "note": "ELIZA is a pattern-matching demonstration. Mass adoption (ChatGPT, 2022-23) was not sourced.", "wikidata": null}
+{"concept_id": "machine-translation", "note": "Dates are from Wikipedia-derived summaries.", "wikidata": null}
+{"concept_id": "universal-translator-unknown-language", "note": "No machine has decoded an unknown language from samples; no milestones given.", "wikidata": null}
+{"concept_id": "codebreaking-computer", "note": "Mark 1 operational 5 Feb 1944. Mark 2 ran 1 June 1944. Earlier electromechanical bombes were not considered.", "wikidata": null}
+{"concept_id": "machine-generated-writing", "note": "Only the earliest demonstration was sourced. Mass adoption (LLMs) not sourced.", "wikidata": null}
+{"concept_id": "machine-generated-art-music", "note": "AARON (Harold Cohen) search returned nothing. Only the earliest music milestone was sourced.", "wikidata": null}
+{"concept_id": "machine-learning", "note": "Rosenblatt's perceptron (1957-58) is an alternative early demonstration.", "wikidata": null}
+{"concept_id": "computer-chess", "note": "Turing's paper program (1951-52) was not sourced. Deep Blue is the 1997 superhuman milestone.", "wikidata": null}
+{"concept_id": "game-playing-computer", "note": "Nimrod (1951) search returned nothing. Samuel's checkers program was televised on 1956-02-24.", "wikidata": null}
+{"concept_id": "artificial-general-intelligence", "note": "Not achieved; no milestones given.", "wikidata": null}
+{"concept_id": "machine-consciousness", "note": "never real; no milestones", "wikidata": null}
+{"concept_id": "machine-emotions", "note": "no machine with genuine emotions; expressive robots are only loose analogues; no milestones", "wikidata": null}
+{"concept_id": "ai-takeover", "note": "never happened; no milestones", "wikidata": null}
+{"concept_id": "ai-deception", "note": "no clear milestone matching goal-driven hiding of intent; not searched; none given", "wikidata": null}
+{"concept_id": "robot-laws-safety-constraints", "note": "Asimov's laws are fiction; no inviolable-rule implementation found; none given", "wikidata": null}
+{"concept_id": "robot-kill-switch", "note": "emergency stops exist but no dated milestone was confirmed; none given", "wikidata": null}
+{"concept_id": "machine-religion", "note": "never real; no milestones", "wikidata": null}
+{"concept_id": "collective-machine-intelligence", "note": "no true merged-mind system; swarm and distributed computing are loose analogues; none given", "wikidata": null}
+{"concept_id": "artificial-senses-placeholder-removed", "note": "ignore", "wikidata": null}
+{"concept_id": "automation-labor-displacement", "note": "has not happened (most paid work is not automated); none given", "wikidata": null}
+{"concept_id": "lifelike-android", "note": "no android indistinguishable from a human exists; no milestones", "wikidata": null}
+{"concept_id": "domestic-robot", "note": "no general-purpose household robot servant in use; single-task vacuums are covered under robot-vacuum-mower; none given", "wikidata": null}
+{"concept_id": "service-robot", "note": "not searched; none given", "wikidata": null}
+{"concept_id": "childcare-robot", "note": "no real robot nanny confirmed; none given", "wikidata": null}
+{"concept_id": "machine-vision", "note": "see milestones", "wikidata": null}
+{"concept_id": "artificial-senses", "note": "see milestones", "wikidata": null}
+{"concept_id": "industrial-robot", "note": "see milestones", "wikidata": null}
+{"concept_id": "automated-factory", "note": "see milestones", "wikidata": null}
+{"concept_id": "robot-manufacturing-industry", "note": "see milestones", "wikidata": null}
+{"concept_id": "humanoid-robot", "note": "see milestones", "wikidata": null}
+{"concept_id": "android-duplicate-of-person", "note": "see milestones; loose fit (teleoperated)", "wikidata": null}
+{"concept_id": "robot-vacuum-mower", "note": "see milestones", "wikidata": null}
+{"concept_id": "vending-automat", "note": "see milestones", "wikidata": null}
+{"concept_id": "companion-robot", "note": "Paro is a therapeutic companion; no romance or sex robot found that meets the definition", "wikidata": null}
+{"concept_id": "robot-pet", "note": "mass_adoption not established", "wikidata": null}
+{"concept_id": "clockwork-automaton", "note": "earlier antique automata likely exist; date is for a documented source only", "wikidata": null}
+{"concept_id": "robot-police-guard", "note": "other deployments (Dubai, NYPD) not checked", "wikidata": null}
+{"concept_id": "lethal-autonomous-weapon", "note": "earlier automated defence systems such as Phalanx not researched", "wikidata": null}
+{"concept_id": "fire-control-missile-guidance", "note": "two milestones, mechanical computer 1916 and missile guidance 1944", "wikidata": null}
+{"concept_id": "military-strategy-computer", "note": "SAGE is an air-defence analogue; no true war-planning computer verified", "wikidata": null}
+{"concept_id": "robot-supervisor-hierarchy", "note": "central computer detail not confirmed in sources, only coordination software", "wikidata": null}
+{"concept_id": "self-replicating-machine", "note": "never achieved from raw materials without human help; no milestones", "wikidata": null}
+{"concept_id": "self-repairing-machine", "note": "not researched; no milestone given", "wikidata": null}
+{"concept_id": "teleoperated-robot", "note": "telepresence with feeling later; first priority contested", "wikidata": null}
+{"concept_id": "robotic-space-probe", "note": "deep-sea and other probes not checked", "wikidata": null}
+{"concept_id": "nanorobot", "note": "no therapeutic in-body use established", "wikidata": null}
+{"concept_id": "three-d-printing", "note": "mass adoption not established", "wikidata": null}
+{"concept_id": "three-d-scanning", "note": "single milestone", "wikidata": null}
+{"concept_id": "autopilot", "note": "practical use and mass adoption not researched", "wikidata": null}
+{"concept_id": "spacecraft-guidance-computer", "note": "single milestone", "wikidata": null}
+{"concept_id": "self-driving-car", "note": "Waymo One 2018 had safety drivers; fully driverless public service not verified, so no practical use given", "wikidata": null}
+{"concept_id": "unmanned-aerial-vehicle", "note": "later practical use not researched", "wikidata": null}
+{"concept_id": "space-station-automation", "note": "not researched; no milestone", "wikidata": null}
+{"concept_id": "computer-run-government", "note": "never real; no milestones", "wikidata": null}
+{"concept_id": "social-forecasting-computer", "note": "psychohistory not real; UNIVAC election forecasting is the real analogue", "wikidata": null}
+{"concept_id": "computerized-economic-planning", "note": "No milestone given. NYSE DOT (1976) only routed orders and is not trading or analysis; 1980s program trading was not pinned down.", "wikidata": null}
+{"concept_id": "consumer-analytics", "note": "Credit scoring 1958 used; Nielsen Audimeter (1939-46) is a meter, not a computer, and was left out.", "wikidata": null}
+{"concept_id": "computer-matchmaking", "note": "Mass adoption not established; Operation Match reached over a million respondents by 1968.", "wikidata": null}
+{"concept_id": "computer-personnel-selection", "note": "Loose fit: CAT-ASVAB tests aptitude by computer. Project TALENT was paper-based.", "wikidata": null}
+{"concept_id": "computer-legal-judgment", "note": "Only the legal research part is real; no computer decides verdicts or sentences.", "wikidata": null}
+{"concept_id": "computer-crime-detection", "note": "Predictive policing found for 2011. NCIC (1967) was not verified.", "wikidata": null}
+{"concept_id": "electronic-voting", "note": "Lever machines (1892) are mechanical, so left out. Punch-card computer tally 1964 is only a timeline-level source.", "wikidata": null}
+{"concept_id": "mass-surveillance-database", "note": "No milestone. The Stasi central file was a card index, and Swedish registers were not a dossier on each citizen.", "wikidata": null}
+{"concept_id": "automated-eavesdropping", "note": "No milestone. SHAMROCK handled telegrams largely by hand, and I found no source for automated speech screening.", "wikidata": null}
+{"concept_id": "electronic-tracking-tags", "note": "The 1983 tag was radio-based; GPS offender monitoring was piloted in 1997.", "wikidata": null}
+{"concept_id": "machine-readable-id-card", "note": "IBM's first magstripe field test was January 1970 at O'Hare (a transaction card); magstripe hotel locks came in 1992-93.", "wikidata": null}
+{"concept_id": "fingerprint-recognition", "note": "Earliest automated systems (Mitre Identimat 1961, FBI-Rockwell 1970s) were not confirmed; 1999 IAFIS is the best-sourced date.", "wikidata": null}
+{"concept_id": "iris-retina-recognition", "note": "Only iris covered; retina scanning (EyeDentify) not confirmed.", "wikidata": null}
+{"concept_id": "face-recognition", "note": "Practical use (e.g., Super Bowl XXXV 2001) not searched.", "wikidata": null}
+{"concept_id": "speaker-recognition", "note": "Practical use date not confirmed; TI system in the early 1970s was a lab system.", "wikidata": null}
+{"concept_id": "office-automation", "note": "LEO payroll dates conflict, 1951 versus 1953.", "wikidata": null}
+{"concept_id": "computer-dependence", "note": "A social condition, not a device; no dated milestone given.", "wikidata": null}
+{"concept_id": "smart-home", "note": "Mass adoption (X10 1975, Amazon Echo 2014) not verified.", "wikidata": null}
+{"concept_id": "automatic-door", "note": "The 1931 Stanley optical door and 1980 infrared sensor were not independently confirmed.", "wikidata": null}
+{"concept_id": "automated-city", "note": "No fully automated city exists; PlanIT Valley and Songdo are planned or smart-city projects, so no milestone.", "wikidata": null}
+{"concept_id": "environmental-monitoring-network", "note": "Milestones cover numerical weather prediction; automatic weather stations were not searched.", "wikidata": null}
+{"concept_id": "teaching-machine", "note": "Practical use and mass adoption not given; PLATO date conflicts across sources.", "wikidata": null}
+{"concept_id": "computer-medical-diagnosis", "note": "MYCIN is a demonstration only, never clinically deployed; no practical-use or mass-adoption milestone confirmed", "wikidata": null}
+{"concept_id": "computer-psychotherapy", "note": "ELIZA is a shallow pattern-matching analogue; no true computer assessment and therapy confirmed", "wikidata": null}
+{"concept_id": "lie-detector", "note": "mass_adoption not researched (Keeler popularised the polygraph in the US)", "wikidata": null}
+{"concept_id": "eeg-brain-monitoring", "note": "practical clinical use and mass adoption not researched", "wikidata": null}
+{"concept_id": "mind-reading-machine", "note": "only coarse visual reconstruction from fMRI; specific thoughts and memories not read, so a partial match", "wikidata": null}
+{"concept_id": "thought-to-text", "note": "imagined handwriting and speech decoding in clinical trials only; no routine use", "wikidata": null}
+{"concept_id": "brain-computer-interface", "note": "later invasive BCIs and practical use not researched", "wikidata": null}
+{"concept_id": "neural-implant-augmentation", "note": "cochlear implant used as the example; mass adoption not researched", "wikidata": null}
+{"concept_id": "brain-in-machine-body", "note": "never realised; no milestones", "wikidata": null}
+{"concept_id": "mind-uploading", "note": "never realised; no milestones", "wikidata": null}
+{"concept_id": "memory-recording-playback", "note": "never realised; no milestones", "wikidata": null}
+{"concept_id": "memory-erasure-implant", "note": "no machine that deletes or plants chosen human memories; only rodent experiments, so no milestones", "wikidata": null}
+{"concept_id": "direct-knowledge-transfer", "note": "never realised; no milestones", "wikidata": null}
+{"concept_id": "sleep-learning", "note": "devices existed but 1950s studies found complex learning during sleep ineffective; no practical use or mass adoption given", "wikidata": null}
+{"concept_id": "machine-mind-control", "note": "never realised; no milestones", "wikidata": null}
+{"concept_id": "virtual-reality", "note": "practical use and mass adoption not researched", "wikidata": null}
+{"concept_id": "shared-virtual-world", "note": "practical use and mass adoption not researched", "wikidata": null}
+{"concept_id": "flight-simulator", "note": "mass adoption not researched; training use was extensive in WWII", "wikidata": null}
+{"concept_id": "simulated-reality", "note": "never realised; no milestones", "wikidata": null}
+{"concept_id": "psionic-machine", "note": "never realised; no milestones", "wikidata": null}
+{"concept_id": "future-viewing-machine", "note": "never realised; no milestones", "wikidata": null}
