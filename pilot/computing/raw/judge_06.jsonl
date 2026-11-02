@@ -1,0 +1,120 @@
+{"pair": "q0887", "score": 0, "rationale": "The quotation says nothing about a library or retrieval; it is just a jump arrival line."}
+{"pair": "q0888", "score": 0.5, "rationale": "Index buttons and a view-screen give instant lookup of stored text, matching the retrieval function. The mechanism (tapes) and the lack of remote online search differ from MEDLINE."}
+{"pair": "q0889", "score": 0.5, "rationale": "Measured properties sent to a computer memory bank for identification match database lookup in function. The mechanism is vague and the query is by property, not interactive text search."}
+{"pair": "q0890", "score": 0.25, "rationale": "A repair machine is reprogrammed to build finer circuits, which points toward miniaturization but gives no integrated-circuit mechanism."}
+{"pair": "q0891", "score": 0.25, "rationale": "'Photocircuit inserts' loosely evokes photolithographic circuits, but the quotation says almost nothing."}
+{"pair": "q0892", "score": 0.75, "rationale": "Microscopic crystalline switches packed by the million into a few cubic inches match dense solid-state integration. The context (a relay, with no fabrication detail) differs."}
+{"pair": "q0893", "score": 0.5, "rationale": "Electroplating and crystal growing as a way to build circuits without per-connection wiring matches the function of integrated fabrication. The mechanism is vague."}
+{"pair": "q0894", "score": 0.25, "rationale": "Brain-sized thinking machines point to miniaturization only loosely, with no circuit mechanism."}
+{"pair": "q0908", "score": 0.75, "rationale": "An eye-cup scan used as a secure access check matches biometric eye identification and the claim that the pattern cannot be forged. It uses the retina, not the iris, and the setting is military."}
+{"pair": "q0909", "score": 0.5, "rationale": "Examining retina patterns to verify identity matches the function, but the mechanism and use are barely described."}
+{"pair": "q0910", "score": 0.75, "rationale": "Holding a device to the eye to capture an 'eyeprint' as a personal signature matches eye-pattern identification. The context (a waiver signature) differs and the retina is not iris."}
+{"pair": "q0911", "score": 0, "rationale": "The quotation contains no eye or biometric content; the summary is not supported by it."}
+{"pair": "q0912", "score": 0.75, "rationale": "Photographing retinal blood-vessel patterns as a biometric matches the eye-pattern scanning. The covert capture and the retina (not iris) differ."}
+{"pair": "q0913", "score": 0, "rationale": "The quotation only shows a man's expression changing and mentions no eye scanning."}
+{"pair": "q0914", "score": 0.75, "rationale": "A retinal pattern taken and checked against a central identity record matches eye-based identification. The context differs and it is the retina, not the iris."}
+{"pair": "q0915", "score": 0.25, "rationale": "Flashes from a small tube held to the eyes only loosely suggest an eye scan, with no identification stated."}
+{"pair": "q0916", "score": 0.5, "rationale": "Retinal patterns are named as an identity check alongside fingerprints, so the function matches. The mechanism is not described."}
+{"pair": "q0917", "score": 0.5, "rationale": "Taking a retina pattern to identify someone matches the function, but the mechanism is minimal."}
+{"pair": "q0918", "score": 0.25, "rationale": "A steel war-machine with a mechanical mind points loosely toward robot soldiers, with no target-selecting autonomy described."}
+{"pair": "q0919", "score": 0.25, "rationale": "A robotic bomb with an electronic brain loosely evokes autonomous weapons, but the quotation only describes the circuitry."}
+{"pair": "q0920", "score": 0.25, "rationale": "The quotation describes only a humanoid robot's body, which loosely suggests robot soldiers without any autonomous attack."}
+{"pair": "q0921", "score": 0.25, "rationale": "A craft that builds worker and fighter machines evokes autonomous military robots loosely, with no targeting decision described."}
+{"pair": "q0922", "score": 0, "rationale": "The quotation describes only an iron machine with eight legs and no weapon function."}
+{"pair": "q0923", "score": 0.75, "rationale": "A galvanometer-based instrument that extracts truth from patients matches the physiological lie-detection function and mechanism. It is used by physicians, not police, and predates 1921 only in fiction."}
+{"pair": "q0924", "score": 0.75, "rationale": "A light registering emotion by a swing across a screen matches a galvanometer-style skin-response lie detector. The context is vague."}
+{"pair": "q0925", "score": 0.5, "rationale": "A recorded line of light picturing the subject's mind matches physiological recording of concealed responses. The detection of deception is only implied."}
+{"pair": "q0943", "score": 0.5, "rationale": "A handle-operated machine producing sonatas matches machine composition in function. It is mechanical and the mechanism is vague."}
+{"pair": "q0944", "score": 0.25, "rationale": "A poetry machine emitting output points to machine creativity only loosely and is not music or pictures."}
+{"pair": "q0945", "score": 0.25, "rationale": "Self-playing robot instruments perform music but do not compose it."}
+{"pair": "q0946", "score": 0, "rationale": "The quotation is only a description of a dim room and contains no machine composing."}
+{"pair": "q0947", "score": 0, "rationale": "Robots that merely reproduce music are playback, not composition."}
+{"pair": "q0948", "score": 0.25, "rationale": "A robot orchestra with a coordinating leader evokes machine performance loosely, with no composing."}
+{"pair": "q0949", "score": 0, "rationale": "The quotation only says a street artist is vacant and describes no machine art."}
+{"pair": "q0950", "score": 0, "rationale": "The quotation describes a shattered record excavated and not recognized, with no machine composing."}
+{"pair": "q0951", "score": 0.25, "rationale": "Projecting a painter's perceptions by analysis loosely points to machine-made art, with no mechanism."}
+{"pair": "q0952", "score": 0.25, "rationale": "Robots performing as Armstrong's band loosely evoke machine-made music but are reproduction of existing performances."}
+{"pair": "q0953", "score": 0.25, "rationale": "A curve-tracer drawing a curve that becomes a picture loosely evokes computer-generated art."}
+{"pair": "q0954", "score": 0.75, "rationale": "Pitches selected by electronic computers and played by machines match computer-generated music with random selection, as in the Illiac Suite. The context (a bar fad) differs."}
+{"pair": "q0955", "score": 0.25, "rationale": "The quotation only claims inspiration; any painting is from the summary, so this is a loose pointer."}
+{"pair": "q0961", "score": 0.25, "rationale": "A cabinet of poetic objects loosely evokes combinatorial text generation, but the quotation only describes a collection."}
+{"pair": "q0962", "score": 0.5, "rationale": "A machine with compartments of synonyms for composing text matches template and word-list generation in function. The mechanism is mechanical and vague."}
+{"pair": "q0963", "score": 0.25, "rationale": "Eloquent writing produced by manipulating a machine points to machine-generated text only loosely."}
+{"pair": "q0964", "score": 0.25, "rationale": "A poetry machine emitting output points toward machine writing, with no detail."}
+{"pair": "q0965", "score": 0.5, "rationale": "Robots that turn out popular fiction match automatic story writing in function. The mechanism is an unspecified creative factor."}
+{"pair": "q0966", "score": 0.5, "rationale": "A machine setting original verse not in the copy matches automatic text generation in function. The mechanism is missing."}
+{"pair": "q0978", "score": 0.5, "rationale": "A machine recording impressions that affect its later actions matches learning from experience. The mechanism is vague."}
+{"pair": "q0979", "score": 0.5, "rationale": "Storing solved problems for reuse matches learning from experience in function. The mechanism is only a stored pattern."}
+{"pair": "q0980", "score": 0.5, "rationale": "A mechanism that grows richer from material fed in and learns matches machine learning in function, with no mechanism."}
+{"pair": "q0981", "score": 0.25, "rationale": "An artificial mind slowly building up intelligence points loosely toward learning, with no mechanism."}
+{"pair": "q0982", "score": 0.25, "rationale": "Information and methods passing between machines loosely evokes shared learning."}
+{"pair": "q0983", "score": 0.5, "rationale": "Machines that learn like people match learning in function, with no mechanism."}
+{"pair": "q0984", "score": 0.25, "rationale": "Machines forming a symbiotic relationship with people loosely suggests adaptation, with no learning stated."}
+{"pair": "q0985", "score": 0.25, "rationale": "One machine learning from another hints at learned behavior, with no mechanism."}
+{"pair": "q0986", "score": 0.25, "rationale": "Brain-like processing at speed points only loosely to learning."}
+{"pair": "q0987", "score": 0.25, "rationale": "A simple device that is a logical development points loosely to experience retention, with no learning detail."}
+{"pair": "q0988", "score": 0.5, "rationale": "Appliances tuning themselves to owners' habits match adaptive improvement from experience in function. The mechanism is absent."}
+{"pair": "q0989", "score": 0, "rationale": "The quotation says only that machines will unscramble a broadcast and nothing about learning."}
+{"pair": "q0990", "score": 0.5, "rationale": "A computer that learns from information and deductive reasoning matches machine learning in function, with no mechanism."}
+{"pair": "q1007", "score": 0.25, "rationale": "A lock actuated by a light-ray combination loosely evokes coded access but is not an identity token."}
+{"pair": "q1008", "score": 0.5, "rationale": "A wrist-band that machines sense to sort people to levels matches a machine-read identity token. The mechanism is vibration, not a coded key."}
+{"pair": "q1009", "score": 0.25, "rationale": "A recorded brain-wave signature stored on a cylinder evokes machine-stored identity loosely, but it is not a card or token read for access."}
+{"pair": "q1010", "score": 0.5, "rationale": "A ring that unlocks and activates a vehicle matches a token-based electronic key. The mechanism is unspecified."}
+{"pair": "q1011", "score": 0.5, "rationale": "A ring applied to a sensor opens a door, matching a token-based access key. The mechanism is vague."}
+{"pair": "q1012", "score": 0.75, "rationale": "A plastic disk dropped into a slot and read by a machine that announces identity closely matches an inserted ID card. The voice response and use differ."}
+{"pair": "q1013", "score": 0.5, "rationale": "An electronic key that opens secure doors matches electronic access keys in function, with no identity mechanism."}
+{"pair": "q1014", "score": 0.25, "rationale": "An automatic scanner guard passing a person only loosely suggests identity checking, without a card."}
+{"pair": "q1015", "score": 0.5, "rationale": "A wristband that starts a vehicle matches a personal electronic key in function. The mechanism is unspecified."}
+{"pair": "q1016", "score": 0.5, "rationale": "A master wristband opening a door matches an electronic door key. The mechanism is unspecified."}
+{"pair": "q1017", "score": 0.5, "rationale": "A wristband pressed to a lock identifies the wearer, matching a token-read lock. The mechanism is minimal."}
+{"pair": "q1018", "score": 0.5, "rationale": "Machines reading and rejecting a card number match machine-read identity cards, including central blacklisting. The mechanism is not described."}
+{"pair": "q1019", "score": 0.5, "rationale": "Identification tabs carrying a personality-linked number match machine-readable ID tokens in function. The mechanism is vague."}
+{"pair": "q1020", "score": 0.25, "rationale": "Pictures matched with an ident-card at a police bureau loosely suggest ID records, but no card is read."}
+{"pair": "q1021", "score": 0.75, "rationale": "Pass cards inserted into an automatic gate guard slot match card readers controlling entry. The context is a city gate."}
+{"pair": "q1022", "score": 0.25, "rationale": "A lock opened only by one person's characteristic motions loosely evokes identity-based access, with no card."}
+{"pair": "q1023", "score": 0.5, "rationale": "A turnstile reading a pass and locking when it is forged matches machine-read tokens for access. The mechanism is vague."}
+{"pair": "q1024", "score": 0.75, "rationale": "A key inserted into a hole making contact with an electronic device to authorize entry closely matches an electronic key-card lock."}
+{"pair": "q1025", "score": 0.75, "rationale": "A metal ID card tripping electronic relays at a gate matches a card read for access. The robot guards are different."}
+{"pair": "q1026", "score": 0.25, "rationale": "A lock responding to a thought only loosely evokes machine-read identity, with no card or token."}
+{"pair": "q1027", "score": 0.25, "rationale": "Control by an owner's brain frequency loosely suggests identity-keyed access, with no token."}
+{"pair": "q1028", "score": 0.25, "rationale": "A scanner identifying a person's insides to open a door is biometric rather than a card, so only loosely related."}
+{"pair": "q1029", "score": 0.75, "rationale": "A card passed before a scanner that acknowledges it matches a machine-read ID card. The robot context differs."}
+{"pair": "q1030", "score": 0.25, "rationale": "A brainwave pickup used for registry identity is biometric and not a card or token, so only loosely related."}
+{"pair": "q1031", "score": 0.25, "rationale": "A hidden camera reading palms for clocking out is biometric rather than a token, so only loosely related."}
+{"pair": "q1032", "score": 0.25, "rationale": "A unit keyed to the owner's thought pattern loosely suggests personal keying, with no card or reader."}
+{"pair": "q1033", "score": 0.75, "rationale": "A scanner reading invisible codings on a card and checking them against a central database closely matches machine-read ID cards."}
+{"pair": "q1034", "score": 0.5, "rationale": "A plastic chip recording a fingerprint for identity matches a coded identity token in function. It is a pass rather than an access card read by a lock."}
+{"pair": "q1035", "score": 0.75, "rationale": "A machine testing the genuineness of inserted identity disks matches card readers verifying ID tokens."}
+{"pair": "q1036", "score": 0.5, "rationale": "A tiny 'identoflake' worn in a bracelet matches a personal ID token in function. The reading mechanism is only implied."}
+{"pair": "q1037", "score": 0.25, "rationale": "A wall scanner matching people to stored images is face recognition, not a card or token, so only loosely related."}
+{"pair": "q1038", "score": 0.25, "rationale": "Tracking a person's number in a central board loosely evokes ID-based records, but no card or reader is shown."}
+{"pair": "q1039", "score": 0.5, "rationale": "A computer recording the identities of those passing a gate matches machine-read identity checks. The token is only implied."}
+{"pair": "q1040", "score": 0.75, "rationale": "A personal plate slotted into a robot to authenticate its holder matches an inserted identity card."}
+{"pair": "q1041", "score": 0.5, "rationale": "A ticket fed into a slot that opens a computer-controlled gate matches machine-read access tokens. It is a lottery ticket and not an identity card."}
+{"pair": "q1042", "score": 0.75, "rationale": "A wrist-worn disc presented to a machine that clicks and opens a gate closely matches a machine-read access token."}
+{"pair": "q1043", "score": 0.5, "rationale": "A plastic pass tuned to the wearer's EEG matches an identity token in function. The EEG mechanism differs."}
+{"pair": "q1044", "score": 0.5, "rationale": "A registration robot handling citizen ID cards matches automated card processing, with limited mechanism detail."}
+{"pair": "q1045", "score": 0.25, "rationale": "A metal strip on a dashboard loosely evokes a vehicle ID tag, with no reading described."}
+{"pair": "q1046", "score": 0.5, "rationale": "Magnetic tags scanned and sent to a central record match machine-read identity tokens. The vehicle context differs from access control."}
+{"pair": "q1047", "score": 0.25, "rationale": "A machine discovering physical principles evokes automated discovery loosely, with no hypothesis-and-experiment mechanism."}
+{"pair": "q1048", "score": 0.25, "rationale": "A machine producing a mathematical model of the atom points to automated discovery loosely."}
+{"pair": "q1049", "score": 0.25, "rationale": "Machines originating their own problems loosely point to autonomous science, with no mechanism."}
+{"pair": "q1050", "score": 0, "rationale": "Superimposing human brains is not an automated computing system."}
+{"pair": "q1051", "score": 0.25, "rationale": "A Brain thinking out technical achievements loosely evokes machine discovery."}
+{"pair": "q1052", "score": 0, "rationale": "The quotation is only an acronym and does not describe discovery."}
+{"pair": "q1053", "score": 0.25, "rationale": "A computer fed theory tapes loosely points to machine theorizing, with no discovery described."}
+{"pair": "q1054", "score": 0.25, "rationale": "A computer solving problems humans have not yet identified loosely evokes machine discovery."}
+{"pair": "q1055", "score": 0, "rationale": "The quotation says nothing about a machine discovery."}
+{"pair": "q1056", "score": 0, "rationale": "The quotation is only a computer's name and maker with no described discovery."}
+{"pair": "q1057", "score": 0, "rationale": "The quotation does not describe any scientific activity."}
+{"pair": "q1058", "score": 0, "rationale": "The quotation says only that a brain was charged with knowledge, with no discovery."}
+{"pair": "q1059", "score": 0.25, "rationale": "Scanning stored science from many planets loosely evokes machine synthesis of knowledge, without hypotheses or experiments."}
+{"pair": "q1060", "score": 0, "rationale": "Reducing material to equations is formalization, not discovery."}
+{"pair": "q1061", "score": 0.5, "rationale": "A self-activating, problem-seeking computer with sensors and actuators matches autonomous inquiry in function. The mechanism of experimenting is not detailed."}
+{"pair": "q1062", "score": 0.25, "rationale": "Machine lawyers turning briefs into speech loosely evoke language conversion, but not translation between languages."}
+{"pair": "q1063", "score": 0.25, "rationale": "Brain-like machines flipped for language analysis point to machine translation only loosely."}
+{"pair": "q1064", "score": 0.5, "rationale": "A machine analyzing an unknown language and translating it matches machine translation in function. The mechanism is vague."}
+{"pair": "q1065", "score": 0.5, "rationale": "A machine returning a song in English matches translation in function. The mechanism and the voice conditioning differ from the 1959 text translator."}
+{"pair": "q1066", "score": 0.5, "rationale": "A trained unit translating into a standard speech from other languages matches machine translation in function, with no mechanism."}
+{"pair": "q1067", "score": 0.25, "rationale": "A constructed unambiguous language for machine processing evokes an interlingua loosely and is not translation itself."}
+{"pair": "q1068", "score": 0.5, "rationale": "A vocal translator whose vocabulary a linguist extends matches machine translation in function. The mechanism is absent."}

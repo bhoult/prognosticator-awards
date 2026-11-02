@@ -1,0 +1,120 @@
+{"pair": "q1549", "score": 0.25, "rationale": "Robot cleaners and switchboard operators in a ministry point toward service robots, but they do not serve customers or the public, and Relay is a delivery robot."}
+{"pair": "q1550", "score": 0.5, "rationale": "A robot receptionist serving visitors matches the public-service function. Nothing is said about how it works, and Relay delivers items rather than receiving visitors."}
+{"pair": "q1551", "score": 0.5, "rationale": "An android receptionist screens visitors, which fits the public-service robot function. The mechanism is unspecified and differs from a delivery robot."}
+{"pair": "q1552", "score": 0.25, "rationale": "A robot attached to a building acts as manager, which loosely points to a service robot. It is not a mobile robot serving guests."}
+{"pair": "q1553", "score": 0.5, "rationale": "A robot runs a hotel desk and baggage is sent to guests' rooms, which matches the hotel service and delivery function. The mechanism is vague and the robot is a desk clerk rather than a mobile deliverer."}
+{"pair": "q1554", "score": 0.25, "rationale": "A remote robot librarian supplies information, which is loosely like a public-service robot. It is not a physical robot serving people on site."}
+{"pair": "q1555", "score": 0.25, "rationale": "Robots demonstrate clothing and cosmetics in exhibit halls, a loose public-facing role. This is not the same as a hotel delivery robot."}
+{"pair": "q1556", "score": 0.25, "rationale": "Table phones in a restaurant are normally answered by robots, which points loosely at automated customer service. No physical service robot is described."}
+{"pair": "q1557", "score": 0.5, "rationale": "A servo-robot guide in a museum matches the guide function for the public. The mechanism is not described and the setting is a museum rather than a hotel delivery."}
+{"pair": "q1558", "score": 0.5, "rationale": "A robot waiter seats guests in a restaurant, matching the public-service function. The mechanism is not described."}
+{"pair": "q1559", "score": 0.5, "rationale": "Robot waiters serve in a restaurant, matching the service function. They are remote-controlled humanoids guided by a central brain, which differs from Relay's autonomous delivery."}
+{"pair": "q1560", "score": 0.5, "rationale": "A robot waiter glides over to serve diners, matching the function. The mechanism is not described."}
+{"pair": "q1561", "score": 0.5, "rationale": "A robot that gives information to the public matches the concierge or guide function. The mechanism is not described and Relay does not give information."}
+{"pair": "q1562", "score": 0.5, "rationale": "A receptionist robot receives visitors and controls doors, matching the receptionist function. The mechanism is vague and differs from delivery."}
+{"pair": "q1563", "score": 0.25, "rationale": "A robot referee officiates a fight, which loosely resembles a robot in a public-facing role. It is not serving customers."}
+{"pair": "q1564", "score": 0, "rationale": "Robots shifting allegiance to a new ruler on a broadcast is not a service robot serving the public in the Relay sense."}
+{"pair": "q1565", "score": 0.5, "rationale": "A robotic barkeep serves drinks to patrons, matching the bartender function. The mechanism is not described."}
+{"pair": "q1566", "score": 0.25, "rationale": "Automata that do card tricks and tell fortunes are entertainment robots, which loosely point toward public-facing robots. They do not serve customers."}
+{"pair": "q1567", "score": 0.25, "rationale": "A humanoid casino employee robot loosely fits a public-facing role. The quote shows only lubrication, not service."}
+{"pair": "q1568", "score": 0.5, "rationale": "A street information robot in a kiosk matches the guide or information function for the public. The mechanism is vague and it is stationary."}
+{"pair": "q1569", "score": 0, "rationale": "Talking robots sitting on a corporate board are not serving customers or the public."}
+{"pair": "q1570", "score": 0.5, "rationale": "Robot bartenders mix drinks for patrons, matching the bartender function. Judging drunkenness from speech goes beyond Relay's mechanism."}
+{"pair": "q1571", "score": 0.5, "rationale": "A robot waiter approaches diners holding a menu board, matching the waiter function. The mechanism is only lightly described."}
+{"pair": "q1572", "score": 0.5, "rationale": "A robot waiter dispenses drinks on request, which fits the service and delivery function. The mechanism is a vending-style compartment rather than a roaming delivery robot."}
+{"pair": "q1573", "score": 0.25, "rationale": "A robot barker solicits passers-by outside a gambling parlor, a loosely public-facing role. It is not a serving or delivery robot."}
+{"pair": "q1574", "score": 0.25, "rationale": "A robot serves as a planet's postal service, sorting and delivering mail, which is loosely like a delivery robot. It is not a customer-facing service robot."}
+{"pair": "q1575", "score": 0.5, "rationale": "A robot waiter serves drinks in a bar, matching the waiter function. The mechanism is not described."}
+{"pair": "q1576", "score": 0.25, "rationale": "Robot servants (jeeps) report status to a human, loosely pointing to service robots. They are not serving the public."}
+{"pair": "q1577", "score": 0.75, "rationale": "A robot redcap glides to carry hotel guests' luggage, matching Relay's function of carrying items for hotel guests and its mobile mechanism. The context differs because the task is luggage rather than room deliveries."}
+{"pair": "q1578", "score": 0.25, "rationale": "Robot confessors instruct people in religion, which is loosely a public-facing robot role. It does not match the Relay milestone."}
+{"pair": "q1579", "score": 0.5, "rationale": "A robot clerk sells tickets at a window, matching the clerk function. The mechanism is a fixed booth with a camera, unlike a mobile delivery robot."}
+{"pair": "q1580", "score": 0.25, "rationale": "A servo-mechanism is told to pick someone up, which is a vague robotic servant. The quote is too thin to show public service."}
+{"pair": "q1581", "score": 0.5, "rationale": "A mess-robot serves a person's meal, matching the serving function. The mechanism is not described and the setting is a starship."}
+{"pair": "q1582", "score": 0.5, "rationale": "Serving-robots dispense hot coffee to crew, matching the service function. The mechanism is not described."}
+{"pair": "q1583", "score": 0.5, "rationale": "Floating serving-robots offer refreshments to guests, matching the mobile service and delivery function. The setting is a social event rather than a hotel."}
+{"pair": "q1584", "score": 0.5, "rationale": "A robot bartender fetches a requested drink, matching the service function. The mechanism is a pencil-light and dial rather than Relay's navigation."}
+{"pair": "q1585", "score": 0.5, "rationale": "Robots pour coffee and dispense cigarettes on request, matching the service function. The mechanism is a keyboard order, which is vague."}
+{"pair": "q1586", "score": 0.5, "rationale": "A casino dealer robot talks and plays games with patrons, matching the clerk-like function. It is a stationary dealer rather than a mobile deliverer."}
+{"pair": "q1587", "score": 0.5, "rationale": "Robots escort and guide citizens on spoken orders, matching the guide function. The mechanism is not described in a way that fits a hotel delivery robot."}
+{"pair": "q1588", "score": 0.5, "rationale": "Robot dealers replace human croupiers at tables, matching a public-facing service role. The mechanism is not described."}
+{"pair": "q1589", "score": 0.5, "rationale": "A robot attendant handles check-in at a station desk, matching the receptionist function. The mechanism is a card-punching desk robot."}
+{"pair": "q1590", "score": 0.5, "rationale": "A computer-clerk gives information on a panel at a reception desk, matching the clerk and receptionist function. The mechanism is a display, not a mobile robot."}
+{"pair": "q1591", "score": 0.5, "rationale": "An auto-receptionist replaces a human receptionist, matching the function. The mechanism is not described."}
+{"pair": "q1592", "score": 0.5, "rationale": "A hotel registration robot handles check-in and escalates exceptions, matching the hotel clerk function. It is a fixed desk system rather than a mobile delivery robot."}
+{"pair": "q1593", "score": 0.5, "rationale": "A robot dealer runs a casino game for players, matching a public-facing service role. The mechanism is not described."}
+{"pair": "q1594", "score": 0.5, "rationale": "Two minds share and shape a created world, matching the idea of a shared virtual world. It is limited to two people and thought-driven, unlike Habitat's networked avatars."}
+{"pair": "q1595", "score": 0.5, "rationale": "People fight duels in shared hallucinated environments produced by a machine, matching the shared virtual world function. The mechanism is brain-pattern amplification and not networked avatars."}
+{"pair": "q1596", "score": 0.5, "rationale": "A machine lets two people share a computer-amplified dream world with feedback between them, matching the shared virtual world. The mechanism is neural rather than a networked graphical world."}
+{"pair": "q1597", "score": 0.25, "rationale": "The quote describes an immersive simulated meadow but says nothing about multiple people interacting. It points toward virtual reality only loosely."}
+{"pair": "q1598", "score": 0.25, "rationale": "A machine amplifies thoughts for a telepath, with a duel only implied by the quote. It points toward shared simulation loosely, with a telepathic mechanism."}
+{"pair": "q1615", "score": 0.5, "rationale": "Household appliances track the occupant and a hi-fi selects tapes by itself, matching home automation in function. Mechanism is vague compared with ECHO IV's computer and terminals."}
+{"pair": "q1616", "score": 0.5, "rationale": "An automated cybernetic cooker in the kitchen matches machines running household tasks. The mechanism is not described."}
+{"pair": "q1617", "score": 0.25, "rationale": "A state system tells a household cooker to adjust food output, which loosely resembles automated household machines. State control is the focus, not occupant-responsive home automation."}
+{"pair": "q1618", "score": 0.5, "rationale": "A home servoconsole provides food menus and controls on a viewscreen, matching home automation via a terminal. The mechanism is vague."}
+{"pair": "q1619", "score": 0.75, "rationale": "A house run by an electronic brain managing cooking, climate and security matches a central home computer running household tasks. The sentient emotional aspect differs from ECHO IV."}
+{"pair": "q1620", "score": 0.5, "rationale": "In-wall machines prepare meals and choose music for residents, matching automated household services. The mechanism is not described."}
+{"pair": "q1621", "score": 0.5, "rationale": "A fully automatic mansion needs no servants, matching home automation in function. The mechanism is not described."}
+{"pair": "q1622", "score": 0.25, "rationale": "Central registration of appliances with repair summoning is a loosely related automation idea. It does not describe occupant-responsive home control."}
+{"pair": "q1623", "score": 0.5, "rationale": "Concealed amplifiers play music tuned to the occupant's mood, matching an automated home responding to its occupant. The mechanism is not described."}
+{"pair": "q1624", "score": 0.25, "rationale": "Appliances adapt to their owners' habits, which loosely points to smart appliances. No house-wide automation is described."}
+{"pair": "q1625", "score": 0.5, "rationale": "A house that runs itself as one machine matches home automation in function. The mechanism is not described."}
+{"pair": "q1626", "score": 0.5, "rationale": "Household machines announce visitors and open doors, matching automated home services. The mechanism is vague."}
+{"pair": "q1627", "score": 0.5, "rationale": "A voice-responsive house feeds and caters to occupants, matching automated home services. ECHO IV used keypads and terminals rather than voice, and the house here is a robot persona."}
+{"pair": "q1628", "score": 0.25, "rationale": "A machine integrates opinions and outputs probabilistic conclusions, loosely like forecasting. It does not predict social behavior from statistical models."}
+{"pair": "q1629", "score": 0.5, "rationale": "An integrator system computes all relevant factors to predict future events, matching computer forecasting. The mechanism is vague compared with UNIVAC's election-night statistical projection."}
+{"pair": "q1630", "score": 0.25, "rationale": "The quote only states a forecasting time range for prognostication. It points toward computer forecasting loosely, with no mechanism."}
+{"pair": "q1631", "score": 0.25, "rationale": "A self-checking data system for analysis is only loosely tied to forecasting. The quote gives almost no mechanism."}
+{"pair": "q1632", "score": 0.25, "rationale": "A science mapping brain power and emotion to predict human behavior loosely points to forecasting behavior. It is a mental science, not a computer statistical model."}
+{"pair": "q1633", "score": 0, "rationale": "Machines compute a conclusion about a plague's source, which is diagnosis of the past rather than prediction of behavior or outcomes."}
+{"pair": "q1634", "score": 0.5, "rationale": "A calculating machine forecasts the results of any act by weighing all factors, matching computer prediction. The mechanism is vague and not specific to elections."}
+{"pair": "q1635", "score": 0.5, "rationale": "A machine integrates social and political data to forecast the course of civilization, matching computer forecasting of social outcomes. The mechanism is vague."}
+{"pair": "q1636", "score": 0.5, "rationale": "A voice-operated computer forecasts the military development of a planet, matching prediction of social and political outcomes. The mechanism is not described."}
+{"pair": "q1637", "score": 0.5, "rationale": "The quote suggests a calculating machine could compute betting odds and predict a horse race, which matches computer prediction of outcomes. The mechanism is a suggestion rather than a described model."}
+{"pair": "q1638", "score": 0.5, "rationale": "A machine analyzes questionnaire answers to predict how people will react, matching statistical modeling of behavior. UNIVAC predicted an election, which is a different context."}
+{"pair": "q1674", "score": 0.25, "rationale": "A mathematical calculator fixes a spaceship's position, which loosely points to navigation computing. The quote is brief and does not show steering."}
+{"pair": "q1675", "score": 0.5, "rationale": "An artificial brain pilots a spacecraft, matching the steering function. It is a biological or fantastic brain and not a computer calculating orbits."}
+{"pair": "q1676", "score": 0.5, "rationale": "A shipboard machine does navigation calculation faster than a human, matching the computing function. The mechanism and steering are not described."}
+{"pair": "q1677", "score": 0.25, "rationale": "A thought-operated computer works out a spacecraft's origin and trajectory. The function is related but the mechanism is fantastical and does not steer."}
+{"pair": "q1678", "score": 0.5, "rationale": "On-board calculators are fed numbers to compute courses, matching the orbital and course computation function. They do not steer the ship."}
+{"pair": "q1679", "score": 0.75, "rationale": "A calculator produces a course and gyroscopes lock the ship onto it, matching the computing and steering mechanism of the Apollo Guidance Computer. The tow-ship context differs."}
+{"pair": "q1680", "score": 0.5, "rationale": "A shipboard computer calculates navigation figures, matching the course computation function. The mechanism is thin."}
+{"pair": "q1681", "score": 0.25, "rationale": "Computers make orbital calculations routine, a loose pointer to navigation computing. They are not onboard and nothing is steered."}
+{"pair": "q1682", "score": 0.5, "rationale": "Automatic course plotters keep a ship on its calculated course, matching course computation with verification. It is not clearly steered by the computer."}
+{"pair": "q1683", "score": 0.25, "rationale": "A computer coupled to radar dodges asteroids, which is loosely related to guidance. It is hazard avoidance rather than orbit calculation."}
+{"pair": "q1684", "score": 0.25, "rationale": "Data is fed to a calculator to determine drive time, angle and velocity, which loosely matches burn calculation. The quote is thin."}
+{"pair": "q1685", "score": 0.75, "rationale": "A compact shipboard computer works out orbital and positional data in flight, closely matching the Apollo Guidance Computer's onboard computing. Steering is not stated."}
+{"pair": "q1686", "score": 0.5, "rationale": "A digital computer produces flight coordinates from input factors, matching the navigation computation function. It does not steer."}
+{"pair": "q1687", "score": 0.5, "rationale": "Rockets carry electronic digital computers (astrogators) that navigate with coded impulses, matching an onboard digital navigation computer. The quote is brief on the mechanism."}
+{"pair": "q1688", "score": 0.5, "rationale": "An electronic computer aboard a ship plots courses, matching the course computation function. The quote lacks steering and burn detail."}
+{"pair": "q1689", "score": 0, "rationale": "The quote asks a calculator to compute betting odds and says nothing about spacecraft navigation, so it is not the same thing."}
+{"pair": "q1690", "score": 0.5, "rationale": "A computer figures an interception orbit from observations before blastoff, matching orbit calculation. Steering is not shown."}
+{"pair": "q1691", "score": 0.25, "rationale": "A mind does orbital calculations quickly, which is only a loose pointer to a navigation computer. There is no machine here."}
+{"pair": "q1692", "score": 0.5, "rationale": "An onboard automatic computer figures distance, velocity and landing time, matching spacecraft computing for landing. It does not steer."}
+{"pair": "q1693", "score": 0.5, "rationale": "A shipboard computer does the navigation work for an asteroid maneuver, matching the guidance computing function. The mechanism is vague."}
+{"pair": "q1694", "score": 0.5, "rationale": "Calculators produce a time-distance plot for timing a thrust, matching course and burn calculation. They do not steer."}
+{"pair": "q1695", "score": 0.25, "rationale": "A computer does orbital calculations quickly for asteroid moving, but it is not an onboard guidance computer. It points toward orbit computation loosely."}
+{"pair": "q1696", "score": 0.75, "rationale": "Onboard electronic computers direct and pilot a fast warship faster than humans can react, matching both computing and steering. The context is a warship."}
+{"pair": "q1697", "score": 0.75, "rationale": "A radar and calculator system tracks a body and the ship is set on automatic control, matching onboard computing and automatic steering. The quote is somewhat loose on the mechanism."}
+{"pair": "q1698", "score": 0.25, "rationale": "A drive computer takes control away from human monitors. This is loosely related to computer control of a ship and does not describe navigation calculation."}
+{"pair": "q1699", "score": 0, "rationale": "A girl communicates telepathically with a gravity drive computer, which is not a guidance or navigation computer in function."}
+{"pair": "q1700", "score": 0.75, "rationale": "Corrections to a directional tape change the ship's course, matching a computer that holds and steers along a programmed course. The tape mechanism is generic."}
+{"pair": "q1701", "score": 0.5, "rationale": "Shipboard computers do astrogation calculations, matching course computation. No steering is described."}
+{"pair": "q1702", "score": 0.75, "rationale": "Courses fed into computers cause the ship to shift course, matching computation plus steering. The context is hyper-flight."}
+{"pair": "q1703", "score": 0.5, "rationale": "A shipboard computer does the navigation work and is trusted as infallible, matching the computing function. Steering is not described."}
+{"pair": "q1704", "score": 0.25, "rationale": "Giant computers calculate orbital insertion mathematics from relayed data. They are not onboard and nothing is steered."}
+{"pair": "q1705", "score": 0.75, "rationale": "A punched paper strip is fed into an autopilot to fly a course, matching a computer that calculates and steers. The context is generic."}
+{"pair": "q1706", "score": 0.25, "rationale": "Electronic brains on Earth calculate burn sequences because the ship cannot carry them. Function matches loosely but not onboard guidance."}
+{"pair": "q1707", "score": 0.5, "rationale": "Comptometer-regulated trajectory means a computer regulates trajectory and speed, matching guidance computing. The mechanism is vague."}
+{"pair": "q1708", "score": 0.25, "rationale": "A shipboard brain feeds out tape analyzing planetary conditions, which is only loosely related to navigation."}
+{"pair": "q1709", "score": 0.75, "rationale": "A course computer's recorded tape runs through the autopilot to navigate, matching computation plus steering. The context is generic."}
+{"pair": "q1710", "score": 0.75, "rationale": "Onboard computers plot warp paths and keep the ship at the right speeds, matching computation plus control of the ship. The context is faster-than-light travel."}
+{"pair": "q1711", "score": 0.5, "rationale": "Navigation equipment automated to do most of the navigator's work matches the function of a guidance system. The mechanism is vague."}
+{"pair": "q1712", "score": 0.25, "rationale": "A cyborg's brain acts as the calculator for orbit and landing. The function is similar but a human performs it, with no computer."}
+{"pair": "q1713", "score": 0.5, "rationale": "Computers calculate the flight profile needed for a time offset, matching trajectory computing. The mechanism and steering are not described."}
+{"pair": "q1714", "score": 0.5, "rationale": "Automatic gyro flight control and an electronic calculator are used for navigation, matching computing and stabilization. They are described only briefly."}
+{"pair": "q1715", "score": 0.5, "rationale": "An onboard computer handles navigation and search calculations and reports to base, matching navigation computing. Steering is not clearly shown."}
+{"pair": "q1716", "score": 0.5, "rationale": "A planetary calculator is used to plot a course before firing steering rockets. The computer calculates but the human fires, so the match is the computing function only."}
+{"pair": "q1717", "score": 0.75, "rationale": "An onboard pilot computer with automatic course projection and docking matches computing and steering. The context is an orbital station."}
+{"pair": "q1718", "score": 0.5, "rationale": "Starships are navigated by computer with a manual override, matching computer control of the ship. The calculation of orbits and burns is not shown."}
+{"pair": "q1719", "score": 0.5, "rationale": "Mandatory shipboard computers on tape plan courses, matching onboard navigation computing. The quote is vague on how it works."}

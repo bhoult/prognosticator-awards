@@ -19,3 +19,11 @@ A17	3	match claims batch 09	claude-sonnet-5-5	107456	9	122
 A15	3	match claims batch 07	claude-sonnet-5-5	110132	9	150
 A11	3	match claims batch 03	claude-sonnet-5-5	118031	11	194
 A12	3	match claims batch 04	claude-sonnet-5-5	89547	7	199
+A26	4	judge batch 06	claude-sonnet-5-5	92733	6	77
+A23	4	judge batch 03	claude-sonnet-5-5	94900	6	86
+A25	4	judge batch 05	claude-sonnet-5-5	93888	9	85
+A28	4	judge batch 08	claude-sonnet-5-5	85105	6	78
+A29	4	judge batch 09	claude-sonnet-5-5	82294	6	86
+A30	4	judge batch 10	claude-sonnet-5-5	79979	8	90
+A31	4	judge batch 11	claude-sonnet-5-5	95326	7	85
+A32	4	judge batch 12	claude-sonnet-5-5	83213	6	77
