@@ -31,3 +31,4 @@ A24	4	judge batch 04	claude-sonnet-5-5	84027	8	93
 A27	4	judge batch 07	claude-sonnet-5-5	84298	8	95
 A21	4	judge batch 01	claude-sonnet-5-5	86743	7	104
 A22	4	judge batch 02	claude-sonnet-5-5	97546	9	112
+A33	4	re-judge batch 05 (template rationales) + 7 robot-mower pairs	claude-sonnet-5-5	97743	6	109
