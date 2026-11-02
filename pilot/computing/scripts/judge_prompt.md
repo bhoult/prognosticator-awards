@@ -36,6 +36,10 @@ Two clarifications for this pilot:
 
 Score each pair independently; similar pairs may deserve different scores.
 
+(Added after the first run, for the re-judged batch.) Read every quotation in full and
+write a rationale that names what *that* quotation says. Never reuse a template sentence
+across pairs; a batch where many rationales are identical is rejected.
+
 ## Output
 
 Only JSON lines, one per pair, in input order, no prose and no code fences:

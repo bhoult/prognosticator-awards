@@ -2,6 +2,7 @@
 
 lead_years = milestone year - first publication year (the claim's year is a whole year).
 Pairs whose milestone is not after publication get score 0 with judged_by "rule".
+raw/judge_rejudge.jsonl, when present, overrides earlier scores for its pairs.
 """
 import json
 from pathlib import Path
@@ -9,7 +10,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent.parent
 pairs = [json.loads(l) for l in open(HERE / "raw" / "pairs.jsonl")]
 scores = {}
-for f in sorted((HERE / "raw").glob("judge_[0-9][0-9].jsonl")):
+files = sorted((HERE / "raw").glob("judge_[0-9][0-9].jsonl"))
+rejudge = HERE / "raw" / "judge_rejudge.jsonl"   # batch 05 again + robot-mower pairs; overrides
+if rejudge.exists():
+    files.append(rejudge)
+for f in files:
     for l in open(f):
         r = json.loads(l)
         if "pair" in r and "score" in r:
