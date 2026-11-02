@@ -4,10 +4,12 @@
 
 Default runs: Stage 1, 1b and 1c. Rejected quotes and claims not speculative at the time are
 left out. Each line: a claim id (<run>/<passage>#<n>, n counting the passage's verified claims
-from 0), the passage's year, and the claim's fields. Book paths, authors and titles are not
-exported; the id leads back to them through the local run directories.
+from 0), an opaque book id (the first 12 hex digits of the sha256 of the book's library path),
+the passage's year, and the claim's fields. Book paths, authors and titles are not exported;
+the ids lead back to them through the local run directories.
 """
 import glob
+import hashlib
 import json
 import os
 import sys
@@ -30,7 +32,8 @@ def main(out, *args):
                         continue
                     if 'domain' in opts and cl.get('domain') != opts['domain']:
                         continue
-                    f.write(json.dumps({'id': f"{run}/{rec['chunk']}#{i}", 'year': rec['year'],
+                    book = hashlib.sha256(rec['book'].encode('utf-8')).hexdigest()[:12]
+                    f.write(json.dumps({'id': f"{run}/{rec['chunk']}#{i}", 'book': book, 'year': rec['year'],
                                         **{k: cl.get(k) for k in FIELDS}}, ensure_ascii=False) + '\n')
                     n += 1
     os.replace(out + '.part', out)
