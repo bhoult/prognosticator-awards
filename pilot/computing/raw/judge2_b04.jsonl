@@ -1,0 +1,150 @@
+{"pair": "n0021", "score": 0.25, "rationale": "A central computer as the brain, nerves and heart of an asteroid station points toward whole-station control, but Skylab's computer only handled attitude and pointing, not life support."}
+{"pair": "q1235", "score": 0.25, "rationale": "The machine reads information straight from a mind, but the Kyoto work only rebuilt crude 10x10 images a subject was looking at, a much narrower function."}
+{"pair": "q0889", "score": 0.25, "rationale": "Matching measured crystal properties against stored memory banks resembles database lookup, but Dialog searched bibliographic records by keyword, not physical-property identification."}
+{"pair": "q0496", "score": 0.25, "rationale": "A speaking robot that dismisses its subject shows speech only; nothing in the line shows understanding of typed English like ELIZA's pattern matching."}
+{"pair": "q1788", "score": 0.5, "rationale": "Robot ears that turn toward a commanding voice anticipate machines obeying speech, but the line gives no recognition mechanism and Apricot was a 1984 word-list recognizer."}
+{"pair": "q0246", "score": 0.5, "rationale": "A machine run by mental impulses matches the aim of thought-controlled devices, but the quote only requests one and Johnny Ray's implant moved a cursor by recorded neural signals."}
+{"pair": "q0310", "score": 0.25, "rationale": "Interrogation data taped into central computers that notify police resembles a networked records system, but NCIC was a lookup database for wanted persons, not integration of interrogation data."}
+{"pair": "q0035", "score": 0, "rationale": "A robot carrying its creator's mind as an extension of his intelligence is not a physical double; Lincoln's animatronic was a lookalike figure with scripted speech."}
+{"pair": "q0624", "score": 0.5, "rationale": "Gates that recognize a person and open match face-based access control in function, but the quote gives no mechanism and ZN-Face used camera image matching."}
+{"pair": "q0867", "score": 0.25, "rationale": "A computer naming an object as a gun from stored data is a loose retrieval-by-matching idea, far from Dialog's keyword search of document databases."}
+{"pair": "q1815", "score": 0.5, "rationale": "Speaking into an order box that returns a card is a voice-driven fetch of records, close to voice command, though recognition is not described and Apricot was a small PC feature."}
+{"pair": "q0419", "score": 0.25, "rationale": "Deliberately feeding a machine a problem to drive it insane is sabotage of a computer, but the 1967 APL network penetration was unauthorized access, not paradox attack."}
+{"pair": "q1491", "score": 0, "rationale": "The line only says a robot shares Central Intelligence's physics beliefs; nothing here shows one computer directing many robots as Kiva fulfilment did."}
+{"pair": "q1821", "score": 0.5, "rationale": "Speaking the date into a laboratory machine's microphone anticipates voice input to a computer, but the line shows no recognition or command execution."}
+{"pair": "q1944", "score": 0.25, "rationale": "A sensipsych training device beside books hints at machine-aided learning, but the line gives no lessons, testing or grading as in PLATO."}
+{"pair": "q1595", "score": 0.25, "rationale": "Testing a system by fighting duels points at interactive simulated combat, but nothing in the line shows many people sharing a networked world like MUD1."}
+{"pair": "q1011", "score": 0.5, "rationale": "A ring token triggering a photo-electronic door mechanism matches a machine-read access token, though by light rather than punched holes and with no identity encoded."}
+{"pair": "q0072", "score": 0.5, "rationale": "Power machinery made completely automatic and needing only a handful of attendants matches a lights-out plant in function, but without robots building robots or the stated mechanism."}
+{"pair": "q1731", "score": 0.5, "rationale": "Checking moon gravity and distance on an onboard computer to decide a maneuver matches shipboard orbital computation in function, but the 1965 case involved burn calculation by the computer."}
+{"pair": "q1034", "score": 0.5, "rationale": "A plastic chip bearing a pressed fingerprint for boarding resembles an identity token verified by machine, but here it is a record checked by a clerk, not read automatically."}
+{"pair": "q1887", "score": 0.5, "rationale": "Speaking a memo into a voicewrite is dictation by machine, though the line does not show transcription, and Dragon Dictate took discrete words."}
+{"pair": "q2095", "score": 0.25, "rationale": "Going wherever home is evokes a personalized created world, but the line gives no sensory display or computer mechanism like the Virtuality 1000SU."}
+{"pair": "q1615", "score": 0.25, "rationale": "A door microphone that follows a person and a hi-fi choosing tapes suggest responsive appliances, but ECHO IV was a home computer controlling household routines."}
+{"pair": "q0706", "score": 0.25, "rationale": "A three-dimensional space model with new dots added is a volumetric map, but the Multiplex hologram was a viewable-around cylinder image, not a live planning model."}
+{"pair": "q1215", "score": 0.25, "rationale": "Reading enemy plans from brains with an educator machine points at extracting mental content, but the real work only decoded viewed images."}
+{"pair": "q1617", "score": 0.25, "rationale": "A state records system telling a cooker to feed a person more is networked appliance control, but ECHO IV was a single household computer, not a state system."}
+{"pair": "q1169", "score": 0, "rationale": "An electronic brain that plays games and has military use is only a sketch; SAGE was an air-defence tracking system, not game-playing."}
+{"pair": "n0003", "score": 0.25, "rationale": "A selector with thirty-two kinds of automatic controls suggests station-wide automation, but Skylab's computer only handled attitude and pointing."}
+{"pair": "q1701", "score": 0.5, "rationale": "Punching keys on computers that do astral mathematics is shipboard navigation computation in function, but no mechanism or maneuvering is shown."}
+{"pair": "q1812", "score": 0.25, "rationale": "An electronic cross-index delivering newspaper files is an indexing system, but nothing in the quote mentions speech or voice commands."}
+{"pair": "q0842", "score": 0.5, "rationale": "A machine matching a photograph to a complete file in seconds matches fast record retrieval, though Dialog retrieved text citations by keyword, not images."}
+{"pair": "q1269", "score": 0, "rationale": "A microscopic electronic brain is about miniature intelligence; Stoddart's rotaxane shuttle was a molecular mechanical switch, a different thing."}
+{"pair": "q0856", "score": 0.25, "rationale": "A central information institution that answers any question resembles broad lookup, but it relies on human or robot operators, unlike Dialog's database query."}
+{"pair": "q0713", "score": 0.25, "rationale": "A mechanical man that commits suicide hints at a humanoid robot, but the line shows no walking, speaking or object handling like Elektro."}
+{"pair": "q1870", "score": 0.5, "rationale": "Exact translation of oral sound into text anticipates speech-to-text dictation, but no mechanism is given and Dragon Dictate in 1990 handled discrete words."}
+{"pair": "q1627", "score": 0.25, "rationale": "A house that announces it supplies wants and feeds you suggests a service-providing home, but ECHO IV merely ran household chores through a computer."}
+{"pair": "q0979", "score": 0.5, "rationale": "Robots keeping solved problems stored for repetition resembles learning from experience, but SNARC learned a maze by reinforcement rather than storing solutions."}
+{"pair": "q1774", "score": 0.25, "rationale": "A computer miscalculating burn mass for a lunar rocket points at onboard maneuver calculation, but the quote is a failure and the 1965 case was a working orbital adjustment."}
+{"pair": "q1375", "score": 0.5, "rationale": "A table map showing the red circles of air-cities matches a live situation display of tracked objects, though SAGE used computer-driven radar consoles, not a mounted map."}
+{"pair": "q0046", "score": 0.25, "rationale": "A mechanical cortex of ninety billion electronic cells echoes neuron-like units, but the line says nothing of learning and LeNet was a trained recognizer of digits."}
+{"pair": "q1798", "score": 0.5, "rationale": "A door rising at a woman's voice is a voice-operated door in function, but the quote shows no recognition mechanism; Apricot was a PC word recognizer."}
+{"pair": "q0640", "score": 0, "rationale": "The quote only describes a man's expression changing; it says nothing of fingerprints, so it does not match AFIS research."}
+{"pair": "q2089", "score": 0.25, "rationale": "Sleeping in nutrient baths in personal dream worlds anticipates being fed a lived world, but nothing here describes computer-generated senses like the arcade systems."}
+{"pair": "q0313", "score": 0.25, "rationale": "A computer noting a crime upswing is crime-trend analysis, but NCIC was a lookup database of wanted persons and stolen property, not analysis."}
+{"pair": "q0290", "score": 0.25, "rationale": "An electronic brain that plays games is not shown to play chess, and the Fidelity Chess Challenger was a consumer chess machine."}
+{"pair": "q2023", "score": 0, "rationale": "A subconscious analysis test is about psychological assessment; UCSF decoded attempted speech from cortical signals into text, which is not shown."}
+{"pair": "q2067", "score": 0.5, "rationale": "A perfect illusion touching all senses matches immersive VR in function, but there is no mechanism and the Virtuality 1000SU was a headset system."}
+{"pair": "q0230", "score": 0.25, "rationale": "Collars delivering machine answers as mental impulses is brain input from computers, whereas the Johnny Ray implant sent brain signals out to move a cursor."}
+{"pair": "q0223", "score": 0.25, "rationale": "Thoughts linked to hidden machinery in a metal square points to mind-machine coupling, but the quote offers no mechanism or controlled device."}
+{"pair": "q0096", "score": 0.5, "rationale": "Cybernetically controlled stations needing no human matches a self-running plant, but without the robot-built products and 30-day lights-out runs of Fanuc."}
+{"pair": "q0084", "score": 0.5, "rationale": "A cybernetic brain controlling quality regulators in all factories at once matches automated plant control, but nothing shows no human workers or robots making robots."}
+{"pair": "q1495", "score": 0.25, "rationale": "Androids needing guidance and some means of command only imply a controller; the quote is inference, not a central computer coordinating robots like Kiva."}
+{"pair": "q1237", "score": 0.25, "rationale": "Gadgets that detect thought-waves point loosely at brain-signal sensing, but no thought content is read as in the Kyoto reconstruction."}
+{"pair": "q0364", "score": 0.25, "rationale": "Humans feeding data to machines whose answers a coordinator humanizes suggests a computer-assisted team, but SAGE linked radar sites to computers."}
+{"pair": "q2042", "score": 0.5, "rationale": "Sliding fingers over a sparkling panel to enter text matches touch-panel input, though the PLATO IV panel was an infrared grid for answering questions."}
+{"pair": "q1355", "score": 0.25, "rationale": "A giant computer behind a private intelligence outfit that agencies rely on is a big answering machine, but the quote shows no natural-language questions like START."}
+{"pair": "q1494", "score": 0, "rationale": "Central Intelligence being the creator of perfect plans says nothing about directing robots; it is not the Kiva coordination."}
+{"pair": "q1963", "score": 0.25, "rationale": "A keyboard to control humanlike servants and follow their courses is remote command, but the Goertz manipulator was a master-slave device with sensory feedback."}
+{"pair": "q0645", "score": 0.25, "rationale": "A thumbhole opening a door suggests thumb-based access, but nothing says the thumb print is matched by machine as in Wegstein's fingerprint models."}
+{"pair": "q1223", "score": 0.25, "rationale": "A robot attuned to thought waves obeys a person, a loose neural-control idea, but nothing here decodes particular thoughts or images."}
+{"pair": "q2070", "score": 0.5, "rationale": "A chamber where light, gas and music make wishes take form matches multisensory immersion, but without a computer-generated display like the Virtuality 1000SU."}
+{"pair": "q2008", "score": 0.25, "rationale": "Thought images thrown on a screen anticipate showing mental content, but UCSF decoded spoken sentences into text, not images."}
+{"pair": "q1820", "score": 0.5, "rationale": "Telling the ship what he wants to do anticipates spoken navigation commands, but Apricot recognized a small word list for software, not piloting."}
+{"pair": "q1771", "score": 0.25, "rationale": "Computing the motions of thousands of stars to a quarter-mile is heavy shipboard calculation, but the 1965 case was orbital maneuvering on a crewed capsule."}
+{"pair": "q0045", "score": 0, "rationale": "Radioactive pyramidal cells that overheat are an imaginary device with no resemblance to LeNet digit recognition."}
+{"pair": "q1502", "score": 0.5, "rationale": "Thousands of ships tied by robot controls to act in coordination match one controller directing many machines, though the Kiva system moved warehouse carts."}
+{"pair": "q1529", "score": 0.5, "rationale": "A concealed robot brain able to control a car anticipates vehicle autonomy, but the line gives no sensing and Tsukuba's car used cameras on street markings."}
+{"pair": "q1699", "score": 0, "rationale": "Communication between a girl and a computer by ESP is telepathy, not navigation computing, so it does not match the onboard computer milestone."}
+{"pair": "q1031", "score": 0.25, "rationale": "A hidden camera reading a raised palm to log workers is biometric identification, not a machine-read card, so it loosely matches VALI-DINE."}
+{"pair": "q1757", "score": 0.25, "rationale": "Feeding space coordinates to a shipboard computer to find the nearest stars is star lookup, while the 1965 milestone was computing orbital maneuvers."}
+{"pair": "q1846", "score": 0.5, "rationale": "A mechanical voice stating a rule to a robot shows machine speech, but the quote does not show how it is produced, while the 1976 devices used synthesis."}
+{"pair": "q0357", "score": 0, "rationale": "Analyzing filmed brain-wave patterns into a live bedside image is brain monitoring, not MYCIN's rule-based diagnosis of infections."}
+{"pair": "q1708", "score": 0, "rationale": "A shipboard Brain feeding out tape is a calculating machine for colonization data, not an orbital guidance computer."}
+{"pair": "q1868", "score": 0.25, "rationale": "A keyless machine recording dictation as a waveform on paper replaces a secretary, but it is not text, unlike Dragon Dictate."}
+{"pair": "q0916", "score": 0.5, "rationale": "Fingerprint and retinal pattern checks match retina scanning for identity, though the quote gives little mechanism and EyeDentify was a retinal scanner product."}
+{"pair": "q1391", "score": 0.25, "rationale": "A circular graph that pulses on a control table points toward a tracking display, but SAGE consoles showed computer-processed radar tracks."}
+{"pair": "q1365", "score": 0.5, "rationale": "An oracle that answers any question promptly and completely matches question-answering, though without mechanism, whereas START answered English questions from a knowledge base."}
+{"pair": "n0009", "score": 0.25, "rationale": "A computer reporting radio messages between a man and his ship is signal interception, but ECHELON screened satellite traffic by keyword at scale."}
+{"pair": "q1620", "score": 0.25, "rationale": "Machines behind walls that prepare meals and select music describe a service home, but ECHO IV controlled household routines through a computer."}
+{"pair": "q1173", "score": 0, "rationale": "Machines that cannot integrate an anomalous datum is a story about failing prediction, not SAGE air-defence tracking."}
+{"pair": "q1249", "score": 0.25, "rationale": "A thought-helmet entering an alien's brain is about reading minds with hardware, but no decoded image or data is shown as in the Kyoto reconstruction."}
+{"pair": "q0707", "score": 0.25, "rationale": "An animated three-dimensional star map on a wall suggests volumetric display, but the Multiplex hologram was a cylinder-viewed film, not an animated map."}
+{"pair": "q1367", "score": 0.25, "rationale": "A legal and policy information bank queried by unit number is a database, but START answered open natural-language questions."}
+{"pair": "q1280", "score": 0.25, "rationale": "An implant triggered by nerve signals gives a device input, whereas the cochlear implant delivered sound by stimulating the nerve."}
+{"pair": "q1230", "score": 0.25, "rationale": "A machine with electrodes that voices a person's thoughts is closer to Chang and Makin's speech decoding than ATR's images, but the real systems read attempted speech."}
+{"pair": "q2080", "score": 0.25, "rationale": "A sensipsych machine's vivid visions teaching skills hints at simulation-based training, but the quote gives no computer-generated senses as in Virtuality 1000SU."}
+{"pair": "q1482", "score": 0, "rationale": "An arrow into a robot's braincase says nothing about a computer that coordinates robots."}
+{"pair": "q1770", "score": 0.5, "rationale": "Ship computers with problem-solving circuits that time a braking burn match onboard computation of engine burns, though only loosely described."}
+{"pair": "q1623", "score": 0.25, "rationale": "Recorded music tuned to his mood from concealed amplifiers is responsive entertainment, narrow next to ECHO IV's home computer."}
+{"pair": "q0890", "score": 0.25, "rationale": "A repair robot reprogrammed to build ever smaller circuits touches on miniaturization, but integrated circuits were solid-state chips."}
+{"pair": "q0095", "score": 0.5, "rationale": "A machine building factories and robot workers matches robots making robots, but the quote relies on telekinesis, not Fanuc's lights-out plant."}
+{"pair": "q1492", "score": 0, "rationale": "Humanlike mechanoids organized in ranks says nothing of a central computer coordinating robots as in Kiva."}
+{"pair": "q1353", "score": 0.25, "rationale": "A large computer used as an integrator by the sciences suggests a general problem-answering machine, but the quote lacks language answers like START."}
+{"pair": "q1007", "score": 0.25, "rationale": "A lock opened by timed light pulses is an access mechanism, but it resembles a combination, not an identity-encoded card."}
+{"pair": "q0242", "score": 0.5, "rationale": "A brain wired by multiplex cable to a typewriter communicates by output, matching a direct interface, though the real implant moved a cursor."}
+{"pair": "q1721", "score": 0.25, "rationale": "Calculators that plot a survey route in advance suggest course planning, but the 1965 milestone was an onboard computer performing orbital maneuvers."}
+{"pair": "q1822", "score": 0.5, "rationale": "A voice-cued setter that records memos on a spoken password matches voice command in function, though it differs in being wearable."}
+{"pair": "q1941", "score": 0.25, "rationale": "Robots acting as repositories of knowledge teaching children point at machine instruction, but PLATO I presented lessons and graded answers."}
+{"pair": "q1882", "score": 0.5, "rationale": "Vocowriters as equipment for people matches machines turning speech into text, but the quote gives no function beyond the name."}
+{"pair": "q2015", "score": 0.25, "rationale": "Turning thought into visible expression for all to read hints at thought display, but UCSF decoded spoken sentences into text from cortical signals."}
+{"pair": "q1696", "score": 0.5, "rationale": "Electronic computers that direct the speed of fast ships match onboard computer control, though no calculation is described."}
+{"pair": "q1680", "score": 0.25, "rationale": "Putting figures into a spaceship computer is a minimal reference to onboard computation, with no maneuver or steering shown."}
+{"pair": "q1816", "score": 0.5, "rationale": "Barking a command into an order box matches voice command, though the quote says nothing of recognition or the kind of machine."}
+{"pair": "q1036", "score": 0.5, "rationale": "A tiny identoflake in a bracelet flashed onto screens is an identity token read by machine, but optical rather than a punched card."}
+{"pair": "q1922", "score": 0.5, "rationale": "Giant electronic computers do the mathematics of orbital insertion, matching the heavy computation of NORC for ballistics, though the use differs."}
+{"pair": "q1316", "score": 0.25, "rationale": "Automated customs scanners and paper-checkers point at machine reading of documents, but the quote does not show reading characters as in postal sorting."}
+{"pair": "q1202", "score": 0.25, "rationale": "A helmet acting as a receiver that draws mental content out without sending current is a passive reading idea, but no content is decoded like the Kyoto reconstruction."}
+{"pair": "q1171", "score": 0.25, "rationale": "A semantic integrator compiling battle reports for a fleet admiral suggests data fusion, whereas SAGE tracked aircraft for air defence."}
+{"pair": "q1313", "score": 0.25, "rationale": "A scanner turning book pages and sending text to distant analysts is scanning, but the quote does not show characters turned into data as in mail sorting."}
+{"pair": "q1013", "score": 0.25, "rationale": "A triggered electronic key that opens airlocks is an access device, but the quote gives no encoded identity as on a VALI-DINE card."}
+{"pair": "q0911", "score": 0, "rationale": "The quote is only a character's inward curse, with no retinal scanning, so it does not match EyeDentify."}
+{"pair": "q0636", "score": 0.75, "rationale": "A scanner that recognizes fingerprints and opens the door matches automated fingerprint recognition, though Wegstein's work was analysis of prints, not door control."}
+{"pair": "q0967", "score": 0.5, "rationale": "Machines that write complete stories match automatic composition of text, but FoG generated weather forecasts from data rather than fiction."}
+{"pair": "q1442", "score": 0.5, "rationale": "Programmed toy dogs that cannot bite match a robot pet, but Gaylord was a leash-steered toy rather than a circuit-run animal."}
+{"pair": "q0968", "score": 0.5, "rationale": "Tube blocks holding plots and dialogue that generate fiction match automatic writing from stored material, but FoG produced forecasts, not fiction."}
+{"pair": "q1045", "score": 0.25, "rationale": "A magnetically encoded tab clipped from a dashboard is a machine-read vehicle record, but VALI-DINE cards identified people for access."}
+{"pair": "q0703", "score": 0.25, "rationale": "A tri-dim chart across a room is a volumetric display of positions, but the Multiplex hologram was a film cylinder."}
+{"pair": "q0041", "score": 0, "rationale": "A naturally formed helium brain with neuron-like circuits is a story creature, not a computer trained for digit recognition."}
+{"pair": "q2045", "score": 0.25, "rationale": "Buttons that unlock when pressed in chorded patterns is a panel input method, but not touch or gesture sensing as on PLATO IV."}
+{"pair": "q0063", "score": 0, "rationale": "A robot brain with a dowsing sense for water is not Audrey's spoken-digit hearing, so no sense is anticipated."}
+{"pair": "q0961", "score": 0.25, "rationale": "A cabinet of drawers from which verse imagery is picked is a mechanized aid to poetry, but FoG generated text from data."}
+{"pair": "q0495", "score": 0.25, "rationale": "A robot's speaker negotiating terms shows machine speech, but a typed English pattern-matching conversation like ELIZA is not shown."}
+{"pair": "q1317", "score": 0.25, "rationale": "Machine sifting of wreckage for registration plates is automated reading, but the quote does not describe reading characters by optical means."}
+{"pair": "q1439", "score": 0.5, "rationale": "A black fuzzy robot cat that hunts mice is an animal robot, though Gaylord was a leash-steered toy dog."}
+{"pair": "q1687", "score": 0.5, "rationale": "An electronic astrogator on rockets using coded impulses is an onboard computer for navigation, but the 1965 case concerned orbital maneuvers on a crewed capsule."}
+{"pair": "q2084", "score": 0.5, "rationale": "A means of reproducing every sensation of living matches immersive VR in function, but there is no mechanism, whereas Virtuality 1000SU used a headset."}
+{"pair": "q1794", "score": 0.25, "rationale": "A door that announces visitors is speech output, not recognition, so it only loosely resembles Apricot's voice commands."}
+{"pair": "q1019", "score": 0.25, "rationale": "Identification tabs carrying a psychometric number are encoded tokens read by scanners, but VALI-DINE used punched holes to open doors."}
+{"pair": "q1849", "score": 0.5, "rationale": "A canned voice interrogating a visitor matches machine speech output, but the line does not show how it is synthesized, as in the Kurzweil machine."}
+{"pair": "q1735", "score": 0.5, "rationale": "Running a multi-beacon problem through the navigator is shipboard course computation, but not the orbital maneuvering of 1965."}
+{"pair": "q1227", "score": 0.25, "rationale": "A hypnosis beam that reads innermost thought is a remote mind reader, but the Kyoto work reconstructed viewed images using brain signals."}
+{"pair": "q0235", "score": 0.25, "rationale": "Lights in the brain that blot vision suggest a computer feeding images in, whereas the cursor-control milestone read brain signals out."}
+{"pair": "q0366", "score": 0.25, "rationale": "A referral to a big system computer implies linked machines, but the quote does not show terminals on communication lines as in SAGE."}
+{"pair": "q0349", "score": 0.75, "rationale": "A records unit that identifies a girl fitting stated requirements matches computer matchmaking, but the 1964 service compared questionnaires."}
+{"pair": "q1260", "score": 0, "rationale": "A machine that detects when a mind is being read is a counter-telepathy detector, not a reader of thoughts."}
+{"pair": "q1710", "score": 0.5, "rationale": "Comptometers plotting warp paths and holding the ship at critical speeds are onboard calculators steering a vessel, though the 1965 computer did orbital burns."}
+{"pair": "q1268", "score": 0, "rationale": "Half-inch micro-robots with electron vision are small robots, not molecular machines like the rotaxane shuttle."}
+{"pair": "q0917", "score": 0.5, "rationale": "Taking a retina pattern from a person for identification matches retina scanning, though here it is photographed and sent to a records office."}
+{"pair": "q1784", "score": 0.25, "rationale": "A figure whose word-repeater reacts to sounds is a speech-triggered device, but it only sways to sounds, with no recognition of words."}
+{"pair": "q1619", "score": 0.25, "rationale": "A house run by an electronic brain suggests an automated home, but the quote names no function like ECHO IV's household routines."}
+{"pair": "q0093", "score": 0.5, "rationale": "A fully automated assembly line matches a self-operating factory, but making android bodies differs from Fanuc's robots building robots."}
+{"pair": "q2018", "score": 0.25, "rationale": "A stereographic device showing a captive's thoughts as moving pictures anticipates thought display, but UCSF decoded text, not 3D images."}
+{"pair": "q0222", "score": 0.25, "rationale": "Thinking a world into being hints at brain-driven control, but the Johnny Ray implant moved a cursor and nothing here shows signals measured."}
+{"pair": "q0292", "score": 0.25, "rationale": "A chess game worked out by masters with high-speed computers involves computers in chess, but not machines that play, unlike the Chess Challenger."}
+{"pair": "q0537", "score": 0.5, "rationale": "A book-screen to read from is an electronic book display, but the Data Discman played books from mini-CD."}
+{"pair": "q0043", "score": 0.25, "rationale": "A brain-modelled giant computer that solves problems at superhuman speed echoes neural designs, but the quote names no neurons or learning."}
+{"pair": "q1022", "score": 0.25, "rationale": "Machinery that opens only to one person's characteristic motions is a personal access control, but VALI-DINE read punched cards."}
+{"pair": "q2016", "score": 0.5, "rationale": "A Menograph recording thoughts onto tape in place of pen and pencil matches thought-to-text in function, with no mechanism shown, unlike UCSF's decoding."}
+{"pair": "q2083", "score": 0.5, "rationale": "A subject thrust into a situation experienced as fully real is immersive simulation, but the line gives no equipment like the Virtuality 1000SU."}
+{"pair": "q0600", "score": 0.25, "rationale": "Transparent index cards with a last-reported-location ticket track people by a manual file, not a device reporting position like NIMCOS."}
