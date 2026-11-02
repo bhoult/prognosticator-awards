@@ -70,3 +70,47 @@ statements. The verdicts are in `raw/quote_check.jsonl`.
   `low` when an earlier event may exist or the date is uncertain, and they did so often.
 - 19 milestones are `mass_adoption` (first pass: 5), 87 `first_demonstration` and 72
   `first_practical_use`.
+
+## 4. Earliest-event check
+
+`scripts/select_checks.py` found **67 milestones** that give at least one matched claim
+more than 40 years of lead (lead = milestone year − claim year, over every claim matched
+to the concept). Six Sonnet checker agents (11–12 milestones each, prompt
+`scripts/earliest_prompt.md`) asked of each one: is there an earlier event that fits
+this definition? `scripts/apply_checks.py` then verified every source they gave, the same
+way as in step 3 (all passed), and wrote the outcome into `milestones2.jsonl`
+(`checked`, plus `replaced_date` for the old date). The log is `raw/check_applied.jsonl`.
+
+- **49 confirmed, 18 replaced, 0 removed.** 17 replacements moved the date earlier. One,
+  the 3D display's practical use, moved from 1989 (MIT electroholography) to 1972
+  (Lloyd Cross's multiplex hologram).
+- One hand fix (`scripts/fix_milestones2.py`): the check moved hacking's practical use
+  to 1967 (Evanston students breaking into an IBM network), which made it earlier than
+  its demonstration (Creeper, 1971). The demonstration now uses the same 1967 event.
+- After the check, 62 milestones still give more than 40 years of lead, and every one
+  carries `checked`.
+
+| Concept | Kind | Before | After | New event |
+|---|---|---|---|---|
+| office-automation | demonstration | 1951 | 1890 | Hollerith tabulators process the 1890 US census |
+| computerized-economic-planning | practical use | 1972 | 1951 | LEO I runs bakery and tea-shop calculations at J. Lyons |
+| artificial-senses | demonstration | 1982 | 1952 | Bell Labs' Audrey recognizes spoken digits |
+| robot-pet | practical use | 1998-10 | 1962 | Ideal Toy's Gaylord battery-powered robot dog on sale |
+| speech-to-text-dictation | demonstration | 1985 | 1961 | Kyoto University's Sonotype phonetic typewriter |
+| computer-security-hacking | practical use | 1988-11-02 | 1967 | Evanston high-school students penetrate IBM's APL network |
+| brain-computer-interface | demonstration | 1977 | 1965 | Lucier's *Music for Solo Performer*: EEG alpha waves drive percussion |
+| machine-readable-id-card | practical use | 1975 | 1968 | RIT's VALI-DINE punched-card meal-access system |
+| iris-retina-recognition | demonstration | 1994 | 1981 | EyeDentify retinal scanner on the market |
+| question-answering-computer | demonstration | 2011-02 | 1993 | MIT's START answers English questions online |
+| holographic-3d-display | practical use | 1989 | 1972 | Lloyd Cross's multiplex hologram (a moving 3D image) |
+| face-recognition | practical use | 2000 | 1997 | Bochum system sold commercially |
+| information-retrieval | practical use | 1971-12 | 1966 | Lockheed's Dialog used on NASA's database |
+| electronic-book-reader | practical use | 1998 | 1990 | Sony Data Discman on sale |
+| touch-gesture-interface | practical use | 1973 | 1972 | PLATO IV terminals with touch panels |
+| computer-video-display | demonstration | 1949 | 1948-06 | Manchester Baby's CRT output |
+| unmanned-aerial-vehicle | mass adoption | 2013 | 2010 | Parrot AR.Drone |
+| virtual-reality | practical use | 1991 | 1990 | Virtuality systems sold to companies |
+
+Some replacements are themselves stretches, and section 6 lists them as still doubtful
+(LEO I as "economic planning", Lucier's concert piece as a brain-computer interface,
+the 1890 census as "office automation").
