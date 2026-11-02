@@ -12,7 +12,7 @@ sources, and a ranked list of authors and books.
 - **Design:** done.
 - **Model comparison:** done on the gold set; Sonnet was chosen for extraction.
 - **Stage 1 extraction:** done for 2,979 public-domain science-fiction books and
-  predictive texts, apart from 7 of 9,419 passages. 115,398 claims are verified against
+  predictive texts, apart from 1 of 9,419 passages. 115,452 claims are verified against
   the text ([report](runs/stage1/report.md)).
 - **Not started yet:** matching claims to real events, and scoring.
 

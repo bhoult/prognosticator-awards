@@ -464,7 +464,7 @@ claim):
 > - **Budget:** `auto` sends a first round to measure the cost per word, then
 >   as many passages as fit in the budget, and stops on a billing error.
 >   Passages it doesn't reach stay pending for subagents.
-> - **Result:** 8,312 passages for $178.33; `runs/stage1/report.md`.
+> - **Result:** 8,318 passages for $178.45; `runs/stage1/report.md`.
 >
 > **Editorial matter.** Modern editions add introductions that explain the
 > book's predictions after the fact (the 1993 Bantam Verne: "Florida won, as
@@ -632,7 +632,7 @@ The questions, each with its accepted default:
 12. **Scope of the first run**: decided 2026-11-02. The run is staged,
     using Sonnet. Stage 1 is the 3,234 Gutenberg sci-fi books
     (54.1M words) and the 47 predictive texts, after a 20-book pilot
-    (`pipeline/extract.py`, §9). Done 2026-11-02 apart from 7 passages:
+    (`pipeline/extract.py`, §9). Done 2026-11-02 apart from 1 passage:
     12% by subagents, the rest through the Batch API on a promotional
     credit (`runs/stage1/report.md`).
 
