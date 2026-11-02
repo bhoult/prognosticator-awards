@@ -1,0 +1,1 @@
+{"id": "stage1-sonnet/p08801#6", "concepts": ["computer-medical-diagnosis"], "reason": "Computer analysis of patient records finds a disease correlation (matched by hand: the batch-11 agent emitted a 'placeholder' row under a wrong id)", "replaces": "stage1-sonnet/p08801#1"}
