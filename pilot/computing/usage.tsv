@@ -2,3 +2,4 @@ agent	step	purpose	model	total_tokens	tool_uses	seconds
 A01	1	propose concepts from descriptions, half 1	claude-sonnet-5-5	112717	4	112
 A02	1	propose concepts from descriptions, half 2	claude-sonnet-5-5	127752	4	171
 A05	2	milestones batch 3 (22 concepts)	claude-sonnet-5-5	74572	13	61
+A08	2	milestones batch 6 (21 concepts)	claude-sonnet-5-5	80657	17	74
