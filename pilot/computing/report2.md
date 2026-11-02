@@ -60,7 +60,7 @@ statements. The verdicts are in `raw/quote_check.jsonl`.
   question-answering practical use (2011), Hero of Alexandria's vending machine
   (AD 62) and Luna 3 as a probe's practical use (1959).
 - **Sources are reference pages, almost all Wikipedia.** 200 sources are `reference`
-  (Wikipedia, plus a few computerhistory.org pages) and 4 are `wikidata`. None are
+  pages, all of them English Wikipedia, and 4 are `wikidata`. None are
   `contemporary`. The agents found that most other hosts (Britannica, the Smithsonian,
   NASA, IEEE, Nature, museum sites) were refused by the environment's egress proxy or
   timed out. No agent used the Chronicling America helper; it worked when I tested it
