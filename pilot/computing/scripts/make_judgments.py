@@ -24,7 +24,7 @@ for p in pairs:
                    judged_by="rule")
     elif p["pair"] in scores:
         s = scores[p["pair"]]
-        row.update(score=s["score"], rationale=s["rationale"], judged_by="sonnet")
+        row.update(score=s["score"], rationale=s.get("rationale") or "(judge gave no rationale)", judged_by="sonnet")
     else:
         missing.append(p["pair"])
         continue
