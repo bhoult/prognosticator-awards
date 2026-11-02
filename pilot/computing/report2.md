@@ -41,3 +41,32 @@ in `raw/wikidata_picks.jsonl`. The step was otherwise done in code.
   date), Internet 1969-10-29 (P571), email 1971, speech recognition 1952 (P580), robotic
   vacuum 1990 (P571) and teaching machine "1920s". So Wikidata is a weak source of dates
   here; it gave the research agents a cross-check, not a milestone.
+
+## 3. Milestones from real sources
+
+Nine Sonnet research agents, 11–15 concepts each, got the concept, its Wikidata item and
+dates, the first-pass milestones and the reason each was doubted (`raw/doubts1.jsonl`),
+and the prompt `scripts/milestone_prompt2.md`. Their raw output is in
+`raw/ms2_b01–09.jsonl` and their per-concept notes in `raw/ms2_concept_notes.jsonl`.
+`scripts/merge_milestones2.py` then checked **every source again, independently of the
+agents**: it fetched each page anew and kept a source only if its quote (≤ 25 words)
+occurs in the page text, and a Wikidata source only if its date is one of the item's
+statements. The verdicts are in `raw/quote_check.jsonl`.
+
+- 183 milestones came back; **178 for 97 concepts survived** (first pass: 118 for 99).
+  204 sources passed, 4 were dropped for quotes over 25 words and 1 because the quote
+  was not on the page. That left 5 milestones with no source, so they were dropped:
+  personal-computer mass adoption (1977), e-mail first demonstration (1965), Siri as
+  question-answering practical use (2011), Hero of Alexandria's vending machine
+  (AD 62) and Luna 3 as a probe's practical use (1959).
+- **Sources are reference pages, almost all Wikipedia.** 200 sources are `reference`
+  (Wikipedia, plus a few computerhistory.org pages) and 4 are `wikidata`. None are
+  `contemporary`. The agents found that most other hosts (Britannica, the Smithsonian,
+  NASA, IEEE, Nature, museum sites) were refused by the environment's egress proxy or
+  timed out. No agent used the Chronicling America helper; it worked when I tested it
+  but is slow (30–70 s a query). So the quotes are real and verified, but the evidence
+  is still one encyclopedia, not the hierarchy of DESIGN §6.
+- **Confidence:** 2 high, 70 medium, 106 low. The agents were told to mark a milestone
+  `low` when an earlier event may exist or the date is uncertain, and they did so often.
+- 19 milestones are `mass_adoption` (first pass: 5), 87 `first_demonstration` and 72
+  `first_practical_use`.
