@@ -81,9 +81,8 @@ this definition? `scripts/apply_checks.py` then verified every source they gave,
 way as in step 3 (all passed), and wrote the outcome into `milestones2.jsonl`
 (`checked`, plus `replaced_date` for the old date). The log is `raw/check_applied.jsonl`.
 
-- **49 confirmed, 18 replaced, 0 removed.** 17 replacements moved the date earlier. One,
-  the 3D display's practical use, moved from 1989 (MIT electroholography) to 1972
-  (Lloyd Cross's multiplex hologram).
+- **49 confirmed, 18 replaced, 0 removed.** Every replacement moved the date earlier, by
+  1 to 61 years (median 12.5).
 - One hand fix (`scripts/fix_milestones2.py`): the check moved hacking's practical use
   to 1967 (Evanston students breaking into an IBM network), which made it earlier than
   its demonstration (Creeper, 1971). The demonstration now uses the same 1967 event.
