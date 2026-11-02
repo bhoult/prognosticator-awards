@@ -1,0 +1,131 @@
+{"concept_id": "electronic-digital-computer", "qid": "Q68", "reason": "computer: general-purpose device performing arithmetic/logic operations; matches programmable electronic computer (item is broader, includes mechanical)"}
+{"concept_id": "analog-computer", "qid": "Q63759", "reason": "analog computer"}
+{"concept_id": "punched-card-tabulation", "qid": "Q1413513", "reason": "tabulating machine: electromechanical machine summarising information on punched cards"}
+{"concept_id": "stored-program-control", "qid": "Q3689317", "reason": "numerical control: machine tools driven by recorded instructions; narrower than the concept (not looms or player pianos) but the closest single item"}
+{"concept_id": "integrated-circuit", "qid": "Q80831", "reason": "integrated circuit"}
+{"concept_id": "superconducting-computer", "qid": "Q1790362", "reason": "cryotron: the superconducting switching element the concept's computers are built from; closest item (no item for a cryotron computer)"}
+{"concept_id": "magnetic-data-storage", "qid": "Q3502645", "reason": "magnetic tape data storage; concept also covers drums and disks, which have separate items"}
+{"concept_id": "microform-storage", "qid": "Q12498524", "reason": "microfilm"}
+{"concept_id": "artificial-neural-network", "qid": "Q192776", "reason": "artificial neural network"}
+{"concept_id": "biological-computer", "qid": "Q17081538", "reason": "biological computer"}
+{"concept_id": "pocket-calculator", "qid": "Q31087", "reason": "calculator (electronic device); broader than pocket size"}
+{"concept_id": "personal-computer", "qid": "Q16338", "reason": "personal computer"}
+{"concept_id": "wearable-computer", "qid": "Q162768", "reason": "personal digital assistant: the concept's definition (pocket device for notes, schedules, reminders) fits a PDA better than the wearable-computer item"}
+{"concept_id": "supercomputer-scientific-calculation", "qid": "Q121117", "reason": "supercomputer"}
+{"concept_id": "computer-simulation", "qid": "Q925667", "reason": "computer simulation"}
+{"concept_id": "computer-aided-design", "qid": "Q184793", "reason": "computer-aided design"}
+{"concept_id": "machine-scientific-discovery", "qid": "Q122644059", "reason": "robot scientist: AI-enabled robot that performs experiments; fits 'computer that forms hypotheses and runs experiments'"}
+{"concept_id": "computer-network", "qid": "Q1301371", "reason": "computer network"}
+{"concept_id": "internet-global-information-network", "qid": "Q75", "reason": "Internet"}
+{"concept_id": "electronic-mail", "qid": "Q9158", "reason": "email"}
+{"concept_id": "information-retrieval", "qid": "Q816826", "reason": "information retrieval"}
+{"concept_id": "question-answering-computer", "qid": "Q1074173", "reason": "question answering (research area; the item is the field, not a machine)"}
+{"concept_id": "electronic-book-reader", "qid": "Q726235", "reason": "e-book reader"}
+{"concept_id": "electronic-paper-display", "qid": "Q189897", "reason": "electronic paper"}
+{"concept_id": "holographic-3d-display", "qid": "Q752712", "reason": "volumetric display: 3D image viewable from all sides, the concept's definition; the holographic-display item is narrower"}
+{"concept_id": "computer-video-display", "qid": "Q5290", "reason": "computer monitor"}
+{"concept_id": "real-time-tactical-display", "qid": null, "reason": "no item for a computer situation display; radar display and situation map are different things"}
+{"concept_id": "touch-gesture-interface", "qid": "Q165970", "reason": "touchscreen; concept also covers gesture gloves"}
+{"concept_id": "optical-character-recognition", "qid": "Q167555", "reason": "optical character recognition"}
+{"concept_id": "computer-security-hacking", "qid": "Q2798820", "reason": "security hacker: someone who breaches computer defences; closest item (the 'hacking' item is the broader hobbyist sense)"}
+{"concept_id": "emp-electronics-vulnerability", "qid": "Q15982668", "reason": "nuclear electromagnetic pulse"}
+{"concept_id": "speech-recognition", "qid": "Q189436", "reason": "speech recognition"}
+{"concept_id": "speech-to-text-dictation", "qid": null, "reason": "speech recognition item is the general technique (already used above); the dictation-machine item is a recorder, not automatic transcription"}
+{"concept_id": "speech-synthesis", "qid": "Q16346", "reason": "speech synthesis"}
+{"concept_id": "conversational-ai", "qid": "Q5270587", "reason": "dialogue system: computer system intended to converse with a human"}
+{"concept_id": "machine-translation", "qid": "Q79798", "reason": "machine translation"}
+{"concept_id": "universal-translator-unknown-language", "qid": null, "reason": "only the fictional universal translator (instant translation, not decipherment)"}
+{"concept_id": "codebreaking-computer", "qid": null, "reason": "no item for codebreaking machines as a class; cryptanalysis is the discipline"}
+{"concept_id": "machine-generated-writing", "qid": "Q1513879", "reason": "natural language generation"}
+{"concept_id": "machine-generated-art-music", "qid": "Q1758902", "reason": "algorithmic composition; covers music only, the concept also covers pictures"}
+{"concept_id": "machine-learning", "qid": "Q2539", "reason": "machine learning"}
+{"concept_id": "computer-chess", "qid": "Q1122588", "reason": "computer chess"}
+{"concept_id": "game-playing-computer", "qid": null, "reason": "no general item; only video-game and patent hits"}
+{"concept_id": "artificial-general-intelligence", "qid": "Q2264109", "reason": "artificial general intelligence (hypothetical)"}
+{"concept_id": "machine-consciousness", "qid": null, "reason": "no matching item in results"}
+{"concept_id": "machine-emotions", "qid": null, "reason": "no matching item in results"}
+{"concept_id": "ai-takeover", "qid": "Q2254427", "reason": "AI takeover (hypothetical scenario)"}
+{"concept_id": "ai-deception", "qid": null, "reason": "no matching item"}
+{"concept_id": "robot-laws-safety-constraints", "qid": null, "reason": "Three Laws of Robotics is Asimov's fictional rule set, and AI alignment is a research field; neither is the built-in constraint itself"}
+{"concept_id": "robot-kill-switch", "qid": "Q2001958", "reason": "kill switch: safety mechanism to shut down a system in an emergency; broader than robots"}
+{"concept_id": "machine-religion", "qid": null, "reason": "no matching item"}
+{"concept_id": "collective-machine-intelligence", "qid": null, "reason": "group mind is a fiction theme about linked minds, not a machine system; no match"}
+{"concept_id": "machine-vision", "qid": "Q844240", "reason": "computer vision: concept includes recognizing objects and navigation, broader than industrial machine vision"}
+{"concept_id": "artificial-senses", "qid": null, "reason": "only separate items for taste, smell, tactile sensor; no single item"}
+{"concept_id": "industrial-robot", "qid": "Q1128980", "reason": "industrial robot"}
+{"concept_id": "automated-factory", "qid": "Q3063795", "reason": "lights-out manufacturing: automated factories with no humans on site"}
+{"concept_id": "automation-labor-displacement", "qid": "Q7692538", "reason": "technological unemployment"}
+{"concept_id": "robot-manufacturing-industry", "qid": null, "reason": "no item"}
+{"concept_id": "humanoid-robot", "qid": "Q584529", "reason": "humanoid robot"}
+{"concept_id": "lifelike-android", "qid": "Q181787", "reason": "android: robot resembling a human"}
+{"concept_id": "android-duplicate-of-person", "qid": null, "reason": "simulacrum items are general imitation or a fiction theme"}
+{"concept_id": "domestic-robot", "qid": "Q1331972", "reason": "domestic robot"}
+{"concept_id": "robot-vacuum-mower", "qid": "Q168577", "reason": "robotic vacuum cleaner; concept also covers robot mowers"}
+{"concept_id": "service-robot", "qid": "Q7455797", "reason": "service robot"}
+{"concept_id": "vending-automat", "qid": "Q211584", "reason": "vending machine; concept also covers automats"}
+{"concept_id": "childcare-robot", "qid": null, "reason": "no item"}
+{"concept_id": "companion-robot", "qid": "Q55608217", "reason": "companion robot"}
+{"concept_id": "robot-pet", "qid": "Q7353422", "reason": "robotic pet"}
+{"concept_id": "clockwork-automaton", "qid": "Q787116", "reason": "automaton: self-operating machine"}
+{"concept_id": "robot-police-guard", "qid": null, "reason": "no item for security or police robots"}
+{"concept_id": "lethal-autonomous-weapon", "qid": "Q25378861", "reason": "lethal autonomous weapon"}
+{"concept_id": "fire-control-missile-guidance", "qid": "Q1568940", "reason": "fire-control system; missile guidance is a separate item (Q2335090)"}
+{"concept_id": "military-strategy-computer", "qid": null, "reason": "military simulation is wargaming in general, not necessarily by computer"}
+{"concept_id": "robot-supervisor-hierarchy", "qid": null, "reason": "swarm robotics is decentralised coordination, the opposite of a central controller"}
+{"concept_id": "self-replicating-machine", "qid": "Q691243", "reason": "self-replicating machine"}
+{"concept_id": "self-repairing-machine", "qid": null, "reason": "only self-healing materials and patents"}
+{"concept_id": "teleoperated-robot", "qid": "Q3982902", "reason": "teleoperation"}
+{"concept_id": "robotic-space-probe", "qid": "Q26529", "reason": "space probe; concept also covers deep-sea probes"}
+{"concept_id": "nanorobot", "qid": "Q47012798", "reason": "nanorobot"}
+{"concept_id": "three-d-printing", "qid": "Q229367", "reason": "3D printing"}
+{"concept_id": "three-d-scanning", "qid": "Q1618071", "reason": "3D scanner"}
+{"concept_id": "autopilot", "qid": "Q220858", "reason": "autopilot"}
+{"concept_id": "spacecraft-guidance-computer", "qid": null, "reason": "only the Apollo Guidance Computer, one instance, not the class"}
+{"concept_id": "self-driving-car", "qid": "Q741490", "reason": "autonomous car"}
+{"concept_id": "unmanned-aerial-vehicle", "qid": "Q484000", "reason": "unmanned aerial vehicle"}
+{"concept_id": "space-station-automation", "qid": null, "reason": "only space station; no item for computer-run stations"}
+{"concept_id": "computer-run-government", "qid": null, "reason": "no item"}
+{"concept_id": "social-forecasting-computer", "qid": null, "reason": "psychohistory is fictional; political forecasting is not specifically by computer"}
+{"concept_id": "computerized-economic-planning", "qid": "Q139445", "reason": "algorithmic trading; covers only the market half of the concept, not economic planning"}
+{"concept_id": "consumer-analytics", "qid": "Q1787103", "reason": "credit score; covers only the customer-scoring part of the concept"}
+{"concept_id": "computer-matchmaking", "qid": "Q139074834", "reason": "computer dating"}
+{"concept_id": "computer-personnel-selection", "qid": "Q352538", "reason": "computerized adaptive testing; covers testing, not selection"}
+{"concept_id": "computer-legal-judgment", "qid": "Q10302162", "reason": "legal informatics; covers legal research by computer, not verdicts"}
+{"concept_id": "computer-crime-detection", "qid": "Q15984289", "reason": "predictive policing; covers the prediction half of the concept"}
+{"concept_id": "electronic-voting", "qid": "Q926161", "reason": "electronic voting"}
+{"concept_id": "mass-surveillance-database", "qid": null, "reason": "mass surveillance item is broader (not a central database); no match"}
+{"concept_id": "automated-eavesdropping", "qid": null, "reason": "signals intelligence and speech analytics are broader"}
+{"concept_id": "electronic-tracking-tags", "qid": "Q17011956", "reason": "electronic tagging"}
+{"concept_id": "machine-readable-id-card", "qid": "Q1054723", "reason": "access badge: credential used to gain entry; concept also covers identity cards"}
+{"concept_id": "fingerprint-recognition", "qid": "Q1195223", "reason": "fingerprint recognition: automated matching of fingerprints"}
+{"concept_id": "iris-retina-recognition", "qid": "Q1672722", "reason": "iris recognition; retinal scan (Q3329841) is a separate item"}
+{"concept_id": "face-recognition", "qid": "Q1192553", "reason": "facial recognition system"}
+{"concept_id": "speaker-recognition", "qid": "Q1145189", "reason": "speaker recognition"}
+{"concept_id": "office-automation", "qid": "Q2734036", "reason": "office automation"}
+{"concept_id": "computer-dependence", "qid": null, "reason": "a social condition; no item"}
+{"concept_id": "smart-home", "qid": "Q848436", "reason": "home automation"}
+{"concept_id": "automatic-door", "qid": "Q11612630", "reason": "automatic door"}
+{"concept_id": "automated-city", "qid": null, "reason": "smart city is not a fully automated city"}
+{"concept_id": "environmental-monitoring-network", "qid": "Q846837", "reason": "automatic weather station; concept also covers water and air networks and forecasting"}
+{"concept_id": "teaching-machine", "qid": "Q16135865", "reason": "teaching machine"}
+{"concept_id": "computer-medical-diagnosis", "qid": "Q1122413", "reason": "computer-aided diagnosis"}
+{"concept_id": "computer-psychotherapy", "qid": null, "reason": "ELIZA is one program, not the class; no match"}
+{"concept_id": "lie-detector", "qid": "Q190767", "reason": "polygraph"}
+{"concept_id": "eeg-brain-monitoring", "qid": "Q179965", "reason": "electroencephalography"}
+{"concept_id": "mind-reading-machine", "qid": "Q7796993", "reason": "thought identification: neuroimaging used to read minds"}
+{"concept_id": "thought-to-text", "qid": null, "reason": "brain-reading is decoding stimuli, broader than writing thoughts as text; already the closest match for mind-reading"}
+{"concept_id": "brain-computer-interface", "qid": "Q897410", "reason": "brain-computer interface"}
+{"concept_id": "neural-implant-augmentation", "qid": "Q555840", "reason": "brain implant; concept also covers body implants"}
+{"concept_id": "brain-in-machine-body", "qid": null, "reason": "brain in a vat is a thought experiment"}
+{"concept_id": "mind-uploading", "qid": "Q2267982", "reason": "mind uploading (hypothetical)"}
+{"concept_id": "memory-recording-playback", "qid": null, "reason": "no item"}
+{"concept_id": "memory-erasure-implant", "qid": "Q6815724", "reason": "memory erasure"}
+{"concept_id": "direct-knowledge-transfer", "qid": null, "reason": "no item"}
+{"concept_id": "sleep-learning", "qid": "Q1407466", "reason": "sleep-learning"}
+{"concept_id": "machine-mind-control", "qid": null, "reason": "no item"}
+{"concept_id": "virtual-reality", "qid": "Q170519", "reason": "virtual reality"}
+{"concept_id": "shared-virtual-world", "qid": "Q444835", "reason": "virtual world: simulated environment populated by many users"}
+{"concept_id": "flight-simulator", "qid": "Q214932", "reason": "flight simulator"}
+{"concept_id": "simulated-reality", "qid": "Q2742884", "reason": "simulation hypothesis; matches the 'possibly including our own' part"}
+{"concept_id": "psionic-machine", "qid": null, "reason": "only role-playing and fiction psionics"}
+{"concept_id": "future-viewing-machine", "qid": null, "reason": "time viewer is a fictional device mostly for the past"}
