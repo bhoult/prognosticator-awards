@@ -1,0 +1,19 @@
+{
+  "chunk": "c006",
+  "claims": [
+    {
+      "quote": "Seventy-five thousand tons—dead-weight—rushing through the fog at the rate of fifty feet a second, had hurled itself at an iceberg.",
+      "description": "A passenger liner of about seventy-five thousand tons will be built and driven at full speed through fog.",
+      "category": "technology",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    }
+  ]
+}

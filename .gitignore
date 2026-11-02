@@ -1,0 +1,25 @@
+# Book text never goes in the repository (DESIGN.md §10). The gold passages include
+# in-copyright books; rebuild them from the local library with pipeline/gold.py.
+gold/chunks/
+# Raw model output for the gold-set passages from in-copyright editions quotes them at length:
+# the three random books (Feist, Giffin, Bear: random1-3 in gold/chunks.jsonl) and the Verne
+# edition (Lowell Bair's 1967 translation; c003, c010, c033, c036). Other chunks' output is kept.
+runs/*/c003.json
+runs/*/c010.json
+runs/*/c033.json
+runs/*/c036.json
+runs/*/c008.json
+runs/*/c021.json
+runs/*/c023.json
+runs/*/c026.json
+runs/*/c035.json
+runs/*/c037.json
+# Haiku wrote 14 of c023's claims into this neighbor's file.
+runs/haiku/c024.json
+# Rebuilt by pipeline/evaluate.py, and it holds quotes from the same books.
+runs/*/verified.jsonl
+# Local working files derived from book text (pre-filter spans, extraction state).
+work/
+*.part
+__pycache__/
+.venv/

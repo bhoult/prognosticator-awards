@@ -1,0 +1,19 @@
+{
+  "chunk": "c005",
+  "claims": [
+    {
+      "quote": "and all night they charged along at forty knots",
+      "description": "A steam-turbine destroyer will sustain forty knots through a night at sea.",
+      "category": "technology",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    }
+  ]
+}

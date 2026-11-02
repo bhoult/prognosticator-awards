@@ -1,0 +1,89 @@
+{
+  "chunk": "c022",
+  "claims": [
+    {
+      "quote": "The improved 'limitless-distance' telephone was presently introduced, and the daily doings of the globe made visible to everybody",
+      "description": "A telephone link that shows live video of distant places anywhere on the globe, so world events are visible to everyone.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": "presently",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "it was delivered to public use, and was soon connected with the telephonic systems of the whole world",
+      "description": "A telelectroscope, a device for seeing distant places, is linked into the world's telephone networks for public use.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "the day will never come when it will do a farthing's worth of real service for any human being",
+      "description": "A skeptic insists the telelectroscope will never be useful to anyone.",
+      "category": "technology",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": "never",
+      "polarity": "will_not",
+      "confidence": "asserted",
+      "valence": "negative",
+      "voice": "antagonist",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "under the new paragraph added to the Constitution in 1889, second trials are not State affairs, but national",
+      "description": "A fictional constitutional amendment moves second criminal trials from state courts to the national Supreme Court.",
+      "category": "political",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "society-politics",
+      "second_order": false
+    },
+    {
+      "quote": "I resume by cable-telephone where I left off yesterday",
+      "description": "Long-distance news reporting sent by a cable telephone link rather than by letter or telegraph.",
+      "category": "technology",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "To-day, by a clipper of the Electric Line",
+      "description": "Electrically powered transport network that carries mail and freight across the ocean and inland by electric railway.",
+      "category": "technology",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    }
+  ]
+}

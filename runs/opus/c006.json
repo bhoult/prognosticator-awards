@@ -1,0 +1,61 @@
+{
+  "chunk": "c006",
+  "claims": [
+    {
+      "quote": "Seventy-five thousand tons—dead-weight—rushing through the fog at the rate of fifty feet a second, had hurled itself at an iceberg.",
+      "description": "A 75,000-ton passenger liner steaming at about 30 knots (fifty feet per second) runs into an iceberg in fog.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "negative",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "Rowland knew that the holocaust was complete; that the invincible *Titan*, with nearly all of her people, unable to climb vertical floors and ceilings, was beneath the surface of the sea.",
+      "description": "A giant liner believed unsinkable sinks after striking an iceberg, taking nearly everyone aboard down with it.",
+      "category": "event",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "negative",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "Twenty-four boats for three thousand people—lashed down with tarred gripe-lashings—thirty men to clear them away, and not an axe on the boat-deck or a sheath-knife on a man.",
+      "description": "A giant liner carries far too few lifeboats, 24 for 3,000 people, and lacks the crew and tools to launch them quickly.",
+      "category": "other",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "negative",
+      "voice": "sympathetic",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "They'll run their boats in the other Lane after this, I think—the money-grabbing wretches.",
+      "description": "After the disaster, shipping lines will move their ships to a different transatlantic lane.",
+      "category": "event",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": "after this",
+      "polarity": "will",
+      "confidence": "hedged",
+      "valence": "mixed",
+      "voice": "sympathetic",
+      "domain": "transport",
+      "second_order": true
+    }
+  ]
+}

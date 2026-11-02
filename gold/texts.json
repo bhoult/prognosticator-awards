@@ -1,0 +1,137 @@
+{
+  "_about": "Gold-set texts. path is relative to the library root. year = first publication of the passage (not the edition). range limits a long volume to one work. 'all' takes every chunk; 'anchors' takes only chunks holding an answer-key anchor, plus `extra` random chunks. blank_headings: heading lines containing these strings are blanked (story titles inside a collection).",
+  "library": "/run/media/bhoult/My Book/library",
+  "chunk_words": 6000,
+  "seed": 2026,
+  "texts": [
+    {
+      "id": "watkins",
+      "path": "Futurism/John Elfreth Watkins Jr/1900-Futurism-John Elfreth Watkins Jr-What May Happen in the Next Hundred Years.md",
+      "year": 1900,
+      "take": "all"
+    },
+    {
+      "id": "futility",
+      "path": "Fiction/Morgan Robertson/1898-Fiction-Morgan Robertson-Futility (The Wreck of the Titan).md",
+      "year": 1898,
+      "take": "anchors",
+      "extra": 1,
+      "blank_headings": [
+        "THE WRECK OF THE TITAN"
+      ]
+    },
+    {
+      "id": "machine_stops",
+      "path": "Science-Fiction/E. M. Forster/1928-Science-Fiction-E. M. Forster-The Eternal Moment, and Other Stories.md",
+      "year": 1909,
+      "take": "all",
+      "range": [
+        1700,
+        58500
+      ],
+      "blank_headings": [
+        "THE MACHINE STOPS"
+      ]
+    },
+    {
+      "id": "twain_1904",
+      "path": "Classics/Mark Twain/2009-Classics-Mark Twain-The Complete Mark Twain Collection.md",
+      "year": 1898,
+      "take": "all",
+      "range": [
+        11125750,
+        11160000
+      ],
+      "blank_headings": [
+        "LONDON TIMES"
+      ]
+    },
+    {
+      "id": "night_mail",
+      "path": "Fiction/Rudyard Kipling/1909-Fiction-Rudyard Kipling-Actions and Reactions.md",
+      "year": 1905,
+      "take": "all",
+      "range": [
+        136500,
+        190000
+      ],
+      "blank_headings": [
+        "WITH THE NIGHT MAIL"
+      ]
+    },
+    {
+      "id": "world_set_free",
+      "path": "Science-Fiction/H. G. Wells/1914-Science-Fiction-H. G. Wells-The World Set Free.md",
+      "year": 1914,
+      "take": "anchors",
+      "extra": 1
+    },
+    {
+      "id": "looking_backward",
+      "path": "Science-Fiction/Edward Bellamy/1887-Science-Fiction-Edward Bellamy-Looking Backward.md",
+      "year": 1888,
+      "take": "anchors",
+      "extra": 1
+    },
+    {
+      "id": "verne_moon",
+      "path": "Classics/Jules Verne/1993-Classics-Jules Verne et al-From the Earth to the Moon.md",
+      "year": 1865,
+      "take": "anchors",
+      "extra": 1
+    },
+    {
+      "id": "anticipations",
+      "path": "Futurism/H. G. Wells/1901-Futurism-H. G. Wells-Anticipations.md",
+      "year": 1901,
+      "take": "anchors",
+      "extra": 0
+    },
+    {
+      "id": "newcomb_flight",
+      "path": "Science/Simon Newcomb/1906-Science-Simon Newcomb-Side-Lights on Astronomy.md",
+      "year": 1903,
+      "take": "all",
+      "range": [
+        540800,
+        572000
+      ]
+    },
+    {
+      "id": "brick_moon",
+      "path": "Science-Fiction/Edward Everett Hale/1899-Science-Fiction-Edward Everett Hale-The Brick Moon, and Other Stories.md",
+      "year": 1869,
+      "take": "anchors",
+      "extra": 0
+    },
+    {
+      "id": "new_atlantis",
+      "path": "Classics/Francis Bacon/1627-Classics-Francis Bacon-New Atlantis.md",
+      "year": 1627,
+      "take": "anchors",
+      "extra": 0
+    },
+    {
+      "id": "bloch",
+      "path": "Futurism/Ivan Bloch/1899-Futurism-Ivan Bloch-Is War Now Impossible (The Future of War).md",
+      "year": 1899,
+      "take": "anchors",
+      "extra": 0
+    },
+    {
+      "id": "ralph",
+      "path": "Science-Fiction/Hugo Gernsback/1925-Science-Fiction-Hugo Gernsback-Ralph 124C 41+.md",
+      "year": 1911,
+      "take": "anchors",
+      "extra": 0
+    }
+  ],
+  "random_books": {
+    "count": 3,
+    "chunks_each": 2,
+    "genres": [
+      "Science-Fiction",
+      "Fiction"
+    ]
+  }
+}

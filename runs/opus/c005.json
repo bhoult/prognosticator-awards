@@ -1,0 +1,61 @@
+{
+  "chunk": "c005",
+  "claims": [
+    {
+      "quote": "all night they charged along at forty knots, with lights extinguished",
+      "description": "A naval destroyer able to keep up forty knots all night.",
+      "category": "technology",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "weapons-war",
+      "second_order": false
+    },
+    {
+      "quote": "The destroyer swung to the southward, showing her stern to the battle-ship, and increasing her speed as the engine-room staff nursed the oil feed and the turbines.",
+      "description": "An oil-fired, turbine-powered naval destroyer.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "weapons-war",
+      "second_order": false
+    },
+    {
+      "quote": "Casey's at the receiver, still listening, but I made out only a few words like 'Charleston,' 'Brooklyn,' 'jail,' 'pirates,' 'Pensacola,' and one phrasing 'Send in pursuit.'",
+      "description": "Warships carry a wireless room with dedicated radio operators, and shore stations and fleets coordinate a pursuit by radio.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "sympathetic",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "I heard him before I saw him.",
+      "description": "Ship-to-ship radio lets one ship hear and challenge another before it comes into sight.",
+      "category": "technology",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "sympathetic",
+      "domain": "communication",
+      "second_order": false
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+Classics/Francis Bacon/1627-Classics-Francis Bacon-New Atlantis.md
+Classics/Thomas More/1516-Classics-Thomas More-Utopia.md
+Classics/Tommaso Campanella/1602-Classics-Tommaso Campanella-The City of the Sun.md
+Fiction/Jack London/1914-Fiction-Jack London-The Strength of the Strong.md
+Fiction/Mark Twain/1906-Fiction-Mark Twain-The $30,000 Bequest, and Other Stories.md
+Fiction/Morgan Robertson/1898-Fiction-Morgan Robertson-Futility (The Wreck of the Titan).md
+Fiction/Rudyard Kipling/1909-Fiction-Rudyard Kipling-Actions and Reactions.md
+Fiction/Rudyard Kipling/1917-Fiction-Rudyard Kipling-A Diversity of Creatures.md
+Futurism/Bertrand Russell/1924-Futurism-Bertrand Russell-Icarus, or the Future of Science.md
+Futurism/H. G. Wells/1901-Futurism-H. G. Wells-Anticipations.md
+Futurism/H. G. Wells/1902-Futurism-H. G. Wells-The Discovery of the Future.md
+Futurism/H. G. Wells/1903-Futurism-H. G. Wells-Mankind in the Making.md
+Futurism/H. G. Wells/1914-Futurism-H. G. Wells-The War That Will End War.md
+Futurism/H. G. Wells/1916-Futurism-H. G. Wells-What Is Coming (A Forecast of Things after the War).md
+Futurism/J. B. S. Haldane/1924-Futurism-J. B. S. Haldane-Daedalus, or Science and the Future.md
+Futurism/Nikola Tesla/1900-Futurism-Nikola Tesla-The Problem of Increasing Human Energy.md
+Futurism/Norman Angell/1910-Futurism-Norman Angell-The Great Illusion.md
+Futurism/T. Baron Russell/1905-Futurism-T. Baron Russell-A Hundred Years Hence (The Expectations of an Optimist).md
+Futurism/T. R. Malthus/1798-Futurism-T. R. Malthus-An Essay on the Principle of Population.md
+Philosophy/Oswald Spengler/1926-Philosophy-Oswald Spengler-The Decline of the West, Volume 1.md
+Philosophy/Oswald Spengler/1928-Philosophy-Oswald Spengler-The Decline of the West, Volume 2.md
+Politics/Alexis de Tocqueville/1835-Politics-Alexis de Tocqueville-Democracy in America, Volume 1.md
+Politics/Alexis de Tocqueville/1840-Politics-Alexis de Tocqueville-Democracy in America, Volume 2.md
+Politics/John Maynard Keynes/1919-Politics-John Maynard Keynes-The Economic Consequences of the Peace.md
+Prophecy/Anonymous/unknown-Prophecy-Anonymous-Prophecies of Robert Nixon, Mother Shipton, and Martha the Gypsy.md
+Prophecy/Milton S. Terry/1899-Prophecy-Milton S. Terry-The Sibylline Oracles.md
+Prophecy/Nostradamus/1672-Prophecy-Nostradamus-The True Prophecies or Prognostications of Michael Nostradamus.md
+Prophecy/Nostradamus/1891-Prophecy-Nostradamus-Oracles of Nostradamus.md
+Religion/Benjamin Thorpe/1866-Religion-Benjamin Thorpe-The Elder Eddas and the Younger Eddas.md
+Religion/E. W. West/1880-Religion-E. W. West-The Bundahishn.md
+Religion/E. W. West/1880-Religion-E. W. West-Zand-i Vohuman Yasht (Bahman Yasht).md
+Religion/F. Max Müller/1884-Religion-F. Max Müller-The Upanishads, Part 2 (Sacred Books of the East, Vol. 15, partial).md
+Religion/James Darmesteter/1880-Religion-James Darmesteter-The Zend-Avesta, Vendidad.md
+Religion/James Darmesteter/1883-Religion-James Darmesteter-The Zend-Avesta, Yashts, Sirozahs and Afrinagans.md
+Religion/Kisari Mohan Ganguli/1896-Religion-Kisari Mohan Ganguli-The Mahabharata, Volume 1 (Books 1-3).md
+Religion/Kisari Mohan Ganguli/1896-Religion-Kisari Mohan Ganguli-The Mahabharata, Volume 2 (Books 4-7).md
+Religion/Kisari Mohan Ganguli/1896-Religion-Kisari Mohan Ganguli-The Mahabharata, Volume 3 (Books 8-12).md
+Religion/Kisari Mohan Ganguli/1896-Religion-Kisari Mohan Ganguli-The Mahabharata, Volume 4 (Books 13-18).md
+Religion/L. H. Mills/1887-Religion-L. H. Mills-The Zend-Avesta, Visperad.md
+Religion/Manmatha Nath Dutt/1896-Religion-Manmatha Nath Dutt-The Vishnu Purana.md
+Religion/R. H. Charles/1917-Religion-R. H. Charles-The Book of Enoch.md
+Science-Fiction/Anna Bowman Dodd/1887-Science-Fiction-Anna Bowman Dodd-The Republic of the Future.md
+Science-Fiction/Charlotte Perkins Gilman/1915-Science-Fiction-Charlotte Perkins Gilman-Herland.md
+Science-Fiction/Edward Everett Hale/1899-Science-Fiction-Edward Everett Hale-The Brick Moon, and Other Stories.md
+Science-Fiction/H. G. Wells/1905-Science-Fiction-H. G. Wells-A Modern Utopia.md
+Science-Fiction/William Morris/1890-Science-Fiction-William Morris-News from Nowhere.md
+Science/Simon Newcomb/1906-Science-Simon Newcomb-Side-Lights on Astronomy.md

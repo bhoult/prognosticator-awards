@@ -1,0 +1,89 @@
+{
+  "chunk": "c034",
+  "claims": [
+    {
+      "quote": "If only we could see that pea as it revolved in that convenient orbit, then we could measure the longitude from that, as soon as we knew how high the orbit was, as well as if it were the ring of Saturn.",
+      "description": "An artificial satellite in a fixed orbit above the earth would let navigators determine longitude by sighting it.",
+      "category": "technology",
+      "specificity": 5,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "sympathetic",
+      "domain": "space",
+      "second_order": false
+    },
+    {
+      "quote": "When the Brick Moon was finished, and all was ready, IT should be gently rolled down a gigantic groove provided for it, till it lighted on the edge of both wheels at the same instant.",
+      "description": "A huge brick satellite is launched into orbit by dropping it onto two giant counter-rotating flywheels charged by a waterfall.",
+      "category": "technology",
+      "specificity": 5,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "sympathetic",
+      "domain": "space",
+      "second_order": false
+    },
+    {
+      "quote": "Suppose one over the meridian of Greenwich, and the other over that of New Orleans.",
+      "description": "Two or more brick satellites in orbit 4,000 miles up, over different meridians, would give most of the world a visible navigation reference.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "sympathetic",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "The curve it is now on will forever clear the world; and over the meridian of that lonely waterfall,—if only we have rightly adjusted the gigantic flies,—will forever revolve, in its obedient orbit, the—",
+      "description": "Once launched the moon would stay in a permanent orbit over one meridian.",
+      "category": "science",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": "forever",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "sympathetic",
+      "domain": "space",
+      "second_order": false
+    },
+    {
+      "quote": "He had unlimited freezing power.",
+      "description": "A character has the ability to freeze water in unlimited quantity, used to make large lenses.",
+      "category": "technology",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "energy",
+      "second_order": false
+    },
+    {
+      "quote": "With this power he made an ice lens, ten feet in diameter, which was easily rubbed, by the delicate hands of the careful women around him, to precisely the surface which he needed.",
+      "description": "A ten-foot ice lens is ground into a telescope lens giving 700-power magnification.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "other",
+      "second_order": false
+    }
+  ]
+}

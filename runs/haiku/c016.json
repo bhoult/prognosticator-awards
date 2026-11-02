@@ -1,0 +1,89 @@
+{
+  "chunk": "c016",
+  "claims": [
+    {
+      "quote": "Much which is now established in Soviet Russia bears at least a likeness to the industrial army visioned in this prophetic book.",
+      "description": "The book imagines a national industrial army that organizes all labor.",
+      "category": "political",
+      "specificity": 2,
+      "speculative_at_time": false,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "society-politics",
+      "second_order": false
+    },
+    {
+      "quote": "Some of the things which must have seemed most improbable of all to the *Transcript* man of 1887 are now actually in being.",
+      "description": "Improbable features of the book's imagined world have since become real.",
+      "category": "other",
+      "specificity": 1,
+      "speculative_at_time": false,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "other",
+      "second_order": false
+    },
+    {
+      "quote": "its definite scheme of industrial organization on a national basis, and the equal share allotted to all persons in the products of industry",
+      "description": "Industry is organized nationally and all citizens receive an equal share of national output.",
+      "category": "political",
+      "specificity": 3,
+      "speculative_at_time": false,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "economy",
+      "second_order": false
+    },
+    {
+      "quote": "enjoying the blessings of a social order at once so simple and logical that it seems but the triumph of common sense",
+      "description": "Society is organized so simply and logically that it appears to be the triumph of common sense.",
+      "category": "political",
+      "specificity": 1,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "society-politics",
+      "second_order": false
+    },
+    {
+      "quote": "The long and weary winter of the race is ended. Its summer has begun. Humanity has burst the chrysalis.",
+      "description": "Humanity enters a new era of fraternal society and spiritual fulfillment after a long period of hardship.",
+      "category": "social",
+      "specificity": 1,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "sympathetic",
+      "domain": "society-politics",
+      "second_order": false
+    },
+    {
+      "quote": "Nowadays, as life advances toward its close, instead of being shadowed by gloom, it is marked by an access of impassioned expectancy",
+      "description": "Old age is marked by eager expectancy rather than gloom.",
+      "category": "social",
+      "specificity": 1,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "sympathetic",
+      "domain": "other",
+      "second_order": false
+    }
+  ]
+}

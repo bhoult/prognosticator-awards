@@ -1,0 +1,103 @@
+{
+  "chunk": "c028",
+  "claims": [
+    {
+      "quote": "Five such coaches were filled as I watched, and were shot up the guides to be locked on to their waiting packets three hundred feet nearer the stars.",
+      "description": "Mail is loaded into large coaches that are hoisted up towers and locked onto airships floating hundreds of feet up.",
+      "category": "transport",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "Blessed be Sargent, Ahrens, and the Dubois brothers, who invented the cloud-breakers of the world whereby we travel in security!",
+      "description": "Beacons that pierce cloud layers let airships navigate safely through cloud and fog.",
+      "category": "technology",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "Raise a few feet of that all but invisible plate three-eighths of an inch and she will yaw five miles to port or starboard ere she is under control again.",
+      "description": "A nearly invisible hinged rudder plate controls the steering of a large airship.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "Fleury's gas can lift anything, as the world-famous trials of '89 showed",
+      "description": "A lifting gas can carry almost any load, though its expansion requires very large tanks.",
+      "category": "technology",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "Even Fleury who begat it and, unlike Magniac, died a multi-millionaire, could not explain how the restless little imp shuddering in the U-tube can, in the fractional fraction of a second, strike the furious blast of gas into a chill greyish-green liquid",
+      "description": "A vacuum-tube effect condenses a high-speed gas stream into liquid in an instant, forming a closed cycle that drives the airship's engines.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "energy",
+      "second_order": false
+    },
+    {
+      "quote": "Our General Communication dial has caught her talk and begins to eavesdrop.",
+      "description": "Airships carry a radio-like dial that picks up and relays transmissions from other aircraft.",
+      "category": "technology",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "Her underbody colloid is open land her transporter-slings hang down like tentacles.",
+      "description": "Airships lower cables with cradles beneath them to lift people and cargo from another airship in mid-air.",
+      "category": "transport",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": null,
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "narrator",
+      "domain": "transport",
+      "second_order": false
+    }
+  ]
+}

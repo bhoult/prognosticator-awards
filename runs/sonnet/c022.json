@@ -1,0 +1,103 @@
+{
+  "chunk": "c022",
+  "claims": [
+    {
+      "quote": "As soon as the Paris contract released the telelectroscope, it was delivered to public use, and was soon connected with the telephonic systems of the whole world.",
+      "description": "A television-like device (the telelectroscope) is released to the public and linked to the worldwide telephone network.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": "autumn of 1901",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "document",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "The improved 'limitless-distance' telephone was presently introduced, and the daily doings of the globe made visible to everybody, and audibly discussible, too, by witnesses separated by any number of leagues.",
+      "description": "Global telephony with unlimited range plus live worldwide video lets everyone see and discuss daily events anywhere on Earth.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": "autumn of 1901",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "document",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "he called up one corner of the globe after another, and looked upon its life, and studied its strange sights, and spoke with its people, and realised that by grace of this marvellous instrument he was almost as free as the birds of the air",
+      "description": "Live two-way video calls to any place on Earth let a prisoner virtually travel the world.",
+      "category": "technology",
+      "specificity": 4,
+      "speculative_at_time": true,
+      "stated_time": "1904",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "document",
+      "domain": "communication",
+      "second_order": false
+    },
+    {
+      "quote": "the wife poured out her gratitude upon him for saving her husband's life, and in her deep thankfulness she kissed him at twelve thousand miles' range.",
+      "description": "Remote video presence is used to save a man from execution and to interact across half the globe.",
+      "category": "event",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": "1904",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "positive",
+      "voice": "document",
+      "domain": "communication",
+      "second_order": true
+    },
+    {
+      "quote": "To-day, by a clipper of the Electric Line, and the latter's Electric Railway connections, arrived an envelope from Vienna, for Captain Clayton, containing an English farthing.",
+      "description": "Fast electric transatlantic freight/mail service connecting Vienna and Chicago.",
+      "category": "technology",
+      "specificity": 2,
+      "speculative_at_time": true,
+      "stated_time": "1904",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "neutral",
+      "voice": "document",
+      "domain": "transport",
+      "second_order": false
+    },
+    {
+      "quote": "for in America under the new paragraph added to the Constitution in 1889, second trials are not State affairs, but national, and must be tried by the most august body in the land--the Supreme Court of the United States.",
+      "description": "A constitutional amendment makes retrials a national matter tried by the US Supreme Court.",
+      "category": "political",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": "1889",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "negative",
+      "voice": "document",
+      "domain": "society-politics",
+      "second_order": false
+    },
+    {
+      "quote": "By the decision of the French courts in the Dreyfus matter, it is established beyond cavil or question that the decisions of courts and permanent and cannot be revised.",
+      "description": "The Dreyfus verdict becomes a binding legal precedent that court decisions can never be revised, leading the US Supreme Court to hang an innocent-of-that-crime man.",
+      "category": "political",
+      "specificity": 3,
+      "speculative_at_time": true,
+      "stated_time": "April 1904",
+      "polarity": "will",
+      "confidence": "asserted",
+      "valence": "negative",
+      "voice": "antagonist",
+      "domain": "society-politics",
+      "second_order": false
+    }
+  ]
+}

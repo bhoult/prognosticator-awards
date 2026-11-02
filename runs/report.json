@@ -1,0 +1,926 @@
+{
+ "haiku": {
+  "chunks": 37,
+  "missing": 0,
+  "bad_json": 0,
+  "claims": 444,
+  "exact": 442,
+  "fuzzy": 2,
+  "rejected": 0,
+  "misfiled": 104,
+  "words": 212553,
+  "recall": 0.5454545454545454,
+  "traps_ok": "3/5",
+  "fields_ok": "2/3",
+  "verified_rate": 1.0,
+  "claims_per_10k_words": 20.888907707724663,
+  "missed": [
+   "W2",
+   "W6",
+   "W7",
+   "F2",
+   "F3",
+   "M1",
+   "M2",
+   "K1",
+   "K2",
+   "S1",
+   "V1",
+   "V2",
+   "N1",
+   "BL3",
+   "R2"
+  ],
+  "traps_failed": [
+   "A3",
+   "B3"
+  ],
+  "rows": [
+   {
+    "id": "W1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "W2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "W3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "W4",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "W5",
+    "expect": "failed",
+    "ok": true,
+    "hits": 3,
+    "fields": {
+     "stated_time": false
+    }
+   },
+   {
+    "id": "W6",
+    "expect": "failed",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "W7",
+    "expect": "failed",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "F1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "F2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "F3",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "M1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "M2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "T1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "K1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "K2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "S1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "S2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {
+     "stated_time": true
+    }
+   },
+   {
+    "id": "L1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "L2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "L3",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "V1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "V2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "V3",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "A1",
+    "expect": "failed",
+    "ok": true,
+    "hits": 1,
+    "fields": {
+     "polarity": true
+    }
+   },
+   {
+    "id": "A2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "A3",
+    "expect": "not_speculative",
+    "ok": false,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "N1",
+    "expect": "failed",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "H1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "B1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 4,
+    "fields": {}
+   },
+   {
+    "id": "B2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "B3",
+    "expect": "not_speculative",
+    "ok": false,
+    "hits": 4,
+    "fields": {}
+   },
+   {
+    "id": "BL1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "BL2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "BL3",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "R1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "R2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "R3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "R4",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 0,
+    "fields": {}
+   }
+  ]
+ },
+ "sonnet": {
+  "chunks": 37,
+  "missing": 0,
+  "bad_json": 0,
+  "claims": 501,
+  "exact": 501,
+  "fuzzy": 0,
+  "rejected": 0,
+  "misfiled": 0,
+  "words": 212553,
+  "recall": 0.7272727272727273,
+  "traps_ok": "3/5",
+  "fields_ok": "5/5",
+  "verified_rate": 1.0,
+  "claims_per_10k_words": 23.570591805337962,
+  "missed": [
+   "W2",
+   "F2",
+   "F3",
+   "M1",
+   "M2",
+   "S1",
+   "V1",
+   "V2",
+   "R2"
+  ],
+  "traps_failed": [
+   "A3",
+   "B3"
+  ],
+  "rows": [
+   {
+    "id": "W1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "W2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "W3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "W4",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "W5",
+    "expect": "failed",
+    "ok": true,
+    "hits": 2,
+    "fields": {
+     "stated_time": true
+    }
+   },
+   {
+    "id": "W6",
+    "expect": "failed",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "W7",
+    "expect": "failed",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "F1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "F2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "F3",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "M1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "M2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "T1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "K1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "K2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "S1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "S2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {
+     "stated_time": true
+    }
+   },
+   {
+    "id": "L1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "L2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "L3",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "V1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "V2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "V3",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "A1",
+    "expect": "failed",
+    "ok": true,
+    "hits": 1,
+    "fields": {
+     "polarity": true
+    }
+   },
+   {
+    "id": "A2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "A3",
+    "expect": "not_speculative",
+    "ok": false,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "N1",
+    "expect": "failed",
+    "ok": true,
+    "hits": 1,
+    "fields": {
+     "polarity": true,
+     "confidence": true
+    }
+   },
+   {
+    "id": "H1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "B1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 4,
+    "fields": {}
+   },
+   {
+    "id": "B2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "B3",
+    "expect": "not_speculative",
+    "ok": false,
+    "hits": 4,
+    "fields": {}
+   },
+   {
+    "id": "BL1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "BL2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "BL3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "R1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "R2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "R3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "R4",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 0,
+    "fields": {}
+   }
+  ]
+ },
+ "opus": {
+  "chunks": 37,
+  "missing": 0,
+  "bad_json": 0,
+  "claims": 1137,
+  "exact": 1137,
+  "fuzzy": 0,
+  "rejected": 0,
+  "misfiled": 0,
+  "words": 212553,
+  "recall": 0.8181818181818182,
+  "traps_ok": "3/5",
+  "fields_ok": "5/5",
+  "verified_rate": 1.0,
+  "claims_per_10k_words": 53.49254068397059,
+  "missed": [
+   "F3",
+   "M1",
+   "S1",
+   "V1",
+   "V2",
+   "R1"
+  ],
+  "traps_failed": [
+   "A3",
+   "B3"
+  ],
+  "rows": [
+   {
+    "id": "W1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 4,
+    "fields": {}
+   },
+   {
+    "id": "W2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "W3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 3,
+    "fields": {}
+   },
+   {
+    "id": "W4",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "W5",
+    "expect": "failed",
+    "ok": true,
+    "hits": 6,
+    "fields": {
+     "stated_time": true
+    }
+   },
+   {
+    "id": "W6",
+    "expect": "failed",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "W7",
+    "expect": "failed",
+    "ok": true,
+    "hits": 3,
+    "fields": {}
+   },
+   {
+    "id": "F1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "F2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "F3",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "M1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "M2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "T1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "K1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "K2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "S1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "S2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {
+     "stated_time": true
+    }
+   },
+   {
+    "id": "L1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "L2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "L3",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "V1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "V2",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "V3",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "A1",
+    "expect": "failed",
+    "ok": true,
+    "hits": 2,
+    "fields": {
+     "polarity": true
+    }
+   },
+   {
+    "id": "A2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "A3",
+    "expect": "not_speculative",
+    "ok": false,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "N1",
+    "expect": "failed",
+    "ok": true,
+    "hits": 1,
+    "fields": {
+     "polarity": true,
+     "confidence": true
+    }
+   },
+   {
+    "id": "H1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "B1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 4,
+    "fields": {}
+   },
+   {
+    "id": "B2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "B3",
+    "expect": "not_speculative",
+    "ok": false,
+    "hits": 4,
+    "fields": {}
+   },
+   {
+    "id": "BL1",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "BL2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "BL3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "R1",
+    "expect": "realized",
+    "ok": false,
+    "hits": 0,
+    "fields": {}
+   },
+   {
+    "id": "R2",
+    "expect": "realized",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   },
+   {
+    "id": "R3",
+    "expect": "realized",
+    "ok": true,
+    "hits": 2,
+    "fields": {}
+   },
+   {
+    "id": "R4",
+    "expect": "editorial",
+    "ok": true,
+    "hits": 1,
+    "fields": {}
+   }
+  ]
+ }
+}
