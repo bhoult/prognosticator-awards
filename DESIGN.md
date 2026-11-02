@@ -639,9 +639,10 @@ The questions, each with its accepted default:
 12. **Scope of the first run**: decided 2026-11-02. The run is staged,
     using Sonnet. Stage 1 is the 3,234 Gutenberg sci-fi books
     (54.1M words) and the 47 predictive texts, after a 20-book pilot
-    (`pipeline/extract.py`, §9). Done 2026-11-02 apart from 1 passage:
-    12% by subagents, the rest through the Batch API on a promotional
-    credit (`runs/stage1/report.md`).
+    (`pipeline/extract.py`, §9). Done 2026-11-02, with the books dated
+    from ISFDB added as Stages 1b and 1c: 10,515 passages, 128,081 claims.
+    About 13% by subagents (local, and in one cloud session), the rest
+    through the Batch API on a promotional credit (`runs/stage1/report.md`).
 
 **Publishing**
 

@@ -12,11 +12,11 @@
 
 | | Subagents | Batch API | Stage 1 |
 |---|---|---|---|
-| Passages verified | 1,100 | 8,318 | 9,418 of 9,419 |
-| Words | 6,177,066 | 46,268,332 | 52,445,398 of 52,451,421 |
-| Claims | 11,359 | 104,093 | 115,452 |
+| Passages verified | 1,101 | 8,318 | 9,419 of 9,419 |
+| Words | 6,183,089 | 46,268,332 | 52,451,421 |
+| Claims | 11,363 | 104,093 | 115,456 |
 | Claims per 10K words | 18.4 | 22.5 | 22.0 |
-| Quotes found exactly | 11,311 | 100,277 | 111,588 |
+| Quotes found exactly | 11,315 | 100,277 | 111,592 |
 | Quotes found at ≥ 90% similarity | 44 | 2,876 | 2,920 |
 | Quotes rejected (not in the passage) | 4 (0.04%) | 940 (0.90%) | 944 |
 | Claims with a field outside its allowed values | 144 (1.3%) | 5,653 (5.4%) | 5,797 |
@@ -24,7 +24,7 @@
 - **Field problems:** `category` holding a domain value such as `economy` (5,319 claims), `voice` (395), `domain` (58), empty `description` (43). They are to be remapped when the claims are loaded into the database.
 - **Rejected quotes** are mostly quotes that join separate pieces of text with "...", which the prompt forbids. Verification drops them.
 - **Retries:** 7 passages had no usable reply the first time: two refusals, and five replies with JSON typos (a stray quote after `false`, an escaped quote around a value, a line break inside a string). A second request succeeded for six of them after the spend limit was raised.
-- **Left for a subagent:** p01439, refused twice.
+- **p01439,** refused twice through the API, was done by a subagent in the cloud session (below): 4 claims.
 
 ## Gold-set check before the Batch API run
 
@@ -63,6 +63,28 @@ The 259 Gutenberg sci-fi books the library had no year for were dated from ISFDB
 | Claims | 10,239 (21.5 per 10K words) |
 | Quotes | 9,805 exact, 337 at ≥ 90% similarity, 97 rejected |
 | Claims with a field outside its allowed values | 484 |
-| Left for subagents | 145 passages, 845,431 words |
+| By subagents in a cloud session | 145 passages, 845,431 words, 1,266 claims |
+| All | 981 passages, 11,505 claims |
 
-Not yet planned: 10 more books dated by the final version of the dating pass (*A Connecticut Yankee in King Arthur's Court*, *The Mummy!*, eight magazine issues), and the *Works of Lucian* volumes, which wait for ancient-text dating.
+## Stage 1c, and the cloud session
+
+Stage 1c is the 10 books dated by the final version of the dating pass (*A Connecticut Yankee in King Arthur's Court*, *The Mummy!*, eight magazine issues): 115 passages, 681,623 words, in `work/extract/stage1c-sonnet`. The *Works of Lucian* volumes wait for ancient-text dating.
+
+The last 261 passages (p01439 from Stage 1, the 145 left in Stage 1b, all of Stage 1c) were run in a Claude Code cloud session, paid from a cloud-session credit. The passages, all from Project Gutenberg books, went into a temporary private GitHub repository with the subagent prompt (`prompts/extract_subagent.md`, unchanged) and a run sheet; the session ran 44 Sonnet subagents, one per batch, and pushed the result files, which were then verified here as usual.
+
+| | Cloud subagents |
+|---|---|
+| Passages | 261 (1,533,077 words) |
+| Claims | 2,390 (15.6 per 10K words) |
+| Quotes | 2,380 exact, 10 at ≥ 90% similarity, 0 rejected |
+| Claims with a field outside its allowed values | 12 |
+| Tokens, as Claude Code reports them | 6.17M for 44 subagents |
+
+## Totals
+
+| | Passages | Words | Claims |
+|---|---|---|---|
+| Stage 1 | 9,419 | 52,451,421 | 115,456 |
+| Stage 1b | 981 | 5,599,014 | 11,505 |
+| Stage 1c | 115 | 681,623 | 1,120 |
+| All | 10,515 | 58,732,058 | 128,081 |

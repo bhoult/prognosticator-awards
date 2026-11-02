@@ -11,8 +11,8 @@ sources, and a ranked list of authors and books.
 **Status (2026-11-02):**
 - **Design:** done.
 - **Model comparison:** done on the gold set; Sonnet was chosen for extraction.
-- **Stage 1 extraction:** done for 2,979 public-domain science-fiction books and
-  predictive texts, apart from 1 of 9,419 passages. 115,452 claims are verified against
+- **Stage 1 extraction:** done for 3,248 public-domain science-fiction books and
+  predictive texts (10,515 passages, 58.7M words). 128,081 claims are verified against
   the text ([report](runs/stage1/report.md)).
 - **Dating:** first-publication years for the 3,234 Gutenberg sci-fi books from ISFDB
   ([report](runs/dating/report.md), [list](lists/gutenberg-sf-dates.tsv)).
