@@ -1,2 +1,3 @@
 agent	step	purpose	model	total_tokens	tool_uses	seconds
 R09	3	milestone research batch 9 (11 concepts)	sonnet	70436	8	294
+R04	3	milestone research batch 4 (15 concepts)	sonnet	85839	28	962
