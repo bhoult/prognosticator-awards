@@ -36,6 +36,8 @@ Each source is `{"url", "publisher", "date", "title", "quote", "kind"}`, with `k
 actually fetched. **No quote, no source.** Check each quote before you output it:
 `python3 -I scripts/page_text.py --check "<url>" "<quote>"` must print `FOUND`.
 
+Note from the research step: in this environment most non-Wikipedia hosts are blocked or time out, so Wikipedia articles (read through the helper) are the dependable sources; computerhistory.org also works. Try a few other hosts if needed, but do not spend long on hosts that fail.
+
 Tools: WebSearch (mode "standard") to find pages; `python3 -I scripts/page_text.py "<url>"
 "<term>" 1` to read a page (Wikipedia via the API, Chronicling America pages via OCR, most
 HTML); `python3 -I scripts/chronam.py "words" 1900 1950 8` to search pre-1963 US
