@@ -52,3 +52,17 @@ The same prompt rules, sent through the Batch API, were first scored on the gold
 - **Tokens per word:** the Sonnet 5.5 tokenizer counted 2.05 tokens per word on these passages, prompt included (measured with the free token-counting endpoint before sending).
 - **The organization's $100 monthly spend limit** is checked when a batch is created, not while it runs: the 7,331-passage round was sent at $21.56 and finished at $178.33. The retry round was refused ("You have reached your specified API usage limits") until the limit was raised. The Console's figure for the month, $179.29, matches the tracked $179.31 (gold set included).
 - **Subagents, for comparison:** the 1,100 passages done by subagents took 24.1M tokens as Claude Code reports them, and 352 agent-minutes.
+
+## Stage 1b: the books that had no year
+
+The 259 Gutenberg sci-fi books the library had no year for were dated from ISFDB (`runs/dating/report.md`) and planned as their own run, `work/extract/stage1b-sonnet`, with those years in the passage headers: 981 passages, 5,599,014 words.
+
+| | |
+|---|---|
+| Through the Batch API, $18 budget | 836 passages, 4,753,583 words, $17.95 ($0.038 per 10K words) |
+| Claims | 10,239 (21.5 per 10K words) |
+| Quotes | 9,805 exact, 337 at ≥ 90% similarity, 97 rejected |
+| Claims with a field outside its allowed values | 484 |
+| Left for subagents | 145 passages, 845,431 words |
+
+Not yet planned: 10 more books dated by the final version of the dating pass (*A Connecticut Yankee in King Arthur's Court*, *The Mummy!*, eight magazine issues), and the *Works of Lucian* volumes, which wait for ancient-text dating.

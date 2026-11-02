@@ -59,6 +59,13 @@ book. ISFDB records the first appearance of each title, including magazine
 serializations. We use that, and store its source. Before republishing ISFDB
 data, check ISFDB's license terms.
 
+> **Done for the Gutenberg sci-fi books (2026-11-02):** `pipeline/isfdb.py` and
+> `pipeline/dating.py` match each book to ISFDB (2026-10-31 backup; CC BY 4.0) by
+> title and author and take the work's earliest year, checked against the
+> transcriber's "produced from <magazine>" notes. 3,175 of 3,234 matched; 165
+> library years change, mostly to the first printing of a reprinted story.
+> Result: `lists/gutenberg-sf-dates.tsv`; report: `runs/dating/report.md`.
+
 ### 1a. Religious and ancient texts
 
 Scripture and other ancient texts are in the corpus too. They are already in

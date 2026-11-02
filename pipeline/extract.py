@@ -2,7 +2,7 @@
 
     python -I pipeline/extract.py pick <library> <n> <seed>                 random Gutenberg sci-fi books
     python -I pipeline/extract.py stage1 <library> [<exclude.txt> ...]       Stage 1 book list
-    python -I pipeline/extract.py plan <run> <model> <library> <books.txt>  split books, write prompts
+    python -I pipeline/extract.py plan <run> <model> <library> <books.txt>  split books, write prompts (path[TAB]year)
     python -I pipeline/extract.py next <run> [in_flight]                    verify, then claim prompts up to in_flight
     python -I pipeline/extract.py release <run> [<batch> ...]               drop claims (all if none given)
     python -I pipeline/extract.py verify <run>                              check new results
@@ -131,11 +131,19 @@ def chunks_of(run):
 
 
 def plan(run, model, library, books_file):
-    books = [l.strip() for l in open(books_file, encoding='utf-8') if l.strip()]
-    books = [os.path.relpath(b, library) if os.path.isabs(b) else b for b in books]
+    """books_file: one library path per line, optionally followed by a tab and the year to use
+    instead of the one in the book's header (from pipeline/dating.py)."""
+    books, years = [], {}
+    for line in open(books_file, encoding='utf-8'):
+        path, _, year = line.rstrip('\n').partition('\t')
+        if path.strip():
+            path = os.path.relpath(path, library) if os.path.isabs(path) else path.strip()
+            books.append(path)
+            if year.strip():
+                years[path] = int(year)
     want = {'model': model, 'prompt_sha256': sha(open(TEMPLATE, 'rb').read()), 'library': library,
             'chunk_words': CHUNK_WORDS, 'batch_words': BATCH_WORDS, 'seed': SEED,
-            'books_sha256': sha('\n'.join(books))}
+            'books_sha256': sha('\n'.join(f'{b}\t{years[b]}' if b in years else b for b in books))}
     cfg_path = os.path.join(run, 'config.json')
     if os.path.exists(cfg_path):
         have = load(run, 'config.json')
@@ -149,7 +157,7 @@ def plan(run, model, library, books_file):
     pieces = []
     for b in books:
         fm, body = read_book(os.path.join(library, b))
-        year = as_year(fm.get('year'))
+        year = years.get(b) or as_year(fm.get('year'))
         for a, z in windows(body, 0, len(body), CHUNK_WORDS):
             if body[a:z].strip():
                 pieces.append({'book': b, 'start': a, 'end': z, 'words': len(body[a:z].split()),
@@ -173,7 +181,7 @@ def plan(run, model, library, books_file):
     if cur:
         batches.append(cur)
     write_atomic(os.path.join(run, 'batches.json'), json.dumps(batches, indent=1))
-    write_atomic(os.path.join(run, 'books.txt'), '\n'.join(books) + '\n')
+    write_atomic(os.path.join(run, 'books.txt'), ''.join(f'{b}\t{years[b]}\n' if b in years else b + '\n' for b in books))
     write_atomic(cfg_path, json.dumps({**want, 'planned_at': time.strftime('%Y-%m-%d %H:%M:%S'),
                                        'books': len(books), 'passages': len(pieces),
                                        'words': sum(c['words'] for c in pieces), 'batches': len(batches)}, indent=1))

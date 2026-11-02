@@ -14,6 +14,8 @@ sources, and a ranked list of authors and books.
 - **Stage 1 extraction:** done for 2,979 public-domain science-fiction books and
   predictive texts, apart from 1 of 9,419 passages. 115,452 claims are verified against
   the text ([report](runs/stage1/report.md)).
+- **Dating:** first-publication years for the 3,234 Gutenberg sci-fi books from ISFDB
+  ([report](runs/dating/report.md), [list](lists/gutenberg-sf-dates.tsv)).
 - **Not started yet:** matching claims to real events, and scoring.
 
 ## How it works
@@ -46,6 +48,7 @@ changing a scoring rule re-ranks everything without calling a model again.
 | [prompts/](prompts/) | `extract_subagent.md` and `extract_api.md` are the extraction prompts in use (subagents, Batch API); `extract.md` and `judge.md` are drafts |
 | [pipeline/extract.py](pipeline/extract.py) | Extraction driver: plans passages and batches, verifies results, tracks usage; can be stopped and restarted at any point |
 | [pipeline/batch_api.py](pipeline/batch_api.py) | The same extraction through the Message Batches API, one request per passage, within a dollar budget |
+| [pipeline/isfdb.py](pipeline/isfdb.py), [pipeline/dating.py](pipeline/dating.py) | Loads an ISFDB backup into SQLite; dates each Gutenberg book by its first appearance in ISFDB |
 | [pipeline/quotes.py](pipeline/quotes.py) | Quote verification (exact, or ≥ 90% fuzzy match) |
 | [pipeline/corpus.py](pipeline/corpus.py) | Reads library books with the author and title blanked; splits them into passages |
 | [pipeline/gold.py](pipeline/gold.py), [pipeline/evaluate.py](pipeline/evaluate.py), [pipeline/make_prompts.py](pipeline/make_prompts.py) | Builds the gold set, writes its prompts, and scores model runs against it |
@@ -53,6 +56,7 @@ changing a scoring rule re-ranks everything without calling a model again.
 | [gold/](gold/) | Gold-set answer key and passage map |
 | [runs/](runs/) | Gold-set model comparison ([findings](runs/findings.md), [report](runs/report.md)), [pilot report](runs/pilot/report.md), [Stage 1 report](runs/stage1/report.md), pre-filter tuning |
 | [lists/predictive-texts.txt](lists/predictive-texts.txt) | The non-fiction and prophetic texts included in Stage 1 |
+| [lists/gutenberg-sf-dates.tsv](lists/gutenberg-sf-dates.tsv) | First-publication year of each Gutenberg sci-fi book, with its ISFDB title id and how it was matched |
 
 ## What is not here
 
@@ -93,6 +97,9 @@ the Message Batches API instead, up to a dollar budget:
 - **Data and documentation:** prompts, answer key, run results, reports and the future
   database, under Creative Commons Attribution 4.0 International. See
   [LICENSE-DATA](LICENSE-DATA).
+- **ISFDB:** the years and title ids in `lists/gutenberg-sf-dates.tsv` come from the
+  [Internet Speculative Fiction Database](https://www.isfdb.org) (CC BY 4.0). The ISFDB
+  backup itself is not included; `pipeline/isfdb.py` loads one downloaded from ISFDB.
 - **Quoted excerpts:** the model output kept here quotes only public-domain texts. The
   in-copyright editions used in the gold set appear only as short identifying anchors in
   `gold/answer_key.json`: three phrases of 3–14 words from the 1967 Bair translation of
