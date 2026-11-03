@@ -1,0 +1,10 @@
+{"type": "html (Wikipedia, via API)", "url": "https://en.wikipedia.org/wiki/Kiva_Systems", "quote": "Kiva Systems", "found": true, "record_date": ""}
+{"type": "html (ethw.org)", "url": "https://ethw.org/Milestones:List_of_IEEE_Milestones", "quote": "IEEE Milestones", "found": true, "record_date": ""}
+{"type": "html (PubMed abstract page)", "url": "https://pubmed.ncbi.nlm.nih.gov/31019317/", "quote": "Speech synthesis from neural decoding of spoken sentences", "found": true, "record_date": ""}
+{"type": "archive.org scanned magazine (OCR)", "url": "https://archive.org/details/computerworld1940unse", "quote": "is being developed specifically for the security business. : The mobile robot, equipped with ultrasonic sensors", "found": true, "record_date": "1985-10-07"}
+{"type": "PDF (bitsavers)", "url": "http://bitsavers.org/pdf/dec/pdp1/F15D_PDP1_Handbook_Oct63.pdf", "quote": "PROGRAMMED DATA PROCESSOR", "found": true, "record_date": ""}
+{"type": "PDF (worldradiohistory)", "url": "https://www.worldradiohistory.com/Archive-Radio-Electronics/50s/1957/Radio-Electronics-1957-01.pdf", "quote": "Radio-Electronics", "found": true, "record_date": ""}
+{"type": "NASA NTRS record", "url": "https://ntrs.nasa.gov/citations/19660019472", "quote": "Guidance computer design", "found": true, "record_date": "1965-06-01"}
+{"type": "Crossref metadata", "url": "https://api.crossref.org/works/10.1038/s41586-019-1119-1", "quote": "Speech synthesis from neural decoding of spoken sentences", "found": true, "record_date": "2019-04-24"}
+{"type": "Semantic Scholar metadata", "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1038/s41586-019-1119-1", "quote": "Speech synthesis from neural decoding of spoken sentences", "found": true, "record_date": "2019-04-01"}
+{"type": "Google Books API", "url": "https://www.googleapis.com/books/v1/volumes?q=%22security+robot%22+computerworld", "quote": "robot", "found": false, "error": "HTTP 429 for https://www.googleapis.com/books/v1/volumes?q=%22security+robot%22+computerworld: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Quota exceeded fo"}
