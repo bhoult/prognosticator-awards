@@ -1,6 +1,8 @@
 # Prognosticator Awards: design draft
 
-Status: draft for discussion, 2026-11-01. Nothing here has been run yet.
+Status: working design, updated 2026-11-03. Extraction (§1–4) has run on Stage 1:
+128,081 claims. Concepts, evidence and judging (§5–7) have been piloted, in three passes,
+on the 2,656 computing claims (`pilot/computing/`); the full matching and judging run is next.
 
 The award ranks authors and texts by how much of the future they got right.
 Science fiction is the core, but the corpus is any text that makes predictions:
@@ -252,6 +254,27 @@ Wikipedia's invention and spaceflight timelines. Models may propose new concepts
 for claims that fit nothing; proposals go into a review queue rather than
 straight into scoring.
 
+> **Computing pilot (2026-11-02, `pilot/computing/report.md`).**
+>
+> - **Where the concepts came from:** the claims, not Wikidata. A subagent read the 2,656
+>   computing claims and proposed 131 concepts: 101 expected to have come true and 30
+>   "still waiting". Wikidata supplied QIDs where it had them.
+> - **Definitions:** each concept has a one-sentence `definition` of what it does and how.
+> - **Matching:** a matcher mapped each claim to at most two concepts; 91% matched.
+> - **The definition is the contract.** The milestone researcher dates against it and the
+>   judge scores against it. A definition that bundles different things breaks both:
+>   "fully automated factory or plant" found its earliest fit in a 1916 unattended
+>   hydroelectric station. That date would have zeroed every claim about self-repairing
+>   robot factories. **Proposed:** split such concepts before dating them (factories and
+>   power plants; reading thoughts and displaying them).
+> - **Matching on the extractor's summary over-matches.** When the quote is a thin
+>   fragment, the one-line summary decides the match. The judge, told to trust the quote,
+>   then scores it 0; that was about half of its zeros in the first pass. **Proposed:**
+>   match on the quote, with the summary as a helper.
+> - **Book ids:** the export (`pipeline/export_claims.py`) gives each claim an opaque book
+>   id. A concept is then counted once per book without the matcher or judge seeing the
+>   title.
+
 ## 6. Evidence: when did it come true?
 
 "Came true" is really three dates. Video calling: 1927 (AT&T demonstration),
@@ -264,7 +287,8 @@ concept stores dated **milestones** of three types:
 | `first_practical_use` | used for its purpose outside the lab |
 | `mass_adoption` | ordinary people use it |
 
-Scoring uses one type, set in config. Default: `first_practical_use`.
+Scoring uses one type, set in config. Default: `first_practical_use`. In the pilot, a
+concept with no practical use yet falls back to its `first_demonstration`.
 
 Evidence hierarchy for each milestone:
 
@@ -276,6 +300,45 @@ Evidence hierarchy for each milestone:
 
 Stored per source: URL, publisher, date, headline and a short quote. Article
 text is never stored.
+
+> **Computing pilot, three passes (2026-11-02/03: `pilot/computing/report.md`, `report2.md`
+> and `report3.md`).** Milestone dates decide the ranking. Points grow with lead time, so a
+> milestone dated too late sends its claims to the top. What the three passes established:
+>
+> 1. **Search summaries are not sources.** The first pass had only search summaries, and
+>    some of its dates were decades late (a robot mower 32 years late). Since the second
+>    pass, every source is a page fetched in code. Its quote, at most 25 words, must be on
+>    that page (`pilot/computing/scripts/page_text3.py --check`). The merge verifies every
+>    quote again, independently of the agents. The quotes are real; the errors that remain
+>    are partial fits.
+> 2. **Sources from the time of the event come from archive.org's full text**, and they
+>    are within reach:
+>    - What it holds: scanned *Computerworld*, *Science* and *American Machinist*; DTIC,
+>      NTRS and ERIC reports; local newspapers.
+>    - What it changed: on the deciding milestones, the second pass (Wikipedia only) had 1
+>      contemporary source in 47 milestones. The third had one for 46 of 55.
+>    - Lending-library books, whose text is locked (HTTP 401), are cited through archive.org's
+>      search restricted to the one item; the quote must lie in a returned snippet.
+>    - PubMed Central articles are read through NCBI's E-utilities.
+>    - Not usable from scripts: Google Books (API quota exhausted), HathiTrust, the
+>      Smithsonian, nature.com, IEEE Xplore and Britannica.
+>    - Not tried yet: the NYT and Guardian APIs.
+> 3. **Each milestone states its fit:** one sentence on how the event matches the
+>    definition's function and mechanism, plus a confidence.
+>    - `high` needs a verified contemporary source and a verified reference source.
+>    - A source counts as `contemporary` only if it was published within two years of the
+>      event; otherwise it is `reference`.
+> 4. **An adversarial earliest-event check:** another agent asks whether an earlier event
+>    fits. It is worth running only on the milestone that scores, and only where it gives
+>    more than 40 years of lead.
+>    - Second pass: 49 milestones confirmed, 18 replaced.
+>    - Third pass: 10 confirmed, 2 moved earlier, and 1 replacement rejected in review.
+> 5. **Review decisions are data.** `pilot/computing/raw/review3.jsonl` holds each decision
+>    taken after the research, with its reason: drop, add, add a source, restore an earlier
+>    milestone, keep, or reject a checker's replacement. The scripts apply it, so a decision
+>    is reversed by editing one line.
+> 6. **Demonstration-only concepts** (mind reading, thought display, machine learning,
+>    sleep learning) are scored on a laboratory result, which is often crude. See §12.
 
 ## 7. Judging
 
@@ -293,6 +356,32 @@ prompt in `prompts/judge.md`):
 
 Only claims that map to a concept with a dated milestone reach the judge, so
 the judge's workload is a small fraction of the extraction's.
+
+> **Computing pilot.**
+>
+> - **How it ran:** Sonnet subagents judged batches of up to 200 pairs, mixed across
+>   concepts.
+> - **The prompt:** `pilot/computing/scripts/judge_prompt2.md`, which is `judge.md` plus
+>   three rules:
+>   - compare the claim with the real development, not with the concept's name;
+>   - when the quotation and the summary disagree, the quotation wins;
+>   - no template rationales: a batch with under 80% distinct rationales is rejected.
+> - **Only pairs whose milestone changed were re-judged**; the others were copied.
+> - **One judge, run to run:** the same score about half the time, and within one step
+>   almost always (first pass: 54% and 97%).
+> - **The top of a one-judge ranking is inflated.** In the third pass a second, blind judge
+>   re-scored the 148 best pairs. It scored 78 of them lower and 3 higher. On 50 random
+>   pairs it was balanced: 11 lower, 7 higher.
+>   - So the judge isn't generous overall. Ranking on one noisy score selects the generous
+>     ones.
+>   - The combination rule (the lower of two, or the median of three where the first two are
+>     two or more steps apart) lowered 78 scores. It also corrected an earlier error,
+>     numbered knobs wired to a kitchen judged as a touch screen.
+> - **Proposed for the full run:** two independent judges on every pair that could reach
+>   the published rankings, or on all pairs, since judging is the cheap stage.
+>   - The score is their mean, with a third judge where the two are two or more steps
+>     apart.
+>   - "The lower of two" applied only to the top is biased downward.
 
 ## 8. Scoring (deterministic, parameterized)
 
@@ -319,6 +408,10 @@ can reach the cap is Nostradamus (1555).
 Recommendation: log. Linear makes one 100-year hit worth a hundred 1-year hits,
 so the ranking would be decided by a handful of Victorian novels. Log still
 rewards foresight strongly while letting breadth count.
+
+In the pilot, lead was counted in whole years (milestone year − publication year), since
+many milestone dates are only a year. A milestone in or before the publication year scores 0
+by rule, without a judge.
 
 De-duplication: a concept counts **once per book** (best-scoring claim) and
 **once per author** (best-scoring book), so a series that keeps the same gadget
@@ -473,6 +566,23 @@ claim):
 >   Passages it doesn't reach stay pending for subagents.
 > - **Result:** 8,318 passages for $178.45; `runs/stage1/report.md`.
 >
+> **Computing pilot: the cost (2026-11-02/03).**
+>
+> | Pass | Subagents | Where |
+> |---|---|---|
+> | First | 33 | a cloud session |
+> | Second | 22 | a cloud session |
+> | Third | 17 | 9 in a cloud session, 8 local |
+>
+> - **Cloud credit:** the cloud sessions used about $71 of it in all.
+> - **Local:** the 8 local Sonnet agents used 0.75M tokens of plan usage.
+> - **Judging is cheap:** about 500 tokens per pair, so 552 pairs took three agents and
+>   about two minutes each.
+> - **Research costs the most:** 100–300K tokens per agent for 7–11 concepts.
+> - **Lost work:** in the cloud the container restarted twice and killed research agents
+>   that hadn't yet written anything. Agents must write their output after every item, as
+>   the extraction already does.
+>
 > **Editorial matter.** Modern editions add introductions that explain the
 > book's predictions after the fact (the 1993 Bantam Verne: "Florida won, as
 > […] predicted"). These are not the author's predictions. The extractor marks
@@ -578,7 +688,9 @@ other text it is null. (Decided 2026-11-01.)
 - Verification, dating, de-duplication and scoring are plain code over stored
   data. Changing the weight function or the milestone type re-ranks everything
   without calling a model.
-- Every rejected claim and every manual override is logged with a reason.
+- Every rejected claim and every manual override is logged with a reason. For
+  milestones, the pilot keeps these decisions as data that the scripts apply
+  (`pilot/computing/raw/review3.jsonl`, §6).
 - **Every long run can be paused and restarted at any point without losing
   work** (decided 2026-11-02). Each chunk (or book) gets its own output file,
   written to a temporary name and then renamed, so a file is either complete
@@ -604,7 +716,8 @@ Decided (2026-11-01):
   article is pinned to a revision, and the permalink is saved in
   `works.date_citation` (2026-11-02, §1a).
 
-Nothing is left to settle.
+Nothing from the first draft is left to settle. The computing pilot raised the new
+questions at the end of this section.
 
 The questions, each with its accepted default:
 
@@ -656,3 +769,21 @@ The questions, each with its accepted default:
     writings.hoult.co-style browser (§10).
 17. **Name**: decided 2026-11-02. The dictionary spelling: Prognosticator
     Awards (`prognosticator-awards`).
+
+**Open after the computing pilot** (2026-11-03; not decided):
+
+18. **Bundled concepts**: split concepts that join different things before dating them, such
+    as factories and power plants, or reading thoughts and displaying them (§5)? Proposed:
+    yes.
+19. **Two judges**: on every pair, or only on pairs that could reach the published rankings?
+    Proposed score: their mean, and a third judge where they are two or more steps apart
+    (§7).
+20. **Demonstration-only concepts**: score a concept that has only a laboratory
+    demonstration on that demonstration, as the pilot did? Or discount it, or treat it as
+    still waiting?
+21. **Matching**: match on the quote, with the extractor's summary as a helper (§5)?
+22. **Where the research runs**: local subagents (open network, fetches only through the
+    checking scripts) or a cloud environment (an allowlist, and container restarts)?
+23. **Re-judging after dating**: 1,423 Stage 1 passages come from books whose year the ISFDB
+    dating pass changed (`runs/dating/report.md`). Their `speculative_at_time` was judged
+    against the old year. Re-extract them, or only recompute lead times?
