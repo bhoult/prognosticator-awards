@@ -379,7 +379,24 @@ def registry(run, audit=True):
         for m in mapping:
             if m['concept_id'] == cid:
                 m['concept_id'], m['how'] = None, m['how'] + '+audit-split'
+    # reviewer decisions (runs/match/concept_review.jsonl): merges after the audit's splits
+    for r in reviewer_rows() if audit else []:
+        if r['op'] != 'merge':
+            continue
+        k = r['keep']
+        for d in r['drop']:
+            if k not in reg or d not in reg:
+                sys.exit(f'review merge: unknown {k} or {d}')
+            c = reg.pop(d)
+            reg[k]['domains'] = sorted(set(reg[k]['domains']) | set(c['domains'] or []))
+            reg[k]['aliases'] = sorted(set(reg[k]['aliases'] or []) | set(c['aliases'] or []) | {c['name']})
+        review = review + [r]
     return sorted(reg.values(), key=lambda c: c['concept_id']), mapping, merges, review
+
+
+def reviewer_rows():
+    path = os.path.join(OUT, 'concept_review.jsonl')
+    return [json.loads(l) for l in open(path, encoding='utf-8') if l.strip()] if os.path.exists(path) else []
 
 
 def audit_plan(run):
@@ -429,7 +446,7 @@ def checkpoint1(rows, mapping, merges, review):
     by = collections.defaultdict(list)
     for m in split:
         by[m['proposal']].append(m['concept_id'])
-    out += [f"| {p} | {', '.join(v)} |" for p, v in sorted(by.items())]
+    out += [f"| {p} | {', '.join(x or '(split again by the audit)' for x in v)} |" for p, v in sorted(by.items())]
     notes = [c for c in rows if (c.get('bundle_check') or 'ok') != 'ok']
     out += ['', f'## Possible bundles kept ({len(notes)})', '', '| Concept | Note | Definition |', '|---|---|---|']
     out += [f"| {c['concept_id']} | {cell(c['bundle_check'])} | {cell(c['definition'])} |" for c in notes]
@@ -441,6 +458,9 @@ def checkpoint1(rows, mapping, merges, review):
     spl = [r for r in review if r['op'] == 'split']
     out += ['', f'## Concepts the audit split ({len(spl)})', '', '| Concept | Into | Why |', '|---|---|---|']
     out += [f"| {r['concept_id']} | {', '.join(n['concept_id'] for n in r['into'])} | {cell(r.get('reason'))} |" for r in spl]
+    mer = [r for r in review if r['op'] == 'merge']
+    out += ['', f'## Reviewer merges ({len(mer)})', '', '| Kept | Merged into it | Why |', '|---|---|---|']
+    out += [f"| {r['keep']} | {', '.join(r['drop'])} | {cell(r.get('reason'))} |" for r in mer]
     drop = [m for m in mapping if m['how'] == 'dropped']
     out += ['', f'## Proposals dropped ({len(drop)})', '', '| Proposal | Why |', '|---|---|']
     out += [f"| {m['proposal']} | {cell(m['reason'])} |" for m in drop]

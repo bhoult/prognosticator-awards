@@ -1,0 +1,1 @@
+{"op": "merge", "keep": "handheld-disintegrator", "drop": ["beam-weapon-disintegration"], "reason": "The audit's split of energy-beam-weapon made a disintegrator half that duplicates the existing handheld-disintegrator (the audit's own note).", "by": "reviewer (orchestrating session), 2026-11-03"}
