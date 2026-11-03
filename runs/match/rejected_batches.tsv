@@ -1,1 +1,3 @@
 environment-006, medicine-biology-006	2026-11-03	one agent did both batches with 122K tokens and coded real predictions too_vague (33% and 23%, against ~5%); outputs moved to work/match/full/match/rejected/, batches redone by single agents
+space-015	2026-11-03	accepted, but lenient: 324 of 347 matched, 148 of them flagged quote_carries false; a few misfits (gravity switch point -> antigravity-propulsion). The judges score on the quote.
+weapons-war-013, weapons-war-015	2026-11-03	one claim each with three concepts; accepted, the collect step keeps the first two

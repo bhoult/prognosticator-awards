@@ -2,3 +2,4 @@ calibration 2026-11-03: weekly usage 75% -> 76% after about 2.6M subagent tokens
 calibration 2026-11-03: 76% -> 77% after about 2.9M subagent tokens (consolidation, cross-domain pass, audit, 20 matching batches) plus the orchestrating session; about 2.7M tokens per point of the week
 calibration 2026-11-03: 77% -> 79% over about 21 matching batches (2.2M subagent tokens): the orchestrating session costs about as much as the agents; agents now take two batches each
 calibration 2026-11-03: 80% at 82 matching batches done (about one point per 23 batches, orchestration included)
+calibration 2026-11-03: 84% at 160 matching batches done; launches stopped at the cap (transport-021 and medicine-biology-022 still running)

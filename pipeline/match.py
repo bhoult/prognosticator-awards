@@ -554,7 +554,8 @@ def match_problems(run, name):
     bad = []
     for r in rows:
         cs = r.get('concepts')
-        if not isinstance(cs, list) or len(cs) > 2 or any(c not in known for c in cs):
+        # more than two concepts is repaired at collection (the first two are kept, logged)
+        if not isinstance(cs, list) or len(cs) > 3 or any(c not in known for c in cs):
             bad.append(f"{r['id']}: concepts {cs}")
         elif bool(cs) == (r.get('code') in CODES) or (not cs and r.get('code') not in CODES):
             bad.append(f"{r['id']}: code {r.get('code')!r} with concepts {cs}")
