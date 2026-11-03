@@ -11,6 +11,7 @@ Every source of the new research is verified again in code, independently of the
   - wikidata sources: the date must be one of the item's statements (raw/wikidata_dates.jsonl).
 A milestone with no verified source is dropped. `high` confidence needs a verified
 contemporary and a verified reference source; otherwise it is lowered to `medium` (logged).
+Decisions taken after the run: raw/review3.jsonl (see below).
 Log: raw/quote_check3.jsonl (url, verdict; never page text). Notes: raw/ms3_concept_notes.jsonl.
 Each row gets `previous_date` (the second-pass date for that concept and kind, or null);
 the new rows also get `target3: true`.
@@ -47,6 +48,26 @@ for f in sorted(HERE.glob("raw/ms3_b[0-9][0-9].jsonl")):
             ms.append(r)
         elif "concept_note" in r:
             notes.append({"concept_id": r["concept_id"], "concept_note": r["concept_note"], "batch": f.name})
+
+# raw/review3.jsonl: decisions taken on the research after the run, each with its reason, in order:
+#   drop        remove the agents' milestone(s) of that concept and kind (only `date`, if given)
+#   add_source  add a source (verified below like any other) to the agents' milestone of that `date`
+#   add         a milestone not from the agents, verified below like theirs
+#   restore2    use the second-pass milestone of that concept and kind (with a `fit` sentence)
+#   keep        no change; the reason goes in the report
+review = L("raw/review3.jsonl") if (HERE / "raw/review3.jsonl").exists() else []
+for r in review:
+    k = (r["concept_id"], r["kind"])
+    if r["op"] == "drop":
+        ms = [m for m in ms if (m["concept_id"], m["kind"]) != k or (r.get("date") and m["date"] != r["date"])]
+    elif r["op"] == "add_source":
+        for m in ms:
+            if (m["concept_id"], m["kind"]) == k and m["date"] == r["date"]:
+                m["sources"] = m.get("sources", []) + [r["source"]]
+                m.update(fit=r.get("fit") or m.get("fit", ""), review3=r["reason"])
+    elif r["op"] == "add":
+        ms.append({**r["milestone"], "concept_id": r["concept_id"], "kind": r["kind"], "review3": r["reason"],
+                   "_file": "review3.jsonl"})
 
 
 def key(s):
@@ -121,7 +142,7 @@ for m in ms:
         conf = "medium"
     row = {"concept_id": m["concept_id"], "kind": m["kind"], "date": str(m["date"]), "what": m["what"],
            "fit": m.get("fit", ""), "sources": keep, "confidence": conf}
-    for k in ("note", "searched"):
+    for k in ("note", "searched", "review3"):
         if m.get(k):
             row[k] = m[k]
     row["previous_date"] = prev.get((m["concept_id"], m["kind"]))
@@ -133,6 +154,12 @@ for r in out:
     k = (r["concept_id"], r["kind"])
     if k not in best or r["date"] < best[k]["date"]:
         best[k] = r
+for r in review:
+    if r["op"] == "restore2":
+        m = next(m for m in m2 if (m["concept_id"], m["kind"]) == (r["concept_id"], r["kind"]))
+        best[(r["concept_id"], r["kind"])] = {**m, "previous_date": m["date"], "target3": True, "review3": r["reason"],
+                                              "fit": r.get("fit") or m.get("fit", "")}
+    log.append({"concept_id": r["concept_id"], "kind": r["kind"], "verdict": "review: " + r["op"]})
 rows = list(best.values())
 for m in m2:
     if m["concept_id"] not in targets:

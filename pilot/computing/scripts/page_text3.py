@@ -12,6 +12,12 @@ Extends page_text.py (Wikipedia, Chronicling America, plain HTML) with the sourc
   Google Books API      https://www.googleapis.com/books/v1/volumes?q=... -> for the cited volume
                         (--volume ID, or `volume_id` in a source) its title, textSnippet and
                         description; date = the volume's publishedDate
+  PubMed Central        https://pmc.ncbi.nlm.nih.gov/articles/PMC<id>/ -> the article through NCBI E-utilities
+                        (the article pages may answer with a captcha); date = publication date
+  archive.org search    https://archive.org/services/search/beta/page_production/?user_query=
+                        "<phrase>" AND identifier:<id>&service_backend=fts -> that item's highlighted
+                        snippets (for lending-library books, whose OCR text answers 401); date = the
+                        item's metadata `date`
 Usage (from pilot/computing/):
   python3 -I scripts/page_text3.py URL                       # whole text
   python3 -I scripts/page_text3.py URL "term" [chars] [max]  # each place the term occurs, with
@@ -128,10 +134,26 @@ def pmc(url):
     return _strip_tags(body), date
 
 
+def fts(url):
+    """archive.org full-text search restricted to one item (user_query names `identifier:`), for
+    lending-library books whose OCR text answers 401: the text is the search's highlighted
+    snippets from that item; date = the item's metadata `date`."""
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    ident = re.search(r"identifier:(\S+)", q["user_query"][0]).group(1)
+    d = net.get_json(url, timeout=90)
+    snips = [s.replace("{{{", "").replace("}}}", "") for x in d["response"]["body"]["hits"]["hits"]
+             if x["fields"]["identifier"] == ident for s in x.get("highlight", {}).get("text", [])]
+    if not snips:
+        raise RuntimeError("no snippet from item " + ident)
+    return "\n".join(snips), str(net.get_json(f"https://archive.org/metadata/{ident}/metadata")["result"].get("date", ""))
+
+
 def fetch(url, volume=None):
     """Return (text, record_date or '')."""
     if re.match(r"https?://(pmc\.ncbi\.nlm\.nih\.gov|www\.ncbi\.nlm\.nih\.gov/pmc)/articles/PMC\d+", url):
         return pmc(url)
+    if re.match(r"https?://archive\.org/services/search/beta/page_production/\?", url):
+        return fts(url)
     if re.match(r"https?://(www\.)?googleapis\.com/books/v1/volumes", url):
         if not volume:
             raise RuntimeError("Google Books source needs a volume id")
