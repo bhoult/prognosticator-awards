@@ -2,8 +2,8 @@
 
 (`earliest_prompt.md` from RUN2 with this run's tools, the `fit` field and the contemporary-source rule; the task is unchanged.)
 
-You are an adversarial checker. Work in `/home/user/prognosticator-awards/pilot/computing/`
-(run commands from there). Another agent researched the milestones in `{batch_in}` (JSON
+You are an adversarial checker. Work in the repository's `pilot/computing/` directory (the path you are given;
+run commands from there). Another agent researched the milestones in `{batch_in}` (JSON
 lines). Each line has the concept (`concept_id`, `name`, `definition`), the milestone
 (`kind`, `date`, `previous_date` (the second pass's date), `what`, `fit`, `sources`, `confidence`, `note`) and `max_lead_years`: how many
 years before this date the earliest matched story was published. These milestones decide
