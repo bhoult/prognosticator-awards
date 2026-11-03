@@ -17,3 +17,7 @@ Step 3 (research), partial:
 To resume:
 1. Finish the concepts missing from `raw/ms3_b04.jsonl` and `raw/ms3_b05.jsonl` (at most 2 agents). Verified leads from the lost agents (URL + quote, trimmed to 25 words) are in `raw/leads3.jsonl`: re-check before use.
 2. Run `merge_milestones3.py`, then steps 5–8 as RUN3.md says. With 4 agents left, use 1 judge for step 6 and the second and third judges for step 7. Settle round 2 by "lower of two".
+
+Update: batch 6 (`raw/ms3_in_b06.jsonl`, the 8 concepts still unresearched) finished: `raw/ms3_b06.jsonl`, 13 milestones and a note for each of the 8 concepts. **Every one of the 33 targets now has research output** in `raw/ms3_b02/b03/b04/b05/b06.jsonl`. Batches 4 and 5 hold only the concepts they finished; where a concept appears in more than one batch, `merge_milestones3.py` keeps the earliest milestone of each kind. 9 of 12 subagents are spent, 3 left: earliest-event check (if needed), the step-6 judges and the second judge. Settle the third judge and round 2 by "lower of two" and say so.
+Next: `python3 -I scripts/merge_milestones3.py`, then steps 5–8.
+Open leads: the robot waiter Tanbo R-1 (Pasadena, 1983) for service-robot, and computerized MMPI interpretation for personnel selection; neither could be fetched.
