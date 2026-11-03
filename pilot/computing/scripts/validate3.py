@@ -90,11 +90,5 @@ if ex("judgments3.jsonl"):
     second = {j["pair"] for j in load("judgments2.jsonl")}
     if not second <= pairs:
         err.append(f"judgments3: {len(second - pairs)} second-pass pairs missing")
-# quotes stored anywhere in run-3 raw files stay short
-for p in sorted(HERE.glob("raw/*3*.jsonl")):
-    for i, r in enumerate(load(p.relative_to(HERE)), 1):
-        for s in r.get("sources", []) if isinstance(r.get("sources"), list) else []:
-            if isinstance(s, dict) and len(str(s.get("quote", "")).split()) > 25 and "quote_check" not in p.name:
-                pass  # agent output may hold long quotes; the merge drops them
 print("\n".join(err) if err else "all RUN3 outputs valid")
 sys.exit(1 if err else 0)
