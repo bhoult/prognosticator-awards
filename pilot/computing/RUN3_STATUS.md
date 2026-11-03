@@ -1,4 +1,8 @@
-# Run 3: paused (status for resuming)
+# Run 3: complete (see report3.md)
+
+Steps 4–8 ran locally on 2026-11-03 after the cloud session below stopped at step 3; the results and every deviation from RUN3.md are in [`report3.md`](report3.md). What follows is the status the cloud session left.
+
+## Status when the cloud session stopped
 
 Paused 2026-11-03 at step 3 because the session's budget ran out. Nothing below step 3 has run.
 

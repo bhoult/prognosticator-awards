@@ -98,10 +98,11 @@ R = decided in raw/review3.jsonl; C = confirmed and X = replaced by the earliest
 | Group | Pairs | Same score | One step apart | Two or more apart | Second judge lower | Second judge higher |
 |---|---|---|---|---|---|---|
 | top100 | 100 | 43 | 52 | 5 | 56 | 1 |
+| top100_new | 48 | 24 | 24 | 0 | 22 | 2 |
 | random50 | 50 | 32 | 18 | 0 | 11 | 7 |
 
-Outcome for the top-100 and 1.0 pairs: agreed 43, lower 52, median 5.
-Scores changed (first judge -> final): 0.5 -> 0.25: 15, 0.75 -> 0.25: 4, 0.75 -> 0.5: 36, 1 -> 0.75: 1.
+Outcome for the top-100 and 1.0 pairs: agreed 67, lower 76, median 5.
+Scores changed (first judge -> final): 0.5 -> 0.25: 33, 0.75 -> 0.25: 4, 0.75 -> 0.5: 40, 1 -> 0.75: 1.
 
 ## Top 20 (951 book-concept entries with points)
 
@@ -122,7 +123,7 @@ Scores changed (first judge -> final): 0.5 -> 0.25: 15, 0.75 -> 0.25: 4, 0.75 ->
 | 13 | new | 1953 | Voiceprint speaker recognition | 1974 | 21 | 0.75/0.75 | 0.75 | 3.34 | Old Rubberarm's got your voice pattern. Just ask for Juno Jones. |
 | 14 | 46 | 1951 | Speech recognition and voice command | 1972 | 21 | 0.75/0.75 | 0.75 | 3.34 | We get in the elevator, and I say "first" to it. It gives out a coughing noise and the basement openings begin to click by … |
 | 15 | 69 | 1897 | Brain-computer interface | 1998 | 101 | 0.5/0.5 | 0.5 | 3.34 | father says some day we may be able to work by sheer will power directly and have no need of hands at all. |
-| 16 | 1 | 1906 | Thought-to-text and thought display | 2006 | 100 | 0.5 | 0.5 | 3.33 | I find that the thought images thrown upon the screen in room "D" are more vivid when the subject is kept in darkness. |
+| 16 | 1 | 1906 | Thought-to-text and thought display | 2006 | 100 | 0.5/0.5 | 0.5 | 3.33 | I find that the thought images thrown upon the screen in room "D" are more vivid when the subject is kept in darkness. |
 | 17 | 68 | 1906 | Mind-reading machine | 2006 | 100 | 0.5/0.5 | 0.5 | 3.33 | I am going to show you how thought can be collected in the form of vibrations, in the form of fluid electric current, and collected … |
 | 18 | 74 | 1912 | Brain-computer interface | 1998 | 86 | 0.5/0.5 | 0.5 | 3.22 | the outer doors are manipulated by telepathic means. The locks are so finely adjusted that the doors are released by the action of a certain … |
 | 19 | 50 | 1954 | Speech recognition and voice command | 1972 | 18 | 0.75/0.75 | 0.75 | 3.19 | He learned about saying 'Open' to a lock and having the electronic device 'recognize' him and let him in. |
