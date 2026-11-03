@@ -43,7 +43,7 @@ def verify(s, event_date):
     if rdate:
         row["date"] = rdate
     if kind == "contemporary":
-        ym = re.search(r"\b(\d{4})\b", str(row["date"]))
+        ym = re.search(r"(?<!\d)(\d{4})", str(row["date"]))
         sy = int(ym.group(1)) if ym else None
         ey = int(str(event_date)[:4]) if event_date else None
         if sy is None or ey is None or abs(sy - ey) > 2:
