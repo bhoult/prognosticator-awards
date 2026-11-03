@@ -7,6 +7,8 @@
     python -I pipeline/match.py global-plan <run>             all domains' concepts, for the cross-domain pass
     python -I pipeline/match.py audit-plan <run>              cross-domain merges and large concepts, for the audit
     python -I pipeline/match.py concepts-build <run>          registry + mapping + checkpoint 1 -> runs/match/
+    python -I pipeline/match.py match-plan <run> [n]          claim up to n pending matching batches, print their prompts
+    python -I pipeline/match.py match-ingest <run>            check the matching outputs, summary
     python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
     python -I pipeline/match.py status <run>
 
@@ -27,6 +29,7 @@ import os
 import random
 import re
 import sys
+import time
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 PROMPTS = os.path.join(ROOT, 'prompts')
@@ -467,6 +470,124 @@ def checkpoint1(rows, mapping, merges, review):
     return '\n'.join(out) + '\n'
 
 
+# ---- matching ----
+
+BATCH, CLAIM_MINUTES = 350, 60
+CODES = {'no_concept', 'untestable', 'too_vague'}
+
+
+def registry_rows():
+    return [json.loads(l) for l in open(os.path.join(OUT, 'concepts.jsonl'), encoding='utf-8')]
+
+
+def match_batches(run):
+    """Fixed once: tranche A claims by domain, shuffled with a fixed seed, about BATCH per batch."""
+    path = rd(run, 'match', 'batches.json')
+    if os.path.exists(path):
+        return json.load(open(path, encoding='utf-8'))
+    by = collections.defaultdict(list)
+    for c in claims(run):
+        if c['tranche'] == 'A':
+            by[c['domain']].append(c['id'])
+    batches = {}
+    for dom in sorted(by):
+        ids = sorted(by[dom])
+        random.Random(f'{SEED}:match:{dom}').shuffle(ids)
+        n = math.ceil(len(ids) / BATCH)
+        for i in range(n):
+            batches[f'{dom}-{i + 1:03d}'] = {'domain': dom, 'ids': ids[i::n]}
+    write_atomic(path, json.dumps(batches))
+    return batches
+
+
+def match_plan(run, limit=None):
+    """Write the inputs and prompts of the batches with no valid output, and claim up to `limit`
+    of them (printing their prompts) so that a later call doesn't hand them out again."""
+    stage = 'match'
+    tpl = open(os.path.join(PROMPTS, 'match.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'batch': BATCH, 'seed': SEED,
+                        'claims_sha256': sha(open(rd(run, 'claims.jsonl'), 'rb').read()),
+                        'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
+    batches = match_batches(run)
+    reg = registry_rows()
+    for dom in sorted({b['domain'] for b in batches.values()}):
+        write_atomic(rd(run, stage, 'registry', dom + '.jsonl'),
+                     jsonl({k: c[k] for k in ('concept_id', 'name', 'definition')} for c in reg if dom in (c['domains'] or [])))
+    by_id = None
+    todo, now = [], time.time()
+    for name, b in batches.items():
+        inp = rd(run, stage, 'in', name + '.jsonl')
+        if not os.path.exists(inp):
+            if by_id is None:
+                by_id = {c['id']: c for c in claims(run)}
+            write_atomic(inp, jsonl({k: by_id[i][k] for k in ('id', 'quote', 'description')} for i in b['ids']))
+        if match_problems(run, name) is None:
+            continue
+        mark = rd(run, stage, 'prompts', name + '.claimed')
+        if os.path.exists(mark) and now - os.path.getmtime(mark) < CLAIM_MINUTES * 60:
+            continue
+        todo.append(name)
+    todo.sort(key=lambda n: (int(n.rsplit('-', 1)[1]), n))  # in turn across domains
+    pick = todo[:int(limit)] if limit else todo
+    for name in pick:
+        b = batches[name]
+        path = prompt(run, stage, name, 'match.md', workdir=ROOT, domain=b['domain'], n=len(b['ids']),
+                      half=(len(b['ids']) + 1) // 2, registry=rel(rd(run, stage, 'registry', b['domain'] + '.jsonl')),
+                      batch_in=rel(rd(run, stage, 'in', name + '.jsonl')), batch_out=rel(rd(run, stage, 'out', name + '.jsonl')),
+                      tmpdir=rel(rd(run, 'tmp', 'match-' + name)))
+        write_atomic(rd(run, stage, 'prompts', name + '.claimed'), time.strftime('%Y-%m-%dT%H:%M:%S\n'))
+        print(rel(path))
+    print(f'{len(pick)} claimed; {len(todo) - len(pick)} more pending; {len(batches)} batches in all', file=sys.stderr)
+
+
+def match_problems(run, name):
+    out = rd(run, 'match', 'out', name + '.jsonl')
+    if not os.path.exists(out):
+        return ['missing']
+    rows, err = read_jsonl(out)
+    if rows is None:
+        return [err]
+    ids = [json.loads(l)['id'] for l in open(rd(run, 'match', 'in', name + '.jsonl'), encoding='utf-8')]
+    if [r.get('id') for r in rows] != ids:
+        return [f'{len(rows)} rows for {len(ids)} claims, or not in input order']
+    known = {c['concept_id'] for c in registry_rows()}
+    bad = []
+    for r in rows:
+        cs = r.get('concepts')
+        if not isinstance(cs, list) or len(cs) > 2 or any(c not in known for c in cs):
+            bad.append(f"{r['id']}: concepts {cs}")
+        elif bool(cs) == (r.get('code') in CODES) or (not cs and r.get('code') not in CODES):
+            bad.append(f"{r['id']}: code {r.get('code')!r} with concepts {cs}")
+        if not isinstance(r.get('quote_carries'), bool) or not str(r.get('reason', '')).strip():
+            bad.append(f"{r['id']}: quote_carries or reason")
+    top = collections.Counter(r.get('reason') for r in rows).most_common(1)
+    if top and top[0][1] > len(rows) * 0.2:
+        bad.append(f'{top[0][1]} identical reasons: {top[0][0]!r}')
+    return bad or None
+
+
+def match_ingest(run):
+    batches = match_batches(run)
+    done, rows, notdone = 0, [], []
+    for name in batches:
+        p = match_problems(run, name)
+        if p is None:
+            done += 1
+            rows += read_jsonl(rd(run, 'match', 'out', name + '.jsonl'))[0]
+        elif p != ['missing']:
+            notdone.append((name, p[:3]))
+    for name, p in notdone:
+        print(f'{name}: INVALID {p}')
+    if rows:
+        n = len(rows)
+        m = sum(1 for r in rows if r['concepts'])
+        print(f"{done} of {len(batches)} batches done: {n} claims, {m / n:.0%} matched, "
+              f"{sum(1 for r in rows if len(r['concepts']) == 2) / n:.0%} to two concepts, "
+              f"codes {dict(collections.Counter(r['code'] for r in rows if r['code']))}, "
+              f"quote alone doesn't carry it: {sum(1 for r in rows if not r['quote_carries']) / n:.0%}, "
+              f"{len({c for r in rows for c in r['concepts']})} concepts used")
+
+
 # ---- usage and status ----
 
 def log(run, agent, stage, tokens, tools, seconds, *note):
@@ -496,5 +617,5 @@ if __name__ == '__main__':
     cmd, args = sys.argv[1], sys.argv[2:]
     {'concepts-plan': concepts_plan, 'concepts-ingest': concepts_ingest, 'consolidate-plan': consolidate_plan,
      'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'audit-plan': audit_plan,
-     'concepts-build': concepts_build,
+     'concepts-build': concepts_build, 'match-plan': match_plan, 'match-ingest': match_ingest,
      'log': log, 'status': status}[cmd](*args)
