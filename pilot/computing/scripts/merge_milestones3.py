@@ -90,11 +90,12 @@ for m in ms:
             else:
                 verdict = "ok"
                 if rdate:
-                    if sdate and sdate[:4] != rdate[:4]:
+                    if sdate and re.search(r"\d{4}", sdate) and re.search(r"\d{4}", sdate).group(0) not in rdate:
                         note = f"date {sdate} -> record date {rdate}"
                     sdate = rdate
                 if kind == "contemporary":
-                    sy = int(sdate[:4]) if re.match(r"\d{4}", sdate) else None
+                    ym = re.search(r"\b(\d{4})\b", sdate)
+                    sy = int(ym.group(1)) if ym else None
                     if sy is None or ey is None or not (ey - 2 <= sy <= ey + 2):
                         kind = "reference"
                         note = (note + "; " if note else "") + f"contemporary -> reference (source date {sdate or '?'}, event {ey})"
