@@ -5,6 +5,7 @@
     python -I pipeline/match.py consolidate-plan <run>        group proposals by domain, write prompts
     python -I pipeline/match.py consolidate-ingest <run>      check the consolidated lists
     python -I pipeline/match.py global-plan <run>             all domains' concepts, for the cross-domain pass
+    python -I pipeline/match.py audit-plan <run>              cross-domain merges and large concepts, for the audit
     python -I pipeline/match.py concepts-build <run>          registry + mapping + checkpoint 1 -> runs/match/
     python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
     python -I pipeline/match.py status <run>
@@ -286,9 +287,21 @@ def global_plan(run):
                      concepts=rel(rd(run, stage, 'in', 'concepts.jsonl')), out=rel(out), tmpdir=rel(rd(run, 'tmp', 'global')))))
 
 
-def concepts_build(run):
-    """runs/match/concepts.jsonl (the registry), concept_mapping.jsonl (proposal -> concept) and
-    checkpoint1.md (what the user reviews before matching)."""
+def audit_rows(run):
+    path = rd(run, 'audit', 'out', 'review.jsonl')
+    if not os.path.exists(path):
+        return []
+    rows, err = read_jsonl(path)
+    if rows is None:
+        sys.exit(f'audit: {err}')
+    return rows
+
+
+def registry(run, audit=True):
+    """(concepts, mapping, merges, audit decisions): the consolidated lists, merged across
+    domains, with the audit's decisions (raw/audit/out/review.jsonl) applied if `audit`."""
+    review = audit_rows(run) if audit else []
+    keep_apart = {(r['keep'], d) for r in review if r['op'] == 'reject_merge' for d in r['drop']}
     reg = {}
     for c in map(json.loads, open(SEED_CONCEPTS, encoding='utf-8')):
         reg[c['concept_id']] = {'concept_id': c['concept_id'], 'name': c['name'], 'definition': c['definition'],
@@ -306,20 +319,37 @@ def concepts_build(run):
             mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'split'})
         if r.get('existing'):
             continue
-        reg[r['concept_id']] = {k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'domains', 'aliases',
-                                                      'came_true_guess', 'est_claims', 'examples', 'bundle_check')}
-        reg[r['concept_id']].update(wikidata=None, source=r['group'],
-                                    domains=sorted({d for g in (r.get('domains') or [r['group']]) for d in g.split('+')}))
+        new = {k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'domains', 'aliases',
+                                     'came_true_guess', 'est_claims', 'examples', 'bundle_check')}
+        new.update(wikidata=None, source=r['group'],
+                   domains=sorted({d for g in (r.get('domains') or [r['group']]) for d in g.split('+')}))
+        old = reg.get(r['concept_id'])
+        if old:  # the same id from two domain groups: one concept; keep the definition with more claims
+            if (new['est_claims'] or 0) > (old['est_claims'] or 0):
+                old, new = new, old
+            old['domains'] = sorted(set(old['domains']) | set(new['domains']))
+            old['aliases'] = sorted(set(old['aliases'] or []) | set(new['aliases'] or []))
+            old['est_claims'] = (old['est_claims'] or 0) + (new['est_claims'] or 0)
+            old['examples'] = (old['examples'] or []) + (new['examples'] or [])
+            old['source'] = '+'.join(sorted(set(old['source'].split('+')) | {new['source']}))
+            new = old
+        reg[r['concept_id']] = new
     merges, err = read_jsonl(rd(run, 'global', 'out', 'merges.jsonl'))
     if merges is None:
         sys.exit(f'global merges: {err}')
+    merges = [{**m, 'drop': [d for d in m['drop'] if (m['keep'], d) not in keep_apart]} for m in merges]
+    merges = [m for m in merges if m['drop']]
     gone = {}
     for m in merges:
         k = m['keep']
+        while k in gone:  # kept here, but dropped by an earlier group
+            k = gone[k]
         if k not in reg:
             sys.exit(f'global merge keeps unknown {k}')
         for d in m['drop']:
-            if d not in reg or d == k:
+            if d == k or d in gone:
+                continue
+            if d not in reg:
                 sys.exit(f'global merge drops unknown {d}')
             c = reg.pop(d)
             reg[k]['domains'] = sorted(set(reg[k]['domains']) | set(c['domains'] or []))
@@ -330,14 +360,60 @@ def concepts_build(run):
     for m in mapping:
         while m['concept_id'] in gone:
             m['concept_id'], m['how'] = gone[m['concept_id']], m['how'] + '+global'
-    rows = sorted(reg.values(), key=lambda c: c['concept_id'])
+    for r in review:
+        if r['op'] != 'split':
+            continue
+        cid = r['concept_id']
+        while cid in gone:
+            cid = gone[cid]
+        old = reg.pop(cid, None)
+        if old is None:
+            sys.exit(f'audit splits unknown {r["concept_id"]}')
+        for n in r['into']:
+            if n['concept_id'] in reg or not KEBAB.match(n['concept_id']) or n.get('type') not in TYPES \
+                    or n.get('came_true_guess') not in GUESSES:
+                sys.exit(f'audit split of {cid}: bad or existing id {n["concept_id"]}')
+            reg[n['concept_id']] = {**old, **{k: n[k] for k in ('concept_id', 'name', 'definition', 'type', 'came_true_guess')},
+                                    'est_claims': None, 'examples': [], 'bundle_check': 'ok', 'split_by_audit': cid}
+            gone.setdefault(cid, n['concept_id'])
+        for m in mapping:
+            if m['concept_id'] == cid:
+                m['concept_id'], m['how'] = None, m['how'] + '+audit-split'
+    return sorted(reg.values(), key=lambda c: c['concept_id']), mapping, merges, review
+
+
+def audit_plan(run):
+    stage = 'audit'
+    tpl = open(os.path.join(PROMPTS, 'concepts_audit.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'largest': 200})
+    rows, _, merges, _ = registry(run, audit=False)
+    defs = {}
+    for c in map(json.loads, open(rd(run, 'global', 'in', 'concepts.jsonl'), encoding='utf-8')):
+        defs.setdefault(c['concept_id'], {k: c[k] for k in ('concept_id', 'name', 'definition')})
+    write_atomic(rd(run, stage, 'in', 'merges.jsonl'),
+                 jsonl({'keep': defs[m['keep']], 'drop': [defs[d] for d in m['drop'] if d in defs]} for m in merges))
+    big = sorted((c for c in rows if c.get('est_claims')), key=lambda c: -c['est_claims'])[:200]
+    pick = {c['concept_id'] for c in big} | {c['concept_id'] for c in rows if (c.get('bundle_check') or 'ok') != 'ok'}
+    write_atomic(rd(run, stage, 'in', 'concepts.jsonl'),
+                 jsonl({k: c.get(k) for k in ('concept_id', 'name', 'definition', 'est_claims', 'bundle_check')}
+                       for c in rows if c['concept_id'] in pick))
+    out = rd(run, stage, 'out', 'review.jsonl')
+    print(len(merges), 'merges and', len(pick), 'concepts to audit;',
+          rel(prompt(run, stage, 'audit', 'concepts_audit.md', workdir=ROOT, merges=rel(rd(run, stage, 'in', 'merges.jsonl')),
+                     concepts=rel(rd(run, stage, 'in', 'concepts.jsonl')), out=rel(out), tmpdir=rel(rd(run, 'tmp', 'audit')))))
+
+
+def concepts_build(run):
+    """runs/match/concepts.jsonl (the registry), concept_mapping.jsonl (proposal -> concept) and
+    checkpoint1.md (what the user reviews before matching)."""
+    rows, mapping, merges, review = registry(run)
     write_atomic(os.path.join(OUT, 'concepts.jsonl'), jsonl(rows))
     write_atomic(os.path.join(OUT, 'concept_mapping.jsonl'), jsonl(mapping))
-    write_atomic(os.path.join(OUT, 'checkpoint1.md'), checkpoint1(rows, mapping, merges))
+    write_atomic(os.path.join(OUT, 'checkpoint1.md'), checkpoint1(rows, mapping, merges, review))
     print(len(rows), 'concepts ->', rel(os.path.join(OUT, 'concepts.jsonl')), '; checkpoint1.md written')
 
 
-def checkpoint1(rows, mapping, merges):
+def checkpoint1(rows, mapping, merges, review):
     cell = lambda s: str(s or '').replace('|', '/').replace('\n', ' ')  # noqa: E731
     dom = collections.Counter(d for c in rows for d in (c['domains'] or []))
     out = ['# Checkpoint 1: the concept registry (tranche A)', '',
@@ -359,6 +435,12 @@ def checkpoint1(rows, mapping, merges):
     out += [f"| {c['concept_id']} | {cell(c['bundle_check'])} | {cell(c['definition'])} |" for c in notes]
     out += ['', f'## Merged across domains ({len(merges)} groups)', '', '| Kept | Dropped | Why |', '|---|---|---|']
     out += [f"| {m['keep']} | {', '.join(m['drop'])} | {cell(m.get('reason'))} |" for m in merges]
+    rej = [r for r in review if r['op'] == 'reject_merge']
+    out += ['', f'## Cross-domain merges the audit rejected ({len(rej)})', '', '| Kept | Kept apart | Why |', '|---|---|---|']
+    out += [f"| {r['keep']} | {', '.join(r['drop'])} | {cell(r.get('reason'))} |" for r in rej]
+    spl = [r for r in review if r['op'] == 'split']
+    out += ['', f'## Concepts the audit split ({len(spl)})', '', '| Concept | Into | Why |', '|---|---|---|']
+    out += [f"| {r['concept_id']} | {', '.join(n['concept_id'] for n in r['into'])} | {cell(r.get('reason'))} |" for r in spl]
     drop = [m for m in mapping if m['how'] == 'dropped']
     out += ['', f'## Proposals dropped ({len(drop)})', '', '| Proposal | Why |', '|---|---|']
     out += [f"| {m['proposal']} | {cell(m['reason'])} |" for m in drop]
@@ -393,5 +475,6 @@ def status(run):
 if __name__ == '__main__':
     cmd, args = sys.argv[1], sys.argv[2:]
     {'concepts-plan': concepts_plan, 'concepts-ingest': concepts_ingest, 'consolidate-plan': consolidate_plan,
-     'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'concepts-build': concepts_build,
+     'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'audit-plan': audit_plan,
+     'concepts-build': concepts_build,
      'log': log, 'status': status}[cmd](*args)

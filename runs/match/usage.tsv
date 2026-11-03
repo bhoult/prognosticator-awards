@@ -13,3 +13,12 @@ P-weapons-war-2	concepts	sonnet	146565	21	295
 P-environment-1	concepts	sonnet	125511	16	265	
 P-space-1	concepts	sonnet	231595	24	591	
 P-transport-1	concepts	sonnet	228646	23	641	
+K-other	consolidate	sonnet	69912	5	50	
+K-communication	consolidate	sonnet	71589	7	62	
+K-transport	consolidate	sonnet	76488	8	78	
+K-computing+economy+society-politics	consolidate	sonnet	75546	10	100	
+K-weapons-war	consolidate	sonnet	85409	9	101	
+K-environment+energy	consolidate	sonnet	83773	8	111	
+K-medicine-biology	consolidate	sonnet	88019	12	139	
+K-space	consolidate	sonnet	104134	10	172	
+G-global	global	sonnet	151638	13	245	
