@@ -770,20 +770,21 @@ The questions, each with its accepted default:
 17. **Name**: decided 2026-11-02. The dictionary spelling: Prognosticator
     Awards (`prognosticator-awards`).
 
-**Open after the computing pilot** (2026-11-03; not decided):
+**Raised by the computing pilot**, decided 2026-11-03 with the plan for the full run
+(`runs/match/PLAN.md` §14; the user took each proposal):
 
 18. **Bundled concepts**: split concepts that join different things before dating them, such
     as factories and power plants, or reading thoughts and displaying them (§5)? Proposed:
-    yes.
+    yes. Decided: split.
 19. **Two judges**: on every pair, or only on pairs that could reach the published rankings?
     Proposed score: their mean, and a third judge where they are two or more steps apart
-    (§7).
+    (§7). Decided: on every judged pair, their mean, a third where two or more steps apart.
 20. **Demonstration-only concepts**: score a concept that has only a laboratory
     demonstration on that demonstration, as the pilot did? Or discount it, or treat it as
-    still waiting?
-21. **Matching**: match on the quote, with the extractor's summary as a helper (§5)?
+    still waiting? Decided: scored on the demonstration and flagged.
+21. **Matching**: match on the quote, with the extractor's summary as a helper (§5)? Decided: on the quote.
 22. **Where the research runs**: local subagents (open network, fetches only through the
-    checking scripts) or a cloud environment (an allowlist, and container restarts)?
+    checking scripts) or a cloud environment (an allowlist, and container restarts)? Decided: locally.
 23. **Re-judging after dating**: 1,423 Stage 1 passages come from books whose year the ISFDB
     dating pass changed (`runs/dating/report.md`). Their `speculative_at_time` was judged
-    against the old year. Re-extract them, or only recompute lead times?
+    against the old year. Re-extract them, or only recompute lead times? Decided: recompute lead times only; no re-extraction.
