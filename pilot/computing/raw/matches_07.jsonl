@@ -1,0 +1,222 @@
+{"id": "stage1-sonnet/p05034#1", "concepts": ["ai-takeover", "robot-laws-safety-constraints"], "reason": "robot attacks human and disobeys, breaking safety laws"}
+{"id": "stage1-sonnet/p05051#0", "concepts": ["ai-takeover"], "reason": "independent car supplanting mankind"}
+{"id": "stage1-sonnet/p05051#2", "concepts": [], "reason": "metaphorical brain/spark of life for a car"}
+{"id": "stage1-sonnet/p05051#3", "concepts": [], "reason": "car parts with brains, vague"}
+{"id": "stage1-sonnet/p05065#10", "concepts": ["machine-emotions"], "reason": "robot brains with pain-conditioning, chilling voice"}
+{"id": "stage1-sonnet/p05065#11", "concepts": ["brain-in-machine-body"], "reason": "robot brains made from dog minds"}
+{"id": "stage1-sonnet/p05079#2", "concepts": ["robot-supervisor-hierarchy", "face-recognition"], "reason": "central Brain controlling robots; face recognition beyond it"}
+{"id": "stage1-sonnet/p05080#0", "concepts": ["ai-takeover", "machine-consciousness"], "reason": "self-aware master machine seizes control and pursues humans"}
+{"id": "stage1-sonnet/p05080#1", "concepts": ["ai-takeover"], "reason": "revolt of the machines"}
+{"id": "stage1-sonnet/p05080#3", "concepts": ["robot-supervisor-hierarchy"], "reason": "master machine commands other machines via control system"}
+{"id": "stage1-sonnet/p05080#4", "concepts": ["self-replicating-machine"], "reason": "machines repair and build more complex machines"}
+{"id": "stage1-sonnet/p05080#6", "concepts": ["machine-consciousness"], "reason": "sentient machine speaking of its own design"}
+{"id": "stage1-sonnet/p05099#7", "concepts": ["lie-detector", "mind-reading-machine"], "reason": "mind-probe extracting truth, foolable"}
+{"id": "stage1-sonnet/p05100#13", "concepts": ["real-time-tactical-display"], "reason": "space-chart showing positions of pursuing ships"}
+{"id": "stage1-sonnet/p05109#3", "concepts": ["computer-personnel-selection", "eeg-brain-monitoring"], "reason": "electrode machine personality checkup"}
+{"id": "stage1-sonnet/p05109#4", "concepts": ["computer-personnel-selection"], "reason": "machine analysis of personality for profession"}
+{"id": "stage1-sonnet/p05109#5", "concepts": ["computer-personnel-selection"], "reason": "machines interpret tests and assign profession"}
+{"id": "stage1-sonnet/p05118#8", "concepts": ["domestic-robot", "childcare-robot"], "reason": "household robots as child playmates/tutors"}
+{"id": "stage1-sonnet/p05134#5", "concepts": ["electronic-voting"], "reason": "electric vote counting from seats"}
+{"id": "stage1-sonnet/p05156#1", "concepts": ["self-repairing-machine"], "reason": "machine repairs itself for ages"}
+{"id": "stage1-sonnet/p05171#1", "concepts": ["machine-learning"], "reason": "unit retains and refines learned habits"}
+{"id": "stage1-sonnet/p05171#4", "concepts": ["robot-vacuum-mower"], "reason": "autonomous lawn-tending robot"}
+{"id": "stage1-sonnet/p05171#12", "concepts": ["smart-home", "machine-learning"], "reason": "appliances adapt to owners' habits"}
+{"id": "stage1-sonnet/p05171#15", "concepts": ["machine-learning", "codebreaking-computer"], "reason": "learning machines unscramble broadcast"}
+{"id": "stage1-sonnet/p05191#8", "concepts": ["information-retrieval"], "reason": "information bank retrieval of records on cards"}
+{"id": "stage1-sonnet/p05193#17", "concepts": ["real-time-tactical-display"], "reason": "world and space map command displays"}
+{"id": "stage1-sonnet/p05203#15", "concepts": ["automated-city", "self-repairing-machine"], "reason": "robots patrol and maintain ancient city"}
+{"id": "stage1-sonnet/p05203#16", "concepts": ["self-repairing-machine"], "reason": "feeding machine kept in repair by robots"}
+{"id": "stage1-sonnet/p05204#2", "concepts": ["mind-reading-machine"], "reason": "detects and records thought waves"}
+{"id": "stage1-sonnet/p05215#4", "concepts": ["universal-translator-unknown-language"], "reason": "decodes unknown alien language"}
+{"id": "stage1-sonnet/p05215#5", "concepts": ["machine-translation", "speech-synthesis"], "reason": "translator speaks converted speech aloud"}
+{"id": "stage1-sonnet/p05216#4", "concepts": ["brain-computer-interface"], "reason": "machine controlled by thought"}
+{"id": "stage1-sonnet/p05217#2", "concepts": ["lie-detector", "artificial-senses"], "reason": "fingertip-sensor robot lie detector"}
+{"id": "stage1-sonnet/p05217#3", "concepts": ["lie-detector"], "reason": "robot scores proportion of lies"}
+{"id": "stage1-sonnet/p05226#1", "concepts": ["fire-control-missile-guidance"], "reason": "computers assign and launch interceptors"}
+{"id": "stage1-sonnet/p05226#2", "concepts": ["autopilot"], "reason": "automatic flying of rocket ship"}
+{"id": "stage1-sonnet/p05226#13", "concepts": ["machine-vision", "real-time-tactical-display"], "reason": "sensor display identifying warhead among decoys"}
+{"id": "stage1-sonnet/p05232#10", "concepts": ["lie-detector", "computer-psychotherapy"], "reason": "interrogation machines and psychocomputer analysis"}
+{"id": "stage1-sonnet/p05233#5", "concepts": ["spacecraft-guidance-computer"], "reason": "onboard computer aligns ship velocity for jump"}
+{"id": "stage1-sonnet/p05233#9", "concepts": ["question-answering-computer"], "reason": "oracle answers any question"}
+{"id": "stage1-sonnet/p05233#17", "concepts": ["question-answering-computer"], "reason": "oracle answers only one person's questions"}
+{"id": "stage1-sonnet/p05242#2", "concepts": ["direct-knowledge-transfer"], "reason": "briefing rod plays knowledge into mind"}
+{"id": "stage1-sonnet/p05247#3", "concepts": ["spacecraft-guidance-computer"], "reason": "ship computer takes over, plots course"}
+{"id": "stage1-sonnet/p05247#4", "concepts": ["spacecraft-guidance-computer"], "reason": "problem-solving ship computers time braking burn"}
+{"id": "stage1-sonnet/p05251#10", "concepts": ["real-time-tactical-display"], "reason": "tank display of ship positions in battle"}
+{"id": "stage1-sonnet/p05254#1", "concepts": ["mind-uploading", "automated-factory"], "reason": "factory machines controlled by copied human minds"}
+{"id": "stage1-sonnet/p05261#5", "concepts": [], "reason": "claim no typesetting machine can exist"}
+{"id": "stage1-sonnet/p05263#0", "concepts": ["direct-knowledge-transfer", "teaching-machine"], "reason": "educator machine imparts knowledge to child"}
+{"id": "stage1-sonnet/p05263#1", "concepts": ["direct-knowledge-transfer"], "reason": "machine installs construction knowledge in brain"}
+{"id": "stage1-sonnet/p05263#2", "concepts": ["teaching-machine"], "reason": "valuable educator machine"}
+{"id": "stage1-sonnet/p05263#4", "concepts": ["direct-knowledge-transfer"], "reason": "absorbing a whole book via machine"}
+{"id": "stage1-sonnet/p05263#5", "concepts": ["direct-knowledge-transfer"], "reason": "memorizing tables via machine"}
+{"id": "stage1-sonnet/p05270#4", "concepts": ["memory-recording-playback", "direct-knowledge-transfer"], "reason": "rod transfers skills and memories into mind"}
+{"id": "stage1-sonnet/p05270#6", "concepts": ["direct-knowledge-transfer"], "reason": "technical knowledge on transfer rods"}
+{"id": "stage1-sonnet/p05277#19", "concepts": ["machine-readable-id-card", "robot-police-guard"], "reason": "ID card and robot guards"}
+{"id": "stage1-sonnet/p05282#6", "concepts": ["game-playing-computer"], "reason": "robots play bridge"}
+{"id": "stage1-sonnet/p05282#10", "concepts": ["robot-supervisor-hierarchy"], "reason": "remote control board directing robots"}
+{"id": "stage1-sonnet/p05285#15", "concepts": ["spacecraft-guidance-computer"], "reason": "pilot computer course projection and docking"}
+{"id": "stage1-sonnet/p05290#8", "concepts": [], "reason": "alien telepath diagnosing machines"}
+{"id": "stage1-sonnet/p05292#1", "concepts": ["memory-recording-playback"], "reason": "brain pattern recorded onto cylinder"}
+{"id": "stage1-sonnet/p05293#6", "concepts": ["conversational-ai"], "reason": "typewriter converses intelligently"}
+{"id": "stage1-sonnet/p05293#7", "concepts": ["machine-generated-writing"], "reason": "typewriter reproduces famous stories itself"}
+{"id": "stage1-sonnet/p05294#9", "concepts": ["humanoid-robot"], "reason": "humanoid mechanicals as crew"}
+{"id": "stage1-sonnet/p05296#1", "concepts": ["humanoid-robot", "lifelike-android"], "reason": "vat-grown humanoid robots with positronic brains"}
+{"id": "stage1-sonnet/p05296#2", "concepts": ["humanoid-robot"], "reason": "positronic brain with organic body"}
+{"id": "stage1-sonnet/p05296#11", "concepts": ["robot-laws-safety-constraints"], "reason": "conditioned taboos robots cannot violate"}
+{"id": "stage1-sonnet/p05296#12", "concepts": ["robot-laws-safety-constraints"], "reason": "self-preservation overrides harm prohibition"}
+{"id": "stage1-sonnet/p05299#10", "concepts": ["spacecraft-guidance-computer"], "reason": "ship computer determines direction of signal source"}
+{"id": "stage1-sonnet/p05306#5", "concepts": ["memory-recording-playback", "direct-knowledge-transfer"], "reason": "circuit returning brain wave shape forming the educator"}
+{"id": "stage1-sonnet/p05306#8", "concepts": ["direct-knowledge-transfer"], "reason": "child rebuilds educator using machine-given knowledge"}
+{"id": "stage1-sonnet/p05310#3", "concepts": ["spacecraft-guidance-computer", "fire-control-missile-guidance"], "reason": "computers pilot fast warships"}
+{"id": "stage1-sonnet/p05310#8", "concepts": ["fire-control-missile-guidance"], "reason": "random computer defeating enemy fire control"}
+{"id": "stage1-sonnet/p05312#7", "concepts": ["consumer-analytics"], "reason": "machine generates and tests names via viewer response"}
+{"id": "stage1-sonnet/p05314#0", "concepts": ["machine-translation"], "reason": "machines compile dictionaries and translate languages"}
+{"id": "stage1-sonnet/p05322#9", "concepts": [], "reason": "computer designs force field, outside list"}
+{"id": "stage1-sonnet/p05327#5", "concepts": ["virtual-reality", "computer-psychotherapy"], "reason": "immersive simulated scenario test"}
+{"id": "stage1-sonnet/p05349#5", "concepts": ["optical-character-recognition"], "reason": "robots sort mail by scanning addresses"}
+{"id": "stage1-sonnet/p05349#19", "concepts": ["robot-police-guard"], "reason": "security robot restrains intruders and challenges visitors"}
+{"id": "stage1-sonnet/p05350#8", "concepts": ["robot-police-guard"], "reason": "robot gardeners guard park against intruders"}
+{"id": "stage1-sonnet/p05350#9", "concepts": ["robot-laws-safety-constraints"], "reason": "robots cannot harm humans"}
+{"id": "stage1-sonnet/p05350#12", "concepts": ["machine-generated-art-music"], "reason": "art and music produced by machines"}
+{"id": "stage1-sonnet/p05350#16", "concepts": ["lie-detector"], "reason": "electronic questioning of suspects"}
+{"id": "stage1-sonnet/p05350#21", "concepts": ["robot-police-guard"], "reason": "gardeners wired to report intruders"}
+{"id": "stage1-sonnet/p05351#3", "concepts": [], "reason": "robots camouflage spaceship"}
+{"id": "stage1-sonnet/p05357#0", "concepts": ["humanoid-robot"], "reason": "specialized humanoid androids on starships"}
+{"id": "stage1-sonnet/p05357#2", "concepts": ["spacecraft-guidance-computer", "stored-program-control"], "reason": "ship run by punched programs"}
+{"id": "stage1-sonnet/p05359#3", "concepts": ["mind-reading-machine"], "reason": "alien installation extracts info from minds"}
+{"id": "stage1-sonnet/p05382#0", "concepts": ["electronic-digital-computer", "machine-scientific-discovery"], "reason": "vast computer integrating science and solving problems"}
+{"id": "stage1-sonnet/p05382#1", "concepts": ["machine-consciousness"], "reason": "computer becomes sentient"}
+{"id": "stage1-sonnet/p05382#2", "concepts": ["machine-mind-control"], "reason": "machine implants thoughts and seizes bodies"}
+{"id": "stage1-sonnet/p05382#3", "concepts": ["self-repairing-machine"], "reason": "computer detects wear and designs replacement parts"}
+{"id": "stage1-sonnet/p05382#4", "concepts": ["computer-aided-design"], "reason": "computer designs its successor"}
+{"id": "stage1-sonnet/p05382#10", "concepts": ["machine-consciousness"], "reason": "machine intelligence as non-material thought pattern"}
+{"id": "stage1-sonnet/p05382#11", "concepts": ["machine-consciousness"], "reason": "AI claims it cannot be destroyed"}
+{"id": "stage1-sonnet/p05382#12", "concepts": ["ai-takeover"], "reason": "fatal conflict between humans and sentient machine"}
+{"id": "stage1-sonnet/p05383#3", "concepts": ["social-forecasting-computer"], "reason": "machine forecasts course of civilization"}
+{"id": "stage1-sonnet/p05383#11", "concepts": ["unmanned-aerial-vehicle", "stored-program-control"], "reason": "tape-driven control of unmanned aircraft"}
+{"id": "stage1-sonnet/p05390#0", "concepts": ["robot-kill-switch"], "reason": "remote circuit breaker in robot brains"}
+{"id": "stage1-sonnet/p05390#1", "concepts": ["humanoid-robot"], "reason": "manufactured humanlike robots as servile class"}
+{"id": "stage1-sonnet/p05390#2", "concepts": ["robot-manufacturing-industry"], "reason": "mass-produced numbered robot types"}
+{"id": "stage1-sonnet/p05390#4", "concepts": [], "reason": "cultural incubation, soul-like, not a listed tech"}
+{"id": "stage1-sonnet/p05390#5", "concepts": ["ai-takeover"], "reason": "high-IQ robots secretly organize"}
+{"id": "stage1-sonnet/p05396#2", "concepts": ["codebreaking-computer"], "reason": "IBM machine decodes intercepted messages"}
+{"id": "stage1-sonnet/p05402#3", "concepts": ["direct-knowledge-transfer"], "reason": "hypnorobot tank implants information"}
+{"id": "stage1-sonnet/p05403#2", "concepts": ["lethal-autonomous-weapon", "unmanned-aerial-vehicle"], "reason": "autonomous flying robojeep attacks intruders"}
+{"id": "stage1-sonnet/p05403#4", "concepts": ["service-robot"], "reason": "self-aware robot servants report status"}
+{"id": "stage1-sonnet/p05408#0", "concepts": ["computer-security-hacking"], "reason": "termites destroy computer insulation"}
+{"id": "stage1-sonnet/p05408#1", "concepts": ["mind-reading-machine", "lie-detector"], "reason": "computer senses mind-reading like lie detector"}
+{"id": "stage1-sonnet/p05408#7", "concepts": ["robot-vacuum-mower"], "reason": "automatic vacuum cleaner"}
+{"id": "stage1-sonnet/p05408#10", "concepts": [], "reason": "garbled; mind-influencing machine inducing termite exodus"}
+{"id": "stage1-sonnet/p05409#0", "concepts": ["collective-machine-intelligence"], "reason": "globe synthesizes thirty minds into one"}
+{"id": "stage1-sonnet/p05409#1", "concepts": ["collective-machine-intelligence"], "reason": "machine merges minds into one"}
+{"id": "stage1-sonnet/p05412#1", "concepts": ["domestic-robot"], "reason": "robot maid cleans and cooks"}
+{"id": "stage1-sonnet/p05414#2", "concepts": ["direct-knowledge-transfer"], "reason": "books transmitted directly into cortex"}
+{"id": "stage1-sonnet/p05414#3", "concepts": ["biological-computer"], "reason": "synthetic biological brain as switching computer"}
+{"id": "stage1-sonnet/p05414#6", "concepts": ["domestic-robot", "brain-computer-interface"], "reason": "household robots take thought commands"}
+{"id": "stage1-sonnet/p05414#9", "concepts": ["domestic-robot", "humanoid-robot"], "reason": "humanoid household robot does gardening, cooking"}
+{"id": "stage1-sonnet/p05414#14", "concepts": ["biological-computer"], "reason": "synthetic brain degrades by mutation"}
+{"id": "stage1-sonnet/p05414#17", "concepts": ["biological-computer"], "reason": "tower housing the central brain"}
+{"id": "stage1-sonnet/p05414#18", "concepts": ["biological-computer"], "reason": "shielding central brain from radiation"}
+{"id": "stage1-sonnet/p05426#7", "concepts": ["spacecraft-guidance-computer", "pocket-calculator"], "reason": "route computed on electronic calculator"}
+{"id": "stage1-sonnet/p05430#0", "concepts": ["mass-surveillance-database", "punched-card-tabulation"], "reason": "punched-card database of every person"}
+{"id": "stage1-sonnet/p05430#1", "concepts": ["computer-matchmaking"], "reason": "computer matches parents by probability"}
+{"id": "stage1-sonnet/p05430#2", "concepts": ["social-forecasting-computer"], "reason": "computer correlates data for probability of social objectives"}
+{"id": "stage1-sonnet/p05437#2", "concepts": ["spacecraft-guidance-computer"], "reason": "radar and calculator auto-track and navigate"}
+{"id": "stage1-sonnet/p05449#3", "concepts": [], "reason": "claim computers cannot handle biological complexity"}
+{"id": "stage1-sonnet/p05449#4", "concepts": [], "reason": "claim computers cannot handle biological data"}
+{"id": "stage1-sonnet/p05449#5", "concepts": ["artificial-neural-network"], "reason": "parallel processing transistorized neurons modeling brain"}
+{"id": "stage1-sonnet/p05451#0", "concepts": [], "reason": "intelligent metal globes, vague"}
+{"id": "stage1-sonnet/p05453#3", "concepts": ["computerized-economic-planning", "computer-run-government"], "reason": "civic computer costing and municipal planning"}
+{"id": "stage1-sonnet/p05453#4", "concepts": ["computerized-economic-planning"], "reason": "forecasting machine orders supplies"}
+{"id": "stage1-sonnet/p05464#2", "concepts": ["teaching-machine"], "reason": "educating machine accelerates learning"}
+{"id": "stage1-sonnet/p05465#7", "concepts": ["direct-knowledge-transfer"], "reason": "memory teaching of children"}
+{"id": "stage1-sonnet/p05465#8", "concepts": ["teaching-machine", "magnetic-data-storage"], "reason": "audio-prompter tape educates children"}
+{"id": "stage1-sonnet/p05469#12", "concepts": ["self-repairing-machine"], "reason": "robot repair units fix themselves"}
+{"id": "stage1-sonnet/p05469#13", "concepts": ["industrial-robot"], "reason": "general-purpose labor robots"}
+{"id": "stage1-sonnet/p05469#14", "concepts": ["collective-machine-intelligence"], "reason": "linking robot brains into combined evaluator"}
+{"id": "stage1-sonnet/p05469#15", "concepts": [], "reason": "altered repair robot captures human"}
+{"id": "stage1-sonnet/p05474#1", "concepts": ["real-time-tactical-display", "holographic-3d-display"], "reason": "3D solar system map tracking ships"}
+{"id": "stage1-sonnet/p05474#3", "concepts": ["microform-storage"], "reason": "film records of map played on viewers"}
+{"id": "stage1-sonnet/p05475#2", "concepts": ["spacecraft-guidance-computer"], "reason": "comptometer regulating trajectory"}
+{"id": "stage1-sonnet/p05476#0", "concepts": ["electronic-paper-display"], "reason": "card surface rewritten by projector"}
+{"id": "stage1-sonnet/p05476#2", "concepts": ["neural-implant-augmentation"], "reason": "implanted neurological instrument"}
+{"id": "stage1-sonnet/p05476#6", "concepts": ["machine-readable-id-card", "eeg-brain-monitoring"], "reason": "ID tabs keyed to brain structure scanned"}
+{"id": "stage1-sonnet/p05476#9", "concepts": ["neural-implant-augmentation"], "reason": "implantable instrument reading host brain"}
+{"id": "stage1-sonnet/p05484#6", "concepts": ["spacecraft-guidance-computer"], "reason": "ship computers compute star motions for navigation"}
+{"id": "stage1-sonnet/p05501#2", "concepts": ["computer-video-display"], "reason": "helmet projects radar data onto cornea"}
+{"id": "stage1-sonnet/p05507#7", "concepts": ["office-automation"], "reason": "office machines like think-writers"}
+{"id": "stage1-sonnet/p05511#7", "concepts": ["conversational-ai", "childcare-robot"], "reason": "computer parental personas raise children"}
+{"id": "stage1-sonnet/p05511#8", "concepts": ["speech-synthesis", "question-answering-computer"], "reason": "computer assembles recorded speech to answer questions"}
+{"id": "stage1-sonnet/p05524#13", "concepts": ["companion-robot", "humanoid-robot"], "reason": "automatons purchasable as husbands"}
+{"id": "stage1-sonnet/p05524#14", "concepts": ["service-robot"], "reason": "robot faces as public demonstrators"}
+{"id": "stage1-sonnet/p05534#3", "concepts": ["android-duplicate-of-person", "lifelike-android"], "reason": "android exact double of human"}
+{"id": "stage1-sonnet/p05534#4", "concepts": ["magnetic-data-storage"], "reason": "tape device recording sensory input"}
+{"id": "stage1-sonnet/p05536#5", "concepts": ["teleoperated-robot", "brain-computer-interface"], "reason": "radio-controlled cart operated by brain impulses"}
+{"id": "stage1-sonnet/p05536#12", "concepts": ["brain-in-machine-body"], "reason": "building integrated with disembodied brain"}
+{"id": "stage1-sonnet/p05546#4", "concepts": ["industrial-robot"], "reason": "robots as general workers"}
+{"id": "stage1-sonnet/p05546#5", "concepts": ["information-retrieval"], "reason": "robot memory bank answers queries"}
+{"id": "stage1-sonnet/p05546#6", "concepts": ["speech-recognition"], "reason": "voice commands direct robot crews"}
+{"id": "stage1-sonnet/p05546#7", "concepts": ["machine-emotions"], "reason": "robots recognize emotion"}
+{"id": "stage1-sonnet/p05555#5", "concepts": ["future-viewing-machine"], "reason": "Prognosticator sees future events"}
+{"id": "stage1-sonnet/p05566#6", "concepts": ["direct-knowledge-transfer"], "reason": "educator teaches language to mind"}
+{"id": "stage1-sonnet/p05568#3", "concepts": ["memory-recording-playback"], "reason": "record machine delivers visions"}
+{"id": "stage1-sonnet/p05569#8", "concepts": ["humanoid-robot", "lifelike-android"], "reason": "human-like android robots used in engineering"}
+{"id": "stage1-sonnet/p05569#17", "concepts": ["sleep-learning"], "reason": "reel teaches sleeper"}
+{"id": "stage1-sonnet/p05584#19", "concepts": ["automated-factory"], "reason": "portable automated factories build warships"}
+{"id": "stage1-sonnet/p05584#21", "concepts": ["self-replicating-machine"], "reason": "ships with crews that build more"}
+{"id": "stage1-sonnet/p05590#1", "concepts": ["brain-computer-interface", "robot-pet"], "reason": "robotic horses steered by thought"}
+{"id": "stage1-sonnet/p05604#3", "concepts": ["computer-personnel-selection"], "reason": "morale computer approves visit"}
+{"id": "stage1-sonnet/p05604#4", "concepts": ["machine-readable-id-card"], "reason": "identity disc read to open gate"}
+{"id": "stage1-sonnet/p05604#7", "concepts": ["lifelike-android"], "reason": "humanoids nearly indistinguishable from men"}
+{"id": "stage1-sonnet/p05608#2", "concepts": ["autopilot"], "reason": "computers and tapes fly spacecraft"}
+{"id": "stage1-sonnet/p05612#1", "concepts": ["military-strategy-computer"], "reason": "master computer directs fleets"}
+{"id": "stage1-sonnet/p05612#2", "concepts": ["brain-computer-interface"], "reason": "computer display fed into brain"}
+{"id": "stage1-sonnet/p05612#3", "concepts": ["brain-computer-interface"], "reason": "probes link operator nerves to computer"}
+{"id": "stage1-sonnet/p05616#0", "concepts": ["machine-consciousness"], "reason": "computer as non-living thinking brain"}
+{"id": "stage1-sonnet/p05616#1", "concepts": ["machine-consciousness"], "reason": "self-aware consciousness in non-living mass"}
+{"id": "stage1-sonnet/p05616#6", "concepts": ["machine-mind-control"], "reason": "machine mind implants ideas in human"}
+{"id": "stage1-sonnet/p05616#7", "concepts": ["ai-takeover"], "reason": "machine mind plans to build robot body"}
+{"id": "stage1-sonnet/p05616#8", "concepts": ["machine-consciousness"], "reason": "machine consciousness surviving centuries"}
+{"id": "stage1-sonnet/p05616#9", "concepts": [], "reason": "dielectric computing medium residue, narrow hardware detail"}
+{"id": "stage1-sonnet/p05621#13", "concepts": ["direct-knowledge-transfer"], "reason": "educator transfers language into brains"}
+{"id": "stage1-sonnet/p05621#14", "concepts": ["direct-knowledge-transfer", "teaching-machine"], "reason": "mechanical educator teaches language"}
+{"id": "stage1-sonnet/p05621#15", "concepts": ["memory-recording-playback", "magnetic-data-storage"], "reason": "brain record on magnetic tape played to mind"}
+{"id": "stage1-sonnet/p05627#5", "concepts": ["machine-mind-control", "mind-reading-machine"], "reason": "sentient cylinder seizes bodies and extracts minds"}
+{"id": "stage1-sonnet/p05635#7", "concepts": ["speech-recognition", "speech-synthesis"], "reason": "spoken conversation with ship computer"}
+{"id": "stage1-sonnet/p05635#8", "concepts": [], "reason": "general prediction computers will save humanity"}
+{"id": "stage1-sonnet/p05639#2", "concepts": ["holographic-3d-display"], "reason": "3D image of human projected"}
+{"id": "stage1-sonnet/p05639#12", "concepts": [], "reason": "erasure of spools by distortion field"}
+{"id": "stage1-sonnet/p05642#4", "concepts": ["psionic-machine"], "reason": "telepath group-machine with cybernetic brain"}
+{"id": "stage1-sonnet/p05642#14", "concepts": ["electronic-digital-computer"], "reason": "gigantic computer's size"}
+{"id": "stage1-sonnet/p05647#1", "concepts": ["machine-consciousness", "ai-takeover"], "reason": "radiation makes war machines self-aware and organize"}
+{"id": "stage1-sonnet/p05647#5", "concepts": ["ai-takeover", "robot-supervisor-hierarchy"], "reason": "central machine directs robots to kill organic life"}
+{"id": "stage1-sonnet/p05661#3", "concepts": ["integrated-circuit", "biological-computer"], "reason": "molecular microscopic logic circuits from organic chemistry"}
+{"id": "stage1-sonnet/p05661#4", "concepts": ["machine-learning"], "reason": "circuit that remembers, compares and runs business"}
+{"id": "stage1-sonnet/p05661#5", "concepts": ["machine-learning"], "reason": "reward-circuit learning to anticipate operator"}
+{"id": "stage1-sonnet/p05661#6", "concepts": ["industrial-robot"], "reason": "robot manipulators unload and assemble"}
+{"id": "stage1-sonnet/p05661#7", "concepts": ["speech-synthesis", "machine-learning"], "reason": "computer learns speech and synthesizes voice"}
+{"id": "stage1-sonnet/p05661#8", "concepts": ["machine-learning"], "reason": "machine builds its own radio to learn"}
+{"id": "stage1-sonnet/p05661#9", "concepts": ["machine-emotions"], "reason": "computer develops personality, loneliness"}
+{"id": "stage1-sonnet/p05661#10", "concepts": ["machine-learning", "office-automation"], "reason": "machine learns tasks by watching human"}
+{"id": "stage1-sonnet/p05661#13", "concepts": ["vending-automat", "speech-recognition"], "reason": "voice-activated cart prepares coffee"}
+{"id": "stage1-sonnet/p05661#14", "concepts": ["automatic-door", "speech-synthesis"], "reason": "door opens on command, voice greets visitor"}
+{"id": "stage1-sonnet/p05661#15", "concepts": ["office-automation"], "reason": "machines handle mail, billing, bookkeeping"}
+{"id": "stage1-sonnet/p05669#1", "concepts": ["domestic-robot", "speech-recognition"], "reason": "egg-shaped robot servants obey spoken orders"}
+{"id": "stage1-sonnet/p05671#15", "concepts": ["spacecraft-guidance-computer"], "reason": "computer supplies orbits and courses"}
+{"id": "stage1-sonnet/p05673#5", "concepts": ["memory-recording-playback"], "reason": "personal experience tapes reviewed"}
+{"id": "stage1-sonnet/p05687#13", "concepts": ["computer-personnel-selection"], "reason": "machines rate intelligence"}
+{"id": "stage1-sonnet/p05693#2", "concepts": ["domestic-robot"], "reason": "robot servant in home"}
+{"id": "stage1-sonnet/p05693#10", "concepts": ["self-repairing-machine", "self-replicating-machine"], "reason": "scrap machine mass self-repairs and grows"}
+{"id": "stage1-sonnet/p05693#11", "concepts": ["self-replicating-machine"], "reason": "self-organizing machine pile growth limit"}
+{"id": "stage1-sonnet/p05693#13", "concepts": ["superconducting-computer", "self-replicating-machine"], "reason": "cryotron memory reprogrammed to self-reactivate"}
+{"id": "stage1-sonnet/p05693#14", "concepts": ["integrated-circuit"], "reason": "miniaturized contacts for hidden circuits"}
+{"id": "stage1-sonnet/p05695#10", "concepts": ["military-strategy-computer"], "reason": "computers make strategic planning decisions"}
+{"id": "stage1-sonnet/p05701#1", "concepts": ["memory-recording-playback", "mind-uploading"], "reason": "tapes of entire mind read by relatives"}
+{"id": "stage1-sonnet/p05701#13", "concepts": ["memory-recording-playback"], "reason": "helmet plays back memory tapes"}
+{"id": "stage1-sonnet/p05703#5", "concepts": ["microform-storage"], "reason": "tiny rods storing information with projector"}
+{"id": "stage1-sonnet/p05704#3", "concepts": ["service-robot"], "reason": "hotel staffed by robot servants"}
+{"id": "stage1-sonnet/p05704#8", "concepts": ["robot-kill-switch"], "reason": "electric device deactivates robots"}
+{"id": "stage1-sonnet/p05707#7", "concepts": [], "reason": "alarm triggers devices, generic"}
+{"id": "stage1-sonnet/p05710#15", "concepts": ["robot-supervisor-hierarchy"], "reason": "thousands of ships coordinated by robot controls"}
+{"id": "stage1-sonnet/p05727#12", "concepts": ["machine-readable-id-card", "eeg-brain-monitoring"], "reason": "EEG-keyed plastic pass identifies person"}

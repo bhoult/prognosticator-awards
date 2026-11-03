@@ -1,0 +1,120 @@
+{"pair": "q0001", "score": 0.5, "rationale": "Machines that automatically carry out calculus match the differential analyzer's function. The quote gives no mechanism."}
+{"pair": "q0002", "score": 0.25, "rationale": "A mechanical globe that computes distances is a calculating device but not an equation-solving analog machine. It only loosely points at the differential analyzer."}
+{"pair": "q0003", "score": 0.5, "rationale": "A machine that performs integration matches the differential analyzer's function. The mechanism is vague and the claimed power is exaggerated."}
+{"pair": "q0004", "score": 0.5, "rationale": "An MIT integrating machine solving large equation problems closely echoes the Bush analyzer's function. The quote is vague on mechanism and says it was already built by 1929."}
+{"pair": "q0016", "score": 0.25, "rationale": "A 'similacrum' of a person points toward a person-copy robot, but the quote gives almost nothing about how it works."}
+{"pair": "q0017", "score": 0.25, "rationale": "Quick-made duplicates of a person are evocative of person copies, but the fading memory impression is a different mechanism from a teleoperated android."}
+{"pair": "q0018", "score": 0.5, "rationale": "A humandroid built to look and talk exactly like a specific famous person matches the person-copy function. The mechanism is not described."}
+{"pair": "q0019", "score": 0.5, "rationale": "An electronic duplicate that stands in for a person socially matches the stand-in function of a person-copy android. The quote has no mechanism."}
+{"pair": "q0020", "score": 0.5, "rationale": "An android double of a man works in his place and is controlled by its maker, which matches the stand-in function. The mechanism of the control is vague."}
+{"pair": "q0021", "score": 0.5, "rationale": "An android duplicate of a specific human matches the function, though the quote emphasizes autonomous abilities rather than a teleoperated double."}
+{"pair": "q0022", "score": 0.25, "rationale": "Only a replica city is stated in the quote. It points loosely toward duplication but not to a robot copy of a person."}
+{"pair": "q0023", "score": 0.75, "rationale": "A remotely run electronic proxy of a specific person matches the teleoperated android double. The context (a revenge plot) differs."}
+{"pair": "q0024", "score": 0.25, "rationale": "A robot dupe of a human is in the right direction, but it is an autonomous spy unaware of its nature, unlike a teleoperated copy."}
+{"pair": "q0025", "score": 0.5, "rationale": "A humanoid robot with the original owner's features matches the look-alike function. The mind transplant mechanism differs from teleoperation."}
+{"pair": "q0026", "score": 0.75, "rationale": "Roboids built as remote-controlled stand-ins for a specific person closely match a teleoperated android copy. The context is fictional impersonation."}
+{"pair": "q0027", "score": 0.5, "rationale": "A perfect human replica robot with a copied brain pattern matches the copy function. The mechanism (brain transfer) differs from teleoperation."}
+{"pair": "q0028", "score": 0.5, "rationale": "Android bodies operated by remote control by a human as public stand-ins match the teleoperation mechanism. The quote does not say they duplicate the operator's appearance."}
+{"pair": "q0029", "score": 0.5, "rationale": "A device making practical androids that copy a person matches the function. The mechanism is only a named gadget."}
+{"pair": "q0030", "score": 0.5, "rationale": "A physically identical duplicate android of a specific person matches the function. The recorded-mind mechanism is not teleoperation."}
+{"pair": "q0031", "score": 0.75, "rationale": "An android double of its owner with remote controls matches the teleoperated copy and its key mechanism. It also carries a recorded mind, which differs from the real case."}
+{"pair": "q0032", "score": 0.5, "rationale": "An android duplicate of a named person used to impersonate him matches the function. The mechanism is not described."}
+{"pair": "q0033", "score": 0.5, "rationale": "A lifelike robot made in a specific woman's image matches the function. The quote shows a companion doll with no mechanism."}
+{"pair": "q0034", "score": 0.5, "rationale": "Android duplicates of workers made from a likeness and used as stand-ins match the function, with no mechanism given."}
+{"pair": "q0035", "score": 0.25, "rationale": "A robot carrying its creator's mind is an evocative copy, but no physical double of the person is stated."}
+{"pair": "q0036", "score": 0.5, "rationale": "A humanoid robot double impersonating a particular man matches the function, with no mechanism given."}
+{"pair": "q0037", "score": 0.5, "rationale": "An android that duplicates a specific human exactly matches the function. The mechanism is not described."}
+{"pair": "q0038", "score": 0.25, "rationale": "A robot that is a magnified version of its creator is only loosely a copy of a person, and it is meant to surpass him."}
+{"pair": "q0039", "score": 0.5, "rationale": "Androids that duplicate specific individuals match the function, with no mechanism given."}
+{"pair": "q0040", "score": 0.5, "rationale": "An android self that is a duplicate of a person matches the function, with no mechanism given."}
+{"pair": "q0041", "score": 0.25, "rationale": "A brain with neuron-like circuits between cells is evocative of neural networks. It arises naturally and has no learning or computing mechanism."}
+{"pair": "q0042", "score": 0.25, "rationale": "The quote only says the best pattern would be the human brain. It points toward brain-modelled computing but loosely."}
+{"pair": "q0043", "score": 0.25, "rationale": "A superhuman problem-solving machine suggests a thinking computer. Nothing here describes interconnected neuron-like units or learning."}
+{"pair": "q0044", "score": 0.25, "rationale": "Mechanical glands and fluid pumping are brain-like but unrelated to neuron-unit computing, so the match is only evocative."}
+{"pair": "q0045", "score": 0.25, "rationale": "Radioactive pyramidal cells hint at neuron-like computing units, but there is no network or learning mechanism."}
+{"pair": "q0046", "score": 0.5, "rationale": "A mechanical cortex of billions of electronic cells matches the function of many neuron-like units. The mechanism of learning is missing."}
+{"pair": "q0047", "score": 0.5, "rationale": "A machine with two nerve-cell equivalents showing lifelike behavior matches a small neuron-unit network. Learning is not stated."}
+{"pair": "q0048", "score": 0.25, "rationale": "A brain-scale count of synapses is evocative of a neural network, but memory by notched molecules is a different mechanism."}
+{"pair": "q0049", "score": 0.25, "rationale": "Circuits imitating nerve tissue function in simple robots are in the right direction, but there are no interconnected units that learn."}
+{"pair": "q0050", "score": 0.25, "rationale": "A compact brain made of neuron-like components is loosely suggestive of a neural network, with no learning or mechanism."}
+{"pair": "q0051", "score": 0.25, "rationale": "A glass-tube brain filled with nerve fluid is brain-like but a different mechanism from computed neuron units."}
+{"pair": "q0052", "score": 0.25, "rationale": "A walk-in artificial brain is a vague gesture toward brain-modelled machines only."}
+{"pair": "q0053", "score": 0.5, "rationale": "Artificial nerves wired to sensors and learned sounds match learning in a neuron-like network. The mechanism is vague and not the Perceptron's."}
+{"pair": "q0054", "score": 0.25, "rationale": "Pumping nerve fluid into an artificial brain is only loosely suggestive of a neural network."}
+{"pair": "q0055", "score": 0.25, "rationale": "The quote only reports an expensive man-made brain sitting idle. It points toward artificial brains loosely."}
+{"pair": "q0056", "score": 0.25, "rationale": "Computers that are electronic analogues of living brains suggest brain-modelled computing, but there are no units or learning."}
+{"pair": "q0060", "score": 0.25, "rationale": "A machine with sensitive organs acting independently is in the area of machine sensing. It describes an autonomous mind rather than an odour or touch sensor."}
+{"pair": "q0061", "score": 0.25, "rationale": "Machines given an ear, an eye and a brain are evocative of artificial senses, but they are not touch, taste or smell."}
+{"pair": "q0062", "score": 0.25, "rationale": "Photo-electric eyes seeing beyond human range involve vision, not smell or touch, so the match is loose."}
+{"pair": "q0063", "score": 0.25, "rationale": "A robot dowsing sense is an extra artificial sense in a loose way, but it is not chemical sensing of odour."}
+{"pair": "q0064", "score": 0.5, "rationale": "Taste sensors on a robot for tasting food match the chemical-sensing function. The mechanism is not given."}
+{"pair": "q0065", "score": 0.25, "rationale": "Distress signals from a warm joint are a loose analogue of touch sensors, with no relation to an electronic nose."}
+{"pair": "q0066", "score": 0.5, "rationale": "A machine whose senses include detecting the smell of a room matches artificial olfaction in function, with no mechanism stated."}
+{"pair": "q0067", "score": 0.25, "rationale": "Eye-lenses and ear-drums that trigger distress calls are an evocative sensing idea, but not smell or touch."}
+{"pair": "q0068", "score": 0.25, "rationale": "Hearing beyond human range is in the concept's scope but far from the electronic nose milestone."}
+{"pair": "q0069", "score": 0.75, "rationale": "Nose sensors that judge ripeness closely match electronic nose use, with sensors detecting odour. The robot context differs."}
+{"pair": "q0070", "score": 0.25, "rationale": "Fingertip thermocouples are touch-like sensors, but the lie-detector function is quite different."}
+{"pair": "q0071", "score": 0.25, "rationale": "More sensory devices for judging facts is vague and unrelated to smell or touch specifically."}
+{"pair": "q0072", "score": 0.5, "rationale": "Fully automatic power machinery needing a few attendants matches a nearly unattended plant. The mechanism is not described."}
+{"pair": "q0073", "score": 0.5, "rationale": "Complete mass-production factories turning out ships continuously match automated production in function. The mining and transmutation details are fantastical."}
+{"pair": "q0074", "score": 0.5, "rationale": "A machine that adjusts all other machines from control-room orders matches automated plant control, though not a fully unattended plant."}
+{"pair": "q0075", "score": 0.5, "rationale": "Machines that run with no maintenance or attention match unattended operation in function, with no mechanism."}
+{"pair": "q0076", "score": 0.5, "rationale": "Fully automatic spare-parts factories that make a system self-sufficient match automated production, with no mechanism."}
+{"pair": "q0077", "score": 0.5, "rationale": "Machines working with no operator on site match unattended operation, but it is installation work, not a factory."}
+{"pair": "q0078", "score": 0.25, "rationale": "A cybernetic control system for reactors is automation of a plant, but safety control rather than unattended running."}
+{"pair": "q0079", "score": 0.75, "rationale": "A self-sustaining automated factory that builds and repairs robots with no supervision closely matches a robots-making-robots plant. The atomic pile and timespan differ."}
+{"pair": "q0080", "score": 0.25, "rationale": "Machines to run the machines is a vague gesture at self-maintaining automation."}
+{"pair": "q0081", "score": 0.5, "rationale": "A self-sustaining robot-operated station running without crew matches unattended operation, but it is a station rather than a factory."}
+{"pair": "q0082", "score": 0.25, "rationale": "Factory machines controlled by brain-analogue computers gesture at automation, but unattended running is not stated."}
+{"pair": "q0083", "score": 0.25, "rationale": "Machines controlled by computers copying a human mind are only loosely related to unattended factory automation."}
+{"pair": "q0084", "score": 0.5, "rationale": "One cybernetic brain controlling quality across all factories matches centralised automated plant control, though it is not stated to run without workers."}
+{"pair": "q0085", "score": 0.25, "rationale": "Gadgets that take care of themselves are a loose hint of self-running systems."}
+{"pair": "q0086", "score": 0.25, "rationale": "Self-maintaining caretaker islands are a loose analogue of self-maintaining plant."}
+{"pair": "q0087", "score": 0.25, "rationale": "An automated complex running outside human control points loosely at automated plant."}
+{"pair": "q0088", "score": 0.25, "rationale": "Robot controls that do the observers' work are partial automation, not a self-running plant."}
+{"pair": "q0089", "score": 0.25, "rationale": "A control panel for a power plant operated by a wired-in human is a loose fit, since it is not unattended."}
+{"pair": "q0090", "score": 0.5, "rationale": "Robot postal stations sorting mail in bulk match unattended automated processing in function. It is a postal plant rather than a factory."}
+{"pair": "q0091", "score": 0.5, "rationale": "Programmed heads producing completed modules in a near-continuous stream match automated manufacturing in function. Unattended running is not stated."}
+{"pair": "q0092", "score": 0.25, "rationale": "Automated equipment with failover channels is reliability for automation in general and not a plant running unattended."}
+{"pair": "q0093", "score": 0.5, "rationale": "A fully automated assembly line matches the function, with no mechanism or unattended detail."}
+{"pair": "q0094", "score": 0.25, "rationale": "A list of robot and machine-supervisor staff points loosely to automated plants with few workers."}
+{"pair": "q0095", "score": 0.25, "rationale": "Getting machines and robot workers is a loose gesture at automated production."}
+{"pair": "q0096", "score": 0.5, "rationale": "Entirely automatic stations needing no human match unattended plant operation in function. The mechanism is only 'cybernetic'."}
+{"pair": "q0097", "score": 0.25, "rationale": "An assembly-line process turning out a car every fifteen minutes is an inspection line and not a self-running plant."}
+{"pair": "q0098", "score": 0.5, "rationale": "Doors opening at a wave of the hand match automatic doors triggered by sensing a person. The mechanism is not described."}
+{"pair": "q0099", "score": 0.5, "rationale": "A conventional electric eye at the door matches sensor-triggered doors, though the point is the voice screening."}
+{"pair": "q0100", "score": 0.5, "rationale": "A panel sliding open on a photo-electronic trigger matches a sensor door. A ring key is the trigger, which differs from presence sensing."}
+{"pair": "q0101", "score": 0.25, "rationale": "A voice-identifying entry system is access control, not a sensor door that opens for approach."}
+{"pair": "q0102", "score": 0.25, "rationale": "Gates that recognise a person and open are access control by recognition, a loose match."}
+{"pair": "q0103", "score": 0.25, "rationale": "A door rising at a voice is an automatic door but with a voice trigger, not presence sensing."}
+{"pair": "q0104", "score": 0.25, "rationale": "A card-reading gate is access control. It is only loosely like a sensor door."}
+{"pair": "q0105", "score": 0.25, "rationale": "Body inductance triggers a butler that speaks. It is presence detection but it does not open a door."}
+{"pair": "q0106", "score": 0.25, "rationale": "Fingerprint-scanner door locks are identity access control, a loose match to sensor doors."}
+{"pair": "q0107", "score": 0.25, "rationale": "A door that opens to a spoken name is voice access control, a loose match."}
+{"pair": "q0108", "score": 0.25, "rationale": "A door opening to a whistled code word is voice-triggered, a loose match to sensor doors."}
+{"pair": "q0109", "score": 0.25, "rationale": "Crossing an electronic beam triggers a voice message. The beam is a sensor, but it does not open the door."}
+{"pair": "q0110", "score": 0.25, "rationale": "A scanner that identifies a person and opens the door is access control rather than a sensor door."}
+{"pair": "q0111", "score": 0.25, "rationale": "A door opening on a fingerprint imprint is biometric access control, a loose match."}
+{"pair": "q0112", "score": 0.25, "rationale": "A door opening to a thumb on an identity plate is biometric access control, a loose match."}
+{"pair": "q0113", "score": 0.5, "rationale": "A door that opens by itself without a visible photo-electric eye matches automatic opening on approach, though the voice identification differs."}
+{"pair": "q0116", "score": 0.25, "rationale": "A machine acting independently in response to its sensory inputs is loosely autopilot-like, but the quote does not describe flight control."}
+{"pair": "q0185", "score": 0.25, "rationale": "A helium brain with neuron-like circuits is a loosely evocative natural brain. It is not computing with biological molecules."}
+{"pair": "q0186", "score": 0, "rationale": "A brain built of condensers and relays is electronic, not biological, so it is not the same thing as a biological computer."}
+{"pair": "q0187", "score": 0.25, "rationale": "A glass-tube brain filled with nerve fluid is evocative of a wet biological computer, with nothing about computation."}
+{"pair": "q0188", "score": 0.25, "rationale": "A tubing brain activated by nerve fluid is loosely evocative of a biological computer."}
+{"pair": "q0189", "score": 0.25, "rationale": "A substance mixture that duplicates thinking and is used in calculators hints at chemical computing, but loosely."}
+{"pair": "q0190", "score": 0.25, "rationale": "A chemical nerve fluid that makes a brain work is only loosely like biomolecular computing."}
+{"pair": "q0191", "score": 0.25, "rationale": "A molecular chain reaction carrying impulses is molecular signalling, but it is not computing as in DNA computing."}
+{"pair": "q0192", "score": 0.25, "rationale": "A large mass of artificial brain tissue as an advisory store is a loose analogue of a biological computer."}
+{"pair": "q0193", "score": 0.25, "rationale": "A chemical goop that stores memory like a brain points at molecular information storage. It does not compute."}
+{"pair": "q0194", "score": 0.25, "rationale": "A part-organic artificial brain is in the direction of a biological computer, with no computing mechanism."}
+{"pair": "q0195", "score": 0.25, "rationale": "The quote only gives a brain-switching-operations number, so it is loose. The living computing component is evocative of a biological computer."}
+{"pair": "q0196", "score": 0.25, "rationale": "Human components in a machine that can reprogram themselves are a living-computer idea, but loosely."}
+{"pair": "q0197", "score": 0.25, "rationale": "A human turned into a control component of machinery is an evocative living-computer idea, not molecular computation."}
+{"pair": "q0198", "score": 0.25, "rationale": "A human used as a process controller sending binary signals is a loose living-computer idea."}
+{"pair": "q0199", "score": 0.5, "rationale": "Linked brains in a nutrient tank forming one computing unit match computing with living matter. The mechanism differs from DNA molecules."}
+{"pair": "q0200", "score": 0.25, "rationale": "Linked humans operating binary switches is a loose living-controller idea."}
+{"pair": "q0201", "score": 0.5, "rationale": "Organic compounds arranged as microscopic logic circuits match molecular computing in function. The mechanism is not stated to be DNA or biological."}
+{"pair": "q0202", "score": 0.5, "rationale": "Protoplasmic computers that plan operations match computing with organic matter in function, with no mechanism."}
+{"pair": "q0203", "score": 0.25, "rationale": "A synthetic brain with axons that degrade by mutation is loosely biological computing, with no computation described."}
+{"pair": "q0204", "score": 0, "rationale": "A tower housing a central brain is not described as biological computing or as anything close to the milestone."}

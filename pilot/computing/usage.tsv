@@ -1,0 +1,34 @@
+agent	step	purpose	model	total_tokens	tool_uses	seconds
+A01	1	propose concepts from descriptions, half 1	claude-sonnet-5-5	112717	4	112
+A02	1	propose concepts from descriptions, half 2	claude-sonnet-5-5	127752	4	171
+A05	2	milestones batch 3 (22 concepts)	claude-sonnet-5-5	74572	13	61
+A08	2	milestones batch 6 (21 concepts)	claude-sonnet-5-5	80657	17	74
+A03	2	milestones batch 1 (22 concepts)	claude-sonnet-5-5	96497	32	106
+A10	3	match claims batch 02 (222 claims)	claude-sonnet-5-5	95314	7	79
+A06	2	milestones batch 4 (22 concepts)	claude-sonnet-5-5	102247	33	141
+A07	2	milestones batch 5 (22 concepts)	claude-sonnet-5-5	103954	26	132
+A09	3	match claims batch 01 (222 claims)	claude-sonnet-5-5	101466	7	117
+A04	2	milestones batch 2 (22 concepts)	claude-sonnet-5-5	100572	27	200
+A13	3	match claims batch 05	claude-sonnet-5-5	96978	7	91
+A18	3	match claims batch 10	claude-sonnet-5-5	90620	7	85
+A19	3	match claims batch 11	claude-sonnet-5-5	96347	7	82
+A20	3	match claims batch 12	claude-sonnet-5-5	94969	6	88
+A14	3	match claims batch 06	claude-sonnet-5-5	105550	9	124
+A16	3	match claims batch 08	claude-sonnet-5-5	106692	9	128
+A17	3	match claims batch 09	claude-sonnet-5-5	107456	9	122
+A15	3	match claims batch 07	claude-sonnet-5-5	110132	9	150
+A11	3	match claims batch 03	claude-sonnet-5-5	118031	11	194
+A12	3	match claims batch 04	claude-sonnet-5-5	89547	7	199
+A26	4	judge batch 06	claude-sonnet-5-5	92733	6	77
+A23	4	judge batch 03	claude-sonnet-5-5	94900	6	86
+A25	4	judge batch 05	claude-sonnet-5-5	93888	9	85
+A28	4	judge batch 08	claude-sonnet-5-5	85105	6	78
+A29	4	judge batch 09	claude-sonnet-5-5	82294	6	86
+A30	4	judge batch 10	claude-sonnet-5-5	79979	8	90
+A31	4	judge batch 11	claude-sonnet-5-5	95326	7	85
+A32	4	judge batch 12	claude-sonnet-5-5	83213	6	77
+A24	4	judge batch 04	claude-sonnet-5-5	84027	8	93
+A27	4	judge batch 07	claude-sonnet-5-5	84298	8	95
+A21	4	judge batch 01	claude-sonnet-5-5	86743	7	104
+A22	4	judge batch 02	claude-sonnet-5-5	97546	9	112
+A33	4	re-judge batch 05 (template rationales) + 7 robot-mower pairs	claude-sonnet-5-5	97743	6	109

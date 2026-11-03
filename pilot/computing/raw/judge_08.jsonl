@@ -1,0 +1,120 @@
+{"pair": "q1254", "score": 0.25, "rationale": "Extracting information from minds loosely points to brain decoding. The passage has no specific thought or image reconstruction, and the mechanism is unspecified."}
+{"pair": "q1255", "score": 0.25, "rationale": "Probing a mind for thoughts points toward brain decoding, but no mechanism is given. fMRI movie reconstruction is far more limited."}
+{"pair": "q1256", "score": 0.25, "rationale": "A probe that extracts memories directly is the right general idea, but it is vague. The real work reconstructed only approximate viewed video."}
+{"pair": "q1257", "score": 0.25, "rationale": "A deep-probe device reading a person is evocative of brain decoding with no mechanism. The real development is far more limited."}
+{"pair": "q1258", "score": 0.25, "rationale": "Predicting actions seconds ahead from muscular and nervous preparation is not reading thoughts or images. It only loosely points toward neural decoding."}
+{"pair": "q1259", "score": 0.25, "rationale": "A shielded room like those used for encephalographic analysis, with mental activity analyzed, loosely resembles brain scanning. It does not say specific thoughts or images are read."}
+{"pair": "q1260", "score": 0, "rationale": "The machine detects that a mind is being read, which is not reading a person's thoughts."}
+{"pair": "q1261", "score": 0, "rationale": "The device cannot detect telepathy or mind-reading, which is not thought decoding."}
+{"pair": "q1262", "score": 0.5, "rationale": "Electrical brain patterns are read remotely by radio waves, so the function of reading thoughts matches. fMRI works by different physics and is not remote."}
+{"pair": "q1263", "score": 0.25, "rationale": "A helmet scan reading someone's psychology loosely resembles brain scanning. It does not say thoughts or images are decoded."}
+{"pair": "q1264", "score": 0.5, "rationale": "Detecting brain waves that carry individual words matches reading specific thoughts from the brain. It resembles EEG sensing but gives no mechanism for the decoding."}
+{"pair": "q1265", "score": 0.5, "rationale": "A machine that records the audience's thought waves and synthesizes them is brain-signal reconstruction. The mechanism is vague and the context is entertainment."}
+{"pair": "q1266", "score": 0, "rationale": "A sign advertising innermost thoughts revealed describes no technology."}
+{"pair": "q1267", "score": 0.25, "rationale": "A tiny remote-controlled proxy robot via brain helmets points to micro-scale robots only loosely. Real DNA robots are autonomous molecular machines."}
+{"pair": "q1268", "score": 0.25, "rationale": "Micro-robots with electron vision are evocative of microscopic machines. They are remotely driven and far larger than DNA nanomachines."}
+{"pair": "q1269", "score": 0.25, "rationale": "A microscopic electronic brain is only loosely a microscopic robot. Real molecular robots have no such intelligence."}
+{"pair": "q1270", "score": 0.25, "rationale": "An implanted device reading nerve impulses of the speech organs to reconstruct speech is a neural interface. It does not restore hearing the way the cochlear implant does."}
+{"pair": "q1271", "score": 0.25, "rationale": "A skull-mounted bone-conduction speaker for silent communication with an implanted device is body-joined electronics. It loosely echoes sensory augmentation, not a cochlear implant."}
+{"pair": "q1272", "score": 0.25, "rationale": "A concealed implant behind the ear is an electronic body device, loosely related to cochlear implants. The passage gives no sensory restoration function."}
+{"pair": "q1273", "score": 0, "rationale": "The quote says only that it was a neurological instrument and not a psychologist. It describes no sense or ability restored."}
+{"pair": "q1274", "score": 0, "rationale": "Scanning nearby people's nervous systems is not restoring or extending the host's sense through a cochlear implant."}
+{"pair": "q1275", "score": 0, "rationale": "A person acting as a living calculator is a mental feat with no implanted device."}
+{"pair": "q1276", "score": 0.25, "rationale": "Electronic brains inserted and connected to neural paths loosely echo neural implants extending ability. The cochlear implant restores hearing, which is a different function."}
+{"pair": "q1277", "score": 0.25, "rationale": "Brain implants absorbing information to replace memorization extend memory in a way no cochlear implant does. They point in the same direction only loosely."}
+{"pair": "q1278", "score": 0, "rationale": "A control panel for a power plant is not an implant."}
+{"pair": "q1279", "score": 0.25, "rationale": "A surgically implanted electronic brain is a neural implant in broad terms. Its function of computing tactics differs from restoring a sense."}
+{"pair": "q1280", "score": 0.25, "rationale": "An implant sensing nerve changes to send a signal resembles neural interfaces loosely. Its teleport trigger function differs from cochlear sensory restoration."}
+{"pair": "q1281", "score": 0.25, "rationale": "A helmet linking the commander to the ship is a human-machine link that is not implanted. It is evocative only."}
+{"pair": "q1282", "score": 0.5, "rationale": "A calculating machine combined with a typewriter producing accounts and invoices matches automating clerical accounting. LEO's bakery valuations are a similar function, but the mechanism is vague."}
+{"pair": "q1311", "score": 0, "rationale": "Tape machines with electronic eyes that select words to speak are not character recognition for sorting or data entry."}
+{"pair": "q1312", "score": 0.75, "rationale": "Robots scanning addresses photoelectrically to sort mail match the USPS OCR sorter. The passage does not say characters are read."}
+{"pair": "q1313", "score": 0.25, "rationale": "A scanner that turns book pages is a page-reading device, loosely related. No character recognition is described."}
+{"pair": "q1314", "score": 0.75, "rationale": "A machine that reads typewriting directly without coded cards matches optical reading of printed text. The insurance context differs from mail sorting."}
+{"pair": "q1315", "score": 0.25, "rationale": "Mail sorters with scanning elements are mentioned only in passing. The passage gives no reading mechanism."}
+{"pair": "q1316", "score": 0.25, "rationale": "Customs scanners and paper-checkers are evocative of automated document reading. Nothing says characters are read."}
+{"pair": "q1317", "score": 0.25, "rationale": "Machine sifting of wreckage for registration plates fed to central records points loosely at automated plate reading. Nothing is said about optical reading."}
+{"pair": "q1318", "score": 0, "rationale": "Fingers flashing over keys of a computer beside a chair does not show a personal computer owned for individual use."}
+{"pair": "q1319", "score": 0, "rationale": "A keyboard electro-reckoner for complex calculations is a desk machine, not a small battery-powered personal device."}
+{"pair": "q1320", "score": 0.25, "rationale": "A cube with columns of buttons that computes is a hand-operated calculating device, loosely like a pocket calculator. No small personal portable function is stated."}
+{"pair": "q1321", "score": 0, "rationale": "A passing remark that a mechanism could be adapted for a calculator describes no calculator."}
+{"pair": "q1322", "score": 0.5, "rationale": "A Minicalculator used by statisticians matches a compact calculator. The portability and personal ownership are not stated."}
+{"pair": "q1323", "score": 0.25, "rationale": "Computing a route on an electronic calculator names the device and its function. It does not say the device is small or personal."}
+{"pair": "q1339", "score": 0.5, "rationale": "Spoken queries answered by a book with locations and plans match question answering by a knowledge store. Breadth and open-domain ability are not shown."}
+{"pair": "q1340", "score": 0, "rationale": "Aliens cracking problems into formulae are a different thing from a knowledge-holding machine."}
+{"pair": "q1341", "score": 0.5, "rationale": "A machine that weighs all stored information to answer coded problems matches the question-answering function. Input is coded rather than ordinary language, and the mechanism is vague."}
+{"pair": "q1342", "score": 0.25, "rationale": "Using logic computers to compute the truth is a loose pointer to a question-answering machine. No answering of factual questions is described."}
+{"pair": "q1343", "score": 0, "rationale": "Asking a logic computer about its own security is not factual question answering."}
+{"pair": "q1344", "score": 0.25, "rationale": "A machine-brain that weighs facts and gives an answer is a general pointer to question answering. It lacks any question and answer specifics."}
+{"pair": "q1345", "score": 0.25, "rationale": "A giant public computer that is like a mother figure is evocative only. It does not state question answering."}
+{"pair": "q1346", "score": 0.5, "rationale": "Any question is submitted and answered by a machine brain, matching question answering in function. Input is by microtape, not ordinary language, and the answering is not shown."}
+{"pair": "q1347", "score": 0.5, "rationale": "A colossal machine brain that answers all questions matches the function of question answering. No mechanism is given."}
+{"pair": "q1348", "score": 0.25, "rationale": "A talking machine registrar with an air of petulance is only loosely a question-answering computer. Answering from data is not in the quote."}
+{"pair": "q1349", "score": 0, "rationale": "The quote concerns energy-beings that outperform a calculator, not a computer."}
+{"pair": "q1350", "score": 0.5, "rationale": "A machine that answers anything, given a legitimate question, matches the function. No mechanism or language interface is stated."}
+{"pair": "q1351", "score": 0.5, "rationale": "A computer receives an entered problem and replies in text, such as INSUFFICIENT DATA. The question-answering function matches, but the knowledge base and language mechanism are vague."}
+{"pair": "q1352", "score": 0.5, "rationale": "A giant brain that can be asked questions as a research oracle matches the question-answering function. The mechanism and language interface are not detailed."}
+{"pair": "q1353", "score": 0.25, "rationale": "A large computer integrating the sciences loosely points at a broad knowledge machine. No question answering is stated."}
+{"pair": "q1354", "score": 0.25, "rationale": "Machines that answer the problems of daily life loosely suggest question answering. The passage is mostly about prophecy."}
+{"pair": "q1355", "score": 0.25, "rationale": "A giant computer financed by a consortium and relied on by agencies is evocative of an answering machine. No question answering is stated."}
+{"pair": "q1356", "score": 0.25, "rationale": "A computer that outputs an answer on tape is a generic answering machine. It does not show breadth of knowledge or natural-language questions."}
+{"pair": "q1357", "score": 0.25, "rationale": "A computer that knows what it is talking about is only loosely an answering machine. No questions are described."}
+{"pair": "q1358", "score": 0.25, "rationale": "An information center that answers any question matches the function, but the machine is a human and robot institution. No computer mechanism is shown."}
+{"pair": "q1359", "score": 0.25, "rationale": "A master computer is described by appearance only. Answering natural-language questions comes from the claim, not the quote."}
+{"pair": "q1360", "score": 0.5, "rationale": "A device that hears questions and answers from a huge microtape memory matches spoken question answering over large stored knowledge. It is a children's interpreter and the mechanism is thin."}
+{"pair": "q1361", "score": 0.5, "rationale": "A computer composes recorded words to answer an almost infinite number of questions, matching spoken question answering. Knowledge breadth is not stated and the mechanism is a crude concatenation."}
+{"pair": "q1362", "score": 0.25, "rationale": "A larger master computer that queries are referred to loosely suggests a query-answering system. The quote shows no answering."}
+{"pair": "q1363", "score": 0.25, "rationale": "An information robot in a kiosk is evocative of an information machine. The quote gives no answering of questions."}
+{"pair": "q1364", "score": 0.25, "rationale": "An oracle machine that responds to a person's questions is loosely question answering. The quote describes restricting access, not capability."}
+{"pair": "q1365", "score": 0.5, "rationale": "A machine oracle that answers any question promptly and completely matches the function. No mechanism is given."}
+{"pair": "q1366", "score": 0, "rationale": "A machine that identifies aliens and issues orders is not question answering."}
+{"pair": "q1367", "score": 0.25, "rationale": "An information bank of a policy machine implies a queryable database. The quote shows no answering of questions."}
+{"pair": "q1368", "score": 0.25, "rationale": "Feeding all information to a Brain to get an answer loosely suggests a question-answering system. The coded inputs and decision-making role differ."}
+{"pair": "q1369", "score": 0.25, "rationale": "A brain charged with a civilization's knowledge points at a knowledge-holding computer. Answering questions is not stated."}
+{"pair": "q1370", "score": 0, "rationale": "Requesting a horoscope from a computer is not factual question answering."}
+{"pair": "q1371", "score": 0.25, "rationale": "A station computer is said to produce results by selection. This loosely suggests an information store but is not question answering."}
+{"pair": "q1372", "score": 0.5, "rationale": "A computer holding all human knowledge, scanning and reasoning, matches broad-knowledge answering. Questions in ordinary language are not stated."}
+{"pair": "q1373", "score": 0, "rationale": "Faking computation results with a dummy describes a hoax, not question answering."}
+{"pair": "q1374", "score": 0.5, "rationale": "Detector stations whose tracks display automatically on a whole-Earth map match sensor-driven live display. The passage does not name a computer."}
+{"pair": "q1375", "score": 0.25, "rationale": "A table-map with circles marking the air-cities' positions is a plot display. Live updating and sensing are not stated."}
+{"pair": "q1376", "score": 0.25, "rationale": "A space-chart on the wall is a display of positions. Live tracking is not stated in the quote."}
+{"pair": "q1377", "score": 0.25, "rationale": "A telechart is a navigation display plate. Nothing in the quote says positions are live or computer-driven."}
+{"pair": "q1378", "score": 0.5, "rationale": "A chart showing glowing circles and ship-dots moving toward a goal matches a live positions display. Sensors and a computer are not stated."}
+{"pair": "q1379", "score": 0.75, "rationale": "A table-map on which red circles automatically show the position of air-cities matches a live tracking display. The objects are fictional, with no stated computer or radar."}
+{"pair": "q1380", "score": 0.25, "rationale": "A metal plate representing the nearby heavens is a map-like display. It does not say live tracking."}
+{"pair": "q1381", "score": 0.5, "rationale": "Spark and pinpoint lights showing positions of the ship and other bodies match a position display. Live detection is only in the claim."}
+{"pair": "q1382", "score": 0.25, "rationale": "Punched coordinates make a point appear in a galaxy tank. This is a manual locator display, not live tracking."}
+{"pair": "q1383", "score": 0.5, "rationale": "A huge tank with millions of lights moving matches a large live tracking display. The sensor and computer mechanism is not stated."}
+{"pair": "q1384", "score": 0, "rationale": "Pointing a device at a light yields a number, which describes identification rather than the situation display."}
+{"pair": "q1385", "score": 0.25, "rationale": "A tank ringed by a million-plug board is a console loosely related to a command display. The quote says nothing of live positions."}
+{"pair": "q1386", "score": 0.5, "rationale": "A tank showing the disposition of every enemy unit matches a tactical positions display. Real-time sensing is implied but not stated."}
+{"pair": "q1387", "score": 0.25, "rationale": "A tactical tank fed by telepathic summarizers is a tactical display. The sensor and computer mechanism is different."}
+{"pair": "q1388", "score": 0, "rationale": "The quote gives only the size of a tank, with no display function."}
+{"pair": "q1389", "score": 0.25, "rationale": "A transparent hull with glowing filaments tracing mechanism status is a live status display. It shows machine state, not positions of tracked objects."}
+{"pair": "q1390", "score": 0.25, "rationale": "World and space maps with colored symbols are command displays. Live tracking is not stated in the quote."}
+{"pair": "q1391", "score": 0.25, "rationale": "A circular graph with pulsing lines is a display. Tracking is only in the claim."}
+{"pair": "q1392", "score": 0, "rationale": "The quote describes only a command ship carrying the Brains."}
+{"pair": "q1393", "score": 0.25, "rationale": "A large 3-D chart of a star system is a map-like display. It is not stated to be live."}
+{"pair": "q1394", "score": 0.5, "rationale": "An autoscanner on a radar-like device that clangs at blips on screens matches radar contacts on a screen with automatic detection. It has no plotting of positions or computer network."}
+{"pair": "q1395", "score": 0.25, "rationale": "A chart projection screen showing their position is a position display. The quote does not say live tracking or sensing."}
+{"pair": "q1396", "score": 0.25, "rationale": "A tri-dim chart filling a room is a display. It does not state tracking."}
+{"pair": "q1397", "score": 0.25, "rationale": "A realistic electronic map that seems to breathe with cities is evocative of a live situational map. The mechanism is vague."}
+{"pair": "q1407", "score": 0, "rationale": "The speaker says robots cannot be manufactured, which is the opposite of an industry."}
+{"pair": "q1408", "score": 0.25, "rationale": "Robots that replace human labor are a pointer to industrial robot use. No manufacturing industry or product sale is described."}
+{"pair": "q1409", "score": 0, "rationale": "One animated dummy proposing to make others is not a commercial industry."}
+{"pair": "q1410", "score": 0.5, "rationale": "A trade-marked robot from Spurgin's Robots implies a commercial robot maker. The humanoid woman context differs from industrial arms."}
+{"pair": "q1411", "score": 0.25, "rationale": "Quinby's function-shaped robots suggest a maker but give no industry or sales."}
+{"pair": "q1412", "score": 0, "rationale": "The quote only mentions the invention of the mechanical brain."}
+{"pair": "q1413", "score": 0.75, "rationale": "A corporation turning out thousands of industrial robots matches robot manufacturing as a commercial industry. The off-world setting differs."}
+{"pair": "q1414", "score": 0, "rationale": "Populating a town with robots shows no manufacturing industry."}
+{"pair": "q1415", "score": 0, "rationale": "Rows of rusting robot populations show no robot-making business."}
+{"pair": "q1416", "score": 0.5, "rationale": "A purchased standard-model all-around robot worker implies a product sold on the market. No manufacturer or manufacturing process is described."}
+{"pair": "q1417", "score": 0.5, "rationale": "A humandroid factory with a foreman matches factory production of robots. Humanlike androids differ from real industrial robots."}
+{"pair": "q1418", "score": 0.25, "rationale": "A model of which 25 are under construction indicates limited manufacture. No sales are stated."}
+{"pair": "q1419", "score": 0.25, "rationale": "Specialist models replacing general-purpose ones implies a market with differing robot models. No manufacturing detail is given."}
+{"pair": "q1420", "score": 0, "rationale": "Obsolete robots replaced by newer generations is a story about robots' fate, not an industry."}
+{"pair": "q1421", "score": 0.5, "rationale": "Model I robots built to a buyer's specifications of size, color and personality match a commercial robot product line. They are humanoid, with customization far beyond real early robots."}
+{"pair": "q1422", "score": 0.5, "rationale": "Robots offered with selectable intelligence level imply a commercial product catalogue. The levels of autonomy are fictional."}
+{"pair": "q1423", "score": 0.25, "rationale": "A robotics business is implied by the quote about someone branching into robotics. Little else is said."}
+{"pair": "q1424", "score": 0.5, "rationale": "A company built a thousand servitor models, implying robot manufacture. They were experimental, and sale is not stated."}
+{"pair": "q1425", "score": 0.25, "rationale": "Numbered robot types imply mass production. No commercial industry is described."}

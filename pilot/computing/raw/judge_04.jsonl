@@ -1,0 +1,120 @@
+{"pair": "q0540", "score": 0.5, "rationale": "A calculating machine doing maths beyond human ability matches ENIAC's function; no mechanism is given."}
+{"pair": "q0541", "score": 0.25, "rationale": "An electronic memory-stack machine intelligence points toward electronic computers, but the passage is about a thinking mind and atomic power rather than a program-running calculator."}
+{"pair": "q0542", "score": 0.25, "rationale": "Calculating machines checking data is loosely the same function. There is no mechanism, and it is only a passing mention."}
+{"pair": "q0543", "score": 0.25, "rationale": "A multiple-calculator appearing in a room is evocative of a computing machine but gives no function or mechanism."}
+{"pair": "q0596", "score": 0.25, "rationale": "A stylus leaving glowing lines on a wall loosely suggests an electronically written surface, but nothing is rewritable or paper-like."}
+{"pair": "q0597", "score": 0.5, "rationale": "A card surface that can be made to show any value on command matches a rewritable display surface. The projector mechanism differs from E Ink and the use (cheating) is different."}
+{"pair": "q0598", "score": 0.75, "rationale": "A reusable slab that changes appearance and shows lines of text at a button press matches a rewritable e-reader surface. The color-change mechanism is vague and the context is fictional."}
+{"pair": "q0599", "score": 0.25, "rationale": "A note plate scratched on is evocative of reusable writing media but has no electronic rewriting stated."}
+{"pair": "q0600", "score": 0.25, "rationale": "Index cards with a last-reported-locality ticket point at tracking people's locations, but it is manual record-keeping with no electronic device."}
+{"pair": "q0601", "score": 0.25, "rationale": "Wrist-bands sensed by machines to route people to their levels point loosely to worn tags, but they sort by rank, not report location to a monitor."}
+{"pair": "q0602", "score": 0.25, "rationale": "A servo-tracer is only named and its function is not stated, so it is a loose pointer to tracking."}
+{"pair": "q0603", "score": 0.25, "rationale": "A tape registration that triggers alarms if someone leaves the base loosely resembles a perimeter monitor. There is no worn device or location reporting."}
+{"pair": "q0604", "score": 0.25, "rationale": "Vehicles with detectors that locate individuals evoke tracking people, but via thought patterns, not worn tags or devices."}
+{"pair": "q0605", "score": 0.5, "rationale": "Tracing a person's whereabouts through a personal plate matches the function of electronic location tracking; the mechanism is vague."}
+{"pair": "q0606", "score": 0.25, "rationale": "Scanning magnetic tags on vehicles and sending them to headquarters is related to monitoring, but it is a records check, not reporting location from a worn device."}
+{"pair": "q0607", "score": 0.5, "rationale": "Votes registered electrically from each seat match electronic vote counting in function. The mechanism is only a signal and the context is parliament, not punch-card tabulation."}
+{"pair": "q0608", "score": 0.75, "rationale": "A national electronic tabulator totalling votes sent over teletype matches automatic computer vote counting. The rigging context differs."}
+{"pair": "q0609", "score": 0.75, "rationale": "A networked tabulator that accepts household votes and flashes running totals matches automatic electronic counting and reporting. It is far more networked than 1964 punch-card tallying."}
+{"pair": "q0610", "score": 0.75, "rationale": "Per-candidate storage circuits accumulating votes electronically match machine tallying. The context of tampering differs from the punch-card milestone."}
+{"pair": "q0611", "score": 0.5, "rationale": "Electronic counters that announce the winner match the function; no mechanism is given."}
+{"pair": "q0612", "score": 0.25, "rationale": "A Brain computer countermanded only by the leader's voice and plate is only loosely about voting."}
+{"pair": "q0613", "score": 0.5, "rationale": "A vote cast by inserting a personal plate and recorded by a central computer matches electronic vote recording. Tallying is not described."}
+{"pair": "q0616", "score": 0.25, "rationale": "Weather towers run by automatics point toward automated monitoring, but nothing is said about forecasting or computers."}
+{"pair": "q0617", "score": 0.25, "rationale": "Weather robots signalling a human match automated sensing loosely. There is no numerical forecasting or computer model."}
+{"pair": "q0623", "score": 0.25, "rationale": "A beam that reveals a person's identity and purpose remotely is evocative of automatic identification. No face matching against stored images is described."}
+{"pair": "q0624", "score": 0.25, "rationale": "Gates that recognise a person and open point at automatic identification, but the quote does not say faces or image matching."}
+{"pair": "q0625", "score": 0.5, "rationale": "Camera pictures matched to an identity record at a police bureau match the function of identifying people from images. The matching mechanism is not described."}
+{"pair": "q0626", "score": 0.75, "rationale": "A machine finding a similar picture in its files with all details of the person matches image-based identification against stored images. The context is a police-style fiction file."}
+{"pair": "q0627", "score": 0.5, "rationale": "A photoelectric search of a file by a photograph and coded description loosely matches image-based person lookup; the mechanism is vague."}
+{"pair": "q0628", "score": 0.25, "rationale": "A robot scanning his features hints at face scanning, but no identification or matching is stated."}
+{"pair": "q0629", "score": 0.25, "rationale": "A camera recording a traveler's face points to face capture, but no automatic matching is described."}
+{"pair": "q0630", "score": 0.5, "rationale": "Cameras feeding a police computer that matches against a description on file and alerts robots match automatic face-based identification. Matching is by description, not stored images."}
+{"pair": "q0631", "score": 0.75, "rationale": "A wall scanner checking people against a large store of registered images and data matches camera-based identification against stored images. Admission decisions are the fictional context."}
+{"pair": "q0632", "score": 0, "rationale": "The passage says face recognition is beyond the Brain's capacity, so it does not depict the capability."}
+{"pair": "q0633", "score": 0.25, "rationale": "A global index classified by fingerprints anticipates fingerprint classification, but it is a manual card index with no machine reading or matching."}
+{"pair": "q0634", "score": 0.75, "rationale": "A machine that takes a recorded thumbprint to release goods matches automatic fingerprint authentication. Vending use differs from the FBI database context."}
+{"pair": "q0635", "score": 0.75, "rationale": "Fingertip whorls triggering a lock mechanism match automatic fingerprint authentication; the context is a secret door."}
+{"pair": "q0636", "score": 0.75, "rationale": "A scanner that recognises fingerprints and opens a door matches automated fingerprint authentication. The context is a door lock, not a criminal database."}
+{"pair": "q0637", "score": 0.5, "rationale": "A scanner plate that checks prints from placed palms matches the function. The matching mechanism is not described."}
+{"pair": "q0638", "score": 0.75, "rationale": "A device that checks fingerprint pattern and whorls to open a door matches automated fingerprint authentication. The context differs."}
+{"pair": "q0639", "score": 0.75, "rationale": "A lock keyed to specific personal fingerprint patterns matches automatic fingerprint authentication."}
+{"pair": "q0640", "score": 0, "rationale": "The quotation only describes a man's changed expression and mentions no fingerprint reading; the summary is not supported by the quote."}
+{"pair": "q0641", "score": 0.75, "rationale": "A bag opening in response to the owner's thumbprint matches automatic fingerprint authentication in a personal-lock context."}
+{"pair": "q0642", "score": 0.75, "rationale": "A thumb in a whorl-lock opening a door matches fingerprint authentication; the context is a ship cabin."}
+{"pair": "q0643", "score": 0.75, "rationale": "A thumb pressed on an electronic grid that opens the door on a fingerprint match closely matches modern fingerprint locks. The milestone is a law-enforcement database, so the context differs."}
+{"pair": "q0644", "score": 0.75, "rationale": "A thumb on an identity-plate that opens the door matches fingerprint authentication, with the context of a home door."}
+{"pair": "q0645", "score": 0.75, "rationale": "A thumb inserted into a door's thumbhole to open it matches fingerprint authentication, with a home-door context."}
+{"pair": "q0646", "score": 0.75, "rationale": "A thumb held to a sensor plate to open a box matches a fingerprint-authenticated container. The context differs from a database."}
+{"pair": "q0647", "score": 0.75, "rationale": "A thumbprint pressed to a lock that opens the door matches fingerprint authentication."}
+{"pair": "q0648", "score": 0.5, "rationale": "Recording a fingerprint into a plastic chip for identity at boarding matches fingerprint identity capture. Automated reading and matching is not described."}
+{"pair": "q0649", "score": 0.5, "rationale": "Fingerprint and retinal patterns named for identification match the function, but the quote gives no mechanism."}
+{"pair": "q0650", "score": 0.25, "rationale": "Computers cross-correlating records to find a fugitive point loosely at print-based search. The quote shows no print reading or matching."}
+{"pair": "q0690", "score": 0.25, "rationale": "A film star chart that appears as a deep space wedge loosely suggests 3D display, but it is film viewing, not a volumetric display."}
+{"pair": "q0691", "score": 0.5, "rationale": "A device projecting a 3D picture into a dark viewing space matches a volumetric image display in function. The mechanism is vague."}
+{"pair": "q0692", "score": 0.5, "rationale": "Points of light for ships in a three-dimensional chart match a volumetric display of positions. The mechanism is not described."}
+{"pair": "q0693", "score": 0.75, "rationale": "A large tank with millions of moving lights is a volumetric display viewable from several sides, close to a swept-volume display. The scale and context differ."}
+{"pair": "q0694", "score": 0.5, "rationale": "A very large tank showing the positions of enemy units matches a volumetric tactical display in function. The mechanism is unspecified."}
+{"pair": "q0695", "score": 0.5, "rationale": "Brains aboard a ship carrying the large chart tank loosely match the display idea, but the quote itself only mentions the ship and Brains."}
+{"pair": "q0696", "score": 0.25, "rationale": "A planet surface appearing in 3D on a screen points toward 3D display but is flat-screen."}
+{"pair": "q0697", "score": 0.75, "rationale": "A 3D map hanging in the air matches a volumetric display viewable from different sides. The mechanism is not described."}
+{"pair": "q0698", "score": 0.5, "rationale": "A huge 3D chart in the middle of a room matches a volumetric display function, with no mechanism given."}
+{"pair": "q0699", "score": 0.5, "rationale": "A transparent cube whose lights form images matches a volumetric display. The text is brief."}
+{"pair": "q0700", "score": 0.25, "rationale": "Tri-di dots on a display suggest 3D tracking but give little detail."}
+{"pair": "q0701", "score": 0.25, "rationale": "A stereo projection against a flat glass wall is a 3D-like display but not volumetric."}
+{"pair": "q0702", "score": 0.75, "rationale": "A detailed 3D form appearing in the middle of a cabin matches a volumetric display viewable from several sides. Its disguise-template use is a different context."}
+{"pair": "q0703", "score": 0.25, "rationale": "A tri-dim chart in a room is only named, giving a loose pointer to a 3D display."}
+{"pair": "q0704", "score": 0.25, "rationale": "A red line gathering in a knot loosely suggests a projected game display but there is no clear 3D or volumetric content."}
+{"pair": "q0705", "score": 0.5, "rationale": "A glowing, moving 3D panorama of the solar system matches a volumetric map display, with no mechanism."}
+{"pair": "q0706", "score": 0.25, "rationale": "A red dot in a 3D model of space loosely points at a 3D display with no mechanism."}
+{"pair": "q0707", "score": 0.25, "rationale": "A tri-di star map that looks like a miniature universe points to a 3D display. It is wall-based and the mechanism is not described."}
+{"pair": "q0708", "score": 0, "rationale": "The quotation is about being stuffed with information and contains no display at all."}
+{"pair": "q0709", "score": 0.25, "rationale": "A transparent globe inflated over a device loosely suggests a volume in which 3D models are shown, but the quote does not describe the display."}
+{"pair": "q0710", "score": 0.25, "rationale": "A mural 3D map on a wall gives a map display but is a wall rendering, not a volumetric one."}
+{"pair": "q0711", "score": 0, "rationale": "The quotation is a bare question and shows no display."}
+{"pair": "q0712", "score": 0.25, "rationale": "A machine-part artificial human is speculated about; this points to a humanoid robot but is only an idea with no walking or handling."}
+{"pair": "q0713", "score": 0.25, "rationale": "A mechanical man acting as an automaton points loosely to a humanoid robot with no capabilities described."}
+{"pair": "q0714", "score": 0.25, "rationale": "An automaton described as not human is a humanoid robot only by name; the quote shows no abilities."}
+{"pair": "q0715", "score": 0.25, "rationale": "A human-like seven-foot robot has the form of a humanoid robot but no walking, talking or handling is shown."}
+{"pair": "q0716", "score": 0.25, "rationale": "A mechanical humanoid body with metal sinews, piloted from within, gives form only and the control mechanism is different."}
+{"pair": "q0717", "score": 0.5, "rationale": "A giant manlike machine with a voice matches a humanoid robot that speaks. Walking and handling objects are not shown."}
+{"pair": "q0718", "score": 0.25, "rationale": "An artificial brain and wiring inside a dummy loosely suggests a humanoid machine, but no walking or handling is described."}
+{"pair": "q0719", "score": 0.25, "rationale": "A laboratory assistant robot is mentioned briefly, so it points toward a humanoid robot only loosely."}
+{"pair": "q0720", "score": 0.25, "rationale": "A huge steel war-machine with a mechanical mind is robot-like and loosely human-shaped, but it is not a human-scale walking robot."}
+{"pair": "q0721", "score": 0.25, "rationale": "Only names are given, so the passage is a loose pointer to humanoid robots."}
+{"pair": "q0722", "score": 0.25, "rationale": "A small monkey-like robot is only loosely humanoid."}
+{"pair": "q0723", "score": 0.25, "rationale": "Humanoid-minded robots solving maths are mentioned, but body, walking and handling are not described."}
+{"pair": "q0724", "score": 0.25, "rationale": "A metal skeleton with machinery is a humanoid frame but shows no function."}
+{"pair": "q0725", "score": 0.25, "rationale": "Android-shaped robots are named with atrophied parts, a loose pointer without demonstrated abilities."}
+{"pair": "q0726", "score": 0.5, "rationale": "A humanoid metal-plastic robot taking orders to guard people matches a human-shaped robot doing tasks. Walking and talking are not shown."}
+{"pair": "q0727", "score": 0.25, "rationale": "Metal-mesh androids with an alien mind give only humanoid form with a different origin."}
+{"pair": "q0728", "score": 0.25, "rationale": "A humanlike robot built through trial and error is only mentioned, so it is a loose pointer."}
+{"pair": "q0729", "score": 0.25, "rationale": "Androids with machinery in their skulls point loosely to humanoid robots, with no abilities shown."}
+{"pair": "q0730", "score": 0.25, "rationale": "Robots balancing on stumpy legs or moving on tracks serve people, but they are not clearly human-shaped; a gyroscopic balance hints at biped walking."}
+{"pair": "q0731", "score": 0.5, "rationale": "A metal man striding along matches a humanoid robot that walks, though handling and speech are not shown."}
+{"pair": "q0732", "score": 0.25, "rationale": "Building a robot with memory, calculation and voice is a loose recipe for a speaking robot with no human-shaped body."}
+{"pair": "q0733", "score": 0.25, "rationale": "Human-built machines guarding a city are mentioned but not described as walking or handling things."}
+{"pair": "q0734", "score": 0.25, "rationale": "Robots being efficient and silent is a loose mention with no human shape or abilities."}
+{"pair": "q0735", "score": 0.25, "rationale": "Synthetic skin over wires and metal joints gives a lifelike robot form, but no capabilities beyond striking."}
+{"pair": "q0736", "score": 0.25, "rationale": "A giant robot awakened by commands loosely suggests a humanoid robot, with little detail on form or use."}
+{"pair": "q0737", "score": 0.5, "rationale": "A humanoid servant robot hastening to pick something up matches a human-shaped robot walking and handling objects in a domestic setting."}
+{"pair": "q0738", "score": 0.5, "rationale": "A robot with a plastoid body and faceplate shows human-shaped form; its work in a human setting matches in function, though its speech and handling are not shown in the quote."}
+{"pair": "q0739", "score": 0.25, "rationale": "A humanoid with an electronic endocrine balance concerns emotional reasoning, not walking, talking or handling."}
+{"pair": "q0740", "score": 0.25, "rationale": "The robot's abilities are telekinesis and omniscience, which differ from a walking, grasping humanoid."}
+{"pair": "q0741", "score": 0.25, "rationale": "Robots that work in vacuum are only loosely humanoid and no handling or speech is shown in the quote."}
+{"pair": "q0742", "score": 0.25, "rationale": "General-purpose robots mentioned as not very bright are a loose pointer to humanoid workers."}
+{"pair": "q0743", "score": 0.25, "rationale": "A computer as the heart of a mechanical man is a loose pointer to a humanoid robot with no capabilities described."}
+{"pair": "q0744", "score": 0.5, "rationale": "A computer walking on aluminum legs matches a legged robot moving in human surroundings. The body is only partly humanoid."}
+{"pair": "q0745", "score": 0.25, "rationale": "A humanlike robot doorman is probed by a tool; it hints at a humanoid in a human setting, with little function."}
+{"pair": "q0746", "score": 0.5, "rationale": "A self-sufficient mechanical man able to move autonomously matches a humanoid robot in function. The mechanism is vague."}
+{"pair": "q0747", "score": 0.5, "rationale": "A human-faced robot that blinks, nods and shakes hands matches a humanoid robot's hand and face handling in human surroundings. Walking and speech are not stated."}
+{"pair": "q0748", "score": 0.5, "rationale": "A humanoid robot with arms, legs and head modelled on human bones matches the form and some function; its war role differs."}
+{"pair": "q0749", "score": 0.25, "rationale": "A race of robots energized remotely points to humanoid robots only loosely, and the quote does not say they are human-shaped."}
+{"pair": "q0750", "score": 0.25, "rationale": "Android robots working in planetary engineering are a loose pointer, with no abilities shown."}
+{"pair": "q0751", "score": 0.5, "rationale": "A human-shaped metal attendant bearing a vessel matches a humanoid robot handling objects in human surroundings."}
+{"pair": "q0752", "score": 0.25, "rationale": "Cybernetics enabling robots is a loose pointer, with no humanoid body shown."}
+{"pair": "q0753", "score": 0.25, "rationale": "A robot calling itself a machine is only a loose pointer. The quote shows no walking, speech beyond the line, or handling."}
+{"pair": "q0754", "score": 0.25, "rationale": "A crew member given a ship to mind loosely suggests a humanoid robot working alongside people, with little detail."}
+{"pair": "q0755", "score": 0.5, "rationale": "An eight-foot humanoid with a synthetic skin and metal frame matches a human-shaped robot, though abilities are not shown."}
+{"pair": "q0756", "score": 0.25, "rationale": "Ranked robots with specialised bodies like extra arms or truck bodies are only partly humanoid."}
+{"pair": "q0757", "score": 0.25, "rationale": "Alien-made humanoids that are grown in vats and capable of speech differ in mechanism from a built robot; this is only loosely related."}

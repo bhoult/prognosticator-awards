@@ -1,0 +1,104 @@
+{"pair": "q1928", "score": 0, "rationale": "The quote only says the Stretts could build something; it describes no computing function."}
+{"pair": "q1929", "score": 0.25, "rationale": "A machine scanning vast stored science in moments loosely points to very fast processing. It is information retrieval, not solving large numerical problems."}
+{"pair": "q1930", "score": 0.5, "rationale": "A central computing center where scientists send problems for a big machine matches the shared scientific-computing function. The mechanism is not described."}
+{"pair": "q1931", "score": 0.25, "rationale": "A computing center extrapolating wave patterns is loosely scientific computation. The quote gives no mechanism or scale."}
+{"pair": "q1963", "score": 0.25, "rationale": "Troops controlled from a keyboard console is remote command, but no sensor feedback or manipulator is described. It is only loosely teleoperation."}
+{"pair": "q1964", "score": 0.25, "rationale": "Radio control of worker machines points toward remote operation. It lacks the operator-sensing and master-slave mechanism."}
+{"pair": "q1965", "score": 0.5, "rationale": "Operating unseen robot members through a video-like display matches remote operation with sensory feedback. The mechanism is vague, and it predates the 1949 manipulator."}
+{"pair": "q1966", "score": 0, "rationale": "The quote is only about an energy source being shut down. It describes no remote operation."}
+{"pair": "q1967", "score": 0.5, "rationale": "Robot lenses recording what they see for their masters matches remote viewing through robot sensors. How it is controlled is not stated."}
+{"pair": "q1968", "score": 0.25, "rationale": "Robots commanded by helmet transmitters is remote control in a loose sense. It is telepathic, not a master-slave manipulator with sensory feedback."}
+{"pair": "q1969", "score": 0, "rationale": "The quote only mentions idle robots standing in a temple. It shows no remote operation."}
+{"pair": "q2006", "score": 0.25, "rationale": "A machine-reporter of thoughts and feelings points toward thought transcription. The quote gives no mechanism and does not clearly produce text."}
+{"pair": "q2007", "score": 0.25, "rationale": "Thought-derived pictures on a screen are the image-display side of the concept. The milestone decodes text from motor cortex, so the match is loose."}
+{"pair": "q2008", "score": 0.25, "rationale": "Thoughts projected as screen images is loosely related to decoding brain activity for display. The mechanism and output type differ from the milestone."}
+{"pair": "q2009", "score": 0, "rationale": "The quote only describes colors appearing on a screen. Nothing in it reads a mind or turns thoughts into output."}
+{"pair": "q2010", "score": 0.25, "rationale": "Figures on a screen standing in for a captive's mental imagery is evocative of thought display. No mechanism is given."}
+{"pair": "q2011", "score": 0.25, "rationale": "A captured brain current turned into a visible representation of thought matches the idea of neural signals becoming a display. The output is images, not text, and the mechanism is unspecified."}
+{"pair": "q2012", "score": 0.25, "rationale": "A cap-based device projecting thoughts on a screen is the right direction. The milestone is decoded text, so the match is loose."}
+{"pair": "q2013", "score": 0, "rationale": "Mapping thought vibrations to colored light does not produce a readable thought representation. It is not the same as decoding thoughts to text or images."}
+{"pair": "q2014", "score": 0.25, "rationale": "A method to capture and record thoughts loosely suggests neural decoding. It says nothing about the output or mechanism."}
+{"pair": "q2015", "score": 0.25, "rationale": "Turning thought into something everyone can read matches the goal of thought-to-text. No mechanism is given, and the output is vaguely vision."}
+{"pair": "q2016", "score": 0.5, "rationale": "A mind-writer that records thoughts directly in place of pen and pencil matches the function of writing a thought down. The mechanism is not described."}
+{"pair": "q2017", "score": 0.5, "rationale": "A mind-writer implies a device that writes thoughts as text, which matches the function. No mechanism is given."}
+{"pair": "q2018", "score": 0.25, "rationale": "A brain recorder projecting a 3D picture is thought display in a loose sense. It is imagery, not text, and the mechanism is vague."}
+{"pair": "q2019", "score": 0.25, "rationale": "A machine throwing thoughts onto a screen is the display function. The output is images, not decoded text, and the mechanism is absent."}
+{"pair": "q2020", "score": 0.5, "rationale": "A device translating thoughts into spoken words matches the function of decoding thought into language. The output is speech and the mechanism is unstated."}
+{"pair": "q2021", "score": 0.25, "rationale": "Brain waves translated into pictures is the right direction, as it reads electrical activity. The output is pictures, not text, and the quote is skeptical."}
+{"pair": "q2022", "score": 0.25, "rationale": "Subconscious activity caught in graphs and turned into pictures loosely matches decoding brain activity for display. The output differs from the milestone and the mechanism is thin."}
+{"pair": "q2023", "score": 0, "rationale": "A subconscious analysis test shows no thought-to-text or thought-display mechanism in the quotation."}
+{"pair": "q2024", "score": 0.25, "rationale": "Mind reading retranslated into visual images shows thoughts on screen. The milestone is text from motor cortex, and no mechanism is given."}
+{"pair": "q2025", "score": 0.25, "rationale": "A device making thoughts visible as light loosely matches thought display. The mechanism is a fantasy conversion and the output is not text."}
+{"pair": "q2026", "score": 0.5, "rationale": "Converting thought into a current that drives a voice to speak matches decoding thought into language output. The mechanism differs from the neural decoding of the milestone."}
+{"pair": "q2027", "score": 0.25, "rationale": "A psychomat turning mental imagery into pictures is loosely thought display. The quote gives little mechanism."}
+{"pair": "q2028", "score": 0.25, "rationale": "The quote only shows a machine typing from a form, with no sign it reads thoughts."}
+{"pair": "q2029", "score": 0.25, "rationale": "Sitting at a thinkwriter to compose is suggestive of thought-to-text. The quote does not show that it reads thoughts."}
+{"pair": "q2030", "score": 0, "rationale": "The quote mentions a thinkwriter only in passing, with no thought-reading function shown."}
+{"pair": "q2031", "score": 0.5, "rationale": "A secretary using a machine with temple electrodes matches brain-sensor transcription to text. The scope and mechanism are vague."}
+{"pair": "q2032", "score": 0.25, "rationale": "A computer circuit conveying limited ideas loosely points to relaying thought content. The quote gives no mechanism and does not produce text."}
+{"pair": "q2033", "score": 0.5, "rationale": "Mind signals picked up by a helmet and translated into English match the function of brain decoding to text. The mechanism is vague."}
+{"pair": "q2034", "score": 0.75, "rationale": "Nozzles extruding cold-set plastic that builds up a form automatically matches additive manufacturing of a shape. The context is reproducing sculptures from a scan, not from a digital design."}
+{"pair": "q2035", "score": 0.5, "rationale": "Lenses capturing sixteen profiles of a subject for reproduction match multi-view scanning of a shape. The mechanism is vague and the aesthetic adjustment is a different function."}
+{"pair": "q2036", "score": 0.25, "rationale": "A molecular camera recording the structure of an object points in the direction of 3D scanning. The scale and mechanism are fantastical."}
+{"pair": "q2037", "score": 0.25, "rationale": "An electronic scanner recording the structure of matter in memory loosely resembles 3D scanning. The molecular scale is unlike surface shape capture."}
+{"pair": "q2038", "score": 0.25, "rationale": "A screen rising from the table to show a menu is a display-based interface. The quote shows no touch input at that point."}
+{"pair": "q2039", "score": 0.25, "rationale": "Touching numbered knobs to order is a touch-adjacent input. It uses physical knobs, not a touch-sensitive screen."}
+{"pair": "q2040", "score": 0.25, "rationale": "Doors opening at a wave of the hand is gesture sensing in a loose sense. No screen or computer interface is involved."}
+{"pair": "q2041", "score": 0, "rationale": "Lean-forward and lean-back reactions sensed by a strap are biometric input, not touch or gesture control of a machine."}
+{"pair": "q2042", "score": 0.5, "rationale": "Sliding fingers over a sparkling panel to operate a text device matches touch-panel control of a machine. The mechanism is vague."}
+{"pair": "q2043", "score": 0.75, "rationale": "Brushing a hand across a screen to activate and deactivate a machine matches touch-screen control. Its context is switching machinery, not a computer display."}
+{"pair": "q2044", "score": 0.25, "rationale": "A hand pass setting a device in action is a loose gesture-control idea. No sensing mechanism or screen is described."}
+{"pair": "q2045", "score": 0, "rationale": "Chorded physical buttons are not a touchscreen or gesture interface."}
+{"pair": "q2046", "score": 0.5, "rationale": "A wired glove whose finger contacts trigger music matches glove-based gesture sensing. Its context is environmental control, not a computer."}
+{"pair": "q2051", "score": 0.25, "rationale": "A wished-for clockwork chemist gestures toward automated dispensing in place of a shopkeeper. The quote gives no mechanism."}
+{"pair": "q2052", "score": 0.25, "rationale": "Ordering via table buttons wired to a kitchen is automated self-service ordering. It is not a machine that vends goods, and food still comes via a kitchen."}
+{"pair": "q2067", "score": 0.5, "rationale": "A machine giving a perfect all-senses illusion of reality matches the function of immersive VR. The mechanism is unspecified."}
+{"pair": "q2068", "score": 0.25, "rationale": "A population living in imagined worlds with brains wired to machines is loosely VR-like. The quote shows no machine-generated sensory world."}
+{"pair": "q2069", "score": 0.5, "rationale": "An interactive multisensory movie the viewer enters and talks with matches the function of VR. The mechanism is not given."}
+{"pair": "q2070", "score": 0.5, "rationale": "A chamber that surrounds you with light, gas and music so that you are in it matches the function of immersive simulation. The mechanism is vague."}
+{"pair": "q2071", "score": 0.25, "rationale": "Rays implanting a convincing experience is a simulated reality by a different, hypnotic mechanism. It loosely points to VR."}
+{"pair": "q2072", "score": 0.25, "rationale": "A machine-induced dream that feels real points loosely to simulation. The quote has little detail on the mechanism."}
+{"pair": "q2073", "score": 0.25, "rationale": "Chambers where people spend their lives dreaming are evocative of VR immersion. No mechanism or sensory feed is described."}
+{"pair": "q2074", "score": 0.5, "rationale": "Being thrust into a situation rather than viewing a picture matches immersive simulation. The mechanism is not stated."}
+{"pair": "q2075", "score": 0.25, "rationale": "Dreams appearing visibly to the mind's eye is loosely VR-like. It is a dream projection with no clear sensory feed mechanism."}
+{"pair": "q2076", "score": 0.5, "rationale": "A cap and booth that put the user into a visualized world matches the function of immersive VR. The brain-reading mechanism is not the headset mechanism of the milestone."}
+{"pair": "q2077", "score": 0.5, "rationale": "A synthetic environment that makes the subject respond as if on an actual planet matches immersive simulation. The mechanism is unstated."}
+{"pair": "q2078", "score": 0.75, "rationale": "A head-worn device feeding simulated visual scenes matches a head-mounted display driving an immersive view. The electron-beam brain tap is a different mechanism, and tracking is absent."}
+{"pair": "q2079", "score": 0.25, "rationale": "A mechanical, drug-like carrying-away device loosely suggests an immersive entertainment machine. The quote is vague on sensory simulation."}
+{"pair": "q2080", "score": 0.5, "rationale": "A machine giving vividly real experiences for learning matches the simulation function. The mechanism is unspecified."}
+{"pair": "q2081", "score": 0.5, "rationale": "Full sensory participation in a movie for years matches an immersive sensory simulation. The mechanism is not described."}
+{"pair": "q2082", "score": 0.5, "rationale": "Sense tapes with limited alternatives shaped by the subject's imagination match an interactive simulated sensory world. The mechanism is vague."}
+{"pair": "q2083", "score": 0.5, "rationale": "Being thrust into a situation that must be solved matches an immersive simulation. The mechanism is not shown."}
+{"pair": "q2084", "score": 0.5, "rationale": "Reproducing all the sensations of actual living matches the VR function. The mechanism is unspecified."}
+{"pair": "q2085", "score": 0.25, "rationale": "Living a lifetime in a chamber in a few hours implies a simulation but with time compression. No machine feed of senses is stated."}
+{"pair": "q2086", "score": 0.5, "rationale": "Computer output turned into electrical patterns put into the brain matches a computer-generated experience delivered to the senses. The direct-neural mechanism differs from a head-mounted display."}
+{"pair": "q2087", "score": 0.5, "rationale": "Computer results rendered as full visual and auditory hallucinations match computer-generated sensory immersion. The delivery mechanism differs."}
+{"pair": "q2088", "score": 0.25, "rationale": "The quote only says duels are used to test a machine's performance. The immersive function is not shown in it."}
+{"pair": "q2089", "score": 0.25, "rationale": "Living an unreal world built to one's standards while asleep in baths is loosely VR. Nothing is said about how senses are fed."}
+{"pair": "q2090", "score": 0.25, "rationale": "Artificial dreams forming a personalized utopia are loosely immersive. No machine or sensory mechanism is described."}
+{"pair": "q2091", "score": 0.5, "rationale": "An EEG-and-computer machine amplifying imagination into a world a man can engulf himself in matches the function of immersion. The mechanism is not the headset display."}
+{"pair": "q2092", "score": 0.5, "rationale": "Standing in a convincing meadow with breeze and sky matches an immersive simulated environment. How it is produced is not shown."}
+{"pair": "q2093", "score": 0.5, "rationale": "Being suddenly in a spacesuit in a simulated scene matches an immersive environment shift. The quote gives no mechanism."}
+{"pair": "q2094", "score": 0.5, "rationale": "A helmet feeding currents into the brain to produce an experience matches the function of a worn device creating an immersive world. The neural-injection mechanism differs from a display."}
+{"pair": "q2095", "score": 0.25, "rationale": "A ride taking you wherever home is loosely suggests a personalized simulated world. The quote has no mechanism."}
+{"pair": "q2096", "score": 0.5, "rationale": "A helmet with a viewplate in a hostile simulated environment matches an immersive simulation worn on the head. The simulation aspect is only partly shown."}
+{"pair": "q2097", "score": 0.5, "rationale": "An hallucination so real it cannot be told from reality matches the function of VR. No mechanism is stated."}
+{"pair": "q2098", "score": 0.25, "rationale": "The rules of a game within a simulation loosely suggest a simulated world. The quote does not show any sensory feed."}
+{"pair": "q2099", "score": 0, "rationale": "A pocket device showing animated clothing previews does not store notes or schedules. It is a different function from a PDA."}
+{"pair": "q2100", "score": 0, "rationale": "A wristband used as an ID key and clothing dispenser interface is not a device storing notes or schedules."}
+{"pair": "q2101", "score": 0.25, "rationale": "A device reciting stored reminders matches the reminder function but is wall-mounted, not body-worn or pocket sized."}
+{"pair": "q2102", "score": 0, "rationale": "A head-mounted projector showing door lettering is a display device, not a note, schedule or reminder store."}
+{"pair": "q2103", "score": 0.5, "rationale": "An electronic calendar showing the day's pattern matches the schedule function of a PDA. Size, portability and storage are not described."}
+{"pair": "q2104", "score": 0.25, "rationale": "Clicking on a typopad suggests a handheld entry device. The quote does not show stored notes or schedules."}
+{"pair": "q2105", "score": 0.5, "rationale": "A wristwatch that buzzes to remind of an appointment matches the reminder function in a body-worn device. It does not store notes or give information on demand."}
+{"pair": "q2106", "score": 0.5, "rationale": "A pocket secretary suggests a pocket device holding notes and records, matching the function. Mechanism details are absent."}
+{"pair": "q2107", "score": 0.25, "rationale": "A personal device that tells limericks on request loosely resembles an on-demand information gadget. The quote does not show notes or schedules."}
+{"pair": "q2108", "score": 0.25, "rationale": "A computer slung from a belt is a body-worn computing device, but its function is not stated beyond being there."}
+{"pair": "q2109", "score": 0.25, "rationale": "A worn device that tells a worker what to do from instant to instant is a loose analogue of a prompting wearable. It is not a notes or schedule store."}
+{"pair": "q2110", "score": 0.25, "rationale": "A heavy scanning and decision-making unit is a loose pointer to a wearable computer. The quote shows no notes or reminders."}
+{"pair": "q2111", "score": 0.5, "rationale": "A wearable that records voice memos on command matches the note-keeping function of a PDA. The mechanism is only lightly described."}
+{"pair": "q2112", "score": 0.5, "rationale": "A discreet earpiece device that supplies names and facts on demand matches information-on-demand from a body-worn aid. It is not a notes or schedule store."}
+{"pair": "q2113", "score": 0.25, "rationale": "A tickler and shoulder cape suggests a wearable assistant, but the quote does not show what it does."}
+{"pair": "q2114", "score": 0, "rationale": "A dispassionate machine set for precis is not described as a notes, schedule or reminder device."}
+{"pair": "q2115", "score": 0, "rationale": "A free-floating future model is not a body-worn information device. The quote shows no PDA function."}
+{"pair": "q2116", "score": 0.5, "rationale": "A mechanical secretary fed orders that reminds at the exact moment matches the PDA reminder function. The form factor is not specified in the quote."}

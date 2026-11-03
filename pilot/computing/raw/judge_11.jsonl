@@ -1,0 +1,120 @@
+{"pair": "q1720", "score": 0.25, "rationale": "Computers predicting the crash point of wreckage is orbit/trajectory computation, but not guidance of a craft. Points in the right direction only."}
+{"pair": "q1721", "score": 0.5, "rationale": "Calculators plot a survey route in advance, which is course computation for a ship. The mechanism and onboard steering are not shown."}
+{"pair": "q1722", "score": 0.25, "rationale": "A big master computer borrowed from MIT is shown, but the quotation shows no navigation function. It is only loosely evocative."}
+{"pair": "q1723", "score": 0.25, "rationale": "Punching the ship's computer is only a vague operation of an onboard computer. No calculation of courses or burns appears in the quotation."}
+{"pair": "q1724", "score": 0.5, "rationale": "Shipboard computers automatically compensate course and power, matching onboard steering. The mechanism is vague and the context is gravitic fantasy."}
+{"pair": "q1725", "score": 0.5, "rationale": "The ship flies itself using radar-based awareness, matching autonomous guidance in function. The mechanism and the computation of courses are not specified."}
+{"pair": "q1726", "score": 0.25, "rationale": "Computers and calculators are said to have planned voyages, which is loosely related. Nothing about orbit or course calculation is stated."}
+{"pair": "q1727", "score": 0.25, "rationale": "Computers 'considered silently; acted' only vaguely suggests the computers executing a maneuver. Calculation and mechanism are absent from the quotation."}
+{"pair": "q1728", "score": 0.5, "rationale": "An astrogation computer with multiple monitor screens in the cockpit matches the navigation function. How it works is unstated."}
+{"pair": "q1729", "score": 0.5, "rationale": "Punching coordinates into a computer to steer matches entering targets into a guidance computer. The mechanism is not described."}
+{"pair": "q1730", "score": 0.75, "rationale": "Directions are computed by the computer and fed into an autopilot, matching compute-then-steer guidance. The context is a lunar landing, which is close."}
+{"pair": "q1731", "score": 0.5, "rationale": "An onboard computer is used to check gravity and distance for a decision about escaping Saturn, which is orbital calculation. Steering is not shown."}
+{"pair": "q1732", "score": 0.75, "rationale": "The electronic brain computes a corrected ship path and the answer is fed to the automatic pilot, matching compute plus steer. Tape input differs from AGC details."}
+{"pair": "q1733", "score": 0.5, "rationale": "An electronic brain and autopilot are the ship's navigation systems, matching in function. Neither the calculation nor the mechanism appears."}
+{"pair": "q1734", "score": 0.5, "rationale": "Computers work out orbits and trajectories for scout ships, matching orbital calculation. They are station-based and nothing is steered."}
+{"pair": "q1735", "score": 0.5, "rationale": "A navigator computer solves a multi-beacon position fix to compute a course, matching computed navigation. Hyperspace context and a vague mechanism."}
+{"pair": "q1736", "score": 0.25, "rationale": "Ground tracking feeds computers that send guidance back to the craft. That is ground-based, not an onboard guidance computer, so only loosely related."}
+{"pair": "q1737", "score": 0.75, "rationale": "Onboard measurement of acceleration and angular velocity, integration and computing of course data matches inertial guidance as in the AGC. Lunar context is close, though engine burns are not mentioned."}
+{"pair": "q1738", "score": 0.25, "rationale": "A huge computer computes satellite orbits and keeps beams aimed, which is ground-based orbit tracking. It is not craft guidance."}
+{"pair": "q1739", "score": 0.5, "rationale": "A compact computer aligns the ship's velocity vector before a jump, matching computer-aided attitude and course setting. The jump context and mechanism differ."}
+{"pair": "q1740", "score": 0.25, "rationale": "A calculator identifies a star by printing a card, which is celestial fix-like but loosely related. No course computation or steering is shown."}
+{"pair": "q1741", "score": 0.25, "rationale": "An observatory computer pinpoints a target and charts an intercept course. It is ground-based planning, not an onboard guidance computer."}
+{"pair": "q1742", "score": 0.5, "rationale": "The ship's computer computes orbits, speeds and distances to pinpoint a position, matching orbit calculation. The steering part is absent."}
+{"pair": "q1743", "score": 0.5, "rationale": "You tell the computer where you are and where you want to go after exact measurements, matching a navigation computer's function. The coordinate system is fantastical."}
+{"pair": "q1744", "score": 0.25, "rationale": "Spaceships run themselves with automatic controls, which is a vague nod to autonomous flight. Nothing is said about computation of orbits or burns."}
+{"pair": "q1745", "score": 0, "rationale": "The quotation is only a spoken query to a contact and contains nothing about a navigation computer."}
+{"pair": "q1746", "score": 0, "rationale": "Feeding a problem to 'Compy' is not shown to be orbital or course computation."}
+{"pair": "q1747", "score": 0, "rationale": "'Doctor Cloud, elucidate' has no guidance or navigation content."}
+{"pair": "q1748", "score": 0.25, "rationale": "A ship's brain being non-functional during a rebuild only vaguely implies an onboard computer. Nothing about navigation appears."}
+{"pair": "q1749", "score": 0.25, "rationale": "Men punched the programs for a built machine, which is vaguely programmed automatic operation. No guidance function is shown."}
+{"pair": "q1750", "score": 0, "rationale": "The quotation is about ignoring ribbing and contains no computer or navigation content."}
+{"pair": "q1751", "score": 0.25, "rationale": "Computing an orbit needs a reference point, which gestures at orbit determination. No spacecraft computer is shown."}
+{"pair": "q1752", "score": 0.25, "rationale": "Computer time is spent on takeoff problems including satellites, which relates loosely to trajectory calculation. It is not onboard guidance."}
+{"pair": "q1753", "score": 0.5, "rationale": "Computers keep the ship on course, matching onboard course-keeping in function. The mechanism is not described."}
+{"pair": "q1754", "score": 0.5, "rationale": "Orders for a new path are set up on the navigational computer, matching onboard course computation. The mechanism is vague."}
+{"pair": "q1755", "score": 0.75, "rationale": "Landing coordinates fed to the computer result in an automatic landing configuration with controls setting themselves, matching automated descent guidance. Atmospheric landing differs from the lunar one."}
+{"pair": "q1756", "score": 0.5, "rationale": "The pilot takes orders from a computer that gives orbits and courses, matching the function. The mechanism is not described."}
+{"pair": "q1757", "score": 0.25, "rationale": "Coordinates are fed into a shipboard computer, but the quotation does not show orbit or course calculation."}
+{"pair": "q1758", "score": 0, "rationale": "A pre-jump checklist and clocks do not show a computer calculating or steering anything."}
+{"pair": "q1759", "score": 0.75, "rationale": "An electronic computer works out flight-line corrections for capture by Mars' gravity, matching computed course corrections for orbit capture. Execution of the burn is not stated."}
+{"pair": "q1760", "score": 0, "rationale": "The quotation only says something is built into the ship, with no navigation function shown."}
+{"pair": "q1761", "score": 0.5, "rationale": "An order to plot a one-gee orbit to Phobos implies the ship computer plots courses. Only the order is shown, not the mechanism."}
+{"pair": "q1762", "score": 0, "rationale": "Installing a cybernetic robot that suffers electronic fatigue does not show guidance or navigation."}
+{"pair": "q1763", "score": 0, "rationale": "The quotation is a joke about a drawing and has no navigation content."}
+{"pair": "q1764", "score": 0.5, "rationale": "The return route is computed on an electronic calculator, matching onboard route computation. The mechanism and steering are not shown."}
+{"pair": "q1765", "score": 0.5, "rationale": "A chartroom electronic computer with astronomical tables matches an onboard navigation computer in function. How it works is unstated."}
+{"pair": "q1766", "score": 0.25, "rationale": "Giant computers solve technical problems beyond human ability, but the quotation does not say they navigate."}
+{"pair": "q1767", "score": 0.25, "rationale": "Only the ship's true position is mentioned. That relates to position fixing but the computer role is not shown."}
+{"pair": "q1768", "score": 0.5, "rationale": "Main and auxiliary computers are expected to fix position after a jump, matching navigation computing. The mechanism is vague."}
+{"pair": "q1769", "score": 0.25, "rationale": "The computer takes over in an emergency, which loosely suggests autonomous control. The quotation does not show course plotting."}
+{"pair": "q1770", "score": 0.25, "rationale": "Smart problem-solving ship computers are mentioned only generically. No guidance function appears in the quotation."}
+{"pair": "q1771", "score": 0.25, "rationale": "Computing the motions of thousands of stars to high precision points toward navigation. The quotation does not tie it to a ship's course."}
+{"pair": "q1772", "score": 0.5, "rationale": "A console computes orbit figures and shows the orbit on a grid projection, matching orbit calculation with display. Steering is not shown."}
+{"pair": "q1773", "score": 0, "rationale": "Scanning for loose equipment is not orbit, course or burn computation."}
+{"pair": "q1774", "score": 0.5, "rationale": "The computer's burn failed to allow for reduced rocket mass, implying it computes rendezvous burns. The mechanism is not detailed."}
+{"pair": "q1775", "score": 0.5, "rationale": "A robo-pilot and astrogational computers are installed for ship navigation, matching in function. No mechanism is given."}
+{"pair": "q1776", "score": 0.5, "rationale": "A computer solves navigation calculations in seconds that would take a human ages, matching navigation computing. Hyperspace context and no steering."}
+{"pair": "q1777", "score": 0.25, "rationale": "An alien computer is said to be used for astrogation, but only in passing. No function is shown."}
+{"pair": "q1778", "score": 0.25, "rationale": "A remote orrery computer returns an asteroid's present position, which is ground-based orbit calculation. It is not craft guidance."}
+{"pair": "q1779", "score": 0.5, "rationale": "Sound analyzers authenticating a living voice and rejecting imitation match voice-based authentication. The mechanism is unspecified."}
+{"pair": "q1780", "score": 0, "rationale": "The quotation describes a fat man in dark glasses and nothing about voice identification."}
+{"pair": "q1781", "score": 0.75, "rationale": "A robot policeman holds a stored voice pattern for a person and can identify and relay by it, matching voiceprint identification. The context is a street robot."}
+{"pair": "q1782", "score": 0.75, "rationale": "A device automatically records a speaker's voice vibration pattern to identify a violator, matching voiceprint use. The registry is only in the claim."}
+{"pair": "q1783", "score": 0.25, "rationale": "A robot cannot connect a changed voice with the familiar one, which loosely implies voice-based recognition. No identification mechanism is stated."}
+{"pair": "q1784", "score": 0.25, "rationale": "A figure that responds to certain sounds is a crude sound-triggered automaton. It does not recognize words or commands."}
+{"pair": "q1785", "score": 0.5, "rationale": "Speaking name, number and rating to a machine that responds with an assignment matches spoken input to a machine. Recognition is implied, not shown."}
+{"pair": "q1786", "score": 0.5, "rationale": "A director voices a demand into a mouthpiece and gets a printed summary, matching voice commands to a machine. The recognition mechanism is unspecified."}
+{"pair": "q1787", "score": 0, "rationale": "The quotation is about human receptionists and shows no voice-operated machine."}
+{"pair": "q1788", "score": 0.25, "rationale": "Robots turn toward a commanding human voice, which shows sound response. The quotation shows no word recognition or obedience."}
+{"pair": "q1789", "score": 0.5, "rationale": "A question is spoken into a machine's mouthpiece, matching spoken input to a computer. The recognition mechanism is not shown, and the prediction is fanciful."}
+{"pair": "q1790", "score": 0.5, "rationale": "A spoken name is given to an electronic door mechanism, matching voice interaction with a machine. The recognition mechanism is vague."}
+{"pair": "q1791", "score": 0.75, "rationale": "Saying a single word to an elevator makes it act, matching spoken command recognition of short vocabulary words. The context is an elevator."}
+{"pair": "q1792", "score": 0.5, "rationale": "An automated service prompts the user to say keywords and presumably interprets them, matching spoken input. Recognition is implied, not shown."}
+{"pair": "q1833", "score": 0.25, "rationale": "Machines convert written briefs into words at the mouth, which is a crude text-to-speech idea. The mechanism is mechanical grinding, far from synthesis."}
+{"pair": "q1866", "score": 0, "rationale": "A machine that reports thoughts and feelings is not speech dictation transcription."}
+{"pair": "q1867", "score": 0.5, "rationale": "Conceives of the spoken word being directly translated into print, which matches the function. No mechanism is given."}
+{"pair": "q1868", "score": 0.25, "rationale": "A keyless typewriter-shaped machine is only vaguely linked to dictation. The quotation shows no speech transcription."}
+{"pair": "q1869", "score": 0.25, "rationale": "A voice-writing machine making twenty-five copies at once is only loosely related. The quotation does not show the transcription."}
+{"pair": "q1870", "score": 0.5, "rationale": "Mathematically exact translation of oral sound into writing matches speech-to-text in function. The mechanism is vague."}
+{"pair": "q1871", "score": 0.5, "rationale": "A dictatyper used to compose a letter matches a dictation typing machine in function. No mechanism is given."}
+{"pair": "q1872", "score": 0.5, "rationale": "A voice-recording machine switched into transcriber mode matches dictation transcription in function. The mechanism is not described."}
+{"pair": "q1873", "score": 0.5, "rationale": "Dictating a message to a steno-robot matches dictation to a machine. The mechanism is not described."}
+{"pair": "q1874", "score": 0.5, "rationale": "Articles are produced on a voco-typer, matching voice-to-text writing in function. The mechanism is not described."}
+{"pair": "q1875", "score": 0.25, "rationale": "A report is 'audioscribed' to a machine. This is only a vague reference to spoken input."}
+{"pair": "q1876", "score": 0.25, "rationale": "A sonotyper on a shelf is a name only. No dictation function is shown."}
+{"pair": "q1877", "score": 0.25, "rationale": "A dicto-typer is mentioned as a speed comparison. No speech transcription is shown."}
+{"pair": "q1878", "score": 0.25, "rationale": "A spool in a thinkwriter is only a name and a prop. No dictation function is shown."}
+{"pair": "q1879", "score": 0.25, "rationale": "A secretary transcribes on an audioscriber, so a human does the transcribing. The machine is only vaguely related."}
+{"pair": "q1880", "score": 0.25, "rationale": "Calling for a dicto-typer shows only a name. The function is not demonstrated."}
+{"pair": "q1881", "score": 0.5, "rationale": "A special voice used with a vocowriter implies a machine that takes speech to write. The mechanism is not shown."}
+{"pair": "q1882", "score": 0.25, "rationale": "Vocowriters are listed as equipment, with no function shown."}
+{"pair": "q1883", "score": 0, "rationale": "The quotation is about a transformer and mechanical aptitude and shows no dictation."}
+{"pair": "q1884", "score": 0.75, "rationale": "Talking into the device makes words appear on paper, directly matching speech-to-text. The context is a 1955 office device rather than software."}
+{"pair": "q1885", "score": 0.25, "rationale": "A thinkwriter used by reporters is a name only. No transcription of speech is shown."}
+{"pair": "q1886", "score": 0.5, "rationale": "Dictating an order to a voicewrite matches dictation to a writing machine. The mechanism is not described."}
+{"pair": "q1887", "score": 0.5, "rationale": "Dictating a memo to a voicewrite matches dictation to a writing machine in function. The mechanism is not described."}
+{"pair": "q1888", "score": 0.25, "rationale": "A mechanical secretary reviewing a summation is only loosely related. No speech transcription is shown."}
+{"pair": "q1889", "score": 0.25, "rationale": "'The clear script of a voice-writer' is only a name. No transcription process is described."}
+{"pair": "q1890", "score": 0.25, "rationale": "A full account is dictated, but the quotation does not show the machine producing text."}
+{"pair": "q1891", "score": 0.5, "rationale": "A stenophone is used to dictate a list, matching dictation to a machine. The mechanism is not shown."}
+{"pair": "q1892", "score": 0.75, "rationale": "Speaking at the Speak-a-Type makes its keys rattle as they try to keep up, matching live speech-to-text typing. The context is a 1958 typewriter."}
+{"pair": "q1893", "score": 0.5, "rationale": "Composing letters on a portable voicewrite matches dictation to a machine. The mechanism is not described."}
+{"pair": "q1894", "score": 0.75, "rationale": "Speaking into the microphone of a typing machine that transcribes her words as type matches speech-to-text dictation. The context is a secretary editing and re-speaking."}
+{"pair": "q1895", "score": 0.25, "rationale": "A battered voicewriter is a prop in a description. No function is shown."}
+{"pair": "q1896", "score": 0, "rationale": "The line is only a wording correction and shows no machine transcription."}
+{"pair": "q1897", "score": 0, "rationale": "The quotation is narrative with no dictation machine content."}
+{"pair": "q1898", "score": 0.25, "rationale": "Automated phono-typers in an office aisle are mentioned in passing. The function is not demonstrated."}
+{"pair": "q1899", "score": 0.25, "rationale": "A dictator records a spoken message. This is recording, and the quotation does not show automatic transcription."}
+{"pair": "q1900", "score": 0.25, "rationale": "A dial-set household robot selects tasks from a preset dial, a crude program. It uses no recorded instruction sequence."}
+{"pair": "q1901", "score": 0.25, "rationale": "A machine receives control-room orders and adjusts machines, which is remote automatic control. There is no recorded program or tape."}
+{"pair": "q1902", "score": 0.25, "rationale": "An order is beamed and sealed into a robot's brain, which is a vague instruction store. It is not a tape or program-driven machine."}
+{"pair": "q1903", "score": 0.5, "rationale": "Tapes are pulled through controllers that run unmanned aircraft, matching tape-driven control in function. The context is aircraft rather than machine tools and the mechanism is thin."}
+{"pair": "q1920", "score": 0, "rationale": "A machine described as the most highly developed in the world does not show scientific computation."}
+{"pair": "q1921", "score": 0.5, "rationale": "The biggest electronic computers handle an unlimited number of variables for an astronomical calculation, matching large scientific computing in function. The mechanism is vague."}
+{"pair": "q1922", "score": 0.25, "rationale": "Giant electronic computers do the mathematics for a flight, which is loosely scientific computing. Nothing specific about scale or speed appears."}
+{"pair": "q1923", "score": 0.25, "rationale": "A mechanical brain might solve thousands of successive equations, a generic reference to computing power. It is speculative."}
+{"pair": "q1924", "score": 0.25, "rationale": "A mammoth Earth computer sends data by radio, which loosely points to heavy computing. The quotation shows no calculation task."}
+{"pair": "q1925", "score": 0, "rationale": "A consortium wanting to own a shared ULTIMAC is about funding and does not show scientific computation."}
+{"pair": "q1926", "score": 0.25, "rationale": "An astrophysics computer of enormous size is mentioned, which is loosely a research supercomputer. No performance or mechanism is given."}
+{"pair": "q1927", "score": 0}

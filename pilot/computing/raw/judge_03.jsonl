@@ -1,0 +1,120 @@
+{"pair": "q0356", "score": 0.75, "rationale": "A computer pairs people as spouses by comparing recorded traits, matching the function and key mechanism of matching on recorded traits. Context differs: compulsory marriage contracts versus voluntary questionnaire dating."}
+{"pair": "q0357", "score": 0.25, "rationale": "A computer analyzes brain-activity film and shows a live picture, which points toward medical computing. It is not record storage or diagnosis from symptoms, so the function differs."}
+{"pair": "q0358", "score": 0.25, "rationale": "The quote says only that the machine is large because of its computation section. This loosely evokes medical computing, with no diagnosis or treatment choice shown."}
+{"pair": "q0359", "score": 0.25, "rationale": "A bedside plug-in to a computer outlet loosely suggests hospital computer access. Nothing in the quote shows records or diagnosis."}
+{"pair": "q0360", "score": 0.25, "rationale": "A computer correlates medical data cards, which is epidemiological analysis. It does not diagnose individuals or choose treatment like the rule-based expert system."}
+{"pair": "q0361", "score": 0.5, "rationale": "Computers hooked into central data banks match the function of linked computers sharing data. The mechanism (communication lines, terminals) is not described."}
+{"pair": "q0362", "score": 0.5, "rationale": "Every machine in a city is linked to work on one problem fed in at a master control, which matches shared computing across a network. The mechanism is vague."}
+{"pair": "q0363", "score": 0.5, "rationale": "Data from a distant computer reaches a remote station by radio, matching remote computing over communication links. It is one-way taped facsimile, not interactive terminals."}
+{"pair": "q0364", "score": 0.25, "rationale": "Teams feed data to machines and receive answers. No linking of distant computers or terminals is stated in the quote."}
+{"pair": "q0365", "score": 0.5, "rationale": "Household communicators are keyed into a central tabulator cross-indexed with census files, which is remote terminals feeding a central system. The network mechanism is not detailed."}
+{"pair": "q0366", "score": 0.5, "rationale": "Local machines refer queries to a central System Computer, a hierarchy of linked computers. Mechanism and users' access are only implied."}
+{"pair": "q0367", "score": 0.25, "rationale": "A button-board device for entering information loosely resembles a terminal. Nothing connects it to a remote computer."}
+{"pair": "q0368", "score": 0.5, "rationale": "Plugging a portable apparatus into a computer outlet implies access to a shared computer through a terminal connection, matching the function. Mechanism details are absent."}
+{"pair": "q0369", "score": 0.25, "rationale": "An automated machine queried for colonists' attributes over a distance loosely points to remote data access. The quote gives no network detail."}
+{"pair": "q0370", "score": 0.5, "rationale": "Orders are automatically routed and beamed across star systems, matching message transmission between linked systems. It is routing of messages rather than shared computing."}
+{"pair": "q0371", "score": 0.75, "rationale": "A keyboard at a desk feeds a remote computer miles away and gets a reply, which matches remote terminal use of a distant machine. The astronomical context differs."}
+{"pair": "q0372", "score": 0.25, "rationale": "Selector-controlled tests of workmen loosely evoke automated testing. The quote is thin and gives no computer or aptitude selection."}
+{"pair": "q0373", "score": 0.25, "rationale": "Machines that rate intelligence loosely point to aptitude testing. The quote is mainly about age as a measure and does not describe computerized selection."}
+{"pair": "q0374", "score": 0.5, "rationale": "An aptitude machine selects people by ability alone, matching the function of computerized aptitude testing and selection. The mechanism is not described."}
+{"pair": "q0375", "score": 0.5, "rationale": "Answers fed to a machine predict behavior, used to screen recruits, which matches computer personality testing for selection. The mechanism is vague."}
+{"pair": "q0376", "score": 0.25, "rationale": "Data fed to an electronic brain yields orders for men and supplies, which is planning rather than testing or selecting people. It is only loosely related."}
+{"pair": "q0377", "score": 0.25, "rationale": "Data fed to an electronic brain yields orders for men and supplies, which is planning rather than testing or selecting people. It is only loosely related."}
+{"pair": "q0378", "score": 0.5, "rationale": "A giant calculator fed coded information is used to select an advisor, matching computer selection for jobs. Mechanism is unspecified and the data is not aptitude testing."}
+{"pair": "q0379", "score": 0.5, "rationale": "Psychograph machines screen out unsuitable personalities, matching computerized personality screening for a mission. The mechanism is not described."}
+{"pair": "q0380", "score": 0.5, "rationale": "Brain-wave analysis plus sorting against stored life-files assesses candidates, matching testing combined with records. Officials still make the judgment."}
+{"pair": "q0381", "score": 0, "rationale": "The passage concerns a human's decision-variance scores against a machine brain. It does not involve computers testing or selecting people."}
+{"pair": "q0382", "score": 0.5, "rationale": "Personnel description cards are run through a machine to find the best match, which is selection from records. It is look-alike matching rather than aptitude testing."}
+{"pair": "q0383", "score": 0.5, "rationale": "Punched-card test data on personality and physiology is integrated by a computer in minutes, matching computerized assessment. No selection decision is stated."}
+{"pair": "q0384", "score": 0.5, "rationale": "Pilots are picked by running characteristics through a sorter, matching computerized selection for jobs. The mechanism is vague."}
+{"pair": "q0385", "score": 0.5, "rationale": "A large computer names the best person for a mission, matching computer selection of people. How it decides is not described."}
+{"pair": "q0386", "score": 0.5, "rationale": "A central machine assigns a person to a ship crew based on abilities and potentialities, matching computerized job placement. The mechanism is vague."}
+{"pair": "q0387", "score": 0.25, "rationale": "Electrodes and sensors feed a machine that analyzes reactions, loosely a personality test apparatus. The quote does not say it selects or rates for jobs."}
+{"pair": "q0388", "score": 0.25, "rationale": "Machines read a person's mind for personality checkups, which is testing by machine in a different mechanism. Selection is not stated."}
+{"pair": "q0389", "score": 0.5, "rationale": "Machines interpret personality test results, matching computer scoring of tests. Selection is only implied by the summary."}
+{"pair": "q0390", "score": 0.25, "rationale": "A cybernetic unit processes a person's data to evaluate them, but the quote is generic about what is tested or decided."}
+{"pair": "q0391", "score": 0.5, "rationale": "A computer runs over a pilot and renews his license in ten minutes, a computerized fitness assessment. Selection from records is not involved."}
+{"pair": "q0392", "score": 0.5, "rationale": "A card-based personnel computer is used for evaluating employees. The quote itself shows little of the evaluation function."}
+{"pair": "q0393", "score": 0.25, "rationale": "A computer's evaluative standards rise and it is implied to judge staff. The quote shows only drift, not testing or selection."}
+{"pair": "q0394", "score": 0.25, "rationale": "A computer evaluating people is shown failing to account for human factors. Testing or selecting is only implied."}
+{"pair": "q0395", "score": 0.25, "rationale": "A machine is said to evaluate personnel without bias. This is a loose pointer with no mechanism."}
+{"pair": "q0396", "score": 0.5, "rationale": "A machine retrieves and prints a job assignment on cards, matching computer-based placement from records. The record-matching mechanism is only partly shown."}
+{"pair": "q0397", "score": 0.5, "rationale": "A governmental computer chooses a man for a mission, matching computer selection for missions. The method is not described."}
+{"pair": "q0398", "score": 0.5, "rationale": "A central computer selects a person for a mission because of mental abilities, matching selection by ability. The method is not described."}
+{"pair": "q0399", "score": 0.5, "rationale": "A central computer selects a person for a mission, matching computer selection. The method is not described."}
+{"pair": "q0400", "score": 0.25, "rationale": "The quote only names a composite Brain. Selection is not in the quote itself and comes only from the helper summary."}
+{"pair": "q0401", "score": 0.25, "rationale": "The quote shows the Brain remotely manipulated, with selection implied only by the summary. This is a loose pointer."}
+{"pair": "q0402", "score": 0.5, "rationale": "Applications are machine-processed with an instant printed rejection, matching automated screening of applicants. It is not aptitude testing."}
+{"pair": "q0403", "score": 0.5, "rationale": "A series of machines extracts information from a person and sends them on, implying automated classification. Job assignment is only implied."}
+{"pair": "q0404", "score": 0.25, "rationale": "The quote shows only automatic order routing across stars. The selection of officers from dossiers comes from the summary, not the quote."}
+{"pair": "q0405", "score": 0, "rationale": "A morale computer approves a visit, which is surveillance or control rather than testing or selecting people for jobs or missions."}
+{"pair": "q0406", "score": 0.25, "rationale": "A machine reads mental frequency and assesses psychological state, which is the assessment half of the concept, but by brain reading rather than dialogue. It is far from ELIZA's mechanism."}
+{"pair": "q0407", "score": 0.5, "rationale": "A psycho-computer session as treatment matches a computer for mental problems in function. The mechanism is not described, and ELIZA was only a pattern-matching analogue."}
+{"pair": "q0408", "score": 0.25, "rationale": "A psychocomputer is one of several interrogation machines. This is evocative of computer psychological assessment but not therapy."}
+{"pair": "q0409", "score": 0, "rationale": "An immersive simulated-scenario test is virtual reality, not a computer conducting analysis or conversation as therapy."}
+{"pair": "q0410", "score": 0.25, "rationale": "A psycho-computer delivers a verdict, which loosely evokes automated psychological assessment. No mechanism is given."}
+{"pair": "q0411", "score": 0.25, "rationale": "Psych analyzers and synthesizers used for psychostatistics are only loosely related. The use is mathematical modeling, not assessing or treating a patient."}
+{"pair": "q0412", "score": 0, "rationale": "A calculator simulating a synthetic personality for space flight is modeling, not assessing or treating a person."}
+{"pair": "q0413", "score": 0.25, "rationale": "Hidden machinery measures pulse, balance and intelligence to profile a visitor, a loose automated personality assessment. It is not clinical and has no dialogue."}
+{"pair": "q0414", "score": 0.25, "rationale": "Machine psychosis and machine psychiatrists are loosely evocative of computer therapy. Here the patients are machines."}
+{"pair": "q0415", "score": 0.25, "rationale": "Extrapolating a personality pattern to predict a person's fate is loosely computer psychological analysis. It is prediction, not assessment of a patient or therapy."}
+{"pair": "q0416", "score": 0.25, "rationale": "A computer's built-in psychological subsystem diagnoses its own emotions, loosely evoking computer psychoanalysis. The quote does not show it treating a patient."}
+{"pair": "q0417", "score": 0, "rationale": "Neuro-graph devices that guard a corridor are physical security guards, not attacks on computer systems."}
+{"pair": "q0418", "score": 0, "rationale": "Termites eating a computer's wood-pulp insulation is physical sabotage by lure. It is not software or network intrusion like the Morris worm."}
+{"pair": "q0419", "score": 0.25, "rationale": "Feeding a machine a problem to make it behave insanely is sabotage of a computer through its input. It differs from a self-propagating program that disables machines."}
+{"pair": "q0420", "score": 0.25, "rationale": "A master computer is destroyed by a paradox fed to it, sabotage through input. Unlike the Morris worm, it involves one machine and no replication."}
+{"pair": "q0421", "score": 0.5, "rationale": "Inserting a new circuit into a central robot computer to make robots harm someone is tampering with a system's programming. It is a targeted insider act, not a spreading worm."}
+{"pair": "q0422", "score": 0, "rationale": "Saboteurs burning out calculator wings is physical damage, not hacking or software attack."}
+{"pair": "q0423", "score": 0, "rationale": "A brain-implanted circuit that wipes memory under extraction is a biological defence, not a computer security scenario."}
+{"pair": "q0424", "score": 0.5, "rationale": "A person covertly corrupts a computer by feeding it false input to change its outputs, which is data tampering. It is slow manual conditioning, not malware."}
+{"pair": "q0425", "score": 0.5, "rationale": "Nationwide personnel records are scrambled by sabotage, matching tampering with data. The method is not shown in the quote."}
+{"pair": "q0426", "score": 0.25, "rationale": "A two-key activation panel guarding a ship's brain loosely evokes access control. It is a defence only, with no attack."}
+{"pair": "q0427", "score": 0.25, "rationale": "Locking computers into a feedback loop until a code key is used is an attack that disables machines. It is not a spreading program and the target class is only implied."}
+{"pair": "q0445", "score": 0.25, "rationale": "A table screen displays a menu when the diner sits, loosely a display device. It is not clearly computer-driven and the real development is a real-time CRT console."}
+{"pair": "q0446", "score": 0.25, "rationale": "A pocket device shows animated figures in a costume. It is a loose pointer to displayed graphics, with no computer mentioned."}
+{"pair": "q0447", "score": 0, "rationale": "Clicking tabulators produce printed summaries, not a screen display."}
+{"pair": "q0448", "score": 0.75, "rationale": "A keyboard entry brings a designation up on a screen in front of the user, matching text shown on a computer screen. The CRT mechanism is not stated and the context is a database query."}
+{"pair": "q0469", "score": 0.25, "rationale": "A keyboard-operated accounting machine keeps national accounts, a loose evocation of automated finance. There is no planning or analysis of production."}
+{"pair": "q0470", "score": 0.25, "rationale": "A government machine audits point accounts daily, loosely evoking centralized accounting. It is not planning production."}
+{"pair": "q0471", "score": 0.5, "rationale": "Batteries of computers coordinate a hemisphere's infrastructure details, matching central economic coordination. Data flow from factories is not described."}
+{"pair": "q0472", "score": 0.25, "rationale": "A city computer produces a cost estimate for a project. This is municipal costing, only loosely economic planning."}
+{"pair": "q0473", "score": 0.5, "rationale": "An automated forecaster predicts needs and links directly to supply, matching computer-driven planning of production and supply. It is much smaller in scale than a national economy."}
+{"pair": "q0474", "score": 0.25, "rationale": "Large computers process economic data for investors, loosely matching financial analysis. The quote gives little mechanism."}
+{"pair": "q0475", "score": 0.5, "rationale": "A computer analyzes finances and forecasts trends to prescribe production changes, a firm-level version of the planning function. The scale and data flow differ."}
+{"pair": "q0476", "score": 0.25, "rationale": "A robot manages finances, which is evocative of automated financial management. The quote gives no computing mechanism."}
+{"pair": "q0477", "score": 0.25, "rationale": "A computer calculates, with a screen of real-time quotes in the summary only. In the quote itself it is just keystrokes on a computer."}
+{"pair": "q0478", "score": 0.25, "rationale": "Computers recompute betting odds in real time, loosely matching computerized market analysis. The psionic input is fantasy, and betting is not an economy or finance market in the concept sense."}
+{"pair": "q0479", "score": 0.5, "rationale": "A planetary computer handles a grain-futures series, matching computers analysing financial markets and planning for an economy. The mechanism is not described."}
+{"pair": "q0480", "score": 0.25, "rationale": "Huge computers dictate people's lives and luxuries, loosely evoking computer-run economy. There is no concrete function."}
+{"pair": "q0481", "score": 0.5, "rationale": "Planning machines handle production lines and plant planning, matching computerized production planning. It is corporate scale rather than a national economy."}
+{"pair": "q0482", "score": 0.25, "rationale": "A giant computer is important to a planet's prosperity, a loose evocation of economic management. The quote gives no function or mechanism."}
+{"pair": "q0483", "score": 0.25, "rationale": "A computer set to audit the planetary treasury loosely evokes computerized finance. It is auditing, not planning or markets."}
+{"pair": "q0484", "score": 0.25, "rationale": "A computer given recent history advises where to find markets, a loose pointer to economic advice. The mechanism is not shown."}
+{"pair": "q0485", "score": 0.5, "rationale": "Millions of tabulating machines arrange production to fit income distribution, matching central planning by machines. Data feeding from factories and the real-time mechanism are not described."}
+{"pair": "q0486", "score": 0.5, "rationale": "Government computers manage and predict the economy and corrective actions, matching centralized economic computing. The mechanism is not described."}
+{"pair": "q0487", "score": 0.5, "rationale": "A computer tabulates a consumer poll and points to the design most likely to sell, matching predicting what customers will buy. The mechanism is poll tabulation rather than credit scoring."}
+{"pair": "q0488", "score": 0.25, "rationale": "A brain-attached device records tastes for conformity, loosely suggesting measuring consumer preferences. It is not a computer predicting purchases."}
+{"pair": "q0489", "score": 0.25, "rationale": "A device tests people's reactions to music and prints cards, a loose analogue of audience measurement. No scoring or purchase prediction is shown."}
+{"pair": "q0494", "score": 0.25, "rationale": "Recorded voice tapes respond to questions across towns, loosely evoking automated question answering. This is canned playback, not a program converting typed English."}
+{"pair": "q0495", "score": 0.5, "rationale": "A machine speaks to humans in natural language and negotiates, matching conversing in ordinary language. It is speech rather than typed text, and no understanding mechanism is shown."}
+{"pair": "q0496", "score": 0.25, "rationale": "A robot speaks callously to a subject, showing speech but little about conversation or understanding."}
+{"pair": "q0497", "score": 0.25, "rationale": "A robot states what it is, a minimal sign of language use. The quote does not show understanding of questions."}
+{"pair": "q0498", "score": 0.5, "rationale": "A machine registrar converses and adopts a personality, matching a computer holding conversation. The mechanism is not shown."}
+{"pair": "q0499", "score": 0.25, "rationale": "The quote says only that the AI is a thing. It is a loose pointer that rests on the helper summary."}
+{"pair": "q0500", "score": 0.75, "rationale": "A typewriter's keys clack on their own and carry on a conversation, matching typed dialogue with a machine. The context is supernatural in tone and the mechanism is unspecified."}
+{"pair": "q0501", "score": 0.25, "rationale": "A mirror speaks advice in ordinary language, a one-way remark rather than an understanding dialogue."}
+{"pair": "q0502", "score": 0.5, "rationale": "A computer replies in speech with a proverb, a conversational exchange in natural language. The mechanism is not described."}
+{"pair": "q0503", "score": 0.5, "rationale": "A machine replies in human language to a person, matching conversation. The mechanism is not described."}
+{"pair": "q0504", "score": 0.25, "rationale": "A machine-mother persona can be summoned on panel screens, evoking an interactive agent, but conversation is not shown in the quote."}
+{"pair": "q0505", "score": 0.25, "rationale": "A device was asked to tell limericks, a hint of a request and response exchange. It is mostly recalled anecdote."}
+{"pair": "q0506", "score": 0.25, "rationale": "A synthesized woman image fronts an information service, an interface persona rather than conversation understanding."}
+{"pair": "q0507", "score": 0.5, "rationale": "A computer answers in English that it is aware of human limits, a conversational reply in natural language. The mechanism is not described."}
+{"pair": "q0508", "score": 0.5, "rationale": "A machine replies to its inventor with a reasoned answer in language, matching conversational exchange. The mechanism is not described."}
+{"pair": "q0509", "score": 0.5, "rationale": "A person speaks to a machine through a microphone to give it information, matching communicating in ordinary language. The reply and understanding are not in the quote."}
+{"pair": "q0510", "score": 0.5, "rationale": "A human interprets mathematics from English for the machine, implying the computer takes English input. The quote suggests this is done by a person, so the match is weak."}
+{"pair": "q0511", "score": 0.25, "rationale": "An alien machine converts brain impulses into broadcast sound, so it speaks aloud. This points loosely toward spoken computer output, with no conversational understanding."}
+{"pair": "q0535", "score": 0.25, "rationale": "Illuminated magnified book sheets on a wall rack for reclining reading point loosely to a screen reader. They are not electronic and not portable."}
+{"pair": "q0536", "score": 0.5, "rationale": "A reusable slab changes colour and shows lines of text at a button press, matching a portable device displaying text. The mechanism is vague and the stored content is not clear."}
+{"pair": "q0537", "score": 0.5, "rationale": "Reading books on a portable book-screen matches an e-reader's function. The mechanism is not described."}
+{"pair": "q0538", "score": 0.25, "rationale": "A lightweight no-back from the ship's library is a reading object. The quote does not say it is a screen device."}
+{"pair": "q0539", "score": 0.5, "rationale": "Machines perform calculus automatically with little guidance, matching the function of automatic calculation. The mechanism (electronic stored program) is missing."}

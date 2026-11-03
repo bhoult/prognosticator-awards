@@ -1,0 +1,138 @@
+{"concept_id": "thought-to-text", "kind": "first_demonstration", "url": "https://api.crossref.org/works/10.1126/sciadv.adw1464", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "thought-to-text", "kind": "first_demonstration", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12588295/", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "brain-computer-interface", "kind": "first_demonstration", "url": "https://archive.org/details/sim_air-force-research-review_1964-11_3_9", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "brain-computer-interface", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "brain-computer-interface", "kind": "first_practical_use", "url": "https://api.crossref.org/works/10.1097/00001756-199806010-00007", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "virtual-reality", "kind": "first_demonstration", "url": "https://archive.computerhistory.org/resources/access/text/2017/04/102726905-05-01-acc.pdf", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "virtual-reality", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/The_Sword_of_Damocles_(virtual_reality)", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "virtual-reality", "kind": "first_practical_use", "url": "https://archive.org/details/NASA_NTRS_Archive_20110004264", "source_kind": "contemporary", "verdict": "quote over 25 words", "batch": "ms3_b02.jsonl"}
+{"concept_id": "virtual-reality", "kind": "first_practical_use", "url": "https://archive.org/details/release-1.0-10-90", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "virtual-reality", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Virtuality_(product)", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "speech-recognition", "kind": "first_demonstration", "url": "https://api.crossref.org/works/10.1121/1.1906946", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "speech-recognition", "kind": "first_demonstration", "url": "https://archive.org/details/sim_record-at-t-bell-laboratories_1956-03_34_3", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "speech-recognition", "kind": "first_practical_use", "url": "https://archive.org/details/ERIC_ED085933", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "speech-recognition", "kind": "first_practical_use", "url": "https://archive.org/details/NASA_NTRS_Archive_19930075178", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "speech-recognition", "kind": "mass_adoption", "url": "https://archive.org/details/DigitNovember2011", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "speech-recognition", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Siri", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-readable-id-card", "kind": "first_demonstration", "url": "https://archive.org/details/sim_industry-week_1960-10-03_147_14", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-readable-id-card", "kind": "first_demonstration", "url": "https://archive.org/details/national-labor-journal_1960-11_13_3", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-readable-id-card", "kind": "first_practical_use", "url": "https://archive.org/details/sim_american-machinist_1961-09-18_105_19", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-generated-writing", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Christopher_Strachey", "source_kind": "reference", "verdict": "quote over 25 words", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-generated-writing", "kind": "first_demonstration", "date": "1952", "verdict": "milestone dropped: no verified source"}
+{"concept_id": "machine-generated-writing", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Natural-language_generation", "source_kind": "reference", "verdict": "quote over 25 words", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-generated-writing", "kind": "first_practical_use", "url": "https://api.crossref.org/works/10.3115/992507.992527", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-generated-writing", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/ChatGPT", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "machine-generated-writing", "kind": "mass_adoption", "url": "https://archive.org/details/9th-london-international-conference-2023", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "computer-video-display", "kind": "first_demonstration", "url": "https://archive.org/details/proceedings_of_a_second_symposium_on_large-scale_", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "computer-video-display", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Manchester_Baby", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "computer-video-display", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Whirlwind_I", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "computer-video-display", "kind": "first_practical_use", "url": "https://archive.org/details/bitsavers_mitwhirlwisummaryMC665r22sr32Q41952_6207671", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "computer-video-display", "kind": "mass_adoption", "url": "https://archive.org/details/time-1983-01-03", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "computer-video-display", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Home_computer", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "electronic-book-reader", "kind": "first_demonstration", "url": "https://archive.org/details/ltew20", "source_kind": "contemporary", "verdict": "quote over 25 words", "batch": "ms3_b02.jsonl"}
+{"concept_id": "electronic-book-reader", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Sony_Data_Discman", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "electronic-book-reader", "kind": "first_practical_use", "url": "https://archive.org/details/ltew20", "source_kind": "contemporary", "verdict": "quote over 25 words", "batch": "ms3_b02.jsonl"}
+{"concept_id": "electronic-book-reader", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Sony_Data_Discman", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "electronic-book-reader", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/E-book", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "electronic-book-reader", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/E-reader", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "spacecraft-guidance-computer", "kind": "first_demonstration", "url": "https://archive.org/details/gemini-titan-3-press-kit", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "spacecraft-guidance-computer", "kind": "first_demonstration", "url": "https://archive.org/details/NASA_NTRS_Archive_19680005472", "source_kind": "reference", "verdict": "quote over 25 words", "batch": "ms3_b02.jsonl"}
+{"concept_id": "spacecraft-guidance-computer", "kind": "first_practical_use", "url": "https://archive.org/details/gemini-titan-3-press-kit", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b02.jsonl"}
+{"concept_id": "spacecraft-guidance-computer", "kind": "first_practical_use", "url": "https://archive.org/details/NASA_NTRS_Archive_19680005472", "source_kind": "reference", "verdict": "quote over 25 words", "batch": "ms3_b02.jsonl"}
+{"concept_id": "face-recognition", "kind": "first_demonstration", "url": "https://archive.org/details/DTIC_AD0724867", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "face-recognition", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Facial_recognition_system", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "face-recognition", "kind": "first_practical_use", "url": "https://archive.org/details/DTIC_ADA284588", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "face-recognition", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Facial_recognition_system", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "face-recognition", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Face_ID", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "speech-synthesis", "kind": "first_demonstration", "url": "https://archive.org/details/b28756307", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "speech-synthesis", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Speech_synthesis", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "speech-synthesis", "kind": "first_practical_use", "url": "https://archive.org/details/computerworld106unse", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "speech-synthesis", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Speech_synthesis", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "speech-synthesis", "kind": "mass_adoption", "url": "https://archive.org/details/ERIC_ED223242", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "speech-synthesis", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Speak_%26_Spell_(toy)", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "companion-robot", "kind": "first_demonstration", "url": "https://archive.org/details/mary-beth-furby", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "companion-robot", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Furby", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "companion-robot", "kind": "first_practical_use", "url": "https://archive.org/details/mary-beth-furby", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "companion-robot", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Furby", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "companion-robot", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Furby", "source_kind": "reference", "verdict": "quote over 25 words", "batch": "ms3_b03.jsonl"}
+{"concept_id": "companion-robot", "kind": "mass_adoption", "date": "1999", "verdict": "milestone dropped: no verified source"}
+{"concept_id": "holographic-3d-display", "kind": "first_demonstration", "url": "https://archive.org/details/sim_electronics_1958-05-23_31_21", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "holographic-3d-display", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Volumetric_display", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "holographic-3d-display", "kind": "first_practical_use", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5720547/", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "holographic-3d-display", "kind": "first_practical_use", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5720547/", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "machine-learning", "kind": "first_demonstration", "url": "https://archive.org/details/sim_popular-science_1952-03_160_3", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "machine-learning", "kind": "first_demonstration", "url": "https://archive.org/details/sim_science-news-us_1952-05-17_61_20", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "machine-learning", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Claude_Shannon", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "three-d-printing", "kind": "first_demonstration", "url": "https://api.crossref.org/works/10.1063/1.1136492", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "three-d-printing", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/3D_printing", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "three-d-printing", "kind": "first_practical_use", "url": "https://archive.org/details/usmodernist-PA-1987-05", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "three-d-printing", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Stereolithography", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "real-time-tactical-display", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Semi-Automatic_Ground_Environment", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "real-time-tactical-display", "kind": "first_demonstration", "url": "https://archive.org/details/bitsavers_mitlincolnIESL045CONDENSEDSUMMARYOFFY5419520610_543004", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "real-time-tactical-display", "kind": "first_practical_use", "url": "https://archive.org/details/sim_bell-telephone-magazine_summer-1958_37_2", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "real-time-tactical-display", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Semi-Automatic_Ground_Environment", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "real-time-tactical-display", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Flightradar24", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "space-station-automation", "kind": "first_demonstration", "url": "https://archive.org/details/NASA_NTRS_Archive_19750002066", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "space-station-automation", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Skylab", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "space-station-automation", "kind": "first_practical_use", "url": "https://archive.org/details/NASA_NTRS_Archive_19750002066", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "space-station-automation", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Skylab", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "sleep-learning", "kind": "first_demonstration", "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.cub.2018.12.038", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b03.jsonl"}
+{"concept_id": "robot-supervisor-hierarchy", "kind": "first_demonstration", "url": "https://archive.org/details/usmodernist-AP-1974-11-12", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "robot-supervisor-hierarchy", "kind": "first_demonstration", "url": "https://archive.org/services/search/beta/page_production/?user_query=%22central+data+computer%22+AND+identifier%3Abwb_P8-CHV-754&service_backend=fts&hits_per_page=5", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "robot-supervisor-hierarchy", "kind": "first_practical_use", "url": "https://archive.org/details/usmodernist-AP-1974-11-12", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "robot-supervisor-hierarchy", "kind": "first_practical_use", "url": "https://archive.org/services/search/beta/page_production/?user_query=%22central+data+computer%22+AND+identifier%3Abwb_P8-CHV-754&service_backend=fts&hits_per_page=5", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "speech-to-text-dictation", "kind": "first_demonstration", "url": "https://api.crossref.org/works/10.1121/1.1905052", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "speech-to-text-dictation", "kind": "first_demonstration", "url": "https://archive.org/details/per_atlanta-constitution_1956-08-02_89_40", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "speech-to-text-dictation", "kind": "first_demonstration", "url": "https://archive.org/details/challenge_august-september-1956_4_11-12", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "speech-to-text-dictation", "kind": "first_practical_use", "url": "https://archive.org/details/sim_computerworld_1986-12-15_20_50", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "speech-to-text-dictation", "kind": "first_practical_use", "url": "https://archive.org/details/sim_computerworld_1986-06-02_20_22", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b04.jsonl"}
+{"concept_id": "question-answering-computer", "kind": "first_demonstration", "url": "https://archive.org/details/DTIC_AD0414777", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "question-answering-computer", "kind": "first_demonstration", "url": "https://archive.org/details/DTIC_AD0414777", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "question-answering-computer", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Boris_Katz", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "question-answering-computer", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Siri", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "touch-gesture-interface", "kind": "first_demonstration", "url": "https://api.crossref.org/works/10.1049/el:19650200", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "touch-gesture-interface", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Touchscreen", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "touch-gesture-interface", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/PLATO_(computer_system)", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "touch-gesture-interface", "kind": "first_practical_use", "url": "https://archive.org/details/ERIC_ED084845", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "touch-gesture-interface", "kind": "mass_adoption", "url": "https://en.wikipedia.org/wiki/Touchscreen", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "robot-vacuum-mower", "kind": "first_demonstration", "url": "https://archive.org/details/usmodernist-HG-1969-05", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "robot-vacuum-mower", "kind": "first_demonstration", "url": "https://archive.org/details/life-1969-09-19-sex-education-for-little-children-red", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "robot-vacuum-mower", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Robotic_lawn_mower", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "robot-vacuum-mower", "kind": "first_practical_use", "url": "https://archive.org/details/usmodernist-HG-1969-05", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "robot-vacuum-mower", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Robotic_lawn_mower", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "robot-vacuum-mower", "kind": "mass_adoption", "url": "https://archive.org/details/SERVOMagazine2006-11", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b05.jsonl"}
+{"concept_id": "iris-retina-recognition", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Retinal_scan", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "iris-retina-recognition", "kind": "first_practical_use", "url": "https://archive.org/details/sim_computerworld_1986-06-23_20_25", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "iris-retina-recognition", "kind": "first_practical_use", "url": "https://archive.org/details/DTIC_ADA161213", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "information-retrieval", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Dialog_(online_database)", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "information-retrieval", "kind": "first_demonstration", "url": "https://archive.org/details/bitsavers_computerDe_49676859", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "information-retrieval", "kind": "first_practical_use", "url": "https://archive.org/details/bitsavers_computerDe_49676859", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "information-retrieval", "kind": "mass_adoption", "url": "https://archive.org/details/2000-07-15_W5YI_Report", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "robot-police-guard", "kind": "first_demonstration", "url": "https://archive.org/details/DTIC_ADA125239", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "robot-police-guard", "kind": "first_demonstration", "url": "https://archive.org/details/DTIC_ADA233074", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "robot-police-guard", "kind": "first_practical_use", "url": "https://archive.org/details/Town_Crier_1986-04-30", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "robot-police-guard", "kind": "first_practical_use", "url": "https://archive.org/details/apatech-37", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "neural-implant-augmentation", "kind": "first_demonstration", "url": "https://en.wikipedia.org/wiki/Cochlear_implant", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "neural-implant-augmentation", "kind": "first_demonstration", "url": "https://archive.org/details/IA41549917_0009", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "neural-implant-augmentation", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Cochlear_implant", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "service-robot", "kind": "first_practical_use", "url": "https://en.wikipedia.org/wiki/Pepper_(robot)", "source_kind": "reference", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "consumer-analytics", "kind": "first_practical_use", "url": "https://archive.org/details/sim_credit-world_1961-08_49_11", "source_kind": "contemporary", "verdict": "ok", "batch": "ms3_b06.jsonl"}
+{"concept_id": "mind-reading-machine", "kind": "first_demonstration", "url": "https://www.unicog.org/publications/ThirionDehaene_InverseRetinotopy_Neuroimage2006.pdf", "source_kind": "contemporary", "verdict": "ok", "batch": "review3.jsonl"}
+{"concept_id": "speaker-recognition", "kind": "first_practical_use", "url": "https://archive.org/details/NASA_NTRS_Archive_19930075180", "source_kind": "reference", "verdict": "ok", "note": "contemporary -> reference (source date 1977-01-01, event 1974)", "batch": "review3.jsonl"}
+{"concept_id": "service-robot", "kind": "first_practical_use", "url": "https://archive.org/services/search/beta/page_production/?user_query=%22waiter+left+takes+on+an+order%22+AND+identifier%3Ascienceitschangi00mart&service_backend=fts&hits_per_page=5", "source_kind": "contemporary", "verdict": "ok", "batch": "review3.jsonl"}
+{"concept_id": "service-robot", "kind": "first_practical_use", "url": "https://archive.org/services/search/beta/page_production/?user_query=%22Tanbo+R-1%22+AND+identifier%3Ascienceitschangi00mart&service_backend=fts&hits_per_page=5", "source_kind": "contemporary", "verdict": "ok", "batch": "review3.jsonl"}
+{"concept_id": "thought-to-text", "kind": "first_demonstration", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11304553/", "source_kind": "contemporary", "verdict": "ok", "batch": "review3.jsonl"}
+{"concept_id": "automated-factory", "kind": "first_demonstration", "verdict": "review: drop"}
+{"concept_id": "automated-factory", "kind": "first_practical_use", "verdict": "review: drop"}
+{"concept_id": "automated-factory", "kind": "first_practical_use", "verdict": "review: restore2"}
+{"concept_id": "mind-reading-machine", "kind": "first_demonstration", "verdict": "review: drop"}
+{"concept_id": "mind-reading-machine", "kind": "first_demonstration", "verdict": "review: add"}
+{"concept_id": "speaker-recognition", "kind": "first_demonstration", "verdict": "review: drop"}
+{"concept_id": "speaker-recognition", "kind": "first_practical_use", "verdict": "review: drop"}
+{"concept_id": "speaker-recognition", "kind": "first_practical_use", "verdict": "review: add"}
+{"concept_id": "service-robot", "kind": "first_practical_use", "verdict": "review: add"}
+{"concept_id": "robot-supervisor-hierarchy", "kind": "first_demonstration", "verdict": "review: add_source"}
+{"concept_id": "robot-supervisor-hierarchy", "kind": "first_practical_use", "verdict": "review: add_source"}
+{"concept_id": "thought-to-text", "kind": "first_demonstration", "verdict": "review: add"}
+{"concept_id": "holographic-3d-display", "kind": "first_practical_use", "verdict": "review: keep"}
+{"concept_id": "sleep-learning", "kind": "first_demonstration", "verdict": "review: reject_check"}

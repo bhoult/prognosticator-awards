@@ -1,0 +1,120 @@
+{"pair": "q1426", "score": 0.25, "rationale": "Robots repairing damaged robots at a central factory gestures at robot repair, but it is a robot-run community, not a commercial company making or selling robots."}
+{"pair": "q1427", "score": 0.5, "rationale": "Robots are produced in automated factories, matching robot manufacturing in function. The commercial/product context and mechanism are absent."}
+{"pair": "q1428", "score": 0.5, "rationale": "Commercial robots on the market match the function of a robot industry selling robots. The quote gives no detail on how they are made or sold."}
+{"pair": "q1429", "score": 0.25, "rationale": "Robotics equipment contracted from a supplier loosely points to a robot-parts trade. Nothing about a robot-making industry is stated."}
+{"pair": "q1430", "score": 0.25, "rationale": "A robot builder as a profession is evocative of the robot industry. The quote is too thin to show mass production or sales."}
+{"pair": "q1431", "score": 0.75, "rationale": "A production line at a named company turning out humanoids with a battery guarantee matches commercial mass production and sale of robots. The humanoid android form differs from industrial Unimates."}
+{"pair": "q1435", "score": 0.5, "rationale": "A robot dog passing as a living pet matches a machine imitating an animal in function. It is a deception device, not a consumer product like AIBO, and the mechanism is unspecified."}
+{"pair": "q1436", "score": 0.5, "rationale": "A light-seeking robot that behaves like an animal matches the animal-imitating machine in function. It is not sold as a pet and the mechanism differs."}
+{"pair": "q1437", "score": 0.5, "rationale": "A robot bedbug is a machine imitating an animal, matching the concept's function. The mechanism and commercial context are not given."}
+{"pair": "q1438", "score": 0.25, "rationale": "Light-seeking tropism in a built device is evocative of animal-like robot behaviour. The quote concerns a person and a bedbug/moth remark, with no clear robot animal described."}
+{"pair": "q1439", "score": 0.5, "rationale": "A black fuzzy robot cat matches an animal-imitating machine in function. Its mouse-hunting purpose and mechanism differ from a pet product."}
+{"pair": "q1440", "score": 0.25, "rationale": "A toy ball that follows a child resembles a pet-like companion toy. It does not imitate an animal."}
+{"pair": "q1441", "score": 0.5, "rationale": "Electronic puppet animals imitating real animals match the function of animal-imitating machines. They are used as lures, not pets, and the mechanism is vague."}
+{"pair": "q1442", "score": 0.75, "rationale": "Robotic toy dogs with canine behaviour, built to be safe for children, closely match a consumer robot dog like AIBO. The setting is a future fiction and the mechanism is only hinted at."}
+{"pair": "q1443", "score": 0.25, "rationale": "Near-living machines are only loosely evocative of animal-imitating robots. The quote does not describe pets or animal imitation."}
+{"pair": "q1444", "score": 0.5, "rationale": "A lifelike robotic horse is a machine imitating an animal, matching in function. It is a ridable mount and not a pet product, and the mechanism is unspecified."}
+{"pair": "q1445", "score": 0.5, "rationale": "A robot horse imitating an animal matches the function. Thought-based control is a different mechanism from AIBO."}
+{"pair": "q1446", "score": 0.5, "rationale": "A robot horse that whinnies and responds to commands matches an animal-imitating machine in function. The thought-control mechanism differs."}
+{"pair": "q1447", "score": 0.5, "rationale": "Remote-controlled robot rats imitating animals match the function. They are operated tools, not commercial pets, and the mechanism is different."}
+{"pair": "q1448", "score": 0.5, "rationale": "A robot proctor that escorts a person away matches robots acting as guards in function. It is a humanoid with no patrol or autonomous-sensing mechanism."}
+{"pair": "q1449", "score": 0.5, "rationale": "A robot guard supervising workers matches the guard function. The mechanism of patrolling or sensing is not given."}
+{"pair": "q1450", "score": 0.25, "rationale": "A metal-man robot is only loosely evocative of a guard. The quote itself shows no guarding function."}
+{"pair": "q1451", "score": 0.25, "rationale": "Immobile, tensed robots hint at guards, but the quote shows no guarding or patrolling."}
+{"pair": "q1452", "score": 0.75, "rationale": "Robot guards wired to a central desk that alarms on abnormal performance match a networked security robot reporting to a control centre. The context is about subverting them, not patrol work."}
+{"pair": "q1453", "score": 0.5, "rationale": "An automatic scanner guard passing a person by identity matches credential checking by an automated guard. It is a fixed scanner, not a patrolling robot."}
+{"pair": "q1454", "score": 0.25, "rationale": "Metallic eyes fixed on a person only vaguely suggest a robot guard. No guarding function appears in the quote."}
+{"pair": "q1455", "score": 0.25, "rationale": "Sending out robots for pursuit loosely points to security work. The quote lacks mechanism or guard function detail."}
+{"pair": "q1456", "score": 0.5, "rationale": "A giant robot built to kill intruders and guard vaults matches the guarding function. It is lethal and fixed, unlike a patrolling observer robot."}
+{"pair": "q1457", "score": 0, "rationale": "The quotation describes a fat man in dark glasses and mentions no robot or policing. The robot-policeman claim is not in the passage."}
+{"pair": "q1458", "score": 0.5, "rationale": "A wall-mounted security robot that restrains intruders and challenges visitors matches the guard function. It is stationary and physically restraining, not a patrol robot."}
+{"pair": "q1459", "score": 0.5, "rationale": "A ground-floor guard robot that bleeps matches a building security robot's alerting. The quote gives no patrol or sensing mechanism."}
+{"pair": "q1460", "score": 0.5, "rationale": "Robot guards that check an ID card to admit someone match credential-checking security robots. The relay-card mechanism and fixed gateway differ from an autonomous patrol robot."}
+{"pair": "q1461", "score": 0, "rationale": "The quote is about robot-training tests and has no security or policing function."}
+{"pair": "q1462", "score": 0.25, "rationale": "An automated building run by cybernetic controls loosely suggests automated custody. The quote shows only a control room, not guard robots."}
+{"pair": "q1463", "score": 0, "rationale": "Controls that open all cells are remote door control, not a robot patrolling, guarding or arresting."}
+{"pair": "q1464", "score": 0.5, "rationale": "Mechanical devices that guard against clandestine burials match robots guarding a site. The detail is vague and the context differs."}
+{"pair": "q1465", "score": 0.25, "rationale": "Robot guardians with fixed orders that cannot be bribed only loosely evoke security robots. The quote describes tamper-proof programming, not guarding."}
+{"pair": "q1466", "score": 0.5, "rationale": "A robot that scans a card and acknowledges it matches credential checking by a robot. It is an optical card check at an establishment, not a patrolling guard."}
+{"pair": "q1467", "score": 0.5, "rationale": "A robot that approaches and scans a person's features matches a robot checking identity. It does not patrol or enforce."}
+{"pair": "q1468", "score": 0.5, "rationale": "A police robot reporting for duty matches robots acting for authorities. The quote gives no mechanism of patrol or arrest."}
+{"pair": "q1469", "score": 0, "rationale": "The quote is a person answering quickly, with no robot or identification function shown."}
+{"pair": "q1470", "score": 0.5, "rationale": "Robots serving as traffic policemen match the robot police function. There is no mechanism or deployment detail."}
+{"pair": "q1471", "score": 0.25, "rationale": "Cameras feeding police headquarters to notify robots loosely resemble networked surveillance. The quote has no robot patrol or arrest mechanism."}
+{"pair": "q1472", "score": 0.5, "rationale": "Gardeners wired to describe and report intruders match a patrolling machine that observes and reports. The primary role is gardening and the mechanism is vague."}
+{"pair": "q1473", "score": 0.5, "rationale": "Gardeners that repel strange robots from a park match guarding. The robots are gardeners without surveillance detail."}
+{"pair": "q1474", "score": 0.25, "rationale": "A wheeled vehicle rolling towards people only loosely hints at a police robot. The quote has no policing function."}
+{"pair": "q1475", "score": 0.5, "rationale": "Police robots with cameras reporting to a central unit match networked surveillance patrol robots in function. The central supercomputer and context differ from the K5."}
+{"pair": "q1476", "score": 0.25, "rationale": "Robots briefed from recorded behaviour analysis loosely resemble data-driven guarding. The quote is indirect, with no patrol or sensing."}
+{"pair": "q1477", "score": 0.5, "rationale": "Robots patrolling streets in anti-crime campaigns match patrol robots. The mechanism is vague and central-brain-linked."}
+{"pair": "q1478", "score": 0.25, "rationale": "One commander coordinating a fleet via a keyboard fleet-control is loosely like central coordination. It directs ships, not robots, with no software mechanism."}
+{"pair": "q1479", "score": 0.5, "rationale": "A master machine brain directing subordinate machines matches central control of many robots in function. Telepathic control differs from a warehouse software mechanism."}
+{"pair": "q1480", "score": 0, "rationale": "The quote only describes the appearance of winged robots and has no central coordination."}
+{"pair": "q1481", "score": 0.5, "rationale": "Robots radio-tuned to a master with built-in obedience match central control of many robots. Warehouse coordination software and context are absent."}
+{"pair": "q1482", "score": 0, "rationale": "The quote shows an arrow into a robot's braincase, with no central control of robots."}
+{"pair": "q1483", "score": 0.5, "rationale": "Many robots acting under a World Brain match a central computer directing many robots in function. The mechanism is only asserted."}
+{"pair": "q1484", "score": 0.25, "rationale": "Small machine creatures meant as the supercomputer's motor organs only loosely point at central direction. They are described as in development."}
+{"pair": "q1485", "score": 0.25, "rationale": "A central machine database is only loosely tied to robot coordination. The quote shows no direction of robots."}
+{"pair": "q1486", "score": 0.5, "rationale": "A master machine commanding other machines through electronic control matches central control in function. The mechanism is abstract nervous-system analogy."}
+{"pair": "q1487", "score": 0.25, "rationale": "Human controllers directing machinery is loosely related. There is no central computer in the quote."}
+{"pair": "q1488", "score": 0.5, "rationale": "A master robot coordinating other robots gives rhythm and purpose, matching coordination of many robots. It is a musician robot rather than a control system."}
+{"pair": "q1489", "score": 0.75, "rationale": "A master intelligence tuned to each robot's wavelength matches central software addressing many individual robots. The continental scale and context differ."}
+{"pair": "q1490", "score": 0.5, "rationale": "A central cybernetic machine acting as the mind of all robots matches the function. The mechanism is unspecified."}
+{"pair": "q1491", "score": 0.25, "rationale": "The quote concerns a robot's belief about matter and energy and only alludes to a Central Intelligence."}
+{"pair": "q1492", "score": 0, "rationale": "Specialized worker robots are described, with no central control."}
+{"pair": "q1493", "score": 0.25, "rationale": "The quote is a bare line from a character and only weakly suggests controlling robots."}
+{"pair": "q1494", "score": 0.25, "rationale": "A central intelligence creating plans loosely hints at central direction. No control of robots is shown."}
+{"pair": "q1495", "score": 0.25, "rationale": "A need for guidance or command is a loose pointer at central direction. The quote does not state that a central machine directs robots."}
+{"pair": "q1496", "score": 0.25, "rationale": "Entering a new circuit into a system is loosely related to central robot programming. The quote shows no direction of many robots."}
+{"pair": "q1497", "score": 0.25, "rationale": "Robots sending a distress signal to the nearest unit is peer-to-peer, not central. It is only loosely related."}
+{"pair": "q1498", "score": 0.75, "rationale": "Humanoids remotely guided by a robot brain in the basement match a central computer directing many robots. The restaurant context and humanoid form differ."}
+{"pair": "q1499", "score": 0.75, "rationale": "A camp computer that automatically controls robots by radio as their shared brain closely matches central control of a robot fleet. The context differs from warehouse drive units."}
+{"pair": "q1500", "score": 0.25, "rationale": "A being sending out robots to do its work only loosely resembles central direction. No control mechanism is described."}
+{"pair": "q1501", "score": 0.25, "rationale": "A cybernetic brain is vaguely mentioned. The quote does not show it directing many robots."}
+{"pair": "q1502", "score": 0.5, "rationale": "Many ships tied by robot controls to one coordinator match central direction of many units. The ships are not robots and there is no software mechanism."}
+{"pair": "q1503", "score": 0.5, "rationale": "Many machines all stopping when the Master Machine is destroyed shows central dependence of many robots. Direction of tasks is implied, not described."}
+{"pair": "q1504", "score": 0.5, "rationale": "Humanoid robots controlled by the Master Machine's computing sections match central control of many robots. The servant role differs from warehouse coordination."}
+{"pair": "q1505", "score": 0, "rationale": "The quote only says something is the largest in the world and has no robot control."}
+{"pair": "q1506", "score": 0.25, "rationale": "Hierarchies of robots operating and supervising other robots loosely point toward robot coordination. It is a speculative remark with no central computer."}
+{"pair": "q1507", "score": 0.5, "rationale": "Robots reporting everything they see to a central Brain match a central computer directing many robots in function. The mechanism and warehouse context differ."}
+{"pair": "q1508", "score": 0.25, "rationale": "A central Brain's capacity limits are only loosely related. The quote shows no direction of robots."}
+{"pair": "q1509", "score": 0.25, "rationale": "A master robot with lesser automatons points loosely at coordination. The quote only shows them vanishing."}
+{"pair": "q1510", "score": 0, "rationale": "Schooling from a central Brain is information delivery, not directing robots."}
+{"pair": "q1511", "score": 0.25, "rationale": "Robot teachers tapping a central Brain for information is a loose link to a central computer. It does not direct robots."}
+{"pair": "q1512", "score": 0.5, "rationale": "Robots mediated by area computers matches central software coordinating robots. The detail is thin."}
+{"pair": "q1513", "score": 0.5, "rationale": "A Brain that controls the robots and the city matches a central computer directing many robots. The quote is a cryptic fragment."}
+{"pair": "q1514", "score": 0.25, "rationale": "A robot overloaded by contradictory orders from a supervisor loosely hints at supervisory control. No central fleet system is shown."}
+{"pair": "q1515", "score": 0, "rationale": "Teleoperated relay and supervisor robots in reactor zones are not central coordination of robots."}
+{"pair": "q1516", "score": 0.5, "rationale": "A robot gardener cutting grass on an electric machine matches robotic lawn mowing in function. It is a seated operator and the mechanism is not clear."}
+{"pair": "q1517", "score": 0.75, "rationale": "A robot mower that stops before an obstacle and then readjusts to its path matches autonomous mowing with obstacle handling. It is a humanoid-like machinot rather than a dedicated mower."}
+{"pair": "q1518", "score": 0.75, "rationale": "An automatic vacuum that cleans without a person matches robot vacuums in function and use. The haywire behaviour is a different context."}
+{"pair": "q1519", "score": 0.5, "rationale": "Robots cleaning a home automatically while the resident is away match robot cleaning in function. The robots and mechanism are unspecified."}
+{"pair": "q1520", "score": 0.5, "rationale": "Small machines rolling on wheels doing tasks match small household cleaning robots in function. The antigravity floating differs and cleaning is not specified."}
+{"pair": "q1521", "score": 0.75, "rationale": "A lawn-tender that goes out to check and cut grass and then returns to its kennel matches an autonomous robot mower with a dock. The milestone is a vacuum cleaner and watering is extra."}
+{"pair": "q1522", "score": 0.75, "rationale": "A machine that rolls back and forth across the grass in rows matches an autonomous lawn mower's coverage pattern. Early commercial mowers matched the mowing function."}
+{"pair": "q1523", "score": 0, "rationale": "Hovering machines with tentacle arms rescuing people on Io is not an exploration probe like a lunar rover."}
+{"pair": "q1524", "score": 0.25, "rationale": "Weather robots reporting from the dark side of a planet loosely resemble remote instruments. They are weather stations rather than a rover probe."}
+{"pair": "q1525", "score": 0.25, "rationale": "A ship computer choosing planets points loosely at autonomous exploration. It is a selection database, not a remote probe."}
+{"pair": "q1526", "score": 0, "rationale": "The quote mentions a survey team and a shuttler and no robot probe."}
+{"pair": "q1527", "score": 0.25, "rationale": "Memory drums of a robot named Bigboss only loosely suggest robots on alien worlds. No exploration function is stated."}
+{"pair": "q1528", "score": 0.25, "rationale": "A robot-control system for trucks that might go out of whack loosely points to automated vehicle control. The quote gives no mechanism."}
+{"pair": "q1529", "score": 0.5, "rationale": "A concealed robotic brain capable of controlling a car matches self-driving in function. The sensors and driving mechanism are not described."}
+{"pair": "q1530", "score": 0.5, "rationale": "Robots built to drive cars match automated driving in function. They are robot drivers, with no mechanism given."}
+{"pair": "q1531", "score": 0, "rationale": "Mechanical drink mixers in bars are not a delivery or public service robot."}
+{"pair": "q1532", "score": 0.25, "rationale": "Specialized robot servants that push aside obstacles loosely resemble a service robot. The quote has no delivery function."}
+{"pair": "q1533", "score": 0.25, "rationale": "A robot attendant wheeling a vehicle onto an elevator loosely resembles an autonomous elevator-riding service robot. The function is vehicle handling, not delivery to rooms."}
+{"pair": "q1534", "score": 0, "rationale": "A tennis-playing robot is a sports opponent, not a public service robot."}
+{"pair": "q1535", "score": 0, "rationale": "A robot answering a request for a pilot has no delivery or service function in the quote."}
+{"pair": "q1536", "score": 0.25, "rationale": "A humanlike doorman robot is loosely related to a hotel service robot. The quote shows a hacking attempt, not service."}
+{"pair": "q1537", "score": 0.25, "rationale": "A voice-interactive wall receptionist is loosely related to a public service robot. It is stationary and not a delivery robot."}
+{"pair": "q1538", "score": 0, "rationale": "A ceiling microphone interrogating a visitor is not a mobile service robot."}
+{"pair": "q1539", "score": 0.25, "rationale": "An android carrying a vessel to serve a visitor is loosely like a hotel serving robot. The detail is thin."}
+{"pair": "q1540", "score": 0.5, "rationale": "A robot attendant gliding up to offer help matches a public service robot in function. The quote lacks the delivery mechanism."}
+{"pair": "q1541", "score": 0.5, "rationale": "Electronic robot servants waiting on guests match a service robot in function. The humanoid party context differs from a hotel delivery robot."}
+{"pair": "q1542", "score": 0.5, "rationale": "A robot luggage carrier following a beacon matches an item-carrying service robot for guests. It follows a beacon rather than navigating on its own."}
+{"pair": "q1543", "score": 0.5, "rationale": "A robot attendant poised to take orders matches a hospitality service robot in function. The mechanism is not specified."}
+{"pair": "q1544", "score": 0, "rationale": "A servo-operator that answers phone calls is a communications function, not a mobile service robot."}
+{"pair": "q1545", "score": 0, "rationale": "Giving a robot salesman human-like brains describes the design idea only, not a deployed service robot."}
+{"pair": "q1546", "score": 0.5, "rationale": "Robot pages gliding to receive and deliver messages match a delivery service robot in function. The setting is a chamber and the mechanism is unspecified."}
+{"pair": "q1547", "score": 0.75, "rationale": "A hotel staffed entirely with robot servants matches robots serving hotel guests. The scale and humanoid form differ from a single delivery robot."}
+{"pair": "q1548", "score": 0.5, "rationale": "Receptionist robots that meet the public match a public service robot in function. The quote concerns appearance and has no delivery mechanism."}

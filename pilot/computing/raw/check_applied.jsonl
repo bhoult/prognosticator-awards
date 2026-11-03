@@ -1,0 +1,67 @@
+{"key": ["electronic-digital-computer", "first_practical_use"], "result": "confirmed", "date": "1944-02-05", "bad_sources": 0}
+{"key": ["artificial-neural-network", "first_practical_use"], "result": "confirmed", "date": "1989", "bad_sources": 0}
+{"key": ["artificial-neural-network", "mass_adoption"], "result": "confirmed", "date": "2016", "bad_sources": 0}
+{"key": ["biological-computer", "first_demonstration"], "result": "confirmed", "date": "1994", "bad_sources": 0}
+{"key": ["pocket-calculator", "first_demonstration"], "result": "confirmed", "date": "1967", "bad_sources": 0}
+{"key": ["pocket-calculator", "first_practical_use"], "result": "confirmed", "date": "1970", "bad_sources": 0}
+{"key": ["pocket-calculator", "mass_adoption"], "result": "confirmed", "date": "1975", "bad_sources": 0}
+{"key": ["wearable-computer", "first_demonstration"], "result": "confirmed", "date": "1984", "bad_sources": 0}
+{"key": ["wearable-computer", "first_practical_use"], "result": "confirmed", "date": "1984", "bad_sources": 0}
+{"key": ["wearable-computer", "mass_adoption"], "result": "confirmed", "date": "1998", "bad_sources": 0}
+{"key": ["machine-scientific-discovery", "first_demonstration"], "result": "confirmed", "date": "2009", "bad_sources": 0}
+{"key": ["information-retrieval", "first_practical_use"], "result": "replaced", "old_date": "1971-12", "new_date": "1966", "bad_sources": 0}
+{"key": ["question-answering-computer", "first_demonstration"], "result": "replaced", "old_date": "2011-02", "new_date": "1993", "bad_sources": 0}
+{"key": ["electronic-book-reader", "first_practical_use"], "result": "replaced", "old_date": "1998", "new_date": "1990", "bad_sources": 0}
+{"key": ["electronic-paper-display", "first_practical_use"], "result": "confirmed", "date": "2004", "bad_sources": 0}
+{"key": ["holographic-3d-display", "first_practical_use"], "result": "replaced", "old_date": "1989", "new_date": "1972", "bad_sources": 0}
+{"key": ["computer-video-display", "first_demonstration"], "result": "replaced", "old_date": "1949", "new_date": "1948-06", "bad_sources": 0}
+{"key": ["computer-video-display", "first_practical_use"], "result": "confirmed", "date": "1951", "bad_sources": 0}
+{"key": ["touch-gesture-interface", "first_demonstration"], "result": "confirmed", "date": "1965", "bad_sources": 0}
+{"key": ["touch-gesture-interface", "first_practical_use"], "result": "replaced", "old_date": "1973", "new_date": "1972", "bad_sources": 0}
+{"key": ["touch-gesture-interface", "mass_adoption"], "result": "confirmed", "date": "2009", "bad_sources": 0}
+{"key": ["computer-security-hacking", "first_practical_use"], "result": "replaced", "old_date": "1988-11-02", "new_date": "1967", "bad_sources": 0}
+{"key": ["speech-recognition", "first_demonstration"], "result": "confirmed", "date": "1952", "bad_sources": 0}
+{"key": ["speech-recognition", "first_practical_use"], "result": "confirmed", "date": "1984", "bad_sources": 0}
+{"key": ["speech-recognition", "mass_adoption"], "result": "confirmed", "date": "2011-10-14", "bad_sources": 0}
+{"key": ["speech-to-text-dictation", "first_demonstration"], "result": "replaced", "old_date": "1985", "new_date": "1961", "bad_sources": 0}
+{"key": ["speech-to-text-dictation", "first_practical_use"], "result": "confirmed", "date": "1990", "bad_sources": 0}
+{"key": ["speech-synthesis", "first_practical_use"], "result": "confirmed", "date": "1976", "bad_sources": 0}
+{"key": ["speech-synthesis", "mass_adoption"], "result": "confirmed", "date": "2011-10-14", "bad_sources": 0}
+{"key": ["conversational-ai", "mass_adoption"], "result": "confirmed", "date": "2022-11-30", "bad_sources": 0}
+{"key": ["machine-translation", "first_demonstration"], "result": "confirmed", "date": "1954-01-07", "bad_sources": 0}
+{"key": ["machine-translation", "first_practical_use"], "result": "confirmed", "date": "1959", "bad_sources": 0}
+{"key": ["machine-translation", "mass_adoption"], "result": "confirmed", "date": "1997", "bad_sources": 0}
+{"key": ["machine-generated-writing", "first_practical_use"], "result": "confirmed", "date": "1990", "bad_sources": 0}
+{"key": ["machine-generated-writing", "mass_adoption"], "result": "confirmed", "date": "2022-11-30", "bad_sources": 0}
+{"key": ["machine-learning", "first_demonstration"], "result": "confirmed", "date": "1951", "bad_sources": 0}
+{"key": ["artificial-senses", "first_demonstration"], "result": "replaced", "old_date": "1982", "new_date": "1952", "bad_sources": 0}
+{"key": ["industrial-robot", "first_demonstration"], "result": "confirmed", "date": "1937", "bad_sources": 0}
+{"key": ["industrial-robot", "first_practical_use"], "result": "confirmed", "date": "1961", "bad_sources": 0}
+{"key": ["automated-factory", "first_practical_use"], "result": "confirmed", "date": "2001", "bad_sources": 0}
+{"key": ["companion-robot", "first_demonstration"], "result": "confirmed", "date": "1999-05-11", "bad_sources": 0}
+{"key": ["companion-robot", "first_practical_use"], "result": "confirmed", "date": "1999-06-01", "bad_sources": 0}
+{"key": ["robot-pet", "first_practical_use"], "result": "replaced", "old_date": "1998-10", "new_date": "1962", "bad_sources": 0}
+{"key": ["robot-pet", "mass_adoption"], "result": "confirmed", "date": "1999", "bad_sources": 0}
+{"key": ["robot-police-guard", "first_practical_use"], "result": "confirmed", "date": "2015", "bad_sources": 0}
+{"key": ["robot-supervisor-hierarchy", "first_practical_use"], "result": "confirmed", "date": "2007", "bad_sources": 0}
+{"key": ["unmanned-aerial-vehicle", "mass_adoption"], "result": "replaced", "old_date": "2013", "new_date": "2010", "bad_sources": 0}
+{"key": ["computerized-economic-planning", "first_practical_use"], "result": "replaced", "old_date": "1972", "new_date": "1951", "bad_sources": 0}
+{"key": ["electronic-voting", "first_practical_use"], "result": "confirmed", "date": "1964", "bad_sources": 0}
+{"key": ["electronic-voting", "mass_adoption"], "result": "confirmed", "date": "1996", "bad_sources": 0}
+{"key": ["electronic-tracking-tags", "first_demonstration"], "result": "confirmed", "date": "1962", "bad_sources": 0}
+{"key": ["electronic-tracking-tags", "first_practical_use"], "result": "confirmed", "date": "1982", "bad_sources": 0}
+{"key": ["machine-readable-id-card", "first_demonstration"], "result": "confirmed", "date": "1960", "bad_sources": 0}
+{"key": ["machine-readable-id-card", "first_practical_use"], "result": "replaced", "old_date": "1975", "new_date": "1968", "bad_sources": 0}
+{"key": ["fingerprint-recognition", "first_demonstration"], "result": "confirmed", "date": "1965", "bad_sources": 0}
+{"key": ["fingerprint-recognition", "mass_adoption"], "result": "confirmed", "date": "2013", "bad_sources": 0}
+{"key": ["iris-retina-recognition", "first_demonstration"], "result": "replaced", "old_date": "1994", "new_date": "1981", "bad_sources": 0}
+{"key": ["face-recognition", "first_practical_use"], "result": "replaced", "old_date": "2000", "new_date": "1997", "bad_sources": 0}
+{"key": ["face-recognition", "mass_adoption"], "result": "confirmed", "date": "2017", "bad_sources": 0}
+{"key": ["office-automation", "first_demonstration"], "result": "replaced", "old_date": "1951", "new_date": "1890", "bad_sources": 0}
+{"key": ["office-automation", "first_practical_use"], "result": "confirmed", "date": "1951", "bad_sources": 0}
+{"key": ["mind-reading-machine", "first_demonstration"], "result": "confirmed", "date": "2008", "bad_sources": 0}
+{"key": ["thought-to-text", "first_demonstration"], "result": "confirmed", "date": "2020", "bad_sources": 0}
+{"key": ["brain-computer-interface", "first_demonstration"], "result": "replaced", "old_date": "1977", "new_date": "1965", "bad_sources": 0}
+{"key": ["brain-computer-interface", "first_practical_use"], "result": "confirmed", "date": "1998", "bad_sources": 0}
+{"key": ["virtual-reality", "first_practical_use"], "result": "replaced", "old_date": "1991", "new_date": "1990", "bad_sources": 0}
+{"key": ["shared-virtual-world", "mass_adoption"], "result": "confirmed", "date": "2008", "bad_sources": 0}

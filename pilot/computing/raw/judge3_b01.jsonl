@@ -1,0 +1,184 @@
+{"pair": "q1355", "score": 0.25, "rationale": "Mentions a corporation funding the ULTIMAC computer but says nothing about answering questions in English; only a loose pointer to a question-answering machine."}
+{"pair": "q1893", "score": 0.5, "rationale": "A portable voicewrite used to compose letters matches speech-to-text dictation in function, but no recognition mechanism is described."}
+{"pair": "q1260", "score": 0.5, "rationale": "A machine detecting slight variations in mental activity to read a mind matches brain-activity decoding in function; the mechanism is only vaguely brain-signal sensing."}
+{"pair": "q2006", "score": 0.25, "rationale": "A \"machine-reporter of thoughts and feelings\" points toward decoding thoughts, but the fMRI result only reconstructed imagined visual patterns, a much narrower thing."}
+{"pair": "q1463", "score": 0, "rationale": "Controls opening every cell in a country have nothing to do with a patrolling security robot."}
+{"pair": "q0831", "score": 0.25, "rationale": "A request to get all information on a planet as fast as possible is a generic information query; it hints at retrieval but no system or mechanism appears."}
+{"pair": "q1382", "score": 0.25, "rationale": "Punching figures into a locator to make a point appear in a galaxy model resembles a computer-driven position display, but it is a model tank, not tracking real-time data."}
+{"pair": "q1549", "score": 0.25, "rationale": "Robot switchboards and corridor-sweeping robots are service machines, but nothing here serves the public as waiters or greeters do."}
+{"pair": "q1220", "score": 0, "rationale": "A telepathic stare-and-nod \"reading mind\" has no machine or brain-measurement element."}
+{"pair": "q1820", "score": 0.5, "rationale": "Telling the ship what you want to do and having it navigate matches voice command in function, but the recognition mechanism is unstated."}
+{"pair": "q1578", "score": 0.25, "rationale": "Robot-confessors performing a duty hint at robots dealing with people, but the quotation gives no public-service task like serving diners."}
+{"pair": "q0707", "score": 0.5, "rationale": "A continuously changing 3D star map making the wall look like a miniature universe matches a volumetric 3D display in function, though the mechanism is unspecified."}
+{"pair": "q0695", "score": 0, "rationale": "A ship floating in a sphere of weapons carrying the Brains is not a display of any kind."}
+{"pair": "q0632", "score": 0.5, "rationale": "Says machine recognition of a face is delicate and would need an enormous Brain, naming the face recognition function; no mechanism and it is treated as infeasible."}
+{"pair": "q1880", "score": 0.5, "rationale": "Summoning a dicto-typer names a dictation machine that types spoken words, matching the function but with no mechanism."}
+{"pair": "q1873", "score": 0.5, "rationale": "Dictating a message to a steno-robot matches automatic dictation transcription in function; how it works is not described."}
+{"pair": "q1259", "score": 0.25, "rationale": "A shielded room like an EEG lab for mind analysis loosely evokes brain-scanning setups but describes no decoding."}
+{"pair": "q1499", "score": 0.5, "rationale": "Robots automatically controlled by a camp computer over radio matches one computer directing many robots; the Volvo carriers were wired or guided differently and in factories."}
+{"pair": "q1559", "score": 0.5, "rationale": "Waiters guided by a central robot brain in the basement gives a central computer driving many service robots; the real examples were two stand-alone robots."}
+{"pair": "q1508", "score": 0, "rationale": "The face-recognition remark about a larger Brain does not describe a computer directing a fleet of robots."}
+{"pair": "q0628", "score": 0.5, "rationale": "A robot scanning a man's features to identify him matches automated face recognition in function, with only a vague scanning mechanism."}
+{"pair": "n0004", "score": 0.75, "rationale": "Directing the station computer by voice panel to run the precession equipment matches a station computer handling attitude control; voice input is an extra and the context is fictional."}
+{"pair": "q1877", "score": 0.5, "rationale": "Comparison of a person's speed against a dicto-typer implies a speech-to-text typing machine, but no operation is described."}
+{"pair": "q1376", "score": 0.25, "rationale": "A vast space-chart overhead is a display of position, but nothing indicates computer-driven live updating."}
+{"pair": "q0699", "score": 0, "rationale": "Lights pulsing and coalescing in an unspecified object does not describe a 3D display."}
+{"pair": "q0282", "score": 0.25, "rationale": "Android female surrogates shipped to colonies point toward companion robots, but Furby is a toy pet, so the match is loose."}
+{"pair": "q1470", "score": 0.25, "rationale": "Robots serving as traffic police are a policing robot idea, but the real product was a patrolling warehouse guard, a different job."}
+{"pair": "q1782", "score": 0.5, "rationale": "Automatically recording a speaker's voice vibration pattern to detect a violation matches voiceprint speaker identification in function; the mechanism is only hinted."}
+{"pair": "q1881", "score": 0.5, "rationale": "A vocowriter used with a special speaking voice is a voice-to-text device, matching dictation transcription in function."}
+{"pair": "q0703", "score": 0.25, "rationale": "A tri-dim chart filling much of a room loosely evokes a 3D display, with no detail of how it works."}
+{"pair": "q1230", "score": 0.25, "rationale": "A machine exclaimed to be \"reading my thoughts\" points at thought reading but has no mechanism or output form."}
+{"pair": "q1201", "score": 0.25, "rationale": "Reading a subject's inmost thoughts while he fails to control them is a mind-reading claim only, with no brain-signal mechanism shown."}
+{"pair": "q1356", "score": 0.5, "rationale": "A delivery section producing an answer facsimile tape after a query matches a question-answering computer in function; START's mechanism of English parsing is not given."}
+{"pair": "q1251", "score": 0, "rationale": "A telepath who knows where something is hidden is a psychic ability, not a machine."}
+{"pair": "q1344", "score": 0.25, "rationale": "A machine-brain weighing facts to give an unbiased answer hints at answering questions but is not about answering English questions from the public."}
+{"pair": "q1506", "score": 0.25, "rationale": "Robots to operate and supervise other robots is a hierarchy of control, loosely pointing to central coordination of robots."}
+{"pair": "q1495", "score": 0, "rationale": "Remarks on needing guidance or command for left-behind things say nothing specific about computer-directed robots."}
+{"pair": "q0909", "score": 0.5, "rationale": "Mentioning that someone might examine retina patterns names retinal identification as a check, matching function; the scanner mechanism is not given."}
+{"pair": "q2007", "score": 0.25, "rationale": "A picture appearing on a white screen that no one had seen before loosely evokes displaying mental imagery, but nothing says it comes from a mind."}
+{"pair": "q1514", "score": 0.25, "rationale": "A robot jammed by contradictory orders from a supervisor suggests hierarchical robot command, but a central computer driving carriers is not shown."}
+{"pair": "q1573", "score": 0.25, "rationale": "A robot barker chattering to lure customers inside is a public-facing robot, but it is a salesman rather than a waiter taking orders."}
+{"pair": "q1612", "score": 0.25, "rationale": "Mastering a language's grammar and vocabulary quickly hints at accelerated learning, but nothing mentions sleep."}
+{"pair": "q1562", "score": 0.5, "rationale": "A receptionist robot controlling the inner doors is a robot serving visitors in public, matching the service-robot function though not waiting tables."}
+{"pair": "q1564", "score": 0, "rationale": "A broadcast message that shifts robots' allegiance is a command hijack, not a service robot interacting with the public."}
+{"pair": "q1202", "score": 0, "rationale": "A device resembling a telephone mouthpiece with the brain not acted upon says nothing about detecting mental activity."}
+{"pair": "q0706", "score": 0.5, "rationale": "A new red dot appearing in a three-dimensional model of space at a planning center matches a 3D volumetric display used for planning, though how it is made is unstated."}
+{"pair": "q1462", "score": 0.25, "rationale": "A room of cybernetic controls as the nerve center of an automatic building is machine control, not a security robot."}
+{"pair": "q1226", "score": 0.75, "rationale": "States that the brain emits electrical discharges varying with activity and that machines can detect them; this matches brain-signal sensing, though it stops short of decoding contents."}
+{"pair": "q0875", "score": 0.25, "rationale": "An \"idgit\" computing a supply list and wanting service is a computing machine at work, only loosely retrieval."}
+{"pair": "q1248", "score": 0.5, "rationale": "A helmet put on a man's head to learn what he knows is a head-worn brain-reading device, matching function, with no decoding mechanism given."}
+{"pair": "q1451", "score": 0, "rationale": "Immobile robots tensed for action says nothing about guarding or patrolling."}
+{"pair": "q0709", "score": 0.5, "rationale": "A transparent globe inflating to four feet over a device matches a volumetric 3D display in form; how it renders imagery is not described."}
+{"pair": "q1818", "score": 0.25, "rationale": "A woman telling a machine or person what to remember and being obeyed is voice instruction, but with no recognition of speech described."}
+{"pair": "q0846", "score": 0.5, "rationale": "Coding an unlimited file search for any person matching a description and any information matches computerized retrieval from a database; the tracer input differs from a DIALOG terminal."}
+{"pair": "q1358", "score": 0.5, "rationale": "An Information Center able to answer any question matches a question-answering system in function; how it works is not described."}
+{"pair": "q1391", "score": 0.25, "rationale": "A large circular graph with pulsing white lines is a display of some kind, but not clearly computer-fed real-time situation data."}
+{"pair": "q1552", "score": 0, "rationale": "A building-attached robot manager who cannot come is not serving the public."}
+{"pair": "q0917", "score": 0.5, "rationale": "Taking a kid's retina pattern directly names retinal scanning for identification, matching function; the access-control context is not shown."}
+{"pair": "q0874", "score": 0.5, "rationale": "A brain holding data on all explored worlds and comparing a landing site against them matches database retrieval and comparison; no query interface like DIALOG."}
+{"pair": "q1246", "score": 0.25, "rationale": "Questioning someone's dreams hints at probing the mind, with no machine or measurement stated."}
+{"pair": "q0845", "score": 0.5, "rationale": "Calling for every scrap of data on a planet and receiving a fair amount matches querying a remote database for information; the terminal and phone link are not given."}
+{"pair": "q1575", "score": 0, "rationale": "A shout at a robot to serve mocks a robot waiter but the quotation only gives the command."}
+{"pair": "q1481", "score": 0.25, "rationale": "Robots whose radio senses tune to those above gives a hierarchy of command, loosely like central coordination."}
+{"pair": "q1503", "score": 0.5, "rationale": "The destruction of a Master Machine halting everyone suggests central control of many agents, partly matching, though it concerns humans."}
+{"pair": "n0031", "score": 0.5, "rationale": "All internal functions of a ship, including care of its crew, relegated to robots and automatic machinery matches a computer running a station, though Skylab did far less."}
+{"pair": "q1507", "score": 0.5, "rationale": "Telelenses reporting back to a Brain beneath the streets matches a central computer taking input from many robots, with only sensing described."}
+{"pair": "q1493", "score": 0, "rationale": "A spoken remark that someone can handle it says nothing about robot control."}
+{"pair": "q1455", "score": 0.25, "rationale": "Sending out six geepees to a location suggests dispatching robot guards, but their function is unspecified."}
+{"pair": "q1781", "score": 0.75, "rationale": "A machine holding a person's voice pattern so a name request lets them in matches voice authentication; the context is a gate, not the corporate computer center."}
+{"pair": "q1488", "score": 0.5, "rationale": "A piano robot leading the orchestra and coordinating other robots matches one unit directing many; the mechanism is musical rhythm, not routing."}
+{"pair": "q1252", "score": 0.25, "rationale": "Detectors driven through cities to pick up a person's pattern loosely evokes sensing brain patterns, but at a distance and unlike decoding."}
+{"pair": "q0855", "score": 0.5, "rationale": "Obtaining recordings of chosen material in printed, pictorial or audio form matches information retrieval in function; how searching works is unstated."}
+{"pair": "q1805", "score": 0.75, "rationale": "Ear-tubes that respond to sound beside memory and tape matches voice input to a computer; recognition of speech is implied but not detailed."}
+{"pair": "q2016", "score": 0.25, "rationale": "A Menograph that supersedes pen and pencil suggests a writing device, but nothing says it reads thoughts."}
+{"pair": "q1539", "score": 0.25, "rationale": "A feminine animated dummy carrying a vessel is a humanoid server, but little describes interaction with the public."}
+{"pair": "q1609", "score": 0.5, "rationale": "The technique of teaching arbitrary knowledge in sleep matches sleep learning in function; no mechanism, and the real result only covered word associations."}
+{"pair": "q1341", "score": 0.5, "rationale": "Coding a problem, gathering all information, weighing and giving an answer matches a question-answering machine in function; no natural-language parsing."}
+{"pair": "q1813", "score": 0.25, "rationale": "A cart serving coffee appears to be a service robot, but the quotation shows no voice recognition at all."}
+{"pair": "q0631", "score": 0.75, "rationale": "A wall scanner checking people against a large store of registered images and data matches automated face recognition; the context is a security checkpoint."}
+{"pair": "q1466", "score": 0.25, "rationale": "A robot scanning a card and acknowledging is an access check by a machine, loosely a security robot."}
+{"pair": "q0887", "score": 0, "rationale": "A remark about unfinished business after a jump contains nothing about looking up information."}
+{"pair": "q2030", "score": 0.25, "rationale": "A \"thinkwriter\" in capable hands loosely names a thought-to-text device, but the quotation describes nothing of how it works."}
+{"pair": "q1242", "score": 0.5, "rationale": "An electrode clamped to a man's head and plugged into the wall to interrogate him matches brain-signal reading in function; the decoding is not described."}
+{"pair": "q0630", "score": 0.75, "rationale": "A camera feeding a police main computer that matches a description on file to alert robots matches automated face recognition; the match is against a description, not a stored image."}
+{"pair": "q1806", "score": 0.75, "rationale": "Saying \"Open\" to a lock which recognizes the speaker matches voice command and speaker-specific recognition; the context is door access, not terminals."}
+{"pair": "q1574", "score": 0.25, "rationale": "A robot postal service sorting and delivering mail is a service robot but not one dealing with customers face to face."}
+{"pair": "q0861", "score": 0.75, "rationale": "Circuits searching storage tubes for a named person's record matches computerized record retrieval; the remote terminal and phone access differ."}
+{"pair": "q1250", "score": 0.5, "rationale": "Brain electromagnetic vibration used to tell a story matches reading brain signals to get content; the signal type and decoding are different from fMRI."}
+{"pair": "q1217", "score": 0.5, "rationale": "A memory-prober reading a man's life history from his mind matches mind reading in function, with the mechanism unnamed and far grander."}
+{"pair": "q0700", "score": 0.5, "rationale": "Two men studying small dots in a tri-di matches a 3D display used for analysis, with no detail on how it works."}
+{"pair": "q0847", "score": 0.25, "rationale": "Walls of electronic file controls suggest large automated files, but no query or retrieval is described."}
+{"pair": "q1898", "score": 0.25, "rationale": "A row of automated phono-typers among office equipment names a dictation typing machine only in passing."}
+{"pair": "q1891", "score": 0.5, "rationale": "Using a stenophone to dictate a reading list matches voice dictation to text in function; no recognition mechanism is mentioned."}
+{"pair": "q0978", "score": 0.5, "rationale": "A machine recording impressions that affect its later actions matches the learning-machine function; the mechanism is stated vaguely and Hull's was electrochemical."}
+{"pair": "q1828", "score": 0.5, "rationale": "Speaking directly to the big computer and getting spoken answers matches voice interaction in function, but recognition is not described and the context is a single privileged person."}
+{"pair": "q1361", "score": 0.5, "rationale": "Recorded words electronically assembled to answer an almost infinite number of questions matches a question-answering system, with canned-word synthesis and no language parsing."}
+{"pair": "q1883", "score": 0, "rationale": "A remark that a device only needed a transformer says nothing about dictation."}
+{"pair": "q1340", "score": 0.25, "rationale": "Machines that crack any problem into a formula give an answer from a problem statement, a calculation notion rather than answering English questions."}
+{"pair": "q1794", "score": 0.25, "rationale": "A door announcing a visitor by name is a speaking machine, with recognition of speech not involved."}
+{"pair": "n0030", "score": 0.5, "rationale": "Everything automatic until a robot or computer calls for help matches a crew relying on onboard computers to run a station; Skylab's computer handled only some tasks."}
+{"pair": "q0915", "score": 0.5, "rationale": "A small tube held to the eyes with flashes matches retinal scanning in function, though the purpose is not stated."}
+{"pair": "q1484", "score": 0, "rationale": "Little beasts still in the nursery stage are unspecified robots, with no central computer."}
+{"pair": "q1367", "score": 0.5, "rationale": "Requesting a unit from an Information Bank of a Law and Policy Machine matches a question-answering database; there is no natural-language answering shown."}
+{"pair": "q1448", "score": 0.5, "rationale": "A robot proctor gripping a man's elbow to lead him away matches a security robot restraining people, with no patrol aspect."}
+{"pair": "q1831", "score": 0.25, "rationale": "Fixing up the sound receptors and voice for a robot loosely evokes speech input and output hardware."}
+{"pair": "q1235", "score": 0.25, "rationale": "A being intruding on a mind to get information is mind reading with no instrument involved."}
+{"pair": "q0910", "score": 0.75, "rationale": "Holding a prepared disk to the eye for twenty seconds to record an eyeprint matches eye-based identification; it is a card-based scan, different from a retinal scanner."}
+{"pair": "q0538", "score": 0.25, "rationale": "Picking up a lightweight no-back from the ship's library suggests a portable reading device, but not electronic form."}
+{"pair": "q1579", "score": 0.5, "rationale": "A robot ticket clerk with a camera recording the buyer's face and destination matches a robot serving the public; the sale only mildly like robot waiters."}
+{"pair": "q0829", "score": 0.75, "rationale": "Voicing a demand for a statistical summary into a mouthpiece and getting it printed at once matches a computerized retrieval of figures; the voice input is an extra."}
+{"pair": "q1384", "score": 0.5, "rationale": "A red light triggering a flashed number on a board matches an automated position display responding to events, but the system is vague."}
+{"pair": "q1475", "score": 0.25, "rationale": "Telelenses reporting back to a central Brain are the eyes of robots, but nothing here shows guarding or policing."}
+{"pair": "q1243", "score": 0.25, "rationale": "Having a mind picked apart layer by layer by a mind-blasting process loosely refers to forced mind reading, with no mechanism."}
+{"pair": "q2025", "score": 0.5, "rationale": "A machine converting thought into visible form matches displaying imagined content; the quanta idea is not how fMRI works."}
+{"pair": "q2010", "score": 0.25, "rationale": "Dim formless figures moving across a lit space loosely evokes displayed mental imagery, but nothing ties it to a mind."}
+{"pair": "q0843", "score": 0.5, "rationale": "Devices designed to answer any question the mind could ask matches a retrieval machine, with only media types named."}
+{"pair": "q1368", "score": 0.5, "rationale": "Coding and feeding every bit of information to the Brain matches loading a database for later questions; the querying side is absent."}
+{"pair": "q1885", "score": 0.25, "rationale": "A repeated thinkwriter in capable hands is a writing device with no description of how it takes dictation."}
+{"pair": "q0884", "score": 0.25, "rationale": "Feeding in coordinates of a space event to a machine is a database query by position, but the text stresses memory and says nothing of the response."}
+{"pair": "q1601", "score": 0.25, "rationale": "Playing a recording in reverse giving back knowledge in spools suggests knowledge transfer, but not during sleep."}
+{"pair": "q0879", "score": 0.75, "rationale": "An automatic library with projected index and tape delivered after punching a call number matches a computer-based retrieval system, though it is closer to a stack-access terminal."}
+{"pair": "q1010", "score": 0.25, "rationale": "A stone that opens the gyro only under its influence is an access token, but not an encoded card read by a machine."}
+{"pair": "q1537", "score": 0.5, "rationale": "A female wall greeting visitors and asking about an appointment matches a robot receptionist serving the public."}
+{"pair": "n0025", "score": 0.75, "rationale": "The computer taking over and controlling water flow to orient a wheel's spin axis matches a computer managing a station's attitude control."}
+{"pair": "q0491", "score": 0.25, "rationale": "Rating computers crediting an audience figure is consumer analytics by computer but about audience size, not credit risk scoring."}
+{"pair": "q0850", "score": 0.25, "rationale": "Huge punched-card files for records too numerous for human clerks point to mechanized record storage, but no query or retrieval by remote terminal."}
+{"pair": "n0026", "score": 0.5, "rationale": "An analogue/digital computer in complacent control of overall complexities with automatic accuracy matches a computer running a station, with no specifics."}
+{"pair": "q1024", "score": 0.5, "rationale": "Inserting a key into a hole that contacts an electronic device for each worker or guard matches an access token read by a machine; a key instead of a card."}
+{"pair": "q1541", "score": 0.25, "rationale": "Electronically controlled mechanical servants everywhere that look alive are service robots, but nothing shows them serving the public."}
+{"pair": "q1254", "score": 0.25, "rationale": "Brains picked while unconscious is mind reading by an unknown agent, with no machine mechanism."}
+{"pair": "q1380", "score": 0.25, "rationale": "A metal rectangle showing the heavens nearby is a position display, but nothing shows computer data feeding it."}
+{"pair": "q1203", "score": 0.5, "rationale": "Collecting thought as vibrations of electric current directly from the brain matches reading brain signals, though the thought content decoding differs."}
+{"pair": "q1784", "score": 0.5, "rationale": "A figure with a word-repeater inside that gestures at certain sounds matches sound-triggered response, a keyed-word reaction like early recognizers."}
+{"pair": "q0841", "score": 0.5, "rationale": "A TV reading machine that uses micro-libraries across America matches remote access to stored information, with television display rather than a terminal."}
+{"pair": "q1264", "score": 0.75, "rationale": "Devices delicate enough to detect brain waves emitted by the human brain match brain-signal sensing for mind reading, with decoding not described."}
+{"pair": "q0286", "score": 0, "rationale": "A seer saying you will always keep friends is not a robot."}
+{"pair": "q1830", "score": 0.75, "rationale": "Sound sensors built into robots, keyed to respond to their names and a few simple commands, match limited-vocabulary speech recognition; household context differs."}
+{"pair": "q1486", "score": 0.5, "rationale": "A nervous-system-like control system through which robots respond to a master machine matches central control of many robots, a conceptual statement."}
+{"pair": "q1613", "score": 0.25, "rationale": "Absorbing languages and social structure through hypno-tapes suggests learning by recording, with no sleep stated."}
+{"pair": "q1360", "score": 0.75, "rationale": "A machine that hears questions and answers from billions of microtapes matches a question-answering computer, where speech input is a plus."}
+{"pair": "q1342", "score": 0, "rationale": "A line about keeping machines from computing the truth does not describe answering questions."}
+{"pair": "q0489", "score": 0.25, "rationale": "A Reacto machine testing everyone's reaction to music is consumer response analysis, loosely like marketing analytics but with no scoring of customers."}
+{"pair": "n0008", "score": 0.5, "rationale": "Mobile repair units dispatched when scanning fails and an offer to alert the staff match a computer maintaining a station automatically; no statement of attitude control."}
+{"pair": "q1587", "score": 0.25, "rationale": "A command to take someone to a named unit is a robot guide, with nothing about its operation."}
+{"pair": "q1558", "score": 0.75, "rationale": "A servo-robot waiter seating diners at a table matches the Pasadena robot waiter; the real ones took orders and served food."}
+{"pair": "q0490", "score": 0.5, "rationale": "Cars recording statistics, pictures, heights and weights, then correlating the data matches machine profiling of customers, though not credit scoring."}
+{"pair": "q1028", "score": 0.5, "rationale": "A scanner identifying his insides to open his door matches machine identification for access, using a body scan not a card."}
+{"pair": "q1030", "score": 0.25, "rationale": "A brainwave pickup receiving a person's pattern constantly is identification by brain signal, which is not a machine-read card."}
+{"pair": "q0839", "score": 0.5, "rationale": "Getting information from automatic scanners of a city library matches machine information retrieval, with mechanism vague."}
+{"pair": "q1354", "score": 0.25, "rationale": "Machines answering problems of daily life is a generic claim used to argue for prophecy, with no question-answering mechanism."}
+{"pair": "q0702", "score": 0.75, "rationale": "A three-dimensional form of flickering light and shadow in the center of a cabin matches a volumetric 3D display; the clinical planning use is absent."}
+{"pair": "q1371", "score": 0, "rationale": "A remark that it depended on what you wished to select does not describe answering questions."}
+{"pair": "q1819", "score": 0.25, "rationale": "A ship loyal only to its master points to owner-specific control but no voice recognition is shown."}
+{"pair": "q1396", "score": 0.25, "rationale": "Walking to a tri-dim chart filling the room loosely evokes a large situation display, with no real-time computer."}
+{"pair": "q1348", "score": 0.25, "rationale": "A machine registrar with personality is a conversing machine, but nothing says it answers questions."}
+{"pair": "q2021", "score": 0.5, "rationale": "Translating brain waves into pictures matches thought display in function; the mechanism is only \"waves\" and it is a claimed ability, not a decoded visual pattern."}
+{"pair": "q1255", "score": 0.25, "rationale": "Deep-probing a mind to learn what someone has thought about hints at mind reading, with no device or method described."}
+{"pair": "q0860", "score": 0.25, "rationale": "Getting a replacement within seconds from a filing computer implies a stored-item lookup, though it is mostly a parts dispenser."}
+{"pair": "q1224", "score": 0, "rationale": "The bare statement \"We know all about you\" contains nothing about a device or reading minds."}
+{"pair": "q1542", "score": 0.25, "rationale": "A robot luggage-carrier following a \"bone\" is a following service robot, but it does not wait on or speak to the public."}
+{"pair": "q1565", "score": 0.5, "rationale": "A robotic barkeep serving a drinker matches a robot serving the public in a bar, much like a robot waiter; no mechanism given."}
+{"pair": "q1365", "score": 0.5, "rationale": "An Oracle that answers any questions promptly and completely matches a question-answering system in function, with no mechanism."}
+{"pair": "q1588", "score": 0.25, "rationale": "Robot croupiers and dealers who cannot cheat are service robots in a casino, but the quotation has no task like taking orders."}
+{"pair": "q2017", "score": 0.25, "rationale": "The name \"Menograph, or mind-writer\" suggests a device that writes thoughts, but the quotation gives no function beyond the name."}
+{"pair": "q1808", "score": 0.5, "rationale": "Speaking into a mike so robots speed up matches voice command of machines in function; recognition is implied, not described."}
+{"pair": "q0535", "score": 0.25, "rationale": "Magnified illuminated book sheets on a wall rack are a reading aid, but no electronic content or portable device."}
+{"pair": "q0862", "score": 0.25, "rationale": "Deleting items from a record tape and its tubes shows stored data being managed, not retrieved."}
+{"pair": "q1387", "score": 0.25, "rationale": "Summarizing a picture in a tactical tank is a display of a situation, but done by trained telepaths and not computer data."}
+{"pair": "q1473", "score": 0.25, "rationale": "Gardeners that repel strange robots from entering the park act like guards, loosely a security robot, but are not patrolling like a Sentry."}
+{"pair": "q1364", "score": 0.25, "rationale": "A machine offering to respond to only one person's questions points at a question-answering device but with no mechanism."}
+{"pair": "q2027", "score": 0, "rationale": "A fad item compared with a ouija board does not describe thought display."}
+{"pair": "q1477", "score": 0.5, "rationale": "Robots patrolling the streets in anti-crime campaigns match robot police in function; the mechanism of a central Brain and city scale differ."}
+{"pair": "q1392", "score": 0, "rationale": "A ship at the center of weapons carrying Brains is not a display."}
+{"pair": "q1027", "score": 0.25, "rationale": "A lock keyed to the owner's brain wavelength is machine-checked identity, but it is a brain-wave key, not a readable card."}
+{"pair": "q1804", "score": 0.25, "rationale": "A door mike following him with its snout and a hi-fi picking a random tape involves microphones but not recognizing speech."}
+{"pair": "q1261", "score": 0.25, "rationale": "Saying the device cannot detect telepathy is a limit on a brain-reading device with no mechanism."}
+{"pair": "q1821", "score": 0.5, "rationale": "Telling a machine's microphone the date and time by voice matches speech input to a machine, but there is no recognition stated."}
+{"pair": "q1244", "score": 0.25, "rationale": "A stroboscope flickering over a blind man's eyes for mind reading loosely involves a head-applied apparatus, without decoding."}
+{"pair": "q1468", "score": 0.5, "rationale": "A police experimental robot reporting for duty matches a robot in a police role; there is no patrol or machine surveillance."}
+{"pair": "q1500", "score": 0.25, "rationale": "Robots sent out to do someone's work hint at an agent and its machines, with no central computer."}
+{"pair": "q1603", "score": 0.5, "rationale": "Putting items in a dream machine at night to start a job next day matches learning during sleep; the mechanism is absent."}
+{"pair": "q1571", "score": 0.75, "rationale": "A robowaiter approaching with a menu board in metal hands matches the Pasadena robot waiters; the quotation lacks taking orders."}
+{"pair": "q0832", "score": 0.5, "rationale": "A desk cabinet finding any of three million items in three seconds with neighbors matches rapid database lookup; no remote terminal."}
+{"pair": "q1796", "score": 0, "rationale": "Robots dispatched when scanning fails is a maintenance response with no speech recognition."}

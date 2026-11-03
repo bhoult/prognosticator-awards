@@ -1,0 +1,120 @@
+{"pair": "q1069", "score": 0.5, "rationale": "Machine translation of a full book matches the function of the 1959 translator. The mechanism is unspecified and the flawless quality is far beyond the real system."}
+{"pair": "q1070", "score": 0.5, "rationale": "A translator machine between two languages matches the function. The mechanism is vague and the use for linguistic analysis differs."}
+{"pair": "q1071", "score": 0.5, "rationale": "A computer translating alien speech into Terran matches machine translation's function. The real 1959 system translated written text, not live speech."}
+{"pair": "q1072", "score": 0.25, "rationale": "The translator only speeds up and imitates speech, which is loosely evocative of translation. It is not clearly translating between languages."}
+{"pair": "q1073", "score": 0, "rationale": "A registered computer operator profession says nothing about translation."}
+{"pair": "q1074", "score": 0.5, "rationale": "A machine beginning to translate matches the function. No mechanism is given."}
+{"pair": "q1075", "score": 0.5, "rationale": "An automatic translating secretary matches machine translation of documents. The diplomatic context and vague mechanism differ."}
+{"pair": "q1076", "score": 0.5, "rationale": "A cybernetic unit decoding words and relaying them via a translator collar matches the function. The mechanism is vague and the real system was written-text only."}
+{"pair": "q1077", "score": 0.25, "rationale": "Translator circuits that produce speech from lip reading point loosely at translation. The function is lip-to-speech, not language translation."}
+{"pair": "q1078", "score": 0.5, "rationale": "A machine translator holding native conversation in memory matches the function. Learning an unknown language from speech is not what the 1959 system did."}
+{"pair": "q1079", "score": 0.25, "rationale": "Rosetta Stone imagery is only an evocative nod to translation, with no machine translation mechanism."}
+{"pair": "q1087", "score": 0.25, "rationale": "Insect-like compound eyes giving machines vision point toward machine sight. There is no image-understanding mechanism."}
+{"pair": "q1088", "score": 0.25, "rationale": "A machine sensing an obstacle and rerouting loosely suggests visual perception. The sensing mechanism is not described."}
+{"pair": "q1089", "score": 0.25, "rationale": "Lens eyes that record for controllers are camera capture, not computer interpretation of 3D structure."}
+{"pair": "q1090", "score": 0.25, "rationale": "Camera eyes for a robot evoke machine vision but have no interpretation of images."}
+{"pair": "q1091", "score": 0.25, "rationale": "A robot perceiving beyond human range with photoelectric eyes is evocative. The mechanism is vague."}
+{"pair": "q1092", "score": 0, "rationale": "Multi-sense inference of an author's personality and smell of a room is not image analysis of objects."}
+{"pair": "q1093", "score": 0.5, "rationale": "A photoelectric robot reacting to the shape of an automobile matches shape recognition by machine. The mechanism is vague."}
+{"pair": "q1094", "score": 0.25, "rationale": "Camera-guided machines are loosely related. The quote shows only a machine fumbling, with no perception logic."}
+{"pair": "q1095", "score": 0.5, "rationale": "Matching people against reference silhouettes is machine visual recognition, close in function to extracting shape from images. It is imperfect and not 3D."}
+{"pair": "q1096", "score": 0.25, "rationale": "Robot sight in darkness is evocative of machine vision but about sensor range rather than interpretation."}
+{"pair": "q1097", "score": 0, "rationale": "Barrier-penetrating vision is a different capability from computer image analysis."}
+{"pair": "q1098", "score": 0.25, "rationale": "Many red eyes gleaming with intelligence is only loosely suggestive of machine sight."}
+{"pair": "q1099", "score": 0, "rationale": "Analyzers classifying life from neural pattern data are not machine vision."}
+{"pair": "q1100", "score": 0.25, "rationale": "A robot capturing a written message with photographic vision is camera capture and reading, loosely related to the 1963 perception work."}
+{"pair": "q1101", "score": 0.25, "rationale": "Computer-controlled 3D radar-like scanning to identify shape is in the right direction. It is radar rather than camera-based, and loose."}
+{"pair": "q1102", "score": 0.25, "rationale": "An infrared scanner display for object identification is a sensor display, not computer extraction of structure from images."}
+{"pair": "q1103", "score": 0.5, "rationale": "A machine brain perceiving and locating a person visually matches the function of machine perception. The mechanism is unspecified."}
+{"pair": "q1105", "score": 0.25, "rationale": "Automatic recording of thoughts and words onto strips evokes storage media loosely. It is not disk storage with random access."}
+{"pair": "q1106", "score": 0.5, "rationale": "A magnetic record threaded into a machine matches magnetic storage and playback. Recording a brain is a different context."}
+{"pair": "q1107", "score": 0.5, "rationale": "Transferring data to magnetized tape as a permanent record matches magnetic storage. The content, a brain section, differs and the 1956 disk is a different medium."}
+{"pair": "q1108", "score": 0.25, "rationale": "Multilevel writing tape as a future medium is a loose pointer to tape storage."}
+{"pair": "q1109", "score": 0.5, "rationale": "Stacks of record-tape containers holding knowledge match stored tape. The mechanism is not described."}
+{"pair": "q1110", "score": 0.25, "rationale": "Voice tapes responding to questions are recorded-playback systems, only loosely related to data storage."}
+{"pair": "q1111", "score": 0, "rationale": "An illuminated date tape on a steel box does not describe magnetic data storage."}
+{"pair": "q1112", "score": 0.25, "rationale": "A machine remembering by notching molecules is a vague memory-storage idea, not magnetic recording."}
+{"pair": "q1113", "score": 0.5, "rationale": "Study spools as recorded information media match tape-like storage of content. The mechanism is vague."}
+{"pair": "q1114", "score": 0.25, "rationale": "Audio retention banks as computing equipment are only evocative of storage units."}
+{"pair": "q1115", "score": 0, "rationale": "The quotation describes people in a room and says nothing about storage."}
+{"pair": "q1116", "score": 0.5, "rationale": "Audio retention banks that record and keep data match recording storage in function. The mechanism is not stated."}
+{"pair": "q1117", "score": 0.5, "rationale": "A recorder transcribing signals for later playback matches magnetic recording and retrieval. The brain-wave content differs."}
+{"pair": "q1118", "score": 0.5, "rationale": "Information tapes loaded into a projector match stored-media retrieval. The medium and mechanism are vague."}
+{"pair": "q1119", "score": 0.75, "rationale": "Explicit drum-memory banks and punched tapes in a computer match drum storage, with the mechanism named. The context is fictional and drum memory predates the 1956 disk milestone."}
+{"pair": "q1120", "score": 0.5, "rationale": "A compact microtape archiving a recorded conference matches durable media storage. The mechanism is vague."}
+{"pair": "q1121", "score": 0.25, "rationale": "A robot's memory-record as evidence is loosely evocative of stored recordings."}
+{"pair": "q1122", "score": 0.5, "rationale": "Brain-tapes recording experiences match tape storage for permanent retrieval. The robot context differs."}
+{"pair": "q1123", "score": 0.5, "rationale": "Memory tapes holding a robot's mind match tape as data storage. The mechanism is not detailed."}
+{"pair": "q1124", "score": 0.5, "rationale": "A reelbook read by machine matches reel-based stored content. The mechanism is vague."}
+{"pair": "q1125", "score": 0.5, "rationale": "Explicit magnetic tape reel preserved as a record matches tape storage. The function is archival, and it does not match the 1956 disk."}
+{"pair": "q1126", "score": 0.5, "rationale": "Mandatory shipboard computers described in a tape context match computing with tape storage. The mechanism is not described much."}
+{"pair": "q1144", "score": 0.75, "rationale": "Writing chemically shrunk to microscopic size for storage matches microfilm's photographic reduction. The details differ from bank-check microfilming."}
+{"pair": "q1145", "score": 0.25, "rationale": "Books on spools inside a clock are loosely like compact document storage. The direct mind-reading differs."}
+{"pair": "q1167", "score": 0.25, "rationale": "A fleet coordination system better than conventional command is evocative of SAGE. No mechanism is given."}
+{"pair": "q1168", "score": 0.25, "rationale": "A mechanical brain as a military auxiliary points toward a command computer. It is vague and not about tracking and directing."}
+{"pair": "q1169", "score": 0.25, "rationale": "A game-playing electronic brain with military use is loosely related to military computing. It is not air-defense direction."}
+{"pair": "q1170", "score": 0.5, "rationale": "A coordinating division with semantic calculators for fleet command matches computerized command and control. The mechanism is unspecified."}
+{"pair": "q1171", "score": 0.5, "rationale": "A machine integrating battle reports for fleet command matches SAGE-style data integration for commanders. The context differs."}
+{"pair": "q1172", "score": 0.25, "rationale": "Machines computing war odds are a different function from tracking and directing interceptors."}
+{"pair": "q1173", "score": 0, "rationale": "Machines failing to integrate an anomalous item says nothing of a military command computer."}
+{"pair": "q1174", "score": 0.25, "rationale": "Plates from SRB machines computing odds is a loosely related predictive military computer."}
+{"pair": "q1175", "score": 0.25, "rationale": "Statistical war forecasting is a different function from real-time radar direction."}
+{"pair": "q1176", "score": 0.25, "rationale": "An onboard combat computer making real-time tactical decisions is in the direction of automated military computing. It is a different function from SAGE."}
+{"pair": "q1177", "score": 0.25, "rationale": "A shipboard logic computer analyzing information on an enemy is loosely military computing."}
+{"pair": "q1178", "score": 0.25, "rationale": "A computer predicting war outcomes is loosely related to military computers."}
+{"pair": "q1179", "score": 0.5, "rationale": "A master military computer directing fleets matches computer-directed military command. The mechanism is vague and the space setting differs."}
+{"pair": "q1199", "score": 0.25, "rationale": "A machine informing the narrator of a person's character is a vague mind-assessment. It does not read brain activity."}
+{"pair": "q1200", "score": 0, "rationale": "A philosophical claim about uniting mind and matter describes no device."}
+{"pair": "q1201", "score": 0.5, "rationale": "Reading a person's inmost thoughts by technology matches the function. The mechanism is unspecified and the real result was limited visual reconstruction."}
+{"pair": "q1202", "score": 0.5, "rationale": "A helmet receiver extracting mental content without acting on the brain matches passive sensing. It is far beyond the partial fMRI result."}
+{"pair": "q1203", "score": 0.5, "rationale": "Collecting thought as electrical signals from the brain matches decoding brain activity in principle. The fidelity is overstated."}
+{"pair": "q1204", "score": 0.25, "rationale": "A head cap covering the head is only a hardware form, with no reading function in the quote."}
+{"pair": "q1205", "score": 0.5, "rationale": "Collecting thought vibrations matches decoding brain signals in function. The mechanism is vague."}
+{"pair": "q1206", "score": 0.5, "rationale": "A head apparatus collecting thought vibrations matches brain-signal decoding. The fidelity is far greater than the real one."}
+{"pair": "q1207", "score": 0.5, "rationale": "A brain-reader extracting a story matches the function of reading minds. The mechanism is missing and the extraction is far richer."}
+{"pair": "q1208", "score": 0.25, "rationale": "Learning the story from the visitors' memories is only implied mind reading, with no device."}
+{"pair": "q1209", "score": 0.5, "rationale": "Reading ideas from a brain matches thought decoding in function. The mechanism is unspecified."}
+{"pair": "q1210", "score": 0.5, "rationale": "A wire contact recording thoughts matches thought detection from the brain. The detail is vague."}
+{"pair": "q1211", "score": 0, "rationale": "Telepathic seizure by a sentient cylinder is not a device decoding brain activity."}
+{"pair": "q1212", "score": 0.25, "rationale": "Reading brains of recently dead people is loosely mind reading, with no mechanism."}
+{"pair": "q1213", "score": 0, "rationale": "The quote only says someone can operate a device and nothing about reading minds."}
+{"pair": "q1214", "score": 0.25, "rationale": "A mechanical educator brought out near a creature is only implicitly a mind device."}
+{"pair": "q1215", "score": 0.5, "rationale": "Reading brains with a machine to learn plans matches the thought-decoding function. The mechanism is not described."}
+{"pair": "q1216", "score": 0.5, "rationale": "A wired cap that reads thoughts matches a head sensor decoding thought. The accuracy is overstated."}
+{"pair": "q1217", "score": 0.5, "rationale": "A memory-prober reading a life history matches the function in a much grander form. No mechanism is given."}
+{"pair": "q1218", "score": 0.25, "rationale": "Psycho-search screening is implied mind reading, and the quote mainly describes defeating it."}
+{"pair": "q1219", "score": 0.25, "rationale": "Knowledge drained from a mind is loosely related to extraction, with no mechanism."}
+{"pair": "q1220", "score": 0.25, "rationale": "A robot reading a mind by gazing is not sensor-based decoding of brain activity."}
+{"pair": "q1221", "score": 0, "rationale": "The quote is about low temperatures on a world, not a mind-reading device."}
+{"pair": "q1222", "score": 0.5, "rationale": "A belt gadget reading thoughts matches the function. The word-for-word fidelity and remote mechanism go beyond the real result."}
+{"pair": "q1223", "score": 0.25, "rationale": "A robot attuned to thought waves evokes thought detection. It is a command-reading robot."}
+{"pair": "q1224", "score": 0.25, "rationale": "The quote gives only a claim of knowledge about a person, with no reading mechanism."}
+{"pair": "q1225", "score": 0.5, "rationale": "Machines probing inner thoughts match the function of reading minds. The mechanism is vague."}
+{"pair": "q1226", "score": 0.5, "rationale": "Detecting brain electrical discharges to read thoughts matches measuring brain activity. The inference of thoughts is far beyond real capability."}
+{"pair": "q1227", "score": 0.5, "rationale": "A beam reading thoughts remotely matches the function. The remote hypnosis mechanism is not the real one."}
+{"pair": "q1228", "score": 0.5, "rationale": "A temple electrode wired to a pocket device monitoring a mind matches a sensor-based brain reader. It is limited in detail."}
+{"pair": "q1229", "score": 0.25, "rationale": "A mind-probe in trials is implied mind reading, and the quote is mainly about deceiving it."}
+{"pair": "q1230", "score": 0.5, "rationale": "A machine with electrodes reading thoughts matches brain-signal decoding in function. The output is far beyond real."}
+{"pair": "q1231", "score": 0, "rationale": "A machine brain using a pineal analogue to contact an operator is not decoding a person's brain."}
+{"pair": "q1232", "score": 0.25, "rationale": "A subconscious analysis test is vaguely related. The quote does not describe image output."}
+{"pair": "q1233", "score": 0.75, "rationale": "A machine reading the mind and retranslating readings into visual images matches decoding brain activity into reconstructed visuals. The imagery is of thoughts rather than watched film."}
+{"pair": "q1234", "score": 0.25, "rationale": "A giant computer with near-extrasensory mind-reading capacity is evocative only."}
+{"pair": "q1235", "score": 0.25, "rationale": "A machine intelligence extracting information from minds is loosely the function, with no mechanism."}
+{"pair": "q1236", "score": 0.25, "rationale": "Scanners applied to a captive evoke reading a mind loosely."}
+{"pair": "q1237", "score": 0.25, "rationale": "Devices detecting thought-waves point at brain-wave sensing, but vaguely."}
+{"pair": "q1238", "score": 0, "rationale": "Robots that learned to think are telepaths, a different concept from a device decoding brain activity."}
+{"pair": "q1239", "score": 0, "rationale": "Androids changing appearance do not describe reading a mind."}
+{"pair": "q1240", "score": 0, "rationale": "A voice and face described with no mind-reading content in the quote."}
+{"pair": "q1241", "score": 0.5, "rationale": "A machine used to learn a human's language and thoughts matches the function of extracting mental content. The mechanism is not described."}
+{"pair": "q1242", "score": 0.5, "rationale": "An electrode clamped to the head and wired to a device matches sensor-based brain reading. The quotation does not say what it outputs."}
+{"pair": "q1243", "score": 0.25, "rationale": "Mind blasting that strips the mind for hidden information is implied mind reading. No device or mechanism is given."}
+{"pair": "q1244", "score": 0, "rationale": "A stroboscope flickering on a blind man's head does not describe decoding brain activity."}
+{"pair": "q1245", "score": 0.5, "rationale": "Tuning in on thought waves like a television matches detecting brain signals to read thought. The mechanism is loose."}
+{"pair": "q1246", "score": 0, "rationale": "Questioning dreams is not tied to any device in the quotation."}
+{"pair": "q1247", "score": 0.25, "rationale": "Meddling with memory is implied reading of memory with no mechanism."}
+{"pair": "q1248", "score": 0.25, "rationale": "A helmet on the head used for interrogation hints at a brain-reading device. The quote's output is vague."}
+{"pair": "q1249", "score": 0.25, "rationale": "A thought-helmet projecting into an alien mind is loosely related. It is projection rather than decoding."}
+{"pair": "q1250", "score": 0.5, "rationale": "Brain electromagnetic emissions that can tell a story match reading mental content from brain activity. The completeness is overstated."}
+{"pair": "q1251", "score": 0.25, "rationale": "Telepath instruments are mentioned but not described."}
+{"pair": "q1252", "score": 0.25, "rationale": "Detectors locating a person by their thought pattern evoke brain-signal sensing. The purpose is localization rather than decoding content."}
+{"pair": "q1253", "score": 0.25, "rationale": "Remote detection of individual thought patterns for filing evokes brain signal sensing. It identifies people rather than reading content."}
