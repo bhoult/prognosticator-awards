@@ -4,7 +4,8 @@ words and on the page, record dates applied, `contemporary` only within two year
 event); confirmed -> checked "confirmed" (+ verified sources); replaced with a verified
 source -> new date/what/fit/sources, checked "replaced", old date in replaced_date;
 replaced with date null -> milestone removed; replacement without a verified source ->
-not applied (checked "confirmed", check_note says so). Starts from raw/milestones3_step4.jsonl
+not applied (checked "confirmed", check_note says so); a check rejected in raw/review3.jsonl
+(op reject_check) -> not applied, with the reason. Starts from raw/milestones3_step4.jsonl
 (saved on the first run). Log: raw/check3_applied.jsonl.
 Usage: python3 -I scripts/apply_checks3.py"""
 import json
@@ -52,12 +53,20 @@ def verify(s, event_date):
 
 
 idx = {(m["concept_id"], m["kind"]): m for m in ms}
+# checker results rejected after review (raw/review3.jsonl, op reject_check): the milestone stays
+rejects = {(r["concept_id"], r["kind"]): r["reason"] for r in
+           (json.loads(l) for l in open(HERE / "raw/review3.jsonl")) if r["op"] == "reject_check"}
 log, removed = [], set()
 for c in checks:
     key = (c["concept_id"], c["kind"])
     m = idx.get(key)
     if not m:
         log.append({"key": key, "result": "unknown milestone"})
+        continue
+    if key in rejects:
+        m.update(checked="confirmed", check_note=f"checker proposed {c.get('date')} ({c.get('what', '')[:120]}); "
+                 f"rejected in review: {rejects[key]}")
+        log.append({"key": key, "result": "check rejected in review", "proposed": str(c.get("date"))})
         continue
     date = c.get("date")
     good = [r for r in (verify(s, date or m["date"]) for s in c.get("sources") or []) if r]

@@ -55,6 +55,7 @@ for f in sorted(HERE.glob("raw/ms3_b[0-9][0-9].jsonl")):
 #   add         a milestone not from the agents, verified below like theirs
 #   restore2    use the second-pass milestone of that concept and kind (with a `fit` sentence)
 #   keep        no change; the reason goes in the report
+#   reject_check  applied by apply_checks3.py: the earliest-event check is not applied
 review = L("raw/review3.jsonl") if (HERE / "raw/review3.jsonl").exists() else []
 for r in review:
     k = (r["concept_id"], r["kind"])

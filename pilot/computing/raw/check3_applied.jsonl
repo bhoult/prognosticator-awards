@@ -1,0 +1,13 @@
+{"key": ["question-answering-computer", "first_practical_use"], "result": "confirmed", "date": "1993", "bad_sources": 0}
+{"key": ["holographic-3d-display", "first_practical_use"], "result": "confirmed", "date": "2009", "bad_sources": 0}
+{"key": ["speech-to-text-dictation", "first_practical_use"], "result": "confirmed", "date": "1986-12", "bad_sources": 0}
+{"key": ["companion-robot", "first_practical_use"], "result": "confirmed", "date": "1998-10-02", "bad_sources": 0}
+{"key": ["robot-supervisor-hierarchy", "first_practical_use"], "result": "confirmed", "date": "1974", "bad_sources": 0}
+{"key": ["face-recognition", "first_practical_use"], "result": "confirmed", "date": "1994", "bad_sources": 0}
+{"key": ["sleep-learning", "first_demonstration"], "result": "check rejected in review", "proposed": "1942-07"}
+{"key": ["electronic-book-reader", "first_practical_use"], "result": "confirmed", "date": "1990-07", "bad_sources": 0}
+{"key": ["speech-recognition", "first_practical_use"], "result": "confirmed", "date": "1972", "bad_sources": 0}
+{"key": ["machine-learning", "first_demonstration"], "result": "replaced", "old_date": "1950", "new_date": "1929-07"}
+{"key": ["robot-police-guard", "first_practical_use"], "result": "confirmed", "date": "1986", "bad_sources": 0}
+{"key": ["machine-readable-id-card", "first_practical_use"], "result": "confirmed", "date": "1961", "bad_sources": 0}
+{"key": ["thought-to-text", "first_demonstration"], "result": "replaced", "old_date": "2023-05", "new_date": "2006"}
