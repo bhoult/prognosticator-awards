@@ -92,14 +92,14 @@ for p in sorted(HERE.glob("raw/judge3b_key_round*.jsonl")):
     s2 = {r["pair"]: r["score"] for r in L(f"raw/judge3b_round{rnd}.jsonl")}
     s3 = {r["pair"]: r["score"] for r in L(f"raw/judge3c_round{rnd}.jsonl")}
     for r in L(p.relative_to(HERE)):
-        keys[r["pair"]] = (r["group"], rnd, s2.get(r["pair"]), s3.get(r["pair"]))
+        keys[(rnd, r["pair"])] = (r["group"], rnd, s2.get(r["pair"]), s3.get(r["pair"]))
 if keys and J:
     first = {j["pair"]: j for j in L("raw/judgments3_step6.jsonl")}
     out += ["", "## Second judge: agreement with the first", "",
             "| Group | Pairs | Same score | One step apart | Two or more apart | Second judge lower | Second judge higher |",
             "|---|---|---|---|---|---|---|"]
     for g in ("top100", "score1", "top100_new", "random50"):
-        rows = [(first[p]["score"], v[2]) for p, v in keys.items() if v[0] == g and v[2] is not None]
+        rows = [(first[p]["score"], v[2]) for (_, p), v in keys.items() if v[0] == g and v[2] is not None]
         if rows:
             d = [abs(a - b) for a, b in rows]
             out.append(f"| {g} | {len(rows)} | {sum(x == 0 for x in d)} | {sum(x == 0.25 for x in d)} | "

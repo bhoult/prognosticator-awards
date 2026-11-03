@@ -14,3 +14,4 @@ J01	6	judge batch 1 (184 pairs), run locally	sonnet	85695	8	115
 J02	6	judge batch 2 (184 pairs), run locally	sonnet	101556	10	132
 J03	6	judge batch 3 (184 pairs), run locally	sonnet	99024	7	148
 B01	7	second blind judge, round 1 (150 pairs), run locally	sonnet	98834	8	159
+C01	7	third blind judge, round 1 (5 pairs), run locally	sonnet	51830	4	36
