@@ -23,3 +23,23 @@ K-medicine-biology	consolidate	sonnet	88019	12	139
 K-space	consolidate	sonnet	104134	10	172	
 G-global	global	sonnet	151638	13	245	
 A-audit	audit	sonnet	111826	12	153	
+M-society-politics-001	match	sonnet	82392	9	79	calibration
+M-economy-001	match	sonnet	89326	10	103	calibration
+M-energy-001	match	sonnet	96527	11	106	calibration
+M-other-001	match	sonnet	95747	11	121	calibration
+M-environment-001	match	sonnet	100569	15	140	calibration
+M-communication-001	match	sonnet	103349	8	143	calibration
+M-medicine-biology-001	match	sonnet	103372	12	167	calibration
+M-computing-001	match	sonnet	106909	13	189	calibration
+M-economy-002	match	sonnet	89613	9	110	calibration
+M-weapons-war-001	match	sonnet	101410	10	130	calibration
+M-space-001	match	sonnet	107803	12	158	calibration
+M-transport-001	match	sonnet	110105	9	173	calibration
+M-computing-002	match	sonnet	111049	10	179	calibration
+M-communication-002	match	sonnet	116417	10	184	calibration
+M-society-politics-002	match	sonnet	83472	6	88	calibration
+M-environment-002	match	sonnet	101047	13	148	calibration
+M-other-002	match	sonnet	101810	9	122	calibration
+M-energy-002	match	sonnet	115944	15	180	calibration
+M-medicine-biology-002	match	sonnet	105124	13	177	calibration
+M-space-002	match	sonnet	102540	10	139	calibration

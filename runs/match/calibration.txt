@@ -1,1 +1,2 @@
 calibration 2026-11-03: weekly usage 75% -> 76% after about 2.6M subagent tokens (the 8 local pilot agents and the 14 concept proposers) plus the orchestrating session
+calibration 2026-11-03: 76% -> 77% after about 2.9M subagent tokens (consolidation, cross-domain pass, audit, 20 matching batches) plus the orchestrating session; about 2.7M tokens per point of the week
