@@ -1,0 +1,15 @@
+agent	stage	model	total_tokens	tool_uses	seconds	note
+P-communication-1	concepts	sonnet	142586	12	250	
+P-weapons-war-1	concepts	sonnet	132718	13	251	
+P-space-2	concepts	sonnet	150636	17	291	
+P-medicine-biology-1	concepts	sonnet	152155	16	306	
+P-medicine-biology-2	concepts	sonnet	139001	16	316	
+P-computing-1	concepts	sonnet	87408	8	89	
+P-other-1	concepts	sonnet	164781	15	378	
+P-society-politics-1	concepts	sonnet	61044	5	36	
+P-economy-1	concepts	sonnet	68521	6	62	
+P-energy-1	concepts	sonnet	94983	10	100	
+P-weapons-war-2	concepts	sonnet	146565	21	295	
+P-environment-1	concepts	sonnet	125511	16	265	
+P-space-1	concepts	sonnet	231595	24	591	
+P-transport-1	concepts	sonnet	228646	23	641	

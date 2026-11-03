@@ -27,5 +27,6 @@ Write with the Write tool to `{out}`: JSON lines only, one group per line, no pr
 
 Only real duplicates; if there are none, write an empty file. Check that it parses
 (`python3 -I -c "import json;print(len([json.loads(l) for l in open('{out}')]))"`).
+If you write helper scripts, keep them in `{tmpdir}` (other agents work in parallel).
 Don't edit any other file, don't search the web, and don't run git. Reply with one line: how
 many groups.

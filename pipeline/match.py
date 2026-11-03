@@ -158,8 +158,6 @@ def propose_problems(run, name):
             bad.append(f'{cid}: no name or definition')
         if r.get('type') not in TYPES or r.get('came_true_guess') not in GUESSES:
             bad.append(f'{cid}: type or came_true_guess')
-        if any(e not in ids for e in r.get('examples', [])):
-            bad.append(f'{cid}: example not in the shard')
     if not rows:
         bad.append('empty')
     return bad or None
@@ -175,10 +173,12 @@ def concepts_ingest(run):
             print(f'{name}: {n_in} claims; NOT DONE: {p[:5]}')
             continue
         rows = read_jsonl(rd(run, 'concepts', 'out', f))[0]
+        ids = {json.loads(l)['id'] for l in open(rd(run, 'concepts', 'in', f), encoding='utf-8')}
+        stray = sum(1 for r in rows for e in r.get('examples') or [] if e not in ids)
         est = sum(int(r.get('est_claims') or 0) for r in rows)
         total += len(rows)
         print(f'{name}: {n_in} claims, {len(rows)} concepts, est. coverage {est / n_in:.0%}, '
-              f'types {dict(collections.Counter(r["type"] for r in rows))}')
+              f'types {dict(collections.Counter(r["type"] for r in rows))}' + (f'; {stray} example ids not in the shard (dropped)' if stray else ''))
     print(total, 'concepts proposed')
 
 
@@ -194,7 +194,9 @@ def consolidate_plan(run):
         if propose_problems(run, name):
             sys.exit(f'proposals for {name} are not done; run concepts-ingest')
         dom = name.rsplit('-', 1)[0]
+        ids = {json.loads(l)['id'] for l in open(rd(run, 'concepts', 'in', f), encoding='utf-8')}
         for r in read_jsonl(rd(run, 'concepts', 'out', f))[0]:
+            r['examples'] = [e for e in r.get('examples') or [] if e in ids]  # examples are only hints
             groups[GROUPS.get(dom, dom)].append({'shard': name, **r})
     todo = []
     for g, rows in sorted(groups.items()):
@@ -204,7 +206,7 @@ def consolidate_plan(run):
         todo.append(prompt(run, stage, 'consolidate-' + g, 'concepts_consolidate.md', workdir=ROOT, domain=g,
                            proposals=rel(rd(run, stage, 'in', g + '.jsonl')),
                            registry=rel(rd(run, 'concepts', 'registry_seed.jsonl')),
-                           out=rel(rd(run, stage, 'out', g + '.jsonl'))))
+                           out=rel(rd(run, stage, 'out', g + '.jsonl')), tmpdir=rel(rd(run, 'tmp', 'consolidate-' + g))))
     print(len(todo), 'consolidate prompts to run:')
     for p in todo:
         print(' ', rel(p))
@@ -281,7 +283,7 @@ def global_plan(run):
         print('done:', rel(out))
         return
     print(rel(prompt(run, stage, 'global', 'concepts_global.md', workdir=ROOT,
-                     concepts=rel(rd(run, stage, 'in', 'concepts.jsonl')), out=rel(out))))
+                     concepts=rel(rd(run, stage, 'in', 'concepts.jsonl')), out=rel(out), tmpdir=rel(rd(run, 'tmp', 'global')))))
 
 
 def concepts_build(run):
@@ -306,7 +308,8 @@ def concepts_build(run):
             continue
         reg[r['concept_id']] = {k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'domains', 'aliases',
                                                       'came_true_guess', 'est_claims', 'examples', 'bundle_check')}
-        reg[r['concept_id']].update(wikidata=None, source=r['group'])
+        reg[r['concept_id']].update(wikidata=None, source=r['group'],
+                                    domains=sorted({d for g in (r.get('domains') or [r['group']]) for d in g.split('+')}))
     merges, err = read_jsonl(rd(run, 'global', 'out', 'merges.jsonl'))
     if merges is None:
         sys.exit(f'global merges: {err}')

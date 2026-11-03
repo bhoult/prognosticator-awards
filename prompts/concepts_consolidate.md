@@ -45,5 +45,6 @@ code fences. Fields: `concept_id`, `name`, `definition`, `type`, `aliases`,
 
 Write in parts as you go (rewrite the file with everything so far). At the end check that it
 parses (`python3 -I -c "import json;print(len([json.loads(l) for l in open('{out}')]))"`).
+If you write helper scripts, keep them in `{tmpdir}` (other agents work in parallel).
 Don't edit any other file, don't search the web, and don't run git. Reply with one line:
 how many concepts, how many merged, split and dropped.
