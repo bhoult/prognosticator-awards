@@ -43,3 +43,68 @@ M-other-002	match	sonnet	101810	9	122	calibration
 M-energy-002	match	sonnet	115944	15	180	calibration
 M-medicine-biology-002	match	sonnet	105124	13	177	calibration
 M-space-002	match	sonnet	102540	10	139	calibration
+M-economy-003	match	sonnet	86098	9	90	
+M-communication-003	match	sonnet	95226	13	99	
+M-weapons-war-002	match	sonnet	101158	11	99	
+M-environment-003	match	sonnet	103991	11	131	
+M-computing-003	match	sonnet	105191	12	154	
+M-transport-002	match	sonnet	105781	10	158	
+M-energy-003	match	sonnet	104808	10	159	
+M-medicine-biology-003	match	sonnet	112085	11	161	
+M-space-003	match	sonnet	99770	13	96	
+M-other-003	match	sonnet	96077	9	113	
+M-transport-003	match	sonnet	121211	8	169	
+M-computing-004	match	sonnet	92099	11	127	
+M-communication-004	match	sonnet	105440	11	150	
+M-weapons-war-003	match	sonnet	108598	11	167	
+M-environment-004	match	sonnet	105410	12	157	
+M-energy-004	match	sonnet	125456	11	167	
+M-other-004	match	sonnet	97329	10	127	
+M-medicine-biology-004	match	sonnet	122160	7	143	
+M-communication-005	match	sonnet	94492	10	117	
+M-space-004	match	sonnet	105928	11	171	
+M-transport-004	match	sonnet	109140	9	166	
+M-medicine-biology-005	match	sonnet	100452	13	119	
+M-computing-005	match	sonnet	100964	12	165	
+M-weapons-war-004	match	sonnet	109373	10	180	
+M-environment-005	match	sonnet	102676	11	151	
+M-energy-005	match	sonnet	115150	10	182	
+M-other-005	match	sonnet	105025	10	167	
+M-environment-006+medicine-biology-006	match	sonnet	121894	12	181	rejected: skimmed, redone
+M-other-006+space-006	match	sonnet	149405	15	223	
+M-space-005+transport-005	match	sonnet	161147	14	289	
+M-weapons-war-005+communication-006	match	sonnet	168489	17	307	
+M-computing-006+energy-006	match	sonnet	156533	19	320	
+M-environment-006	match	sonnet	90676	8	125	redo
+M-medicine-biology-006	match	sonnet	106982	11	169	redo
+M-transport-006+weapons-war-006	match	sonnet	176624	24	380	
+M-computing-007	match	sonnet	98809	11	111	
+M-communication-007	match	sonnet	101804	9	130	
+M-energy-007	match	sonnet	104448	15	166	
+M-other-007	match	sonnet	101584	8	116	
+M-environment-007	match	sonnet	101326	11	127	
+M-medicine-biology-007	match	sonnet	106865	11	159	
+M-space-007	match	sonnet	102793	14	133	
+M-weapons-war-007	match	sonnet	103745	11	131	
+M-communication-008	match	sonnet	109136	9	134	
+M-transport-007	match	sonnet	106100	10	153	
+M-computing-008	match	sonnet	100981	12	146	
+M-environment-008	match	sonnet	104968	13	133	
+M-energy-008	match	sonnet	100010	12	135	
+M-medicine-biology-008	match	sonnet	103773	9	136	
+M-space-008	match	sonnet	99716	13	132	
+M-other-008	match	sonnet	99846	10	148	
+M-communication-009	match	sonnet	96861	11	124	
+M-energy-009	match	sonnet	98809	11	114	
+M-weapons-war-008	match	sonnet	109195	13	168	
+M-transport-008	match	sonnet	109024	13	185	
+M-medicine-biology-009	match	sonnet	104966	10	111	
+M-environment-009	match	sonnet	95415	12	111	
+M-transport-009	match	sonnet	101516	8	108	
+M-other-009	match	sonnet	102008	13	162	
+M-space-009	match	sonnet	106084	10	173	
+M-weapons-war-009	match	sonnet	108901	10	174	
+M-medicine-biology-010	match	sonnet	105755	13	120	
+M-environment-010	match	sonnet	97411	14	122	
+M-communication-010	match	sonnet	102124	10	176	
+M-other-010	match	sonnet	99653	10	138	
