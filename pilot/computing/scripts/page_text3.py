@@ -113,8 +113,25 @@ def gbooks(url, volume):
     raise RuntimeError(f"volume {volume} not in the API result")
 
 
+def pmc(url):
+    """A PubMed Central article through NCBI's E-utilities (the article pages may answer
+    with a captcha); date = the article's publication date."""
+    ident = re.search(r"/articles/PMC(\d+)", url).group(1)
+    code, body, _ = net.get(f"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id={ident}",
+                            accept="application/xml", timeout=90)
+    if code != 200 or "<article" not in body:
+        raise RuntimeError(f"HTTP {code}")
+    d = re.search(r'<pub-date[^>]*pub-type="(?:epub|ppub)"[^>]*>(.*?)</pub-date>', body, re.S) or \
+        re.search(r"<pub-date[^>]*>(.*?)</pub-date>", body, re.S)
+    part = lambda t: (re.search(rf"<{t}>(\d+)</{t}>", d.group(1)) if d else None)  # noqa: E731
+    date = "-".join(f"{int(m.group(1)):02d}" for m in (part("year"), part("month"), part("day")) if m)
+    return _strip_tags(body), date
+
+
 def fetch(url, volume=None):
     """Return (text, record_date or '')."""
+    if re.match(r"https?://(pmc\.ncbi\.nlm\.nih\.gov|www\.ncbi\.nlm\.nih\.gov/pmc)/articles/PMC\d+", url):
+        return pmc(url)
     if re.match(r"https?://(www\.)?googleapis\.com/books/v1/volumes", url):
         if not volume:
             raise RuntimeError("Google Books source needs a volume id")

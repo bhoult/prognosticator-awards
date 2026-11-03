@@ -94,7 +94,7 @@ for m in ms:
                         note = f"date {sdate} -> record date {rdate}"
                     sdate = rdate
                 if kind == "contemporary":
-                    ym = re.search(r"\b(\d{4})\b", sdate)
+                    ym = re.search(r"(?<!\d)(\d{4})", sdate)
                     sy = int(ym.group(1)) if ym else None
                     if sy is None or ey is None or not (ey - 2 <= sy <= ey + 2):
                         kind = "reference"
