@@ -10,6 +10,10 @@ matters for stories published before it), `milestones2` (the second pass's miles
 with their sources and notes), `doubt` (why the second pass is doubted, if it is) and
 `search_hints` (things you must search explicitly, if any).
 
+**Leads** (if `{leads}` is given): quotes that an earlier agent on this batch had already
+checked as FOUND before the container restarted and its work was lost. They are leads,
+not results: use them if they fit, re-check them, and don't rely on them alone.
+
 **The second pass is not the answer; check it.** It rests almost entirely on Wikipedia
 (the only site that worked then). Some of its dates are too late (it settled for the
 best-known or only quotable event), some stretch the definition, and five concepts
@@ -107,8 +111,13 @@ All print to stdout; **never save page text to files in the repository**.
 
 ## Output
 
-Write your result with the Write tool to `{batch_out}` (JSON lines, no prose, no code
-fences). One line per milestone:
+**Write as you go.** The container can restart and lose an agent's work (it happened to the
+first three agents of this step). After you finish each concept, write the file
+`{batch_out}` again with the Write tool, holding every line so far (the concept's milestone
+lines and its concept_note line), so that finished concepts are never lost. If the file
+already exists when you start, read it first and continue with the concepts it lacks.
+
+`{batch_out}` holds JSON lines only (no prose, no code fences). One line per milestone:
 
 {"concept_id": "...", "kind": "first_demonstration", "date": "1985-10", "what": "one line: what happened, where, by whom", "fit": "one sentence: how the event matches the definition's function and mechanism", "sources": [{"url": "...", "publisher": "...", "date": "1985-10-07", "title": "...", "quote": "...", "kind": "contemporary"}], "confidence": "medium", "note": "earlier candidates considered and why each was rejected; agreement with or difference from the second pass", "searched": "what you searched and where"}
 

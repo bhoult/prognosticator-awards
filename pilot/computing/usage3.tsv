@@ -1,1 +1,4 @@
 agent	step	purpose	model	total_tokens	tool_uses	seconds
+R01a	3	milestone research batch 01 (11 concepts), lost: container restart before output	sonnet	142380	39	889
+R02a	3	milestone research batch 02 (11 concepts), lost: container restart before output	sonnet	96222	28	889
+R03a	3	milestone research batch 03 (11 concepts), lost: container restart before output	sonnet	135107	40	888
