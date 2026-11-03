@@ -69,9 +69,11 @@ under two domains would count twice. The registry is global.
   so far and proposes only the concepts it lacks.
 - **3b. Consolidate,** one agent per domain, then one pass over all names:
   - merge duplicates;
-  - **split bundles by rule:** a definition names one function and one mechanism, and one
-    that joins two things with "or" is split, unless the claims treat them as one (DESIGN
-    §12, question 18).
+  - **split bundles by rule:** a definition names one function and one mechanism. When it
+    joins alternatives that could have different first real-world dates ("a factory, mine or
+    power plant"), it is split; alternatives of one thing ("holes in cards or tape") are not
+    (DESIGN §12, question 18). The word "or" alone is no test: 95 of the pilot's 131
+    definitions contain it.
 
   Merges and splits go to a mapping file.
 - **3c. Close the gaps.** After matching (§4), agents propose concepts for the claims coded
@@ -81,7 +83,7 @@ under two domains would count twice. The registry is global.
   - counts by domain and type;
   - the 50 largest concepts;
   - every merge and split;
-  - every definition that still contains "or".
+  - every definition the consolidation flagged as a possible bundle but kept.
 
   Your changes go in as review rows (§5).
 

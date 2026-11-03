@@ -1,0 +1,394 @@
+"""Matching-run driver (runs/match/PLAN.md). All state is on disk under work/match/<run>/.
+
+    python -I pipeline/match.py concepts-plan <run>           sample tranche A, write the propose prompts
+    python -I pipeline/match.py concepts-ingest <run>         check the proposals
+    python -I pipeline/match.py consolidate-plan <run>        group proposals by domain, write prompts
+    python -I pipeline/match.py consolidate-ingest <run>      check the consolidated lists
+    python -I pipeline/match.py global-plan <run>             all domains' concepts, for the cross-domain pass
+    python -I pipeline/match.py concepts-build <run>          registry + mapping + checkpoint 1 -> runs/match/
+    python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
+    python -I pipeline/match.py status <run>
+
+Subagents can't be started from Python. The orchestrating Claude Code session starts one
+subagent per prompt file a *-plan command prints ("Read <file> and follow its instructions"),
+and records its usage with `log`. A subagent writes its output file as it goes; the *-ingest
+commands check what is there, and a stage's plan command lists only the prompts whose output
+is missing or invalid, so a stopped run restarts where it was.
+
+Inputs: work/match/<run>/claims.jsonl from pipeline/export_claims.py, and the computing
+pilot's concepts (pilot/computing/concepts2.jsonl) as the seed of the registry.
+"""
+import collections
+import hashlib
+import json
+import math
+import os
+import random
+import re
+import sys
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+PROMPTS = os.path.join(ROOT, 'prompts')
+SEED_CONCEPTS = os.path.join(ROOT, 'pilot', 'computing', 'concepts2.jsonl')
+OUT = os.path.join(ROOT, 'runs', 'match')
+SEED, SAMPLE, SHARD = 2026, 0.25, 2500
+# domains consolidated together because their samples are small
+GROUPS = {'environment': 'environment+energy', 'energy': 'environment+energy',
+          'computing': 'computing+economy+society-politics', 'economy': 'computing+economy+society-politics',
+          'society-politics': 'computing+economy+society-politics'}
+TYPES, GUESSES = {'technology', 'event', 'social'}, {'yes', 'no', 'unsure'}
+KEBAB = re.compile(r'^[a-z0-9]+(-[a-z0-9]+)*$')
+
+
+def sha(data):
+    return hashlib.sha256(data.encode('utf-8') if isinstance(data, str) else data).hexdigest()
+
+
+def write_atomic(path, text):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path + '.part', 'w', encoding='utf-8') as f:
+        f.write(text)
+    os.replace(path + '.part', path)
+
+
+def jsonl(rows):
+    return ''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows)
+
+
+def read_jsonl(path):
+    """Rows of a JSON-lines file, or (None, error) if a line doesn't parse."""
+    rows = []
+    with open(path, encoding='utf-8') as f:
+        for n, line in enumerate(f, 1):
+            if line.strip():
+                try:
+                    rows.append(json.loads(line))
+                except json.JSONDecodeError as e:
+                    return None, f'line {n}: {e}'
+    return rows, None
+
+
+def rd(run, *p):
+    return os.path.join(ROOT, 'work', 'match', run, *p)
+
+
+def rel(path):
+    return os.path.relpath(path, ROOT)
+
+
+def claims(run):
+    return [json.loads(l) for l in open(rd(run, 'claims.jsonl'), encoding='utf-8')]
+
+
+def seed_registry():
+    return [{'concept_id': c['concept_id'], 'name': c['name'], 'definition': c['definition']}
+            for c in map(json.loads, open(SEED_CONCEPTS, encoding='utf-8'))]
+
+
+def config(run, stage, settings):
+    """Record a stage's settings; refuse to continue under different ones."""
+    path = rd(run, stage, 'config.json')
+    if os.path.exists(path):
+        old = json.load(open(path, encoding='utf-8'))
+        if old != settings:
+            sys.exit(f'{rel(path)} has other settings: {old} (now {settings})')
+    else:
+        write_atomic(path, json.dumps(settings, indent=1) + '\n')
+
+
+def prompt(run, stage, name, template, **fields):
+    text = open(os.path.join(PROMPTS, template), encoding='utf-8').read()
+    for k, v in fields.items():
+        text = text.replace('{' + k + '}', str(v))
+    path = rd(run, stage, 'prompts', name + '.md')
+    write_atomic(path, text)
+    return path
+
+
+# ---- concepts: propose ----
+
+def concepts_plan(run):
+    stage = 'concepts'
+    tpl = open(os.path.join(PROMPTS, 'concepts_propose.md'), encoding='utf-8').read()
+    config(run, stage, {'tranche': 'A', 'sample': SAMPLE, 'shard': SHARD, 'seed': SEED,
+                        'claims_sha256': sha(open(rd(run, 'claims.jsonl'), 'rb').read()),
+                        'prompt_sha256': sha(tpl), 'seed_concepts_sha256': sha(open(SEED_CONCEPTS, 'rb').read())})
+    write_atomic(rd(run, stage, 'registry_seed.jsonl'), jsonl(seed_registry()))
+    by = collections.defaultdict(list)
+    for c in claims(run):
+        if c['tranche'] == 'A':
+            by[c['domain']].append(c)
+    todo = []
+    for dom in sorted(by):
+        rows = sorted(by[dom], key=lambda c: c['id'])
+        pick = random.Random(f'{SEED}:{dom}').sample(rows, round(len(rows) * SAMPLE))
+        n = max(1, math.ceil(len(pick) / SHARD))
+        for i in range(n):
+            name = f'{dom}-{i + 1}'
+            part = pick[i::n]
+            write_atomic(rd(run, stage, 'in', name + '.jsonl'),
+                         jsonl({'id': c['id'], 'description': c['description']} for c in part))
+            out = rd(run, stage, 'out', name + '.jsonl')
+            if propose_problems(run, name) is None:
+                continue
+            todo.append(prompt(run, stage, 'propose-' + name, 'concepts_propose.md', workdir=ROOT, domain=dom,
+                               n=len(part), shard_in=rel(rd(run, stage, 'in', name + '.jsonl')),
+                               registry=rel(rd(run, stage, 'registry_seed.jsonl')), shard_out=rel(out)))
+    print(len(todo), 'propose prompts to run:')
+    for p in todo:
+        print(' ', rel(p))
+
+
+def propose_problems(run, name):
+    """None if the shard's output is complete and valid, else a list of problems."""
+    out = rd(run, 'concepts', 'out', name + '.jsonl')
+    if not os.path.exists(out):
+        return ['missing']
+    rows, err = read_jsonl(out)
+    if rows is None:
+        return [err]
+    ids = {json.loads(l)['id'] for l in open(rd(run, 'concepts', 'in', name + '.jsonl'), encoding='utf-8')}
+    bad, seen = [], set()
+    for r in rows:
+        cid = r.get('concept_id', '')
+        if not KEBAB.match(str(cid)) or cid in seen:
+            bad.append(f'bad or repeated id {cid!r}')
+        seen.add(cid)
+        if not str(r.get('definition', '')).strip() or not str(r.get('name', '')).strip():
+            bad.append(f'{cid}: no name or definition')
+        if r.get('type') not in TYPES or r.get('came_true_guess') not in GUESSES:
+            bad.append(f'{cid}: type or came_true_guess')
+        if any(e not in ids for e in r.get('examples', [])):
+            bad.append(f'{cid}: example not in the shard')
+    if not rows:
+        bad.append('empty')
+    return bad or None
+
+
+def concepts_ingest(run):
+    total = 0
+    for f in sorted(os.listdir(rd(run, 'concepts', 'in'))):
+        name = f[:-6]
+        n_in = sum(1 for _ in open(rd(run, 'concepts', 'in', f), encoding='utf-8'))
+        p = propose_problems(run, name)
+        if p:
+            print(f'{name}: {n_in} claims; NOT DONE: {p[:5]}')
+            continue
+        rows = read_jsonl(rd(run, 'concepts', 'out', f))[0]
+        est = sum(int(r.get('est_claims') or 0) for r in rows)
+        total += len(rows)
+        print(f'{name}: {n_in} claims, {len(rows)} concepts, est. coverage {est / n_in:.0%}, '
+              f'types {dict(collections.Counter(r["type"] for r in rows))}')
+    print(total, 'concepts proposed')
+
+
+# ---- concepts: consolidate per domain group ----
+
+def consolidate_plan(run):
+    stage = 'consolidate'
+    tpl = open(os.path.join(PROMPTS, 'concepts_consolidate.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'groups': GROUPS})
+    groups = collections.defaultdict(list)
+    for f in sorted(os.listdir(rd(run, 'concepts', 'in'))):
+        name = f[:-6]
+        if propose_problems(run, name):
+            sys.exit(f'proposals for {name} are not done; run concepts-ingest')
+        dom = name.rsplit('-', 1)[0]
+        for r in read_jsonl(rd(run, 'concepts', 'out', f))[0]:
+            groups[GROUPS.get(dom, dom)].append({'shard': name, **r})
+    todo = []
+    for g, rows in sorted(groups.items()):
+        write_atomic(rd(run, stage, 'in', g + '.jsonl'), jsonl(rows))
+        if consolidate_problems(run, g) is None:
+            continue
+        todo.append(prompt(run, stage, 'consolidate-' + g, 'concepts_consolidate.md', workdir=ROOT, domain=g,
+                           proposals=rel(rd(run, stage, 'in', g + '.jsonl')),
+                           registry=rel(rd(run, 'concepts', 'registry_seed.jsonl')),
+                           out=rel(rd(run, stage, 'out', g + '.jsonl'))))
+    print(len(todo), 'consolidate prompts to run:')
+    for p in todo:
+        print(' ', rel(p))
+
+
+def consolidate_problems(run, g):
+    out = rd(run, 'consolidate', 'out', g + '.jsonl')
+    if not os.path.exists(out):
+        return ['missing']
+    rows, err = read_jsonl(out)
+    if rows is None:
+        return [err]
+    props = {f"{r['shard']}:{r['concept_id']}" for r in map(json.loads, open(rd(run, 'consolidate', 'in', g + '.jsonl'), encoding='utf-8'))}
+    seed = {c['concept_id'] for c in seed_registry()}
+    bad, seen, covered = [], set(), set()
+    for r in rows:
+        if 'dropped' in r:
+            covered.add(r['dropped'])
+            continue
+        cid = r.get('concept_id', '')
+        covered |= set(r.get('merged_from') or []) | set(r.get('split_from') or [])
+        if r.get('existing'):
+            if cid not in seed:
+                bad.append(f'{cid}: marked existing but not in the registry')
+            continue
+        if not KEBAB.match(str(cid)) or cid in seen or cid in seed:
+            bad.append(f'bad, repeated or existing id {cid!r}')
+        seen.add(cid)
+        if r.get('type') not in TYPES or r.get('came_true_guess') not in GUESSES or not str(r.get('definition', '')).strip():
+            bad.append(f'{cid}: type, guess or definition')
+    missing = props - covered
+    if missing:
+        bad.append(f'{len(missing)} proposals not accounted for, e.g. {sorted(missing)[:3]}')
+    return bad or None
+
+
+def consolidate_ingest(run):
+    for f in sorted(os.listdir(rd(run, 'consolidate', 'in'))):
+        g = f[:-6]
+        n_in = sum(1 for _ in open(rd(run, 'consolidate', 'in', f), encoding='utf-8'))
+        p = consolidate_problems(run, g)
+        if p:
+            print(f'{g}: {n_in} proposals; NOT DONE: {p[:5]}')
+            continue
+        rows = read_jsonl(rd(run, 'consolidate', 'out', f))[0]
+        kept = [r for r in rows if 'dropped' not in r and not r.get('existing')]
+        print(f'{g}: {n_in} proposals -> {len(kept)} concepts, {sum(1 for r in rows if r.get("existing"))} to existing, '
+              f'{sum(1 for r in rows if "dropped" in r)} dropped, {sum(1 for r in kept if r.get("split_from"))} from splits, '
+              f'{sum(1 for r in kept if r.get("bundle_check", "ok") != "ok")} bundle notes')
+
+
+# ---- concepts: across domains, then the registry ----
+
+def consolidated(run):
+    rows = []
+    for f in sorted(os.listdir(rd(run, 'consolidate', 'in'))):
+        g = f[:-6]
+        if consolidate_problems(run, g):
+            sys.exit(f'consolidation of {g} is not done; run consolidate-ingest')
+        rows += [{'group': g, **r} for r in read_jsonl(rd(run, 'consolidate', 'out', f))[0]]
+    return rows
+
+
+def global_plan(run):
+    stage = 'global'
+    tpl = open(os.path.join(PROMPTS, 'concepts_global.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl)})
+    seed = [{**c, 'domains': ['computing'], 'est_claims': None} for c in seed_registry()]
+    new = [{k: r.get(k) for k in ('concept_id', 'name', 'definition', 'domains', 'est_claims')}
+           for r in consolidated(run) if 'dropped' not in r and not r.get('existing')]
+    write_atomic(rd(run, stage, 'in', 'concepts.jsonl'), jsonl(seed + new))
+    out = rd(run, stage, 'out', 'merges.jsonl')
+    if os.path.exists(out) and read_jsonl(out)[0] is not None:
+        print('done:', rel(out))
+        return
+    print(rel(prompt(run, stage, 'global', 'concepts_global.md', workdir=ROOT,
+                     concepts=rel(rd(run, stage, 'in', 'concepts.jsonl')), out=rel(out))))
+
+
+def concepts_build(run):
+    """runs/match/concepts.jsonl (the registry), concept_mapping.jsonl (proposal -> concept) and
+    checkpoint1.md (what the user reviews before matching)."""
+    reg = {}
+    for c in map(json.loads, open(SEED_CONCEPTS, encoding='utf-8')):
+        reg[c['concept_id']] = {'concept_id': c['concept_id'], 'name': c['name'], 'definition': c['definition'],
+                                'type': 'technology', 'domains': ['computing'], 'aliases': c.get('aliases', []),
+                                'wikidata': c.get('wikidata'), 'came_true_guess': 'yes' if c.get('realizable') else 'unsure',
+                                'est_claims': None, 'examples': [], 'source': 'computing pilot', 'bundle_check': 'ok'}
+    mapping = []
+    for r in consolidated(run):
+        if 'dropped' in r:
+            mapping.append({'proposal': r['dropped'], 'concept_id': None, 'how': 'dropped', 'reason': r.get('reason', '')})
+            continue
+        for p in r.get('merged_from') or []:
+            mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'existing' if r.get('existing') else 'merged'})
+        for p in r.get('split_from') or []:
+            mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'split'})
+        if r.get('existing'):
+            continue
+        reg[r['concept_id']] = {k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'domains', 'aliases',
+                                                      'came_true_guess', 'est_claims', 'examples', 'bundle_check')}
+        reg[r['concept_id']].update(wikidata=None, source=r['group'])
+    merges, err = read_jsonl(rd(run, 'global', 'out', 'merges.jsonl'))
+    if merges is None:
+        sys.exit(f'global merges: {err}')
+    gone = {}
+    for m in merges:
+        k = m['keep']
+        if k not in reg:
+            sys.exit(f'global merge keeps unknown {k}')
+        for d in m['drop']:
+            if d not in reg or d == k:
+                sys.exit(f'global merge drops unknown {d}')
+            c = reg.pop(d)
+            reg[k]['domains'] = sorted(set(reg[k]['domains']) | set(c['domains'] or []))
+            reg[k]['aliases'] = sorted(set(reg[k]['aliases'] or []) | set(c['aliases'] or []) | {c['name']})
+            reg[k]['est_claims'] = (reg[k]['est_claims'] or 0) + (c['est_claims'] or 0) or None
+            reg[k]['examples'] = (reg[k]['examples'] or []) + (c['examples'] or [])
+            gone[d] = k
+    for m in mapping:
+        while m['concept_id'] in gone:
+            m['concept_id'], m['how'] = gone[m['concept_id']], m['how'] + '+global'
+    rows = sorted(reg.values(), key=lambda c: c['concept_id'])
+    write_atomic(os.path.join(OUT, 'concepts.jsonl'), jsonl(rows))
+    write_atomic(os.path.join(OUT, 'concept_mapping.jsonl'), jsonl(mapping))
+    write_atomic(os.path.join(OUT, 'checkpoint1.md'), checkpoint1(rows, mapping, merges))
+    print(len(rows), 'concepts ->', rel(os.path.join(OUT, 'concepts.jsonl')), '; checkpoint1.md written')
+
+
+def checkpoint1(rows, mapping, merges):
+    cell = lambda s: str(s or '').replace('|', '/').replace('\n', ' ')  # noqa: E731
+    dom = collections.Counter(d for c in rows for d in (c['domains'] or []))
+    out = ['# Checkpoint 1: the concept registry (tranche A)', '',
+           f'{len(rows)} concepts. Matching does not start until this is approved (runs/match/PLAN.md §3).', '',
+           '| Domain | Concepts |', '|---|---|'] + [f'| {d} | {n} |' for d, n in dom.most_common()]
+    out += ['', '| Type | Concepts |', '|---|---|'] + [f'| {t} | {n} |' for t, n in collections.Counter(c['type'] for c in rows).most_common()]
+    out += ['', '| Came true (guess) | Concepts |', '|---|---|'] + [f'| {t} | {n} |' for t, n in collections.Counter(c['came_true_guess'] for c in rows).most_common()]
+    big = sorted((c for c in rows if c['est_claims']), key=lambda c: -c['est_claims'])[:50]
+    out += ['', '## The 50 largest (estimated claims in the 25% sample)', '', '| Concept | Est. | Came true? | Definition |', '|---|---|---|---|']
+    out += [f"| {c['concept_id']} | {c['est_claims']} | {c['came_true_guess']} | {cell(c['definition'])} |" for c in big]
+    split = [m for m in mapping if m['how'].startswith('split')]
+    out += ['', f'## Splits ({len(split)} proposals split)', '', '| Proposal | Became |', '|---|---|']
+    by = collections.defaultdict(list)
+    for m in split:
+        by[m['proposal']].append(m['concept_id'])
+    out += [f"| {p} | {', '.join(v)} |" for p, v in sorted(by.items())]
+    notes = [c for c in rows if (c.get('bundle_check') or 'ok') != 'ok']
+    out += ['', f'## Possible bundles kept ({len(notes)})', '', '| Concept | Note | Definition |', '|---|---|---|']
+    out += [f"| {c['concept_id']} | {cell(c['bundle_check'])} | {cell(c['definition'])} |" for c in notes]
+    out += ['', f'## Merged across domains ({len(merges)} groups)', '', '| Kept | Dropped | Why |', '|---|---|---|']
+    out += [f"| {m['keep']} | {', '.join(m['drop'])} | {cell(m.get('reason'))} |" for m in merges]
+    drop = [m for m in mapping if m['how'] == 'dropped']
+    out += ['', f'## Proposals dropped ({len(drop)})', '', '| Proposal | Why |', '|---|---|']
+    out += [f"| {m['proposal']} | {cell(m['reason'])} |" for m in drop]
+    return '\n'.join(out) + '\n'
+
+
+# ---- usage and status ----
+
+def log(run, agent, stage, tokens, tools, seconds, *note):
+    path = os.path.join(OUT, 'usage.tsv')
+    if not os.path.exists(path):
+        write_atomic(path, 'agent\tstage\tmodel\ttotal_tokens\ttool_uses\tseconds\tnote\n')
+    with open(path, 'a', encoding='utf-8') as f:
+        f.write('\t'.join([agent, stage, 'sonnet', tokens, tools, seconds, ' '.join(note)]) + '\n')
+
+
+def status(run):
+    for stage in ('concepts', 'consolidate', 'global'):
+        d = rd(run, stage, 'in')
+        if os.path.isdir(d):
+            names = [f[:-6] for f in sorted(os.listdir(d))]
+            check = {'concepts': propose_problems, 'consolidate': consolidate_problems}.get(stage)
+            done = sum(1 for n in names if check and check(run, n) is None) if check else \
+                int(os.path.exists(rd(run, 'global', 'out', 'merges.jsonl')))
+            print(f'{stage}: {done} of {len(names)} done')
+    path = os.path.join(OUT, 'usage.tsv')
+    if os.path.exists(path):
+        rows = [l.split('\t') for l in open(path, encoding='utf-8').read().splitlines()[1:]]
+        print(f'usage: {len(rows)} agents, {sum(int(r[3]) for r in rows):,} tokens')
+
+
+if __name__ == '__main__':
+    cmd, args = sys.argv[1], sys.argv[2:]
+    {'concepts-plan': concepts_plan, 'concepts-ingest': concepts_ingest, 'consolidate-plan': consolidate_plan,
+     'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'concepts-build': concepts_build,
+     'log': log, 'status': status}[cmd](*args)
