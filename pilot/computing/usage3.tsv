@@ -10,3 +10,6 @@ R05	3	milestone research batch 05 (7 concepts, stopped for budget)	sonnet	102232
 R06	3	milestone research batch 06 (the 8 unresearched concepts)	sonnet	126397	48	959
 X01	5	earliest-event check batch 1 (7 milestones), run locally	sonnet	114396	33	468
 X02	5	earliest-event check batch 2 (6 milestones), run locally	sonnet	134708	37	491
+J01	6	judge batch 1 (184 pairs), run locally	sonnet	85695	8	115
+J02	6	judge batch 2 (184 pairs), run locally	sonnet	101556	10	132
+J03	6	judge batch 3 (184 pairs), run locally	sonnet	99024	7	148
