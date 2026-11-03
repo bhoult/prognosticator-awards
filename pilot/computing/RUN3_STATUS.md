@@ -12,8 +12,8 @@ Step 3 (research), partial:
 - The container restarted twice and killed the research agents. `raw/ms3_b02.jsonl` (10 of 11 concepts) and `raw/ms3_b03.jsonl` (9 of 11) were saved. Batch 1 saved nothing.
 - Its 11 concepts, plus computer-personnel-selection, consumer-analytics and speaker-recognition, were split into `raw/ms3_in_b04.jsonl` and `raw/ms3_in_b05.jsonl`. Those agents were stopped for budget; whatever they had written is in `raw/ms3_b04.jsonl` and `raw/ms3_b05.jsonl`.
 - A trial merge on batches 2–3 kept 43 of 46 milestones. Eight sources were dropped for quotes over 25 words. `milestones3.jsonl` in the repo is that trial and must be regenerated.
-- 8 of the 12 subagents are spent (`usage3.tsv`; the last two are not yet logged).
+- 8 of the 12 subagents are spent (`usage3.tsv`).
 
 To resume:
-1. Finish the concepts missing from `raw/ms3_b04.jsonl` and `raw/ms3_b05.jsonl` (at most 2 agents). Verified leads from the lost agents were in the session scratchpad, which won't survive; they can be re-extracted from the subagent transcripts if those still exist.
+1. Finish the concepts missing from `raw/ms3_b04.jsonl` and `raw/ms3_b05.jsonl` (at most 2 agents). Verified leads from the lost agents (URL + quote, trimmed to 25 words) are in `raw/leads3.jsonl`: re-check before use.
 2. Run `merge_milestones3.py`, then steps 5–8 as RUN3.md says. With 4 agents left, use 1 judge for step 6 and the second and third judges for step 7. Settle round 2 by "lower of two".

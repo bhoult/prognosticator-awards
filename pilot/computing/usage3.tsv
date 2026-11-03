@@ -5,3 +5,5 @@ R03a	3	milestone research batch 03 (11 concepts), lost: container restart before
 R01b	3	milestone research batch 01 retry (11 concepts), lost: container restart, agent had written no output	sonnet	244049	123	3218
 R02b	3	milestone research batch 02 retry (11 concepts), 10 of 11 concepts saved before container restart	sonnet	299354	144	3219
 R03b	3	milestone research batch 03 retry (11 concepts), 9 of 11 concepts saved before container restart	sonnet	253084	118	3219
+R04	3	milestone research batch 04 (7 concepts, stopped for budget)	sonnet	106353	21	381
+R05	3	milestone research batch 05 (7 concepts, stopped for budget)	sonnet	102232	26	382
