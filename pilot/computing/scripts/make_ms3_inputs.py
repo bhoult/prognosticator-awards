@@ -42,3 +42,6 @@ for i, b in enumerate(BATCHES, 1):
         rows.append(r)
     (HERE / f"raw/ms3_in_b{i:02d}.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     print(i, len(rows))
+# After two container restarts (see report3.md), batch 1 (no output saved) and the concepts
+# batches 2-3 had not finished were re-split by hand into raw/ms3_in_b04.jsonl and
+# raw/ms3_in_b05.jsonl (same rows as above).
