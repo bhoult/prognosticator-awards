@@ -9,6 +9,8 @@
     python -I pipeline/match.py concepts-build <run>          registry + mapping + checkpoint 1 -> runs/match/
     python -I pipeline/match.py match-plan <run> [n]          claim up to n pending matching batches, print their prompts
     python -I pipeline/match.py match-ingest <run>            check the matching outputs, summary
+    python -I pipeline/match.py rematch-plan <run> [n]        second pass: no_concept/too_vague claims vs the whole registry
+    python -I pipeline/match.py matches-collect <run>         both passes -> work/match/<run>/matches.jsonl
     python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
     python -I pipeline/match.py status <run>
 
@@ -540,14 +542,14 @@ def match_plan(run, limit=None):
     print(f'{len(pick)} claimed; {len(todo) - len(pick)} more pending; {len(batches)} batches in all', file=sys.stderr)
 
 
-def match_problems(run, name):
-    out = rd(run, 'match', 'out', name + '.jsonl')
+def match_problems(run, name, stage='match'):
+    out = rd(run, stage, 'out', name + '.jsonl')
     if not os.path.exists(out):
         return ['missing']
     rows, err = read_jsonl(out)
     if rows is None:
         return [err]
-    ids = [json.loads(l)['id'] for l in open(rd(run, 'match', 'in', name + '.jsonl'), encoding='utf-8')]
+    ids = [json.loads(l)['id'] for l in open(rd(run, stage, 'in', name + '.jsonl'), encoding='utf-8')]
     if [r.get('id') for r in rows] != ids:
         return [f'{len(rows)} rows for {len(ids)} claims, or not in input order']
     known = {c['concept_id'] for c in registry_rows()}
@@ -561,7 +563,8 @@ def match_problems(run, name):
             bad.append(f"{r['id']}: code {r.get('code')!r} with concepts {cs}")
         if not isinstance(r.get('quote_carries'), bool) or not str(r.get('reason', '')).strip():
             bad.append(f"{r['id']}: quote_carries or reason")
-    top = collections.Counter(r.get('reason') for r in rows).most_common(1)
+    # template reasons matter for matches; unmatched claims are all retried in the second pass
+    top = collections.Counter(r.get('reason') for r in rows if r.get('concepts')).most_common(1)
     if top and top[0][1] > len(rows) * 0.2:
         bad.append(f'{top[0][1]} identical reasons: {top[0][0]!r}')
     return bad or None
@@ -587,6 +590,93 @@ def match_ingest(run):
               f"codes {dict(collections.Counter(r['code'] for r in rows if r['code']))}, "
               f"quote alone doesn't carry it: {sum(1 for r in rows if not r['quote_carries']) / n:.0%}, "
               f"{len({c for r in rows for c in r['concepts']})} concepts used")
+
+
+# ---- second pass: the leftovers against the whole registry ----
+
+RETRY = {'no_concept', 'too_vague'}
+
+
+def first_pass(run):
+    """claim id -> first-pass row; exits if a first-pass batch is not done."""
+    rows = {}
+    for name in match_batches(run):
+        if match_problems(run, name) is not None:
+            sys.exit(f'first-pass batch {name} is not done')
+        for r in read_jsonl(rd(run, 'match', 'out', name + '.jsonl'))[0]:
+            rows[r['id']] = r
+    return rows
+
+
+def rematch_batches(run):
+    path = rd(run, 'rematch', 'batches.json')
+    if os.path.exists(path):
+        return json.load(open(path, encoding='utf-8'))
+    left = sorted(i for i, r in first_pass(run).items() if r['code'] in RETRY)
+    random.Random(f'{SEED}:rematch').shuffle(left)
+    n = math.ceil(len(left) / BATCH)
+    batches = {f'rematch-{i + 1:03d}': {'ids': left[i::n]} for i in range(n)}
+    write_atomic(path, json.dumps(batches))
+    return batches
+
+
+def rematch_plan(run, limit=None):
+    """Like match-plan, for the claims the first pass coded no_concept or too_vague."""
+    stage = 'rematch'
+    tpl = open(os.path.join(PROMPTS, 'rematch.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'batch': BATCH, 'seed': SEED, 'retry': sorted(RETRY),
+                        'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
+    batches = rematch_batches(run)
+    reg = registry_rows()
+    write_atomic(rd(run, stage, 'registry.jsonl'), jsonl({k: c[k] for k in ('concept_id', 'name', 'definition')} for c in reg))
+    by_id, todo, now = None, [], time.time()
+    for name, b in batches.items():
+        inp = rd(run, stage, 'in', name + '.jsonl')
+        if not os.path.exists(inp):
+            if by_id is None:
+                by_id = {c['id']: c for c in claims(run)}
+            write_atomic(inp, jsonl({k: by_id[i][k] for k in ('id', 'quote', 'description')} for i in b['ids']))
+        if match_problems(run, name, stage) is None:
+            continue
+        mark = rd(run, stage, 'prompts', name + '.claimed')
+        if os.path.exists(mark) and now - os.path.getmtime(mark) < CLAIM_MINUTES * 60:
+            continue
+        todo.append(name)
+    pick = todo[:int(limit)] if limit else todo
+    for name in pick:
+        n = len(batches[name]['ids'])
+        path = prompt(run, stage, name, 'rematch.md', workdir=ROOT, domain='all', n=n, half=(n + 1) // 2,
+                      n_concepts=len(reg), registry=rel(rd(run, stage, 'registry.jsonl')),
+                      batch_in=rel(rd(run, stage, 'in', name + '.jsonl')), batch_out=rel(rd(run, stage, 'out', name + '.jsonl')),
+                      tmpdir=rel(rd(run, 'tmp', 'rematch-' + name)))
+        write_atomic(rd(run, stage, 'prompts', name + '.claimed'), time.strftime('%Y-%m-%dT%H:%M:%S\n'))
+        print(rel(path))
+    print(f'{len(pick)} claimed; {len(todo) - len(pick)} more pending; {len(batches)} batches in all', file=sys.stderr)
+
+
+def matches_collect(run):
+    """work/match/<run>/matches.jsonl: one row per tranche-A claim, the first pass's answer, or the
+    second pass's for claims it retried; more than two concepts are cut to the first two (logged)."""
+    first = first_pass(run)
+    second = {}
+    for name in rematch_batches(run):
+        if match_problems(run, name, 'rematch') is not None:
+            sys.exit(f'second-pass batch {name} is not done')
+        for r in read_jsonl(rd(run, 'rematch', 'out', name + '.jsonl'))[0]:
+            second[r['id']] = r
+    rows, cut = [], 0
+    for i, r in first.items():
+        s2 = second.get(i)
+        row = dict(s2 if s2 else r, first_code=r['code'], **({'second_pass': True} if s2 else {}))
+        if len(row['concepts']) > 2:
+            row['concepts_dropped'], row['concepts'] = row['concepts'][2:], row['concepts'][:2]
+            cut += 1
+        rows.append(row)
+    write_atomic(rd(run, 'matches.jsonl'), jsonl(rows))
+    n = len(rows)
+    print(f"{n} claims: {sum(1 for r in rows if r['concepts']) / n:.1%} matched "
+          f"({sum(1 for r in rows if r.get('second_pass') and r['concepts'])} by the second pass), "
+          f"codes {dict(collections.Counter(r['code'] for r in rows if r['code']))}, {cut} cut to two concepts")
 
 
 # ---- usage and status ----
@@ -619,4 +709,5 @@ if __name__ == '__main__':
     {'concepts-plan': concepts_plan, 'concepts-ingest': concepts_ingest, 'consolidate-plan': consolidate_plan,
      'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'audit-plan': audit_plan,
      'concepts-build': concepts_build, 'match-plan': match_plan, 'match-ingest': match_ingest,
+     'rematch-plan': rematch_plan, 'matches-collect': matches_collect,
      'log': log, 'status': status}[cmd](*args)
