@@ -954,9 +954,12 @@ def gap_review(run):
     n, matched = len(third), sum(1 for r in third.values() if r['concepts'])
     out = ['# Gap concepts (3c): review before milestone research', '',
            f'{n:,} claims were coded no_concept after both passes. Agents proposed concepts for what they kept '
-           f'returning to; one agent consolidated them against the approved registry. The gap pass then matched '
-           f'{matched:,} of the {n:,} ({matched / n:.0%}).', '',
+           f'returning to; one agent per domain group consolidated them against the approved registry, and one more '
+           f'merged duplicates across groups. The gap pass then matched {matched:,} of the {n:,} ({matched / n:.0%}).', '',
            f'- **New concepts:** {len(new)} ({sum(1 for c in new if hits[c["concept_id"]] < 3)} with fewer than 3 matched claims).',
+           '- **Where a cut would fall:** ' + '; '.join(
+               f'keeping those with at least {k} matched claims keeps {sum(1 for c in new if hits[c["concept_id"]] >= k)} '
+               f'concepts and {sum(hits[c["concept_id"]] for c in new if hits[c["concept_id"]] >= k):,} claims' for k in (3, 5, 10)) + '.',
            f'- **Proposals that duplicated an approved concept:** {sum(again.values())}, for {len(again)} concepts '
            f'(claims the earlier passes missed).',
            f'- **Codes after the gap pass:** {dict(collections.Counter(r["code"] for r in third.values() if r["code"]))}.', '',
