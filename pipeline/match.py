@@ -839,9 +839,9 @@ def gap_row(r, mapping, shard_domains):
 
 
 def gapglobal_plan(run):
-    """The new concepts of every group, for one cross-group merge pass (prompts/concepts_global.md)."""
+    """The new concepts of every group, for one cross-group merge pass."""
     stage = 'gapglobal'
-    tpl = open(os.path.join(PROMPTS, 'concepts_global.md'), encoding='utf-8').read()
+    tpl = open(os.path.join(PROMPTS, 'concepts_gap_global.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl)})
     new, _ = gap_consolidated(run)
     write_atomic(rd(run, stage, 'in', 'concepts.jsonl'),
@@ -850,7 +850,7 @@ def gapglobal_plan(run):
     if os.path.exists(out) and read_jsonl(out)[0] is not None:
         print('done:', rel(out))
         return
-    print(len(new), 'new concepts;', rel(prompt(run, stage, 'global', 'concepts_global.md', workdir=ROOT,
+    print(len(new), 'new concepts;', rel(prompt(run, stage, 'global', 'concepts_gap_global.md', workdir=ROOT,
                                                concepts=rel(rd(run, stage, 'in', 'concepts.jsonl')), out=rel(out),
                                                tmpdir=rel(rd(run, 'tmp', 'gapglobal')))))
 

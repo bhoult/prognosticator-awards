@@ -334,3 +334,7 @@ C-gap-environment+energy	gapcons	sonnet	172458	9	120
 C-gap-other	gapcons	sonnet	192239	11	163	
 C-gap-medicine-biology	gapcons	sonnet	202627	11	189	
 C-gap-space	gapcons	sonnet	190304	12	246	
+C-gap-transport	gapcons	sonnet	163487	9	100	redo
+C-gap-weapons-war	gapcons	sonnet	176772	13	170	redo
+G-gap-global	gapglobal	sonnet	85859	8	82	rejected
+G-gap-global	gapglobal	sonnet	138641	8	65	redo
