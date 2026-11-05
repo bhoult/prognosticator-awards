@@ -314,3 +314,11 @@ M-rematch-062	rematch	sonnet	191242	11	163
 M-rematch-063	rematch	sonnet	193161	11	184	
 M-rematch-064	rematch	sonnet	199864	12	223	
 M-rematch-065	rematch	sonnet	202551	13	235	
+P-gap-environment+energy-1	gap	sonnet	163458	11	142	
+P-gap-communication-1	gap	sonnet	161112	9	232	
+P-gap-computing+economy+society-politics-1	gap	sonnet	157130	9	238	
+P-gap-medicine-biology-2	gap	sonnet	194671	9	301	
+P-gap-other-2	gap	sonnet	206935	10	330	
+P-gap-medicine-biology-1	gap	sonnet	202150	11	330	
+P-gap-other-1	gap	sonnet	175054	8	348	
+P-gap-environment+energy-2	gap	sonnet	193765	9	363	

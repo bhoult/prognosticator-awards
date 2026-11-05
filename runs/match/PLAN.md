@@ -81,9 +81,9 @@ under two domains would count twice. The registry is global.
   - **Propose:** the 11,923 no_concept claims after both passes, by domain group in shards of
     at most 1,500, with the approved registry's names; only concepts that at least 3 claims of
     a shard return to.
-  - **Consolidate:** one agent over all proposals against the whole approved registry: merges,
-    splits, proposals that duplicate an approved concept (claims the earlier passes missed),
-    and nothing under 3 claims.
+  - **Consolidate:** one agent per domain group against the whole approved registry (merges,
+    splits, proposals that duplicate an approved concept, which are claims the earlier passes
+    missed, and nothing under 3 claims), then one cross-group merge pass.
   - **The new concepts** go to `concepts_gap.jsonl`; `concepts.jsonl`, approved at checkpoint
     1, stays as it was.
   - **Match:** the no_concept claims against the new concepts and the approved ones they

@@ -13,7 +13,8 @@
     python -I pipeline/match.py matches-collect <run>         all passes -> work/match/<run>/matches.jsonl
     python -I pipeline/match.py gap-plan <run>                3c: propose concepts for the no_concept claims
     python -I pipeline/match.py gap-ingest <run>              check the gap proposals
-    python -I pipeline/match.py gapcons-plan <run>            consolidate them against the approved registry
+    python -I pipeline/match.py gapcons-plan <run>            consolidate them per domain group against the approved registry
+    python -I pipeline/match.py gapglobal-plan <run>          the new concepts of all groups, for the cross-group merges
     python -I pipeline/match.py gap-build <run>               -> runs/match/concepts_gap.jsonl + concept_gap_mapping.jsonl
     python -I pipeline/match.py gapmatch-plan <run> [n]       the no_concept claims vs the gap concepts
     python -I pipeline/match.py gap-review <run>              -> runs/match/gap_review.md (a stop before research)
@@ -761,11 +762,11 @@ def gap_plan(run):
 
 
 def gapcons_plan(run):
-    """Consolidate: every gap proposal in one list, against the whole approved registry."""
+    """Consolidate: one agent per domain group, against the whole approved registry."""
     stage = 'gapcons'
     tpl = open(os.path.join(PROMPTS, 'concepts_gap_consolidate.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
-    rows = []
+    groups = collections.defaultdict(list)
     for f in sorted(os.listdir(rd(run, 'gap', 'in'))):
         name = f[:-6]
         if propose_problems(run, name, 'gap'):
@@ -773,43 +774,108 @@ def gapcons_plan(run):
         ids = {json.loads(l)['id'] for l in open(rd(run, 'gap', 'in', f), encoding='utf-8')}
         for r in read_jsonl(rd(run, 'gap', 'out', f))[0]:
             r['examples'] = [e for e in r.get('examples') or [] if e in ids]  # examples are only hints
-            rows.append({'shard': name, **r})
-    write_atomic(rd(run, stage, 'in', 'all.jsonl'), jsonl(rows))
+            groups[name.rsplit('-', 1)[0]].append({'shard': name, **r})
     main = main_registry()
     write_atomic(rd(run, stage, 'registry.jsonl'), jsonl({k: c[k] for k in ('concept_id', 'name', 'definition')} for c in main))
-    out = rd(run, stage, 'out', 'all.jsonl')
-    p = consolidate_problems(run, 'all', stage, {c['concept_id'] for c in main})
-    if p is None:
+    todo = []
+    for g, rows in sorted(groups.items()):
+        write_atomic(rd(run, stage, 'in', g + '.jsonl'), jsonl(rows))
+        if consolidate_problems(run, g, stage, {c['concept_id'] for c in main}) is None:
+            continue
+        todo.append(prompt(run, stage, 'consolidate-' + g, 'concepts_gap_consolidate.md', workdir=ROOT, domain=g,
+                           proposals=rel(rd(run, stage, 'in', g + '.jsonl')), n_concepts=len(main),
+                           registry=rel(rd(run, stage, 'registry.jsonl')), out=rel(rd(run, stage, 'out', g + '.jsonl')),
+                           tmpdir=rel(rd(run, 'tmp', 'gapcons-' + g))))
+    print(len(todo), 'gap consolidate prompts to run:')
+    for p in todo:
+        print(' ', rel(p))
+
+
+def gap_consolidated(run):
+    """(new concepts, mapping) from the per-group consolidations, before the cross-group merges;
+    the same id from two groups is one concept, and domains come from the proposals' shards."""
+    main = {c['concept_id'] for c in main_registry()}
+    shard_domains = lambda props: sorted({d for p in props for d in p.split(':')[0].rsplit('-', 1)[0].split('+')})  # noqa: E731
+    new, mapping = {}, []
+    for f in sorted(os.listdir(rd(run, 'gapcons', 'in'))):
+        g = f[:-6]
+        if consolidate_problems(run, g, 'gapcons', main):
+            sys.exit(f'gap consolidation of {g} is not done')
+        for r in read_jsonl(rd(run, 'gapcons', 'out', f))[0]:
+            row = gap_row(r, mapping, shard_domains)
+            if row is None:
+                continue
+            old = new.get(row['concept_id'])
+            if old:
+                old['domains'] = sorted(set(old['domains']) | set(row['domains']))
+                old['aliases'] = sorted(set(old['aliases'] or []) | set(row['aliases'] or []))
+                old['est_claims'] = (old['est_claims'] or 0) + (row['est_claims'] or 0)
+                old['examples'] = (old['examples'] or []) + (row['examples'] or [])
+            else:
+                new[row['concept_id']] = row
+    return new, mapping
+
+
+def gap_row(r, mapping, shard_domains):
+    """One consolidated row: its proposals go to `mapping`; returns the new concept, or None."""
+    if 'dropped' in r:
+        mapping.append({'proposal': r['dropped'], 'concept_id': None, 'how': 'dropped', 'reason': r.get('reason', '')})
+        return None
+    for p in r.get('merged_from') or []:
+        mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'existing' if r.get('existing') else 'merged'})
+    for p in r.get('split_from') or []:
+        mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'split'})
+    if r.get('existing'):
+        return None
+    return {**{k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases', 'came_true_guess',
+                                     'est_claims', 'examples', 'bundle_check')},
+            'domains': shard_domains((r.get('merged_from') or []) + (r.get('split_from') or [])),
+            'wikidata': None, 'source': 'gap'}
+
+
+def gapglobal_plan(run):
+    """The new concepts of every group, for one cross-group merge pass (prompts/concepts_global.md)."""
+    stage = 'gapglobal'
+    tpl = open(os.path.join(PROMPTS, 'concepts_global.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl)})
+    new, _ = gap_consolidated(run)
+    write_atomic(rd(run, stage, 'in', 'concepts.jsonl'),
+                 jsonl({k: c[k] for k in ('concept_id', 'name', 'definition', 'domains', 'est_claims')} for c in new.values()))
+    out = rd(run, stage, 'out', 'merges.jsonl')
+    if os.path.exists(out) and read_jsonl(out)[0] is not None:
         print('done:', rel(out))
         return
-    print(len(rows), 'proposals;', rel(prompt(run, stage, 'consolidate', 'concepts_gap_consolidate.md', workdir=ROOT,
-                                              proposals=rel(rd(run, stage, 'in', 'all.jsonl')), n_concepts=len(main),
-                                              registry=rel(rd(run, stage, 'registry.jsonl')), out=rel(out),
-                                              tmpdir=rel(rd(run, 'tmp', 'gapcons')))))
+    print(len(new), 'new concepts;', rel(prompt(run, stage, 'global', 'concepts_global.md', workdir=ROOT,
+                                               concepts=rel(rd(run, stage, 'in', 'concepts.jsonl')), out=rel(out),
+                                               tmpdir=rel(rd(run, 'tmp', 'gapglobal')))))
 
 
 def gap_concepts(run):
-    """(new concepts, mapping) from the consolidation; domains come from the proposals' shards."""
-    main = {c['concept_id'] for c in main_registry()}
-    if consolidate_problems(run, 'all', 'gapcons', main):
-        sys.exit('gap consolidation is not done')
-    shard_domains = lambda props: sorted({d for p in props for d in p.split(':')[0].rsplit('-', 1)[0].split('+')})  # noqa: E731
-    new, mapping = [], []
-    for r in read_jsonl(rd(run, 'gapcons', 'out', 'all.jsonl'))[0]:
-        if 'dropped' in r:
-            mapping.append({'proposal': r['dropped'], 'concept_id': None, 'how': 'dropped', 'reason': r.get('reason', '')})
-            continue
-        for p in r.get('merged_from') or []:
-            mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'existing' if r.get('existing') else 'merged'})
-        for p in r.get('split_from') or []:
-            mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'split'})
-        if r.get('existing'):
-            continue
-        new.append({**{k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases', 'came_true_guess',
-                                             'est_claims', 'examples', 'bundle_check')},
-                    'domains': shard_domains((r.get('merged_from') or []) + (r.get('split_from') or [])),
-                    'wikidata': None, 'source': 'gap'})
-    return sorted(new, key=lambda c: c['concept_id']), mapping
+    """(new concepts, mapping): the per-group consolidations with the cross-group merges applied."""
+    new, mapping = gap_consolidated(run)
+    merges, err = read_jsonl(rd(run, 'gapglobal', 'out', 'merges.jsonl'))
+    if merges is None:
+        sys.exit(f'gap cross-group merges: {err}; run gapglobal-plan')
+    gone = {}
+    for m in merges:
+        k = m['keep']
+        while k in gone:
+            k = gone[k]
+        for d in m['drop']:
+            if d == k or d in gone:
+                continue
+            if k not in new or d not in new:
+                sys.exit(f'gap merge: unknown {k} or {d}')
+            c = new.pop(d)
+            new[k]['domains'] = sorted(set(new[k]['domains']) | set(c['domains']))
+            new[k]['aliases'] = sorted(set(new[k]['aliases'] or []) | set(c['aliases'] or []) | {c['name']})
+            new[k]['est_claims'] = (new[k]['est_claims'] or 0) + (c['est_claims'] or 0)
+            new[k]['examples'] = (new[k]['examples'] or []) + (c['examples'] or [])
+            gone[d] = k
+    for m in mapping:
+        while m['concept_id'] in gone:
+            m['concept_id'], m['how'] = gone[m['concept_id']], m['how'] + '+global'
+    return sorted(new.values(), key=lambda c: c['concept_id']), mapping
 
 
 def gap_build(run):
@@ -915,6 +981,7 @@ if __name__ == '__main__':
      'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'audit-plan': audit_plan,
      'concepts-build': concepts_build, 'match-plan': match_plan, 'match-ingest': match_ingest,
      'rematch-plan': rematch_plan, 'matches-collect': matches_collect, 'gap-plan': gap_plan,
-     'gap-ingest': lambda run: concepts_ingest(run, 'gap'), 'gapcons-plan': gapcons_plan, 'gap-build': gap_build,
+     'gap-ingest': lambda run: concepts_ingest(run, 'gap'), 'gapcons-plan': gapcons_plan, 'gapglobal-plan': gapglobal_plan,
+     'gap-build': gap_build,
      'gapmatch-plan': gapmatch_plan, 'gap-review': gap_review,
      'log': log, 'status': status}[cmd](*args)

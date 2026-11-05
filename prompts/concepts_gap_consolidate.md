@@ -2,8 +2,9 @@
 
 Agents read, domain by domain, the claims that matched no concept in the registry, and each
 proposed new concepts for what those claims keep returning to. Their lists overlap with each
-other, and some proposals may be a concept the registry already has. Your job is to turn them
-into one clean list of new concepts. A **concept** is a real-world thing many predictions
+other, and some proposals may be a concept the registry already has. Your job is to turn the
+proposals of the domain group `{domain}` into one clean list of new concepts (another pass
+merges across groups afterwards). A **concept** is a real-world thing many predictions
 point to, at the level where one could date when it first came true ("video telephone",
 "heart transplant"): not a whole field, and not one story's gadget.
 
@@ -12,7 +13,7 @@ in `{tmpdir}`, never in any other temporary or scratchpad directory.
 
 ## Input
 
-- `{proposals}`: JSON lines, every proposal, each with `shard` (`<domain group>-<n>`),
+- `{proposals}`: JSON lines, the group's proposals, each with `shard` (`<domain group>-<n>`),
   `concept_id`, `name`, `definition`, `type`, `aliases`, `came_true_guess`, `est_claims` and
   `examples` (claim ids). Read the whole file with the Read tool, in parts, until the end.
 - `{registry}`: the {n_concepts} concepts that already exist, JSON lines `{"concept_id",
