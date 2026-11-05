@@ -134,6 +134,15 @@ The researchers see concept definitions only, never claims.
   Every quote is at most 25 words and checked on the fetched page, and the merge checks all
   of them again in code (DESIGN §6). WebSearch is for finding pages only. Blocks are never
   worked around.
+- **As built (2026-11-05):** `pipeline/sources.py` (`text`, `check`, `date`, `search`);
+  `match.py research-plan` and `verify`. The research covers every concept with a matched
+  claim after the gap review (1,087 approved and 669 new), except the pilot's 101 concepts
+  with reviewed milestones and unchanged definitions: 1,188 concepts in 80 batches of 15, and
+  467 guessed "no" in 12 quick-check batches of 40, in domain order. `verify` writes
+  `runs/match/milestones.jsonl` (the pilot's rows plus the verified tier-1 rows) and
+  `milestone_notes.jsonl`. Hosts that refused scripted access on 2026-11-05: Britannica,
+  HathiTrust, loc.gov, newspapers.com, nytimes.com, science.org, ScienceDirect, IEEE Xplore,
+  worldradiohistory.com; the Google Books API was out of quota.
 - **Tier 1: every concept with a matched claim.** One researcher per about 15 concepts gives
   each milestone a verified source, a `fit` sentence and a confidence, preferring a source
   from the time of the event. That is pass 3's prompt with tier-1 effort.

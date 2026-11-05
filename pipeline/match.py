@@ -1146,6 +1146,9 @@ def research_problems(run, name):
         if sorted(got) != sorted(ids):
             bad.append(f'{len(got)} rows for {len(ids)} concepts, or other ids')
         bad += [f"{r.get('concept_id')}: verdict {r.get('verdict')!r}" for r in rows if r.get('verdict') not in ('fits', 'none')]
+        top = collections.Counter(r.get('note') for r in rows).most_common(1)
+        if top and top[0][1] > 2:
+            bad.append(f'{top[0][1]} identical notes: {top[0][0]!r}')
         return bad or None
     notes = [r['concept_id'] for r in rows if 'concept_note' in r]
     if sorted(notes) != sorted(ids):

@@ -26,7 +26,12 @@ parallel and would overwrite them.
   if that was confirmed (the Moon has no life: established by the first missions); if it
   was refuted, it is `none`, and the note names the refuting event.
 - Use your knowledge first, then WebSearch (mode "standard") for anything you are not sure
-  of: one to three searches per concept is enough. No sources are needed here.
+  of: one to three searches per concept is enough. Search whenever the closest real thing
+  is recent (after about 2000), technical or obscure, since that is where a "none" is most
+  often wrong. No sources are needed here.
+- Every `note` is about *this* concept. For a `none`, name the closest real thing you know of
+  (or what you searched for) and why it falls short; a stock phrase ("no real event
+  matches") is not a note, and a file with many identical notes is redone.
 
 ## Output
 
