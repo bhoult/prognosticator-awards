@@ -60,7 +60,7 @@ def get(url, params=None, accept='application/json', tries=8, timeout=60):
     for _ in range(tries):
         p = subprocess.run(['curl', '-sSL', '-m', str(timeout), '-A', UA, '-H', f'Accept: {accept}',
                             '-D', '/dev/stderr', '-w', '\n%{http_code} %{url_effective}', url],
-                           capture_output=True, text=True)
+                           capture_output=True, text=True, errors="replace")
         body, tail = p.stdout.rsplit('\n', 1) if '\n' in p.stdout else ('', p.stdout)
         parts = tail.split(' ', 1)
         try:
@@ -132,12 +132,12 @@ def pdf_text(url):
     with tempfile.TemporaryDirectory() as d:
         f = Path(d) / 'x.pdf'
         p = subprocess.run(['curl', '-sSL', '-m', '180', '-A', UA, '-o', str(f), '-w', '%{http_code}', url],
-                           capture_output=True, text=True)
+                           capture_output=True, text=True, errors="replace")
         if p.stdout.strip() != '200':
             raise RuntimeError(f'HTTP {p.stdout.strip()}')
         if f.read_bytes()[:5] != b'%PDF-':
             raise RuntimeError('not a PDF')
-        return subprocess.run(['pdftotext', '-q', str(f), '-'], capture_output=True, text=True).stdout
+        return subprocess.run(['pdftotext', '-q', str(f), '-'], capture_output=True, text=True, errors="replace").stdout
 
 
 def archive_item(url):

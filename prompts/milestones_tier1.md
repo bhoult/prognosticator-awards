@@ -32,7 +32,12 @@ For **every** concept and **every** milestone kind, find the **earliest** real e
   loose analogue exists, give **no milestone** for that kind and say so in the concept note.
   A concept with no milestone at all is a fine answer. A proposal, a patent, a design study
   or a lab attempt that did not work is not a demonstration; a fictional, staged or hoax event
-  is not an event.
+  is not an event. A milestone you would call loose, partial or a stand-in is not one: leave
+  it out and describe it in the concept note.
+- **Names and bundles.** When a definition joins alternatives, the milestone must still fit
+  the concept as its name gives it (for "lightweight electric motor", a gasoline engine
+  doesn't fit even if the definition says "motor or engine"); say in the note which
+  alternative you dated.
 - **Discoveries.** When the concept is a fact about the world rather than something built
   (what lies under Jupiter's clouds, whether a planet has life, how lunar craters formed),
   `first_demonstration` is the first observation or measurement that established it; the
