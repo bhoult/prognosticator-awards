@@ -224,6 +224,11 @@ def consolidate_plan(run):
         print(' ', rel(p))
 
 
+def as_list(v):
+    """A provenance field: a list, or one id that an agent wrote as a bare string."""
+    return [v] if isinstance(v, str) else list(v or [])
+
+
 def consolidate_problems(run, g, stage='consolidate', known=None):
     """`known`: the concept ids a proposal may be mapped to as existing (default: the seed)."""
     out = rd(run, stage, 'out', g + '.jsonl')
@@ -240,7 +245,7 @@ def consolidate_problems(run, g, stage='consolidate', known=None):
             covered.add(r['dropped'])
             continue
         cid = r.get('concept_id', '')
-        covered |= set(r.get('merged_from') or []) | set(r.get('split_from') or [])
+        covered |= set(as_list(r.get('merged_from'))) | set(as_list(r.get('split_from')))
         if r.get('existing'):
             if cid not in seed:
                 bad.append(f'{cid}: marked existing but not in the registry')
@@ -821,15 +826,15 @@ def gap_row(r, mapping, shard_domains):
     if 'dropped' in r:
         mapping.append({'proposal': r['dropped'], 'concept_id': None, 'how': 'dropped', 'reason': r.get('reason', '')})
         return None
-    for p in r.get('merged_from') or []:
+    for p in as_list(r.get('merged_from')):
         mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'existing' if r.get('existing') else 'merged'})
-    for p in r.get('split_from') or []:
+    for p in as_list(r.get('split_from')):
         mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'split'})
     if r.get('existing'):
         return None
     return {**{k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases', 'came_true_guess',
                                      'est_claims', 'examples', 'bundle_check')},
-            'domains': shard_domains((r.get('merged_from') or []) + (r.get('split_from') or [])),
+            'domains': shard_domains(as_list(r.get('merged_from')) + as_list(r.get('split_from'))),
             'wikidata': None, 'source': 'gap'}
 
 
@@ -891,9 +896,8 @@ def gap_build(run):
 def gapmatch_registry():
     """The new concepts, and the approved ones the gap proposals turned out to duplicate."""
     new = [json.loads(l) for l in open(os.path.join(OUT, 'concepts_gap.jsonl'), encoding='utf-8')]
-    again = {json.loads(l)['concept_id'] for l in open(os.path.join(OUT, 'concept_gap_mapping.jsonl'), encoding='utf-8')
-             if json.loads(l)['how'] == 'existing'}
-    return new + [c for c in main_registry() if c['concept_id'] in again]
+    again = {json.loads(l)['concept_id'] for l in open(os.path.join(OUT, 'concept_gap_mapping.jsonl'), encoding='utf-8')}
+    return new + [c for c in main_registry() if c['concept_id'] in again]  # proposals mapped or split onto approved ones
 
 
 def gapmatch_batches(run):
@@ -917,14 +921,35 @@ def gapmatch_plan(run, limit=None):
     claim_batches(run, stage, gapmatch_batches(run), 'gapmatch.md', gapmatch_registry(), limit)
 
 
+SIMILAR = 0.2
+STOP = set('that this with from into their them they which when where what will would could than then also only '
+           'other such have been being make makes made using uses used kind form like more most some very each '
+           'without within through about over under between device machine system people person world'.split())
+
+
+def similar_pairs(new, main):
+    """(score, new id, approved id) for each new concept whose closest approved concept shares at
+    least SIMILAR of their content words (Jaccard), highest first."""
+    words = lambda c: {w for w in re.findall(r'[a-z]{4,}', ' '.join([c['concept_id'].replace('-', ' '), c['name'],  # noqa: E731
+                                                                      c['definition']]).lower()) if w not in STOP}
+    mw = [(c['concept_id'], words(c)) for c in main]
+    pairs = []
+    for c in new:
+        w = words(c)
+        score, best = max(((len(w & v) / len(w | v) if w | v else 0, cid) for cid, v in mw), default=(0, None))
+        if score >= SIMILAR:
+            pairs.append((score, c['concept_id'], best))
+    return sorted(pairs, reverse=True)
+
+
 def gap_review(run):
     """runs/match/gap_review.md: the new concepts with the claims the gap pass matched to them,
     for the user's review before milestone research."""
     third = pass_rows(run, 'gapmatch', gapmatch_batches(run))
     hits = collections.Counter(c for r in third.values() for c in r['concepts'][:2])
     new, mapping = gap_concepts(run)
-    again = collections.Counter(m['concept_id'] for m in mapping if m['how'] == 'existing')
     main = {c['concept_id']: c for c in main_registry()}
+    again = collections.Counter(m['concept_id'] for m in mapping if m['concept_id'] in main)
     cell = lambda s: str(s or '').replace('|', '/').replace('\n', ' ')  # noqa: E731
     n, matched = len(third), sum(1 for r in third.values() if r['concepts'])
     out = ['# Gap concepts (3c): review before milestone research', '',
@@ -942,6 +967,12 @@ def gap_review(run):
     for c in sorted(new, key=lambda c: (-hits[c['concept_id']], c['concept_id'])):
         out.append(f"| `{c['concept_id']}` {cell(c['name'])} | {cell(c['definition'])} | {c['came_true_guess']} | "
                    f"{', '.join(c['domains'])} | {c['est_claims'] or ''} | {hits[c['concept_id']]} |")
+    out += ['', '## New concepts that may duplicate an approved one', '',
+            'The closest approved concept to each new one by shared words in id, name and definition '
+            f'(Jaccard of {SIMILAR:.2f} or more): a check on the consolidators, which judged them distinct.', '',
+            '| new concept | approved concept | overlap |', '|---|---|---|']
+    for score, a, b in similar_pairs(new, list(main.values())):
+        out.append(f'| `{a}` | `{b}` | {score:.2f} |')
     out += ['', '## Approved concepts the gap proposals duplicated', '',
             '| concept | definition | proposals | matched in the gap pass |', '|---|---|---|---|']
     for cid, k in again.most_common():

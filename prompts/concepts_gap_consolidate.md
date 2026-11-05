@@ -18,7 +18,9 @@ in `{tmpdir}`, never in any other temporary or scratchpad directory.
   `examples` (claim ids). Read the whole file with the Read tool, in parts, until the end.
 - `{registry}`: the {n_concepts} concepts that already exist, JSON lines `{"concept_id",
   "name", "definition"}`. Read it with the Read tool in four calls (lines 1–300, 301–600,
-  601–900, 901 to the end), every definition in full.
+  601–900, 901 to the end), every definition in full. Don't print names only or shortened
+  definitions with a script, and don't filter it to your domain: a proposal can duplicate a
+  concept of any domain.
 
 ## Rules
 

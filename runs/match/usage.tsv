@@ -322,3 +322,15 @@ P-gap-other-2	gap	sonnet	206935	10	330
 P-gap-medicine-biology-1	gap	sonnet	202150	11	330	
 P-gap-other-1	gap	sonnet	175054	8	348	
 P-gap-environment+energy-2	gap	sonnet	193765	9	363	
+P-gap-transport-1	gap	sonnet	168303	8	280	
+P-gap-space-1	gap	sonnet	212354	10	439	
+P-gap-space-2	gap	sonnet	200459	10	354	
+P-gap-weapons-war-1	gap	sonnet	227271	16	357	
+C-gap-computing+economy+society-politics	gapcons	sonnet	148068	9	47	
+C-gap-transport	gapcons	sonnet	89089	7	62	
+C-gap-communication	gapcons	sonnet	154781	10	65	
+C-gap-weapons-war	gapcons	sonnet	80897	10	70	
+C-gap-environment+energy	gapcons	sonnet	172458	9	120	
+C-gap-other	gapcons	sonnet	192239	11	163	
+C-gap-medicine-biology	gapcons	sonnet	202627	11	189	
+C-gap-space	gapcons	sonnet	190304	12	246	
