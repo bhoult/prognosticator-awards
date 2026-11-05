@@ -6,15 +6,18 @@ concepts of its own domain and got no match (`no_concept` or `too_vague`). Your 
 check it against the **whole** registry, all domains, and say which real-world **concepts**
 it predicts, if any. Many will still have no match; that is a fine answer.
 
-Work in `{workdir}` and run commands from there. If you write helper scripts, keep them in
-`{tmpdir}` (other agents work in parallel).
+Work in `{workdir}` and run commands from there. Keep every file you write (scripts, notes,
+decision lists) in `{tmpdir}`, never in any other temporary or scratchpad directory: other
+agents work in parallel and would overwrite them.
 
 ## Input
 
 - `{registry}`: every concept in the registry ({n_concepts}), JSON lines `{"concept_id",
-  "name", "definition"}`. Read it all, in chunks.
+  "name", "definition"}`. Read it with the Read tool in four calls (lines 1–300, 301–600,
+  601–900, 901 to the end). Read every definition in full: don't print names only or shortened
+  definitions with a script. A claim can only be matched against definitions you have read.
 - `{batch_in}`: {n} claims, JSON lines `{"id", "quote", "description"}`. Read it in two
-  parts: lines 1–{half}, then the rest.
+  parts: lines 1–{half}, then the rest. Read every quotation in full; don't cut it short.
 
 ## Rules
 

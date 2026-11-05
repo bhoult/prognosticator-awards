@@ -563,8 +563,9 @@ def match_problems(run, name, stage='match'):
             bad.append(f"{r['id']}: code {r.get('code')!r} with concepts {cs}")
         if not isinstance(r.get('quote_carries'), bool) or not str(r.get('reason', '')).strip():
             bad.append(f"{r['id']}: quote_carries or reason")
-    # template reasons matter for matches; unmatched claims are all retried in the second pass
-    top = collections.Counter(r.get('reason') for r in rows if r.get('concepts')).most_common(1)
+    # first pass: template reasons matter for matches only, since unmatched claims are all retried in
+    # the second pass; the second pass is final, so there every row counts
+    top = collections.Counter(r.get('reason') for r in rows if r.get('concepts') or stage != 'match').most_common(1)
     if top and top[0][1] > len(rows) * 0.2:
         bad.append(f'{top[0][1]} identical reasons: {top[0][0]!r}')
     return bad or None
