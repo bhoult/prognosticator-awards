@@ -90,6 +90,10 @@ under two domains would count twice. The registry is global.
     duplicated; the answers go on top of both passes in `matches.jsonl`.
   - **A stop:** `gap_review.md` lists the new concepts with their matched claims, for your
     review before milestone research.
+  - **Decided (2026-11-05):** new concepts with fewer than 3 matched claims are cut and their
+    claims are `no_concept` again; one duplicate is merged. Both are rows in
+    `concept_review.jsonl` (`gap_min_claims`, `gap_merge`), applied by `matches-collect`;
+    `concepts_gap.jsonl` stays as built. 669 new concepts are kept.
 - **Size:** 1,200–2,000 concepts for tranche A is my estimate.
 - **Checkpoint 1 (a stop):** you see the registry before matching runs:
   - counts by domain and type;

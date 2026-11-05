@@ -699,18 +699,22 @@ def matches_collect(run):
     rows, cut = [], 0
     for i, r in first.items():
         s2, s3 = second.get(i), third.get(i)
-        row = dict(s3 or s2 or r, first_code=r['code'], **({'second_pass': True} if s2 else {}),
-                   **({'third_pass': True} if s3 else {}))
+        rows.append(dict(s3 or s2 or r, first_code=r['code'], **({'second_pass': True} if s2 else {}),
+                         **({'third_pass': True} if s3 else {})))
+    _, merged, gap_cut = gap_apply(rows) if third else (None, {}, set())
+    for row in rows:
         if len(row['concepts']) > 2:
             row['concepts_dropped'], row['concepts'] = row['concepts'][2:], row['concepts'][:2]
             cut += 1
-        rows.append(row)
     write_atomic(rd(run, 'matches.jsonl'), jsonl(rows))
     n = len(rows)
     print(f"{n} claims: {sum(1 for r in rows if r['concepts']) / n:.1%} matched "
           f"({sum(1 for r in rows if r.get('second_pass') and not r.get('third_pass') and r['concepts'])} by the second pass, "
           f"{sum(1 for r in rows if r.get('third_pass') and r['concepts'])} by the gap pass), "
           f"codes {dict(collections.Counter(r['code'] for r in rows if r['code']))}, {cut} cut to two concepts")
+    if third:
+        print(f"review: {len(merged)} gap concepts merged, {len(gap_cut)} cut "
+              f"({sum(1 for r in rows if r.get('gap_cut') and not r['concepts'])} claims back to no_concept)")
 
 
 # ---- 3c: concepts for the claims that nothing matched ----
@@ -893,6 +897,39 @@ def gap_build(run):
           f"{len({m['concept_id'] for m in mapping if m['how'] == 'existing'})} existing concepts proposed again")
 
 
+def gap_apply(rows):
+    """The reviewer's decisions on the gap concepts (runs/match/concept_review.jsonl), applied to the
+    collected rows in place: `gap_merge` rows first, then `gap_min_claims` cuts the new concepts with
+    fewer matched claims. A claim left with no concept is no_concept again; what was removed is kept
+    in `gap_cut`, and merged ids in `gap_merged`. concepts_gap.jsonl stays as built (the gap pass's
+    outputs are checked against it). Returns (kept new ids, merged id -> kept id, cut ids)."""
+    new = {json.loads(l)['concept_id'] for l in open(os.path.join(OUT, 'concepts_gap.jsonl'), encoding='utf-8')}
+    known = new | {c['concept_id'] for c in main_registry()}
+    to, least = {}, 0
+    for r in reviewer_rows():
+        if r['op'] == 'gap_merge':
+            for d in r['drop']:
+                if d not in new or r['keep'] not in known or d == r['keep']:
+                    sys.exit(f'review gap_merge: {d} is not a new concept, or {r["keep"]} is unknown')
+                to[d] = r['keep']
+        elif r['op'] == 'gap_min_claims':
+            least = r['min']
+    final = lambda c: final(to[c]) if c in to else c  # noqa: E731
+    for row in rows:
+        cs = list(dict.fromkeys(final(c) for c in row['concepts']))
+        if cs != row['concepts']:
+            row['gap_merged'], row['concepts'] = [c for c in row['concepts'] if c in to], cs
+    hits = collections.Counter(c for row in rows for c in row['concepts'] if c in new)
+    cut = {c for c in new - set(to) if hits[c] < least}
+    for row in rows:
+        gone = [c for c in row['concepts'] if c in cut]
+        if gone:
+            row['gap_cut'], row['concepts'] = gone, [c for c in row['concepts'] if c not in cut]
+            if not row['concepts']:
+                row['code'] = 'no_concept'
+    return new - set(to) - cut, to, cut
+
+
 def gapmatch_registry():
     """The new concepts, and the approved ones the gap proposals turned out to duplicate."""
     new = [json.loads(l) for l in open(os.path.join(OUT, 'concepts_gap.jsonl'), encoding='utf-8')]
@@ -964,9 +1001,15 @@ def gap_review(run):
            f'(claims the earlier passes missed).',
            f'- **Codes after the gap pass:** {dict(collections.Counter(r["code"] for r in third.values() if r["code"]))}.', '',
            'Each new concept will get milestone research. To drop or merge one, add a row to '
-           '`runs/match/concept_review.jsonl` before research starts.', '',
-           '## New concepts, by matched claims', '',
-           '| concept | definition | came true? | domains | proposed | matched |', '|---|---|---|---|---|---|']
+           '`runs/match/concept_review.jsonl` before research starts.', '']
+    decided = [r for r in reviewer_rows() if r['op'] in ('gap_merge', 'gap_min_claims')]
+    if decided:
+        out += ['**Decisions** (`concept_review.jsonl`, applied by matches-collect; the tables below are before them):', '']
+        what = lambda r: (f"merge {', '.join(r['drop'])} into {r['keep']}" if r['op'] == 'gap_merge'  # noqa: E731
+                          else f"cut the new concepts with fewer than {r['min']} matched claims")
+        out += [f"- {what(r)}: {r['reason']}" for r in decided] + ['']
+    out += ['## New concepts, by matched claims', '',
+            '| concept | definition | came true? | domains | proposed | matched |', '|---|---|---|---|---|---|']
     for c in sorted(new, key=lambda c: (-hits[c['concept_id']], c['concept_id'])):
         out.append(f"| `{c['concept_id']}` {cell(c['name'])} | {cell(c['definition'])} | {c['came_true_guess']} | "
                    f"{', '.join(c['domains'])} | {c['est_claims'] or ''} | {hits[c['concept_id']]} |")

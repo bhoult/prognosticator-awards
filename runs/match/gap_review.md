@@ -9,6 +9,11 @@
 
 Each new concept will get milestone research. To drop or merge one, add a row to `runs/match/concept_review.jsonl` before research starts.
 
+**Decisions** (`concept_review.jsonl`, applied by matches-collect; the tables below are before them):
+
+- merge ultra-dense-matter into neutronium-dense-matter: Both are collapsed matter of extreme density (neutronium); the gap matchers split the same claims between them.
+- cut the new concepts with fewer than 3 matched claims: Each kept concept gets milestone research; new concepts with fewer than 3 matched claims are cut and their claims are no_concept again (the user's choice, 2026-11-05).
+
 ## New concepts, by matched claims
 
 | concept | definition | came true? | domains | proposed | matched |
