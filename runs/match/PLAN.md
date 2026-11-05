@@ -77,7 +77,19 @@ under two domains would count twice. The registry is global.
 
   Merges and splits go to a mapping file.
 - **3c. Close the gaps.** After matching (§4), agents propose concepts for the claims coded
-  `no_concept` only, and those claims are matched again.
+  `no_concept` only, and those claims are matched again (as built, 2026-11-04):
+  - **Propose:** the 11,923 no_concept claims after both passes, by domain group in shards of
+    at most 1,500, with the approved registry's names; only concepts that at least 3 claims of
+    a shard return to.
+  - **Consolidate:** one agent over all proposals against the whole approved registry: merges,
+    splits, proposals that duplicate an approved concept (claims the earlier passes missed),
+    and nothing under 3 claims.
+  - **The new concepts** go to `concepts_gap.jsonl`; `concepts.jsonl`, approved at checkpoint
+    1, stays as it was.
+  - **Match:** the no_concept claims against the new concepts and the approved ones they
+    duplicated; the answers go on top of both passes in `matches.jsonl`.
+  - **A stop:** `gap_review.md` lists the new concepts with their matched claims, for your
+    review before milestone research.
 - **Size:** 1,200–2,000 concepts for tranche A is my estimate.
 - **Checkpoint 1 (a stop):** you see the registry before matching runs:
   - counts by domain and type;

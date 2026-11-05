@@ -10,7 +10,13 @@
     python -I pipeline/match.py match-plan <run> [n]          claim up to n pending matching batches, print their prompts
     python -I pipeline/match.py match-ingest <run>            check the matching outputs, summary
     python -I pipeline/match.py rematch-plan <run> [n]        second pass: no_concept/too_vague claims vs the whole registry
-    python -I pipeline/match.py matches-collect <run>         both passes -> work/match/<run>/matches.jsonl
+    python -I pipeline/match.py matches-collect <run>         all passes -> work/match/<run>/matches.jsonl
+    python -I pipeline/match.py gap-plan <run>                3c: propose concepts for the no_concept claims
+    python -I pipeline/match.py gap-ingest <run>              check the gap proposals
+    python -I pipeline/match.py gapcons-plan <run>            consolidate them against the approved registry
+    python -I pipeline/match.py gap-build <run>               -> runs/match/concepts_gap.jsonl + concept_gap_mapping.jsonl
+    python -I pipeline/match.py gapmatch-plan <run> [n]       the no_concept claims vs the gap concepts
+    python -I pipeline/match.py gap-review <run>              -> runs/match/gap_review.md (a stop before research)
     python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
     python -I pipeline/match.py status <run>
 
@@ -145,15 +151,14 @@ def concepts_plan(run):
         print(' ', rel(p))
 
 
-def propose_problems(run, name):
+def propose_problems(run, name, stage='concepts'):
     """None if the shard's output is complete and valid, else a list of problems."""
-    out = rd(run, 'concepts', 'out', name + '.jsonl')
+    out = rd(run, stage, 'out', name + '.jsonl')
     if not os.path.exists(out):
         return ['missing']
     rows, err = read_jsonl(out)
     if rows is None:
         return [err]
-    ids = {json.loads(l)['id'] for l in open(rd(run, 'concepts', 'in', name + '.jsonl'), encoding='utf-8')}
     bad, seen = [], set()
     for r in rows:
         cid = r.get('concept_id', '')
@@ -169,17 +174,17 @@ def propose_problems(run, name):
     return bad or None
 
 
-def concepts_ingest(run):
+def concepts_ingest(run, stage='concepts'):
     total = 0
-    for f in sorted(os.listdir(rd(run, 'concepts', 'in'))):
+    for f in sorted(os.listdir(rd(run, stage, 'in'))):
         name = f[:-6]
-        n_in = sum(1 for _ in open(rd(run, 'concepts', 'in', f), encoding='utf-8'))
-        p = propose_problems(run, name)
+        n_in = sum(1 for _ in open(rd(run, stage, 'in', f), encoding='utf-8'))
+        p = propose_problems(run, name, stage)
         if p:
             print(f'{name}: {n_in} claims; NOT DONE: {p[:5]}')
             continue
-        rows = read_jsonl(rd(run, 'concepts', 'out', f))[0]
-        ids = {json.loads(l)['id'] for l in open(rd(run, 'concepts', 'in', f), encoding='utf-8')}
+        rows = read_jsonl(rd(run, stage, 'out', f))[0]
+        ids = {json.loads(l)['id'] for l in open(rd(run, stage, 'in', f), encoding='utf-8')}
         stray = sum(1 for r in rows for e in r.get('examples') or [] if e not in ids)
         est = sum(int(r.get('est_claims') or 0) for r in rows)
         total += len(rows)
@@ -218,15 +223,16 @@ def consolidate_plan(run):
         print(' ', rel(p))
 
 
-def consolidate_problems(run, g):
-    out = rd(run, 'consolidate', 'out', g + '.jsonl')
+def consolidate_problems(run, g, stage='consolidate', known=None):
+    """`known`: the concept ids a proposal may be mapped to as existing (default: the seed)."""
+    out = rd(run, stage, 'out', g + '.jsonl')
     if not os.path.exists(out):
         return ['missing']
     rows, err = read_jsonl(out)
     if rows is None:
         return [err]
-    props = {f"{r['shard']}:{r['concept_id']}" for r in map(json.loads, open(rd(run, 'consolidate', 'in', g + '.jsonl'), encoding='utf-8'))}
-    seed = {c['concept_id'] for c in seed_registry()}
+    props = {f"{r['shard']}:{r['concept_id']}" for r in map(json.loads, open(rd(run, stage, 'in', g + '.jsonl'), encoding='utf-8'))}
+    seed = known if known is not None else {c['concept_id'] for c in seed_registry()}
     bad, seen, covered = [], set(), set()
     for r in rows:
         if 'dropped' in r:
@@ -478,8 +484,15 @@ BATCH, CLAIM_MINUTES = 350, 60
 CODES = {'no_concept', 'untestable', 'too_vague'}
 
 
-def registry_rows():
+def main_registry():
+    """The registry approved at checkpoint 1 (runs/match/concepts.jsonl)."""
     return [json.loads(l) for l in open(os.path.join(OUT, 'concepts.jsonl'), encoding='utf-8')]
+
+
+def registry_rows():
+    """Every concept: the approved registry and the gap pass's (runs/match/concepts_gap.jsonl)."""
+    gap = os.path.join(OUT, 'concepts_gap.jsonl')
+    return main_registry() + ([json.loads(l) for l in open(gap, encoding='utf-8')] if os.path.exists(gap) else [])
 
 
 def match_batches(run):
@@ -627,8 +640,13 @@ def rematch_plan(run, limit=None):
     tpl = open(os.path.join(PROMPTS, 'rematch.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'batch': BATCH, 'seed': SEED, 'retry': sorted(RETRY),
                         'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
-    batches = rematch_batches(run)
     reg = registry_rows()
+    claim_batches(run, stage, rematch_batches(run), 'rematch.md', reg, limit)
+
+
+def claim_batches(run, stage, batches, template, reg, limit=None):
+    """Write the stage's registry and inputs, claim up to `limit` batches that aren't done or
+    claimed in the last CLAIM_MINUTES, and print their prompts."""
     write_atomic(rd(run, stage, 'registry.jsonl'), jsonl({k: c[k] for k in ('concept_id', 'name', 'definition')} for c in reg))
     by_id, todo, now = None, [], time.time()
     for name, b in batches.items():
@@ -646,29 +664,37 @@ def rematch_plan(run, limit=None):
     pick = todo[:int(limit)] if limit else todo
     for name in pick:
         n = len(batches[name]['ids'])
-        path = prompt(run, stage, name, 'rematch.md', workdir=ROOT, domain='all', n=n, half=(n + 1) // 2,
+        path = prompt(run, stage, name, template, workdir=ROOT, domain='all', n=n, half=(n + 1) // 2,
                       n_concepts=len(reg), registry=rel(rd(run, stage, 'registry.jsonl')),
                       batch_in=rel(rd(run, stage, 'in', name + '.jsonl')), batch_out=rel(rd(run, stage, 'out', name + '.jsonl')),
-                      tmpdir=rel(rd(run, 'tmp', 'rematch-' + name)))
+                      tmpdir=rel(rd(run, 'tmp', stage + '-' + name)))
         write_atomic(rd(run, stage, 'prompts', name + '.claimed'), time.strftime('%Y-%m-%dT%H:%M:%S\n'))
         print(rel(path))
     print(f'{len(pick)} claimed; {len(todo) - len(pick)} more pending; {len(batches)} batches in all', file=sys.stderr)
 
 
+def pass_rows(run, stage, batches):
+    rows = {}
+    for name in batches:
+        if match_problems(run, name, stage) is not None:
+            sys.exit(f'{stage} batch {name} is not done')
+        for r in read_jsonl(rd(run, stage, 'out', name + '.jsonl'))[0]:
+            rows[r['id']] = r
+    return rows
+
+
 def matches_collect(run):
     """work/match/<run>/matches.jsonl: one row per tranche-A claim, the first pass's answer, or the
-    second pass's for claims it retried; more than two concepts are cut to the first two (logged)."""
+    second pass's for claims it retried, or the gap pass's (3c) once it has run; more than two
+    concepts are cut to the first two (logged)."""
     first = first_pass(run)
-    second = {}
-    for name in rematch_batches(run):
-        if match_problems(run, name, 'rematch') is not None:
-            sys.exit(f'second-pass batch {name} is not done')
-        for r in read_jsonl(rd(run, 'rematch', 'out', name + '.jsonl'))[0]:
-            second[r['id']] = r
+    second = pass_rows(run, 'rematch', rematch_batches(run))
+    third = pass_rows(run, 'gapmatch', gapmatch_batches(run)) if os.path.exists(rd(run, 'gapmatch', 'batches.json')) else {}
     rows, cut = [], 0
     for i, r in first.items():
-        s2 = second.get(i)
-        row = dict(s2 if s2 else r, first_code=r['code'], **({'second_pass': True} if s2 else {}))
+        s2, s3 = second.get(i), third.get(i)
+        row = dict(s3 or s2 or r, first_code=r['code'], **({'second_pass': True} if s2 else {}),
+                   **({'third_pass': True} if s3 else {}))
         if len(row['concepts']) > 2:
             row['concepts_dropped'], row['concepts'] = row['concepts'][2:], row['concepts'][:2]
             cut += 1
@@ -676,8 +702,186 @@ def matches_collect(run):
     write_atomic(rd(run, 'matches.jsonl'), jsonl(rows))
     n = len(rows)
     print(f"{n} claims: {sum(1 for r in rows if r['concepts']) / n:.1%} matched "
-          f"({sum(1 for r in rows if r.get('second_pass') and r['concepts'])} by the second pass), "
+          f"({sum(1 for r in rows if r.get('second_pass') and not r.get('third_pass') and r['concepts'])} by the second pass, "
+          f"{sum(1 for r in rows if r.get('third_pass') and r['concepts'])} by the gap pass), "
           f"codes {dict(collections.Counter(r['code'] for r in rows if r['code']))}, {cut} cut to two concepts")
+
+
+# ---- 3c: concepts for the claims that nothing matched ----
+
+GAP_SHARD = 1500
+
+
+def gap_ids(run):
+    """Fixed once: the claims coded no_concept after both passes."""
+    path = rd(run, 'gap', 'ids.json')
+    if os.path.exists(path):
+        return json.load(open(path, encoding='utf-8'))
+    src = rd(run, 'matches.jsonl')
+    if not os.path.exists(src):
+        sys.exit('run matches-collect first')
+    rows = [json.loads(l) for l in open(src, encoding='utf-8')]
+    if any(r.get('third_pass') for r in rows):
+        sys.exit('matches.jsonl already holds the gap pass; gap/ids.json is missing')
+    ids = sorted(r['id'] for r in rows if r['code'] == 'no_concept')
+    write_atomic(path, json.dumps(ids))
+    return ids
+
+
+def gap_plan(run):
+    """Propose: the no_concept claims by domain group, in shards of about GAP_SHARD."""
+    stage = 'gap'
+    tpl = open(os.path.join(PROMPTS, 'concepts_gap_propose.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'shard': GAP_SHARD, 'seed': SEED, 'groups': GROUPS,
+                        'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
+    ids, main = set(gap_ids(run)), main_registry()
+    write_atomic(rd(run, stage, 'registry_names.jsonl'), jsonl({k: c[k] for k in ('concept_id', 'name')} for c in main))
+    by = collections.defaultdict(list)
+    for c in claims(run):
+        if c['id'] in ids:
+            by[GROUPS.get(c['domain'], c['domain'])].append(c)
+    todo = []
+    for g in sorted(by):
+        rows = sorted(by[g], key=lambda c: c['id'])
+        random.Random(f'{SEED}:gap:{g}').shuffle(rows)
+        n = math.ceil(len(rows) / GAP_SHARD)
+        for i in range(n):
+            name, part = f'{g}-{i + 1}', rows[i::n]
+            write_atomic(rd(run, stage, 'in', name + '.jsonl'),
+                         jsonl({'id': c['id'], 'description': c['description']} for c in part))
+            if propose_problems(run, name, stage) is None:
+                continue
+            todo.append(prompt(run, stage, 'propose-' + name, 'concepts_gap_propose.md', workdir=ROOT, domain=g,
+                               n=len(part), n_concepts=len(main), shard_in=rel(rd(run, stage, 'in', name + '.jsonl')),
+                               registry=rel(rd(run, stage, 'registry_names.jsonl')),
+                               shard_out=rel(rd(run, stage, 'out', name + '.jsonl')), tmpdir=rel(rd(run, 'tmp', 'gap-' + name))))
+    print(len(todo), 'gap propose prompts to run:')
+    for p in todo:
+        print(' ', rel(p))
+
+
+def gapcons_plan(run):
+    """Consolidate: every gap proposal in one list, against the whole approved registry."""
+    stage = 'gapcons'
+    tpl = open(os.path.join(PROMPTS, 'concepts_gap_consolidate.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
+    rows = []
+    for f in sorted(os.listdir(rd(run, 'gap', 'in'))):
+        name = f[:-6]
+        if propose_problems(run, name, 'gap'):
+            sys.exit(f'gap proposals for {name} are not done; run gap-ingest')
+        ids = {json.loads(l)['id'] for l in open(rd(run, 'gap', 'in', f), encoding='utf-8')}
+        for r in read_jsonl(rd(run, 'gap', 'out', f))[0]:
+            r['examples'] = [e for e in r.get('examples') or [] if e in ids]  # examples are only hints
+            rows.append({'shard': name, **r})
+    write_atomic(rd(run, stage, 'in', 'all.jsonl'), jsonl(rows))
+    main = main_registry()
+    write_atomic(rd(run, stage, 'registry.jsonl'), jsonl({k: c[k] for k in ('concept_id', 'name', 'definition')} for c in main))
+    out = rd(run, stage, 'out', 'all.jsonl')
+    p = consolidate_problems(run, 'all', stage, {c['concept_id'] for c in main})
+    if p is None:
+        print('done:', rel(out))
+        return
+    print(len(rows), 'proposals;', rel(prompt(run, stage, 'consolidate', 'concepts_gap_consolidate.md', workdir=ROOT,
+                                              proposals=rel(rd(run, stage, 'in', 'all.jsonl')), n_concepts=len(main),
+                                              registry=rel(rd(run, stage, 'registry.jsonl')), out=rel(out),
+                                              tmpdir=rel(rd(run, 'tmp', 'gapcons')))))
+
+
+def gap_concepts(run):
+    """(new concepts, mapping) from the consolidation; domains come from the proposals' shards."""
+    main = {c['concept_id'] for c in main_registry()}
+    if consolidate_problems(run, 'all', 'gapcons', main):
+        sys.exit('gap consolidation is not done')
+    shard_domains = lambda props: sorted({d for p in props for d in p.split(':')[0].rsplit('-', 1)[0].split('+')})  # noqa: E731
+    new, mapping = [], []
+    for r in read_jsonl(rd(run, 'gapcons', 'out', 'all.jsonl'))[0]:
+        if 'dropped' in r:
+            mapping.append({'proposal': r['dropped'], 'concept_id': None, 'how': 'dropped', 'reason': r.get('reason', '')})
+            continue
+        for p in r.get('merged_from') or []:
+            mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'existing' if r.get('existing') else 'merged'})
+        for p in r.get('split_from') or []:
+            mapping.append({'proposal': p, 'concept_id': r['concept_id'], 'how': 'split'})
+        if r.get('existing'):
+            continue
+        new.append({**{k: r.get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases', 'came_true_guess',
+                                             'est_claims', 'examples', 'bundle_check')},
+                    'domains': shard_domains((r.get('merged_from') or []) + (r.get('split_from') or [])),
+                    'wikidata': None, 'source': 'gap'})
+    return sorted(new, key=lambda c: c['concept_id']), mapping
+
+
+def gap_build(run):
+    """runs/match/concepts_gap.jsonl (the new concepts) and concept_gap_mapping.jsonl."""
+    new, mapping = gap_concepts(run)
+    write_atomic(os.path.join(OUT, 'concepts_gap.jsonl'), jsonl(new))
+    write_atomic(os.path.join(OUT, 'concept_gap_mapping.jsonl'), jsonl(mapping))
+    how = collections.Counter(m['how'] for m in mapping)
+    print(f"{len(new)} new concepts; proposals: {dict(how)}; "
+          f"{len({m['concept_id'] for m in mapping if m['how'] == 'existing'})} existing concepts proposed again")
+
+
+def gapmatch_registry():
+    """The new concepts, and the approved ones the gap proposals turned out to duplicate."""
+    new = [json.loads(l) for l in open(os.path.join(OUT, 'concepts_gap.jsonl'), encoding='utf-8')]
+    again = {json.loads(l)['concept_id'] for l in open(os.path.join(OUT, 'concept_gap_mapping.jsonl'), encoding='utf-8')
+             if json.loads(l)['how'] == 'existing'}
+    return new + [c for c in main_registry() if c['concept_id'] in again]
+
+
+def gapmatch_batches(run):
+    path = rd(run, 'gapmatch', 'batches.json')
+    if os.path.exists(path):
+        return json.load(open(path, encoding='utf-8'))
+    left = list(gap_ids(run))
+    random.Random(f'{SEED}:gapmatch').shuffle(left)
+    n = math.ceil(len(left) / BATCH)
+    batches = {f'gapmatch-{i + 1:03d}': {'ids': left[i::n]} for i in range(n)}
+    write_atomic(path, json.dumps(batches))
+    return batches
+
+
+def gapmatch_plan(run, limit=None):
+    """Like rematch-plan: the no_concept claims against the gap concepts."""
+    stage = 'gapmatch'
+    tpl = open(os.path.join(PROMPTS, 'gapmatch.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'batch': BATCH, 'seed': SEED,
+                        'gap_registry_sha256': sha(open(os.path.join(OUT, 'concepts_gap.jsonl'), 'rb').read())})
+    claim_batches(run, stage, gapmatch_batches(run), 'gapmatch.md', gapmatch_registry(), limit)
+
+
+def gap_review(run):
+    """runs/match/gap_review.md: the new concepts with the claims the gap pass matched to them,
+    for the user's review before milestone research."""
+    third = pass_rows(run, 'gapmatch', gapmatch_batches(run))
+    hits = collections.Counter(c for r in third.values() for c in r['concepts'][:2])
+    new, mapping = gap_concepts(run)
+    again = collections.Counter(m['concept_id'] for m in mapping if m['how'] == 'existing')
+    main = {c['concept_id']: c for c in main_registry()}
+    cell = lambda s: str(s or '').replace('|', '/').replace('\n', ' ')  # noqa: E731
+    n, matched = len(third), sum(1 for r in third.values() if r['concepts'])
+    out = ['# Gap concepts (3c): review before milestone research', '',
+           f'{n:,} claims were coded no_concept after both passes. Agents proposed concepts for what they kept '
+           f'returning to; one agent consolidated them against the approved registry. The gap pass then matched '
+           f'{matched:,} of the {n:,} ({matched / n:.0%}).', '',
+           f'- **New concepts:** {len(new)} ({sum(1 for c in new if hits[c["concept_id"]] < 3)} with fewer than 3 matched claims).',
+           f'- **Proposals that duplicated an approved concept:** {sum(again.values())}, for {len(again)} concepts '
+           f'(claims the earlier passes missed).',
+           f'- **Codes after the gap pass:** {dict(collections.Counter(r["code"] for r in third.values() if r["code"]))}.', '',
+           'Each new concept will get milestone research. To drop or merge one, add a row to '
+           '`runs/match/concept_review.jsonl` before research starts.', '',
+           '## New concepts, by matched claims', '',
+           '| concept | definition | came true? | domains | proposed | matched |', '|---|---|---|---|---|---|']
+    for c in sorted(new, key=lambda c: (-hits[c['concept_id']], c['concept_id'])):
+        out.append(f"| `{c['concept_id']}` {cell(c['name'])} | {cell(c['definition'])} | {c['came_true_guess']} | "
+                   f"{', '.join(c['domains'])} | {c['est_claims'] or ''} | {hits[c['concept_id']]} |")
+    out += ['', '## Approved concepts the gap proposals duplicated', '',
+            '| concept | definition | proposals | matched in the gap pass |', '|---|---|---|---|']
+    for cid, k in again.most_common():
+        out.append(f"| `{cid}` {cell(main[cid]['name'])} | {cell(main[cid]['definition'])} | {k} | {hits[cid]} |")
+    write_atomic(os.path.join(OUT, 'gap_review.md'), '\n'.join(out) + '\n')
+    print(f'{len(new)} new concepts, {matched:,} of {n:,} claims matched ->', rel(os.path.join(OUT, 'gap_review.md')))
 
 
 # ---- usage and status ----
@@ -710,5 +914,7 @@ if __name__ == '__main__':
     {'concepts-plan': concepts_plan, 'concepts-ingest': concepts_ingest, 'consolidate-plan': consolidate_plan,
      'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'audit-plan': audit_plan,
      'concepts-build': concepts_build, 'match-plan': match_plan, 'match-ingest': match_ingest,
-     'rematch-plan': rematch_plan, 'matches-collect': matches_collect,
+     'rematch-plan': rematch_plan, 'matches-collect': matches_collect, 'gap-plan': gap_plan,
+     'gap-ingest': lambda run: concepts_ingest(run, 'gap'), 'gapcons-plan': gapcons_plan, 'gap-build': gap_build,
+     'gapmatch-plan': gapmatch_plan, 'gap-review': gap_review,
      'log': log, 'status': status}[cmd](*args)
