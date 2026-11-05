@@ -1217,7 +1217,7 @@ def verify(run):
         a verified reference source, else it is `medium`;
       - for each concept and kind, the earliest verified milestone is kept.
     The verdicts are cached in work/match/<run>/research/quote_check.jsonl (url, quote, verdict, record
-    date: never page text), so a re-run only fetches new sources. Concept notes and the checks'
+    date: never page text), so a re-run only fetches new sources and those that failed to fetch. Concept notes and the checks'
     verdicts go to runs/match/milestone_notes.jsonl."""
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import sources
@@ -1235,7 +1235,9 @@ def verify(run):
     cache_path = rd(run, 'research', 'quote_check.jsonl')
     cache = {(c['url'], c.get('volume_id'), c['quote']): c for c in (read_jsonl(cache_path)[0] or [])} \
         if os.path.exists(cache_path) else {}
-    need = {(s['url'], s.get('volume_id'), s['quote'].strip()) for m in ms for s in m['sources']} - set(cache)
+    # a fetch that failed (a 429, a timeout) is tried again on the next run
+    need = {(s['url'], s.get('volume_id'), s['quote'].strip()) for m in ms for s in m['sources']} - \
+        {k for k, c in cache.items() if not c['verdict'].startswith('fetch failed')}
     pages = {}
 
     def get(k):

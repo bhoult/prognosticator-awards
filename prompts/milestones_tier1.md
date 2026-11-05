@@ -13,7 +13,8 @@ in parallel and would overwrite them.
 
 `{batch_in}`: {n} concepts, JSON lines `{"concept_id", "name", "definition", "type",
 "aliases", "came_true_guess"}`. `came_true_guess` is an earlier guess whether it ever came
-true (`yes` or `unsure`); check it, don't trust it. The concepts share a domain, so searches
+true (`yes`, `unsure`, or `no` for a concept a quick check found a real event for); check
+it, don't trust it. The concepts share a domain, so searches
 and sources often serve several of them.
 
 ## Task
