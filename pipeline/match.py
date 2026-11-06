@@ -22,6 +22,8 @@
     python -I pipeline/match.py agree-report <run>            -> runs/match/agreement.md
     python -I pipeline/match.py research-plan <run> [n] [prefix]  §5 tier 1: claim up to n research batches, print their prompts
     python -I pipeline/match.py verify <run>                  check every source again -> runs/match/milestones.jsonl
+    python -I pipeline/match.py judge-plan <run> [n] [prefix] §6-7: claim up to n judging batches (A, B, then C), print their prompts
+    python -I pipeline/match.py judge-collect <run>           -> runs/match/judgments.jsonl + judging.md
     python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
     python -I pipeline/match.py status <run>
 
@@ -1334,6 +1336,176 @@ def verify(run):
 
 # ---- usage and status ----
 
+# ---- §6–7: pairs and judging ----
+
+JUDGE_BATCH, SCORES = 200, (0, 0.25, 0.5, 0.75, 1)
+JUDGE_FIELDS = ('pair', 'pub_year', 'quote', 'claim_description', 'polarity', 'concept_name', 'concept_description',
+                'milestone_kind', 'milestone_date', 'milestone_summary')
+
+
+def scoring_milestones():
+    """concept -> its scoring milestone (PLAN §6): first_practical_use, else first_demonstration."""
+    best = {}
+    for m in read_jsonl(os.path.join(OUT, 'milestones.jsonl'))[0]:
+        if m['kind'] == 'first_practical_use' or (m['kind'] == 'first_demonstration' and m['concept_id'] not in best):
+            best[m['concept_id']] = m
+    return best
+
+
+def judge_pairs(run):
+    """Every claim–concept pair whose concept's scoring milestone is dated after the claim's year (a
+    lead of zero or less scores 0 by rule, PLAN §6). The pair id hashes the claim, the concept and
+    the milestone's kind and date, so a later round can copy every judgment whose pair is unchanged."""
+    best, cl = scoring_milestones(), {c['id']: c for c in claims(run)}
+    reg = {c['concept_id']: c for c in final_registry(run)}
+    pairs = []
+    for r in read_jsonl(rd(run, 'matches.jsonl'))[0]:
+        c = cl[r['id']]
+        for k in r['concepts']:
+            m = best.get(k)
+            if m is None or c.get('year') is None or date_key(m['date'])[0] <= c['year']:
+                continue
+            pairs.append({'pair': 'p' + sha('|'.join((r['id'], k, m['kind'], m['date'])))[:10], 'claim': r['id'],
+                          'concept_id': k, 'lead': date_key(m['date'])[0] - c['year'], 'type': reg[k].get('type'),
+                          'pub_year': c['year'], 'quote': c['quote'], 'claim_description': c['description'],
+                          'polarity': c['polarity'], 'concept_name': reg[k]['name'],
+                          'concept_description': reg[k]['definition'], 'milestone_kind': m['kind'],
+                          'milestone_date': m['date'], 'milestone_summary': m.get('what', '')})
+    return pairs
+
+
+def judge_batches(run):
+    """judge/batches.json and judge/pairs.jsonl, fixed once from the verified milestones: judge A
+    scores every pair and judge B every `will` pair (a `will_not` claim scores no points, so one
+    judge is enough, PLAN §6), each in its own fixed-seed shuffle, in mixed batches of JUDGE_BATCH.
+    When A and B are done, the pairs they score two or more steps apart go to judge C."""
+    path = rd(run, 'judge', 'batches.json')
+    if os.path.exists(path):
+        batches = json.load(open(path, encoding='utf-8'))
+    else:
+        rb = research_batches(run)
+        if any(research_problems(run, n) is not None for n in rb):
+            sys.exit('research is not done')
+        ms = os.path.join(OUT, 'milestones.jsonl')
+        if max(os.path.getmtime(rd(run, 'research', 'out', n + '.jsonl')) for n in rb) > os.path.getmtime(ms):
+            sys.exit('a research output is newer than milestones.jsonl: run verify first')
+        pairs = judge_pairs(run)
+        write_atomic(rd(run, 'judge', 'pairs.jsonl'), jsonl(pairs))
+        batches = {}
+        for j in 'AB':
+            ids = sorted(p['pair'] for p in pairs if j == 'A' or p['polarity'] == 'will')
+            random.Random(f'{SEED}:judge{j}').shuffle(ids)
+            batches.update({f'{j}-{i // JUDGE_BATCH + 1:03d}': {'pairs': ids[i:i + JUDGE_BATCH]}
+                            for i in range(0, len(ids), JUDGE_BATCH)})
+        write_atomic(path, json.dumps(batches, indent=0))
+    if not any(n.startswith('C-') for n in batches) and all(judge_problems(run, n) is None for n in batches):
+        a, b = judge_scores(run, batches, 'A'), judge_scores(run, batches, 'B')
+        far = sorted(p for p in b if abs(a[p]['score'] - b[p]['score']) >= 0.5)
+        random.Random(f'{SEED}:judgeC').shuffle(far)
+        batches.update({f'C-{i // JUDGE_BATCH + 1:03d}': {'pairs': far[i:i + JUDGE_BATCH]}
+                        for i in range(0, len(far), JUDGE_BATCH)})
+        write_atomic(path, json.dumps(batches, indent=0))
+    return batches
+
+
+def judge_problems(run, name):
+    """None if the batch's output is complete and well formed (PLAN §7), else what is wrong."""
+    out, inp = rd(run, 'judge', 'out', name + '.jsonl'), rd(run, 'judge', 'in', name + '.jsonl')
+    if not os.path.exists(inp):
+        return ['not planned']
+    if not os.path.exists(out):
+        return ['missing']
+    rows, err = read_jsonl(out)
+    if rows is None:
+        return [err]
+    ids = [json.loads(l)['pair'] for l in open(inp, encoding='utf-8')]
+    got = [r.get('pair') for r in rows]
+    bad = [] if sorted(got) == sorted(ids) else [f'{len(got)} lines for {len(ids)} pairs, or other ids']
+    bad += [f"{r.get('pair')}: score {r.get('score')!r}" for r in rows if r.get('score') not in SCORES]
+    bad += [f"{r.get('pair')}: no rationale" for r in rows if not str(r.get('rationale', '')).strip()]
+    distinct = len({str(r.get('rationale', '')).strip().lower() for r in rows})
+    if rows and distinct < 0.8 * len(rows):
+        bad.append(f'{distinct} distinct rationales for {len(rows)} pairs')
+    return bad or None
+
+
+def judge_scores(run, batches, judge):
+    return {r['pair']: r for n in batches if n.startswith(judge + '-')
+            for r in read_jsonl(rd(run, 'judge', 'out', n + '.jsonl'))[0]}
+
+
+def judge_plan(run, limit=None, only=''):
+    """Claim up to `limit` judging batches (whose names start with `only`) that aren't done or
+    claimed in the last CLAIM_MINUTES and print their prompts."""
+    stage = 'judge'
+    tpl = open(os.path.join(PROMPTS, 'judge.md'), encoding='utf-8').read()
+    config(run, stage, {'prompt_sha256': sha(tpl), 'batch': JUDGE_BATCH, 'seed': SEED})
+    batches = judge_batches(run)
+    pairs = {p['pair']: p for p in read_jsonl(rd(run, stage, 'pairs.jsonl'))[0]}
+    todo, now = [], time.time()
+    for name, b in batches.items():
+        inp = rd(run, stage, 'in', name + '.jsonl')
+        if not os.path.exists(inp):  # no claim ids, books or authors reach the judge
+            write_atomic(inp, jsonl({k: pairs[p][k] for k in JUDGE_FIELDS} for p in b['pairs']))
+        mark = rd(run, stage, 'prompts', name + '.claimed')
+        if not name.startswith(only) or judge_problems(run, name) is None or \
+                (os.path.exists(mark) and now - os.path.getmtime(mark) < CLAIM_MINUTES * 60):
+            continue
+        todo.append(name)
+    pick = sorted(todo)[:int(limit)] if limit else sorted(todo)
+    for name in pick:
+        path = prompt(run, stage, name, 'judge.md', workdir=ROOT, n=len(batches[name]['pairs']),
+                      batch_in=rel(rd(run, stage, 'in', name + '.jsonl')), batch_out=rel(rd(run, stage, 'out', name + '.jsonl')),
+                      tmpdir=rel(rd(run, 'tmp', stage + '-' + name)))
+        write_atomic(rd(run, stage, 'prompts', name + '.claimed'), time.strftime('%Y-%m-%dT%H:%M:%S\n'))
+        print(rel(path))
+    done = sum(1 for n in batches if judge_problems(run, n) is None)
+    print(f'{len(pick)} claimed; {len(todo) - len(pick)} more pending; {done} of {len(batches)} batches done', file=sys.stderr)
+
+
+def judge_collect(run):
+    """runs/match/judgments.jsonl and runs/match/judging.md (PLAN §7): a `will` pair scores the mean
+    of judges A and B, or the median of A, B and C where A and B are two or more steps apart; a
+    `will_not` pair scores judge A's. The report gives how far A and B agree: overall, by concept
+    type, and on a random 300."""
+    batches = judge_batches(run)  # adds the C batches once A and B are done
+    left = [n for n in batches if judge_problems(run, n) is not None]
+    if left:
+        sys.exit(f'{len(left)} judging batches not done, e.g. {left[0]}')
+    a, b, c = (judge_scores(run, batches, j) for j in 'ABC')
+    rows = []
+    for p in read_jsonl(rd(run, 'judge', 'pairs.jsonl'))[0]:
+        k = p['pair']
+        sa, sb = a[k]['score'], b[k]['score'] if k in b else None
+        if sb is None:
+            score = sa
+        elif abs(sa - sb) >= 0.5:
+            score = sorted((sa, sb, c[k]['score']))[1]
+        else:
+            score = (sa + sb) / 2
+        rows.append({**{f: p[f] for f in ('pair', 'claim', 'concept_id', 'polarity', 'milestone_kind', 'milestone_date', 'lead')},
+                     'a': sa, 'b': sb, 'c': c[k]['score'] if k in c else None, 'score': score,
+                     'rationale_a': a[k]['rationale'], 'rationale_b': b[k]['rationale'] if k in b else None})
+    write_atomic(os.path.join(OUT, 'judgments.jsonl'), jsonl(rows))
+    types = {p['pair']: p.get('type') or '?' for p in read_jsonl(rd(run, 'judge', 'pairs.jsonl'))[0]}
+
+    def agree(rs):
+        d = collections.Counter(min(int(abs(r['a'] - r['b']) / 0.25 + 0.5), 2) for r in rs)
+        n = len(rs) or 1
+        return f"{len(rs)} | {d[0] / n:.0%} | {d[1] / n:.0%} | {d[2] / n:.0%}"
+    pairs2 = [r for r in rows if r['b'] is not None]
+    rnd = random.Random(f'{SEED}:judge-agree').sample(pairs2, min(300, len(pairs2)))
+    out = ['# Judging: how far the two judges agree (PLAN §7)', '',
+           f'{len(rows)} pairs judged; {len(pairs2)} by two judges, {sum(r["c"] is not None for r in rows)} decided by a third.',
+           f'Scores: {dict(sorted(collections.Counter(r["score"] for r in rows).items()))}', '',
+           '| pairs | n | same | one step | further |', '|---|---|---|---|---|',
+           f'| all | {agree(pairs2)} |', f'| random 300 | {agree(rnd)} |']
+    for t in sorted({types[r["pair"]] for r in pairs2}):
+        out.append(f'| type {t} | {agree([r for r in pairs2 if types[r["pair"]] == t])} |')
+    write_atomic(os.path.join(OUT, 'judging.md'), '\n'.join(out) + '\n')
+    print(f'{len(rows)} judgments -> runs/match/judgments.jsonl; agreement in runs/match/judging.md')
+
+
 def log(run, agent, stage, tokens, tools, seconds, *note):
     path = os.path.join(OUT, 'usage.tsv')
     if not os.path.exists(path):
@@ -1366,5 +1538,5 @@ if __name__ == '__main__':
      'gap-ingest': lambda run: concepts_ingest(run, 'gap'), 'gapcons-plan': gapcons_plan, 'gapglobal-plan': gapglobal_plan,
      'gap-build': gap_build,
      'gapmatch-plan': gapmatch_plan, 'gap-review': gap_review, 'agree-plan': agree_plan, 'agree-report': agree_report,
-     'research-plan': research_plan, 'verify': verify,
+     'research-plan': research_plan, 'verify': verify, 'judge-plan': judge_plan, 'judge-collect': judge_collect,
      'log': log, 'status': status}[cmd](*args)
