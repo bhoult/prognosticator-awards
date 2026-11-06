@@ -1089,7 +1089,13 @@ def agree_report(run):
 RESEARCH_BATCH, CHECK_BATCH = 15, 40
 KINDS = ('first_demonstration', 'first_practical_use', 'mass_adoption')
 PILOT_MILESTONES = os.path.join(ROOT, 'pilot', 'computing', 'milestones3.jsonl')
-DATE = re.compile(r'^\d{4}(-\d{2}(-\d{2})?)?$')
+DATE = re.compile(r'^-?\d{4}(-\d{2}(-\d{2})?)?$')  # a leading '-' for a year BC (-0602)
+
+
+def date_key(d):
+    """Sort key for a milestone date: the year as a number (BC years are negative), then month and day."""
+    y, rest = re.match(r'(-?\d+)(.*)', d).groups()
+    return int(y), rest
 
 
 def research_concepts(run):
@@ -1256,7 +1262,7 @@ def verify(run):
     write_atomic(cache_path, jsonl(cache.values()))
     out, log = [], collections.Counter()
     for m in ms:
-        ey = int(m['date'][:4])
+        ey = date_key(m['date'])[0]
         keep = []
         for s in m['sources']:
             c = cache[(s['url'], s.get('volume_id'), s['quote'].strip())]
@@ -1282,7 +1288,7 @@ def verify(run):
     best = {}
     for r in out:
         k = (r['concept_id'], r['kind'])
-        if k not in best or r['date'] < best[k]['date']:
+        if k not in best or date_key(r['date']) < date_key(best[k]['date']):
             best[k] = r
     researched = {i for b in batches.values() for i in b['ids']}
     pilot = [dict(r, tier='pilot') for r in map(json.loads, open(PILOT_MILESTONES, encoding='utf-8'))
@@ -1290,7 +1296,7 @@ def verify(run):
     rows = sorted(pilot + list(best.values()), key=lambda r: (r['concept_id'], KINDS.index(r['kind'])))
     for c, d in itertools.groupby(rows, key=lambda r: r['concept_id']):
         d = {r['kind']: r['date'] for r in d}
-        year = lambda k, dflt: int(re.match(r'-?\d+', d[k]).group(0)) if k in d else dflt  # noqa: E731
+        year = lambda k, dflt: date_key(d[k])[0] if k in d else dflt  # noqa: E731
         if year('first_practical_use', 9999) < year('first_demonstration', -9999):
             print(f'WARNING {c}: practical use {d["first_practical_use"]} before demonstration {d["first_demonstration"]}')
     write_atomic(os.path.join(OUT, 'milestones.jsonl'), jsonl(rows))
