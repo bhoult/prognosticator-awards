@@ -96,7 +96,7 @@ def norm(s):
     """Case, whitespace, curly quotes and dashes ignored; OCR soft hyphens joined ("sen¬ sors")."""
     s = html.unescape(s)
     s = s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
-    s = s.replace('–', '-').replace('—', '-').replace('\xa0', ' ')
+    s = s.replace('–', '-').replace('—', '-').replace('\xa0', ' ').replace('\xad', '')  # \xad: a typeset soft hyphen
     return re.sub(r'\s*¬\s*', '', re.sub(r'\s+', ' ', s).strip().lower())
 
 
