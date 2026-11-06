@@ -213,6 +213,22 @@ The researchers see concept definitions only, never claims.
   least 80% of rationales are distinct.
 - **The report** gives agreement between the judges (the same score, one step apart,
   further) overall, by concept type, and on a random 300.
+- **As built (2026-11-06):** `match.py judge-plan full [n] [A|B|C]` and `judge-collect full`.
+  The pairs and batches are fixed once in `work/match/full/judge/` from the verified milestones
+  (the plan refuses to start if any research output is newer than `milestones.jsonl`): 17,201
+  pairs with a positive lead (17,065 `will`, 136 `will_not`), judge A on all of them in 87
+  batches, judge B on the `will` pairs in 86, and C batches built once A and B are done.
+  `judge-collect` writes `runs/match/judgments.jsonl` and `judging.md`. The pair id hashes
+  claim, concept, milestone kind and date, so a re-run copies unchanged judgments.
+- **Test (2026-11-06):** A-001 and B-001 each read their 200 pairs in four 50-line Read calls
+  and wrote as they went (the first chunk with Write, the rest appended with `cat >>`), in 11
+  tool calls, about 130K tokens and 3–4 minutes each; both pass the code checks, with 200
+  distinct rationales. Scores: A 0 ×7, 0.25 ×51, 0.5 ×103, 0.75 ×38, 1 ×1; B 0 ×5, 0.25 ×46,
+  0.5 ×106, 0.75 ×42, 1 ×1. The rationales name what each quotation says; the 0.75s are real
+  function-and-mechanism matches with a stated difference. The two batches share only 2 pairs
+  (both 0.5 from each judge), so agreement waits for the full run. Estimate for the rest: 171
+  A/B batches at about 130K tokens, plus 10–20 C batches: 23–25M tokens, about 14–16 points of
+  the week (13% used after the test).
 
 ## 8. Resolutions and scores (deterministic)
 
