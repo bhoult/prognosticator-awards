@@ -1089,7 +1089,7 @@ def agree_report(run):
 RESEARCH_BATCH, CHECK_BATCH = 15, 40
 KINDS = ('first_demonstration', 'first_practical_use', 'mass_adoption')
 PILOT_MILESTONES = os.path.join(ROOT, 'pilot', 'computing', 'milestones3.jsonl')
-DATE = re.compile(r'^-?\d{4}(-\d{2}(-\d{2})?)?$')  # a leading '-' for a year BC (-0602)
+DATE = re.compile(r'^(-\d{4,}|\d{4})(-\d{2}(-\d{2})?)?$')  # a leading '-' for a year BC (-0602, -62000)
 
 
 def date_key(d):
