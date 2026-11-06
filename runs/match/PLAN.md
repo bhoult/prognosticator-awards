@@ -143,6 +143,17 @@ The researchers see concept definitions only, never claims.
   `milestone_notes.jsonl`. Hosts that refused scripted access on 2026-11-05: Britannica,
   HathiTrust, loc.gov, newspapers.com, nytimes.com, science.org, ScienceDirect, IEEE Xplore,
   worldradiohistory.com; the Google Books API was out of quota.
+- **Tier 1 done (2026-11-06):** 98 batches (12 checks, 80 tier-1, 6 from the checks' 86
+  "fits"); 101 agents, 13.2M tokens, 4% to 12% of the week. `verify`: 1,736 milestones for 970
+  of the 1,274 concepts (967 with a scoring milestone), every source fetched again (2,346 ok,
+  1 quote not on its page, 11 contemporary sources downgraded). Confidence high 67, medium 590,
+  low 1,079; 547 contemporary sources; 1,030 milestones rest on Wikipedia alone. Agents used
+  about 3.5 tool calls per concept, not the 8-12 asked, and often dated the famous example.
+  The checks answered from knowledge, without searches. Of 67,487 claim-concept pairs, 33,345
+  have a scoring milestone and 34,142 are open; 1,541 open claims belong to 79 concepts
+  guessed "came true" (some real misses, e.g. electrification, stellar evolution, air taxis,
+  bunkers). Prompt v3 (from tier1-044) lets a year BC be written `-YYYY`; `verify` sorts
+  dates by year. Notes in `rejected_batches.tsv`.
 - **Tier 1: every concept with a matched claim.** One researcher per about 15 concepts gives
   each milestone a verified source, a `fit` sentence and a confidence, preferring a source
   from the time of the event. That is pass 3's prompt with tier-1 effort.

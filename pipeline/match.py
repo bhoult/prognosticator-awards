@@ -1296,8 +1296,8 @@ def verify(run):
     rows = sorted(pilot + list(best.values()), key=lambda r: (r['concept_id'], KINDS.index(r['kind'])))
     for c, d in itertools.groupby(rows, key=lambda r: r['concept_id']):
         d = {r['kind']: r['date'] for r in d}
-        year = lambda k, dflt: date_key(d[k])[0] if k in d else dflt  # noqa: E731
-        if year('first_practical_use', 9999) < year('first_demonstration', -9999):
+        if {'first_practical_use', 'first_demonstration'} <= d.keys() and \
+                date_key(d['first_practical_use'])[0] < date_key(d['first_demonstration'])[0]:
             print(f'WARNING {c}: practical use {d["first_practical_use"]} before demonstration {d["first_demonstration"]}')
     write_atomic(os.path.join(OUT, 'milestones.jsonl'), jsonl(rows))
     write_atomic(os.path.join(OUT, 'milestone_notes.jsonl'), jsonl(sorted(notes, key=lambda r: r['concept_id'])))
