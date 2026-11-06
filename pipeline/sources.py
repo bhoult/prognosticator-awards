@@ -269,6 +269,9 @@ def main(a):
         del a[i:i + 2]
     cmd = a[0] if a else ''
     if cmd == 'check' and len(a) == 3:
+        if len(a[2].split()) > 25:  # the merge drops these, so don't let one print FOUND
+            print(f'TOO LONG ({len(a[2].split())} words; a quote is at most 25)')
+            return 1
         t, d = fetch(a[1], vol)
         ok = has_quote(t, a[2])
         print(('FOUND' if ok else 'NOT FOUND') + (f' (record date {d})' if d else ''))
