@@ -294,7 +294,7 @@ def main(a):
         t, d = fetch(a[1], vol)
         if d:
             print(f'[record date: {d}]')
-        if len(a) == 2:
+        if len(a) == 2 or not a[2].strip():  # an empty term would match at every position
             print(t)
             return 0
         term, ctx, mx = ' '.join(a[2].lower().split()), int(a[3]) if len(a) > 3 else 300, int(a[4]) if len(a) > 4 else 20
