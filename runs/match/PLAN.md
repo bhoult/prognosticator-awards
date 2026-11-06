@@ -225,7 +225,8 @@ The researchers see concept definitions only, never claims.
   tool calls, about 130K tokens and 3–4 minutes each; both pass the code checks, with 200
   distinct rationales. Scores: A 0 ×7, 0.25 ×51, 0.5 ×103, 0.75 ×38, 1 ×1; B 0 ×5, 0.25 ×46,
   0.5 ×106, 0.75 ×42, 1 ×1. The rationales name what each quotation says; the 0.75s are real
-  function-and-mechanism matches with a stated difference. The two batches share only 2 pairs
+  function-and-mechanism matches with a stated difference. A-001's two `will_not` pairs (food
+  pills 1895, lie detector 1910) were scored on subject, not on the denial (0.5 each). The two batches share only 2 pairs
   (both 0.5 from each judge), so agreement waits for the full run. Estimate for the rest: 171
   A/B batches at about 130K tokens, plus 10–20 C batches: 23–25M tokens, about 14–16 points of
   the week (13% used after the test).
