@@ -154,6 +154,17 @@ The researchers see concept definitions only, never claims.
   guessed "came true" (some real misses, e.g. electrification, stellar evolution, air taxis,
   bunkers). Prompt v3 (from tier1-044) lets a year BC be written `-YYYY`; `verify` sorts
   dates by year. Notes in `rejected_batches.tsv`.
+- **Second look done (2026-11-06):** the 79 concepts guessed "came true" with no scoring
+  milestone went to 16 `recheck` batches of 5 (`prompts/milestones_recheck.md`: the tier-1
+  prompt with the first pass's note as a lead, 10–15 tool calls per concept). 34 gained a
+  scoring milestone (swamp drainage −0600, helmet-contact speech 1882, self-erasing ink 1866,
+  biocontainment labs 1965, air taxis 1911, plant-growth lighting 1880, ...); 45 still have
+  none, each with a note on what was searched and the closest event. 18 agent runs, 2.0M tokens.
+  `verify`: 1,788 milestones for 1,003 concepts (1,001 with a scoring milestone; 2,434 sources
+  ok, 11 downgraded, 1 quote not on its page). Of the 67,487 pairs, 17,201 have a positive
+  lead and go to judging, 16,838 score 0 by rule (lead ≤ 0), 3 have no year, and 33,445 are
+  open (654 concepts: 273 researched without a fitting event, and 381 the checks found none for).
+  The agents reported that the session's WebSearch budget ran out during the pass.
 - **Tier 1: every concept with a matched claim.** One researcher per about 15 concepts gives
   each milestone a verified source, a `fit` sentence and a confidence, preferring a source
   from the time of the event. That is pass 3's prompt with tier-1 effort.
