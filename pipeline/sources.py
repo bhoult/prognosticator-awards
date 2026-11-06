@@ -56,7 +56,7 @@ def get(url, params=None, accept='application/json', tries=8, timeout=60):
     """(status, body, final_url); status -1 on network failure."""
     if params:
         url = url + ('&' if '?' in url else '?') + urllib.parse.urlencode(params)
-    delay, last = 2.0, (-1, '', url)
+    delay, last, stalls = 2.0, (-1, '', url), 0
     for _ in range(tries):
         p = subprocess.run(['curl', '-sSL', '-m', str(timeout), '-A', UA, '-H', f'Accept: {accept}',
                             '-D', '/dev/stderr', '-w', '\n%{http_code} %{url_effective}', url],
@@ -69,6 +69,9 @@ def get(url, params=None, accept='application/json', tries=8, timeout=60):
             code = -1
         last = (code or -1, body, parts[1] if len(parts) > 1 else url)
         if code == 200:
+            return last
+        stalls += p.returncode == 28  # curl timed out: a host that hangs twice won't answer (8 tries would take 16 minutes)
+        if stalls >= 2:
             return last
         if code in (0, 429, 500, 502, 503, 504) or p.returncode != 0:
             ra = next((l.split(':', 1)[1].strip() for l in p.stderr.splitlines()
