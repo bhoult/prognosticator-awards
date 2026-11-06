@@ -217,8 +217,8 @@ def html_text(url):
     code, body, _ = get(url, accept='text/html,application/xhtml+xml,*/*', timeout=90)
     if not (200 <= code < 300) or not body.strip():
         raise RuntimeError(f'HTTP {code}')
-    if body.lstrip().startswith('%PDF-'):
-        raise RuntimeError('PDF served without .pdf in the URL')
+    if body.lstrip().startswith('%PDF-'):  # a PDF served without .pdf in the URL: fetch it again as a file
+        return pdf_text(url)
     body = re.sub(r'(?is)<(script|style|noscript)\b.*?</\1>', ' ', body)
     body = re.sub(r'(?i)<br\s*/?>|</p>|</div>|</li>|</h\d>|</tr>', '\n', body)
     body = re.sub(r'<[^>]+>', ' ', body)
