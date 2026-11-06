@@ -56,7 +56,8 @@ For **every** concept and **every** milestone kind, find the **earliest** real e
 - A `first_practical_use` cannot be earlier than the `first_demonstration`; if one event is
   both, give both kinds with the same date. `mass_adoption` only if it happened.
 - Dates as `YYYY`, `YYYY-MM` or `YYYY-MM-DD`, only as precise as the sources. Nothing else in
-  the field: no "c.", ranges or words.
+  the field: no "c.", ranges or words. A year BC takes a minus sign (`-0602`); for something
+  known only as ancient or prehistoric, give the earliest year a source states.
 
 **Effort (tier 1):** about 8–12 tool calls per concept, and never more than 15 fetches on
 one. One verified source per milestone is enough; a second, contemporary one is better when
