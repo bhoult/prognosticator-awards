@@ -1086,7 +1086,7 @@ def agree_report(run):
 
 # ---- §5: milestones, tier 1 ----
 
-RESEARCH_BATCH, CHECK_BATCH = 15, 40
+RESEARCH_BATCH, CHECK_BATCH, RECHECK_BATCH = 15, 40, 5
 KINDS = ('first_demonstration', 'first_practical_use', 'mass_adoption')
 PILOT_MILESTONES = os.path.join(ROOT, 'pilot', 'computing', 'milestones3.jsonl')
 DATE = re.compile(r'^(-\d{4,}|\d{4})(-\d{2}(-\d{2})?)?$')  # a leading '-' for a year BC (-0602, -62000)
@@ -1113,7 +1113,9 @@ def research_batches(run):
     """research/batches.json, fixed once: `tier1-NNN` batches of RESEARCH_BATCH concepts, `check-NNN`
     batches of CHECK_BATCH concepts guessed never to have come true, both in domain order so that a
     researcher's concepts are related. When every check is done, the concepts a check found a real
-    event for are added as more tier1 batches."""
+    event for are added as more tier1 batches; when every tier1 batch is done, the concepts guessed
+    "yes" that it gave no demonstration or practical use go to `recheck-NNN` batches of RECHECK_BATCH,
+    a second look with the first researcher's note."""
     path = rd(run, 'research', 'batches.json')
     if os.path.exists(path):
         batches = json.load(open(path, encoding='utf-8'))
@@ -1134,7 +1136,24 @@ def research_batches(run):
             batches.update({f'tier1-{k + i // RESEARCH_BATCH + 1:03d}': {'ids': fits[i:i + RESEARCH_BATCH], 'from_checks': True}
                             for i in range(0, len(fits), RESEARCH_BATCH)})
             write_atomic(path, json.dumps(batches, indent=0))
+    tier1 = [n for n in batches if n.startswith('tier1-')]
+    if not any(n.startswith('recheck-') for n in batches) and all(research_problems(run, n) is None for n in tier1):
+        miss = [i for n in sorted(tier1) for i in batches[n]['ids']
+                if i not in first_pass_dated(run, n) and research_inputs(run, n)[i]['came_true_guess'] == 'yes']
+        batches.update({f'recheck-{i // RECHECK_BATCH + 1:03d}': {'ids': miss[i:i + RECHECK_BATCH]}
+                        for i in range(0, len(miss), RECHECK_BATCH)})
+        write_atomic(path, json.dumps(batches, indent=0))
     return batches
+
+
+def first_pass_dated(run, name):
+    """The concepts a tier1 batch gave a scoring milestone (a demonstration or a practical use)."""
+    return {r['concept_id'] for r in read_jsonl(rd(run, 'research', 'out', name + '.jsonl'))[0]
+            if r.get('kind') in ('first_demonstration', 'first_practical_use')}
+
+
+def research_inputs(run, name):
+    return {r['concept_id']: r for r in read_jsonl(rd(run, 'research', 'in', name + '.jsonl'))[0]}
 
 
 def research_problems(run, name):
@@ -1182,16 +1201,23 @@ def research_plan(run, limit=None, only=''):
     guessed never to have come true)."""
     stage = 'research'
     tpl = {k: open(os.path.join(PROMPTS, f), encoding='utf-8').read()
-           for k, f in (('tier1', 'milestones_tier1.md'), ('check', 'milestones_check.md'))}
+           for k, f in (('tier1', 'milestones_tier1.md'), ('check', 'milestones_check.md'), ('recheck', 'milestones_recheck.md'))}
     config(run, stage, {'tier1_prompt_sha256': sha(tpl['tier1']), 'check_prompt_sha256': sha(tpl['check']),
-                        'batch': RESEARCH_BATCH, 'check_batch': CHECK_BATCH})
+                        'recheck_prompt_sha256': sha(tpl['recheck']),
+                        'batch': RESEARCH_BATCH, 'check_batch': CHECK_BATCH, 'recheck_batch': RECHECK_BATCH})
     batches = research_batches(run)
     reg = {c['concept_id']: c for c in registry_rows()}
+    first = {}  # recheck: the first researcher's concept note
+    for n in batches:
+        if n.startswith('tier1-') and research_problems(run, n) is None:
+            first.update({r['concept_id']: r['concept_note'] for r in read_jsonl(rd(run, stage, 'out', n + '.jsonl'))[0]
+                          if 'concept_note' in r})
     todo, now = [], time.time()
     for name, b in batches.items():
         inp = rd(run, stage, 'in', name + '.jsonl')
         if not os.path.exists(inp):  # definitions only: the researchers never see claims (PLAN §5)
-            write_atomic(inp, jsonl({k: reg[i].get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases', 'came_true_guess')}
+            write_atomic(inp, jsonl({**{k: reg[i].get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases', 'came_true_guess')},
+                                     **({'first_pass_note': first.get(i, '')} if name.startswith('recheck-') else {})}
                                     for i in b['ids']))
         mark = rd(run, stage, 'prompts', name + '.claimed')
         if not name.startswith(only) or research_problems(run, name) is None or \
@@ -1202,7 +1228,8 @@ def research_plan(run, limit=None, only=''):
     pick = todo[:int(limit)] if limit else todo
     for name in pick:
         kind = name.split('-')[0]
-        path = prompt(run, stage, name, {'tier1': 'milestones_tier1.md', 'check': 'milestones_check.md'}[kind],
+        path = prompt(run, stage, name, {'tier1': 'milestones_tier1.md', 'check': 'milestones_check.md',
+                                         'recheck': 'milestones_recheck.md'}[kind],
                       workdir=ROOT, n=len(batches[name]['ids']), batch_in=rel(rd(run, stage, 'in', name + '.jsonl')),
                       batch_out=rel(rd(run, stage, 'out', name + '.jsonl')), tmpdir=rel(rd(run, 'tmp', stage + '-' + name)))
         write_atomic(rd(run, stage, 'prompts', name + '.claimed'), time.strftime('%Y-%m-%dT%H:%M:%S\n'))
