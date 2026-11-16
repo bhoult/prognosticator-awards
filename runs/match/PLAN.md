@@ -259,6 +259,39 @@ The researchers see concept definitions only, never claims.
 - **Scores:** points, one count per book (by the opaque id) and per author, and the rankings
   of DESIGN §8. Authors are joined from the run directories at this step, never shown to a
   model.
+- **As built (2026-11-16):** `match.py score full`, deterministic, about 2 seconds. It writes
+  `work/match/full/books.jsonl` and `resolutions.jsonl` (out of git), and `runs/match/scoring.md`
+  and `deciding.jsonl`. It refuses to run if a judging output is newer than the judgments or a
+  pair with a positive lead is not judged. Decided here, for your review:
+  - Points come from every judged score above 0, as DESIGN §8's formula and the pilot have it.
+    Points only from 0.5 would drop 3,046 of the 11,811 entries and 15% of the points; 29 of the
+    top 30 authors would stay (the report's sensitivity table).
+  - `not_a_prediction` is a fifth resolution, for a claim whose milestone is in or before its
+    publication year (15,735 claims). DESIGN §8a has no status for it.
+  - A claim realized after its stated deadline is `realized`, and its timing error is recorded.
+    `missed_deadline` needs a matched concept. A decade ends in its last year, a century in its
+    hundredth.
+  - Precision counts tranche-A claims only. Points per book divides by all the author's books
+    in the corpus.
+  - Every name the dating list gives for a book is credited; 56 books have more than one. A few
+    are probably illustrators or writers of introductions (Henri Théophile Hildibrand, Ed
+    Emshwiller, John W. Campbell Jr on *Venus Equilateral*) and need review rows before
+    publishing. Religious texts rank by text, since the library's author there is the
+    translator; so do Anonymous and Various.
+- **First scoring (2026-11-16):**
+  - Of 77,436 tranche-A claims: 16,420 realized (21%), 15,735 not a prediction, 31,486 open with
+    no milestone, 10,692 open with no concept or too vague, 2,558 untestable, 170
+    `missed_deadline`, 91 `contradicted_negative`.
+  - 11,811 book–concept entries score, from 2,473 books and 773 authors. Top authors: E. E. Smith
+    451, H. G. Wells 403, Murray Leinster 389, Jules Verne 364. Top book: *Limanora* (Godfrey
+    Sweven, 1903), 250.
+  - The deciding concepts for tier 2 are 165 (`deciding.jsonl`). Of their milestones, 99 are low
+    confidence, 82 rest on Wikipedia alone and 66 are demonstrations only. The largest is the
+    death ray: 606 points from 190 entries, dated by the 2014 LaWS laser.
+  - Data issues: the dating pass dates two books 2009 and 2012 (H. P. Lovecraft's *Writings in
+    the United Amateur, 1915–1922*; Harry Bates's *Astounding Stories* of January 1930).
+    Translations carry the translation's year (Lucian 1780, the Mahabharata 1896), which
+    understates their lead until DESIGN §1a's dates are built.
 
 ## 9. Tranche B: events and social change
 

@@ -24,6 +24,7 @@
     python -I pipeline/match.py verify <run>                  check every source again -> runs/match/milestones.jsonl
     python -I pipeline/match.py judge-plan <run> [n] [prefix] §6-7: claim up to n judging batches (A, B, then C), print their prompts
     python -I pipeline/match.py judge-collect <run>           -> work/match/<run>/judgments.jsonl + runs/match/judging.md
+    python -I pipeline/match.py score <run>                   §8: resolutions, points, rankings -> runs/match/scoring.md + deciding.jsonl
     python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
     python -I pipeline/match.py status <run>
 
@@ -37,6 +38,7 @@ Inputs: work/match/<run>/claims.jsonl from pipeline/export_claims.py, and the co
 pilot's concepts (pilot/computing/concepts2.jsonl) as the seed of the registry.
 """
 import collections
+import csv
 import hashlib
 import itertools
 import json
@@ -1352,6 +1354,10 @@ def scoring_milestones():
     return best
 
 
+def pair_id(claim, concept, m):
+    return 'p' + sha('|'.join((claim, concept, m['kind'], m['date'])))[:10]
+
+
 def judge_pairs(run):
     """Every claim–concept pair whose concept's scoring milestone is dated after the claim's year (a
     lead of zero or less scores 0 by rule, PLAN §6). The pair id hashes the claim, the concept and
@@ -1365,7 +1371,7 @@ def judge_pairs(run):
             m = best.get(k)
             if m is None or c.get('year') is None or date_key(m['date'])[0] <= c['year']:
                 continue
-            pairs.append({'pair': 'p' + sha('|'.join((r['id'], k, m['kind'], m['date'])))[:10], 'claim': r['id'],
+            pairs.append({'pair': pair_id(r['id'], k, m), 'claim': r['id'],
                           'concept_id': k, 'lead': date_key(m['date'])[0] - c['year'], 'type': reg[k].get('type'),
                           'pub_year': c['year'], 'quote': c['quote'], 'claim_description': c['description'],
                           'polarity': c['polarity'], 'concept_name': reg[k]['name'],
@@ -1506,6 +1512,337 @@ def judge_collect(run):
     print(f'{len(rows)} judgments -> work/match/{run}/judgments.jsonl; agreement in runs/match/judging.md')
 
 
+# ---- scoring (PLAN §8, DESIGN §8) ----
+
+SCORE_YEAR, GRACE = 2026, 10  # deadlines are checked against a fixed year, so a re-run gives the same result
+WEIGHT, CAP = 'log', 500  # DESIGN §8: w = log2(1 + min(L, 500)); 'linear' is the comparison switch
+REALIZED_MIN = 0.125  # a `will` pair with a positive lead is realized and earns points from here: every s > 0 (DESIGN §8)
+STRICT_MIN = 0.5  # precision counts the claims realized at this score or more (DESIGN §8); the report also ranks at it
+NEGATIVE_MIN = 0.5  # a `will_not` pair from this score resolves as contradicted_negative (PLAN §6)
+PRECISION_CLAIMS, PPB_BOOKS = 50, 3  # the precision ranking needs this many claims, points per book this many books
+ERAS = (('pre-1900', -10 ** 6, 1899), ('1900–1945', 1900, 1945), ('1946–1979', 1946, 1979), ('1980+', 1980, 10 ** 6))
+NO_AUTHOR = {'Anonymous', 'Various', 'Milton S. Terry'}  # ranked by text only (DESIGN §1a); Terry translated the Sibylline Oracles
+TEXT_ONLY = {'Religion'}  # corpus groups whose library author is the translator
+UNITS = ('first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth thirteenth fourteenth '
+         'fifteenth sixteenth seventeenth eighteenth nineteenth').split()
+TENS = 'twenty thirty forty fifty sixty seventy eighty ninety'.split()
+ORDINAL = {**{w: i + 1 for i, w in enumerate(UNITS)}, **{t[:-1] + 'ieth': 20 + 10 * i for i, t in enumerate(TENS)}}
+CENTURY = re.compile(rf"\b(?:(\d{{1,2}})(?:st|nd|rd|th)|(?:({'|'.join(TENS)})[\s-])?({'|'.join(ORDINAL)}))\s+century\b", re.I)
+YEAR = re.compile(r"(?<![\d,.])(\d{4})('?s\b)?(?![\d,]|\s*-?\s*(?:years?|yrs?|hours?|miles?)\b|\s*B\.?\s*C)", re.I)
+
+
+def deadline(stated, pub):
+    """The latest calendar year a stated time names, if it is after `pub` (PLAN §8): a year ("by 1975",
+    "A.D. 2000"), or a decade's or century's last year ("the 1970s" end in 1979, "the twentieth century" in
+    2000). Relative and story times ("two years", "the next century") name none."""
+    if not stated or pub is None:
+        return None
+    ys = [int(y) + (9 if s else 0) for y, s in YEAR.findall(stated)]
+    for d, t, o in CENTURY.findall(stated):
+        ys.append(100 * (int(d) if d else ORDINAL[o.lower()] + (20 + 10 * TENS.index(t.lower()) if t else 0)))
+    ys = [y for y in ys if y > pub]
+    return max(ys) if ys else None
+
+
+def weight(lead):
+    return 0 if lead <= 0 else math.log2(1 + min(lead, CAP)) if WEIGHT == 'log' else min(lead, CAP)
+
+
+def book_index(run, cl):
+    """Opaque book id -> library path, corpus group, authors, title and year. The ids are the first 12 hex
+    digits of the sha256 of the library path (export_claims.py), joined back from the extraction run
+    directories; authors and titles come from the dating list, else the path. They join only here, at
+    scoring, and never reach a model (PLAN §8)."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from export_claims import DATES, RUNS
+    listed = {r['path']: r for r in csv.DictReader(open(DATES, encoding='utf-8'), delimiter='\t')}
+    years = {c['book']: c['year'] for c in cl}
+    books = {}
+    for r in RUNS:
+        d = os.path.join(ROOT, 'work', 'extract', r, 'verified')
+        for f in sorted(os.listdir(d)):
+            path = json.load(open(os.path.join(d, f), encoding='utf-8'))['book']
+            b = sha(path)[:12]
+            if b in books:
+                continue
+            group, folder, base = path.split('/')
+            names = listed[path]['author'].split(';') if path in listed else [folder]
+            prefix = f'{group}-{folder}-'
+            title = base[:-3].split('-', 1)[1]
+            title = listed[path]['title'] if path in listed else title[len(prefix):] if title.startswith(prefix) else title
+            books[b] = {'book': b, 'path': path, 'group': group, 'title': title, 'year': years.get(b),
+                        'authors': [] if group in TEXT_ONLY else [a.strip() for a in names if a.strip() and a.strip() not in NO_AUTHOR]}
+    return books
+
+
+def rankings(pairs, books, floor):
+    """Book-concept entries (a book's best claim on each concept), book totals and author totals (DESIGN §8),
+    from the realized pairs scoring `floor` or more. Ties go to the lower claim id, as in the pilot."""
+    entry = {}
+    for p in pairs:
+        if p['score'] >= floor:
+            e, key = {**p, 'points': round(p['score'] * weight(p['lead']), 4)}, (p['book'], p['concept_id'])
+            if key not in entry or (-e['points'], e['claim']) < (-entry[key]['points'], entry[key]['claim']):
+                entry[key] = e
+    entries = sorted(entry.values(), key=lambda e: (-e['points'], e['claim']))
+    book, author, best = collections.Counter(), collections.Counter(), {}
+    for e in entries:
+        book[e['book']] += e['points']
+        for a in books[e['book']]['authors']:
+            if (a, e['concept_id']) not in best:  # entries come best first, so the first is the author's best book
+                best[a, e['concept_id']] = e
+                author[a] += e['points']
+    top = lambda c: sorted(c.items(), key=lambda t: (-t[1], t[0]))
+    return entries, top(book), top(author), best
+
+
+def score(run):
+    """Resolutions, points and rankings of every tranche-A claim (PLAN §8; DESIGN §8, §8a), from the
+    judgments and the scoring milestones. Writes work/match/<run>/books.jsonl and resolutions.jsonl (large,
+    out of git), runs/match/deciding.jsonl (PLAN §5's tier-2 concepts) and runs/match/scoring.md.
+
+    A claim takes the first of these that fits:
+    - realized: a `will` pair with a positive lead scoring REALIZED_MIN or more; it earns points;
+    - failed, contradicted_negative: a `will_not` pair with a positive lead scoring NEGATIVE_MIN or more;
+    - not_a_prediction: a pair whose milestone is in or before the publication year (0 by rule, PLAN §6;
+      DESIGN §8a has no status for it);
+    - failed, missed_deadline: a `will` claim with a concept whose stated time names a year or century that
+      ended more than GRACE years before SCORE_YEAR;
+    - untestable: the matcher's code;
+    - open: the rest, with why (the matcher's no_concept or too_vague, no_milestone, no_year, not_matched)."""
+    jpath = rd(run, 'judgments.jsonl')
+    out = rd(run, 'judge', 'out')
+    if max(os.path.getmtime(os.path.join(out, f)) for f in os.listdir(out)) > os.path.getmtime(jpath):
+        sys.exit('a judging output is newer than judgments.jsonl: run judge-collect first')
+    judged = {r['pair']: r for r in read_jsonl(jpath)[0]}
+    cl = claims(run)
+    books, best = book_index(run, cl), scoring_milestones()
+    reg = {c['concept_id']: c for c in final_registry(run)}
+    matches = {r['id']: r for r in read_jsonl(rd(run, 'matches.jsonl'))[0]}
+    pairs, rows, stale, strict = [], [], [], collections.Counter()
+    claims_of = collections.Counter()
+    dl_stats = collections.Counter()
+    for c in cl:
+        if c['tranche'] != 'A':
+            continue
+        mt, will, ps = matches[c['id']], c['polarity'] == 'will', []
+        claims_of[c['book']] += 1
+        for k in mt['concepts']:
+            m = best.get(k)
+            if m is None or c['year'] is None:
+                ps.append({'concept_id': k, 'why': 'no_milestone' if m is None else 'no_year'})
+                continue
+            p = {'claim': c['id'], 'book': c['book'], 'concept_id': k, 'kind': m['kind'], 'date': m['date'],
+                 'lead': date_key(m['date'])[0] - c['year']}
+            if p['lead'] > 0:
+                j = judged.get(pair_id(c['id'], k, m))
+                if j is None:
+                    stale.append(c['id'])
+                    continue
+                p['score'] = j['score']
+                if will:
+                    pairs.append(p)
+            ps.append(p)
+        hit = [p for p in ps if p.get('lead', 0) > 0 and p['score'] >= (REALIZED_MIN if will else NEGATIVE_MIN)]
+        dl = deadline(c['stated_time'], c['year']) if will and mt['concepts'] else None
+        pick = None
+        if hit:
+            pick = min(hit, key=lambda p: (-p['score'] * weight(p['lead']), p['concept_id']))
+            res, why = ('realized', None) if will else ('failed', 'contradicted_negative')
+            strict[c['book']] += will and max(p['score'] for p in hit) >= STRICT_MIN
+        elif any(p.get('lead', 1) <= 0 for p in ps):
+            pick = min((p for p in ps if p.get('lead', 1) <= 0), key=lambda p: p['concept_id'])
+            res, why = 'not_a_prediction', None
+        elif dl is not None and dl + GRACE < SCORE_YEAR:
+            res, why = 'failed', 'missed_deadline'
+        elif mt['code'] == 'untestable':
+            res, why = 'untestable', None
+        else:
+            res = 'open'
+            why = mt['code'] or ('no_year' if c['year'] is None and ps else
+                                 'not_matched' if any('score' in p for p in ps) else 'no_milestone')
+        if dl is not None:
+            dl_stats['named'] += 1
+            if dl + GRACE < SCORE_YEAR:
+                dl_stats['passed'] += 1
+                dl_stats[res if res != 'failed' else why] += 1
+        row = {'id': c['id'], 'book': c['book'], 'year': c['year'], 'polarity': c['polarity'], 'resolution': res,
+               'why': why, 'deadline': dl}
+        if pick:
+            row.update({'concept_id': pick['concept_id'], 'milestone_kind': pick['kind'], 'milestone_date': pick['date'],
+                        'lead': pick['lead'], 'score': pick.get('score'),
+                        'points': round(pick['score'] * weight(pick['lead']), 4) if res == 'realized' else 0,
+                        'demonstration_only': pick['kind'] == 'first_demonstration',
+                        'timing_error': date_key(pick['date'])[0] - dl if dl is not None and res == 'realized' else None})
+        rows.append(row)
+    if stale:
+        sys.exit(f'{len(stale)} pairs are not judged (milestones or matches changed since judging), e.g. {stale[0]}')
+    write_atomic(rd(run, 'books.jsonl'), jsonl(books[b] for b in sorted(books)))
+    write_atomic(rd(run, 'resolutions.jsonl'), jsonl(rows))  # large: kept out of git, as the judgments (PLAN §11)
+
+    entries, book_rank, author_rank, author_best = rankings(pairs, books, REALIZED_MIN)
+    quote = {c['id']: c['quote'] for c in cl if c['tranche'] == 'A'}
+    nbooks, nclaims, nstrict = collections.Counter(), collections.Counter(), collections.Counter()
+    for b, info in books.items():
+        for a in info['authors']:
+            nbooks[a] += 1
+            nclaims[a] += claims_of[b]
+            nstrict[a] += strict[b]
+    era = lambda y: next((n for n, lo, hi in ERAS if y is not None and lo <= y <= hi), None)
+
+    # PLAN §5: the deciding concepts, whose milestone carries a top entry, for tier 2
+    why_k = collections.defaultdict(set)
+    for e in entries[:300]:
+        why_k[e['concept_id']].add('top-300 prediction')
+    best_of_book = {}
+    for e in entries:
+        best_of_book.setdefault(e['book'], e)
+    for b, _ in book_rank[:100]:
+        why_k[best_of_book[b]['concept_id']].add('best entry of a top-100 book')
+    for a, _ in author_rank[:100]:
+        k = min((e for (aa, _), e in author_best.items() if aa == a), key=lambda e: (-e['points'], e['claim']))['concept_id']
+        why_k[k].add('best entry of a top-100 author')
+    for name, _, _ in ERAS:
+        for e in [e for e in entries if era(books[e['book']]['year']) == name][:50]:
+            why_k[e['concept_id']].add(f'top-50 entry, {name}')
+    long_lead = collections.Counter(k for k, _ in {(p['concept_id'], p['claim']) for p in pairs
+                                                   if p['score'] >= REALIZED_MIN and p['lead'] > 40})
+    for k, n in long_lead.items():
+        if n >= 20:
+            why_k[k].add('lead over 40 years for 20+ claims')
+    per_k = collections.defaultdict(list)
+    for e in entries:
+        per_k[e['concept_id']].append(e)
+    deciding = []
+    for k in why_k:
+        m, es = best[k], per_k[k]
+        top_e = es[0]
+        deciding.append({'concept_id': k, 'name': reg[k]['name'], 'reasons': sorted(why_k[k]),
+                         'points': round(sum(e['points'] for e in es), 2), 'entries': len(es),
+                         'claims_lead_over_40': long_lead[k], 'milestone_kind': m['kind'], 'milestone_date': m['date'],
+                         'milestone': m.get('what', ''), 'confidence': m['confidence'], 'tier': m.get('tier'),
+                         'contemporary': any(s['kind'] == 'contemporary' for s in m['sources']),
+                         'wikipedia_only': all('wikipedia.org' in s['url'] for s in m['sources']),
+                         'best_entry': {'book': top_e['book'], 'title': books[top_e['book']]['title'],
+                                        'authors': books[top_e['book']]['authors'], 'year': books[top_e['book']]['year'],
+                                        'points': top_e['points'], 'score': top_e['score'], 'lead': top_e['lead']}})
+    deciding.sort(key=lambda d: (-d['points'], d['concept_id']))
+    write_atomic(os.path.join(OUT, 'deciding.jsonl'), jsonl(deciding))
+
+    # the report
+    def cell(s, n=None):
+        s = ' '.join(str(s).split()).replace('|', '\\|')
+        return s if n is None or len(s) <= n else s[:n - 1].rstrip() + '…'
+
+    def who(b):
+        return '; '.join(books[b]['authors']) or '(text)'
+
+    def bk(b):
+        return f"*{cell(books[b]['title'], 60)}* ({books[b]['year']})"
+
+    def entry_row(i, e):
+        flag = ' †' if e['kind'] == 'first_demonstration' else ''
+        return (f"| {i} | {e['points']:.2f} | {e['score']:g} | {e['lead']} | {cell(who(e['book']), 30)} | {bk(e['book'])} | "
+                f"{cell(reg[e['concept_id']]['name'], 40)}{flag} | {e['date']} | {cell(quote[e['claim']], 110)} |")
+    entry_head = ['| # | points | score | lead | author | book | concept | milestone | quote |', '|---|---|---|---|---|---|---|---|---|']
+    res_n = collections.Counter((r['resolution'], r['why']) for r in rows)
+    out = ['# First scoring, tranche A (PLAN §8)', '',
+           f'Written by `match.py score {run}`. Settings: weight {WEIGHT} (w = log2(1 + min(L, {CAP}))), the '
+           f'scoring milestone `first_practical_use` else `first_demonstration`, points from score {REALIZED_MIN:g} '
+           f'(every judged score above 0), precision from {STRICT_MIN:g}, `contradicted_negative` from {NEGATIVE_MIN:g}, '
+           f'deadlines checked against {SCORE_YEAR} with {GRACE} years of grace. This is the first scoring: tier 2 '
+           f'(PLAN §5) can still move the deciding milestones, and tranche B is not scored. † = scored on a '
+           f'demonstration only (PLAN §14.5).', '',
+           '## Resolutions', '', f'{len(rows):,} tranche-A claims from {len(claims_of):,} books.', '',
+           '| resolution | claims | share |', '|---|---|---|']
+    for (res, why), n in sorted(res_n.items(), key=lambda t: (-t[1], t[0][0], t[0][1] or '')):
+        out.append(f"| {res}{': ' + why if why else ''} | {n:,} | {n / len(rows):.1%} |")
+    timing = [r['timing_error'] for r in rows if r.get('timing_error') is not None]
+    late = sorted(t for t in timing if t > 0)
+    out += ['', f"Deadlines: {dl_stats['named']:,} `will` claims with a concept have a stated time naming a year, "
+                f"decade or century after publication; {dl_stats['passed']:,} of those ended before {SCORE_YEAR - GRACE}. Of "
+                f"these, {dl_stats['realized']:,} are realized anyway, {dl_stats['missed_deadline']:,} missed the deadline, and "
+                f"{dl_stats['not_a_prediction']:,} are not a prediction. Of the {len(timing):,} realized claims with a "
+                f"deadline, {len(timing) - len(late):,} came true by it and {len(late):,} after it"
+                + (f" (median {late[len(late) // 2]} years late)." if late else '.'),
+            '', '## The top 50 predictions', '',
+            f'{len(entries):,} book–concept entries earn points (each book counts its best claim once per concept).', '']
+    out += entry_head + [entry_row(i, e) for i, e in enumerate(entries[:50], 1)]
+    out += ['', '## Authors: total points', '',
+            f'Each author counts a concept once, from their best book. {len(author_rank):,} authors score.', '',
+            '| # | author | points | concepts | books | points per book | precision |', '|---|---|---|---|---|---|---|']
+    ncon = collections.Counter(a for a, _ in author_best)
+    for i, (a, pts) in enumerate(author_rank[:30], 1):
+        out.append(f'| {i} | {cell(a)} | {pts:.1f} | {ncon[a]} | {nbooks[a]} | {pts / nbooks[a]:.1f} | '
+                   f'{nstrict[a] / nclaims[a]:.0%} of {nclaims[a]} |')
+    out += ['', '## Books: total points', '', '| # | book | author | group | points | concepts |', '|---|---|---|---|---|---|']
+    nent = collections.Counter(e['book'] for e in entries)
+    for i, (b, pts) in enumerate(book_rank[:30], 1):
+        out.append(f"| {i} | {bk(b)} | {cell(who(b), 40)} | {books[b]['group']} | {pts:.1f} | {nent[b]} |")
+    prec = sorted(((nstrict[a] / nclaims[a], a) for a in nclaims if nclaims[a] >= PRECISION_CLAIMS), key=lambda t: (-t[0], t[1]))
+    out += ['', '## Precision', '',
+            f'Claims realized at a score of {STRICT_MIN:g} or more, of all tranche-A claims by the author; authors with '
+            f'{PRECISION_CLAIMS} or more ({len(prec)}).', '', '| # | author | precision | claims | points |', '|---|---|---|---|---|']
+    pts_a = dict(author_rank)
+    for i, (v, a) in enumerate(prec[:20], 1):
+        out.append(f'| {i} | {cell(a)} | {v:.0%} | {nclaims[a]} | {pts_a.get(a, 0):.1f} |')
+    ppb = sorted(((pts / nbooks[a], a) for a, pts in author_rank if nbooks[a] >= PPB_BOOKS), key=lambda t: (-t[0], t[1]))
+    out += ['', '## Points per book', '', f'Authors with {PPB_BOOKS} or more books in the corpus ({len(ppb)}); every '
+            f'book counts, including those with no tranche-A points.', '', '| # | author | points per book | books | points |',
+            '|---|---|---|---|---|']
+    for i, (v, a) in enumerate(ppb[:20], 1):
+        out.append(f'| {i} | {cell(a)} | {v:.1f} | {nbooks[a]} | {pts_a[a]:.1f} |')
+    out += ['', '## By era', '', 'The best books of each era, by publication year.', '']
+    for name, _, _ in ERAS:
+        rk = [(b, p) for b, p in book_rank if era(books[b]['year']) == name]
+        out += [f'**{name}** ({len(rk)} books score)', '', '| # | book | author | points |', '|---|---|---|---|']
+        out += [f'| {i} | {bk(b)} | {cell(who(b), 40)} | {p:.1f} |' for i, (b, p) in enumerate(rk[:10], 1)] + ['']
+    out += ['## Other corpus groups', '', 'The non-fiction, classics, prophecy and religious texts. Their years are '
+            'the library\'s, which for translations is the translation\'s year (lead is then understated); the '
+            'curated composition dates and the second-translation re-judging of DESIGN §1a are not built. Religious '
+            'texts rank by text, not by translator.', '', '| group | book | author | points | rank |', '|---|---|---|---|---|']
+    pos = {b: i for i, (b, _) in enumerate(book_rank, 1)}
+    for g in sorted({v['group'] for v in books.values()} - {'Science-Fiction'}):
+        for b, p in [(b, p) for b, p in book_rank if books[b]['group'] == g][:3]:
+            out.append(f'| {g} | {bk(b)} | {cell(who(b), 40)} | {p:.1f} | {pos[b]} |')
+
+    s_entries, s_books, s_authors, _ = rankings(pairs, books, STRICT_MIN)
+    gone = [p for p in pairs if REALIZED_MIN <= p['score'] < STRICT_MIN]
+    lost = sum(e['points'] for e in entries) - sum(e['points'] for e in s_entries)
+    out += ['', f'## Sensitivity: points only from a score of {STRICT_MIN:g}', '',
+            f'{len(gone):,} of {len(pairs):,} judged `will` pairs score below {STRICT_MIN:g}; without them '
+            f'{len(entries) - len(s_entries):,} entries and {lost:,.0f} of {sum(e["points"] for e in entries):,.0f} '
+            f'points go. Of the top 30 authors, {len({a for a, _ in author_rank[:30]} & {a for a, _ in s_authors[:30]})} '
+            f'stay in the top 30; of the top 30 books, {len({b for b, _ in book_rank[:30]} & {b for b, _ in s_books[:30]})}.',
+            '', '| # | author (default) | points | author (from 0.5) | points |', '|---|---|---|---|---|']
+    for i, ((a1, p1), (a2, p2)) in enumerate(zip(author_rank[:20], s_authors[:20]), 1):
+        out.append(f'| {i} | {cell(a1)} | {p1:.1f} | {cell(a2)} | {p2:.1f} |')
+
+    crit = collections.Counter(r for d in deciding for r in d['reasons'])
+    out += ['', '## Tier 2: the deciding concepts (PLAN §5)', '',
+            f'{len(deciding)} concepts carry a top entry; `runs/match/deciding.jsonl` lists them all with their '
+            f'scoring milestone. By criterion (a concept can meet several):', '']
+    out += [f'- {r}: {n}' for r, n in sorted(crit.items())]
+    conf = collections.Counter(d['confidence'] for d in deciding)
+    out += ['', f"Their milestones: confidence {', '.join(f'{k} {v}' for k, v in sorted(conf.items()))}; "
+                f"{sum(d['contemporary'] for d in deciding)} have a contemporary source, "
+                f"{sum(d['wikipedia_only'] for d in deciding)} rest on Wikipedia alone, "
+                f"{sum(d['milestone_kind'] == 'first_demonstration' for d in deciding)} are demonstrations only.", '',
+            'The 40 that carry the most points:', '',
+            '| concept | points | entries | lead > 40 | milestone | confidence | sources | best entry |', '|---|---|---|---|---|---|---|---|']
+    for d in deciding[:40]:
+        src = 'Wikipedia only' if d['wikipedia_only'] else 'contemporary' if d['contemporary'] else 'reference'
+        be = d['best_entry']
+        out.append(f"| {cell(d['name'], 40)} | {d['points']:.1f} | {d['entries']} | {d['claims_lead_over_40']} | "
+                   f"{d['milestone_date']}{' †' if d['milestone_kind'] == 'first_demonstration' else ''}: "
+                   f"{cell(d['milestone'], 70)} | {d['confidence']} | {src} | {cell('; '.join(be['authors']) or '(text)', 25)}, "
+                   f"*{cell(be['title'], 35)}* ({be['year']}) |")
+    write_atomic(os.path.join(OUT, 'scoring.md'), '\n'.join(out) + '\n')
+    print(f'{len(rows):,} claims: ' + ', '.join(f"{res}{'/' + why if why else ''} {n:,}" for (res, why), n in res_n.most_common()))
+    print(f'{len(entries):,} entries, {len(book_rank):,} books and {len(author_rank):,} authors score; '
+          f'{len(deciding)} deciding concepts -> runs/match/scoring.md, deciding.jsonl')
+
+
 def log(run, agent, stage, tokens, tools, seconds, *note):
     path = os.path.join(OUT, 'usage.tsv')
     if not os.path.exists(path):
@@ -1538,5 +1875,5 @@ if __name__ == '__main__':
      'gap-ingest': lambda run: concepts_ingest(run, 'gap'), 'gapcons-plan': gapcons_plan, 'gapglobal-plan': gapglobal_plan,
      'gap-build': gap_build,
      'gapmatch-plan': gapmatch_plan, 'gap-review': gap_review, 'agree-plan': agree_plan, 'agree-report': agree_report,
-     'research-plan': research_plan, 'verify': verify, 'judge-plan': judge_plan, 'judge-collect': judge_collect,
+     'research-plan': research_plan, 'verify': verify, 'judge-plan': judge_plan, 'judge-collect': judge_collect, 'score': score,
      'log': log, 'status': status}[cmd](*args)
