@@ -23,7 +23,7 @@
     python -I pipeline/match.py research-plan <run> [n] [prefix]  §5 tier 1: claim up to n research batches, print their prompts
     python -I pipeline/match.py verify <run>                  check every source again -> runs/match/milestones.jsonl
     python -I pipeline/match.py judge-plan <run> [n] [prefix] §6-7: claim up to n judging batches (A, B, then C), print their prompts
-    python -I pipeline/match.py judge-collect <run>           -> runs/match/judgments.jsonl + judging.md
+    python -I pipeline/match.py judge-collect <run>           -> work/match/<run>/judgments.jsonl + runs/match/judging.md
     python -I pipeline/match.py log <run> <agent> <stage> <tokens> <tool_uses> <seconds> [note]
     python -I pipeline/match.py status <run>
 
@@ -1464,7 +1464,7 @@ def judge_plan(run, limit=None, only=''):
 
 
 def judge_collect(run):
-    """runs/match/judgments.jsonl and runs/match/judging.md (PLAN §7): a `will` pair scores the mean
+    """work/match/<run>/judgments.jsonl and runs/match/judging.md (PLAN §7): a `will` pair scores the mean
     of judges A and B, or the median of A, B and C where A and B are two or more steps apart; a
     `will_not` pair scores judge A's. The report gives how far A and B agree: overall, by concept
     type, and on a random 300."""
@@ -1486,7 +1486,7 @@ def judge_collect(run):
         rows.append({**{f: p[f] for f in ('pair', 'claim', 'concept_id', 'polarity', 'milestone_kind', 'milestone_date', 'lead')},
                      'a': sa, 'b': sb, 'c': c[k]['score'] if k in c else None, 'score': score,
                      'rationale_a': a[k]['rationale'], 'rationale_b': b[k]['rationale'] if k in b else None})
-    write_atomic(os.path.join(OUT, 'judgments.jsonl'), jsonl(rows))
+    write_atomic(rd(run, 'judgments.jsonl'), jsonl(rows))  # large: kept out of git, published as a release asset (PLAN §11)
     types = {p['pair']: p.get('type') or '?' for p in read_jsonl(rd(run, 'judge', 'pairs.jsonl'))[0]}
 
     def agree(rs):
@@ -1503,7 +1503,7 @@ def judge_collect(run):
     for t in sorted({types[r["pair"]] for r in pairs2}):
         out.append(f'| type {t} | {agree([r for r in pairs2 if types[r["pair"]] == t])} |')
     write_atomic(os.path.join(OUT, 'judging.md'), '\n'.join(out) + '\n')
-    print(f'{len(rows)} judgments -> runs/match/judgments.jsonl; agreement in runs/match/judging.md')
+    print(f'{len(rows)} judgments -> work/match/{run}/judgments.jsonl; agreement in runs/match/judging.md')
 
 
 def log(run, agent, stage, tokens, tools, seconds, *note):

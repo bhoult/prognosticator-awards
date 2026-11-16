@@ -230,6 +230,19 @@ The researchers see concept definitions only, never claims.
   (both 0.5 from each judge), so agreement waits for the full run. Estimate for the rest: 171
   A/B batches at about 130K tokens, plus 10–20 C batches: 23–25M tokens, about 14–16 points of
   the week (13% used after the test).
+- **Full run done (2026-11-15):** 174 agents (87 A, 86 B, 1 C), 22.2M tokens, 35% to 47% of
+  the week; every batch passed the code checks the first time, none redone. 17,201 judgments in
+  `work/match/full/judgments.jsonl` (9.9 MB, out of git as §11 says; `judge-collect` now writes
+  it there) and `runs/match/judging.md`. The judges agree closely: on the 17,065 pairs both
+  scored, 70% the same, 30% one step apart and 0.6% (96) two or more, which one C batch decided
+  (C landed between A and B on 52, with A on 23, with B on 20). A random 300: 67%, 32%, 1%.
+  Mean score 0.494 (A and B 0.494 and 0.496 on the shared pairs); 208 pairs at 0.875 or more.
+  Judges differ in leniency at the 0.5/0.75 boundary (from 22 to 81 of 200 batch pairs at 0.75
+  or more; A-068 the most lenient, e.g. 0.75 for a tube and mouthpiece as "painless death on
+  demand"), and averaging absorbs it because the gaps are one step. 92 of the 136 `will_not`
+  pairs score 0.5 or more: the `contradicted_negative` candidates (§6). Most judges appended
+  chunks with `cat >>` or joined per-chunk part files instead of rewriting with Write; all read
+  the input in four 50-line Reads.
 
 ## 8. Resolutions and scores (deterministic)
 
