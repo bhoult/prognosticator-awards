@@ -180,6 +180,23 @@ The researchers see concept definitions only, never claims.
 
   Each gets contemporary-source research, and its scoring milestone gets the
   earliest-event check. Pairs whose milestone changes are judged again by both judges.
+- **Tier 2 as built (2026-11-16):** `prompts/milestones_tier2.md` (the pilot's
+  earliest-event check with tier 1's tools and source rules, plus Wikipedia's own citations
+  through `action=raw` as the route to contemporary sources, a search for the practical use of
+  demonstration-only technologies, and a fallback when WebSearch is used up). The 165
+  concepts of `deciding.jsonl` are 33 `tier2-NNN` batches of 5, most points first, in
+  `research/batches.json`; each input holds the definition, the current demonstration and
+  practical use with their sources, and the earlier notes (no claims, leads or points).
+  Every given milestone gets `confirmed`, `replaced` or `removed`, and a missing kind can be
+  `added`; `mass_adoption` is left alone. `verify` applies them over tier 1: a verified answer
+  replaces the milestone (`tier` 2, `previous_date`, `checked`), `removed` drops it, and an
+  answer with no verified source leaves the earlier one, marked. It then writes the
+  checkpoint-3 table, `runs/match/deciding_milestones.md`, with the pairs whose id changes.
+  Test batch tier2-001 (181K tokens, 59 tool calls, 9 minutes; WebSearch worked): 5 confirmed,
+  4 replaced, all 21 quotes verified; death ray's practical use 2014 → 2003 (Zeus-HLONS
+  against mines and unexploded munitions, flagged as a judgment call), closed-loop life support
+  2014 → 1972 (BIOS-3), spacecraft radio 1958 → 1957 (Sputnik 2), spacesuit practical use
+  1965 → 1969 (Soyuz 4/5 transfer; umbilical-fed Gemini suits rejected on "own air supply").
 - **Checkpoint 3 (a stop):** you get the table of deciding milestones (old date, new date,
   event, sources, confidence, fit), as in report3 §3.1. Your decisions go in
   `review.jsonl`, and the scripts apply them.

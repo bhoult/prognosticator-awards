@@ -20,8 +20,9 @@
     python -I pipeline/match.py gap-review <run>              -> runs/match/gap_review.md (a stop before research)
     python -I pipeline/match.py agree-plan <run>              §4: a second agent re-matches 300 random claims
     python -I pipeline/match.py agree-report <run>            -> runs/match/agreement.md
-    python -I pipeline/match.py research-plan <run> [n] [prefix]  §5 tier 1: claim up to n research batches, print their prompts
+    python -I pipeline/match.py research-plan <run> [n] [prefix]  §5 tiers 1 and 2: claim up to n research batches, print their prompts
     python -I pipeline/match.py verify <run>                  check every source again -> runs/match/milestones.jsonl
+    python -I pipeline/match.py deciding-report <run>         tier 2's checkpoint-3 table -> runs/match/deciding_milestones.md
     python -I pipeline/match.py judge-plan <run> [n] [prefix] §6-7: claim up to n judging batches (A, B, then C), print their prompts
     python -I pipeline/match.py judge-collect <run>           -> work/match/<run>/judgments.jsonl + runs/match/judging.md
     python -I pipeline/match.py score <run>                   §8: resolutions, points, rankings -> runs/match/scoring.md + deciding.jsonl
@@ -108,14 +109,14 @@ def seed_registry():
 
 
 def config(run, stage, settings):
-    """Record a stage's settings; refuse to continue under different ones."""
+    """Record a stage's settings; refuse to continue if one of them changed (a new one is added)."""
     path = rd(run, stage, 'config.json')
-    if os.path.exists(path):
-        old = json.load(open(path, encoding='utf-8'))
-        if old != settings:
-            sys.exit(f'{rel(path)} has other settings: {old} (now {settings})')
-    else:
-        write_atomic(path, json.dumps(settings, indent=1) + '\n')
+    old = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
+    changed = {k: (old[k], v) for k, v in settings.items() if k in old and old[k] != v}
+    if changed:
+        sys.exit(f'{rel(path)} has other settings (was, now): {changed}')
+    if settings.keys() - old.keys():
+        write_atomic(path, json.dumps({**old, **settings}, indent=1) + '\n')
 
 
 def prompt(run, stage, name, template, **fields):
@@ -1090,7 +1091,9 @@ def agree_report(run):
 
 # ---- §5: milestones, tier 1 ----
 
-RESEARCH_BATCH, CHECK_BATCH, RECHECK_BATCH = 15, 40, 5
+RESEARCH_BATCH, CHECK_BATCH, RECHECK_BATCH, TIER2_BATCH = 15, 40, 5, 5
+TIER2_KINDS = ('first_demonstration', 'first_practical_use')  # tier 2 checks the kinds that score
+VERDICTS = ('confirmed', 'replaced', 'removed', 'added')
 KINDS = ('first_demonstration', 'first_practical_use', 'mass_adoption')
 PILOT_MILESTONES = os.path.join(ROOT, 'pilot', 'computing', 'milestones3.jsonl')
 DATE = re.compile(r'^(-\d{4,}|\d{4})(-\d{2}(-\d{2})?)?$')  # a leading '-' for a year BC (-0602, -62000)
@@ -1119,7 +1122,9 @@ def research_batches(run):
     researcher's concepts are related. When every check is done, the concepts a check found a real
     event for are added as more tier1 batches; when every tier1 batch is done, the concepts guessed
     "yes" that it gave no demonstration or practical use go to `recheck-NNN` batches of RECHECK_BATCH,
-    a second look with the first researcher's note."""
+    a second look with the first researcher's note. Once the first scoring has written
+    runs/match/deciding.jsonl, its concepts go to `tier2-NNN` batches of TIER2_BATCH, most points
+    first (PLAN §5 tier 2)."""
     path = rd(run, 'research', 'batches.json')
     if os.path.exists(path):
         batches = json.load(open(path, encoding='utf-8'))
@@ -1146,6 +1151,12 @@ def research_batches(run):
                 if i not in first_pass_dated(run, n) and research_inputs(run, n)[i]['came_true_guess'] == 'yes']
         batches.update({f'recheck-{i // RECHECK_BATCH + 1:03d}': {'ids': miss[i:i + RECHECK_BATCH]}
                         for i in range(0, len(miss), RECHECK_BATCH)})
+        write_atomic(path, json.dumps(batches, indent=0))
+    deciding = os.path.join(OUT, 'deciding.jsonl')
+    if not any(n.startswith('tier2-') for n in batches) and os.path.exists(deciding):
+        ids = [r['concept_id'] for r in read_jsonl(deciding)[0]]
+        batches.update({f'tier2-{i // TIER2_BATCH + 1:03d}': {'ids': ids[i:i + TIER2_BATCH]}
+                        for i in range(0, len(ids), TIER2_BATCH)})
         write_atomic(path, json.dumps(batches, indent=0))
     return batches
 
@@ -1182,35 +1193,76 @@ def research_problems(run, name):
     notes = [r['concept_id'] for r in rows if 'concept_note' in r]
     if sorted(notes) != sorted(ids):
         bad.append(f'concept notes for {len(notes)} of {len(ids)} concepts, or other ids')
+    if not name.startswith('tier2-'):
+        for r in rows:
+            if 'kind' in r:
+                bad += milestone_problems(r, ids)
+        return bad or None
+    # tier 2: one verdict for each milestone it was given, `added` only for a kind it wasn't
+    given = {(c, m['kind']): m for c, r in research_inputs(run, name).items() for m in r['milestones']}
+    got = collections.Counter((r.get('concept_id'), r.get('kind')) for r in rows if 'checked' in r)
+    bad += [f'{c} {k}: no verdict' for c, k in given if not got[(c, k)]]
+    bad += [f'{c} {k}: {n} rows' for (c, k), n in got.items() if n > 1]
     for r in rows:
-        if 'kind' not in r:
+        if 'checked' not in r:
             continue
-        where = f"{r.get('concept_id')} {r.get('kind')}"
-        if r.get('concept_id') not in ids or r['kind'] not in KINDS or not DATE.match(str(r.get('date', ''))):
-            bad.append(f'{where}: id, kind or date {r.get("date")!r}')
-        srcs = r.get('sources')
-        if not isinstance(srcs, list) or not 1 <= len(srcs) <= 3 or not str(r.get('fit', '')).strip():
-            bad.append(f'{where}: sources or fit')
-            continue
-        for s in srcs:
-            if not isinstance(s, dict) or not s.get('url') or not s.get('quote') or len(str(s['quote']).split()) > 25 \
-                    or s.get('kind') not in ('contemporary', 'reference'):
-                bad.append(f'{where}: source {str(s)[:80]}')
+        k, where = (r.get('concept_id'), r.get('kind')), f"{r.get('concept_id')} {r.get('kind')}"
+        if r.get('kind') not in TIER2_KINDS or r['checked'] not in VERDICTS or (r['checked'] == 'added') == (k in given):
+            bad.append(f'{where}: checked {r["checked"]!r}')
+        elif r['checked'] == 'removed':
+            if not str(r.get('note', '')).strip():
+                bad.append(f'{where}: removed without a note')
+        else:
+            bad += milestone_problems(r, ids)
+            if r['checked'] == 'confirmed' and DATE.match(str(r.get('date', ''))) and \
+                    date_key(r['date'])[0] != date_key(given[k]['date'])[0]:
+                bad.append(f"{where}: confirmed with another year ({given[k]['date']} -> {r['date']})")
+    top = collections.Counter(r.get('note') for r in rows if 'checked' in r).most_common(1)
+    if top and top[0][1] > 2:
+        bad.append(f'{top[0][1]} identical notes: {top[0][0]!r}')
     return bad or None
+
+
+def milestone_problems(r, ids):
+    """What is wrong with one researched milestone: its id, kind, date, fit and sources."""
+    where = f"{r.get('concept_id')} {r.get('kind')}"
+    bad = []
+    if r.get('concept_id') not in ids or r.get('kind') not in KINDS or not DATE.match(str(r.get('date', ''))):
+        bad.append(f'{where}: id, kind or date {r.get("date")!r}')
+    srcs = r.get('sources')
+    if not isinstance(srcs, list) or not 1 <= len(srcs) <= 3 or not str(r.get('fit', '')).strip():
+        return bad + [f'{where}: sources or fit']
+    for s in srcs:
+        if not isinstance(s, dict) or not s.get('url') or not s.get('quote') or len(str(s['quote']).split()) > 25 \
+                or s.get('kind') not in ('contemporary', 'reference'):
+            bad.append(f'{where}: source {str(s)[:80]}')
+    return bad
 
 
 def research_plan(run, limit=None, only=''):
     """Claim up to `limit` research batches (whose names start with `only`) that aren't done or claimed
-    in the last CLAIM_MINUTES and print their prompts (tier-1 research, or the quick check for concepts
-    guessed never to have come true)."""
+    in the last CLAIM_MINUTES and print their prompts (tier-1 research, the quick check for concepts
+    guessed never to have come true, the second look, or tier 2's check of the deciding milestones)."""
     stage = 'research'
-    tpl = {k: open(os.path.join(PROMPTS, f), encoding='utf-8').read()
-           for k, f in (('tier1', 'milestones_tier1.md'), ('check', 'milestones_check.md'), ('recheck', 'milestones_recheck.md'))}
+    files = {'tier1': 'milestones_tier1.md', 'check': 'milestones_check.md', 'recheck': 'milestones_recheck.md',
+             'tier2': 'milestones_tier2.md'}
+    tpl = {k: open(os.path.join(PROMPTS, f), encoding='utf-8').read() for k, f in files.items()}
     config(run, stage, {'tier1_prompt_sha256': sha(tpl['tier1']), 'check_prompt_sha256': sha(tpl['check']),
-                        'recheck_prompt_sha256': sha(tpl['recheck']),
-                        'batch': RESEARCH_BATCH, 'check_batch': CHECK_BATCH, 'recheck_batch': RECHECK_BATCH})
+                        'recheck_prompt_sha256': sha(tpl['recheck']), 'tier2_prompt_sha256': sha(tpl['tier2']),
+                        'batch': RESEARCH_BATCH, 'check_batch': CHECK_BATCH, 'recheck_batch': RECHECK_BATCH,
+                        'tier2_batch': TIER2_BATCH})
     batches = research_batches(run)
     reg = {c['concept_id']: c for c in registry_rows()}
+    # tier 2: each concept's verified milestones and the earlier notes, as tier 1 left them
+    current, earlier = collections.defaultdict(list), collections.defaultdict(list)
+    if any(n.startswith('tier2-') for n in batches):
+        for m in read_jsonl(os.path.join(OUT, 'milestones.jsonl'))[0]:
+            if m['kind'] in TIER2_KINDS and m['tier'] != 2:
+                current[m['concept_id']].append({k: m[k] for k in ('kind', 'date', 'what', 'fit', 'sources', 'confidence',
+                                                                   'note', 'searched') if m.get(k)})
+        for r in read_jsonl(os.path.join(OUT, 'milestone_notes.jsonl'))[0]:
+            if r.get('concept_note') and not r['batch'].startswith('tier2-'):
+                earlier[r['concept_id']].append(r['concept_note'])
     first = {}  # recheck: the first researcher's concept note
     for n in batches:
         if n.startswith('tier1-') and research_problems(run, n) is None:
@@ -1219,7 +1271,10 @@ def research_plan(run, limit=None, only=''):
     todo, now = [], time.time()
     for name, b in batches.items():
         inp = rd(run, stage, 'in', name + '.jsonl')
-        if not os.path.exists(inp):  # definitions only: the researchers never see claims (PLAN §5)
+        if not os.path.exists(inp) and name.startswith('tier2-'):  # no claims, leads or points either
+            write_atomic(inp, jsonl({**{k: reg[i].get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases')},
+                                     'milestones': current[i], 'earlier_notes': earlier[i]} for i in b['ids']))
+        elif not os.path.exists(inp):  # definitions only: the researchers never see claims (PLAN §5)
             write_atomic(inp, jsonl({**{k: reg[i].get(k) for k in ('concept_id', 'name', 'definition', 'type', 'aliases', 'came_true_guess')},
                                      **({'first_pass_note': first.get(i, '')} if name.startswith('recheck-') else {})}
                                     for i in b['ids']))
@@ -1231,9 +1286,7 @@ def research_plan(run, limit=None, only=''):
     todo.sort(key=lambda n: (not n.startswith('check-'), n))  # the checks first: they may add tier-1 batches
     pick = todo[:int(limit)] if limit else todo
     for name in pick:
-        kind = name.split('-')[0]
-        path = prompt(run, stage, name, {'tier1': 'milestones_tier1.md', 'check': 'milestones_check.md',
-                                         'recheck': 'milestones_recheck.md'}[kind],
+        path = prompt(run, stage, name, files[name.split('-')[0]],
                       workdir=ROOT, n=len(batches[name]['ids']), batch_in=rel(rd(run, stage, 'in', name + '.jsonl')),
                       batch_out=rel(rd(run, stage, 'out', name + '.jsonl')), tmpdir=rel(rd(run, 'tmp', stage + '-' + name)))
         write_atomic(rd(run, stage, 'prompts', name + '.claimed'), time.strftime('%Y-%m-%dT%H:%M:%S\n'))
@@ -1252,20 +1305,27 @@ def verify(run):
       - `contemporary` needs a source dated within two years of the event, else it is `reference`;
       - a milestone with no verified source is dropped; `high` needs a verified contemporary and
         a verified reference source, else it is `medium`;
-      - for each concept and kind, the earliest verified milestone is kept.
+      - for each concept and kind, the earliest verified milestone is kept;
+      - then tier 2's verdicts on the deciding milestones override them: a confirmed, replaced or
+        added milestone with a verified source takes the place of the earlier one (`tier` 2, with
+        `previous_date` and `checked`), a removed one is dropped, and an answer whose sources all
+        fail leaves the earlier milestone in place, marked `tier2_rejected`. The checkpoint-3
+        table goes to runs/match/deciding_milestones.md.
     The verdicts are cached in work/match/<run>/research/quote_check.jsonl (url, quote, verdict, record
-    date: never page text), so a re-run only fetches new sources and those that failed to fetch. Concept notes and the checks'
-    verdicts go to runs/match/milestone_notes.jsonl."""
+    date: never page text), so a re-run only fetches new sources and those that failed to fetch. Concept notes, the checks'
+    verdicts, and tier 2's removals and fallbacks go to runs/match/milestone_notes.jsonl."""
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import sources
     from concurrent.futures import ThreadPoolExecutor
     batches = research_batches(run)
-    ms, notes = [], []
+    ms, ms2, notes = [], [], []
     for name in batches:
         if research_problems(run, name) is not None:
             continue
         for r in read_jsonl(rd(run, 'research', 'out', name + '.jsonl'))[0]:
-            if 'kind' in r:
+            if 'checked' in r:
+                ms2.append(dict(r, batch=name))
+            elif 'kind' in r:
                 ms.append(dict(r, batch=name))
             elif 'concept_note' in r or 'verdict' in r:
                 notes.append(dict(r, batch=name))
@@ -1273,7 +1333,7 @@ def verify(run):
     cache = {(c['url'], c.get('volume_id'), c['quote']): c for c in (read_jsonl(cache_path)[0] or [])} \
         if os.path.exists(cache_path) else {}
     # a fetch that failed (a 429, a timeout) is tried again on the next run
-    need = {(s['url'], s.get('volume_id'), s['quote'].strip()) for m in ms for s in m['sources']} - \
+    need = {(s['url'], s.get('volume_id'), s['quote'].strip()) for m in ms + ms2 for s in m.get('sources') or []} - \
         {k for k, c in cache.items() if not c['verdict'].startswith('fetch failed')}
     pages = {}
 
@@ -1291,8 +1351,10 @@ def verify(run):
         verdict = 'fetch failed: ' + err if t is None else 'ok' if sources.has_quote(t, q) else 'quote not on page'
         cache[(url, vol, q)] = {'url': url, 'volume_id': vol, 'quote': q, 'verdict': verdict, 'record_date': d}
     write_atomic(cache_path, jsonl(cache.values()))
-    out, log = [], collections.Counter()
-    for m in ms:
+    log = collections.Counter()
+
+    def checked(m, tier):
+        """The milestone with only its verified sources, or None if none is left."""
         ey = date_key(m['date'])[0]
         keep = []
         for s in m['sources']:
@@ -1308,23 +1370,47 @@ def verify(run):
             keep.append({**{k: s.get(k, '') for k in ('url', 'publisher', 'title', 'quote')}, 'date': sdate, 'kind': kind,
                          **({'volume_id': s['volume_id']} if s.get('volume_id') else {})})
         if not keep:
-            log['milestone dropped'] += 1
-            continue
+            return None
         conf = m.get('confidence') if m.get('confidence') in ('high', 'medium', 'low') else 'low'
         if conf == 'high' and not {'contemporary', 'reference'} <= {s['kind'] for s in keep}:
             conf = 'medium'
-        out.append({'concept_id': m['concept_id'], 'kind': m['kind'], 'date': m['date'], 'what': m.get('what', ''),
-                    'fit': m['fit'], 'sources': keep, 'confidence': conf,
-                    **{k: m[k] for k in ('note', 'searched') if m.get(k)}, 'tier': 1, 'batch': m['batch']})
+        return {'concept_id': m['concept_id'], 'kind': m['kind'], 'date': m['date'], 'what': m.get('what', ''),
+                'fit': m['fit'], 'sources': keep, 'confidence': conf,
+                **{k: m[k] for k in ('note', 'searched') if m.get(k)}, 'tier': tier, 'batch': m['batch']}
     best = {}
-    for r in out:
+    for m in ms:
+        r = checked(m, 1)
+        if r is None:
+            log['milestone dropped'] += 1
+            continue
         k = (r['concept_id'], r['kind'])
         if k not in best or date_key(r['date']) < date_key(best[k]['date']):
             best[k] = r
-    researched = {i for b in batches.values() for i in b['ids']}
+    researched = {i for n, b in batches.items() if not n.startswith('tier2-') for i in b['ids']}
     pilot = [dict(r, tier='pilot') for r in map(json.loads, open(PILOT_MILESTONES, encoding='utf-8'))
              if r['concept_id'] not in researched]
-    rows = sorted(pilot + list(best.values()), key=lambda r: (r['concept_id'], KINDS.index(r['kind'])))
+    keyed = {(r['concept_id'], r['kind']): r for r in pilot + list(best.values())}
+    # tier 2 overrides (PLAN §5): its verdict replaces the milestone, `removed` drops it, and an answer
+    # with no verified source leaves the earlier milestone in place, marked
+    for m in ms2:
+        k, prev = (m['concept_id'], m['kind']), keyed.get((m['concept_id'], m['kind']))
+        before = {'previous_date': prev['date'] if prev else None, 'checked': m['checked']}
+        log['tier 2 ' + m['checked']] += 1
+        if m['checked'] == 'removed':
+            keyed.pop(k, None)
+            notes.append({'concept_id': m['concept_id'], 'kind': m['kind'], **before,
+                          **{f: m[f] for f in ('note', 'searched', 'batch') if m.get(f)}})
+            continue
+        r = checked(m, 2)
+        if r is None:
+            log['tier 2 fell back'] += 1
+            if prev:
+                prev['tier2_rejected'] = f"{m['checked']} {m['date']}: no source verified"
+            notes.append({'concept_id': m['concept_id'], 'kind': m['kind'], **before, 'date': m['date'],
+                          'fell_back': True, **{f: m[f] for f in ('what', 'note', 'batch') if m.get(f)}})
+            continue
+        keyed[k] = {**r, **before}
+    rows = sorted(keyed.values(), key=lambda r: (r['concept_id'], KINDS.index(r['kind'])))
     for c, d in itertools.groupby(rows, key=lambda r: r['concept_id']):
         d = {r['kind']: r['date'] for r in d}
         if {'first_practical_use', 'first_demonstration'} <= d.keys() and \
@@ -1333,7 +1419,93 @@ def verify(run):
     write_atomic(os.path.join(OUT, 'milestones.jsonl'), jsonl(rows))
     write_atomic(os.path.join(OUT, 'milestone_notes.jsonl'), jsonl(sorted(notes, key=lambda r: r['concept_id'])))
     print(f"{len(ms)} researched milestones -> {len(best)} kept for {len({k[0] for k in best})} concepts, "
-          f"plus {len(pilot)} pilot rows; sources {dict(log)}")
+          f"plus {len(pilot)} pilot rows, {len(ms2)} tier-2 verdicts; {dict(log)}")
+    if ms2:
+        deciding_report(run)
+
+
+def deciding_report(run):
+    """runs/match/deciding_milestones.md, checkpoint 3 (PLAN §5): each checked deciding concept's
+    scoring milestone at the first scoring and after tier 2, with its event, sources, confidence and
+    fit, and how many pairs change and must be judged again (their pair id hashes the milestone)."""
+    batches = research_batches(run)
+    t2 = sorted(n for n in batches if n.startswith('tier2-'))
+    done = [n for n in t2 if research_problems(run, n) is None]
+    ids = {i for n in done for i in batches[n]['ids']}
+    deciding = [d for d in read_jsonl(os.path.join(OUT, 'deciding.jsonl'))[0] if d['concept_id'] in ids]
+    new, ms = scoring_milestones(), read_jsonl(os.path.join(OUT, 'milestones.jsonl'))[0]
+    verdicts = collections.defaultdict(dict)
+    for m in ms:
+        if m['tier'] == 2:
+            verdicts[m['concept_id']][m['kind']] = m['checked']
+    side = [r for r in read_jsonl(os.path.join(OUT, 'milestone_notes.jsonl'))[0]
+            if r.get('batch', '').startswith('tier2-') and 'kind' in r]
+    for r in side:
+        verdicts[r['concept_id']][r['kind']] = 'fell back' if r.get('fell_back') else 'removed'
+    old = {p['pair'] for p in read_jsonl(rd(run, 'judge', 'pairs.jsonl'))[0]}
+    pairs = judge_pairs(run)
+    now = {p['pair'] for p in pairs}
+    again = collections.Counter(p['concept_id'] for p in pairs if p['pair'] not in old)
+    again_b = sum(1 for p in pairs if p['pair'] not in old and p['polarity'] == 'will')
+    short = {'first_demonstration': 'demo.', 'first_practical_use': 'use'}
+
+    def esc(s):
+        return str(s).replace('|', '\\|').replace('\n', ' ')
+
+    def srcs(m):
+        n = collections.Counter(s['kind'] for s in m['sources'])
+        return ', '.join(f'{n[k]} {k}' for k in ('contemporary', 'reference') if n[k])
+
+    changed, same, moves = [], [], collections.Counter()
+    for i, d in enumerate(deciding, 1):
+        c, m = d['concept_id'], new.get(d['concept_id'])
+        before = f"{d['milestone_date']} ({short[d['milestone_kind']]})"
+        tier2 = '; '.join(f'{short[k]} {v}' for k, v in sorted(verdicts[c].items()))
+        if m is None:
+            moves['no scoring milestone left'] += 1
+            changed.append(f"| {esc(d['name'])} | {d['points']:.0f} | {before} | **none** | {tier2} | | | | | "
+                           f"{again[c]} |")
+            continue
+        after = f"{m['date']} ({short[m['kind']]})"
+        unchanged = (m['kind'], m['date']) == (d['milestone_kind'], d['milestone_date'])
+        (same if unchanged else changed).append(
+            f"| {esc(d['name'])} | {d['points']:.0f} | {before} | {after if unchanged else '**' + after + '**'} | {tier2} | "
+            f"{esc(m.get('what', ''))} | {srcs(m)} | {m['confidence']} | {esc(m['fit'])} | {again[c]} |")
+        if not unchanged:
+            dy = date_key(m['date'])[0] - date_key(d['milestone_date'])[0]
+            moves['earlier' if dy < 0 else 'later' if dy > 0 else 'same year, other month or kind'] += 1
+    head = ['| Concept | Points | First scoring | After tier 2 | Tier 2 | Event | Sources | Confidence | Fit | Pairs to judge |',
+            '|---|---|---|---|---|---|---|---|---|---|']
+    tally = collections.Counter(v for c in ids for v in verdicts[c].values())
+    contemporary = sum(1 for d in deciding if new.get(d['concept_id']) and
+                       any(s['kind'] == 'contemporary' for s in new[d['concept_id']]['sources']))
+    out = ['# The deciding milestones: checkpoint 3 (runs/match/PLAN.md §5)', '',
+           f'Tier 2 checked {len(deciding)} of the deciding concepts ({len(done)} of {len(t2)} batches): '
+           f'`prompts/milestones_tier2.md`, an adversarial earliest-event check of each concept\'s demonstration '
+           f'and practical use with a search for contemporary sources, every quote fetched again by `match.py verify`. '
+           f"The concepts are in the first scoring's order (`runs/match/deciding.jsonl`); points are the concept's "
+           f'share of the first scoring.', '',
+           f"- **Verdicts:** {', '.join(f'{v} {tally[v]}' for v in (*VERDICTS, 'fell back') if tally[v])}"
+           + (' (fell back: no source of the answer verified, so the earlier milestone stays).' if tally['fell back'] else '.'),
+           f"- **Scoring milestone changed** for {len(changed)} of {len(deciding)} concepts: "
+           f"{', '.join(f'{k} {v}' for k, v in moves.most_common())}.",
+           f'- **Contemporary sources:** {contemporary} of {len(deciding)} scoring milestones have one now, '
+           f"{sum(d['contemporary'] for d in deciding)} had one at the first scoring.",
+           f'- **Judging again:** {len(now - old):,} pairs are new (judge A all, judge B the {again_b:,} `will` '
+           f'pairs), and {len(old - now):,} judged pairs drop out. Nothing is re-judged before your review.', '',
+           'Decisions on any row go in `runs/match/milestone_review.jsonl` before the re-judging. '
+           'Each concept\'s notes, the candidates the researcher rejected and what it searched are in '
+           '`runs/match/milestones.jsonl` and `milestone_notes.jsonl`.', '',
+           f'## Scoring milestone changed ({len(changed)})', '', *head, *changed, '',
+           f'## Scoring milestone unchanged ({len(same)})', '', *head, *same, '']
+    if side:
+        out += ['## Removed, and answers that fell back', '', '| Concept | Kind | Before | Verdict | Note |', '|---|---|---|---|---|']
+        out += [f"| {r['concept_id']} | {short[r['kind']]} | {r.get('previous_date') or ''} | "
+                f"{'fell back (' + r['date'] + ')' if r.get('fell_back') else 'removed'} | {esc(r.get('note', ''))} |"
+                for r in sorted(side, key=lambda r: (r['concept_id'], r['kind']))]
+    write_atomic(os.path.join(OUT, 'deciding_milestones.md'), '\n'.join(out) + '\n')
+    print(f'{len(deciding)} deciding concepts checked, {len(changed)} scoring milestones changed, '
+          f'{len(now - old):,} pairs to judge -> runs/match/deciding_milestones.md')
 
 
 # ---- usage and status ----
@@ -1875,5 +2047,6 @@ if __name__ == '__main__':
      'gap-ingest': lambda run: concepts_ingest(run, 'gap'), 'gapcons-plan': gapcons_plan, 'gapglobal-plan': gapglobal_plan,
      'gap-build': gap_build,
      'gapmatch-plan': gapmatch_plan, 'gap-review': gap_review, 'agree-plan': agree_plan, 'agree-report': agree_report,
-     'research-plan': research_plan, 'verify': verify, 'judge-plan': judge_plan, 'judge-collect': judge_collect, 'score': score,
+     'research-plan': research_plan, 'verify': verify, 'deciding-report': deciding_report, 'judge-plan': judge_plan,
+     'judge-collect': judge_collect, 'score': score,
      'log': log, 'status': status}[cmd](*args)
