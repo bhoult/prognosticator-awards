@@ -197,6 +197,16 @@ The researchers see concept definitions only, never claims.
   against mines and unexploded munitions, flagged as a judgment call), closed-loop life support
   2014 → 1972 (BIOS-3), spacecraft radio 1958 → 1957 (Sputnik 2), spacesuit practical use
   1965 → 1969 (Soyuz 4/5 transfer; umbilical-fed Gemini suits rejected on "own air supply").
+- **Tier 2 done (2026-11-16):** 33 agents, 4.9M tokens, 11 tool calls per concept, 5.4
+  agent-hours; week usage 60% → 63%. 274 verdicts: 163 confirmed, 97 replaced, 14 added, none
+  removed; every answer kept a verified source (2,965 quotes ok, 17 contemporary sources
+  downgraded, 1 fetch failed on a 429 and is retried on the next `verify`). The scoring
+  milestone changed for 90 of the 165 concepts (50 earlier, 13 later, 27 only in month or
+  kind). Confidence of the scoring milestones: high 27, medium 90, low 48 (was 10, 56, 99);
+  137 have a contemporary source (was 65), 7 rest on Wikipedia alone (was 82), 53 are
+  demonstrations only (was 66). 4,091 pairs are new and 4,392 drop out; 853 of the new ones
+  belong to a milestone confirmed in the same year and kind (only the date got more precise).
+  **Checkpoint 3 (a stop):** `runs/match/deciding_milestones.md`.
 - **Checkpoint 3 (a stop):** you get the table of deciding milestones (old date, new date,
   event, sources, confidence, fit), as in report3 §3.1. Your decisions go in
   `review.jsonl`, and the scripts apply them.

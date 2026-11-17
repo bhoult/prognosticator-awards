@@ -1470,7 +1470,7 @@ def deciding_report(run):
         unchanged = (m['kind'], m['date']) == (d['milestone_kind'], d['milestone_date'])
         (same if unchanged else changed).append(
             f"| {esc(d['name'])} | {d['points']:.0f} | {before} | {after if unchanged else '**' + after + '**'} | {tier2} | "
-            f"{esc(m.get('what', ''))} | {srcs(m)} | {m['confidence']} | {esc(m['fit'])} | {again[c]} |")
+            f"{esc(m.get('what', ''))} | {srcs(m)} | {m['confidence']} | {esc(m.get('fit', ''))} | {again[c]} |")
         if not unchanged:
             dy = date_key(m['date'])[0] - date_key(d['milestone_date'])[0]
             moves['earlier' if dy < 0 else 'later' if dy > 0 else 'same year, other month or kind'] += 1
