@@ -209,7 +209,18 @@ The researchers see concept definitions only, never claims.
   **Checkpoint 3 (a stop):** `runs/match/deciding_milestones.md`.
 - **Checkpoint 3 (a stop):** you get the table of deciding milestones (old date, new date,
   event, sources, confidence, fit), as in report3 §3.1. Your decisions go in
-  `review.jsonl`, and the scripts apply them.
+  `runs/match/milestone_review.jsonl`, and the scripts apply them.
+- **Checkpoint 3 decided (2026-11-18):** you took the recommendations. `milestone_review.jsonl`
+  has one row per concept and kind (`decision` keep_previous or accept, the `tier2_date` it was
+  made on, and a `reason`); `verify` applies it last, and a row whose tier-2 answer has another
+  date stops it. Two answers are overruled and keep the earlier milestone, marked
+  `tier2_overruled` (the overruled answer stays in `milestone_notes.jsonl`): sleep learning keeps
+  the pilot's 2019-02 (tier 2 brought back LeShan's 1942 nail-biting study, which the pilot's
+  review rejected; tier 2 was not given the pilot's review decisions), and wearable wings keeps
+  its 1935 practical use (Sohn's exhibition flights, over the 1999 wingsuits on sale). Aquaculture
+  1927 and increased human height 1860 are accepted on the record. The scoring milestone now
+  changes for 88 of the 165 (49 earlier, 12 later, 27 in month or kind). The 2015 air-purification
+  source that failed on a 429 verified on the retry.
 - **Concepts with only a demonstration** (DESIGN §12, question 20): the pilot's rule scores
   them on that demonstration. Proposed: keep the rule, and flag those entries in the
   rankings.
@@ -270,6 +281,16 @@ The researchers see concept definitions only, never claims.
   pairs score 0.5 or more: the `contradicted_negative` candidates (§6). Most judges appended
   chunks with `cat >>` or joined per-chunk part files instead of rewriting with Write; all read
   the input in four 50-line Reads.
+- **Re-judging after tier 2 (2026-11-18):** `judge_batches` adds a round once every batch is
+  done and the milestones have changed since the last round: the current pairs no round has go
+  to `judge/pairs-2.jsonl`, and their batches continue the numbering (A-088–A-103, B-087–B-102,
+  then C-002). A pair whose milestone tier 2 confirmed in the same kind and year copies its
+  earlier pair's judgments (`reuse`; 853 of the 4,019 new pairs), since only the date got more
+  precise and lead counts whole years. `judge-collect` scores the current pairs from every round.
+  33 agents, 4.3M tokens, 64% to 66% of the week; every batch passed the code checks. 3,166 pairs
+  judged: 71% the same score, 28% one step, 0.4% (14) two or more, which C-002 decided; mean
+  0.462. Three replacements kept their date (cutting beam 1970, solar-thermal propulsion 1999,
+  synthetic food 1939), so their 173 pairs keep round-1 judgments made against the earlier event.
 
 ## 8. Resolutions and scores (deterministic)
 
@@ -319,6 +340,13 @@ The researchers see concept definitions only, never claims.
     the United Amateur, 1915–1922*; Harry Bates's *Astounding Stories* of January 1930).
     Translations carry the translation's year (Lucian 1780, the Mahabharata 1896), which
     understates their lead until DESIGN §1a's dates are built.
+- **Scoring after tier 2 (2026-11-18):** 16,161 realized, 15,994 not a prediction, 81
+  `contradicted_negative`; 11,585 entries from 2,457 books and 771 authors, 26,458 points (27,931
+  at the first scoring). The top 30 authors are the same 30 and 29 of the top 30 books stay. Once
+  tier 2 has run, `score` keeps `deciding.jsonl` as the first scoring's selection and lists the
+  concepts that carry a top entry now but were not checked: 26 of 165, most small, some wrong
+  (orbital docking dated by Apollo 11, not Gemini 8). **Checkpoint 4 (a stop):**
+  `runs/match/report.md`.
 
 ## 9. Tranche B: events and social change
 
