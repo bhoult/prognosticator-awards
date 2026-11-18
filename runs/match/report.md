@@ -50,12 +50,13 @@ your review.
 
 Every batch ran as a background subagent with its own input and output file, so the run was
 stopped and restarted many times without losing work. Each stage pins its prompt by sha256, and
-every output passed the checks in code before it counted. Every log is in
+every output passed the checks in code or was redone; the few early matching batches accepted with
+notes are in [`rejected_batches.tsv`](rejected_batches.tsv). Every log is in
 [`usage.tsv`](usage.tsv).
 
-- **Checkpoint 1, the registry:** approved 2026-11-04; the gap concepts were reviewed
+- **Checkpoint 1, the registry:** approved 2026-11-03; the gap concepts were reviewed
   2026-11-05 ([`gap_review.md`](gap_review.md), [`concept_review.jsonl`](concept_review.jsonl)).
-- **Checkpoint 2, calibration:** done in the matching stage ([`calibration.txt`](calibration.txt)).
+- **Checkpoint 2, calibration:** 2026-11-03, on the first 20 matching batches ([`calibration.txt`](calibration.txt)).
 - **Checkpoint 3, the deciding milestones:** decided 2026-11-18 ([`deciding_milestones.md`](deciding_milestones.md),
   [`milestone_review.jsonl`](milestone_review.jsonl)).
 - **Matching agreement** ([`agreement.md`](agreement.md)): of 300 random claims matched again by
