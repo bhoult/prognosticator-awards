@@ -1878,7 +1878,7 @@ def judge_collect(run):
     for t in sorted({types[r["pair"]] for r in pairs2}):
         out.append(f'| type {t} | {agree([r for r in pairs2 if types[r["pair"]] == t])} |')
     write_atomic(os.path.join(OUT, 'judging.md'), '\n'.join(out) + '\n')
-    print(f'{len(rows)} judgments -> work/match/{run}/judgments.jsonl; agreement in runs/match/judging.md')
+    print(f'{len(rows)} judgments -> work/match/{run}/judgments.jsonl; agreement in {rel(os.path.join(OUT, "judging.md"))}')
 
 
 # ---- scoring (PLAN §8, DESIGN §8) ----
@@ -2145,7 +2145,7 @@ def score(run):
                 f"{cell(reg[e['concept_id']]['name'], 40)}{flag} | {e['date']} | {cell(quote[e['claim']], 110)} |")
     entry_head = ['| # | points | score | lead | author | book | concept | milestone | quote |', '|---|---|---|---|---|---|---|---|---|']
     res_n = collections.Counter((r['resolution'], r['why']) for r in rows)
-    out = [f"# {'Scoring after tier 2' if after else 'First scoring'}, tranche A (PLAN §8)", '',
+    out = [f"# {'Scoring after tier 2' if after else 'First scoring'}, tranche {TRANCHE} (PLAN §8{'' if TRANCHE == 'A' else ', §9'})", '',
            f'Written by `match.py score {run}`. Settings: weight {WEIGHT} (w = log2(1 + min(L, {CAP}))), the '
            f'scoring milestone `first_practical_use` else `first_demonstration`, points from score {REALIZED_MIN:g} '
            f'(every judged score above 0), precision from {STRICT_MIN:g}, `contradicted_negative` from {NEGATIVE_MIN:g}, '
@@ -2153,8 +2153,9 @@ def score(run):
            + (f"This scoring follows tier 2 (PLAN §5), which checked {len(checked)} deciding concepts, and "
               f"checkpoint 3's review (`runs/match/milestone_review.jsonl`). " if after else
               'This is the first scoring: tier 2 (PLAN §5) can still move the deciding milestones. ')
-           + 'Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).', '',
-           '## Resolutions', '', f'{len(rows):,} tranche-A claims from {len(claims_of):,} books.', '',
+           + ('Tranche B is not scored. ' if TRANCHE == 'A' else 'Tranche A is scored on its own (runs/match/scoring.md). ')
+           + '† = scored on a demonstration only (PLAN §14.5).', '',
+           '## Resolutions', '', f'{len(rows):,} tranche-{TRANCHE} claims from {len(claims_of):,} books.', '',
            '| resolution | claims | share |', '|---|---|---|']
     for (res, why), n in sorted(res_n.items(), key=lambda t: (-t[1], t[0][0], t[0][1] or '')):
         out.append(f"| {res}{': ' + why if why else ''} | {n:,} | {n / len(rows):.1%} |")
@@ -2182,7 +2183,7 @@ def score(run):
         out.append(f"| {i} | {bk(b)} | {cell(who(b), 40)} | {books[b]['group']} | {pts:.1f} | {nent[b]} |")
     prec = sorted(((nstrict[a] / nclaims[a], a) for a in nclaims if nclaims[a] >= PRECISION_CLAIMS), key=lambda t: (-t[0], t[1]))
     out += ['', '## Precision', '',
-            f'Claims realized at a score of {STRICT_MIN:g} or more, of all tranche-A claims by the author; authors with '
+            f'Claims realized at a score of {STRICT_MIN:g} or more, of all tranche-{TRANCHE} claims by the author; authors with '
             f'{PRECISION_CLAIMS} or more ({len(prec)}).', '', '| # | author | precision | claims | points |', '|---|---|---|---|---|']
     pts_a = dict(author_rank)
     for i, (v, a) in enumerate(prec[:20], 1):
@@ -2249,7 +2250,7 @@ def score(run):
     print(f'{len(rows):,} claims: ' + ', '.join(f"{res}{'/' + why if why else ''} {n:,}" for (res, why), n in res_n.most_common()))
     print(f'{len(entries):,} entries, {len(book_rank):,} books and {len(author_rank):,} authors score; '
           f'{len(deciding)} deciding concepts ({sum(d["concept_id"] not in checked for d in deciding)} not checked by tier 2) '
-          f'-> runs/match/scoring.md' + (f', {len(added)} added to deciding.jsonl' if added else ''))
+          f'-> {rel(os.path.join(OUT, "scoring.md"))}' + (f', {len(added)} added to deciding.jsonl' if added else ''))
 
 
 def log(run, agent, stage, tokens, tools, seconds, *note):
