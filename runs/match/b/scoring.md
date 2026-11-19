@@ -1,6 +1,6 @@
 # Scoring after tier 2, tranche B (PLAN §8, §9)
 
-Written by `match.py score b`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 101 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche A is scored on its own (runs/match/scoring.md). † = scored on a demonstration only (PLAN §14.5).
+Written by `match.py score b`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 102 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche A is scored on its own (runs/match/scoring.md). † = scored on a demonstration only (PLAN §14.5).
 
 ## Resolutions
 
@@ -9,22 +9,22 @@ Written by `match.py score b`. Settings: weight log (w = log2(1 + min(L, 500))),
 | resolution | claims | share |
 |---|---|---|
 | open: no_milestone | 16,372 | 35.4% |
-| not_a_prediction | 8,466 | 18.3% |
+| not_a_prediction | 8,474 | 18.3% |
 | open: too_vague | 7,445 | 16.1% |
 | open: no_concept | 6,149 | 13.3% |
 | untestable | 3,669 | 7.9% |
-| realized | 3,651 | 7.9% |
+| realized | 3,644 | 7.9% |
 | failed: missed_deadline | 328 | 0.7% |
 | open: no_year | 45 | 0.1% |
 | open: not_contradicted | 39 | 0.1% |
-| open: not_matched | 30 | 0.1% |
+| open: not_matched | 29 | 0.1% |
 | vindicated | 17 | 0.0% |
 
 Deadlines: 1,732 `will` claims with a concept have a stated time naming a year, decade or century after publication; 969 of those ended before 2016. Of these, 216 are realized anyway, 328 missed the deadline, and 425 are not a prediction. Of the 307 realized claims with a deadline, 242 came true by it and 65 after it (median 17 years late).
 
 ## The top 50 predictions
 
-2,496 book–concept entries earn points (each book counts its best claim once per concept).
+2,493 book–concept entries earn points (each book counts its best claim once per concept).
 
 | # | points | score | lead | author | book | concept | milestone | quote |
 |---|---|---|---|---|---|---|---|---|
@@ -81,7 +81,7 @@ Deadlines: 1,732 `will` claims with a concept have a stated time naming a year, 
 
 ## Authors: total points
 
-Each author counts a concept once, from their best book. 506 authors score.
+Each author counts a concept once, from their best book. 504 authors score.
 
 | # | author | points | concepts | books | points per book | precision |
 |---|---|---|---|---|---|---|
@@ -93,7 +93,7 @@ Each author counts a concept once, from their best book. 506 authors score.
 | 6 | Edward Bellamy | 82.4 | 28 | 5 | 16.5 | 27% of 451 |
 | 7 | Ray Cummings | 80.4 | 30 | 36 | 2.2 | 6% of 664 |
 | 8 | Edmond Hamilton | 69.9 | 26 | 34 | 2.1 | 6% of 434 |
-| 9 | Godfrey Sweven | 69.5 | 26 | 2 | 34.7 | 9% of 308 |
+| 9 | Godfrey Sweven | 69.5 | 26 | 2 | 34.8 | 9% of 308 |
 | 10 | Thomas More | 66.7 | 14 | 1 | 66.7 | 26% of 74 |
 | 11 | Ignatius Donnelly | 65.5 | 21 | 1 | 65.5 | 15% of 156 |
 | 12 | E. E. Smith | 55.7 | 22 | 20 | 2.8 | 4% of 591 |
@@ -109,7 +109,7 @@ Each author counts a concept once, from their best book. 506 authors score.
 | 22 | William Morris | 37.0 | 12 | 1 | 37.0 | 16% of 148 |
 | 23 | Edgar Rice Burroughs | 35.7 | 13 | 21 | 1.7 | 2% of 521 |
 | 24 | Raymond Z. Gallun | 35.6 | 17 | 17 | 2.1 | 4% of 289 |
-| 25 | Milo Hastings | 35.5 | 14 | 2 | 17.7 | 12% of 179 |
+| 25 | Milo Hastings | 35.5 | 14 | 2 | 17.8 | 12% of 179 |
 | 26 | Carey Rockwell | 35.4 | 18 | 6 | 5.9 | 8% of 229 |
 | 27 | Olaf Stapledon | 34.9 | 14 | 1 | 34.9 | 5% of 168 |
 | 28 | Nelson S. Bond | 33.9 | 14 | 37 | 0.9 | 5% of 309 |
@@ -168,12 +168,12 @@ Claims realized at a score of 0.5 or more, of all tranche-B claims by the author
 | 9 | Arthur Cheney Train | 18% | 76 | 33.6 |
 | 10 | Robert Williams Wood | 18% | 76 | 33.6 |
 | 11 | Ellison Harding | 17% | 103 | 21.1 |
-| 12 | Guy Thorne | 17% | 92 | 24.3 |
-| 13 | Roy Rockwood | 17% | 78 | 18.3 |
-| 14 | Donald A. Wollheim | 16% | 73 | 14.4 |
-| 15 | Richard M. Elam | 16% | 92 | 37.7 |
-| 16 | William Morris | 16% | 148 | 37.0 |
-| 17 | Mary E. Bradley Lane | 15% | 72 | 22.4 |
+| 12 | Roy Rockwood | 17% | 78 | 18.3 |
+| 13 | Donald A. Wollheim | 16% | 73 | 14.4 |
+| 14 | Richard M. Elam | 16% | 92 | 37.7 |
+| 15 | William Morris | 16% | 148 | 37.0 |
+| 16 | Mary E. Bradley Lane | 15% | 72 | 22.4 |
+| 17 | Guy Thorne | 15% | 92 | 22.3 |
 | 18 | Norman Angell | 15% | 198 | 20.4 |
 | 19 | George S. Schuyler | 15% | 60 | 3.4 |
 | 20 | Ignatius Donnelly | 15% | 156 | 65.5 |
@@ -192,7 +192,7 @@ Authors with 3 or more books in the corpus (212); every book counts, including t
 | 6 | George Allan England | 11.2 | 3 | 33.6 |
 | 7 | H. G. Wells | 9.2 | 27 | 249.7 |
 | 8 | Jack London | 9.0 | 3 | 27.1 |
-| 9 | Guy Thorne | 8.1 | 3 | 24.3 |
+| 9 | Guy Thorne | 7.4 | 3 | 22.3 |
 | 10 | Garrett Putman Serviss | 6.8 | 6 | 41.1 |
 | 11 | Jules Verne | 6.7 | 16 | 107.5 |
 | 12 | Carey Rockwell | 5.9 | 6 | 35.4 |
@@ -224,7 +224,7 @@ The best books of each era, by publication year.
 | 9 | *The Moon-Voyage* (1872) | Jules Verne | 38.9 |
 | 10 | *News from Nowhere* (1890) | William Morris | 37.0 |
 
-**1900–1945** (343 books score)
+**1900–1945** (341 books score)
 
 | # | book | author | points |
 |---|---|---|---|
@@ -267,9 +267,9 @@ The non-fiction, classics, prophecy and religious texts. Ancient and translated 
 |---|---|---|---|---|
 | Classics | *Utopia* (1516) | Thomas More | 66.7 | 2 |
 | Classics | *The City of the Sun* (1602) | Tommaso Campanella | 21.4 | 38 |
-| Classics | *New Atlantis* (1627) | Francis Bacon | 7.0 | 211 |
+| Classics | *New Atlantis* (1627) | Francis Bacon | 7.0 | 210 |
 | Fiction | *The Strength of the Strong* (1914) | Jack London | 7.4 | 202 |
-| Fiction | *Futility (The Wreck of the Titan)* (1898) | Morgan Robertson | 4.1 | 392 |
+| Fiction | *Futility (The Wreck of the Titan)* (1898) | Morgan Robertson | 4.1 | 391 |
 | Fiction | *Actions and Reactions* (1909) | Rudyard Kipling | 2.7 | 613 |
 | Futurism | *Anticipations* (1901) | H. G. Wells | 64.2 | 4 |
 | Futurism | *A Hundred Years Hence (The Expectations of an Optimist)* (1905) | T. Baron Russell | 32.9 | 18 |
@@ -278,18 +278,18 @@ The non-fiction, classics, prophecy and religious texts. Ancient and translated 
 | Philosophy | *The Decline of the West, Volume 1* (1926) | Oswald Spengler | 7.5 | 196 |
 | Politics | *Democracy in America, Volume 2* (1840) | Alexis de Tocqueville | 26.9 | 26 |
 | Politics | *Democracy in America, Volume 1* (1835) | Alexis de Tocqueville | 17.6 | 60 |
-| Politics | *The Economic Consequences of the Peace* (1919) | John Maynard Keynes | 10.0 | 139 |
-| Prophecy | *The Sibylline Oracles* (700) | (text) | 16.7 | 66 |
+| Politics | *The Economic Consequences of the Peace* (1919) | John Maynard Keynes | 10.0 | 138 |
+| Prophecy | *The Sibylline Oracles* (700) | (text) | 16.7 | 65 |
 | Prophecy | *The True Prophecies or Prognostications of Michael Nostrada…* (1568) | Nostradamus | 14.1 | 85 |
 | Prophecy | *Oracles of Nostradamus* (1568) | Nostradamus | 13.2 | 95 |
 | Religion | *The Mahabharata, Volume 1 (Books 1-3)* (400) | (text) | 13.5 | 91 |
 | Religion | *The Mahabharata, Volume 4 (Books 13-18)* (400) | (text) | 12.3 | 106 |
-| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (400) | (text) | 11.2 | 118 |
-| Science | *Side-Lights on Astronomy* (1906) | Simon Newcomb | 6.1 | 246 |
+| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (400) | (text) | 9.0 | 155 |
+| Science | *Side-Lights on Astronomy* (1906) | Simon Newcomb | 6.1 | 245 |
 
 ## Sensitivity: points only from a score of 0.5
 
-1,046 of 3,754 judged `will` pairs score below 0.5; without them 621 entries and 901 of 5,928 points go. Of the top 30 authors, 26 stay in the top 30; of the top 30 books, 29.
+1,049 of 3,747 judged `will` pairs score below 0.5; without them 624 entries and 902 of 5,914 points go. Of the top 30 authors, 26 stay in the top 30; of the top 30 books, 29.
 
 | # | author (default) | points | author (from 0.5) | points |
 |---|---|---|---|---|
@@ -316,9 +316,9 @@ The non-fiction, classics, prophecy and religious texts. Ancient and translated 
 
 ## The deciding concepts after tier 2 (PLAN §5)
 
-239 concepts carry a top entry or add 5+ points to the author totals now; tier 2 checked 92 of them (`runs/match/deciding.jsonl` lists every concept selected for it, by round). By criterion (a concept can meet several):
+238 concepts carry a top entry or add 5+ points to the author totals now; tier 2 checked 93 of them (`runs/match/deciding.jsonl` lists every concept selected for it, by round). By criterion (a concept can meet several):
 
-- adds 5+ points to the author totals: 224
+- adds 5+ points to the author totals: 223
 - best entry of a top-100 author: 57
 - best entry of a top-100 book: 63
 - lead over 40 years for 20+ claims: 16
@@ -327,7 +327,7 @@ The non-fiction, classics, prophecy and religious texts. Ancient and translated 
 - top-50 entry, 1946–1979: 24
 - top-50 entry, pre-1900: 34
 
-Their milestones: confidence high 73, low 50, medium 116; 195 have a contemporary source, 22 rest on Wikipedia alone, 40 are demonstrations only.
+Their milestones: confidence high 74, low 47, medium 117; 197 have a contemporary source, 18 rest on Wikipedia alone, 40 are demonstrations only.
 
 The 40 that carry the most points, and every one tier 2 did not check:
 
@@ -414,12 +414,11 @@ The 40 that carry the most points, and every one tier 2 did not check:
 | Jewish state in Palestine | 14.2 | 6 | 12 | 1948-05-14: David Ben-Gurion read the Declaration of the Establishment of the Sta… | high | contemporary | M. P. Shiel, *The Lord of the Sea* (1901) | **not checked** |
 | Mass military air force | 13.9 | 5 | 0 | 1918-04: The Royal Air Force formed on 1 April 1918 from the RFC and RNAS as t… | low | Wikipedia only | George Chetwynd Griffith, *The Angel of the Revolution* (1893) | **not checked** |
 | Black sky filled with stars seen from s… | 13.5 | 4 | 1 | 1961-04-12 †: Yuri Gagarin, orbiting in Vostok 1 on 12 April 1961, reported a pitch… | medium | contemporary | Jules Verne, *All Around the Moon* (1870) | **not checked** |
-| Psychological methods in crime detection | 13.2 | 6 | 1 | 1921-04-19: John A. Larson's polygraph (blood pressure and breathing) was used by… | low | Wikipedia only | John Uri Lloyd, *Etidorhpa* (1895) | **not checked** |
 | Official rating of citizens by aptitude… | 12.6 | 6 | 1 | 1917: From September 1917 the US Army (Surgeon General) put recruits throug… | high | contemporary | Tommaso Campanella, *The City of the Sun* (1602) | **not checked** |
 | Mind-reading machine | 12.1 | 3 | 9 | 2006 †: Thirion et al. (NeuroSpin, France) decoded fMRI activity to reconstru… | medium | contemporary | Guy Thorne, *The Soul Stealer* (1906) | **not checked** |
 | Synthetic diamond | 12.1 | 3 | 3 | 1957: General Electric's Detroit plant made man-made industrial diamonds in… | medium | contemporary | H. G. Wells, *The Stolen Bacillus and Other Inci…* (1895) | **not checked** |
 | Stored air, water and food for spacefli… | 12.0 | 4 | 3 | 1961-04-12: Vostok 1: Yuri Gagarin flew with food, water and regeneration supplie… | high | contemporary | Jules Verne, *The Moon-Voyage* (1872) | **not checked** |
-| Engineered manipulation of public opini… | 11.7 | 6 | 0 | 1929-03-31: Edward Bernays hired women to smoke in the New York Easter Parade as… | low | Wikipedia only | Ignatius Donnelly, *Cæsar's Column* (1890) | **not checked** |
+| Engineered manipulation of public opini… | 11.7 | 6 | 0 | 1929-03-31: Edward Bernays arranged for women, led by Bertha Hunt, to smoke in th… | low | contemporary | Ignatius Donnelly, *Cæsar's Column* (1890) | **not checked** |
 | Hydrogen bomb | 11.6 | 12 | 0 | 1954: Emergency-capability thermonuclear bombs (EC 17, EC 24) entered the U… | medium | Wikipedia only | Lester Del Rey, *And There Was Light* (1951) | **not checked** |
 | Totalitarian dictatorship over a nation | 11.5 | 6 | 1 | 1918-09: Bolshevik Soviet Russia: one-party rule, with the Sovnarkom decree of… | low | contemporary | Alexis de Tocqueville, *Democracy in America, Volume 2* (1840) | **not checked** |
 | Moving an asteroid into a new orbit | 11.5 | 4 | 5 | 2022-09-26 †: NASA's DART spacecraft struck the asteroid moonlet Dimorphos on 26 Se… | high | contemporary | Harold L. Goodwin, *Rip Foster in Ride the Gray Planet* (1952) | **not checked** |
@@ -440,7 +439,6 @@ The 40 that carry the most points, and every one tier 2 did not check:
 | Spacecraft emergency safety systems | 10.0 | 4 | 4 | 1997-06-25: Progress M-34 punctured Mir's Spektr module; the crew cut cables and… | medium | contemporary | John Murray Reynolds, *Goddess of the Moon* (1940) | **not checked** |
 | Audiobook player | 10.0 | 2 | 1 | 1935: Talking Books on long-playing discs, played on special reading machin… | medium | contemporary | Cyrano de Bergerac, *A Voyage to the Moon* (1657) | **not checked** |
 | Gravity assist navigation | 9.8 | 4 | 3 | 1973-12-03: Pioneer 10 passed Jupiter on 3 December 1973 and used its gravity to… | medium | contemporary | Jules Verne, *The Moon-Voyage* (1872) | **not checked** |
-| Routine mass health screening | 9.7 | 4 | 2 | 1936: Abreugraphy was used from 1936 for screening of groups in Brazil, lat… | low | Wikipedia only | Cyrano de Bergerac, *A Voyage to the Moon* (1657) | **not checked** |
 | Undersea habitat or city | 9.7 | 5 | 1 | 1963-06: Conshelf II in the Red Sea off Sudan: five oceanauts lived a month in… | medium | contemporary | Stanton A. Coblentz, *The Sunken World* (1928) | **not checked** |
 | Physiological effects of spaceflight | 9.6 | 8 | 0 | 1961-08-06 †: Gherman Titov, in Vostok 2 (launched 6 August 1961), became the first… | high | contemporary | E. E. Smith, *Robot Nemesis* (1934) | **not checked** |
 | Change in Earth's rotation | 9.6 | 5 | 1 | 1939: The Earth's rotation was shown to be changing in speed (day length va… | low | contemporary | H. G. Wells, *Tales of Space and Time* (1899) | **not checked** |
@@ -455,6 +453,7 @@ The 40 that carry the most points, and every one tier 2 did not check:
 | Live television from space | 8.7 | 5 | 0 | 1962-07-23: Telstar 1 relayed the first public live transatlantic television, sho… | high | contemporary | Arthur Leo Zagat, *The Great Dome on Mercury* (1932) | **not checked** |
 | Eugenic breeding of humans | 8.3 | 2 | 3 | 1869: Same event: the committee approved parents and children were born und… | medium | contemporary | Tommaso Campanella, *The City of the Sun* (1602) | **not checked** |
 | Under-ice polar submarine | 8.2 | 3 | 6 | 1959-03-17: USS Skate, on a 12-day winter Arctic cruise under the ice, surfaced a… | low | contemporary | Luis Senarens, *Frank Reade Jr.'s Submarine Boat* (1893) | **not checked** |
+| Routine mass health screening | 8.1 | 4 | 2 | 1937: Thoracic Census Centers in Rio de Janeiro screened asymptomatic peopl… | medium | reference | Godfrey Sweven, *Limanora* (1903) | **not checked** |
 | Compulsory or make-work employment | 8.1 | 2 | 3 | 1848-02-25: On 25 February 1848 the French provisional government of the Second R… | high | contemporary | Thomas More, *Utopia* (1516) | **not checked** |
 | Air travel replaces sea travel | 8.0 | 2 | 1 | 1951: By 1951 airlines carried 52 percent of all commercial transpacific (U… | low | reference | Ralph Centennius, *The Dominion in 1983* (1883) | **not checked** |
 | Planets changing orbits | 7.9 | 5 | 1 | 1945-11 †: B. P. Sharpless of the US Naval Observatory published the first compu… | medium | contemporary | Ray Cummings, *The Princess of the Atom* (1929) | **not checked** |
@@ -469,14 +468,14 @@ The 40 that carry the most points, and every one tier 2 did not check:
 | Uncrewed cargo spacecraft | 6.7 | 4 | 0 | 1978-01-22: Progress 1 delivered fuel and supplies to the crew of Salyut 6 (Roman… | high | contemporary | Richard M. Elam, *Young Visitor to Mars* (1953) | **not checked** |
 | Non-lethal stun gun | 6.4 | 3 | 1 | 1975-03: The Taser Public Defender, a flashlight-shaped dart stun gun made by… | medium | contemporary | Frank Aubrey, *A Trip to Mars* (1909) | **not checked** |
 | Spacecraft built from or reused as othe… | 6.4 | 3 | 0 | 1973-05-25: The Skylab 2 crew was launched to Skylab and lived and worked in the… | medium | contemporary | Murray Leinster, *Planet Explorer* (1957) | **not checked** |
-| Sealed knowledge repository | 6.4 | 3 | 1 | 1938-09-23: Same event: the capsule was sealed and buried as a repository. | medium | Wikipedia only | Pierre Benoît, *Atlantida* (1919) | **not checked** |
+| Sealed knowledge repository | 6.4 | 3 | 1 | 1938-09-23: Same event: the capsule was sealed and buried as a repository for peo… | high | contemporary | Pierre Benoît, *Atlantida* (1919) | **not checked** |
 | Automated construction | 6.2 | 3 | 1 | 1991: Shimizu Corporation introduced its SMART automated construction syste… | medium | reference | Mark Meadows, *Joy Ride* (1954) | **not checked** |
 | Credit card payment | 6.1 | 2 | 1 | 1950-02: Diners Club began operating in February 1950 and within the year had… | medium | contemporary | Edward Bellamy, *Looking Backward* (1888) | **not checked** |
 | Brain-to-brain link | 6.0 | 3 | 3 | 2013-08-12 †: At the University of Washington on 12 Aug 2013, Rajesh Rao's EEG-read… | medium | contemporary | Mike Lewis, *Collectivum* (1953) | **not checked** |
 | Space beacons and navigation aids | 6.0 | 4 | 0 | 1965-12-15: Gemini VI-A's rendezvous radar locked on the transponder carried by G… | low | contemporary | D. W. Barefoot, *Morley's Weapon* (1954) | **not checked** |
 | Orbital rendezvous and docking | 5.8 | 3 | 0 | 1969-07-21: Apollo 11 Lunar Module Eagle rendezvoused with and docked to Columbia… | high | contemporary | Ray Cummings, *Tama of the Light Country* (1930) | **not checked** |
 | Round-the-world flight | 5.8 | 2 | 1 | 1947-06-17: Pan American Clipper America left New York on the first commercial ro… | medium | contemporary | Luis Senarens, *From Zone to Zone* (1894) | **not checked** |
-| Selling or owning land on the Moon | 5.7 | 3 | 2 | 1955: Robert R. Coles, former chairman of the Hayden Planetarium, ran the I… | low | contemporary | Ellsworth Douglass, *Pharaoh's Broker* (1899) | **not checked** |
+| Selling or owning land on the Moon | 5.7 | 3 | 2 | 1955: Robert R. Coles, former chairman of the Hayden Planetarium, ran the I… | medium | contemporary | Ellsworth Douglass, *Pharaoh's Broker* (1899) | **not checked** |
 | Solar electric power generation | 5.6 | 2 | 1 | 1973-07: The Solar One experimental house at the University of Delaware began… | medium | contemporary | John Jacob Astor, *A Journey in Other Worlds* (1894) | **not checked** |
 | Disposable paper clothing and strong pa… | 5.5 | 3 | 1 | 1966: Scott Paper Company offered a wear-it-once paper dress to the public… | medium | contemporary | Fritz Leiber, *The Last Letter* (1958) | **not checked** |
 | Airborne troop transport | 5.3 | 2 | 0 | 1923: RAF Vernons flew Sikh troops from Kingarban to Kirkuk in a real opera… | medium | contemporary | H. G. Wells, *The Sleeper Awakes* (1899) | **not checked** |
@@ -486,7 +485,6 @@ The 40 that carry the most points, and every one tier 2 did not check:
 | Emotion-recognition machine | 5.2 | 2 | 3 | 2015-06: SoftBank's Pepper, a humanoid robot that reads emotions from words, v… | low | contemporary | Dean Evans, *The Furious Rose* (1952) | **not checked** |
 | Unattended automatic power plant | 5.0 | 2 | 1 | 1966: The US Navy installed a radioisotope generator on uninhabited Fairway… | medium | contemporary | Van Tassel Sutphen, *The Doomsman* (1906) | **not checked** |
 | Exotic surface of Pluto | 4.8 | 2 | 0 | 1976-11 †: Cruikshank, Pilcher and Morrison (Univ. of Hawaii) reported infrared… | medium | contemporary | Fletcher Pratt; Laurence…, *Expedition to Pluto* (1939) | **not checked** |
-| Self-glowing gems and jewelry | 4.5 | 1 | 1 | 1883: Electric head ornaments were worn by ladies of the ballet and at fanc… | low | contemporary | (text), *The Mahabharata, Volume 2 (Books 4…* (400) | **not checked** |
 | Weapons-to-energy conversion and arms c… | 4.2 | 1 | 1 | 1998: Cooper Nuclear Station in Nebraska became the first US power plant to… | low | Wikipedia only | George O. Smith, *The Incredible Invasion* (1948) | **not checked** |
 | Origin of lunar craters and domes | 4.0 | 1 | 0 | 1970-01 †: First Apollo 11 lunar samples studied at the Apollo 11 Lunar Science… | medium | contemporary | Robert H. Wilson, *Out Around Rigel* (1931) | **not checked** |
 | Volcanic eruption forecasting | 3.9 | 1 | 0 | 1910-07: Same event: the police chief's forecast was acted on by evacuating re… | high | contemporary | Jules Verne, *The Secret of the Island* (1874) | **not checked** |

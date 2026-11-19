@@ -3,15 +3,15 @@
  "claims": 123647,
  "books": 3256,
  "resolutions": {
-  "open": 72543,
-  "not_a_prediction": 24877,
-  "realized": 19454,
+  "open": 72541,
+  "not_a_prediction": 24892,
+  "realized": 19441,
   "failed": 522,
   "untestable": 6227,
   "vindicated": 24
  },
- "points": 31230.7,
- "entries": 13473,
+ "points": 31215.8,
+ "entries": 13471,
  "authors": 801,
  "awards": [
   {
@@ -156,8 +156,8 @@
     "name": "Limanora",
     "by": "Godfrey Sweven",
     "year": 1903,
-    "points": 246.9,
-    "stat": "246.9 points from 88 ideas"
+    "points": 245.6,
+    "stat": "245.6 points from 88 ideas"
    },
    "runners_up": [
     {
@@ -421,18 +421,12 @@
    "title": "Sharpest Eye",
    "rule": "The highest share of predictions that came true at a judged closeness of 0.5 or more, among authors with 50+ predictions.",
    "winner": {
-    "name": "Edwin Balmer and William MacHarg",
-    "key": "Edwin Balmer",
-    "points": 13.5,
-    "stat": "48% of 62 predictions came true (score 0.5+)"
+    "name": "Isabel Hornibrook",
+    "key": "Isabel Hornibrook",
+    "points": 30.0,
+    "stat": "39% of 51 predictions came true (score 0.5+)"
    },
    "runners_up": [
-    {
-     "name": "Isabel Hornibrook",
-     "key": "Isabel Hornibrook",
-     "points": 30.0,
-     "stat": "39% of 51 predictions came true (score 0.5+)"
-    },
     {
      "name": "E. Douglas Fawcett",
      "key": "E. Douglas Fawcett",
@@ -450,107 +444,108 @@
      "key": "George S. Schuyler",
      "points": 6.6,
      "stat": "33% of 94 predictions came true (score 0.5+)"
+    },
+    {
+     "name": "Edwin Balmer and William MacHarg",
+     "key": "Edwin Balmer",
+     "points": 10.8,
+     "stat": "32% of 62 predictions came true (score 0.5+)"
     }
    ],
    "hits": [
     {
-     "concept": "Lie detector",
-     "concept_id": "lie-detector",
-     "definition": "A device that detects deception by measuring physiological signals such as pulse, breathing and skin conductance.",
-     "quote": "for no matter how hardened a man may be, no matter how impossible it may have become to detect his feelings in his face or bearing, he cannot prevent the volume of blood in his hand from decreasing, and his breathing from becoming different, under the influence of emotions of fear or guilt.",
-     "title": "The Achievements of Luther Trant",
-     "year": 1910,
+     "concept": "Rocket sent to strike the Moon",
+     "concept_id": "lunar-impact-probe",
+     "definition": "An uncrewed rocket is fired at the Moon to crash on its surface, sometimes carrying a bomb or steel to be observed on impact.",
+     "quote": "saw the blue powder-flash light up the full, round face of the Silver Queen they loved, while the Thunder Bird, expiring, dropped its bones upon her dead surface.",
+     "title": "Pemrose Lorry, Camp Fire Girl",
+     "year": 1921,
      "authors": [
-      "Edwin Balmer",
-      "William MacHarg"
+      "Isabel Hornibrook"
      ],
-     "came_true": "1921",
+     "came_true": "1959-09-13",
      "kind": "first_practical_use",
-     "event": "John A. Larson of the Berkeley Police Department, under chief August Vollmer, began using his continuous blood-pressure and breathing recorder (the cardio-pneumo-psychogram, later called the polygraph) to test suspects, in 1921.",
-     "confidence": "medium",
-     "lead": 11,
-     "score": 1.0,
-     "points": 3.58,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Mind-reading machine",
-     "concept_id": "mind-reading-machine",
-     "definition": "A machine that reads a person's specific thoughts, memories or images directly from their brain.",
-     "quote": "I read from the marks made upon minds by a crime, not from scrawls and thumbprints upon paper. And my means of reading those marks are fortunately in my possession this morning.",
-     "title": "The Achievements of Luther Trant",
-     "year": 1910,
-     "authors": [
-      "Edwin Balmer",
-      "William MacHarg"
-     ],
-     "came_true": "2006",
-     "kind": "first_demonstration",
-     "event": "Thirion et al. (NeuroSpin, France) decoded fMRI activity to reconstruct and identify the visual pattern subjects viewed and the pattern they imagined (one of six self-chosen patterns), NeuroImage 33(4), accepted June 2006, online October 2006.",
-     "confidence": "medium",
-     "lead": 96,
-     "score": 0.5,
-     "points": 3.3,
-     "demonstration_only": true
-    },
-    {
-     "concept": "Psychological methods in crime detection",
-     "concept_id": "forensic-psychological-crime-detection",
-     "definition": "Scientific psychological examination of suspects, mind traces or behavior to determine guilt or identify the culprit instead of physical evidence.",
-     "quote": "The hour is close at hand when they will be used not merely in the determination of guilt and innocence, but to establish in the courts the credibility of witnesses and the impartiality of jurors, and by employers to ascertain the fitness and particular abilities of their employees.",
-     "title": "The Achievements of Luther Trant",
-     "year": 1910,
-     "authors": [
-      "Edwin Balmer",
-      "William MacHarg"
-     ],
-     "came_true": "1921-04-19",
-     "kind": "first_practical_use",
-     "event": "John A. Larson's polygraph (blood pressure and breathing) was used by the Berkeley Police Department, under chief August Vollmer, to question the 90 residents of a UC Berkeley dormitory after thefts.",
-     "confidence": "low",
-     "lead": 11,
+     "event": "The Soviet Luna 2 probe struck the Moon's surface near Mare Imbrium on 13 September 1959, the first human-made object to reach it.",
+     "confidence": "high",
+     "lead": 38,
      "score": 0.75,
-     "points": 2.69,
+     "points": 3.96,
      "demonstration_only": false
     },
     {
-     "concept": "Traumatic amnesia and its cure",
-     "concept_id": "traumatic-amnesia-and-recovery",
-     "definition": "A person loses memory through shock or trauma and regains it by second shock, therapy, drug or recall of the original circumstances.",
-     "quote": "an emotion so intense as that she suffered divides itself off from the rest of her consciousness. It is so overpowering that it cannot connect itself with her daily life; ordinary sights and sounds cannot call it back to memory.",
-     "title": "The Achievements of Luther Trant",
-     "year": 1910,
+     "concept": "Capsule parachute or sea-splashdown recovery",
+     "concept_id": "capsule-splashdown-parachute-recovery",
+     "definition": "A returning spacecraft capsule is slowed by parachutes and lands in the sea or on land to be recovered.",
+     "quote": "to be the fir-rst to see that very first record man has ever got from so high up–high up in the earth’s thin atmosphere, where the air ends–and space begins!",
+     "title": "Pemrose Lorry, Camp Fire Girl",
+     "year": 1921,
      "authors": [
-      "Edwin Balmer",
-      "William MacHarg"
+      "Isabel Hornibrook"
      ],
-     "came_true": "1917",
-     "kind": "first_demonstration",
-     "event": "British army physicians (M. D. Eder and others) treated war-shock soldiers who had lost their memory after the shock; recalling the circumstances under hypnosis brought the memory back.",
-     "confidence": "low",
-     "lead": 7,
+     "came_true": "1960-08-19",
+     "kind": "first_practical_use",
+     "event": "Discoverer 14's capsule, carrying the first film returned from orbit, was slowed by parachute and snagged in mid-air by a C-119 over the Pacific.",
+     "confidence": "medium",
+     "lead": 39,
      "score": 0.625,
-     "points": 1.88,
+     "points": 3.33,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Multistage rocket",
+     "concept_id": "multistage-rocket",
+     "definition": "A rocket made of stacked stages that fire in turn and are dropped as their fuel is used, to reach space or high altitude.",
+     "quote": "Explosion after bright explosion tore the cloud-banks as, one by one, the innumerable little rockets, which Pem had watched her father fitting into their grooves in its interior–far back in that quiet laboratory–went off.",
+     "title": "Pemrose Lorry, Camp Fire Girl",
+     "year": 1921,
+     "authors": [
+      "Isabel Hornibrook"
+     ],
+     "came_true": "1944-11",
+     "kind": "first_practical_use",
+     "event": "About 20 Rheinbote four-stage rockets were fired from Zwolle in the Netherlands against Antwerp, starting in autumn 1944 (Wikipedia gives December 1944 to January 1945; a 1948 BIS article says November 1944).",
+     "confidence": "medium",
+     "lead": 23,
+     "score": 0.625,
+     "points": 2.87,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Crewed Moon landing",
+     "concept_id": "crewed-moon-landing",
+     "definition": "A crewed spacecraft that flies people to the Moon, lands them on its surface and may return them to Earth.",
+     "quote": "the real Thunder Bird, full-fledged with magic, red-eyed, fiery-tailed, would embark on its hundred-hour flight moonward",
+     "title": "Pemrose Lorry, Camp Fire Girl",
+     "year": 1921,
+     "authors": [
+      "Isabel Hornibrook"
+     ],
+     "came_true": "1969-07-20",
+     "kind": "first_demonstration",
+     "event": "Apollo 11's lunar module Eagle landed Neil Armstrong and Buzz Aldrin on the Moon in the Sea of Tranquility on 20 July 1969; the crew returned to Earth 24 July.",
+     "confidence": "high",
+     "lead": 48,
+     "score": 0.5,
+     "points": 2.81,
      "demonstration_only": true
     },
     {
-     "concept": "Fast cure for mental illness",
-     "concept_id": "mental-illness-cure",
-     "definition": "A psychological, chemical or electrical treatment that quickly and reliably cures insanity and mental breakdown.",
-     "quote": "you have only to recount them to her, repeating them time after time if necessary, until she normally remembers them and you have drawn the two parts of her consciousness back again into one.",
-     "title": "The Achievements of Luther Trant",
-     "year": 1910,
+     "concept": "Robotic exploration probe",
+     "concept_id": "robotic-space-probe",
+     "definition": "An uncrewed robot vehicle that explores another planet, the deep sea or space and reports back.",
+     "quote": "the steel explorer, twenty feet long, leaped from its platform high into the air, pointed directly for the moon, with a great inventor’s mathematical precision,–trailing its two-hundred-foot, rosy trail of fire.",
+     "title": "Pemrose Lorry, Camp Fire Girl",
+     "year": 1921,
      "authors": [
-      "Edwin Balmer",
-      "William MacHarg"
+      "Isabel Hornibrook"
      ],
-     "came_true": "1934-01",
+     "came_true": "1962-12-14",
      "kind": "first_practical_use",
-     "event": "The same hospital treatment of real psychiatric patients by Meduna from January 1934; by 1937 metrazol convulsive therapy was in use in hospitals in Britain and elsewhere and, according to a later history, within three years of 1934 was in use worldwide.",
+     "event": "NASA's Mariner 2 flew past Venus at 21,648 miles on 14 Dec 1962 and radioed back its measurements of the planet's clouds, temperature and lack of magnetic field: the first successful robotic probe of another planet.",
      "confidence": "medium",
-     "lead": 24,
-     "score": 0.25,
-     "points": 1.16,
+     "lead": 41,
+     "score": 0.5,
+     "points": 2.7,
      "demonstration_only": false
     }
    ]
@@ -849,8 +844,8 @@
     {
      "name": "Godfrey Sweven",
      "key": "Godfrey Sweven",
-     "points": 299.3,
-     "stat": "299.3 points from 107 ideas"
+     "points": 298.1,
+     "stat": "298.1 points from 107 ideas"
     },
     {
      "name": "Edmond Hamilton",
@@ -1476,8 +1471,8 @@
    "winner": {
     "name": "The Mahabharata",
     "key": "The Mahabharata",
-    "points": 91.7,
-    "stat": "91.7 points from 30 ideas"
+    "points": 89.5,
+    "stat": "89.5 points from 30 ideas"
    },
    "runners_up": [
     {
@@ -2266,8 +2261,8 @@
    "winner": {
     "name": "Godfrey Sweven",
     "key": "Godfrey Sweven",
-    "points": 63.5,
-    "stat": "63.5 points from 23 ideas"
+    "points": 62.3,
+    "stat": "62.3 points from 23 ideas"
    },
    "runners_up": [
     {
@@ -2354,25 +2349,6 @@
      "demonstration_only": false
     },
     {
-     "concept": "Routine mass health screening",
-     "concept_id": "routine-health-screening",
-     "definition": "Regular, often compulsory, screening of whole populations with instruments to catch disease early.",
-     "quote": "They were used in the weekly medical inspection, which every member of the commonwealth underwent.",
-     "title": "Limanora",
-     "year": 1903,
-     "authors": [
-      "Godfrey Sweven"
-     ],
-     "came_true": "1936",
-     "kind": "first_practical_use",
-     "event": "Abreugraphy was used from 1936 for screening of groups in Brazil, later required for public jobs and schools.",
-     "confidence": "low",
-     "lead": 33,
-     "score": 0.75,
-     "points": 3.82,
-     "demonstration_only": false
-    },
-    {
      "concept": "Sleep learning",
      "concept_id": "sleep-learning",
      "definition": "Teaching people while they sleep or are hypnotized by playing recorded lessons.",
@@ -2389,6 +2365,25 @@
      "lead": 116,
      "score": 0.5,
      "points": 3.44,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Genetically engineered superhumans",
+     "concept_id": "human-genetic-enhancement",
+     "definition": "Engineering human heredity by genetic or laboratory methods to produce stronger, smarter or otherwise improved people.",
+     "quote": "if they moulded every tissue and organ and faculty for themselves, this retrogressive tendency that nature treasures up in every germ and child would disappear.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "2018-11-25",
+     "kind": "first_demonstration",
+     "event": "He Jiankui announced the birth of twin girls, Lulu and Nana, whose embryos he had genome-edited (CCR5) in Shenzhen, China.",
+     "confidence": "medium",
+     "lead": 115,
+     "score": 0.5,
+     "points": 3.43,
      "demonstration_only": true
     }
    ]
@@ -3481,7 +3476,7 @@
     {
      "name": "Godfrey Sweven",
      "key": "Godfrey Sweven",
-     "points": 299.3,
+     "points": 298.1,
      "stat": "first to predict 28 ideas that came true"
     },
     {

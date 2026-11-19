@@ -1,11 +1,11 @@
 # The deciding milestones: checkpoint 3 (runs/match/PLAN.md §5)
 
-Tier 2 checked 101 of the deciding concepts (21 of 21 batches, in 2 rounds): `prompts/milestones_tier2.md`, an adversarial earliest-event check of each concept's demonstration and practical use with a search for contemporary sources, every quote fetched again by `match.py verify`. The concepts are in the order the scorings selected them (`runs/match/deciding.jsonl`: the first scoring's, then each later round's newcomers, marked with their round); points and the milestone before tier 2 are from the scoring that selected the concept.
+Tier 2 checked 102 of the deciding concepts (22 of 22 batches, in 3 rounds): `prompts/milestones_tier2.md`, an adversarial earliest-event check of each concept's demonstration and practical use with a search for contemporary sources, every quote fetched again by `match.py verify`. The concepts are in the order the scorings selected them (`runs/match/deciding.jsonl`: the first scoring's, then each later round's newcomers, marked with their round); points and the milestone before tier 2 are from the scoring that selected the concept.
 
-- **Verdicts:** confirmed 79, replaced 30, added 3. 2 overruled on review, which keeps the earlier milestone.
-- **Scoring milestone changed** for 38 of 101 concepts: earlier 22, same year, other month or kind 15, later 1.
-- **Contemporary sources:** 74 of 101 scoring milestones have one now, 23 had one before tier 2.
-- **Judging again:** 0 pairs are in no judging round yet, and 336 judged pairs are no longer current. 0 of the new pairs copy the judgments of an earlier pair, since tier 2 confirmed the same event in the same kind and year and only the date got more precise; the other 0 go to both judges (judge A all, judge B the 0 `will` pairs).
+- **Verdicts:** confirmed 80, replaced 30, added 3. 2 overruled on review, which keeps the earlier milestone.
+- **Scoring milestone changed** for 38 of 102 concepts: earlier 22, same year, other month or kind 15, later 1.
+- **Contemporary sources:** 75 of 102 scoring milestones have one now, 23 had one before tier 2.
+- **Judging again:** 0 pairs are in no judging round yet, and 352 judged pairs are no longer current. 0 of the new pairs copy the judgments of an earlier pair, since tier 2 confirmed the same event in the same kind and year and only the date got more precise; the other 0 go to both judges (judge A all, judge B the 0 `will` pairs).
 
 Checkpoint 3's decisions are in `runs/match/milestone_review.jsonl`: 2 rows, 2 of them keeping the earlier milestone. Each concept's notes, the candidates the researcher rejected and what it searched are in `runs/match/milestones.jsonl` and `milestone_notes.jsonl`.
 
@@ -52,7 +52,7 @@ Checkpoint 3's decisions are in `runs/match/milestone_review.jsonl`: 2 rows, 2 o
 | Restrictive divorce law | 4 | 1816 (use) | **1816-05-08 (use)** | use confirmed | France's Bonald law of 8 May 1816 abolished divorce (Article 1: 'Le divorce est aboli'), converting pending divorce suits into separations and annulling consent-divorce proceedings. | 2 contemporary, 1 reference | high | Divorce was made impossible by statute, the extreme form of the definition's abolition of contested divorce. | 0 |
 | Musical or whistled speech (round 2) | 7 | 1687 (use) | **1402 (use)** | use replaced | The French chroniclers of Jean de Bethencourt's conquest (Le Canarien, 1402) recorded that the people of La Gomera speak with the lips as if they had no tongue, read by the Canary Islands government as the first record of the island's whistled language, Silbo. | 2 reference | low | A whole island population conversing by whistled pitch in place of ordinary words matches the definition, though the 1402 text describes the odd speech and does not itself say whistling. | 0 |
 
-## Scoring milestone unchanged (63)
+## Scoring milestone unchanged (64)
 
 | Concept | Points | Before tier 2 | After tier 2 | Tier 2 | Event | Sources | Confidence | Fit | Pairs to judge |
 |---|---|---|---|---|---|---|---|---|---|
@@ -119,6 +119,7 @@ Checkpoint 3's decisions are in `runs/match/milestone_review.jsonl`: 2 rows, 2 o
 | Control or monopoly of atomic fuel | 6 | 1944-06 (use) | 1944-06 (use) | use confirmed | The US and UK Combined Policy Committee created the Combined Development Trust (chaired by Groves) to corner uranium and thorium ores on the world market, notably Belgian Congo and Canadian ore. | 2 reference | medium | Two governments organized to secure control of the world's supply of atomic fuel ore and deny it to others, a government monopoly of the fuel material, though for weapons rather than society's power. | 0 |
 | Government programs to raise national intelligence | 6 | 1979-03 (use) | 1979-03 (use) | use confirmed | Venezuela's new Herrera Campins government created a Ministry for the Development of Intelligence under Luis Alberto Machado, March 1979. | 2 contemporary, 1 reference | high | A state ministry created to raise the intelligence of the whole population by teaching thinking skills. | 0 |
 | Narrow medical specialization | 4 | 1949 (use) | 1949 (use) | use confirmed | US Department of Commerce survey: among all physicians full specialists reached 46 percent against 38 percent for general practitioners (26 and 53 percent in 1929), and independent general practitioners were only 26 to 31 percent of practitioners in cities over 500,000. | 1 contemporary | medium | In the United States full specialists had replaced general practitioners as the largest group, most of all in large cities, which is the replacement the definition describes. | 0 |
+| State-provided universal health care (round 3) | 4 | 1918-07 (use) | 1918-07 (use) | use confirmed | Soviet Russia (RSFSR) set up a state health system under the People's Commissariat of Public Health (Semashko, appointed 11 July 1918); a July 1918 decree nationalized medical institutions and declared care free for all. | 1 contemporary, 2 reference | low | A single state-funded system proclaimed medical care free to every citizen; universality was nominal at first but the state system and the free-for-all rule were in force in Soviet Russia. | 0 |
 
 ## Removed, fell back, or overruled on review
 

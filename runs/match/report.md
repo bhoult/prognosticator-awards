@@ -362,10 +362,14 @@ from tranche A:
 ## 9. Both tranches: the second edition of the awards
 
 Tranche B (run `b`, 2026-11-19, [`b/report.md`](b/report.md)) scored 46,211 claims about events,
-politics, economics and ways of living: 3,651 came true, 2,496 book entries, 5,929 points, for 356
-agents and 50.4M tokens. `pipeline/awards.py data full+b` joins the two runs so that a book counts an
-idea once, from its best claim in either tranche, and the totals become 123,647 claims, 19,454
-realized, 13,473 entries and 31,231 points from 801 authors and texts.
+politics, economics and ways of living: 3,644 came true, 2,493 book entries, 5,914 points, for 360
+agents and 50.6M tokens. `pipeline/awards.py data full+b` joins the two runs so that a book counts an
+idea once, from its best claim in either tranche, and the totals become 123,647 claims, 19,441
+realized, 13,471 entries and 31,216 points from 801 authors and texts. Seven tranche-A concepts
+that only tranche B's claims made deciding were checked by tier 2 afterwards (tier2-136, tier2-137;
+judging A-125, B-124): psychological crime detection moved to C. G. Jung's 1905 case, which takes
+the Luther Trant stories' detection methods out of the predictions, and tranche A now has 15,797
+realized claims and 26,127 points. All 780 concepts that decide the combined awards are checked.
 
 | award | tranche A alone | both tranches |
 |---|---|---|
@@ -373,6 +377,7 @@ realized, 13,473 entries and 31,231 points from 801 authors and texts.
 | Prediction of the Age | Locke, lunar meteorites | More, painless death on demand (469 years) |
 | The Long View | Cyrano de Bergerac (287 years) | Thomas More (469 years) |
 | Most Prescient per Book | Richard M. Elam | George Griffith (58.0 a book) |
+| Precision | Balmer and MacHarg (48% of 62) | Isabel Hornibrook (39% of 51; Balmer and MacHarg fall to 32%) |
 | Pulp-era visionary (1900–1945) | E. E. Smith | H. G. Wells |
 | Best forecaster (non-fiction) | T. Baron Russell | H. G. Wells |
 | Best early-modern utopia | Francis Bacon | Thomas More (71.7 to Bacon's 70.9) |
@@ -381,7 +386,7 @@ realized, 13,473 entries and 31,231 points from 801 authors and texts.
 | Transport, environment, economy | Griffith, Verne, Leiber | Senarens, Wells, Wells |
 | Still Waiting | telepathy (473 books) | intelligent life on other worlds (540 books) |
 
-The other 17 winners are unchanged. The reasons were rewritten for the new winners and updated for
+The other 16 winners are unchanged. The reasons were rewritten for the new winners and updated for
 the others' new totals ([`awards_notes.jsonl`](awards_notes.jsonl)); tranche A's edition is in the
 git history (commit `ce84794`). The negative check's input is built by `pipeline/negative_check.py`. The release database (`pipeline/export_db.py`: SQLite and CSV, both
 tranches, the books cited by title and author, never by library path) is attached to a draft GitHub

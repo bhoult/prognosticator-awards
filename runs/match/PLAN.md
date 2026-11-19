@@ -435,7 +435,7 @@ The researchers see concept definitions only, never claims.
   every tranche-B claim (46,211), the pilot's concepts and milestones carried in (`b-init b seed:bpilot`).
   First pass 38.8% matched; gap pass, consolidation and gap matching to 62.6%; 525 new concepts; tier 1,
   verify, two judges, tier 2 on B's own 101 deciding concepts (two answers overruled on review), the
-  negative check (0 of 56 contradicted). 3,651 realized, 5,929 points; 356 agents, 50.4M tokens. The
+  negative check (0 of 56 contradicted). 3,644 realized, 5,914 points; 360 agents, 50.6M tokens; the seven tranche-A concepts that only B made deciding checked in A's run (tier2-136, tier2-137). The
   awards' second edition joins both tranches (`awards.py data full+b`).
 
 ## 10. Orchestration

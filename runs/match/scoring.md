@@ -1,6 +1,6 @@
 # Scoring after tier 2, tranche A (PLAN §8)
 
-Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 650 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).
+Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 657 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).
 
 ## Resolutions
 
@@ -9,12 +9,12 @@ Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500)
 | resolution | claims | share |
 |---|---|---|
 | open: no_milestone | 31,442 | 40.6% |
-| not_a_prediction | 16,411 | 21.2% |
-| realized | 15,803 | 20.4% |
+| not_a_prediction | 16,418 | 21.2% |
+| realized | 15,797 | 20.4% |
 | open: no_concept | 6,795 | 8.8% |
 | open: too_vague | 3,897 | 5.0% |
 | untestable | 2,558 | 3.3% |
-| open: not_matched | 272 | 0.4% |
+| open: not_matched | 271 | 0.3% |
 | failed: missed_deadline | 170 | 0.2% |
 | open: not_contradicted | 51 | 0.1% |
 | failed: contradicted_negative | 24 | 0.0% |
@@ -97,7 +97,7 @@ Each author counts a concept once, from their best book. 767 authors score.
 | 9 | George Chetwynd Griffith | 257.7 | 92 | 6 | 43.0 | 28% of 803 |
 | 10 | Raymond Z. Gallun | 254.8 | 99 | 17 | 15.0 | 22% of 701 |
 | 11 | John W. Campbell Jr | 250.3 | 102 | 11 | 22.8 | 15% of 963 |
-| 12 | Godfrey Sweven | 246.6 | 88 | 2 | 123.3 | 17% of 568 |
+| 12 | Godfrey Sweven | 245.4 | 88 | 2 | 122.7 | 17% of 568 |
 | 13 | Fritz Leiber | 225.5 | 94 | 29 | 7.8 | 18% of 657 |
 | 14 | H. Beam Piper | 217.3 | 100 | 32 | 6.8 | 14% of 1180 |
 | 15 | F. L. Wallace | 202.4 | 87 | 18 | 11.2 | 17% of 551 |
@@ -121,7 +121,7 @@ Each author counts a concept once, from their best book. 767 authors score.
 
 | # | book | author | group | points | concepts |
 |---|---|---|---|---|---|
-| 1 | *Limanora* (1903) | Godfrey Sweven | Science-Fiction | 226.9 | 81 |
+| 1 | *Limanora* (1903) | Godfrey Sweven | Science-Fiction | 225.7 | 81 |
 | 2 | *Across the Zodiac* (1880) | Percy Greg | Science-Fiction | 147.0 | 47 |
 | 3 | *Ralph 124C 41+* (1911) | Hugo Gernsback | Science-Fiction | 143.4 | 44 |
 | 4 | *Spacehounds of IPC* (1931) | E. E. Smith | Science-Fiction | 117.7 | 43 |
@@ -158,9 +158,9 @@ Claims realized at a score of 0.5 or more, of all tranche-A claims by the author
 
 | # | author | precision | claims | points |
 |---|---|---|---|---|
-| 1 | Edwin Balmer | 46% | 54 | 13.1 |
-| 2 | William MacHarg | 46% | 54 | 13.1 |
-| 3 | Harold L. Goodwin | 39% | 208 | 73.7 |
+| 1 | Harold L. Goodwin | 39% | 208 | 73.7 |
+| 2 | Edwin Balmer | 37% | 54 | 10.8 |
+| 3 | William MacHarg | 37% | 54 | 10.8 |
 | 4 | Ignatius Donnelly | 34% | 90 | 64.6 |
 | 5 | Walter M. Miller | 33% | 85 | 56.5 |
 | 6 | Jeff Sutton | 32% | 85 | 37.4 |
@@ -229,7 +229,7 @@ The best books of each era, by publication year.
 
 | # | book | author | points |
 |---|---|---|---|
-| 1 | *Limanora* (1903) | Godfrey Sweven | 226.9 |
+| 1 | *Limanora* (1903) | Godfrey Sweven | 225.7 |
 | 2 | *Ralph 124C 41+* (1911) | Hugo Gernsback | 143.4 |
 | 3 | *Spacehounds of IPC* (1931) | E. E. Smith | 117.7 |
 | 4 | *Skylark Three* (1930) | E. E. Smith | 110.9 |
@@ -278,13 +278,13 @@ The non-fiction, classics, prophecy and religious texts. Ancient and translated 
 | Prophecy | *The Sibylline Oracles* (700) | (text) | 7.8 | 976 |
 | Prophecy | *The True Prophecies or Prognostications of Michael Nostrada…* (1568) | Nostradamus | 2.0 | 2104 |
 | Religion | *The Mahabharata, Volume 1 (Books 1-3)* (400) | (text) | 34.8 | 133 |
-| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (400) | (text) | 19.1 | 330 |
-| Religion | *The Mahabharata, Volume 4 (Books 13-18)* (400) | (text) | 18.8 | 337 |
+| Religion | *The Mahabharata, Volume 4 (Books 13-18)* (400) | (text) | 20.0 | 311 |
+| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (400) | (text) | 19.1 | 331 |
 | Science | *Side-Lights on Astronomy* (1906) | Simon Newcomb | 33.9 | 140 |
 
 ## Sensitivity: points only from a score of 0.5
 
-5,434 of 16,421 judged `will` pairs score below 0.5; without them 3,210 entries and 4,490 of 26,129 points go. Of the top 30 authors, 29 stay in the top 30; of the top 30 books, 27.
+5,432 of 16,414 judged `will` pairs score below 0.5; without them 3,211 entries and 4,491 of 26,127 points go. Of the top 30 authors, 29 stay in the top 30; of the top 30 books, 27.
 
 | # | author (default) | points | author (from 0.5) | points |
 |---|---|---|---|---|
@@ -299,8 +299,8 @@ The non-fiction, classics, prophecy and religious texts. Ancient and translated 
 | 9 | George Chetwynd Griffith | 257.7 | Raymond Z. Gallun | 236.9 |
 | 10 | Raymond Z. Gallun | 254.8 | John W. Campbell Jr | 220.2 |
 | 11 | John W. Campbell Jr | 250.3 | George Chetwynd Griffith | 219.5 |
-| 12 | Godfrey Sweven | 246.6 | Fritz Leiber | 213.2 |
-| 13 | Fritz Leiber | 225.5 | Godfrey Sweven | 208.3 |
+| 12 | Godfrey Sweven | 245.4 | Fritz Leiber | 213.2 |
+| 13 | Fritz Leiber | 225.5 | Godfrey Sweven | 207.0 |
 | 14 | H. Beam Piper | 217.3 | H. Beam Piper | 192.6 |
 | 15 | F. L. Wallace | 202.4 | F. L. Wallace | 169.3 |
 | 16 | Garrett Putman Serviss | 200.7 | Nelson S. Bond | 166.7 |

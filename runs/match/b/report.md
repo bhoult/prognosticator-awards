@@ -10,11 +10,11 @@ and no API calls. The rankings and resolutions are in [`scoring.md`](scoring.md)
 ## Summary
 
 - **46,211 claims about events, politics, economics and ways of living** from 3,182 books, every
-  tranche-B claim of the export (the pilot's 2,500 among them, matched again). 3,651 came true
-  (7.9%), against 20.4% in tranche A and 2.9% in the pilot; 8,466 came after their event (not a
-  prediction), 30,080 are open (16,372 with no milestone, 7,445 too vague, 6,149 with no concept),
+  tranche-B claim of the export (the pilot's 2,500 among them, matched again). 3,644 came true
+  (7.9%), against 20.4% in tranche A and 2.9% in the pilot; 8,474 came after their event (not a
+  prediction), 30,079 are open (16,372 with no milestone, 7,445 too vague, 6,149 with no concept),
   3,669 are untestable, and 328 missed a deadline they named.
-- **2,496 book entries from 1,099 books and 506 authors score, 5,929 points.** H. G. Wells leads
+- **2,493 book entries from 1,097 books and 504 authors score, 5,914 points.** H. G. Wells leads
   (250 points), then George Griffith (126), Jules Verne (108), George O. Smith and Murray Leinster.
   The top books are Bellamy's *Equality* (1897), More's *Utopia* (1516), Donnelly's *Cæsar's Column*
   (1890) and Wells's *Anticipations* (1901). *Utopia* has the five best single predictions: a
@@ -22,11 +22,11 @@ and no API calls. The rankings and resolutions are in [`scoring.md`](scoring.md)
   property (1918), a welfare state (1883) and communal dining (1958).
 - **The yield is highest where tranche A's concepts reach:** 35.6% of computing claims, 17.8% of
   transport and 14.2% of space came true, against 5.7% of society and politics (20,232 claims).
-- **Combined with tranche A** (the awards): 123,647 claims, 19,454 realized, 13,473 book entries,
-  31,231 points (a book counts an idea once, from its best claim in either tranche). Wells passes
+- **Combined with tranche A** (the awards): 123,647 claims, 19,441 realized, 13,471 book entries,
+  31,216 points (a book counts an idea once, from its best claim in either tranche). Wells passes
   E. E. Smith as Grand Prognosticator, 549.5 points to 467.5, and Thomas More's *Utopia* takes the
   best single prediction and the longest view.
-- **Cost:** 356 agents, 50.4M tokens and 22 agent-hours, inside the pilot's 50–65M estimate. Weekly
+- **Cost:** 360 agents, 50.6M tokens and 22 agent-hours, inside the pilot's 50–65M estimate. Weekly
   usage went from 16% to 29% at the last check.
 
 ## How it ran
@@ -38,10 +38,10 @@ and no API calls. The rankings and resolutions are in [`scoring.md`](scoring.md)
 | Consolidation by domain group, then a global merge | 9 | 2.1M | 540 new concepts; 70 proposals mapped to existing ones |
 | Gap matching | 81 | 14.7M | 62.6% matched in all (11,031 by the gap pass); 15 concepts under three claims cut |
 | Quick checks, tier 1, second look | 36 | 3.8M | 324 milestones for 281 of the 525 new concepts |
-| Judging, two judges and a third | 45 | 5.6M | 3,820 pairs; 69% same score, 30% one step apart |
-| Tier 2 on the deciding concepts | 21 | 2.7M | 101 checked: 79 confirmed, 30 replaced, 3 added |
+| Judging, two judges and a third | 48 | 5.7M | 3,812 pairs; 69% same score, 30% one step apart |
+| Tier 2 on the deciding concepts | 22 | 2.8M | 102 checked: 80 confirmed, 30 replaced, 3 added |
 | Negative check | 1 | 0.1M | 56 denials: 0 contradicted, 17 vindicated, 39 about something else |
-| **Total** | **356** | **50.4M** | |
+| **Total** | **360** | **50.6M** | |
 
 Every source was fetched and checked again by `verify`. The re-judging after tier 2 took 209 pairs
 in four batches; 88 more pairs copied the scores of their first-round pair, where tier 2 only dated
@@ -49,9 +49,12 @@ the same event more precisely.
 
 ## What tier 2 changed
 
-Tranche B's deciding concepts are 239, of which tier 2 checks only its own: tranche A's concepts
-keep tranche A's verified milestones, and the pilot's 23 were checked in the pilot. Of the 101
-checked, 38 scoring milestones changed. Most moved earlier with a contemporary source: Tambora (1815)
+Tranche B's deciding concepts are 238, of which tier 2 checks only its own: tranche A's concepts
+keep tranche A's verified milestones, and the pilot's 23 were checked in the pilot. Of the 102
+checked, 38 scoring milestones changed. Seven tranche-A concepts that only tranche B's claims made
+deciding were checked in tranche A's run (tier2-136, tier2-137) and carried into B's seed
+(`milestones_seed.jsonl`), so every one of the 780 concepts that decide the combined awards has
+been checked. Most moved earlier with a contemporary source: Tambora (1815)
 for a volcano destroying a town, the 1913 Dayton flood for a region-wide blackout, the 1911 census
 for London's first fall in population, Armitage's party on the Polar Plateau (January 1903) for the
 Antarctic interior. Two answers were overruled on review
