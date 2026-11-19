@@ -285,7 +285,7 @@ def data(run):
                        'hits': [th(r) for r in timed[:RUNNERS + 1]]})
 
     waiting = collections.defaultdict(list)  # concept -> its claims, for concepts with no milestone
-    for c in match.read_jsonl(match.rd(run, 'matches.jsonl'))[0]:
+    for c in (c for r in run.split('+') for c in match.read_jsonl(match.rd(r, 'matches.jsonl'))[0]):
         if c['concepts'] and c['id'] in cl:
             for k in c['concepts']:
                 if k not in ms and reg.get(k, {}).get('came_true_guess') != 'yes':
@@ -329,8 +329,13 @@ def page(run, edition='First awards, 2026 · technology and science', scored='20
             stale.append(f"{a['id']}: {w['name']}")
     r = d['resolutions']
     nreg = len(match.final_registry(run.split('+')[-1]))
-    ndec = sum(len(match.read_jsonl(os.path.join(AW, *p, 'deciding.jsonl'))[0])
-               for p in ([], [r for r in run.split('+')[1:]]) if os.path.exists(os.path.join(AW, *p, 'deciding.jsonl')))
+    dirs = [os.path.join(AW, *([] if r == 'full' else [r])) for r in run.split('+')]
+    rows = lambda f: [x for d in dirs if os.path.exists(os.path.join(d, f)) for x in match.read_jsonl(os.path.join(d, f))[0]]
+    deciding = {x['concept_id'] for x in rows('deciding.jsonl')}  # tier 2 checked them, in this run or the one it builds on
+    checked = {m['concept_id'] for m in rows('milestones.jsonl') if m.get('tier') == 2} | \
+        {n['concept_id'] for n in rows('milestone_notes.jsonl') if str(n.get('batch', '')).startswith('tier2-')}
+    ndec, nchk = len(deciding), len(deciding & checked)
+    both = '+' in run
     d.update(edition=edition, scored=scored,
              dek='For the science fiction, forecasts and old texts that saw the future first. Every prediction was '
                  'read from the book itself, matched to the dated event that made it come true, and scored by how '
@@ -343,12 +348,13 @@ def page(run, edition='First awards, 2026 · technology and science', scored='20
                  ('How it was made', [
                      f"{d['books']:,} books and texts: Project Gutenberg's science fiction with a known year, and 47 "
                      f"forecasts, utopias, prophecies and sacred texts. Sonnet subagents read every page and listed "
-                     f"{d['claims']:,} technology and science predictions, each with a verbatim quote that code checked "
-                     f"against the book.",
+                     f"{d['claims']:,} predictions, each with a verbatim quote that code checked against the book: "
+                     + ("technology and science (tranche A), and events, politics and ways of living (tranche B)."
+                        if both else "technology and science."),
                      f'The predictions were matched to {nreg:,} ideas, and each idea that came true was dated from public '
-                     f'sources by researchers who never saw the books, the claims or the authors. The {ndec} ideas that '
-                     'decide the rankings were researched a second time. Judges saw the passage and the event, never '
-                     'the author or the title.']),
+                     f'sources by researchers who never saw the books, the claims or the authors. Of the {ndec} ideas that '
+                     f'decide the rankings, {nchk} were researched a second time. Judges saw the passage and the event, '
+                     'never the author or the title.']),
                  ('What to keep in mind', [
                      f"Ideas dated only by a demonstration are marked <i>demo only</i>; dates from a single, weak source "
                      f"are marked <i>low confidence</i>. {r.get('not_a_prediction', 0):,} passages described things that "
@@ -356,8 +362,11 @@ def page(run, edition='First awards, 2026 · technology and science', scored='20
                      'Ancient texts are dated by the end of the scholarly range for their composition, from each '
                      "text's English Wikipedia article, and read in one translation each; the plan's second-translation "
                      'check is not built yet.',
-                     'Social, political and historical predictions (tranche B, 46,211 more claims) are scored separately '
-                     'and are not in these awards yet.']),
+                     ('A book counts an idea once across both tranches, from its best claim. Tranche B\'s first '
+                      'research leaned on Wikipedia, and many of its events are matters of reading (when a war or a '
+                      'custom counts as begun); its deciding dates were checked again with contemporary sources.'
+                      if both else 'Social, political and historical predictions (tranche B, 46,211 more claims) are '
+                      'scored separately and are not in these awards yet.')]),
                  ('The data', [
                      f'Code, prompts, every milestone with its sources, the review decisions and the full reports are in '
                      f'the public repository: <a href="{REPO}">{REPO.replace("https://", "")}</a> '

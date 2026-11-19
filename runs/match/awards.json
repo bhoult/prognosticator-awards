@@ -1,151 +1,150 @@
 {
- "run": "full",
- "claims": 77436,
- "books": 3224,
+ "run": "full+b",
+ "claims": 123647,
+ "books": 3256,
  "resolutions": {
-  "open": 42463,
-  "not_a_prediction": 16411,
-  "realized": 15803,
-  "failed": 194,
-  "untestable": 2558,
-  "vindicated": 7
+  "open": 72543,
+  "not_a_prediction": 24877,
+  "realized": 19454,
+  "failed": 522,
+  "untestable": 6227,
+  "vindicated": 24
  },
- "points": 26129.2,
- "entries": 11375,
- "authors": 767,
+ "points": 31230.7,
+ "entries": 13473,
+ "authors": 801,
  "awards": [
   {
    "id": "grand",
    "title": "Grand Prognosticator",
    "rule": "The most points: each realized idea scores closeness × log2(1 + years of lead), counted once per author from their best book.",
    "winner": {
-    "name": "E. E. Smith",
-    "key": "E. E. Smith",
-    "points": 426.8,
-    "stat": "426.8 points from 163 ideas in 20 books"
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 549.5,
+    "stat": "549.5 points from 192 ideas in 27 books"
    },
    "runners_up": [
     {
-     "name": "H. G. Wells",
-     "key": "H. G. Wells",
-     "points": 360.2,
-     "stat": "360.2 points from 128 ideas in 27 books"
-    },
-    {
-     "name": "Murray Leinster",
-     "key": "Murray Leinster",
-     "points": 358.4,
-     "stat": "358.4 points from 152 ideas in 58 books"
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 467.5,
+     "stat": "467.5 points from 178 ideas in 20 books"
     },
     {
      "name": "Jules Verne",
      "key": "Jules Verne",
-     "points": 344.2,
-     "stat": "344.2 points from 108 ideas in 16 books"
+     "points": 411.1,
+     "stat": "411.1 points from 129 ideas in 16 books"
     },
     {
-     "name": "George O. Smith",
-     "key": "George O. Smith",
-     "points": 319.2,
-     "stat": "319.2 points from 131 ideas in 57 books"
+     "name": "Murray Leinster",
+     "key": "Murray Leinster",
+     "points": 411.1,
+     "stat": "411.1 points from 178 ideas in 58 books"
+    },
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 370.9,
+     "stat": "370.9 points from 146 ideas in 36 books"
     }
    ],
    "hits": [
     {
-     "concept": "Retina and iris recognition",
-     "concept_id": "iris-retina-recognition",
-     "definition": "A machine that identifies a person by scanning the patterns of the eye.",
-     "quote": "Kinnison dashed up to an apparently blank wall, turned his back upon four commissioned officers holding cocked forty-fives at the ready, and fitted his right eye into a cup. Unlike fingerprints, retinal patterns cannot be imitated, duplicated, or altered;",
-     "title": "Triplanetary",
-     "year": 1948,
+     "concept": "Cash replaced by cheques and accounts",
+     "concept_id": "cashless-payment-society",
+     "definition": "Physical coin and banknotes are largely replaced by cheques, salary credits or account transfers as the everyday means of payment.",
+     "quote": "The common traffic of the city, the common currency indeed of all the world, was conducted by means of the little brown, green and pink council cheques for small amounts, printed with a blank payee.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
      "authors": [
-      "E. E. Smith"
+      "H. G. Wells"
      ],
-     "came_true": "1984",
+     "came_true": "2015",
      "kind": "first_practical_use",
-     "event": "EyeDentify began production and shipment of its retinal identification units (EyeDentification System 7.5) in 1984, used as an access-control device; about 50 units a month by the 1984 report.",
+     "event": "Sweden: by 2015 only about 20 percent of shop payments were made in cash, with salaries credited to accounts since the 1960s and cards and Swish replacing cash; by value about 2 percent of transactions by 2016.",
      "confidence": "medium",
-     "lead": 36,
-     "score": 1.0,
-     "points": 5.21,
+     "lead": 116,
+     "score": 0.75,
+     "points": 5.15,
      "demonstration_only": false
     },
     {
-     "concept": "Three-dimensional telepresence",
-     "concept_id": "holographic-telepresence",
-     "definition": "A communication system that projects a life-size three-dimensional image of a distant person into the room so that the two can talk as if together.",
-     "quote": "You will see simply three-dimensional talking pictures of ourselves, transmitted by radio.",
-     "title": "Skylark Three",
-     "year": 1930,
+     "concept": "Virtual clothing preview",
+     "concept_id": "virtual-try-on-clothing-preview",
+     "definition": "A device that shows moving images of a person or model wearing proposed garments, or comments on appearance, before anything is made.",
+     "quote": "this is our modern development See here.\" The little figure repeated its evolutions, but in a different costume.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
      "authors": [
-      "E. E. Smith"
+      "H. G. Wells"
      ],
-     "came_true": "2022",
-     "kind": "first_practical_use",
-     "event": "Google began testing Project Starline with partner companies such as Salesforce and T-Mobile from late 2022.",
+     "came_true": "2001",
+     "kind": "first_demonstration",
+     "event": "A 3D Virtual Fitting Room (MIRALab/FashionMe) let users see an animated virtual model walking in garments.",
      "confidence": "low",
+     "lead": 102,
+     "score": 0.75,
+     "points": 5.01,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Common currency across many states",
+     "concept_id": "common-currency-among-nations",
+     "definition": "One currency issued by a common authority circulates among many countries and replaces separate national money.",
+     "quote": "The common traffic of the city, the common currency indeed of all the world, was conducted by means of the little brown, green and pink council cheques for small amounts, printed with a blank payee.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1999-01-01",
+     "kind": "first_practical_use",
+     "event": "The euro became the currency of 11 participating EU member states on 1 January 1999, issued under the European Central Bank, replacing their national currencies (cash followed in 2002).",
+     "confidence": "high",
+     "lead": 100,
+     "score": 0.75,
+     "points": 4.99,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Rule by scientists or experts",
+     "concept_id": "technocracy",
+     "definition": "Government is run by scientists, engineers or trained experts rather than elected politicians.",
+     "quote": "The suppression of the party machine in the purely democratic countries and of the official choice of the rich and privileged rulers in the more monarchical ones, by capable operative and administrative men inspired by the belief in a common theory of social order, will come about",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1995-01",
+     "kind": "first_practical_use",
+     "event": "Italy: in January 1995 President Scalfaro appointed the central banker Lamberto Dini prime minister of a caretaker cabinet made up entirely of non-parliamentary technocrats, which governed until 1996.",
+     "confidence": "medium",
+     "lead": 94,
+     "score": 0.75,
+     "points": 4.93,
+     "demonstration_only": false
+    },
+    {
+     "concept": "European political union",
+     "concept_id": "european-political-union",
+     "definition": "The nations of Europe unite under a common federal or confederal government or union with pooled sovereignty, shared institutions, free internal borders and often a single currency.",
+     "quote": "The splendid dream of a Federal Europe, which opened the nineteenth century for France, may perhaps, after all, come to something like realization at the opening of the twenty-first.",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1993-11-01",
+     "kind": "first_practical_use",
+     "event": "The Maastricht Treaty on European Union entered into force after ratification by all twelve member states, creating the European Union with common citizenship and institutions.",
+     "confidence": "medium",
      "lead": 92,
      "score": 0.75,
      "points": 4.9,
      "demonstration_only": false
-    },
-    {
-     "concept": "Self-driving car",
-     "concept_id": "self-driving-car",
-     "definition": "A road vehicle that drives itself to a destination without a human driver.",
-     "quote": "pressed down \"9-2-6-4-3-8\"—the location number of the airport—upon the banked keys of a numbering machine, and touched a red button, whereupon the machine glided off of itself.",
-     "title": "The Skylark of Valeron",
-     "year": 1934,
-     "authors": [
-      "E. E. Smith"
-     ],
-     "came_true": "2020-10-08",
-     "kind": "first_practical_use",
-     "event": "Waymo opened its fully driverless ride-hailing service (Waymo One, no human in the car) to the general public in Phoenix, Arizona.",
-     "confidence": "medium",
-     "lead": 86,
-     "score": 0.75,
-     "points": 4.83,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Brain-to-brain link",
-     "concept_id": "brain-to-brain-link",
-     "definition": "A direct connection between human brains, by wires or headsets, that shares experiences or pools thinking between people.",
-     "quote": "Dunark clamped sets of multiple electrodes, connected to a set of instruments, upon the temples of his father, Dorothy, and Seaton. He pressed a lever, and instantly Dorothy and Seaton read each other's minds to the minutest detail",
-     "title": "The Skylark of Space",
-     "year": 1928,
-     "authors": [
-      "E. E. Smith",
-      "Lee Hawkins Garby"
-     ],
-     "came_true": "2013-08-12",
-     "kind": "first_demonstration",
-     "event": "At the University of Washington on 12 Aug 2013, Rajesh Rao's EEG-read motor imagery was sent over the Internet to trigger a TMS pulse in Andrea Stocco's brain, making his finger press a key.",
-     "confidence": "medium",
-     "lead": 85,
-     "score": 0.75,
-     "points": 4.82,
-     "demonstration_only": true
-    },
-    {
-     "concept": "Thought-to-text and thought display",
-     "concept_id": "thought-to-text",
-     "definition": "A machine that writes down a person's thoughts as text, or shows their mental images or dreams on a screen.",
-     "quote": "the stereographic device, in parallel with Solon's own brain recorder, which projected a three-dimensional picture into the \"viewing-area\" or dark space of the cabinet.",
-     "title": "Skylark Three",
-     "year": 1930,
-     "authors": [
-      "E. E. Smith"
-     ],
-     "came_true": "2006",
-     "kind": "first_demonstration",
-     "event": "Thirion, Duchesnay, Hubbard, Dubois, Poline, Lebihan and Dehaene (NeuroSpin, France) decoded fMRI activity to reconstruct the visual pattern that subjects were only imagining; paper accepted June 2006, online 9 October 2006 (NeuroImage 33(4)).",
-     "confidence": "medium",
-     "lead": 76,
-     "score": 0.75,
-     "points": 4.7,
-     "demonstration_only": true
     }
    ]
   },
@@ -157,37 +156,37 @@
     "name": "Limanora",
     "by": "Godfrey Sweven",
     "year": 1903,
-    "points": 226.9,
-    "stat": "226.9 points from 81 ideas"
+    "points": 246.9,
+    "stat": "246.9 points from 88 ideas"
    },
    "runners_up": [
     {
      "name": "Across the Zodiac",
      "by": "Percy Greg",
      "year": 1880,
-     "points": 147.0,
-     "stat": "147.0 points"
+     "points": 172.1,
+     "stat": "172.1 points"
     },
     {
      "name": "Ralph 124C 41+",
      "by": "Hugo Gernsback",
      "year": 1911,
-     "points": 143.4,
-     "stat": "143.4 points"
-    },
-    {
-     "name": "Spacehounds of IPC",
-     "by": "E. E. Smith",
-     "year": 1931,
-     "points": 117.7,
-     "stat": "117.7 points"
+     "points": 159.7,
+     "stat": "159.7 points"
     },
     {
      "name": "Olga Romanoff",
      "by": "George Chetwynd Griffith",
      "year": 1894,
-     "points": 114.0,
-     "stat": "114.0 points"
+     "points": 152.5,
+     "stat": "152.5 points"
+    },
+    {
+     "name": "The Moon-Voyage",
+     "by": "Jules Verne",
+     "year": 1872,
+     "points": 145.1,
+     "stat": "145.1 points"
     }
    ],
    "hits": [
@@ -293,11 +292,16 @@
    "title": "Prediction of the Age",
    "rule": "The single prediction worth the most points, the closest match with the longest lead, in a work published since 1500.",
    "winner": {
-    "name": "Richard Adams Locke",
-    "points": 6.32,
-    "stat": "Meteorites that came from the Moon, 148 years early"
+    "name": "Thomas More",
+    "points": 6.66,
+    "stat": "Painless death on demand, 469 years early"
    },
    "runners_up": [
+    {
+     "name": "Richard Adams Locke",
+     "points": 6.32,
+     "stat": "Meteorites that came from the Moon, 148 years early"
+    },
     {
      "name": "Cyrano de Bergerac",
      "points": 6.13,
@@ -312,14 +316,28 @@
      "name": "Francis Bacon",
      "points": 6.07,
      "stat": "Hearing aid, 273 years early"
-    },
-    {
-     "name": "Luis Senarens",
-     "points": 5.98,
-     "stat": "Submarine air supply, 62 years early"
     }
    ],
    "hits": [
+    {
+     "concept": "Painless death on demand",
+     "concept_id": "assisted-suicide-euthanasia",
+     "definition": "Pills, devices or institutions that give those who choose it a painless death.",
+     "quote": "Such as are wrought on by these persuasions either starve themselves of their own accord, or take opium, and by that means die without pain.",
+     "title": "Utopia",
+     "year": 1516,
+     "authors": [
+      "Thomas More"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "Exit Deutsche Schweiz, a Swiss right-to-die society founded in 1982, medically assisted its first patient to end his life.",
+     "confidence": "low",
+     "lead": 469,
+     "score": 0.75,
+     "points": 6.66,
+     "demonstration_only": false
+    },
     {
      "concept": "Meteorites that came from the Moon",
      "concept_id": "lunar-meteorites",
@@ -395,25 +413,6 @@
      "score": 0.75,
      "points": 6.07,
      "demonstration_only": false
-    },
-    {
-     "concept": "Submarine air supply",
-     "concept_id": "submarine-life-support",
-     "definition": "Onboard machinery that makes oxygen and fresh air or water so a submarine can stay sealed and submerged for long periods.",
-     "quote": "Under the pilot-house there was placed a generator which was capable of manufacturing pure oxygen, and also of extracting and destroying the bad air or gases as fast as they were created.",
-     "title": "The Sunken Isthmus",
-     "year": 1896,
-     "authors": [
-      "Luis Senarens"
-     ],
-     "came_true": "1958-10",
-     "kind": "first_practical_use",
-     "event": "USS Seawolf completed a 60-day submerged cruise cut off from the atmosphere, with oxygen supplied and carbon dioxide scrubbed by onboard equipment; electrolytic oxygen generators were then entering fleet supply",
-     "confidence": "low",
-     "lead": 62,
-     "score": 1.0,
-     "points": 5.98,
-     "demonstration_only": false
     }
    ]
   },
@@ -424,33 +423,33 @@
    "winner": {
     "name": "Edwin Balmer and William MacHarg",
     "key": "Edwin Balmer",
-    "points": 13.1,
-    "stat": "46% of 54 predictions came true (score 0.5+)"
+    "points": 13.5,
+    "stat": "48% of 62 predictions came true (score 0.5+)"
    },
    "runners_up": [
     {
+     "name": "Isabel Hornibrook",
+     "key": "Isabel Hornibrook",
+     "points": 30.0,
+     "stat": "39% of 51 predictions came true (score 0.5+)"
+    },
+    {
+     "name": "E. Douglas Fawcett",
+     "key": "E. Douglas Fawcett",
+     "points": 42.2,
+     "stat": "37% of 65 predictions came true (score 0.5+)"
+    },
+    {
      "name": "Harold L. Goodwin",
      "key": "Harold L. Goodwin",
-     "points": 73.7,
-     "stat": "39% of 208 predictions came true (score 0.5+)"
+     "points": 80.8,
+     "stat": "33% of 266 predictions came true (score 0.5+)"
     },
     {
-     "name": "Ignatius Donnelly",
-     "key": "Ignatius Donnelly",
-     "points": 64.6,
-     "stat": "34% of 90 predictions came true (score 0.5+)"
-    },
-    {
-     "name": "Walter M. Miller",
-     "key": "Walter M. Miller",
-     "points": 56.5,
-     "stat": "33% of 85 predictions came true (score 0.5+)"
-    },
-    {
-     "name": "Jeff Sutton",
-     "key": "Jeff Sutton",
-     "points": 37.4,
-     "stat": "32% of 85 predictions came true (score 0.5+)"
+     "name": "George S. Schuyler",
+     "key": "George S. Schuyler",
+     "points": 6.6,
+     "stat": "33% of 94 predictions came true (score 0.5+)"
     }
    ],
    "hits": [
@@ -498,7 +497,7 @@
      "concept": "Psychological methods in crime detection",
      "concept_id": "forensic-psychological-crime-detection",
      "definition": "Scientific psychological examination of suspects, mind traces or behavior to determine guilt or identify the culprit instead of physical evidence.",
-     "quote": "I could tell within the hour if I could take you successively to the psychological laboratory and submit you to a test.",
+     "quote": "The hour is close at hand when they will be used not merely in the determination of guilt and innocence, but to establish in the courts the credibility of witnesses and the impartiality of jurors, and by employers to ascertain the fitness and particular abilities of their employees.",
      "title": "The Achievements of Luther Trant",
      "year": 1910,
      "authors": [
@@ -510,8 +509,8 @@
      "event": "John A. Larson's polygraph (blood pressure and breathing) was used by the Berkeley Police Department, under chief August Vollmer, to question the 90 residents of a UC Berkeley dormitory after thefts.",
      "confidence": "low",
      "lead": 11,
-     "score": 0.625,
-     "points": 2.24,
+     "score": 0.75,
+     "points": 2.69,
      "demonstration_only": false
     },
     {
@@ -561,131 +560,131 @@
    "title": "Most Prescient per Book",
    "rule": "Points per book in the corpus, among authors with 3+ books, so volume alone does not win.",
    "winner": {
-    "name": "Richard M. Elam",
-    "key": "Richard M. Elam",
-    "points": 134.6,
-    "stat": "44.9 points per book over 3 books"
+    "name": "George Chetwynd Griffith",
+    "key": "George Chetwynd Griffith",
+    "points": 347.8,
+    "stat": "58.0 points per book over 6 books"
    },
    "runners_up": [
     {
-     "name": "George Chetwynd Griffith",
-     "key": "George Chetwynd Griffith",
-     "points": 257.7,
-     "stat": "43.0 points per book over 6 books"
-    },
-    {
-     "name": "Garrett Putman Serviss",
-     "key": "Garrett Putman Serviss",
-     "points": 200.7,
-     "stat": "33.5 points per book over 6 books"
-    },
-    {
-     "name": "George Allan England",
-     "key": "George Allan England",
-     "points": 96.0,
-     "stat": "32.0 points per book over 3 books"
+     "name": "Richard M. Elam",
+     "key": "Richard M. Elam",
+     "points": 153.9,
+     "stat": "51.3 points per book over 3 books"
     },
     {
      "name": "Camille Flammarion",
      "key": "Camille Flammarion",
-     "points": 92.0,
-     "stat": "30.7 points per book over 3 books"
+     "points": 130.2,
+     "stat": "43.4 points per book over 3 books"
+    },
+    {
+     "name": "George Allan England",
+     "key": "George Allan England",
+     "points": 126.3,
+     "stat": "42.1 points per book over 3 books"
+    },
+    {
+     "name": "Garrett Putman Serviss",
+     "key": "Garrett Putman Serviss",
+     "points": 226.9,
+     "stat": "37.8 points per book over 6 books"
     }
    ],
    "hits": [
     {
-     "concept": "Using local resources in space",
-     "concept_id": "in-situ-resource-utilization",
-     "definition": "Extracting water, oxygen or building materials from the rock, ice or soil of the Moon, an asteroid or another world to supply a crew.",
-     "quote": "The whole colony is built of lunar rock, quarried near by.",
-     "title": "Young Visitor to Mars",
-     "year": 1953,
+     "concept": "Tidal power",
+     "concept_id": "tidal-power",
+     "definition": "Generating electricity from tidal flow using barrages or turbines.",
+     "quote": "The ebb and flow in the Thames had at last been turned to account, and worked huge turbines which perpetually stored up electric power that was used not only for lighting, but for cooking in hotels and private houses, and for driving machinery.",
+     "title": "The Angel of the Revolution",
+     "year": 1893,
      "authors": [
-      "Richard M. Elam"
+      "George Chetwynd Griffith"
      ],
-     "came_true": "2021-04-20",
+     "came_true": "1966-11-26",
+     "kind": "first_practical_use",
+     "event": "Same event: the Rance station, inaugurated 26 November 1966, supplied the French grid (EDF) from then on.",
+     "confidence": "high",
+     "lead": 73,
+     "score": 0.875,
+     "points": 5.43,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Planetary defense against comets and asteroids",
+     "concept_id": "planetary-defense",
+     "definition": "Destroying or deflecting a comet or asteroid on a course to hit the Earth.",
+     "quote": "day by day the Invader from Space grew bigger and brighter in the great reflector, and day by day the huge cannon, which, in the decisive moment of the world's fate, was to do battle with it, approached completion.",
+     "title": "The World Peril of 1910",
+     "year": 1906,
+     "authors": [
+      "George Chetwynd Griffith"
+     ],
+     "came_true": "2022-09-26",
      "kind": "first_demonstration",
-     "event": "NASA's MOXIE instrument on the Perseverance rover made 5.37 g of oxygen from Martian atmospheric carbon dioxide in Jezero Crater, the first extraction of a resource from another world's environment.",
-     "confidence": "medium",
-     "lead": 68,
+     "event": "NASA's DART hit Dimorphos, shortening its orbit around Didymos by about 32 minutes (announced 2022-10-11).",
+     "confidence": "high",
+     "lead": 116,
      "score": 0.75,
-     "points": 4.58,
+     "points": 5.15,
      "demonstration_only": true
     },
     {
-     "concept": "Crewed suborbital rocket flight",
-     "concept_id": "crewed-suborbital-spaceflight",
-     "definition": "A small crewed rocket that lifts off, rises above the atmosphere and returns.",
-     "quote": "SPACE RIDES DAILY.  \nENJOY THE THRILL OF A LIFETIME A THOUSAND MILES ABOVE EARTH.",
-     "title": "Young Readers Science Fiction Stories",
-     "year": 1957,
+     "concept": "Sleep and incapacitating gas",
+     "concept_id": "incapacitating-gas",
+     "definition": "A gas or aerosol that knocks out or paralyzes people en masse or individually, delivered by grenade, vent, spray or aircraft.",
+     "quote": "That cloud is one of two things—it's the smoke of the explosion of twenty or thirty shells, or else it's made of gases intended to either poison us or make us insensible",
+     "title": "A Honeymoon in Space",
+     "year": 1901,
      "authors": [
-      "Richard M. Elam"
+      "George Chetwynd Griffith"
      ],
-     "came_true": "2021-07-20",
+     "came_true": "2002-10-26",
      "kind": "first_practical_use",
-     "event": "Blue Origin NS-16: New Shepard carried four people to space from West Texas, including Oliver Daemen, described by Blue Origin as its first paying customer (a seat bought for him at the company's auction).",
-     "confidence": "medium",
-     "lead": 64,
-     "score": 0.75,
-     "points": 4.52,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Inflatable space habitat",
-     "concept_id": "inflatable-space-habitat",
-     "definition": "A lightweight inflatable shelter or bubble that is deployed from a launch vehicle or set up on an airless world as a home or work space.",
-     "quote": "a plastic bubble began growing out of it. The bubble, which was slightly oblong and transparent, enlarged to about seven feet, then detached itself from the cartridge airtight.",
-     "title": "Young Readers Science Fiction Stories",
-     "year": 1957,
-     "authors": [
-      "Richard M. Elam"
-     ],
-     "came_true": "2016-06-06",
-     "kind": "first_practical_use",
-     "event": "After BEAM was expanded on the ISS on 28 May 2016, astronauts Jeff Williams and Oleg Skripochka first entered it on 6 June 2016 to collect air samples and begin sensor data downloads; it later served for storage.",
+     "event": "Russian special forces pumped an aerosol anesthetic (believed to be a fentanyl-derivative mixture, 'Kolokol-1') into the ventilation of the Dubrovka theater in Moscow, knocking out the hostages and hostage takers before the storming; many hostages died.",
      "confidence": "high",
-     "lead": 59,
+     "lead": 101,
      "score": 0.75,
-     "points": 4.43,
+     "points": 5.0,
      "demonstration_only": false
     },
     {
-     "concept": "Spacecraft emergency safety systems",
-     "concept_id": "spacecraft-compartment-safety",
-     "definition": "Sealed compartments, hull patches and cabin venting that protect a crew from leaks, fire or loss of pressure.",
-     "quote": "The outside meteor bumper and the inner buffer bulkheads had kept the destruction to a minimum. By automatically sealing themselves off from the rest of the ship at the moment of impact, the protective bulkheads had kept the ship from being decompressed.",
-     "title": "Young Readers Science Fiction Stories",
-     "year": 1957,
+     "concept": "High-speed train",
+     "concept_id": "high-speed-train",
+     "definition": "A passenger train running far faster than ordinary trains, at 150 to 300 mph or more on dedicated track.",
+     "quote": "Trains could travel at two hundred miles an hour along the hundreds of quadruple lines which covered the Continent with their gigantic network",
+     "title": "Olga Romanoff",
+     "year": 1894,
      "authors": [
-      "Richard M. Elam"
+      "George Chetwynd Griffith"
      ],
-     "came_true": "1997-06-25",
+     "came_true": "1981-09-27",
      "kind": "first_practical_use",
-     "event": "Progress M-34 punctured Mir's Spektr module; the crew cut cables and closed Spektr's hatch, isolating the leak so station pressure held.",
-     "confidence": "medium",
-     "lead": 40,
-     "score": 0.75,
-     "points": 4.02,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Reusable winged spaceplane or shuttle",
-     "concept_id": "reusable-spaceplane-shuttle",
-     "definition": "A winged or reusable vehicle that flies between Earth's surface and orbit, or between a planet and a station, and glides back to land.",
-     "quote": "Marsh would begin the precarious journey back to Earth, in gliding flight.",
-     "title": "Teen-age Super Science Stories",
-     "year": 1957,
-     "authors": [
-      "Richard M. Elam"
-     ],
-     "came_true": "1982-11-11",
-     "kind": "first_practical_use",
-     "event": "STS-5 (Columbia), the first officially operational Shuttle flight, launched 1982-11-11 and deployed the commercial satellites SBS-3 (11 Nov) and Anik C-3 (12 Nov) before landing on 16 November.",
+     "event": "The TGV began regular fare-paying service between Paris and Lyon on 27 September 1981 on the new dedicated LGV Sud-Est line, at up to 260 km/h (about 160 mph).",
      "confidence": "high",
-     "lead": 25,
+     "lead": 87,
      "score": 0.75,
-     "points": 3.53,
+     "points": 4.84,
+     "demonstration_only": false
+    },
+    {
+     "concept": "VTOL aircraft",
+     "concept_id": "vtol-convertiplane",
+     "definition": "An aircraft that takes off and lands vertically with rotors, fans or jets and then flies forward on wings like an airplane.",
+     "quote": "On her five masts she carried five fan-wheels, capable of raising her vertically to a height of ten thousand feet without the assistance of her air-planes, and her three propellers, each worked by duplex engines, were able to drive her through the air at a speed of two hundred miles an hour in a calm atmosphere.",
+     "title": "The Angel of the Revolution",
+     "year": 1893,
+     "authors": [
+      "George Chetwynd Griffith"
+     ],
+     "came_true": "1969-04-01",
+     "kind": "first_practical_use",
+     "event": "The Hawker Siddeley Harrier GR.1 officially entered RAF service on 1 April 1969, with No. 1 Squadron converting at RAF Wittering that month.",
+     "confidence": "medium",
+     "lead": 76,
+     "score": 0.75,
+     "points": 4.7,
      "demonstration_only": false
     }
    ]
@@ -697,33 +696,33 @@
    "winner": {
     "name": "Jules Verne",
     "key": "Jules Verne",
-    "points": 337.9,
-    "stat": "337.9 points from 105 ideas"
+    "points": 401.0,
+    "stat": "401.0 points from 125 ideas"
    },
    "runners_up": [
     {
      "name": "H. G. Wells",
      "key": "H. G. Wells",
-     "points": 178.2,
-     "stat": "178.2 points from 64 ideas"
+     "points": 248.7,
+     "stat": "248.7 points from 85 ideas"
     },
     {
      "name": "George Chetwynd Griffith",
      "key": "George Chetwynd Griffith",
-     "points": 170.9,
-     "stat": "170.9 points from 61 ideas"
+     "points": 231.4,
+     "stat": "231.4 points from 80 ideas"
     },
     {
      "name": "Percy Greg",
      "key": "Percy Greg",
-     "points": 147.0,
-     "stat": "147.0 points from 47 ideas"
+     "points": 172.1,
+     "stat": "172.1 points from 55 ideas"
     },
     {
-     "name": "John Jacob Astor",
-     "key": "John Jacob Astor",
-     "points": 105.6,
-     "stat": "105.6 points from 40 ideas"
+     "name": "Edward Bellamy",
+     "key": "Edward Bellamy",
+     "points": 138.4,
+     "stat": "138.4 points from 50 ideas"
     }
    ],
    "hits": [
@@ -829,133 +828,132 @@
    "title": "Pulp-era visionary (1900–1945)",
    "rule": "The most points from books first published 1900–1945.",
    "winner": {
-    "name": "E. E. Smith",
-    "key": "E. E. Smith",
-    "points": 351.5,
-    "stat": "351.5 points from 129 ideas"
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 402.7,
+    "stat": "402.7 points from 150 ideas"
    },
    "runners_up": [
     {
-     "name": "Ray Cummings",
-     "key": "Ray Cummings",
-     "points": 308.7,
-     "stat": "308.7 points from 125 ideas"
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 385.0,
+     "stat": "385.0 points from 141 ideas"
     },
     {
-     "name": "H. G. Wells",
-     "key": "H. G. Wells",
-     "points": 250.9,
-     "stat": "250.9 points from 95 ideas"
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 362.5,
+     "stat": "362.5 points from 143 ideas"
     },
     {
      "name": "Godfrey Sweven",
      "key": "Godfrey Sweven",
-     "points": 246.6,
-     "stat": "246.6 points from 88 ideas"
+     "points": 299.3,
+     "stat": "299.3 points from 107 ideas"
     },
     {
      "name": "Edmond Hamilton",
      "key": "Edmond Hamilton",
-     "points": 235.2,
-     "stat": "235.2 points from 86 ideas"
+     "points": 258.2,
+     "stat": "258.2 points from 94 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "Three-dimensional telepresence",
-     "concept_id": "holographic-telepresence",
-     "definition": "A communication system that projects a life-size three-dimensional image of a distant person into the room so that the two can talk as if together.",
-     "quote": "You will see simply three-dimensional talking pictures of ourselves, transmitted by radio.",
-     "title": "Skylark Three",
-     "year": 1930,
+     "concept": "Rule by scientists or experts",
+     "concept_id": "technocracy",
+     "definition": "Government is run by scientists, engineers or trained experts rather than elected politicians.",
+     "quote": "The suppression of the party machine in the purely democratic countries and of the official choice of the rich and privileged rulers in the more monarchical ones, by capable operative and administrative men inspired by the belief in a common theory of social order, will come about",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "E. E. Smith"
+      "H. G. Wells"
      ],
-     "came_true": "2022",
+     "came_true": "1995-01",
      "kind": "first_practical_use",
-     "event": "Google began testing Project Starline with partner companies such as Salesforce and T-Mobile from late 2022.",
-     "confidence": "low",
+     "event": "Italy: in January 1995 President Scalfaro appointed the central banker Lamberto Dini prime minister of a caretaker cabinet made up entirely of non-parliamentary technocrats, which governed until 1996.",
+     "confidence": "medium",
+     "lead": 94,
+     "score": 0.75,
+     "points": 4.93,
+     "demonstration_only": false
+    },
+    {
+     "concept": "European political union",
+     "concept_id": "european-political-union",
+     "definition": "The nations of Europe unite under a common federal or confederal government or union with pooled sovereignty, shared institutions, free internal borders and often a single currency.",
+     "quote": "The splendid dream of a Federal Europe, which opened the nineteenth century for France, may perhaps, after all, come to something like realization at the opening of the twenty-first.",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1993-11-01",
+     "kind": "first_practical_use",
+     "event": "The Maastricht Treaty on European Union entered into force after ratification by all twelve member states, creating the European Union with common citizenship and institutions.",
+     "confidence": "medium",
      "lead": 92,
      "score": 0.75,
      "points": 4.9,
      "demonstration_only": false
     },
     {
-     "concept": "Self-driving car",
-     "concept_id": "self-driving-car",
-     "definition": "A road vehicle that drives itself to a destination without a human driver.",
-     "quote": "pressed down \"9-2-6-4-3-8\"—the location number of the airport—upon the banked keys of a numbering machine, and touched a red button, whereupon the machine glided off of itself.",
-     "title": "The Skylark of Valeron",
-     "year": 1934,
+     "concept": "State-enforced limits on births",
+     "concept_id": "state-birth-limits",
+     "definition": "A government caps family size or total population by law, licensing, incentive or sterilization.",
+     "quote": "Utopia will control the increase of its population. Without the determination and ability to limit that increase as well as to stimulate it whenever it is necessary, no Utopia is possible.",
+     "title": "A Modern Utopia",
+     "year": 1905,
      "authors": [
-      "E. E. Smith"
+      "H. G. Wells"
      ],
-     "came_true": "2020-10-08",
+     "came_true": "1972",
      "kind": "first_practical_use",
-     "event": "Waymo opened its fully driverless ride-hailing service (Waymo One, no human in the car) to the general public in Phoenix, Arizona.",
-     "confidence": "medium",
-     "lead": 86,
-     "score": 0.75,
-     "points": 4.83,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Brain-to-brain link",
-     "concept_id": "brain-to-brain-link",
-     "definition": "A direct connection between human brains, by wires or headsets, that shares experiences or pools thinking between people.",
-     "quote": "Dunark clamped sets of multiple electrodes, connected to a set of instruments, upon the temples of his father, Dorothy, and Seaton. He pressed a lever, and instantly Dorothy and Seaton read each other's minds to the minutest detail",
-     "title": "The Skylark of Space",
-     "year": 1928,
-     "authors": [
-      "E. E. Smith",
-      "Lee Hawkins Garby"
-     ],
-     "came_true": "2013-08-12",
-     "kind": "first_demonstration",
-     "event": "At the University of Washington on 12 Aug 2013, Rajesh Rao's EEG-read motor imagery was sent over the Internet to trigger a TMS pulse in Andrea Stocco's brain, making his finger press a key.",
-     "confidence": "medium",
-     "lead": 85,
-     "score": 0.75,
-     "points": 4.82,
-     "demonstration_only": true
-    },
-    {
-     "concept": "Thought-to-text and thought display",
-     "concept_id": "thought-to-text",
-     "definition": "A machine that writes down a person's thoughts as text, or shows their mental images or dreams on a screen.",
-     "quote": "the stereographic device, in parallel with Solon's own brain recorder, which projected a three-dimensional picture into the \"viewing-area\" or dark space of the cabinet.",
-     "title": "Skylark Three",
-     "year": 1930,
-     "authors": [
-      "E. E. Smith"
-     ],
-     "came_true": "2006",
-     "kind": "first_demonstration",
-     "event": "Thirion, Duchesnay, Hubbard, Dubois, Poline, Lebihan and Dehaene (NeuroSpin, France) decoded fMRI activity to reconstruct the visual pattern that subjects were only imagining; paper accepted June 2006, online 9 October 2006 (NeuroImage 33(4)).",
-     "confidence": "medium",
-     "lead": 76,
-     "score": 0.75,
-     "points": 4.7,
-     "demonstration_only": true
-    },
-    {
-     "concept": "Three-dimensional holographic display",
-     "concept_id": "holographic-3d-display",
-     "definition": "A display that shows images, maps or people as volumetric three-dimensional pictures viewable from several sides.",
-     "quote": "Simultaneously there appeared in the air above the machine a three-dimensional model of all the Galaxies there listed.",
-     "title": "The Skylark of Valeron",
-     "year": 1934,
-     "authors": [
-      "E. E. Smith"
-     ],
-     "came_true": "2001-10",
-     "kind": "first_practical_use",
-     "event": "Actuality Systems announced that Structural GenomiX (San Diego) was the first beta customer for its spherical volumetric 3-D display, to use in protein and drug-design work and for presenting data to partners.",
+     "event": "Singapore's 'Stop at Two' policy: from 1972 (debated in Parliament 24 Oct 1972, building on 1968-69 measures) the state penalized third and later children through delivery fees, maternity leave, tax, housing and school priority, and paid sterilization incentives.",
      "confidence": "medium",
      "lead": 67,
      "score": 0.75,
      "points": 4.57,
      "demonstration_only": false
+    },
+    {
+     "concept": "Pressurized spacecraft cabin and atmosphere management",
+     "concept_id": "pressurized-spacecraft-cabin",
+     "definition": "A sealed spacecraft interior is filled with breathable air, such as Earth-like air or oxygen-helium, from tanks or a pump and its pressure is managed so occupants live without spacesuits.",
+     "quote": "Presently the glass stopper of the manhole was so far undone that the denser air within our sphere began to escape along the thread of the screw, singing as a kettle sings before it boils.",
+     "title": "The First Men in the Moon",
+     "year": 1900,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1964-10-12",
+     "kind": "first_practical_use",
+     "event": "Voskhod 1 carried Komarov, Feoktistov and Yegorov in orbit for a day without spacesuits in a sealed, air-filled cabin, USSR.",
+     "confidence": "high",
+     "lead": 64,
+     "score": 0.75,
+     "points": 4.52,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Weightlessness in spaceflight",
+     "concept_id": "weightlessness-microgravity",
+     "definition": "People and objects float freely in the free fall of orbit or coasting flight, so they move by pushing off surfaces.",
+     "quote": "I was astonished to see that they were floating now nearly a foot from the spherical wall.",
+     "title": "The First Men in the Moon",
+     "year": 1900,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1961-04-12",
+     "kind": "first_demonstration",
+     "event": "Yuri Gagarin orbited the Earth in Vostok 1 and floated weightless in the cabin.",
+     "confidence": "high",
+     "lead": 61,
+     "score": 0.75,
+     "points": 4.47,
+     "demonstration_only": true
     }
    ]
   },
@@ -966,33 +964,33 @@
    "winner": {
     "name": "Murray Leinster",
     "key": "Murray Leinster",
-    "points": 305.4,
-    "stat": "305.4 points from 134 ideas"
+    "points": 349.1,
+    "stat": "349.1 points from 156 ideas"
    },
    "runners_up": [
     {
-     "name": "Randall Garrett",
-     "key": "Randall Garrett",
-     "points": 260.0,
-     "stat": "260.0 points from 111 ideas"
-    },
-    {
      "name": "George O. Smith",
      "key": "George O. Smith",
-     "points": 252.3,
-     "stat": "252.3 points from 112 ideas"
+     "points": 297.2,
+     "stat": "297.2 points from 131 ideas"
+    },
+    {
+     "name": "Randall Garrett",
+     "key": "Randall Garrett",
+     "points": 290.4,
+     "stat": "290.4 points from 124 ideas"
     },
     {
      "name": "H. Beam Piper",
      "key": "H. Beam Piper",
-     "points": 217.3,
-     "stat": "217.3 points from 100 ideas"
+     "points": 239.9,
+     "stat": "239.9 points from 111 ideas"
     },
     {
      "name": "Fritz Leiber",
      "key": "Fritz Leiber",
-     "points": 208.3,
-     "stat": "208.3 points from 87 ideas"
+     "points": 225.6,
+     "stat": "225.6 points from 96 ideas"
     }
    ],
    "hits": [
@@ -1098,131 +1096,131 @@
    "title": "Best forecaster (non-fiction)",
    "rule": "The most points among the futurist essays and forecasts.",
    "winner": {
-    "name": "T. Baron Russell",
-    "key": "T. Baron Russell",
-    "points": 100.3,
-    "stat": "100.3 points from 32 ideas"
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 159.9,
+    "stat": "159.9 points from 61 ideas"
    },
    "runners_up": [
     {
-     "name": "H. G. Wells",
-     "key": "H. G. Wells",
-     "points": 63.9,
-     "stat": "63.9 points from 25 ideas"
+     "name": "T. Baron Russell",
+     "key": "T. Baron Russell",
+     "points": 131.4,
+     "stat": "131.4 points from 44 ideas"
     },
     {
      "name": "Nikola Tesla",
      "key": "Nikola Tesla",
-     "points": 37.0,
-     "stat": "37.0 points from 13 ideas"
+     "points": 48.9,
+     "stat": "48.9 points from 17 ideas"
     },
     {
      "name": "J. B. S. Haldane",
      "key": "J. B. S. Haldane",
-     "points": 25.6,
-     "stat": "25.6 points from 9 ideas"
+     "points": 26.4,
+     "stat": "26.4 points from 10 ideas"
     },
     {
-     "name": "Bertrand Russell",
-     "key": "Bertrand Russell",
-     "points": 5.3,
-     "stat": "5.3 points from 3 ideas"
+     "name": "Norman Angell",
+     "key": "Norman Angell",
+     "points": 20.4,
+     "stat": "20.4 points from 9 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "Self-service rental cars",
-     "concept_id": "self-service-rental-car",
-     "definition": "Coin-, key- or wristband-activated cars are rented for anonymous short or intercity use.",
-     "quote": "automatic motor-cars will exist, coin-worked. A man who wishes to travel will step into a motor-car, drop into a slot-machine the coin which represents the hire of the car for the distance he wants to travel, and assume control.",
-     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
-     "year": 1905,
+     "concept": "Rule by scientists or experts",
+     "concept_id": "technocracy",
+     "definition": "Government is run by scientists, engineers or trained experts rather than elected politicians.",
+     "quote": "The suppression of the party machine in the purely democratic countries and of the official choice of the rich and privileged rulers in the more monarchical ones, by capable operative and administrative men inspired by the belief in a common theory of social order, will come about",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "T. Baron Russell"
+      "H. G. Wells"
      ],
-     "came_true": "1971",
+     "came_true": "1995-01",
      "kind": "first_practical_use",
-     "event": "Procotip in Montpellier, France: from mid-1971 members took one of the Simca cars from city parking spaces with a ten-franc token and a personal key, driving about 18 km per token, with 240 members and 35 cars reported by 18 August 1971.",
+     "event": "Italy: in January 1995 President Scalfaro appointed the central banker Lamberto Dini prime minister of a caretaker cabinet made up entirely of non-parliamentary technocrats, which governed until 1996.",
      "confidence": "medium",
-     "lead": 66,
-     "score": 0.875,
-     "points": 5.31,
+     "lead": 94,
+     "score": 0.75,
+     "points": 4.93,
      "demonstration_only": false
     },
     {
-     "concept": "Automatic house cleaning",
-     "concept_id": "automated-housecleaning",
-     "definition": "Floors, dust, dishes, laundry and rooms clean themselves or are cleaned by built-in machinery without human work.",
-     "quote": "Of course, in the new age, these utensils will be simply dropped one by one into an automatic receptacle; swilled clean by water delivered with force and charged with nascent oxygen; dried by electric heat; and polished by electric force",
-     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
-     "year": 1905,
+     "concept": "European political union",
+     "concept_id": "european-political-union",
+     "definition": "The nations of Europe unite under a common federal or confederal government or union with pooled sovereignty, shared institutions, free internal borders and often a single currency.",
+     "quote": "The splendid dream of a Federal Europe, which opened the nineteenth century for France, may perhaps, after all, come to something like realization at the opening of the twenty-first.",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "T. Baron Russell"
+      "H. G. Wells"
      ],
-     "came_true": "1985",
+     "came_true": "1993-11-01",
      "kind": "first_practical_use",
-     "event": "A floor-cleaning robot was in use in supermarkets, and the US Navy had tested it for scrubbing ship decks (per a 1985 book); the machine and maker are not named.",
-     "confidence": "low",
-     "lead": 80,
+     "event": "The Maastricht Treaty on European Union entered into force after ratification by all twelve member states, creating the European Union with common citizenship and institutions.",
+     "confidence": "medium",
+     "lead": 92,
      "score": 0.75,
-     "points": 4.75,
+     "points": 4.9,
      "demonstration_only": false
     },
     {
-     "concept": "High-speed train",
-     "concept_id": "high-speed-train",
-     "definition": "A passenger train running far faster than ordinary trains, at 150 to 300 mph or more on dedicated track.",
-     "quote": "With trains travelling at quite 200 miles an hour—and certainly nothing less will satisfy the remoter suburbanites of next century",
-     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
-     "year": 1905,
+     "concept": "Continuous urban megalopolis",
+     "concept_id": "megalopolis-continuous-urban-region",
+     "definition": "Cities merge into one continuous urban region of tens of millions spanning a former region or country.",
+     "quote": "It will stretch from Lille to Kiel, it will drive extensions along the Rhine valley into Switzerland, and fling an arm along the Moldau to Prague, it will be the industrial capital of the old world.",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "T. Baron Russell"
+      "H. G. Wells"
      ],
-     "came_true": "1981-09-27",
+     "came_true": "1950",
      "kind": "first_practical_use",
-     "event": "The TGV began regular fare-paying service between Paris and Lyon on 27 September 1981 on the new dedicated LGV Sud-Est line, at up to 260 km/h (about 160 mph).",
-     "confidence": "high",
-     "lead": 76,
+     "event": "By the 1950 census the continuous urbanized belt of the US northeastern seaboard, Boston to Washington, held tens of millions of people (over one-fifth of the US population; about 37 million by 1960), the region Jean Gottmann named Megalopolis.",
+     "confidence": "medium",
+     "lead": 49,
      "score": 0.75,
-     "points": 4.7,
+     "points": 4.23,
      "demonstration_only": false
     },
     {
-     "concept": "Automatic body-cleaning machine",
-     "concept_id": "automatic-bathing-machine",
-     "definition": "A household machine or booth that washes, rinses and dries a person with little effort, using jets, brushes, ultrasound, vapor, radiation or air, sometimes also shaving or massaging.",
-     "quote": "The bath of the next century will lave the body speedily with oxygenated water delivered with a force that will render rubbing unnecessary",
-     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
-     "year": 1905,
+     "concept": "United States as leading world power",
+     "concept_id": "us-world-leadership",
+     "definition": "The United States becomes the dominant world power and leading financial and trading nation, with decisive influence over peace settlements, finance, markets and culture.",
+     "quote": "These things render the transfer of the present mercantile and naval ascendency of Great Britain to the United States during the next two or three decades a very probable thing",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "T. Baron Russell"
+      "H. G. Wells"
      ],
-     "came_true": "1970",
-     "kind": "first_demonstration",
-     "event": "Sanyo showed its Ultrasonic Bath (human washing machine) at its pavilion at Expo 70, Osaka: an egg-shaped chamber that sprayed water jets, ultrasonic bubbles and massage, then dried the occupant with warm air in about 15 minutes.",
+     "came_true": "1945",
+     "kind": "first_practical_use",
+     "event": "With the end of World War II the United States stood as the dominant world power: leading creditor and financial power (Bretton Woods dollar system, 1944) and decisive voice in the peace settlements.",
      "confidence": "medium",
-     "lead": 65,
+     "lead": 44,
      "score": 0.75,
-     "points": 4.53,
-     "demonstration_only": true
+     "points": 4.12,
+     "demonstration_only": false
     },
     {
-     "concept": "Disposable paper clothing and strong paper",
-     "concept_id": "disposable-paper-clothing",
-     "definition": "Clothing and goods made from cheap, strong or tearproof paper that replaces cloth and is discarded after use.",
-     "quote": "The innermost garment will no doubt be made of some fabric not much unlike the soft silky papers now made in Japan, so that it can be destroyed as soon as it is taken off.",
-     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
-     "year": 1905,
+     "concept": "Compulsory killing of the old or unfit",
+     "concept_id": "mandatory-euthanasia-of-old-or-unfit",
+     "definition": "The state kills or orders the death of people because of age, illness or social uselessness.",
+     "quote": "I do not foresee any reason to suppose that they will hesitate to kill when that sufferance is abused.",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "T. Baron Russell"
+      "H. G. Wells"
      ],
-     "came_true": "1966",
+     "came_true": "1939-09",
      "kind": "first_practical_use",
-     "event": "Scott Paper Company offered a wear-it-once paper dress to the public by mail order in 1966, starting the paper dress fashion.",
+     "event": "After the German invasion of Poland on 1 September 1939, SS units (Einsatzkommando 16, Selbstschutz) shot thousands of psychiatric patients and disabled adults in occupied Poland; the Nazi state's killing of the ill and disabled, formalized by Hitler's October 1939 note (Aktion T4), then spread to Germany.",
      "confidence": "medium",
-     "lead": 61,
+     "lead": 38,
      "score": 0.75,
-     "points": 4.47,
+     "points": 3.96,
      "demonstration_only": false
     }
    ]
@@ -1232,119 +1230,241 @@
    "title": "Best early-modern utopia",
    "rule": "The most points among the classic utopias (More, Campanella, Bacon).",
    "winner": {
-    "name": "Francis Bacon",
-    "key": "Francis Bacon",
-    "points": 63.9,
-    "stat": "63.9 points from 18 ideas"
+    "name": "Thomas More",
+    "key": "Thomas More",
+    "points": 71.7,
+    "stat": "71.7 points from 16 ideas"
    },
    "runners_up": [
     {
-     "name": "Thomas More",
-     "key": "Thomas More",
-     "points": 5.0,
-     "stat": "5.0 points from 2 ideas"
+     "name": "Francis Bacon",
+     "key": "Francis Bacon",
+     "points": 70.9,
+     "stat": "70.9 points from 20 ideas"
     },
     {
      "name": "Tommaso Campanella",
      "key": "Tommaso Campanella",
-     "points": 3.8,
-     "stat": "3.8 points from 1 idea"
+     "points": 25.2,
+     "stat": "25.2 points from 6 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "Hearing aid",
-     "concept_id": "hearing-aid",
-     "definition": "A device worn to amplify faint sounds or shift them into the audible range so a person can hear better.",
-     "quote": "We have certain helps which set to the ear do further the hearing greatly.",
-     "title": "New Atlantis",
-     "year": 1627,
+     "concept": "Painless death on demand",
+     "concept_id": "assisted-suicide-euthanasia",
+     "definition": "Pills, devices or institutions that give those who choose it a painless death.",
+     "quote": "Such as are wrought on by these persuasions either starve themselves of their own accord, or take opium, and by that means die without pain.",
+     "title": "Utopia",
+     "year": 1516,
      "authors": [
-      "Francis Bacon"
+      "Thomas More"
      ],
-     "came_true": "1900",
+     "came_true": "1985",
      "kind": "first_practical_use",
-     "event": "The Akouphone Company of New York was selling the Akouphone, a portable electric instrument for the partially deaf, by December 1900 and exhibiting it to schools and otologists.",
+     "event": "Exit Deutsche Schweiz, a Swiss right-to-die society founded in 1982, medically assisted its first patient to end his life.",
      "confidence": "low",
-     "lead": 273,
+     "lead": 469,
      "score": 0.75,
-     "points": 6.07,
+     "points": 6.66,
      "demonstration_only": false
     },
     {
-     "concept": "Supertall tower",
-     "concept_id": "supertall-tower",
-     "definition": "A free-standing tower or skyscraper far taller than the structures of its day, built for observation, restaurants or display.",
-     "quote": "We have high towers; the highest about half a mile in height; and some of them likewise set upon high mountains",
-     "title": "New Atlantis",
-     "year": 1627,
+     "concept": "Abolition of money",
+     "concept_id": "abolition-of-money",
+     "definition": "A society in which money and wages are no longer used, with goods and labor allocated directly, by assignment or free of charge, in force across a whole country or world.",
+     "quote": "they have no use for money among themselves, but keep it as a provision against events which seldom happen",
+     "title": "Utopia",
+     "year": 1516,
      "authors": [
-      "Francis Bacon"
+      "Thomas More"
      ],
-     "came_true": "1889-05-15",
+     "came_true": "1975",
      "kind": "first_practical_use",
-     "event": "The Eiffel Tower opened to the public nine days after the Exposition opened on 6 May 1889; visitors climbed the stairs before lifts began on 26 May.",
+     "event": "After taking Phnom Penh in April 1975 the Khmer Rouge abolished currency, banks and markets across Cambodia (Democratic Kampuchea); no wages were paid and people lived on rations and barter between communes until the second riel of 1980.",
+     "confidence": "high",
+     "lead": 459,
+     "score": 0.75,
+     "points": 6.63,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Abolition of private property",
+     "concept_id": "abolition-of-private-property",
+     "definition": "Private ownership of productive property and inherited wealth is abolished and society is reorganized under communal or socialist ownership.",
+     "quote": "the setting all upon a level was the only way to make a nation happy; which cannot be obtained so long as there is property",
+     "title": "Utopia",
+     "year": 1516,
+     "authors": [
+      "Thomas More"
+     ],
+     "came_true": "1918-06",
+     "kind": "first_practical_use",
+     "event": "Soviet Russia abolished private ownership of land (Decree on Land, Nov 1917, restated Jan 1918), abolished inheritance (27 April 1918) and nationalized all large-scale industry (decree of 28 June 1918).",
      "confidence": "medium",
-     "lead": 262,
+     "lead": 402,
+     "score": 0.75,
+     "points": 6.49,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Welfare state",
+     "concept_id": "welfare-state",
+     "definition": "A government provides citizens with pensions, unemployment support, relief for the poor, child and mother support and a minimum standard of living as a standing legal entitlement.",
+     "quote": "there is no less care taken of those who were once engaged in labour, but grow afterwards unable to follow it, than there is, elsewhere, of these that continue still employed.",
+     "title": "Utopia",
+     "year": 1516,
+     "authors": [
+      "Thomas More"
+     ],
+     "came_true": "1883",
+     "kind": "first_practical_use",
+     "event": "Imperial Germany under Bismarck enacted the first national statutory social insurance: the Sickness Insurance Act of 1883, followed by accident insurance (1884) and old-age pensions (1889).",
+     "confidence": "medium",
+     "lead": 367,
+     "score": 0.75,
+     "points": 6.39,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Communal dining replaces home cooking",
+     "concept_id": "communal-dining",
+     "definition": "Households stop cooking at home and take meals from public dining halls, central kitchens or delivered prepared meals as the normal custom in a community or country.",
+     "quote": "the whole Syphogranty being called together by sound of trumpet, they meet and eat together",
+     "title": "Utopia",
+     "year": 1516,
+     "authors": [
+      "Thomas More"
+     ],
+     "came_true": "1958",
+     "kind": "first_practical_use",
+     "event": "In China's 1958 people's communes, communal kitchens and mess halls replaced household cooking: by the end of 1958 more than 3.4 million kitchens fed about 90 percent of the rural population.",
+     "confidence": "medium",
+     "lead": 442,
      "score": 0.625,
-     "points": 5.02,
+     "points": 5.49,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "group-politics",
+   "title": "Best political or historical forecast",
+   "rule": "The most points among the works of politics and philosophy.",
+   "winner": {
+    "name": "Alexis de Tocqueville",
+    "key": "Alexis de Tocqueville",
+    "points": 38.3,
+    "stat": "38.3 points from 12 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Oswald Spengler",
+     "key": "Oswald Spengler",
+     "points": 17.1,
+     "stat": "17.1 points from 7 ideas"
+    },
+    {
+     "name": "John Maynard Keynes",
+     "key": "John Maynard Keynes",
+     "points": 10.0,
+     "stat": "10.0 points from 5 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "American settlement of the West",
+     "concept_id": "us-westward-settlement",
+     "definition": "White settlement and population growth spread across North America from the Atlantic to the Pacific, displacing native tribes and making the frontier orderly.",
+     "quote": "At a period which may be said to be near (for we are speaking of the life of a nation), the Anglo-Americans will alone cover the immense space contained between the polar regions and the tropics, extending from the coasts of the Atlantic to the shores of the Pacific Ocean.",
+     "title": "Democracy in America, Volume 1",
+     "year": 1835,
+     "authors": [
+      "Alexis de Tocqueville"
+     ],
+     "came_true": "1890",
+     "kind": "first_practical_use",
+     "event": "The Eleventh Census (1890) found the unsettled West so broken up by isolated bodies of settlement that no frontier line could be drawn; the Census stopped tracking a frontier.",
+     "confidence": "high",
+     "lead": 55,
+     "score": 0.75,
+     "points": 4.36,
      "demonstration_only": false
     },
     {
-     "concept": "Laboratory-created animal species",
-     "concept_id": "engineered-new-animal-species",
-     "definition": "Designing and producing new animal species or enhanced animals by genetic engineering or forced evolution.",
-     "quote": "By art likewise, we make them greater or taller than their kind is; and contrariwise dwarf them, and stay their growth: we make them more fruitful and bearing than their kind is; and contrariwise barren and not generative.",
-     "title": "New Atlantis",
-     "year": 1627,
+     "concept": "Science and practical subjects replace classics in schooling",
+     "concept_id": "modern-curriculum-replaces-classics",
+     "definition": "Schools and universities drop the classics and dead languages for physical science, commerce, technology and modern languages as the core of education.",
+     "quote": "It is evident that in democratic communities the interest of individuals, as well as the security of the commonwealth, demands that the education of the greater number should be scientific, commercial, and industrial, rather than literary.",
+     "title": "Democracy in America, Volume 2",
+     "year": 1840,
      "authors": [
-      "Francis Bacon"
+      "Alexis de Tocqueville"
      ],
-     "came_true": "2003",
+     "came_true": "1918",
      "kind": "first_practical_use",
-     "event": "Taikong Corp of Taiwan sold genetically modified fluorescent medaka (TK-1) as pets in 2003; about 100 reached Japanese pet shops in May 2003, and GloFish zebrafish followed in the US in December 2003 and January 2004.",
-     "confidence": "medium",
-     "lead": 376,
-     "score": 0.5,
-     "points": 4.28,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Artificial rainmaking",
-     "concept_id": "cloud-seeding-rainmaking",
-     "definition": "Producing rain or snow on demand by seeding clouds with chemicals, dry ice or other agents, or by shock and heat, so that precipitation falls where wanted.",
-     "quote": "We have also great and spacious houses where we imitate and demonstrate meteors; as snow, hail, rain, some artificial rains of bodies and not of water, thunders, lightnings",
-     "title": "New Atlantis",
-     "year": 1627,
-     "authors": [
-      "Francis Bacon"
-     ],
-     "came_true": "1948",
-     "kind": "first_practical_use",
-     "event": "Irving Krick's American Institute of Aerological Research ran 27 airborne dry-ice and silver-iodide seeding flights in summer 1948 over the Salt River watershed in Arizona to produce water for the drought.",
-     "confidence": "medium",
-     "lead": 321,
-     "score": 0.5,
-     "points": 4.17,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Faster-growing and engineered crops",
-     "concept_id": "crop-growth-engineering",
-     "definition": "Chemical or genetic treatment that makes plants grow faster, larger, sweeter or in designed shapes and varieties.",
-     "quote": "And we make (by art) in the same orchards and gardens, trees and flowers to come earlier or later than their seasons; and to come up and bear more speedily than by their natural course they do.",
-     "title": "New Atlantis",
-     "year": 1627,
-     "authors": [
-      "Francis Bacon"
-     ],
-     "came_true": "1945",
-     "kind": "first_practical_use",
-     "event": "Synthetic plant-hormone fruit-set sprays (p-chlorophenoxyacetic acid products such as Seed-less-Set) went on sale to US tomato growers and gardeners, producing earlier, seedless tomatoes.",
+     "event": "Soviet Russia's Commissariat of Education introduced the Unified Workers' School (nine-year polytechnical general school) in place of the classical and technical secondary schools; the classical languages were declared non-obligatory.",
      "confidence": "low",
-     "lead": 318,
+     "lead": 78,
+     "score": 0.625,
+     "points": 3.94,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Nationalization of industry",
+     "concept_id": "nationalization-of-industry",
+     "definition": "The state, after a revolution or by law, takes over private industries or the whole economy and runs production and labor centrally.",
+     "quote": "Thus, in every kingdom, the ruler becomes the principal manufacturer; he collects and retains in his service a vast number of engineers, architects, mechanics, and handicraftsmen.",
+     "title": "Democracy in America, Volume 2",
+     "year": 1840,
+     "authors": [
+      "Alexis de Tocqueville"
+     ],
+     "came_true": "1918-06-28",
+     "kind": "first_practical_use",
+     "event": "The Soviet government's decree of 28 June 1918 nationalized all large-scale and many medium-scale industrial enterprises in Soviet Russia, which the state then ran through the Supreme Council of National Economy.",
+     "confidence": "medium",
+     "lead": 78,
+     "score": 0.625,
+     "points": 3.94,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Synthetic diamond",
+     "concept_id": "synthetic-diamond",
+     "definition": "Manufacturing real-quality diamonds artificially so they are cheap or indistinguishable from natural stones.",
+     "quote": "Imitation diamonds are now made which may be easily mistaken for real ones; as soon as the art of fabricating false diamonds shall have reached so high a degree of perfection that they cannot be distinguished from real ones, it is probable that both one and the other will be abandoned, and become mere pebbles again.",
+     "title": "Democracy in America, Volume 2",
+     "year": 1840,
+     "authors": [
+      "Alexis de Tocqueville"
+     ],
+     "came_true": "1957",
+     "kind": "first_practical_use",
+     "event": "General Electric's Detroit plant made man-made industrial diamonds in quantity (100,000 carats by Nov 1957) and began supplying them to industry for grinding wheels, lapping and dressing; by March 1958 GE offered them in unlimited quantities.",
+     "confidence": "medium",
+     "lead": 117,
      "score": 0.5,
-     "points": 4.16,
+     "points": 3.44,
+     "demonstration_only": false
+    },
+    {
+     "concept": "East-West Cold War",
+     "concept_id": "cold-war",
+     "definition": "A prolonged hostile standoff between a Soviet-led Communist bloc and the United States and its allies, short of open general war, with rival blocs, espionage and arms build-up.",
+     "quote": "Their starting-point is different, and their courses are not the same; yet each of them seems to be marked out by the will of Heaven to sway the destinies of half the globe.",
+     "title": "Democracy in America, Volume 1",
+     "year": 1835,
+     "authors": [
+      "Alexis de Tocqueville"
+     ],
+     "came_true": "1947-03-12",
+     "kind": "first_practical_use",
+     "event": "President Truman's address to Congress on 12 March 1947 (Truman Doctrine) openly set the US against Soviet expansion; Baruch named the 'cold war' on 16 April 1947.",
+     "confidence": "high",
+     "lead": 112,
+     "score": 0.5,
+     "points": 3.41,
      "demonstration_only": false
     }
    ]
@@ -1356,36 +1476,87 @@
    "winner": {
     "name": "The Mahabharata",
     "key": "The Mahabharata",
-    "points": 62.6,
-    "stat": "62.6 points from 23 ideas"
+    "points": 91.7,
+    "stat": "91.7 points from 30 ideas"
    },
    "runners_up": [
     {
      "name": "Lucian of Samosata",
      "key": "Lucian of Samosata",
-     "points": 33.6,
-     "stat": "33.6 points from 9 ideas"
+     "points": 39.2,
+     "stat": "39.2 points from 11 ideas"
     },
     {
-     "name": "The Elder Eddas and the Younger Eddas",
-     "key": "The Elder Eddas and the Younger Eddas",
-     "points": 15.7,
-     "stat": "15.7 points from 4 ideas"
+     "name": "Nostradamus",
+     "key": "Nostradamus",
+     "points": 25.3,
+     "stat": "25.3 points from 10 ideas"
     },
     {
      "name": "The Sibylline Oracles",
      "key": "The Sibylline Oracles",
-     "points": 7.8,
-     "stat": "7.8 points from 2 ideas"
+     "points": 24.6,
+     "stat": "24.6 points from 6 ideas"
     },
     {
-     "name": "Zand-i Vohuman Yasht (Bahman Yasht)",
-     "key": "Zand-i Vohuman Yasht (Bahman Yasht)",
-     "points": 3.4,
-     "stat": "3.4 points from 1 idea"
+     "name": "The Elder Eddas and the Younger Eddas",
+     "key": "The Elder Eddas and the Younger Eddas",
+     "points": 17.9,
+     "stat": "17.9 points from 5 ideas"
     }
    ],
    "hits": [
+    {
+     "concept": "Vast forest fire",
+     "concept_id": "devastating-forest-fire",
+     "definition": "A fire sweeps over a huge stretch of forest, killing wildlife and destroying settlements.",
+     "quote": "The fire thus cast off grew in the woods. It then produced a general conflagration in the forest.",
+     "title": "The Mahabharata, Volume 4 (Books 13-18)",
+     "year": 400,
+     "authors": [],
+     "came_true": "1825-10-07",
+     "kind": "first_practical_use",
+     "event": "The Miramichi fire complex swept about 16,000 km2 of northern New Brunswick forest, razing Newcastle and Douglastown and killing about 160 people.",
+     "confidence": "high",
+     "lead": 1425,
+     "score": 0.625,
+     "points": 5.61,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Invisibility",
+     "concept_id": "invisibility",
+     "definition": "A person, craft or object is made unseeable to ordinary sight by a cloak, field, powder, chemical or process that bends or passes light.",
+     "quote": "He knew the science of disappearing at will from before the eyes of all.",
+     "title": "The Mahabharata, Volume 4 (Books 13-18)",
+     "year": 400,
+     "authors": [],
+     "came_true": "2010-12",
+     "kind": "first_demonstration",
+     "event": "Baile Zhang, Yuan Luo, Xiaogang Liu and George Barbastathis (MIT/SMART) reported a macroscopic two-piece calcite cloak that hid an object up to 2 mm tall under a bump on a mirror in visible light (arXiv 2010-12-10; Phys. Rev. Lett. 106, 033901, 2011-01-18).",
+     "confidence": "medium",
+     "lead": 1610,
+     "score": 0.5,
+     "points": 4.48,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Society without government",
+     "concept_id": "anarchist-society",
+     "definition": "A community that has no government or state and settles disputes by itself, or the claim that such anarchy cannot work.",
+     "quote": "If there were no king on earth for wielding the rod of chastisement, the strong would then have preyed on the weak after the manner of fishes in the water.",
+     "title": "The Mahabharata, Volume 3 (Books 8-12)",
+     "year": 400,
+     "authors": [],
+     "came_true": "1918-11",
+     "kind": "first_practical_use",
+     "event": "After the Austro-German occupation collapsed (Nov 1918), the Makhnovist movement held a territory in southern Ukraine 'without official authority' and ran it through free soviets and regional congresses, aiming at a stateless society.",
+     "confidence": "low",
+     "lead": 1518,
+     "score": 0.5,
+     "points": 4.48,
+     "demonstration_only": false
+    },
     {
      "concept": "Voluntary control of body functions",
      "concept_id": "voluntary-body-control",
@@ -1404,72 +1575,21 @@
      "demonstration_only": false
     },
     {
-     "concept": "Sonic weapon",
-     "concept_id": "sonic-weapon",
-     "definition": "A device that uses focused or high-intensity sound, ultrasound or infrasound to injure, incapacitate, frighten or kill.",
-     "quote": "in consequence of the blare of those (two) conchs, all men, O sire, lost their strength.",
-     "title": "The Mahabharata, Volume 2 (Books 4-7)",
-     "year": 400,
-     "authors": [],
-     "came_true": "2005-11-05",
-     "kind": "first_practical_use",
-     "event": "The cruise ship Seabourn Spirit used a long-range acoustic device (LRAD), a directed beam of earsplitting sound, against pirates who attacked it off Somalia.",
-     "confidence": "medium",
-     "lead": 1605,
-     "score": 0.5,
-     "points": 4.48,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Non-lethal stun gun",
-     "concept_id": "nonlethal-stun-weapon",
-     "definition": "A handheld or mounted weapon that knocks out or incapacitates a person at range without killing, by shock, sleep ray, spray or gas-propelled dart, often with an adjustable setting.",
-     "quote": "Endued with energy and prowess and splendour, it is capable of sending the foe to sleep.",
+     "concept": "Classless egalitarian society",
+     "concept_id": "classless-egalitarian-society",
+     "definition": "Class distinctions of birth and income disappear and citizens live in near equality of condition, with rich and poor mixing as social equals.",
+     "quote": "And Brahmanas and Kshatriyas and Vaisyas will disappear, leaving, O king, no remnants of their orders. And all men towards the end of the Yuga will become members of one common order, without distinction of any kind.",
      "title": "The Mahabharata, Volume 1 (Books 1-3)",
      "year": 400,
      "authors": [],
-     "came_true": "1975-03",
+     "came_true": "1936-07",
      "kind": "first_practical_use",
-     "event": "The Taser Public Defender, a flashlight-shaped dart stun gun made by Advanced Chemical Technology of Los Angeles, was first marketed in March 1975; more than 1,000 sold by November, mostly to the public.",
-     "confidence": "medium",
-     "lead": 1575,
+     "event": "In Barcelona and Catalonia, controlled by anarchist and syndicalist unions after the July 1936 rising, shops and cafes were collectivized, titles and tipping vanished and waiters treated customers as equals; Orwell, arriving in December 1936, found a town where the wealthy classes had practically ceased to exist.",
+     "confidence": "low",
+     "lead": 1536,
      "score": 0.5,
      "points": 4.48,
      "demonstration_only": false
-    },
-    {
-     "concept": "Antidote for a drug or poison",
-     "concept_id": "antidote-for-poison-or-agent",
-     "definition": "A specific counteragent that reverses the effects of a paralytic, venom, truth drug or other chemical.",
-     "quote": "The vegetable poison, mingled in the blood of the son of the Wind god, was neutralised by the snake-poison.",
-     "title": "The Mahabharata, Volume 1 (Books 1-3)",
-     "year": 400,
-     "authors": [],
-     "came_true": "1895",
-     "kind": "first_practical_use",
-     "event": "Calmette's antivenom serum, made in donkeys and horses at the Pasteur Institute in Lille from 1895, was used on a bitten snake collector, the first person treated with antivenom; Calmette's March 1896 book also reports an Annamite bitten by a cobra at Saigon cured by a 12 cc serum injection.",
-     "confidence": "medium",
-     "lead": 1495,
-     "score": 0.5,
-     "points": 4.48,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Invisibility",
-     "concept_id": "invisibility",
-     "definition": "A person, craft or object is made unseeable to ordinary sight by a cloak, field, powder, chemical or process that bends or passes light.",
-     "quote": "Proceeding a little way, the son of Bhrigu disappeared in the very sight of the royal couple (making himself invisible by his Yoga-power).",
-     "title": "The Mahabharata, Volume 4 (Books 13-18)",
-     "year": 400,
-     "authors": [],
-     "came_true": "2010-12",
-     "kind": "first_demonstration",
-     "event": "Baile Zhang, Yuan Luo, Xiaogang Liu and George Barbastathis (MIT/SMART) reported a macroscopic two-piece calcite cloak that hid an object up to 2 mm tall under a bump on a mirror in visible light (arXiv 2010-12-10; Phys. Rev. Lett. 106, 033901, 2011-01-18).",
-     "confidence": "medium",
-     "lead": 1610,
-     "score": 0.375,
-     "points": 3.36,
-     "demonstration_only": true
     }
    ]
   },
@@ -1480,21 +1600,27 @@
    "winner": {
     "name": "Rudyard Kipling",
     "key": "Rudyard Kipling",
-    "points": 48.9,
-    "stat": "48.9 points from 23 ideas"
+    "points": 53.8,
+    "stat": "53.8 points from 25 ideas"
    },
    "runners_up": [
     {
      "name": "Morgan Robertson",
      "key": "Morgan Robertson",
-     "points": 16.6,
-     "stat": "16.6 points from 6 ideas"
+     "points": 20.7,
+     "stat": "20.7 points from 7 ideas"
     },
     {
      "name": "Jack London",
      "key": "Jack London",
-     "points": 5.1,
-     "stat": "5.1 points from 2 ideas"
+     "points": 12.5,
+     "stat": "12.5 points from 6 ideas"
+    },
+    {
+     "name": "Mark Twain",
+     "key": "Mark Twain",
+     "points": 2.1,
+     "stat": "2.1 points from 1 idea"
     }
    ],
    "hits": [
@@ -1627,8 +1753,8 @@
     {
      "name": "H. Beam Piper",
      "key": "H. Beam Piper",
-     "points": 41.3,
-     "stat": "41.3 points from 17 ideas"
+     "points": 42.0,
+     "stat": "42.0 points from 18 ideas"
     }
    ],
    "hits": [
@@ -1736,15 +1862,15 @@
    "winner": {
     "name": "E. E. Smith",
     "key": "E. E. Smith",
-    "points": 84.4,
-    "stat": "84.4 points from 30 ideas"
+    "points": 86.3,
+    "stat": "86.3 points from 30 ideas"
    },
    "runners_up": [
     {
      "name": "H. G. Wells",
      "key": "H. G. Wells",
-     "points": 64.5,
-     "stat": "64.5 points from 25 ideas"
+     "points": 68.6,
+     "stat": "68.6 points from 26 ideas"
     },
     {
      "name": "Ray Cummings",
@@ -1870,104 +1996,104 @@
    "title": "Transport",
    "rule": "The most points from ideas in transport.",
    "winner": {
-    "name": "George Chetwynd Griffith",
-    "key": "George Chetwynd Griffith",
-    "points": 66.2,
-    "stat": "66.2 points from 21 ideas"
+    "name": "Luis Senarens",
+    "key": "Luis Senarens",
+    "points": 67.2,
+    "stat": "67.2 points from 21 ideas"
    },
    "runners_up": [
     {
-     "name": "Luis Senarens",
-     "key": "Luis Senarens",
-     "points": 65.1,
-     "stat": "65.1 points from 21 ideas"
+     "name": "George Chetwynd Griffith",
+     "key": "George Chetwynd Griffith",
+     "points": 66.2,
+     "stat": "66.2 points from 21 ideas"
     },
     {
      "name": "E. E. Smith",
      "key": "E. E. Smith",
-     "points": 61.5,
-     "stat": "61.5 points from 25 ideas"
+     "points": 63.0,
+     "stat": "63.0 points from 26 ideas"
     },
     {
      "name": "Jules Verne",
      "key": "Jules Verne",
-     "points": 58.2,
-     "stat": "58.2 points from 19 ideas"
+     "points": 62.8,
+     "stat": "62.8 points from 21 ideas"
     },
     {
      "name": "H. G. Wells",
      "key": "H. G. Wells",
-     "points": 55.1,
-     "stat": "55.1 points from 20 ideas"
+     "points": 57.2,
+     "stat": "57.2 points from 21 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "High-speed train",
-     "concept_id": "high-speed-train",
-     "definition": "A passenger train running far faster than ordinary trains, at 150 to 300 mph or more on dedicated track.",
-     "quote": "Trains could travel at two hundred miles an hour along the hundreds of quadruple lines which covered the Continent with their gigantic network",
-     "title": "Olga Romanoff",
-     "year": 1894,
+     "concept": "Submarine air supply",
+     "concept_id": "submarine-life-support",
+     "definition": "Onboard machinery that makes oxygen and fresh air or water so a submarine can stay sealed and submerged for long periods.",
+     "quote": "Under the pilot-house there was placed a generator which was capable of manufacturing pure oxygen, and also of extracting and destroying the bad air or gases as fast as they were created.",
+     "title": "The Sunken Isthmus",
+     "year": 1896,
      "authors": [
-      "George Chetwynd Griffith"
+      "Luis Senarens"
      ],
-     "came_true": "1981-09-27",
+     "came_true": "1958-10",
      "kind": "first_practical_use",
-     "event": "The TGV began regular fare-paying service between Paris and Lyon on 27 September 1981 on the new dedicated LGV Sud-Est line, at up to 260 km/h (about 160 mph).",
-     "confidence": "high",
-     "lead": 87,
-     "score": 0.75,
-     "points": 4.84,
+     "event": "USS Seawolf completed a 60-day submerged cruise cut off from the atmosphere, with oxygen supplied and carbon dioxide scrubbed by onboard equipment; electrolytic oxygen generators were then entering fleet supply",
+     "confidence": "low",
+     "lead": 62,
+     "score": 1.0,
+     "points": 5.98,
      "demonstration_only": false
     },
     {
-     "concept": "VTOL aircraft",
-     "concept_id": "vtol-convertiplane",
-     "definition": "An aircraft that takes off and lands vertically with rotors, fans or jets and then flies forward on wings like an airplane.",
-     "quote": "On her five masts she carried five fan-wheels, capable of raising her vertically to a height of ten thousand feet without the assistance of her air-planes, and her three propellers, each worked by duplex engines, were able to drive her through the air at a speed of two hundred miles an hour in a calm atmosphere.",
-     "title": "The Angel of the Revolution",
+     "concept": "Walking machine",
+     "concept_id": "walking-machine-vehicle",
+     "definition": "A machine that walks on mechanical legs and carries riders or pulls loads, from steam horses and steam men to legged vehicles.",
+     "quote": "The Steam Man started, ran forward for a hundred yards or so, and then pulled up.",
+     "title": "Frank Reade and His Steam Horse",
+     "year": 1876,
+     "authors": [
+      "Luis Senarens"
+     ],
+     "came_true": "1968",
+     "kind": "first_demonstration",
+     "event": "General Electric's Walking Truck (Cybernetic Anthropomorphous Machine, Ralph Mosher), a four-legged hydraulic walker with a seated operator, was built for the Army and ARPA and shown on national television in 1968; a December 1968 NASA survey reports prototype hardware built and the feared instability not encountered.",
+     "confidence": "low",
+     "lead": 92,
+     "score": 0.75,
+     "points": 4.9,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Under-ice polar submarine",
+     "concept_id": "polar-submarine",
+     "definition": "A submarine that travels beneath polar ice and surfaces at the pole or in polar seas.",
+     "quote": "FRANK READE, JR.'S SUBMARINE BOAT, THE \"EXPLORER\"; or, To the North Pole Under the Ice.",
+     "title": "Frank Reade Jr.'s Submarine Boat",
      "year": 1893,
      "authors": [
-      "George Chetwynd Griffith"
+      "Luis Senarens"
      ],
-     "came_true": "1969-04-01",
+     "came_true": "1959-03-17",
      "kind": "first_practical_use",
-     "event": "The Hawker Siddeley Harrier GR.1 officially entered RAF service on 1 April 1969, with No. 1 Squadron converting at RAF Wittering that month.",
-     "confidence": "medium",
-     "lead": 76,
+     "event": "USS Skate, on a 12-day winter Arctic cruise under the ice, surfaced at the geographic North Pole.",
+     "confidence": "low",
+     "lead": 66,
      "score": 0.75,
-     "points": 4.7,
+     "points": 4.55,
      "demonstration_only": false
-    },
-    {
-     "concept": "Flying submarine",
-     "concept_id": "flying-submarine",
-     "definition": "A craft able both to fly and to dive and operate underwater.",
-     "quote": "Her side-fins inclined upwards, and, like a flash, she leapt from the water, and began to circle round the room.",
-     "title": "The World Peril of 1910",
-     "year": 1906,
-     "authors": [
-      "George Chetwynd Griffith"
-     ],
-     "came_true": "1964-06-09",
-     "kind": "first_demonstration",
-     "event": "Donald Reid's single-seat RFS-1 completed a full cycle over the Shrewsbury River, New Jersey: flew about 10 m up and submerged about 2 m, piloted by his son.",
-     "confidence": "medium",
-     "lead": 58,
-     "score": 0.75,
-     "points": 4.41,
-     "demonstration_only": true
     },
     {
      "concept": "Helicopter",
      "concept_id": "helicopter",
      "definition": "An aircraft lifted and driven by powered rotating rotor blades or screws, able to take off, hover and land vertically.",
-     "quote": "At nine o'clock the moon was high in the heavens. At that hour the fan-wheels of the little squadron rose from the decks, and at a signal from Arnold began to revolve.",
-     "title": "The Angel of the Revolution",
+     "quote": "He stood upon the deck with one hand upon the rail and an eye upon the revolving rotascopes which served to hold the ship suspended in the air.",
+     "title": "Frank Reade Jr.'s Air Wonder, The \"Kite\"",
      "year": 1893,
      "authors": [
-      "George Chetwynd Griffith"
+      "Luis Senarens"
      ],
      "came_true": "1942-11",
      "kind": "first_practical_use",
@@ -1979,23 +2105,23 @@
      "demonstration_only": false
     },
     {
-     "concept": "Transparent vehicle body",
-     "concept_id": "transparent-vehicle-body",
-     "definition": "A vehicle whose body, canopy or hull is made of clear material, so occupants see out all around.",
-     "quote": "a sliding door opened in the after-part of the glass dome which covered the deck from stem to stern, a light metal stairway fell from it",
-     "title": "Olga Romanoff",
-     "year": 1894,
+     "concept": "Pressurized aircraft cabin",
+     "concept_id": "pressurized-aircraft-cabin",
+     "definition": "A sealed aircraft cabin supplied with air and oxygen so that passengers can fly at very high altitude.",
+     "quote": "It was provided with dead-eye windows, and could be made airtight in the event of the air-ship ascending into the rarefied atmosphere above the clouds, where human life could not be supported.",
+     "title": "The Transient Lake",
+     "year": 1896,
      "authors": [
-      "George Chetwynd Griffith"
+      "Luis Senarens"
      ],
-     "came_true": "1939-04",
-     "kind": "first_demonstration",
-     "event": "General Motors showed a Pontiac with a body of clear Plexiglas (the Ghost Car) at the New York World's Fair, opened 30 April 1939.",
-     "confidence": "medium",
-     "lead": 45,
+     "came_true": "1940-07",
+     "kind": "first_practical_use",
+     "event": "TWA put the Boeing 307 Stratoliner into transcontinental revenue passenger service in July 1940, the first airliner in service with a pressurized cabin.",
+     "confidence": "high",
+     "lead": 44,
      "score": 0.75,
-     "points": 4.14,
-     "demonstration_only": true
+     "points": 4.12,
+     "demonstration_only": false
     }
    ]
   },
@@ -2013,26 +2139,26 @@
     {
      "name": "George O. Smith",
      "key": "George O. Smith",
-     "points": 34.5,
-     "stat": "34.5 points from 13 ideas"
+     "points": 38.8,
+     "stat": "38.8 points from 14 ideas"
     },
     {
      "name": "E. E. Smith",
      "key": "E. E. Smith",
-     "points": 32.9,
-     "stat": "32.9 points from 13 ideas"
+     "points": 35.5,
+     "stat": "35.5 points from 14 ideas"
+    },
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 31.4,
+     "stat": "31.4 points from 10 ideas"
     },
     {
      "name": "John W. Campbell Jr",
      "key": "John W. Campbell Jr",
      "points": 29.7,
      "stat": "29.7 points from 12 ideas"
-    },
-    {
-     "name": "Ray Cummings",
-     "key": "Ray Cummings",
-     "points": 27.6,
-     "stat": "27.6 points from 9 ideas"
     }
    ],
    "hits": [
@@ -2140,15 +2266,15 @@
    "winner": {
     "name": "Godfrey Sweven",
     "key": "Godfrey Sweven",
-    "points": 61.4,
-    "stat": "61.4 points from 22 ideas"
+    "points": 63.5,
+    "stat": "63.5 points from 23 ideas"
    },
    "runners_up": [
     {
      "name": "H. G. Wells",
      "key": "H. G. Wells",
-     "points": 53.1,
-     "stat": "53.1 points from 19 ideas"
+     "points": 62.2,
+     "stat": "62.2 points from 21 ideas"
     },
     {
      "name": "F. L. Wallace",
@@ -2163,10 +2289,10 @@
      "stat": "41.3 points from 16 ideas"
     },
     {
-     "name": "Francis Bacon",
-     "key": "Francis Bacon",
-     "points": 30.6,
-     "stat": "30.6 points from 8 ideas"
+     "name": "Stephen Marlowe",
+     "key": "Stephen Marlowe",
+     "points": 30.7,
+     "stat": "30.7 points from 11 ideas"
     }
    ],
    "hits": [
@@ -2274,33 +2400,33 @@
    "winner": {
     "name": "E. E. Smith",
     "key": "E. E. Smith",
-    "points": 81.0,
-    "stat": "81.0 points from 31 ideas"
+    "points": 87.0,
+    "stat": "87.0 points from 34 ideas"
    },
    "runners_up": [
     {
-     "name": "Ray Cummings",
-     "key": "Ray Cummings",
-     "points": 69.6,
-     "stat": "69.6 points from 26 ideas"
-    },
-    {
      "name": "George Chetwynd Griffith",
      "key": "George Chetwynd Griffith",
-     "points": 66.4,
-     "stat": "66.4 points from 24 ideas"
+     "points": 83.6,
+     "stat": "83.6 points from 30 ideas"
     },
     {
      "name": "John W. Campbell Jr",
      "key": "John W. Campbell Jr",
-     "points": 64.5,
-     "stat": "64.5 points from 23 ideas"
+     "points": 72.8,
+     "stat": "72.8 points from 25 ideas"
     },
     {
-     "name": "Murray Leinster",
-     "key": "Murray Leinster",
-     "points": 54.3,
-     "stat": "54.3 points from 19 ideas"
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 72.0,
+     "stat": "72.0 points from 27 ideas"
+    },
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 69.3,
+     "stat": "69.3 points from 25 ideas"
     }
    ],
    "hits": [
@@ -2409,33 +2535,33 @@
    "winner": {
     "name": "Jules Verne",
     "key": "Jules Verne",
-    "points": 149.5,
-    "stat": "149.5 points from 42 ideas"
+    "points": 171.8,
+    "stat": "171.8 points from 48 ideas"
    },
    "runners_up": [
     {
      "name": "Murray Leinster",
      "key": "Murray Leinster",
-     "points": 141.0,
-     "stat": "141.0 points from 61 ideas"
-    },
-    {
-     "name": "E. E. Smith",
-     "key": "E. E. Smith",
-     "points": 116.8,
-     "stat": "116.8 points from 43 ideas"
+     "points": 167.5,
+     "stat": "167.5 points from 72 ideas"
     },
     {
      "name": "George O. Smith",
      "key": "George O. Smith",
-     "points": 114.6,
-     "stat": "114.6 points from 48 ideas"
+     "points": 135.4,
+     "stat": "135.4 points from 55 ideas"
     },
     {
      "name": "Edmond Hamilton",
      "key": "Edmond Hamilton",
-     "points": 107.3,
-     "stat": "107.3 points from 40 ideas"
+     "points": 129.4,
+     "stat": "129.4 points from 47 ideas"
+    },
+    {
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 127.0,
+     "stat": "127.0 points from 46 ideas"
     }
    ],
    "hits": [
@@ -2541,17 +2667,23 @@
    "title": "Environment",
    "rule": "The most points from ideas in environment.",
    "winner": {
-    "name": "Jules Verne",
-    "key": "Jules Verne",
-    "points": 32.1,
-    "stat": "32.1 points from 9 ideas"
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 37.8,
+    "stat": "37.8 points from 13 ideas"
    },
    "runners_up": [
     {
-     "name": "H. G. Wells",
-     "key": "H. G. Wells",
-     "points": 29.7,
-     "stat": "29.7 points from 12 ideas"
+     "name": "Jules Verne",
+     "key": "Jules Verne",
+     "points": 37.1,
+     "stat": "37.1 points from 10 ideas"
+    },
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 26.9,
+     "stat": "26.9 points from 11 ideas"
     },
     {
      "name": "Murray Leinster",
@@ -2560,114 +2692,107 @@
      "stat": "24.7 points from 11 ideas"
     },
     {
-     "name": "Ray Cummings",
-     "key": "Ray Cummings",
-     "points": 22.4,
-     "stat": "22.4 points from 10 ideas"
-    },
-    {
      "name": "Garrett Putman Serviss",
      "key": "Garrett Putman Serviss",
-     "points": 17.3,
-     "stat": "17.3 points from 6 ideas"
+     "points": 23.2,
+     "stat": "23.2 points from 8 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "Astronomical cycles changing Earth's climate",
-     "concept_id": "orbital-cycles-climate",
-     "definition": "Slow astronomical cycles such as precession of the poles and equinoxes, orbital changes or varying interstellar gas that shift Earth's temperatures, polar ice and ice ages over long periods.",
-     "quote": "would it not require a lapse of twelve thousand years for Vega to become our pole-star, in accordance with the said phenomenon, and for the Arctic regions to undergo a change in climate?",
-     "title": "The Purchase of the North Pole",
-     "year": 1889,
+     "concept": "Cosmic catastrophe changing the Earth",
+     "concept_id": "planet-collision-celestial-catastrophe",
+     "definition": "A passing planet, asteroid or cosmic event alters Earth's gravity, orbit or climate, such as a new planet tilting the axis.",
+     "quote": "“Earthquakes, volcanic outbreaks, cyclones, sea waves, floods, and a steady rise in temperature to I know not what limit”—so prophesied the master mathematician.",
+     "title": "The Star",
+     "year": 1897,
      "authors": [
-      "Jules Verne"
+      "H. G. Wells"
      ],
-     "came_true": "1976-12",
+     "came_true": "1991",
      "kind": "first_demonstration",
-     "event": "Hays, Imbrie and Shackleton (Science, 10 Dec 1976) showed 23,000, 42,000 and about 100,000 year cycles in Southern Ocean core climate records matching precession, obliquity and eccentricity.",
+     "event": "The Chicxulub structure in Yucatan was identified as the Cretaceous-Tertiary boundary impact crater (Hildebrand, Penfield, Boynton, Camargo and others, 1991), establishing the asteroid impact that darkened and changed Earth's climate.",
      "confidence": "medium",
-     "lead": 87,
-     "score": 0.75,
-     "points": 4.84,
+     "lead": 94,
+     "score": 0.625,
+     "points": 4.11,
      "demonstration_only": true
+    },
+    {
+     "concept": "Radioactive fallout wasteland",
+     "concept_id": "radioactive-fallout-wasteland",
+     "definition": "Large regions made lastingly uninhabitable by radioactive fallout, contamination or radiation from bombs or reactors.",
+     "quote": "To this day the battle-fields and bomb fields of that frantic time in human history are sprinkled with radiant matter, and so centres of inconvenient rays.",
+     "title": "The World Set Free",
+     "year": 1913,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1954-03-01",
+     "kind": "first_practical_use",
+     "event": "The Castle Bravo H-bomb test at Bikini on 1 March 1954 dropped fallout on Rongelap, Rongerik and Utirik; residents were evacuated three days later and Rongelap was still deemed unsafe over a year after.",
+     "confidence": "medium",
+     "lead": 41,
+     "score": 0.75,
+     "points": 4.04,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Glowing plants and animals",
+     "concept_id": "bioluminescent-life",
+     "definition": "Plants, fungi and sea creatures that give off their own light.",
+     "quote": "The creatures, it seems, like most deep-sea organisms, were phosphorescent, and they had been floating, five fathoms deep or so, like creatures of moonshine through the blackness of the water",
+     "title": "30 Strange Stories",
+     "year": 1897,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "2024-04",
+     "kind": "first_practical_use",
+     "event": "Light Bio began shipping Firefly Petunias (fungal bioluminescence pathway) to US consumers in April 2024 after USDA approval; online sales opened in February.",
+     "confidence": "medium",
+     "lead": 127,
+     "score": 0.5,
+     "points": 3.5,
+     "demonstration_only": false
     },
     {
      "concept": "Continental-scale water engineering",
      "concept_id": "megascale-water-engineering",
      "definition": "Rivers, canals and aqueducts rebuilt on a continental scale to irrigate deserts, tame floods or reclaim land from the sea.",
-     "quote": "Those climates now so fatal to strangers will be purified by cultivation and by drainage of the soil, and those scattered water supplies will be gathered into one common bed to form an artery of navigation.",
-     "title": "Five Weeks in a Balloon",
-     "year": 1863,
+     "quote": "Suppose we take that up, suppose we let ourselves in for it, us and the others, and run that water sluice from the Mediterranean into the Dead Sea Valley—think of the difference it will make!",
+     "title": "Tono-Bungay",
+     "year": 1909,
      "authors": [
-      "Jules Verne"
+      "H. G. Wells"
      ],
      "came_true": "2013-11",
      "kind": "first_practical_use",
      "event": "Water diversion on the first phase of the East route started in November 2013, carrying Yangtze water to Shandong along the Grand Canal for supply.",
      "confidence": "high",
-     "lead": 150,
-     "score": 0.625,
-     "points": 4.52,
+     "lead": 104,
+     "score": 0.5,
+     "points": 3.36,
      "demonstration_only": false
     },
     {
-     "concept": "Thinning atmosphere",
-     "concept_id": "atmosphere-loss-thin-air",
-     "definition": "A planet or fragment losing air, so that breathing is labored and sound weakens, or its air is locked up chemically.",
-     "quote": "they were unconscious that their respiration became forced and rapid, like that of a mountaineer when he has reached an altitude where the air has become less charged with oxygen.",
-     "title": "Off on a Comet! a Journey Through Planetary Space",
-     "year": 1877,
+     "concept": "Air purification",
+     "concept_id": "air-purification",
+     "definition": "Filtering, purifying or clearing polluted outdoor or city air by machines, covers or cleaner energy.",
+     "quote": "London, under the Visible Smoke Law, by which any production of visible smoke with or without excuse was punishable by a fine, had already ceased to be the sombre smoke-darkened city of the Victorian time",
+     "title": "The World Set Free",
+     "year": 1913,
      "authors": [
-      "Jules Verne"
+      "H. G. Wells"
      ],
-     "came_true": "1989",
+     "came_true": "2015-03",
      "kind": "first_demonstration",
-     "event": "Phobos 2's plasma instruments measured ions escaping from Mars's upper atmosphere into space (Lundin et al., Nature, October 1989).",
-     "confidence": "low",
-     "lead": 112,
-     "score": 0.625,
-     "points": 4.26,
+     "event": "Arup and Sino Green unveiled and trialled a bus-shelter-shaped City Air Purification System on a busy Hong Kong street (Wan Chai); a fan drew roadside air through a bag filter and released it overhead, cutting particulates by about 40 percent for people under it.",
+     "confidence": "medium",
+     "lead": 102,
+     "score": 0.5,
+     "points": 3.34,
      "demonstration_only": true
-    },
-    {
-     "concept": "Seasonal heat storage",
-     "concept_id": "thermal-energy-storage",
-     "definition": "Storing summer or solar heat in reservoirs, rock or underground for use in winter.",
-     "quote": "Mitigating the rigors of winter, by giving back to the atmosphere the surplus heat stored up during the summer, they have revolutionized agriculture.",
-     "title": "In the Year 2889",
-     "year": 1889,
-     "authors": [
-      "Michel Verne",
-      "Jules Verne"
-     ],
-     "came_true": "1985",
-     "kind": "first_practical_use",
-     "event": "Lyckebo, near Uppsala, Sweden: solar heat stored in a roughly 100,000 m3 rock cavern for seasonal use, serving 550 apartments.",
-     "confidence": "low",
-     "lead": 96,
-     "score": 0.625,
-     "points": 4.12,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Change in Earth's rotation",
-     "concept_id": "earth-rotation-change",
-     "definition": "The Earth's spin speeding up, slowing or stopping, changing the length of the day or leaving one side permanently facing the sun.",
-     "quote": "Although the days and nights had become reduced from twenty-four hours to twelve, Captain Servadac would not accept the new condition of things",
-     "title": "Off on a Comet! a Journey Through Planetary Space",
-     "year": 1877,
-     "authors": [
-      "Jules Verne"
-     ],
-     "came_true": "1939",
-     "kind": "first_practical_use",
-     "event": "The Earth's rotation was shown to be changing in speed (day length varying and, over the long run, slowing), the first time the change was established as having happened.",
-     "confidence": "low",
-     "lead": 62,
-     "score": 0.625,
-     "points": 3.74,
-     "demonstration_only": false
     }
    ]
   },
@@ -2676,131 +2801,131 @@
    "title": "Economy",
    "rule": "The most points from ideas in economy.",
    "winner": {
-    "name": "Fritz Leiber",
-    "key": "Fritz Leiber",
-    "points": 16.9,
-    "stat": "16.9 points from 6 ideas"
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 49.6,
+    "stat": "49.6 points from 17 ideas"
    },
    "runners_up": [
     {
-     "name": "Percy Greg",
-     "key": "Percy Greg",
-     "points": 13.0,
-     "stat": "13.0 points from 4 ideas"
+     "name": "Edward Bellamy",
+     "key": "Edward Bellamy",
+     "points": 47.7,
+     "stat": "47.7 points from 14 ideas"
     },
     {
-     "name": "H. G. Wells",
-     "key": "H. G. Wells",
-     "points": 11.6,
-     "stat": "11.6 points from 4 ideas"
+     "name": "Mack Reynolds",
+     "key": "Mack Reynolds",
+     "points": 24.7,
+     "stat": "24.7 points from 7 ideas"
     },
     {
-     "name": "F. L. Wallace",
-     "key": "F. L. Wallace",
-     "points": 11.2,
-     "stat": "11.2 points from 3 ideas"
+     "name": "Thomas More",
+     "key": "Thomas More",
+     "points": 22.7,
+     "stat": "22.7 points from 4 ideas"
     },
     {
-     "name": "Hugo Gernsback",
-     "key": "Hugo Gernsback",
-     "points": 11.1,
-     "stat": "11.1 points from 4 ideas"
+     "name": "Godfrey Sweven",
+     "key": "Godfrey Sweven",
+     "points": 21.9,
+     "stat": "21.9 points from 7 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "Robot mannequin",
-     "concept_id": "robot-fashion-mannequin",
-     "definition": "A robot that models clothing or stands as a shop-window display figure.",
-     "quote": "The cab had just hummed past Monstro Multi-Products' blindingly bright basement show windows, behind which a file of dress-display robots marched in an endless figure eight",
-     "title": "The Green Millennium",
-     "year": 1953,
+     "concept": "Cash replaced by cheques and accounts",
+     "concept_id": "cashless-payment-society",
+     "definition": "Physical coin and banknotes are largely replaced by cheques, salary credits or account transfers as the everyday means of payment.",
+     "quote": "The common traffic of the city, the common currency indeed of all the world, was conducted by means of the little brown, green and pink council cheques for small amounts, printed with a blank payee.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
      "authors": [
-      "Fritz Leiber"
+      "H. G. Wells"
      ],
-     "came_true": "2009-06",
+     "came_true": "2015",
      "kind": "first_practical_use",
-     "event": "Flower Robotics began renting and selling Palette and UT Palette robotic mannequins to customers in Japan for fashion shows and events; its robots had already appeared in some department stores.",
-     "confidence": "low",
-     "lead": 56,
+     "event": "Sweden: by 2015 only about 20 percent of shop payments were made in cash, with salaries credited to accounts since the 1960s and cards and Swish replacing cash; by value about 2 percent of transactions by 2016.",
+     "confidence": "medium",
+     "lead": 116,
      "score": 0.75,
-     "points": 4.37,
+     "points": 5.15,
      "demonstration_only": false
     },
     {
-     "concept": "Service robot for the public",
-     "concept_id": "service-robot",
-     "definition": "A robot that serves customers or the public as a waiter, bartender, clerk, receptionist or guide.",
-     "quote": "For Robie was the logical conclusion of the development of vending machines. All the earlier ones had stood in one place, on a floor or hanging on a wall, and blankly delivered merchandise in return for coins, whereas Robie searched for customers.",
-     "title": "A Bad Day for Sales",
-     "year": 1953,
+     "concept": "Common currency across many states",
+     "concept_id": "common-currency-among-nations",
+     "definition": "One currency issued by a common authority circulates among many countries and replaces separate national money.",
+     "quote": "The common traffic of the city, the common currency indeed of all the world, was conducted by means of the little brown, green and pink council cheques for small amounts, printed with a blank payee.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
      "authors": [
-      "Fritz Leiber"
+      "H. G. Wells"
      ],
-     "came_true": "1983",
+     "came_true": "1999-01-01",
      "kind": "first_practical_use",
-     "event": "The Two Panda Deli (Two Panda Robot Restaurant) in Pasadena, California put two Japanese-built robots, Tanbo R-1 and Tanbo R-2, to work in 1983 carrying trays of food to customers' tables, owned by Shayne Hayashi.",
+     "event": "The euro became the currency of 11 participating EU member states on 1 January 1999, issued under the European Central Bank, replacing their national currencies (cash followed in 2002).",
+     "confidence": "high",
+     "lead": 100,
+     "score": 0.75,
+     "points": 4.99,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Synthetic diamond",
+     "concept_id": "synthetic-diamond",
+     "definition": "Manufacturing real-quality diamonds artificially so they are cheap or indistinguishable from natural stones.",
+     "quote": "Suppose one to have at last just hit the right trick, before the secret got out and diamonds became as common as coal, one might realise millions.",
+     "title": "The Stolen Bacillus and Other Incidents",
+     "year": 1895,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1957",
+     "kind": "first_practical_use",
+     "event": "General Electric's Detroit plant made man-made industrial diamonds in quantity (100,000 carats by Nov 1957) and began supplying them to industry for grinding wheels, lapping and dressing; by March 1958 GE offered them in unlimited quantities.",
      "confidence": "medium",
-     "lead": 30,
+     "lead": 62,
+     "score": 0.75,
+     "points": 4.48,
+     "demonstration_only": false
+    },
+    {
+     "concept": "United States as leading world power",
+     "concept_id": "us-world-leadership",
+     "definition": "The United States becomes the dominant world power and leading financial and trading nation, with decisive influence over peace settlements, finance, markets and culture.",
+     "quote": "These things render the transfer of the present mercantile and naval ascendency of Great Britain to the United States during the next two or three decades a very probable thing",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1945",
+     "kind": "first_practical_use",
+     "event": "With the end of World War II the United States stood as the dominant world power: leading creditor and financial power (Bretton Woods dollar system, 1944) and decisive voice in the peace settlements.",
+     "confidence": "medium",
+     "lead": 44,
+     "score": 0.75,
+     "points": 4.12,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Decline and disappearance of newspapers",
+     "concept_id": "decline-of-newspapers",
+     "definition": "Printed daily newspapers lose their place as the main source of news and shrink or vanish, replaced by broadcast, telephone or networked news delivery.",
+     "quote": "the great Flying or Wind Vane or Water Companies, or to an appointment on one of the General Intelligence Organisations that had replaced newspapers",
+     "title": "Tales of Space and Time",
+     "year": 1899,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1963",
+     "kind": "first_practical_use",
+     "event": "Elmo Roper's 1963 national survey for the Television Information Office found more Americans naming television (55%) than newspapers (53%) as where they get most of their news.",
+     "confidence": "medium",
+     "lead": 64,
      "score": 0.625,
-     "points": 3.1,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Humanoid robot",
-     "concept_id": "humanoid-robot",
-     "definition": "A robot with a human-shaped body that walks, talks and handles objects in human surroundings.",
-     "quote": "a host of dress-display robots, arrayed in everything from high collared sable evening cloaks to bathing jewelry. Their hair gleamed with a hundred tints, their suede-rubber skins glowed with a creamy seductiveness",
-     "title": "The Green Millennium",
-     "year": 1953,
-     "authors": [
-      "Fritz Leiber"
-     ],
-     "came_true": "2024-06",
-     "kind": "first_practical_use",
-     "event": "GXO Logistics and Agility Robotics signed a multi-year paid agreement (27 June 2024) to deploy the bipedal Digit in a live warehouse, moving totes, after a late-2023 pilot.",
-     "confidence": "low",
-     "lead": 71,
-     "score": 0.5,
-     "points": 3.08,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Disposable paper clothing and strong paper",
-     "concept_id": "disposable-paper-clothing",
-     "definition": "Clothing and goods made from cheap, strong or tearproof paper that replaces cloth and is discarded after use.",
-     "quote": "trying to make throwaway paper dresses last a month",
-     "title": "The Green Millennium",
-     "year": 1953,
-     "authors": [
-      "Fritz Leiber"
-     ],
-     "came_true": "1966",
-     "kind": "first_practical_use",
-     "event": "Scott Paper Company offered a wear-it-once paper dress to the public by mail order in 1966, starting the paper dress fashion.",
-     "confidence": "medium",
-     "lead": 13,
-     "score": 0.75,
-     "points": 2.86,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Automatic house cleaning",
-     "concept_id": "automated-housecleaning",
-     "definition": "Floors, dust, dishes, laundry and rooms clean themselves or are cleaned by built-in machinery without human work.",
-     "quote": "she'd be sweeping up after some sweeping robot",
-     "title": "The Green Millennium",
-     "year": 1953,
-     "authors": [
-      "Fritz Leiber"
-     ],
-     "came_true": "1985",
-     "kind": "first_practical_use",
-     "event": "A floor-cleaning robot was in use in supermarkets, and the US Navy had tested it for scrubbing ship decks (per a 1985 book); the machine and maker are not named.",
-     "confidence": "low",
-     "lead": 32,
-     "score": 0.5,
-     "points": 2.52,
+     "points": 3.76,
      "demonstration_only": false
     }
    ]
@@ -2812,110 +2937,129 @@
    "winner": {
     "name": "H. G. Wells",
     "key": "H. G. Wells",
-    "points": 11.0,
-    "stat": "11.0 points from 4 ideas"
+    "points": 116.6,
+    "stat": "116.6 points from 42 ideas"
    },
    "runners_up": [
     {
-     "name": "Fritz Leiber",
-     "key": "Fritz Leiber",
-     "points": 7.3,
-     "stat": "7.3 points from 3 ideas"
+     "name": "George Chetwynd Griffith",
+     "key": "George Chetwynd Griffith",
+     "points": 39.8,
+     "stat": "39.8 points from 13 ideas"
     },
     {
-     "name": "Murray Leinster",
-     "key": "Murray Leinster",
-     "points": 7.3,
-     "stat": "7.3 points from 3 ideas"
+     "name": "Edward Bellamy",
+     "key": "Edward Bellamy",
+     "points": 39.2,
+     "stat": "39.2 points from 13 ideas"
     },
     {
-     "name": "Stanley Mullen",
-     "key": "Stanley Mullen",
-     "points": 5.1,
-     "stat": "5.1 points from 2 ideas"
+     "name": "Ignatius Donnelly",
+     "key": "Ignatius Donnelly",
+     "points": 32.2,
+     "stat": "32.2 points from 10 ideas"
     },
     {
-     "name": "Katherine MacLean",
-     "key": "Katherine MacLean",
-     "points": 3.8,
-     "stat": "3.8 points from 1 idea"
+     "name": "Thomas More",
+     "key": "Thomas More",
+     "points": 28.8,
+     "stat": "28.8 points from 7 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "Electronic voting and vote counting",
-     "concept_id": "electronic-voting",
-     "definition": "Votes cast or counted by electrical or computer machines, with totals reported automatically.",
-     "quote": "an electrician and an expert locksmith could in a few weeks, and for a few hundred pounds, devise and construct a member's desk and key, committee-room tapes and voting-desks, and a general recording apparatus",
+     "concept": "Rule by scientists or experts",
+     "concept_id": "technocracy",
+     "definition": "Government is run by scientists, engineers or trained experts rather than elected politicians.",
+     "quote": "The suppression of the party machine in the purely democratic countries and of the official choice of the rich and privileged rulers in the more monarchical ones, by capable operative and administrative men inspired by the belief in a common theory of social order, will come about",
      "title": "Anticipations",
      "year": 1901,
      "authors": [
       "H. G. Wells"
      ],
-     "came_true": "1964-09",
+     "came_true": "1995-01",
      "kind": "first_practical_use",
-     "event": "Fulton and DeKalb counties, Georgia, used punch-card ballots (Votomatic/Vote Master type) with computer tallying in the September 1964 primary, the first significant use of computers to count real votes in the US.",
+     "event": "Italy: in January 1995 President Scalfaro appointed the central banker Lamberto Dini prime minister of a caretaker cabinet made up entirely of non-parliamentary technocrats, which governed until 1996.",
      "confidence": "medium",
-     "lead": 63,
-     "score": 0.625,
-     "points": 3.75,
+     "lead": 94,
+     "score": 0.75,
+     "points": 4.93,
      "demonstration_only": false
     },
     {
-     "concept": "Central citizen database and mass surveillance",
-     "concept_id": "mass-surveillance-database",
-     "definition": "A government computer that holds a dossier on every citizen and tracks them through their records.",
-     "quote": "a man or woman who has refused to work once is known by a thumb-marking system in the Company’s offices all over the world.",
+     "concept": "European political union",
+     "concept_id": "european-political-union",
+     "definition": "The nations of Europe unite under a common federal or confederal government or union with pooled sovereignty, shared institutions, free internal borders and often a single currency.",
+     "quote": "The splendid dream of a Federal Europe, which opened the nineteenth century for France, may perhaps, after all, come to something like realization at the opening of the twenty-first.",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1993-11-01",
+     "kind": "first_practical_use",
+     "event": "The Maastricht Treaty on European Union entered into force after ratification by all twelve member states, creating the European Union with common citizenship and institutions.",
+     "confidence": "medium",
+     "lead": 92,
+     "score": 0.75,
+     "points": 4.9,
+     "demonstration_only": false
+    },
+    {
+     "concept": "State-enforced limits on births",
+     "concept_id": "state-birth-limits",
+     "definition": "A government caps family size or total population by law, licensing, incentive or sterilization.",
+     "quote": "Utopia will control the increase of its population. Without the determination and ability to limit that increase as well as to stimulate it whenever it is necessary, no Utopia is possible.",
+     "title": "A Modern Utopia",
+     "year": 1905,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1972",
+     "kind": "first_practical_use",
+     "event": "Singapore's 'Stop at Two' policy: from 1972 (debated in Parliament 24 Oct 1972, building on 1968-69 measures) the state penalized third and later children through delivery fees, maternity leave, tax, housing and school priority, and paid sterilization incentives.",
+     "confidence": "medium",
+     "lead": 67,
+     "score": 0.75,
+     "points": 4.57,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Communal dining replaces home cooking",
+     "concept_id": "communal-dining",
+     "definition": "Households stop cooking at home and take meals from public dining halls, central kitchens or delivered prepared meals as the normal custom in a community or country.",
+     "quote": "Instead there will be a great multitude of gracious little houses clustering in college-like groups, no doubt about their common kitchens and halls, down and about the valley slopes.",
+     "title": "A Modern Utopia",
+     "year": 1905,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1958",
+     "kind": "first_practical_use",
+     "event": "In China's 1958 people's communes, communal kitchens and mess halls replaced household cooking: by the end of 1958 more than 3.4 million kitchens fed about 90 percent of the rural population.",
+     "confidence": "medium",
+     "lead": 53,
+     "score": 0.75,
+     "points": 4.32,
+     "demonstration_only": false
+    },
+    {
+     "concept": "English as the world language",
+     "concept_id": "english-as-world-language",
+     "definition": "English becomes the single dominant or near-universal language of commerce, science and diplomacy across most of the world, by custom or decree.",
+     "quote": "Over a great part of the earth the English tongue was spoken; taken together with its Spanish American and Hindoo and Negro and “Pidgin” dialects, it was the everyday language of two-thirds of the people of the earth.",
      "title": "When the Sleeper Wakes",
      "year": 1899,
      "authors": [
       "H. G. Wells"
      ],
-     "came_true": "1964",
+     "came_true": "1950",
      "kind": "first_practical_use",
-     "event": "Same event: the register was run for administration (replacing electorate and school lists) from 1964.",
-     "confidence": "medium",
-     "lead": 65,
-     "score": 0.5,
-     "points": 3.02,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Mathematical science of society",
-     "concept_id": "psychohistory-mathematical-social-science",
-     "definition": "A mathematical or statistical science that models the behavior of whole populations, institutions or societies from equations and predicts their future course.",
-     "quote": "as individuals increase in number they begin to average out",
-     "title": "The Discovery of the Future",
-     "year": 1902,
-     "authors": [
-      "H. G. Wells"
-     ],
-     "came_true": "1939",
-     "kind": "first_demonstration",
-     "event": "Lewis F. Richardson published Generalized Foreign Politics (British Journal of Psychology Monograph Supplement 23, Cambridge University Press), modeling nations' armament behavior with differential equations and solving for when the arms race runs away or stabilizes.",
+     "event": "By about 1950 English had replaced French and German as the leading international language of science and diplomacy, and of commerce under US leadership.",
      "confidence": "low",
-     "lead": 37,
-     "score": 0.5,
-     "points": 2.62,
-     "demonstration_only": true
-    },
-    {
-     "concept": "Automated fingerprint recognition",
-     "concept_id": "fingerprint-recognition",
-     "definition": "A machine that identifies or authenticates a person by automatically reading and matching fingerprints.",
-     "quote": "a man or woman who has refused to work once is known by a thumb-marking system in the Department’s offices all over the world.",
-     "title": "The Sleeper Awakes",
-     "year": 1899,
-     "authors": [
-      "H. G. Wells"
-     ],
-     "came_true": "1973",
-     "kind": "first_practical_use",
-     "event": "The FBI Identification Division used the Calspan (formerly Cornell Aeronautical Laboratory) FINDER automatic fingerprint reader, delivered as a prototype in fall 1972 and by Dec 1974 reported in operation for more than 1.5 years; Calspan's Fingerscan access-control terminal then verified identity from a finger in two seconds.",
-     "confidence": "medium",
-     "lead": 74,
-     "score": 0.25,
-     "points": 1.56,
+     "lead": 51,
+     "score": 0.75,
+     "points": 4.28,
      "demonstration_only": false
     }
    ]
@@ -2927,8 +3071,8 @@
    "winner": {
     "name": "H. G. Wells",
     "key": "H. G. Wells",
-    "points": 44.6,
-    "stat": "44.6 points from 16 ideas"
+    "points": 47.3,
+    "stat": "47.3 points from 18 ideas"
    },
    "runners_up": [
     {
@@ -3059,132 +3203,132 @@
    "title": "Best forecaster of society and politics",
    "rule": "The most points from wars, revolutions, laws, institutions and ways of living (the ideas of the event and social kinds).",
    "winner": {
-    "name": "Jules Verne",
-    "key": "Jules Verne",
-    "points": 25.8,
-    "stat": "25.8 points from 8 ideas"
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 186.2,
+    "stat": "186.2 points from 65 ideas"
    },
    "runners_up": [
     {
-     "name": "H. G. Wells",
-     "key": "H. G. Wells",
-     "points": 16.5,
-     "stat": "16.5 points from 6 ideas"
+     "name": "George Chetwynd Griffith",
+     "key": "George Chetwynd Griffith",
+     "points": 77.8,
+     "stat": "77.8 points from 25 ideas"
     },
     {
-     "name": "Murray Leinster",
-     "key": "Murray Leinster",
-     "points": 10.8,
-     "stat": "10.8 points from 4 ideas"
+     "name": "Edward Bellamy",
+     "key": "Edward Bellamy",
+     "points": 71.8,
+     "stat": "71.8 points from 23 ideas"
     },
     {
-     "name": "Ray Cummings",
-     "key": "Ray Cummings",
-     "points": 10.3,
-     "stat": "10.3 points from 5 ideas"
+     "name": "Jules Verne",
+     "key": "Jules Verne",
+     "points": 67.3,
+     "stat": "67.3 points from 22 ideas"
     },
     {
-     "name": "Garrett Putman Serviss",
-     "key": "Garrett Putman Serviss",
-     "points": 8.3,
-     "stat": "8.3 points from 3 ideas"
+     "name": "Thomas More",
+     "key": "Thomas More",
+     "points": 62.9,
+     "stat": "62.9 points from 14 ideas"
     }
    ],
    "hits": [
     {
-     "concept": "Astronomical cycles changing Earth's climate",
-     "concept_id": "orbital-cycles-climate",
-     "definition": "Slow astronomical cycles such as precession of the poles and equinoxes, orbital changes or varying interstellar gas that shift Earth's temperatures, polar ice and ice ages over long periods.",
-     "quote": "would it not require a lapse of twelve thousand years for Vega to become our pole-star, in accordance with the said phenomenon, and for the Arctic regions to undergo a change in climate?",
-     "title": "The Purchase of the North Pole",
-     "year": 1889,
+     "concept": "Cash replaced by cheques and accounts",
+     "concept_id": "cashless-payment-society",
+     "definition": "Physical coin and banknotes are largely replaced by cheques, salary credits or account transfers as the everyday means of payment.",
+     "quote": "The common traffic of the city, the common currency indeed of all the world, was conducted by means of the little brown, green and pink council cheques for small amounts, printed with a blank payee.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
      "authors": [
-      "Jules Verne"
+      "H. G. Wells"
      ],
-     "came_true": "1976-12",
-     "kind": "first_demonstration",
-     "event": "Hays, Imbrie and Shackleton (Science, 10 Dec 1976) showed 23,000, 42,000 and about 100,000 year cycles in Southern Ocean core climate records matching precession, obliquity and eccentricity.",
+     "came_true": "2015",
+     "kind": "first_practical_use",
+     "event": "Sweden: by 2015 only about 20 percent of shop payments were made in cash, with salaries credited to accounts since the 1960s and cards and Swish replacing cash; by value about 2 percent of transactions by 2016.",
      "confidence": "medium",
-     "lead": 87,
+     "lead": 116,
      "score": 0.75,
-     "points": 4.84,
-     "demonstration_only": true
+     "points": 5.15,
+     "demonstration_only": false
     },
     {
-     "concept": "Thinning atmosphere",
-     "concept_id": "atmosphere-loss-thin-air",
-     "definition": "A planet or fragment losing air, so that breathing is labored and sound weakens, or its air is locked up chemically.",
-     "quote": "they were unconscious that their respiration became forced and rapid, like that of a mountaineer when he has reached an altitude where the air has become less charged with oxygen.",
-     "title": "Off on a Comet! a Journey Through Planetary Space",
-     "year": 1877,
+     "concept": "Common currency across many states",
+     "concept_id": "common-currency-among-nations",
+     "definition": "One currency issued by a common authority circulates among many countries and replaces separate national money.",
+     "quote": "The common traffic of the city, the common currency indeed of all the world, was conducted by means of the little brown, green and pink council cheques for small amounts, printed with a blank payee.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
      "authors": [
-      "Jules Verne"
+      "H. G. Wells"
      ],
-     "came_true": "1989",
-     "kind": "first_demonstration",
-     "event": "Phobos 2's plasma instruments measured ions escaping from Mars's upper atmosphere into space (Lundin et al., Nature, October 1989).",
-     "confidence": "low",
-     "lead": 112,
-     "score": 0.625,
-     "points": 4.26,
-     "demonstration_only": true
-    },
-    {
-     "concept": "Crewed flight around the Moon and back",
-     "concept_id": "circumlunar-free-return-flight",
-     "definition": "A crewed spacecraft loops around the Moon without landing and returns to Earth, possibly entering lunar orbit on the way.",
-     "quote": "Instead of losing itself in interplanetary space, it is probable that the projectile will describe an elliptical orbit around the moon.",
-     "title": "From the Earth to the Moon, Direct in Ninety-Seven Hours and Twenty Minutes",
-     "year": 1872,
-     "authors": [
-      "Jules Verne"
-     ],
-     "came_true": "1968-12-24",
+     "came_true": "1999-01-01",
      "kind": "first_practical_use",
-     "event": "Apollo 8 first actually carried a crew around the Moon and back (event, same flight).",
+     "event": "The euro became the currency of 11 participating EU member states on 1 January 1999, issued under the European Central Bank, replacing their national currencies (cash followed in 2002).",
      "confidence": "high",
-     "lead": 96,
-     "score": 0.625,
-     "points": 4.12,
+     "lead": 100,
+     "score": 0.75,
+     "points": 4.99,
      "demonstration_only": false
     },
     {
-     "concept": "Change in Earth's rotation",
-     "concept_id": "earth-rotation-change",
-     "definition": "The Earth's spin speeding up, slowing or stopping, changing the length of the day or leaving one side permanently facing the sun.",
-     "quote": "Although the days and nights had become reduced from twenty-four hours to twelve, Captain Servadac would not accept the new condition of things",
-     "title": "Off on a Comet! a Journey Through Planetary Space",
-     "year": 1877,
+     "concept": "Rule by scientists or experts",
+     "concept_id": "technocracy",
+     "definition": "Government is run by scientists, engineers or trained experts rather than elected politicians.",
+     "quote": "The suppression of the party machine in the purely democratic countries and of the official choice of the rich and privileged rulers in the more monarchical ones, by capable operative and administrative men inspired by the belief in a common theory of social order, will come about",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "Jules Verne"
+      "H. G. Wells"
      ],
-     "came_true": "1939",
+     "came_true": "1995-01",
      "kind": "first_practical_use",
-     "event": "The Earth's rotation was shown to be changing in speed (day length varying and, over the long run, slowing), the first time the change was established as having happened.",
-     "confidence": "low",
-     "lead": 62,
-     "score": 0.625,
-     "points": 3.74,
+     "event": "Italy: in January 1995 President Scalfaro appointed the central banker Lamberto Dini prime minister of a caretaker cabinet made up entirely of non-parliamentary technocrats, which governed until 1996.",
+     "confidence": "medium",
+     "lead": 94,
+     "score": 0.75,
+     "points": 4.93,
      "demonstration_only": false
     },
     {
-     "concept": "Falling oceans exposing seabed",
-     "concept_id": "sea-level-fall-exposed-seabed",
-     "definition": "The oceans drop or drain away, exposing new seabed and land, with rivers cutting new channels across it.",
-     "quote": "The Atlantic Ocean would be nearly entirely emptied and the maximum point of depression being nearly at the region of Bermuda",
-     "title": "Topsy-Turvy",
-     "year": 1889,
+     "concept": "European political union",
+     "concept_id": "european-political-union",
+     "definition": "The nations of Europe unite under a common federal or confederal government or union with pooled sovereignty, shared institutions, free internal borders and often a single currency.",
+     "quote": "The splendid dream of a Federal Europe, which opened the nineteenth century for France, may perhaps, after all, come to something like realization at the opening of the twenty-first.",
+     "title": "Anticipations",
+     "year": 1901,
      "authors": [
-      "Jules Verne"
+      "H. G. Wells"
      ],
-     "came_true": "1970",
-     "kind": "first_demonstration",
-     "event": "Deep Sea Drilling Project Leg 13 (Glomar Challenger, Aug-Oct 1970, co-chiefs Ryan and Hsu) cored Messinian salt and gravels, showing the Mediterranean had dried out about 5.9 million years ago, exposing its seabed.",
+     "came_true": "1993-11-01",
+     "kind": "first_practical_use",
+     "event": "The Maastricht Treaty on European Union entered into force after ratification by all twelve member states, creating the European Union with common citizenship and institutions.",
      "confidence": "medium",
-     "lead": 81,
-     "score": 0.5,
-     "points": 3.18,
-     "demonstration_only": true
+     "lead": 92,
+     "score": 0.75,
+     "points": 4.9,
+     "demonstration_only": false
+    },
+    {
+     "concept": "State-enforced limits on births",
+     "concept_id": "state-birth-limits",
+     "definition": "A government caps family size or total population by law, licensing, incentive or sterilization.",
+     "quote": "Utopia will control the increase of its population. Without the determination and ability to limit that increase as well as to stimulate it whenever it is necessary, no Utopia is possible.",
+     "title": "A Modern Utopia",
+     "year": 1905,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1972",
+     "kind": "first_practical_use",
+     "event": "Singapore's 'Stop at Two' policy: from 1972 (debated in Parliament 24 Oct 1972, building on 1968-69 measures) the state penalized third and later children through delivery fees, maternity leave, tax, housing and school priority, and paid sterilization incentives.",
+     "confidence": "medium",
+     "lead": 67,
+     "score": 0.75,
+     "points": 4.57,
+     "demonstration_only": false
     }
    ]
   },
@@ -3193,33 +3337,52 @@
    "title": "The Long View",
    "rule": "The longest lead of any prediction judged 0.75 or closer, in a work published since 1500 (older texts have their own award).",
    "winner": {
-    "name": "Cyrano de Bergerac",
-    "points": 6.13,
-    "stat": "287 years ahead"
+    "name": "Thomas More",
+    "points": 6.66,
+    "stat": "469 years ahead"
    },
    "runners_up": [
+    {
+     "name": "Cyrano de Bergerac",
+     "points": 6.13,
+     "stat": "287 years ahead"
+    },
     {
      "name": "Francis Bacon",
      "points": 6.07,
      "stat": "273 years ahead"
     },
     {
+     "name": "Tommaso Campanella",
+     "points": 6.05,
+     "stat": "267 years ahead"
+    },
+    {
      "name": "Richard Adams Locke",
      "points": 6.32,
      "stat": "148 years ahead"
-    },
-    {
-     "name": "Jules Verne",
-     "points": 5.32,
-     "stat": "136 years ahead"
-    },
-    {
-     "name": "Voltaire",
-     "points": 6.11,
-     "stat": "125 years ahead"
     }
    ],
    "hits": [
+    {
+     "concept": "Painless death on demand",
+     "concept_id": "assisted-suicide-euthanasia",
+     "definition": "Pills, devices or institutions that give those who choose it a painless death.",
+     "quote": "Such as are wrought on by these persuasions either starve themselves of their own accord, or take opium, and by that means die without pain.",
+     "title": "Utopia",
+     "year": 1516,
+     "authors": [
+      "Thomas More"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "Exit Deutsche Schweiz, a Swiss right-to-die society founded in 1982, medically assisted its first patient to end his life.",
+     "confidence": "low",
+     "lead": 469,
+     "score": 0.75,
+     "points": 6.66,
+     "demonstration_only": false
+    },
     {
      "concept": "Multistage rocket",
      "concept_id": "multistage-rocket",
@@ -3259,6 +3422,25 @@
      "demonstration_only": false
     },
     {
+     "concept": "Eugenic breeding of humans",
+     "concept_id": "eugenic-breeding-program",
+     "definition": "Deliberately controlling human reproduction to improve the species or breed castes, eliminating defects.",
+     "quote": "Love is foremost in attending to the charge of the race. He sees that men and women are so joined together, that they bring forth the best offspring.",
+     "title": "The City of the Sun",
+     "year": 1602,
+     "authors": [
+      "Tommaso Campanella"
+     ],
+     "came_true": "1869",
+     "kind": "first_practical_use",
+     "event": "Same event: the committee approved parents and children were born under the program from 1869-70",
+     "confidence": "medium",
+     "lead": 267,
+     "score": 0.75,
+     "points": 6.05,
+     "demonstration_only": false
+    },
+    {
      "concept": "Meteorites that came from the Moon",
      "concept_id": "lunar-meteorites",
      "definition": "Rocks blasted off the lunar surface by volcanism or impacts later fall to Earth as meteorites.",
@@ -3276,44 +3458,6 @@
      "score": 0.875,
      "points": 6.32,
      "demonstration_only": true
-    },
-    {
-     "concept": "Second natural moon of Earth",
-     "concept_id": "earth-second-moon",
-     "definition": "An additional small natural satellite of Earth besides the Moon, previously undiscovered or newly captured, is found orbiting the planet.",
-     "quote": "It is a simple bolide, but one of such enormous dimensions that the Earth's attraction has made it a satellite.",
-     "title": "All Around the Moon",
-     "year": 1870,
-     "authors": [
-      "Jules Verne"
-     ],
-     "came_true": "2006-09-14",
-     "kind": "first_demonstration",
-     "event": "Catalina Sky Survey (Arizona) discovered 6R10DB9, later 2006 RH120, a meter-size natural object captured into Earth orbit and making repeated loops until mid-2007.",
-     "confidence": "medium",
-     "lead": 136,
-     "score": 0.75,
-     "points": 5.32,
-     "demonstration_only": true
-    },
-    {
-     "concept": "Phobos and Deimos, the two moons of Mars",
-     "concept_id": "mars-two-moons",
-     "definition": "Mars is found, or reasoned, to have two very small, fast-orbiting moons, later identified as Phobos and Deimos, discovered by telescope.",
-     "quote": "they swung by two moons that cater to this planet but have escaped the notice of our astronomers.",
-     "title": "Micromegas",
-     "year": 1752,
-     "authors": [
-      "Voltaire"
-     ],
-     "came_true": "1877-08",
-     "kind": "first_demonstration",
-     "event": "Asaph Hall at the U.S. Naval Observatory found Deimos (first seen 11 Aug 1877) and Phobos (17-18 Aug) with the 26-inch refractor; the discovery was telegraphed on 19 Aug",
-     "confidence": "high",
-     "lead": 125,
-     "score": 0.875,
-     "points": 6.11,
-     "demonstration_only": true
     }
    ]
   },
@@ -3324,33 +3468,33 @@
    "winner": {
     "name": "Jules Verne",
     "key": "Jules Verne",
-    "points": 344.2,
-    "stat": "first to predict 61 ideas that came true"
+    "points": 411.1,
+    "stat": "first to predict 71 ideas that came true"
    },
    "runners_up": [
     {
      "name": "H. G. Wells",
      "key": "H. G. Wells",
-     "points": 360.2,
-     "stat": "first to predict 37 ideas that came true"
+     "points": 549.5,
+     "stat": "first to predict 53 ideas that came true"
     },
     {
      "name": "Godfrey Sweven",
      "key": "Godfrey Sweven",
-     "points": 246.6,
-     "stat": "first to predict 29 ideas that came true"
+     "points": 299.3,
+     "stat": "first to predict 28 ideas that came true"
     },
     {
      "name": "George Chetwynd Griffith",
      "key": "George Chetwynd Griffith",
-     "points": 257.7,
+     "points": 347.8,
      "stat": "first to predict 26 ideas that came true"
     },
     {
      "name": "Percy Greg",
      "key": "Percy Greg",
-     "points": 147.0,
-     "stat": "first to predict 24 ideas that came true"
+     "points": 172.1,
+     "stat": "first to predict 25 ideas that came true"
     }
    ],
    "hits": [
@@ -3592,6 +3736,16 @@
    },
    "runners_up": [
     {
+     "name": "Ignatius Donnelly",
+     "points": 4.94,
+     "stat": "off by 3 years"
+    },
+    {
+     "name": "Ignatius Donnelly",
+     "points": 4.94,
+     "stat": "off by 3 years"
+    },
+    {
      "name": "Edgar Rice Burroughs",
      "points": 4.04,
      "stat": "off by 3 years"
@@ -3600,16 +3754,6 @@
      "name": "Judith Merril",
      "points": 2.69,
      "stat": "off by 3 years"
-    },
-    {
-     "name": "Murray Leinster",
-     "points": 2.69,
-     "stat": "off by 4 years"
-    },
-    {
-     "name": "Frank R. Stockton",
-     "points": 4.14,
-     "stat": "off by 5 years"
     }
    ],
    "hits": [
@@ -3633,6 +3777,48 @@
      "demonstration_only": false,
      "stated_time": "1958 launch, orbiting for forty million years",
      "timing_error": -1
+    },
+    {
+     "concept": "Painless death on demand",
+     "concept_id": "assisted-suicide-euthanasia",
+     "definition": "Pills, devices or institutions that give those who choose it a painless death.",
+     "quote": "in this city they actually facilitate suicide! A race of philosophers has arisen in the last fifty years who argue that, as man was not consulted about his coming into the world, he has a perfect right to leave it",
+     "title": "Cæsar's Column",
+     "year": 1890,
+     "authors": [
+      "Ignatius Donnelly"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "Exit Deutsche Schweiz, a Swiss right-to-die society founded in 1982, medically assisted its first patient to end his life.",
+     "confidence": "low",
+     "lead": 95,
+     "score": 0.75,
+     "points": 4.94,
+     "demonstration_only": false,
+     "stated_time": "1988",
+     "timing_error": -3
+    },
+    {
+     "concept": "Painless death on demand",
+     "concept_id": "assisted-suicide-euthanasia",
+     "definition": "Pills, devices or institutions that give those who choose it a painless death.",
+     "quote": "now in all the public squares or parks they have erected hand some houses, beautifully furnished, with baths and bedrooms. If a man has decided to die, he goes there.",
+     "title": "Cæsar's Column",
+     "year": 1890,
+     "authors": [
+      "Ignatius Donnelly"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "Exit Deutsche Schweiz, a Swiss right-to-die society founded in 1982, medically assisted its first patient to end his life.",
+     "confidence": "low",
+     "lead": 95,
+     "score": 0.75,
+     "points": 4.94,
+     "demonstration_only": false,
+     "stated_time": "1988",
+     "timing_error": -3
     },
     {
      "concept": "Beamed-power vehicle",
@@ -3675,48 +3861,6 @@
      "demonstration_only": false,
      "stated_time": "orbited in 1974",
      "timing_error": -3
-    },
-    {
-     "concept": "Robot vacuum cleaner and lawn mower",
-     "concept_id": "robot-vacuum-mower",
-     "definition": "A small autonomous machine that cleans floors or mows a lawn on its own.",
-     "quote": "It rolled across the grass from one path-edge to another. When it reached the second path it stopped, briskly moved itself its own width sidewise, and rolled back.",
-     "title": "The Machine That Saved The World",
-     "year": 1957,
-     "authors": [
-      "Murray Leinster"
-     ],
-     "came_true": "1968",
-     "kind": "first_practical_use",
-     "event": "MowBot was on sale to the public by December 1968 (about $800) and still advertised in 1969, when users wrote of seeing it in operation.",
-     "confidence": "medium",
-     "lead": 11,
-     "score": 0.75,
-     "points": 2.69,
-     "demonstration_only": false,
-     "stated_time": "1972",
-     "timing_error": -4
-    },
-    {
-     "concept": "Helicopter",
-     "concept_id": "helicopter",
-     "definition": "An aircraft lifted and driven by powered rotating rotor blades or screws, able to take off, hover and land vertically.",
-     "quote": "he sailed over the place in one of those air-screw machines, with a fan workin' under the car to keep it up.",
-     "title": "The Great Stone of Sardis",
-     "year": 1897,
-     "authors": [
-      "Frank R. Stockton"
-     ],
-     "came_true": "1942-11",
-     "kind": "first_practical_use",
-     "event": "Kriegsmarine Flettner Fl 282 V6 flown as a reconnaissance craft over the Aegean from the minelayer Drache, November 1942 to early 1943.",
-     "confidence": "low",
-     "lead": 45,
-     "score": 0.75,
-     "points": 4.14,
-     "demonstration_only": false,
-     "stated_time": "in 1947",
-     "timing_error": -5
     }
    ]
   },
@@ -3726,40 +3870,10 @@
    "rule": "The ideas the most books predicted that have not come true, with the earliest book in the corpus to predict each.",
    "waiting": [
     {
-     "concept": "Telepathic communication",
-     "definition": "Mind-to-mind transfer of thoughts between people or other beings without speech or devices, sometimes across great distances.",
-     "books": 473,
-     "claims": 1062,
-     "first_title": "The Mahabharata, Volume 3 (Books 8-12)",
-     "first_by": "The Mahabharata",
-     "first_year": 400,
-     "quote": "Sulabha, endued with Yoga-power, entered the understanding of the king by her own understanding."
-    },
-    {
-     "concept": "Handheld energy blaster",
-     "definition": "A personal sidearm that fires a bolt or beam of concentrated energy to kill or burn a target at range, powered by a battery, atomic cell or similar charge.",
-     "books": 420,
-     "claims": 643,
-     "first_title": "Edison's Conquest of Mars",
-     "first_by": "Garrett Putman Serviss",
-     "first_year": 1898,
-     "quote": "Unknown to us the Martians carried hand engines, capable of launching bolts of death of the same character as those which emanated from the knobs of their larger machines."
-    },
-    {
-     "concept": "Native life on other worlds",
-     "definition": "Plants, animals and ecosystems native to Mercury, Jupiter, Saturn's moons, Pluto, asteroids or alien planets, strange in form.",
-     "books": 419,
-     "claims": 717,
-     "first_title": "Trips to the Moon",
-     "first_by": "Lucian of Samosata",
-     "first_year": 200,
-     "quote": "when a man grows old he does not die, but dissolves into smoke and turns to air."
-    },
-    {
      "concept": "Intelligent extraterrestrial life",
      "definition": "Intelligent beings of non-human form exist on planets of other stars or in unspecified places, and may be found.",
-     "books": 418,
-     "claims": 638,
+     "books": 540,
+     "claims": 884,
      "first_title": "A Voyage to the Moon",
      "first_by": "Cyrano de Bergerac",
      "first_year": 1657,
@@ -3768,48 +3882,78 @@
     {
      "concept": "Interstellar spaceship travel",
      "definition": "A crewed spacecraft that carries people from the solar system to planets of other stars, at sublight speed or by unspecified means.",
-     "books": 415,
-     "claims": 626,
+     "books": 511,
+     "claims": 830,
      "first_title": "The Moon-Voyage",
      "first_by": "Jules Verne",
      "first_year": 1872,
      "quote": "Would a service of navigation ever be founded across space for the solar world? Will people ever go from planet to planet, from Jupiter to Mercury, and later on from one star to another"
     },
     {
+     "concept": "Telepathic communication",
+     "definition": "Mind-to-mind transfer of thoughts between people or other beings without speech or devices, sometimes across great distances.",
+     "books": 480,
+     "claims": 1099,
+     "first_title": "The Mahabharata, Volume 3 (Books 8-12)",
+     "first_by": "The Mahabharata",
+     "first_year": 400,
+     "quote": "Sulabha, endued with Yoga-power, entered the understanding of the king by her own understanding."
+    },
+    {
      "concept": "Routine commercial traffic between planets",
      "definition": "Regularly scheduled passenger and cargo spaceship service between planets and moons of the solar system.",
-     "books": 366,
-     "claims": 507,
+     "books": 447,
+     "claims": 673,
      "first_title": "All Around the Moon",
      "first_by": "Jules Verne",
      "first_year": 1870,
      "quote": "Will any Air Line of space navigation ever undertake to start a system of locomotion between the different members of the solar system?"
     },
     {
+     "concept": "Native life on other worlds",
+     "definition": "Plants, animals and ecosystems native to Mercury, Jupiter, Saturn's moons, Pluto, asteroids or alien planets, strange in form.",
+     "books": 428,
+     "claims": 742,
+     "first_title": "Trips to the Moon",
+     "first_by": "Lucian of Samosata",
+     "first_year": 200,
+     "quote": "when a man grows old he does not die, but dissolves into smoke and turns to air."
+    },
+    {
+     "concept": "Handheld energy blaster",
+     "definition": "A personal sidearm that fires a bolt or beam of concentrated energy to kill or burn a target at range, powered by a battery, atomic cell or similar charge.",
+     "books": 421,
+     "claims": 644,
+     "first_title": "Edison's Conquest of Mars",
+     "first_by": "Garrett Putman Serviss",
+     "first_year": 1898,
+     "quote": "Unknown to us the Martians carried hand engines, capable of launching bolts of death of the same character as those which emanated from the knobs of their larger machines."
+    },
+    {
+     "concept": "Colonization of planets of other stars",
+     "definition": "Settling human colonies on planets that orbit other stars, carried there by ship.",
+     "books": 375,
+     "claims": 628,
+     "first_title": "Riallaro",
+     "first_by": "Godfrey Sweven",
+     "first_year": 1901,
+     "quote": "perhaps in some future age, when they had renovated all the nations of the earth, they would send out new breeds to the other planets and systems."
+    },
+    {
      "concept": "Faster-than-light travel",
      "definition": "A spacecraft travels between stars faster than the speed of light by some unspecified or generic drive.",
-     "books": 349,
-     "claims": 808,
+     "books": 352,
+     "claims": 839,
      "first_title": "Lumen",
      "first_by": "Camille Flammarion",
      "first_year": 1873,
      "quote": "You start to-day for a star, and you arrive yesterday! What do I say—yesterday? You will arrive there seventy-two years ago, even a hundred years ago! The farther you go, the sooner you will arrive!"
-    },
-    {
-     "concept": "Telepathic mind reading",
-     "definition": "Perceiving what another person is thinking, feeling or remembering directly by mental power, with or without their consent.",
-     "books": 311,
-     "claims": 582,
-     "first_title": "Voyages to the Moon and the Sun",
-     "first_by": "Cyrano de Bergerac",
-     "first_year": 1662,
-     "quote": "I arrange all the parts of my body in an order similar to yours; for, by arranging all parts of me like you, I excite in myself by this disposal of my matter the same thought that is produced in you"
     }
    ],
    "winner": {
-    "name": "Telepathic communication",
+    "name": "Intelligent extraterrestrial life",
     "points": 0,
-    "stat": "predicted in 473 books, first in The Mahabharata, Volume 3 (Books 8-12)"
+    "stat": "predicted in 540 books, first in A Voyage to the Moon"
    }
   }
  ]

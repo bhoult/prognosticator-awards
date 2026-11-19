@@ -431,6 +431,12 @@ The researchers see concept definitions only, never claims.
   - Open at the pilot checkpoint: whether to run the rest of B as piloted, only the event domains,
     or with concepts proposed before matching (the first pass against a technology registry matched
     3% and was coded carelessly), and how to read the prophecy texts (the second-translation rule).
+- **The full tranche as run (2026-11-19, run `b`, seeded from the pilot; [`b/report.md`](b/report.md)):**
+  every tranche-B claim (46,211), the pilot's concepts and milestones carried in (`b-init b seed:bpilot`).
+  First pass 38.8% matched; gap pass, consolidation and gap matching to 62.6%; 525 new concepts; tier 1,
+  verify, two judges, tier 2 on B's own 101 deciding concepts (two answers overruled on review), the
+  negative check (0 of 56 contradicted). 3,651 realized, 5,929 points; 356 agents, 50.4M tokens. The
+  awards' second edition joins both tranches (`awards.py data full+b`).
 
 ## 10. Orchestration
 

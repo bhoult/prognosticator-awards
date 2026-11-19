@@ -8,6 +8,8 @@ your review. This version follows the later tier-2 rounds of 2026-11-18 and your
 (2026-11-19: the review assist's suggestions taken, and a recheck round on its objections), then the
 remaining steps of 2026-11-19: the data fixes, the composition dates of the ancient texts, the
 awards page ([`awards.html`](awards.html)) and the tranche-B pilot ([`bpilot/report.md`](bpilot/report.md)).
+Tranche B then ran in full the same day ([`b/report.md`](b/report.md)); the awards page is now its
+second edition, built from both tranches (section 9).
 
 ## Summary
 
@@ -322,7 +324,8 @@ later move was checked against the definition; in round 4 they are in the review
 ## 7. For tranche B
 
 The pilot of 2026-11-19 (2,500 society-politics claims end to end) is reported in
-[`bpilot/report.md`](bpilot/report.md). Lessons from tranche A:
+[`bpilot/report.md`](bpilot/report.md), and the full tranche in [`b/report.md`](b/report.md). Lessons
+from tranche A:
 
 - **Select the checked set by its share of the author totals from the start,** not only by top
   entries: the first selection left half the author points unchecked. Re-select after re-judging
@@ -355,3 +358,32 @@ The pilot of 2026-11-19 (2,500 society-politics claims end to end) is reported i
 | Review assist | | 2.8M |
 | Fixes of 2026-11-19 | | 0.7M |
 | **Tranche A** | **85–125M** | **118.1M** |
+
+## 9. Both tranches: the second edition of the awards
+
+Tranche B (run `b`, 2026-11-19, [`b/report.md`](b/report.md)) scored 46,211 claims about events,
+politics, economics and ways of living: 3,651 came true, 2,496 book entries, 5,929 points, for 356
+agents and 50.4M tokens. `pipeline/awards.py data full+b` joins the two runs so that a book counts an
+idea once, from its best claim in either tranche, and the totals become 123,647 claims, 19,454
+realized, 13,473 entries and 31,231 points from 801 authors and texts.
+
+| award | tranche A alone | both tranches |
+|---|---|---|
+| Grand Prognosticator | E. E. Smith (426.8) | H. G. Wells (549.5; Smith 467.5) |
+| Prediction of the Age | Locke, lunar meteorites | More, painless death on demand (469 years) |
+| The Long View | Cyrano de Bergerac (287 years) | Thomas More (469 years) |
+| Most Prescient per Book | Richard M. Elam | George Griffith (58.0 a book) |
+| Pulp-era visionary (1900–1945) | E. E. Smith | H. G. Wells |
+| Best forecaster (non-fiction) | T. Baron Russell | H. G. Wells |
+| Best early-modern utopia | Francis Bacon | Thomas More (71.7 to Bacon's 70.9) |
+| Best political or historical forecast | none | Alexis de Tocqueville |
+| Best forecaster of society and politics | none | H. G. Wells (186.2) |
+| Transport, environment, economy | Griffith, Verne, Leiber | Senarens, Wells, Wells |
+| Still Waiting | telepathy (473 books) | intelligent life on other worlds (540 books) |
+
+The other 17 winners are unchanged. The reasons were rewritten for the new winners and updated for
+the others' new totals ([`awards_notes.jsonl`](awards_notes.jsonl)); tranche A's edition is in the
+git history (commit `ce84794`). The release database (`pipeline/export_db.py`: SQLite and CSV, both
+tranches, the books cited by title and author, never by library path) is attached to a draft GitHub
+release, not published.
+
