@@ -228,6 +228,16 @@ The researchers see concept definitions only, never claims.
   half the author points, so the selection was widened: `score` also selects every concept that
   adds `AUTHOR_MIN` (5) or more points to the author totals (each author's best entry on it,
   summed). Round 4 is the 451 concepts that adds (tier2-041..131), with up to 20 agents at a time.
+  Rounds 2–4: 98 agents, 14.8M tokens; over all four rounds 643 concepts and 1,108 verdicts
+  (667 confirmed, 373 replaced, 67 added, 1 removed), and the scoring milestone changed for 356.
+  Seven batches marked a year change "confirmed" and were sent back to mark it "replaced". The
+  re-scoring after round 4 selected no newcomers: all 588 deciding concepts are checked.
+- **Review assist (2026-11-18, advisory):** `pipeline/review_assist.py plan full <base> 4` gives
+  a second reader (`prompts/milestones_review_assist.md`, no web) every demonstration or practical
+  use a round replaced, added or removed, beside the milestone before it (from `<base>`'s
+  milestones.jsonl) and the definition; `collect` writes `runs/match/milestone_review_suggestions.md`.
+  Round 4: 309 rows, 241 accept, 16 keep_previous, 52 unsure; 11 agents, 0.9M tokens. Nothing is
+  applied: decisions go in `milestone_review.jsonl`. **Checkpoint 3 for rounds 2–4 (a stop).**
 - **Concepts with only a demonstration** (DESIGN §12, question 20): the pilot's rule scores
   them on that demonstration. Proposed: keep the rule, and flag those entries in the
   rankings.
@@ -298,6 +308,10 @@ The researchers see concept definitions only, never claims.
   judged: 71% the same score, 28% one step, 0.4% (14) two or more, which C-002 decided; mean
   0.462. Three replacements kept their date (cutting beam 1970, solar-thermal propulsion 1999,
   synthetic food 1939), so their 173 pairs keep round-1 judgments made against the earlier event.
+  Round 3 (after tier-2 round 2): 61 pairs judged, 132 copied, 1 to C-003. Round 4 (after the
+  widened round 4): 3,247 pairs judged by both judges and 1,513 copied (A-105–A-121, B-104–B-120,
+  C-004 for 26 pairs); 67% the same, 32% one step, 0.8% further; 38 agents over rounds 3–4, 4.5M
+  tokens.
 
 ## 8. Resolutions and scores (deterministic)
 
@@ -352,8 +366,13 @@ The researchers see concept definitions only, never claims.
   at the first scoring). The top 30 authors are the same 30 and 29 of the top 30 books stay. Once
   tier 2 has run, `score` keeps `deciding.jsonl` as the first scoring's selection and lists the
   concepts that carry a top entry now but were not checked: 26 of 165, most small, some wrong
-  (orbital docking dated by Apollo 11, not Gemini 8). **Checkpoint 4 (a stop):**
-  `runs/match/report.md`.
+  (orbital docking dated by Apollo 11, which tier 2 later confirmed: the definition needs crew or
+  cargo to pass). **Checkpoint 4 (a stop):** `runs/match/report.md`.
+- **Scoring after tier-2 round 4 (2026-11-18):** 15,719 realized, 16,447 not a prediction, 82
+  `contradicted_negative`; 11,319 entries from 2,458 books and 773 authors, 25,971 points. Against
+  the first scoring the top 9 authors keep their places, 29 of the top 30 stay and 27 of the top 30
+  books. The selection rule now also takes every concept adding `AUTHOR_MIN` points to the author
+  totals; 588 concepts are deciding and all are checked. `runs/match/report.md` is updated.
 
 ## 9. Tranche B: events and social change
 
