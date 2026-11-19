@@ -535,21 +535,30 @@ def main_registry():
 def b_init(run, n=None):
     """Start a tranche-B run (PLAN §9): work/match/<run>/claims.jsonl, tranche A's export (the tranche filter
     picks B), or for a pilot a fixed-seed sample of `n` society-politics claims; and runs/match/<run>/concepts.jsonl,
-    tranche A's final registry, which B's matching uses and its gap pass extends."""
+    tranche A's final registry, which B's matching uses and its gap pass extends. With `n` = seed:<pilot run>, the
+    pilot's kept concepts join the registry (tranche B) and its milestones, tier-2 verdicts included, seed verify
+    (runs/match/<run>/milestones_seed.jsonl); its claims are matched again with the rest."""
     if TRANCHE != 'B' or os.path.exists(os.path.join(OUT, 'concepts.jsonl')):
         sys.exit(f'{rel(OUT)} is tranche A or already started')
     a_out = os.path.join(ROOT, 'runs', 'match')
     hit = {k for l in open(rd('full', 'matches.jsonl'), encoding='utf-8') for k in json.loads(l)['concepts']}
     reg = read_jsonl(os.path.join(a_out, 'concepts.jsonl'))[0] + \
         [c for c in read_jsonl(os.path.join(a_out, 'concepts_gap.jsonl'))[0] if c['concept_id'] in hit]
+    reg = [dict(c, tranche='A') for c in reg]
+    seed = n[5:] if n and str(n).startswith('seed:') else None
+    if seed:
+        n, s_out = None, os.path.join(a_out, seed)
+        kept = {k for l in open(rd(seed, 'matches.jsonl'), encoding='utf-8') for k in json.loads(l)['concepts']}
+        reg += [dict(c, tranche='B') for c in read_jsonl(os.path.join(s_out, 'concepts_gap.jsonl'))[0] if c['concept_id'] in kept]
+        write_atomic(os.path.join(OUT, 'milestones_seed.jsonl'), open(os.path.join(s_out, 'milestones.jsonl'), encoding='utf-8').read())
     rows = open(rd('full', 'claims.jsonl'), encoding='utf-8').read().splitlines(True)
     if n:
         pool = sorted(l for l in rows if json.loads(l)['tranche'] == 'B' and json.loads(l)['domain'] == 'society-politics')
         rows = sorted(random.Random(f'{SEED}:{run}').sample(pool, int(n)))
     write_atomic(rd(run, 'claims.jsonl'), ''.join(rows))
-    write_atomic(os.path.join(OUT, 'concepts.jsonl'), jsonl(dict(c, tranche='A') for c in reg))
+    write_atomic(os.path.join(OUT, 'concepts.jsonl'), jsonl(reg))
     print(f"{sum(json.loads(l)['tranche'] == 'B' for l in rows):,} tranche-B claims -> {rel(rd(run, 'claims.jsonl'))}; "
-          f"{len(reg):,} tranche-A concepts -> {rel(os.path.join(OUT, 'concepts.jsonl'))}")
+          f"{len(reg):,} concepts ({sum(c['tranche'] == 'B' for c in reg)} from {seed}) -> {rel(os.path.join(OUT, 'concepts.jsonl'))}")
 
 
 def registry_rows():
@@ -1210,8 +1219,10 @@ def research_batches(run):
     deciding, t2 = os.path.join(OUT, 'deciding.jsonl'), [n for n in batches if n.startswith('tier2-')]
     if os.path.exists(deciding) and all(research_problems(run, n) is None for n in t2):
         queued = {i for n in t2 for i in batches[n]['ids']}
-        if TRANCHE == 'B':  # tranche A's concepts keep tranche A's milestones (its own tier 2 checks them)
-            queued |= {c['concept_id'] for c in main_registry()}
+        if TRANCHE == 'B':  # tranche A's concepts keep tranche A's milestones, and a B pilot's tier 2 stands
+            queued |= {c['concept_id'] for c in main_registry() if c.get('tranche', 'A') == 'A'}
+            sp = os.path.join(OUT, 'milestones_seed.jsonl')
+            queued |= {m['concept_id'] for m in (read_jsonl(sp)[0] if os.path.exists(sp) else []) if m.get('tier') == 2}
         ids = [r['concept_id'] for r in read_jsonl(deciding)[0] if r['concept_id'] not in queued]
         rnd = 1 + max((batches[n].get('round', 1) for n in t2), default=0)
         batches.update({f'tier2-{len(t2) + i // TIER2_BATCH + 1:03d}': {'ids': ids[i:i + TIER2_BATCH], **({'round': rnd} if rnd > 1 else {})}
@@ -1472,8 +1483,10 @@ def verify(run):
     researched = {i for n, b in batches.items() if not n.startswith('tier2-') for i in b['ids']}
     pilot = [dict(r, tier='pilot') for r in map(json.loads, open(PILOT_MILESTONES, encoding='utf-8'))
              if r['concept_id'] not in researched]
-    if TRANCHE == 'B':  # tranche A's verified milestones (they include the pilot's) for its concepts
-        pilot = [r for r in read_jsonl(os.path.join(ROOT, 'runs', 'match', 'milestones.jsonl'))[0] if r['concept_id'] not in researched]
+    if TRANCHE == 'B':  # tranche A's verified milestones (they include the pilot's), or a B pilot's (A's and its own)
+        sp = os.path.join(OUT, 'milestones_seed.jsonl')
+        sp = sp if os.path.exists(sp) else os.path.join(ROOT, 'runs', 'match', 'milestones.jsonl')
+        pilot = [r for r in read_jsonl(sp)[0] if r['concept_id'] not in researched]
     keyed = {(r['concept_id'], r['kind']): r for r in pilot + list(best.values())}
     # tier 2 overrides (PLAN §5): its verdict replaces the milestone, `removed` drops it, and an answer
     # with no verified source leaves the earlier milestone in place, marked; checkpoint 3's review can
