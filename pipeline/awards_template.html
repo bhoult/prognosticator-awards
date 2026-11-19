@@ -185,7 +185,7 @@ document.getElementById('method').textContent = DATA.method;
 section('The top prize', '', [A.grand && plate(A.grand, { grand: true, cat: 'Grand award', by: true })]);
 section('Single predictions', 'one passage each', ['prediction', 'long_view', 'on_time', 'last_words'].map(id => A[id] && A[id].winner &&
   plate(A[id], { cat: 'Prediction award', by: true, hits: 1, negative: id === 'last_words' })));
-section('Bodies of work', 'authors and books', ['book', 'originator', 'precision', 'per_book'].map(id => A[id] && A[id].winner &&
+section('Bodies of work', 'authors and books', ['book', 'society', 'originator', 'precision', 'per_book'].map(id => A[id] && A[id].winner &&
   plate(A[id], { cat: 'Body of work', by: id === 'book' ? false : false })));
 section('By era', 'when the book was first published', pick('era-').map(a => plate(a, { cat: 'Era award' })));
 section('By field', 'what the idea is about', pick('domain-').map(a => plate(a, { cat: 'Field award' })));

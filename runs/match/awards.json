@@ -3055,6 +3055,140 @@
    ]
   },
   {
+   "id": "society",
+   "title": "Best forecaster of society and politics",
+   "rule": "The most points from wars, revolutions, laws, institutions and ways of living (the ideas of the event and social kinds).",
+   "winner": {
+    "name": "Jules Verne",
+    "key": "Jules Verne",
+    "points": 25.8,
+    "stat": "25.8 points from 8 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 16.5,
+     "stat": "16.5 points from 6 ideas"
+    },
+    {
+     "name": "Murray Leinster",
+     "key": "Murray Leinster",
+     "points": 10.8,
+     "stat": "10.8 points from 4 ideas"
+    },
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 10.3,
+     "stat": "10.3 points from 5 ideas"
+    },
+    {
+     "name": "Garrett Putman Serviss",
+     "key": "Garrett Putman Serviss",
+     "points": 8.3,
+     "stat": "8.3 points from 3 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Astronomical cycles changing Earth's climate",
+     "concept_id": "orbital-cycles-climate",
+     "definition": "Slow astronomical cycles such as precession of the poles and equinoxes, orbital changes or varying interstellar gas that shift Earth's temperatures, polar ice and ice ages over long periods.",
+     "quote": "would it not require a lapse of twelve thousand years for Vega to become our pole-star, in accordance with the said phenomenon, and for the Arctic regions to undergo a change in climate?",
+     "title": "The Purchase of the North Pole",
+     "year": 1889,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1976-12",
+     "kind": "first_demonstration",
+     "event": "Hays, Imbrie and Shackleton (Science, 10 Dec 1976) showed 23,000, 42,000 and about 100,000 year cycles in Southern Ocean core climate records matching precession, obliquity and eccentricity.",
+     "confidence": "medium",
+     "lead": 87,
+     "score": 0.75,
+     "points": 4.84,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Thinning atmosphere",
+     "concept_id": "atmosphere-loss-thin-air",
+     "definition": "A planet or fragment losing air, so that breathing is labored and sound weakens, or its air is locked up chemically.",
+     "quote": "they were unconscious that their respiration became forced and rapid, like that of a mountaineer when he has reached an altitude where the air has become less charged with oxygen.",
+     "title": "Off on a Comet! a Journey Through Planetary Space",
+     "year": 1877,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1989",
+     "kind": "first_demonstration",
+     "event": "Phobos 2's plasma instruments measured ions escaping from Mars's upper atmosphere into space (Lundin et al., Nature, October 1989).",
+     "confidence": "low",
+     "lead": 112,
+     "score": 0.625,
+     "points": 4.26,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Crewed flight around the Moon and back",
+     "concept_id": "circumlunar-free-return-flight",
+     "definition": "A crewed spacecraft loops around the Moon without landing and returns to Earth, possibly entering lunar orbit on the way.",
+     "quote": "Instead of losing itself in interplanetary space, it is probable that the projectile will describe an elliptical orbit around the moon.",
+     "title": "From the Earth to the Moon, Direct in Ninety-Seven Hours and Twenty Minutes",
+     "year": 1872,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1968-12-24",
+     "kind": "first_practical_use",
+     "event": "Apollo 8 first actually carried a crew around the Moon and back (event, same flight).",
+     "confidence": "high",
+     "lead": 96,
+     "score": 0.625,
+     "points": 4.12,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Change in Earth's rotation",
+     "concept_id": "earth-rotation-change",
+     "definition": "The Earth's spin speeding up, slowing or stopping, changing the length of the day or leaving one side permanently facing the sun.",
+     "quote": "Although the days and nights had become reduced from twenty-four hours to twelve, Captain Servadac would not accept the new condition of things",
+     "title": "Off on a Comet! a Journey Through Planetary Space",
+     "year": 1877,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1939",
+     "kind": "first_practical_use",
+     "event": "The Earth's rotation was shown to be changing in speed (day length varying and, over the long run, slowing), the first time the change was established as having happened.",
+     "confidence": "low",
+     "lead": 62,
+     "score": 0.625,
+     "points": 3.74,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Falling oceans exposing seabed",
+     "concept_id": "sea-level-fall-exposed-seabed",
+     "definition": "The oceans drop or drain away, exposing new seabed and land, with rivers cutting new channels across it.",
+     "quote": "The Atlantic Ocean would be nearly entirely emptied and the maximum point of depression being nearly at the region of Bermuda",
+     "title": "Topsy-Turvy",
+     "year": 1889,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1970",
+     "kind": "first_demonstration",
+     "event": "Deep Sea Drilling Project Leg 13 (Glomar Challenger, Aug-Oct 1970, co-chiefs Ryan and Hsu) cored Messinian salt and gravels, showing the Mediterranean had dried out about 5.9 million years ago, exposing its seabed.",
+     "confidence": "medium",
+     "lead": 81,
+     "score": 0.5,
+     "points": 3.18,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
    "id": "long_view",
    "title": "The Long View",
    "rule": "The longest lead of any prediction judged 0.75 or closer, in a work published since 1500 (older texts have their own award).",

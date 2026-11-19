@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import match
 
 TOP_HITS, RUNNERS = 5, 4
+AW = os.path.join(match.ROOT, 'runs', 'match')  # the awards' files, whichever runs they are built from
 ANCIENT = 1500  # works written before this year have their own award (their lead reaches the 500-year cap)
 GROUP_AWARDS = (  # award id, title, rule, which books; the texts rank by work, authors where they have one
     ('futurism', 'Best forecaster (non-fiction)', 'the futurist essays and forecasts',
@@ -41,6 +42,25 @@ LONG_MIN, ONTIME_MIN, ONTIME_LEAD, ORIGIN_MIN = 0.75, 0.75, 10, 0.5
 
 
 def load(run):
+    """One run's scoring, or with `run` = full+<b run> both tranches: their entries joined so that a book counts
+    an idea once (its best claim from either tranche), and the tranche-B run's registry and milestones, which
+    hold tranche A's."""
+    if '+' in run:
+        a, b = run.split('+')
+        A, B = load(a), load(b)
+        books = {k: dict(v) for k, v in A[0].items()}
+        for k, v in B[0].items():
+            w = books.setdefault(k, dict(v, claims=0, strict=0))
+            if w is not v:
+                w['claims'], w['strict'] = w.get('claims', 0) + v.get('claims', 0), w.get('strict', 0) + v.get('strict', 0)
+        best = {}
+        for e in A[1] + B[1]:
+            k = (e['book'], e['concept_id'])
+            if k not in best or (-e['points'], e['claim']) < (-best[k]['points'], best[k]['claim']):
+                best[k] = e
+        entries = sorted(best.values(), key=lambda e: (-e['points'], e['claim']))
+        return books, entries, A[2] + B[2], {**A[3], **B[3]}, B[4], B[5]
+    match.use_run(run)
     rd = lambda f: match.read_jsonl(match.rd(run, f))[0]
     books = {b['book']: b for b in rd('books.jsonl')}
     entries = rd('entries.jsonl')
@@ -195,6 +215,13 @@ def data(run):
         person('domain-' + d, title, f'The most points from ideas in {title.lower()}.', r, h,
                lambda a, p, h=h: f'{p:.1f} points from {ideas(len(h[a]))}')
 
+    social = lambda e: reg[e['concept_id']].get('type') in ('social', 'event')
+    if any(social(e) for e in entries):
+        r, h = totals(entries, books, lambda e: books[e['book']]['authors'] and social(e))
+        person('society', 'Best forecaster of society and politics', 'The most points from wars, revolutions, laws, '
+               'institutions and ways of living (the ideas of the event and social kinds).', r, h,
+               lambda a, p, h=h: f'{p:.1f} points from {ideas(len(h[a]))}')
+
     longs = by_author(sorted((e for e in entries if e['score'] >= LONG_MIN and modern(books[e['book']])),
                              key=lambda e: (-e['lead'], -e['score'], e['claim'])))
     if longs:
@@ -221,8 +248,10 @@ def data(run):
                f'(judged {ORIGIN_MIN:g} or closer), that later came true.', [(a, pts.get(a, 0)) for a, _ in orank], oh,
                lambda a, p: f'first to predict {len(origin[a])} ideas that came true')
 
-    npath = os.path.join(match.OUT, 'negative_review.jsonl')  # prompts/negative_check.md: which skeptics were really proved wrong
-    proved = {r['id'] for r in match.read_jsonl(npath)[0] if r['verdict'] == 'contradicted'} if os.path.exists(npath) else set()
+    proved = set()  # prompts/negative_check.md: which skeptics were really proved wrong, in each tranche
+    for npath in (os.path.join(AW, 'negative_review.jsonl'), os.path.join(match.OUT, 'negative_review.jsonl')):
+        if os.path.exists(npath):
+            proved |= {r['id'] for r in match.read_jsonl(npath)[0] if r['verdict'] == 'contradicted'}
     nonfiction = lambda r: books[r['book']]['group'] in ('Science', 'Futurism', 'Politics', 'Philosophy')
     neg = sorted((r for r in res if r['resolution'] == 'failed' and r['why'] == 'contradicted_negative' and r['id'] in proved
                   and cl[r['id']]['voice'] == 'narrator'),
@@ -277,19 +306,19 @@ def data(run):
     out = {'run': run, 'claims': len(res), 'books': len({r['book'] for r in res}), 'resolutions': dict(counts),
            'points': round(sum(e['points'] for e in entries), 1), 'entries': len(entries),
            'authors': len(author_rank), 'awards': awards}
-    match.write_atomic(os.path.join(match.OUT, 'awards.json'), json.dumps(out, ensure_ascii=False, indent=1) + '\n')
+    match.write_atomic(os.path.join(AW, 'awards.json'), json.dumps(out, ensure_ascii=False, indent=1) + '\n')
     print(f"{len(awards)} awards -> runs/match/awards.json")
     for a in awards:
         w = a.get('winner')
         print(f"{a['id']:28} {w['name'] if w else '-':40} {w['stat'] if w else ''}")
 
 
-NOTES = os.path.join(match.OUT, 'awards_notes.jsonl')  # {"id", "winner", "why"}: the hand-written reason for each award
+NOTES = os.path.join(AW, 'awards_notes.jsonl')  # {"id", "winner", "why"}: the hand-written reason for each award
 REPO = 'https://github.com/bhoult/prognosticator-awards'
 
 
 def page(run, edition='First awards, 2026 · technology and science', scored='2026-11-19'):
-    d = json.load(open(os.path.join(match.OUT, 'awards.json'), encoding='utf-8'))
+    d = json.load(open(os.path.join(AW, 'awards.json'), encoding='utf-8'))
     notes = {(n['id'], n['winner']): n['why'] for n in match.read_jsonl(NOTES)[0]} if os.path.exists(NOTES) else {}
     stale = []
     for a in d['awards']:
@@ -299,8 +328,9 @@ def page(run, edition='First awards, 2026 · technology and science', scored='20
         elif w:
             stale.append(f"{a['id']}: {w['name']}")
     r = d['resolutions']
-    nreg = len(match.final_registry(run))
-    ndec = len(match.read_jsonl(os.path.join(match.OUT, 'deciding.jsonl'))[0])
+    nreg = len(match.final_registry(run.split('+')[-1]))
+    ndec = sum(len(match.read_jsonl(os.path.join(AW, *p, 'deciding.jsonl'))[0])
+               for p in ([], [r for r in run.split('+')[1:]]) if os.path.exists(os.path.join(AW, *p, 'deciding.jsonl')))
     d.update(edition=edition, scored=scored,
              dek='For the science fiction, forecasts and old texts that saw the future first. Every prediction was '
                  'read from the book itself, matched to the dated event that made it come true, and scored by how '
@@ -335,7 +365,7 @@ def page(run, edition='First awards, 2026 · technology and science', scored='20
                      'Code under GPL-3.0-or-later; data under CC BY 4.0.'])])
     tpl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'awards_template.html'), encoding='utf-8').read()
     html = tpl.replace('__AWARDS_JSON__', json.dumps(d, ensure_ascii=False).replace('</', '<\\/'))
-    match.write_atomic(os.path.join(match.OUT, 'awards.html'), html)
+    match.write_atomic(os.path.join(AW, 'awards.html'), html)
     print(f"{len(d['awards'])} awards -> runs/match/awards.html; no reason written for {len(stale)}: {stale}")
 
 
