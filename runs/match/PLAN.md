@@ -221,6 +221,13 @@ The researchers see concept definitions only, never claims.
   1927 and increased human height 1860 are accepted on the record. The scoring milestone now
   changes for 88 of the 165 (49 earlier, 12 later, 27 in month or kind). The 2015 air-purification
   source that failed on a 429 verified on the retry.
+- **Later tier-2 rounds (2026-11-18, the user: "go" at checkpoint 4, then "continue until all
+  tokens are used", "use up to 20 agents"):** round 2 (tier2-034..039) checked the 26 concepts the
+  re-scoring moved into the deciding set; round 3 (tier2-040) the one newcomer after that
+  (electronic tracking tags). The check showed that the concepts tier 2 had checked carried only
+  half the author points, so the selection was widened: `score` also selects every concept that
+  adds `AUTHOR_MIN` (5) or more points to the author totals (each author's best entry on it,
+  summed). Round 4 is the 451 concepts that adds (tier2-041..131), with up to 20 agents at a time.
 - **Concepts with only a demonstration** (DESIGN §12, question 20): the pilot's rule scores
   them on that demonstration. Proposed: keep the rule, and flag those entries in the
   rankings.

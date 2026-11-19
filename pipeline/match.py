@@ -1805,6 +1805,7 @@ WEIGHT, CAP = 'log', 500  # DESIGN §8: w = log2(1 + min(L, 500)); 'linear' is t
 REALIZED_MIN = 0.125  # a `will` pair with a positive lead is realized and earns points from here: every s > 0 (DESIGN §8)
 STRICT_MIN = 0.5  # precision counts the claims realized at this score or more (DESIGN §8); the report also ranks at it
 NEGATIVE_MIN = 0.5  # a `will_not` pair from this score resolves as contradicted_negative (PLAN §6)
+AUTHOR_MIN = 5  # tier 2 also checks every concept that adds this many points to the author totals (PLAN §5, 2026-11-18)
 PRECISION_CLAIMS, PPB_BOOKS = 50, 3  # the precision ranking needs this many claims, points per book this many books
 ERAS = (('pre-1900', -10 ** 6, 1899), ('1900–1945', 1900, 1945), ('1946–1979', 1946, 1979), ('1980+', 1980, 10 ** 6))
 NO_AUTHOR = {'Anonymous', 'Various', 'Milton S. Terry'}  # ranked by text only (DESIGN §1a); Terry translated the Sibylline Oracles
@@ -1978,7 +1979,7 @@ def score(run):
             nstrict[a] += strict[b]
     era = lambda y: next((n for n, lo, hi in ERAS if y is not None and lo <= y <= hi), None)
 
-    # PLAN §5: the deciding concepts, whose milestone carries a top entry, for tier 2
+    # PLAN §5: the deciding concepts, whose milestone carries a top entry or a share of the author totals, for tier 2
     why_k = collections.defaultdict(set)
     for e in entries[:300]:
         why_k[e['concept_id']].add('top-300 prediction')
@@ -1998,6 +1999,12 @@ def score(run):
     for k, n in long_lead.items():
         if n >= 20:
             why_k[k].add('lead over 40 years for 20+ claims')
+    adds = collections.Counter()
+    for (_, k), e in author_best.items():  # a concept's share of the author totals: each author's best entry on it
+        adds[k] += e['points']
+    for k, n in adds.items():
+        if n >= AUTHOR_MIN:
+            why_k[k].add(f'adds {AUTHOR_MIN}+ points to the author totals')
     per_k = collections.defaultdict(list)
     for e in entries:
         per_k[e['concept_id']].append(e)
@@ -2121,7 +2128,7 @@ def score(run):
 
     crit = collections.Counter(r for d in deciding for r in d['reasons'])
     out += ['', f"## {'The deciding concepts after tier 2' if after else 'Tier 2: the deciding concepts'} (PLAN §5)", '',
-            (f'{len(deciding)} concepts carry a top entry now, by the first scoring\'s criteria; tier 2 checked '
+            (f'{len(deciding)} concepts carry a top entry or add {AUTHOR_MIN}+ points to the author totals now; tier 2 checked '
              f'{sum(d["concept_id"] in checked for d in deciding)} of them (`runs/match/deciding.jsonl` lists every '
              f'concept selected for it, by round). By criterion (a concept can meet several):' if after else
              f'{len(deciding)} concepts carry a top entry; `runs/match/deciding.jsonl` lists them all with their '
