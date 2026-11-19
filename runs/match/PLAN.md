@@ -242,8 +242,17 @@ The researchers see concept definitions only, never claims.
   (`prompts/milestones_review_confirmed.md` -> `milestone_review_confirmed.md`: 504 rows, 419 accept,
   6 earlier_exists, 4 does_not_fit, 75 unsure), and `plan-missing full 30` the 242 concepts with no
   milestone and 30+ open claims (`prompts/milestones_missing_check.md` -> `no_milestone_candidates.md`:
-  200 never happened, 41 unsure, 1 happened). 40 agents, 2.8M tokens in all. **Checkpoint 3 for
-  rounds 2–4 (a stop).**
+  200 never happened, 41 unsure, 1 happened). 40 agents, 2.8M tokens in all.
+- **Checkpoint 3 for rounds 2–4 decided (2026-11-19, the user: "continue" on the recommendation):**
+  `milestone_review.jsonl` keeps the earlier milestone for the 18 keep_previous suggestions and for
+  the airlifted-buildings practical use (it would precede the kept demonstration), and accepts the
+  rest; 21 answers are overruled in all. **Round 5, the recheck:** `runs/match/tier2_recheck.jsonl`
+  lists the concepts to check again with the second reader's objection (the 10 confirmed answers it
+  called earlier_exists or does_not_fit, and brain transplant); `research_batches` queues them once
+  (tier2-132..133, `recheck`), and `research_plan` gives them tier 2's own answer as the milestone to
+  check and the objection among the earlier notes. 7 of the 10 changed; brain transplant got 1890 and
+  1987 milestones on a literal reading. A recheck answer supersedes a review row for its kind (the
+  geothermal row was dropped).
 - **Concepts with only a demonstration** (DESIGN §12, question 20): the pilot's rule scores
   them on that demonstration. Proposed: keep the rule, and flag those entries in the
   rankings.
@@ -379,6 +388,10 @@ The researchers see concept definitions only, never claims.
   the first scoring the top 9 authors keep their places, 29 of the top 30 stay and 27 of the top 30
   books. The selection rule now also takes every concept adding `AUTHOR_MIN` points to the author
   totals; 588 concepts are deciding and all are checked. `runs/match/report.md` is updated.
+- **Scoring after the review and the recheck (2026-11-19):** judging round 5 (110 pairs, A-122 and
+  B-121); 15,820 realized, 16,393 not a prediction, 26,090 points; the top 30 authors and books
+  unchanged from round 4; 590 deciding concepts, all checked (brain transplant joined).
+  `runs/match/report.md` is updated. **Checkpoint 4 (a stop).**
 
 ## 9. Tranche B: events and social change
 

@@ -1,6 +1,6 @@
 # Scoring after tier 2, tranche A (PLAN §8)
 
-Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 643 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).
+Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 644 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).
 
 ## Resolutions
 
@@ -8,22 +8,22 @@ Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500)
 
 | resolution | claims | share |
 |---|---|---|
-| open: no_milestone | 31,493 | 40.7% |
-| not_a_prediction | 16,447 | 21.2% |
-| realized | 15,719 | 20.3% |
+| open: no_milestone | 31,442 | 40.6% |
+| not_a_prediction | 16,393 | 21.2% |
+| realized | 15,820 | 20.4% |
 | open: no_concept | 6,795 | 8.8% |
 | open: too_vague | 3,897 | 5.0% |
 | untestable | 2,558 | 3.3% |
-| open: not_matched | 269 | 0.3% |
+| open: not_matched | 273 | 0.4% |
 | failed: missed_deadline | 170 | 0.2% |
 | failed: contradicted_negative | 82 | 0.1% |
 | open: no_year | 6 | 0.0% |
 
-Deadlines: 1,741 `will` claims with a concept have a stated time naming a year, decade or century after publication; 765 of those ended before 2016. Of these, 300 are realized anyway, 170 missed the deadline, and 295 are not a prediction. Of the 580 realized claims with a deadline, 510 came true by it and 70 after it (median 17 years late).
+Deadlines: 1,741 `will` claims with a concept have a stated time naming a year, decade or century after publication; 765 of those ended before 2016. Of these, 302 are realized anyway, 170 missed the deadline, and 293 are not a prediction. Of the 581 realized claims with a deadline, 511 came true by it and 70 after it (median 18 years late).
 
 ## The top 50 predictions
 
-11,319 book–concept entries earn points (each book counts its best claim once per concept).
+11,374 book–concept entries earn points (each book counts its best claim once per concept).
 
 | # | points | score | lead | author | book | concept | milestone | quote |
 |---|---|---|---|---|---|---|---|---|
@@ -84,33 +84,33 @@ Each author counts a concept once, from their best book. 773 authors score.
 
 | # | author | points | concepts | books | points per book | precision |
 |---|---|---|---|---|---|---|
-| 1 | E. E. Smith | 423.6 | 161 | 20 | 21.2 | 11% of 2868 |
-| 2 | H. G. Wells | 356.1 | 127 | 27 | 13.2 | 18% of 1515 |
-| 3 | Murray Leinster | 352.1 | 149 | 58 | 6.1 | 17% of 2144 |
-| 4 | Jules Verne | 345.3 | 108 | 16 | 21.6 | 19% of 1082 |
+| 1 | E. E. Smith | 426.8 | 163 | 20 | 21.3 | 11% of 2868 |
+| 2 | H. G. Wells | 360.2 | 128 | 27 | 13.3 | 18% of 1515 |
+| 3 | Murray Leinster | 358.4 | 152 | 58 | 6.2 | 17% of 2144 |
+| 4 | Jules Verne | 344.2 | 108 | 16 | 21.5 | 19% of 1082 |
 | 5 | George O. Smith | 319.2 | 131 | 57 | 5.6 | 11% of 2076 |
-| 6 | Ray Cummings | 315.4 | 127 | 36 | 8.8 | 11% of 1907 |
-| 7 | John W. Campbell Jr | 287.6 | 116 | 12 | 24.0 | 15% of 1241 |
-| 8 | Edmond Hamilton | 282.4 | 104 | 34 | 8.3 | 15% of 959 |
-| 9 | Randall Garrett | 259.5 | 111 | 78 | 3.3 | 12% of 1590 |
-| 10 | George Chetwynd Griffith | 257.4 | 92 | 6 | 42.9 | 28% of 803 |
+| 6 | Ray Cummings | 317.1 | 128 | 36 | 8.8 | 11% of 1907 |
+| 7 | John W. Campbell Jr | 290.2 | 117 | 12 | 24.2 | 15% of 1241 |
+| 8 | Edmond Hamilton | 285.6 | 106 | 34 | 8.4 | 16% of 959 |
+| 9 | Randall Garrett | 260.0 | 111 | 78 | 3.3 | 12% of 1590 |
+| 10 | George Chetwynd Griffith | 257.7 | 92 | 6 | 43.0 | 28% of 803 |
 | 11 | Raymond Z. Gallun | 254.8 | 99 | 17 | 15.0 | 22% of 701 |
-| 12 | Godfrey Sweven | 250.3 | 89 | 2 | 125.2 | 18% of 568 |
-| 13 | Fritz Leiber | 226.8 | 94 | 29 | 7.8 | 18% of 657 |
-| 14 | H. Beam Piper | 217.2 | 100 | 32 | 6.8 | 14% of 1180 |
-| 15 | F. L. Wallace | 201.7 | 87 | 18 | 11.2 | 17% of 551 |
-| 16 | Garrett Putman Serviss | 200.2 | 72 | 6 | 33.4 | 14% of 585 |
-| 17 | Edgar Rice Burroughs | 196.4 | 78 | 21 | 9.4 | 10% of 1200 |
+| 12 | Godfrey Sweven | 246.6 | 88 | 2 | 123.3 | 17% of 568 |
+| 13 | Fritz Leiber | 225.5 | 94 | 29 | 7.8 | 18% of 657 |
+| 14 | H. Beam Piper | 217.3 | 100 | 32 | 6.8 | 14% of 1180 |
+| 15 | F. L. Wallace | 206.2 | 88 | 18 | 11.5 | 17% of 551 |
+| 16 | Edgar Rice Burroughs | 200.9 | 79 | 21 | 9.6 | 11% of 1200 |
+| 17 | Garrett Putman Serviss | 200.7 | 72 | 6 | 33.5 | 14% of 585 |
 | 18 | Nelson S. Bond | 186.1 | 74 | 37 | 5.0 | 15% of 741 |
 | 19 | Stephen Marlowe | 179.6 | 73 | 53 | 3.4 | 14% of 750 |
-| 20 | Bryce Walton | 162.1 | 69 | 38 | 4.3 | 14% of 536 |
-| 21 | Hugo Gernsback | 161.5 | 53 | 2 | 80.8 | 29% of 223 |
-| 22 | Robert Silverberg | 157.9 | 73 | 42 | 3.8 | 13% of 720 |
+| 20 | Bryce Walton | 164.7 | 70 | 38 | 4.3 | 15% of 536 |
+| 21 | Hugo Gernsback | 162.2 | 52 | 2 | 81.1 | 28% of 223 |
+| 22 | Robert Silverberg | 157.6 | 73 | 42 | 3.8 | 13% of 720 |
 | 23 | Jack Williamson | 156.1 | 59 | 11 | 14.2 | 15% of 391 |
 | 24 | Alan Edward Nourse | 150.9 | 70 | 33 | 4.6 | 15% of 541 |
 | 25 | Percy Greg | 147.0 | 47 | 1 | 147.0 | 27% of 248 |
-| 26 | Carey Rockwell | 137.0 | 59 | 6 | 22.8 | 21% of 535 |
-| 27 | Richard M. Elam | 134.4 | 59 | 3 | 44.8 | 31% of 307 |
+| 26 | Carey Rockwell | 136.1 | 59 | 6 | 22.7 | 21% of 535 |
+| 27 | Richard M. Elam | 134.6 | 59 | 3 | 44.9 | 31% of 307 |
 | 28 | Roy Rockwood | 123.5 | 49 | 7 | 17.6 | 16% of 404 |
 | 29 | Leigh Brackett | 122.2 | 50 | 21 | 5.8 | 11% of 501 |
 | 30 | Alfred Coppel | 113.1 | 52 | 24 | 4.7 | 19% of 262 |
@@ -119,32 +119,32 @@ Each author counts a concept once, from their best book. 773 authors score.
 
 | # | book | author | group | points | concepts |
 |---|---|---|---|---|---|
-| 1 | *Limanora* (1903) | Godfrey Sweven | Science-Fiction | 230.6 | 82 |
+| 1 | *Limanora* (1903) | Godfrey Sweven | Science-Fiction | 226.9 | 81 |
 | 2 | *Across the Zodiac* (1880) | Percy Greg | Science-Fiction | 147.0 | 47 |
-| 3 | *Ralph 124C 41+* (1911) | Hugo Gernsback | Science-Fiction | 142.7 | 45 |
-| 4 | *Spacehounds of IPC* (1931) | E. E. Smith | Science-Fiction | 115.9 | 42 |
+| 3 | *Ralph 124C 41+* (1911) | Hugo Gernsback | Science-Fiction | 143.4 | 44 |
+| 4 | *Spacehounds of IPC* (1931) | E. E. Smith | Science-Fiction | 117.7 | 43 |
 | 5 | *Olga Romanoff* (1894) | George Chetwynd Griffith | Science-Fiction | 114.0 | 43 |
 | 6 | *The Moon-Voyage* (1872) | Jules Verne | Science-Fiction | 112.8 | 35 |
 | 7 | *Skylark Three* (1930) | E. E. Smith | Science-Fiction | 110.9 | 38 |
 | 8 | *All Around the Moon* (1870) | Jules Verne | Science-Fiction | 110.5 | 32 |
-| 9 | *A Journey in Other Worlds* (1894) | John Jacob Astor | Science-Fiction | 108.5 | 41 |
+| 9 | *A Journey in Other Worlds* (1894) | John Jacob Astor | Science-Fiction | 105.6 | 40 |
 | 10 | *The Skylark of Space* (1928) | E. E. Smith; Lee Hawkins Garby | Science-Fiction | 104.6 | 37 |
-| 11 | *A Hundred Years Hence (The Expectations of an Optimist)* (1905) | T. Baron Russell | Futurism | 100.3 | 32 |
-| 12 | *When the Sleeper Wakes* (1899) | H. G. Wells | Science-Fiction | 100.2 | 39 |
-| 13 | *Maza of the Moon* (1929) | Otis Adelbert Kline | Science-Fiction | 89.1 | 32 |
-| 14 | *Through the Sun in an Airship* (1909) | John Mastin | Science-Fiction | 88.8 | 37 |
-| 15 | *The Mummy! A Tale of the Twenty-Second Century* (1827) | Mrs. Loudon | Science-Fiction | 87.4 | 29 |
-| 16 | *The Skylark of Valeron* (1934) | E. E. Smith | Science-Fiction | 86.9 | 32 |
+| 11 | *When the Sleeper Wakes* (1899) | H. G. Wells | Science-Fiction | 102.7 | 40 |
+| 12 | *A Hundred Years Hence (The Expectations of an Optimist)* (1905) | T. Baron Russell | Futurism | 100.3 | 32 |
+| 13 | *Maza of the Moon* (1929) | Otis Adelbert Kline | Science-Fiction | 91.5 | 33 |
+| 14 | *The Mummy! A Tale of the Twenty-Second Century* (1827) | Mrs. Loudon | Science-Fiction | 90.3 | 30 |
+| 15 | *Through the Sun in an Airship* (1909) | John Mastin | Science-Fiction | 88.0 | 37 |
+| 16 | *The Skylark of Valeron* (1934) | E. E. Smith | Science-Fiction | 87.7 | 33 |
 | 17 | *A Honeymoon in Space* (1901) | George Chetwynd Griffith | Science-Fiction | 85.9 | 33 |
-| 18 | *Space Tug* (1953) | Murray Leinster | Science-Fiction | 83.4 | 38 |
-| 19 | *Teen-age Super Science Stories* (1957) | Richard M. Elam | Science-Fiction | 82.5 | 41 |
+| 18 | *Space Tug* (1953) | Murray Leinster | Science-Fiction | 83.8 | 38 |
+| 19 | *Teen-age Super Science Stories* (1957) | Richard M. Elam | Science-Fiction | 82.8 | 41 |
 | 20 | *The Green Millennium* (1953) | Fritz Leiber | Science-Fiction | 80.5 | 33 |
 | 21 | *A Trip to Venus* (1897) | John Munro | Science-Fiction | 80.2 | 26 |
 | 22 | *Pharaoh's Broker* (1899) | Ellsworth Douglass | Science-Fiction | 79.8 | 26 |
 | 23 | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Jules Verne; Henri Théophile Hildibrand | Science-Fiction | 79.6 | 25 |
-| 24 | *To Mars Via the Moon* (1911) | Mark Wicks | Science-Fiction | 75.1 | 27 |
-| 25 | *The Angel of the Revolution* (1893) | George Chetwynd Griffith | Science-Fiction | 74.9 | 25 |
-| 26 | *Tarrano the Conqueror* (1925) | Ray Cummings | Science-Fiction | 74.6 | 30 |
+| 24 | *Tarrano the Conqueror* (1925) | Ray Cummings | Science-Fiction | 78.1 | 31 |
+| 25 | *The Angel of the Revolution* (1893) | George Chetwynd Griffith | Science-Fiction | 75.2 | 25 |
+| 26 | *To Mars Via the Moon* (1911) | Mark Wicks | Science-Fiction | 75.1 | 27 |
 | 27 | *Venus Equilateral* (1947) | George O. Smith; John W. Campbell Jr | Science-Fiction | 74.4 | 32 |
 | 28 | *Triplanetary* (1948) | E. E. Smith | Science-Fiction | 73.7 | 33 |
 | 29 | *Last and First Men* (1930) | Olaf Stapledon | Science-Fiction | 73.3 | 29 |
@@ -159,23 +159,23 @@ Claims realized at a score of 0.5 or more, of all tranche-A claims by the author
 | 1 | Edwin Balmer | 46% | 54 | 13.1 |
 | 2 | William MacHarg | 46% | 54 | 13.1 |
 | 3 | Harold L. Goodwin | 39% | 208 | 73.7 |
-| 4 | Ignatius Donnelly | 34% | 90 | 66.5 |
-| 5 | Jeff Sutton | 33% | 85 | 36.8 |
-| 6 | Walter M. Miller | 33% | 85 | 56.5 |
-| 7 | Richard M. Elam | 31% | 307 | 134.4 |
+| 4 | Ignatius Donnelly | 34% | 90 | 64.6 |
+| 5 | Walter M. Miller | 33% | 85 | 56.5 |
+| 6 | Jeff Sutton | 32% | 85 | 37.4 |
+| 7 | Richard M. Elam | 31% | 307 | 134.6 |
 | 8 | Arthur Cheney Train | 31% | 112 | 88.7 |
 | 9 | Robert Williams Wood | 31% | 112 | 88.7 |
 | 10 | Mary E. Bradley Lane | 31% | 104 | 58.8 |
 | 11 | Wilbur Finley Fauley | 29% | 80 | 37.2 |
-| 12 | Hugo Gernsback | 29% | 223 | 161.5 |
-| 13 | John Munro | 28% | 95 | 80.2 |
-| 14 | George Chetwynd Griffith | 28% | 803 | 257.4 |
+| 12 | John Munro | 28% | 95 | 80.2 |
+| 13 | George Chetwynd Griffith | 28% | 803 | 257.7 |
+| 14 | Hugo Gernsback | 28% | 223 | 162.2 |
 | 15 | Luis Senarens | 28% | 395 | 88.1 |
 | 16 | George Gordon Hastings | 27% | 73 | 33.4 |
-| 17 | Nikola Tesla | 27% | 66 | 39.7 |
+| 17 | Philip Francis Nowlan | 27% | 172 | 89.5 |
 | 18 | Walt Richmond | 27% | 101 | 44.3 |
 | 19 | Percy Greg | 27% | 248 | 147.0 |
-| 20 | Roman Frederick Starzl | 26% | 105 | 65.8 |
+| 20 | Nikola Tesla | 26% | 66 | 37.0 |
 
 ## Points per book
 
@@ -183,26 +183,26 @@ Authors with 3 or more books in the corpus (257); every book counts, including t
 
 | # | author | points per book | books | points |
 |---|---|---|---|---|
-| 1 | Richard M. Elam | 44.8 | 3 | 134.4 |
-| 2 | George Chetwynd Griffith | 42.9 | 6 | 257.4 |
-| 3 | Garrett Putman Serviss | 33.4 | 6 | 200.2 |
-| 4 | George Allan England | 31.4 | 3 | 94.1 |
-| 5 | Camille Flammarion | 31.1 | 3 | 93.3 |
-| 6 | John W. Campbell Jr | 24.0 | 12 | 287.6 |
-| 7 | Carey Rockwell | 22.8 | 6 | 137.0 |
-| 8 | Charles Willard Diffin | 22.3 | 4 | 89.1 |
-| 9 | Rudyard Kipling | 22.0 | 3 | 65.9 |
+| 1 | Richard M. Elam | 44.9 | 3 | 134.6 |
+| 2 | George Chetwynd Griffith | 43.0 | 6 | 257.7 |
+| 3 | Garrett Putman Serviss | 33.5 | 6 | 200.7 |
+| 4 | George Allan England | 32.0 | 3 | 96.0 |
+| 5 | Camille Flammarion | 30.7 | 3 | 92.0 |
+| 6 | John W. Campbell Jr | 24.2 | 12 | 290.2 |
+| 7 | Carey Rockwell | 22.7 | 6 | 136.1 |
+| 8 | Charles Willard Diffin | 22.6 | 4 | 90.3 |
+| 9 | Otis Adelbert Kline | 22.3 | 5 | 111.6 |
 | 10 | Roman Frederick Starzl | 21.9 | 3 | 65.8 |
-| 11 | Otis Adelbert Kline | 21.8 | 5 | 109.2 |
-| 12 | Jules Verne | 21.6 | 16 | 345.3 |
-| 13 | E. E. Smith | 21.2 | 20 | 423.6 |
+| 11 | Rudyard Kipling | 21.9 | 3 | 65.7 |
+| 12 | Jules Verne | 21.5 | 16 | 344.2 |
+| 13 | E. E. Smith | 21.3 | 20 | 426.8 |
 | 14 | E. Everett Evans | 20.1 | 4 | 80.4 |
 | 15 | Roy Rockwood | 17.6 | 7 | 123.5 |
-| 16 | Guy Thorne | 15.7 | 3 | 47.0 |
-| 17 | Leigh Richmond | 15.3 | 3 | 45.9 |
-| 18 | Neil R. Jones | 15.2 | 5 | 76.2 |
-| 19 | Raymond Z. Gallun | 15.0 | 17 | 254.8 |
-| 20 | Ralph Milne Farley | 14.5 | 4 | 57.9 |
+| 16 | Guy Thorne | 16.5 | 3 | 49.5 |
+| 17 | Anthony Gilmore | 15.7 | 4 | 62.9 |
+| 18 | Neil R. Jones | 15.7 | 5 | 78.4 |
+| 19 | Arthur J. Burks | 15.4 | 3 | 46.2 |
+| 20 | Leigh Richmond | 15.3 | 3 | 45.9 |
 
 ## By era
 
@@ -216,34 +216,34 @@ The best books of each era, by publication year.
 | 2 | *Olga Romanoff* (1894) | George Chetwynd Griffith | 114.0 |
 | 3 | *The Moon-Voyage* (1872) | Jules Verne | 112.8 |
 | 4 | *All Around the Moon* (1870) | Jules Verne | 110.5 |
-| 5 | *A Journey in Other Worlds* (1894) | John Jacob Astor | 108.5 |
-| 6 | *When the Sleeper Wakes* (1899) | H. G. Wells | 100.2 |
-| 7 | *The Mummy! A Tale of the Twenty-Second Century* (1827) | Mrs. Loudon | 87.4 |
+| 5 | *A Journey in Other Worlds* (1894) | John Jacob Astor | 105.6 |
+| 6 | *When the Sleeper Wakes* (1899) | H. G. Wells | 102.7 |
+| 7 | *The Mummy! A Tale of the Twenty-Second Century* (1827) | Mrs. Loudon | 90.3 |
 | 8 | *A Trip to Venus* (1897) | John Munro | 80.2 |
 | 9 | *Pharaoh's Broker* (1899) | Ellsworth Douglass | 79.8 |
 | 10 | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Jules Verne; Henri Théophile Hildibrand | 79.6 |
 
-**1900–1945** (627 books score)
+**1900–1945** (628 books score)
 
 | # | book | author | points |
 |---|---|---|---|
-| 1 | *Limanora* (1903) | Godfrey Sweven | 230.6 |
-| 2 | *Ralph 124C 41+* (1911) | Hugo Gernsback | 142.7 |
-| 3 | *Spacehounds of IPC* (1931) | E. E. Smith | 115.9 |
+| 1 | *Limanora* (1903) | Godfrey Sweven | 226.9 |
+| 2 | *Ralph 124C 41+* (1911) | Hugo Gernsback | 143.4 |
+| 3 | *Spacehounds of IPC* (1931) | E. E. Smith | 117.7 |
 | 4 | *Skylark Three* (1930) | E. E. Smith | 110.9 |
 | 5 | *The Skylark of Space* (1928) | E. E. Smith; Lee Hawkins Garby | 104.6 |
 | 6 | *A Hundred Years Hence (The Expectations of an Optimist)* (1905) | T. Baron Russell | 100.3 |
-| 7 | *Maza of the Moon* (1929) | Otis Adelbert Kline | 89.1 |
-| 8 | *Through the Sun in an Airship* (1909) | John Mastin | 88.8 |
-| 9 | *The Skylark of Valeron* (1934) | E. E. Smith | 86.9 |
+| 7 | *Maza of the Moon* (1929) | Otis Adelbert Kline | 91.5 |
+| 8 | *Through the Sun in an Airship* (1909) | John Mastin | 88.0 |
+| 9 | *The Skylark of Valeron* (1934) | E. E. Smith | 87.7 |
 | 10 | *A Honeymoon in Space* (1901) | George Chetwynd Griffith | 85.9 |
 
 **1946–1979** (1711 books score)
 
 | # | book | author | points |
 |---|---|---|---|
-| 1 | *Space Tug* (1953) | Murray Leinster | 83.4 |
-| 2 | *Teen-age Super Science Stories* (1957) | Richard M. Elam | 82.5 |
+| 1 | *Space Tug* (1953) | Murray Leinster | 83.8 |
+| 2 | *Teen-age Super Science Stories* (1957) | Richard M. Elam | 82.8 |
 | 3 | *The Green Millennium* (1953) | Fritz Leiber | 80.5 |
 | 4 | *Venus Equilateral* (1947) | George O. Smith; John W. Campbell Jr | 74.4 |
 | 5 | *Triplanetary* (1948) | E. E. Smith | 73.7 |
@@ -251,7 +251,7 @@ The best books of each era, by publication year.
 | 7 | *People Minus X* (1957) | Raymond Z. Gallun | 61.9 |
 | 8 | *Pioneers of Space* (1949) | George Adamski | 58.8 |
 | 9 | *Rip Foster in Ride the Gray Planet* (1952) | Harold L. Goodwin | 56.1 |
-| 10 | *Rip Foster Rides the Gray Planet* (1952) | Harold L. Goodwin | 54.4 |
+| 10 | *Space Platform* (1953) | Murray Leinster | 55.8 |
 
 **1980+** (1 books score)
 
@@ -265,64 +265,64 @@ The non-fiction, classics, prophecy and religious texts. Their years are the lib
 
 | group | book | author | points | rank |
 |---|---|---|---|---|
-| Classics | *New Atlantis* (1627) | Francis Bacon | 63.9 | 40 |
-| Classics | *Utopia* (1516) | Thomas More | 5.0 | 1411 |
-| Classics | *The City of the Sun* (1602) | Tommaso Campanella | 3.8 | 1642 |
-| Fiction | *Actions and Reactions* (1909) | Rudyard Kipling | 25.2 | 223 |
-| Fiction | *A Diversity of Creatures* (1917) | Rudyard Kipling | 25.1 | 227 |
-| Fiction | *Futility (The Wreck of the Titan)* (1898) | Morgan Robertson | 16.6 | 394 |
-| Futurism | *A Hundred Years Hence (The Expectations of an Optimist)* (1905) | T. Baron Russell | 100.3 | 11 |
-| Futurism | *Anticipations* (1901) | H. G. Wells | 51.5 | 63 |
-| Futurism | *The Problem of Increasing Human Energy* (1900) | Nikola Tesla | 39.7 | 98 |
-| Prophecy | *The Sibylline Oracles* (1899) | (text) | 2.3 | 2006 |
-| Prophecy | *The True Prophecies or Prognostications of Michael Nostrada…* (1672) | Nostradamus | 1.8 | 2152 |
-| Religion | *The Mahabharata, Volume 1 (Books 1-3)* (1896) | (text) | 16.8 | 387 |
-| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (1896) | (text) | 10.4 | 712 |
-| Religion | *The Elder Eddas and the Younger Eddas* (1866) | (text) | 9.8 | 781 |
-| Science | *Side-Lights on Astronomy* (1906) | Simon Newcomb | 33.0 | 145 |
+| Classics | *New Atlantis* (1627) | Francis Bacon | 63.9 | 42 |
+| Classics | *Utopia* (1516) | Thomas More | 5.0 | 1414 |
+| Classics | *The City of the Sun* (1602) | Tommaso Campanella | 3.8 | 1643 |
+| Fiction | *Actions and Reactions* (1909) | Rudyard Kipling | 26.2 | 215 |
+| Fiction | *A Diversity of Creatures* (1917) | Rudyard Kipling | 25.5 | 223 |
+| Fiction | *Futility (The Wreck of the Titan)* (1898) | Morgan Robertson | 16.6 | 396 |
+| Futurism | *A Hundred Years Hence (The Expectations of an Optimist)* (1905) | T. Baron Russell | 100.3 | 12 |
+| Futurism | *Anticipations* (1901) | H. G. Wells | 52.2 | 62 |
+| Futurism | *The Problem of Increasing Human Energy* (1900) | Nikola Tesla | 37.0 | 123 |
+| Prophecy | *The Sibylline Oracles* (1899) | (text) | 2.3 | 2007 |
+| Prophecy | *The True Prophecies or Prognostications of Michael Nostrada…* (1672) | Nostradamus | 1.8 | 2153 |
+| Religion | *The Mahabharata, Volume 1 (Books 1-3)* (1896) | (text) | 16.8 | 389 |
+| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (1896) | (text) | 10.4 | 719 |
+| Religion | *The Elder Eddas and the Younger Eddas* (1866) | (text) | 9.8 | 785 |
+| Science | *Side-Lights on Astronomy* (1906) | Simon Newcomb | 33.9 | 140 |
 
 ## Sensitivity: points only from a score of 0.5
 
-5,408 of 16,335 judged `will` pairs score below 0.5; without them 3,193 entries and 4,436 of 25,971 points go. Of the top 30 authors, 29 stay in the top 30; of the top 30 books, 27.
+5,427 of 16,440 judged `will` pairs score below 0.5; without them 3,204 entries and 4,455 of 26,090 points go. Of the top 30 authors, 29 stay in the top 30; of the top 30 books, 27.
 
 | # | author (default) | points | author (from 0.5) | points |
 |---|---|---|---|---|
-| 1 | E. E. Smith | 423.6 | E. E. Smith | 375.7 |
-| 2 | H. G. Wells | 356.1 | Murray Leinster | 331.3 |
-| 3 | Murray Leinster | 352.1 | H. G. Wells | 318.4 |
-| 4 | Jules Verne | 345.3 | Jules Verne | 308.5 |
+| 1 | E. E. Smith | 426.8 | E. E. Smith | 378.2 |
+| 2 | H. G. Wells | 360.2 | Murray Leinster | 338.5 |
+| 3 | Murray Leinster | 358.4 | H. G. Wells | 325.6 |
+| 4 | Jules Verne | 344.2 | Jules Verne | 306.5 |
 | 5 | George O. Smith | 319.2 | George O. Smith | 279.2 |
-| 6 | Ray Cummings | 315.4 | Ray Cummings | 262.1 |
-| 7 | John W. Campbell Jr | 287.6 | John W. Campbell Jr | 254.7 |
-| 8 | Edmond Hamilton | 282.4 | Edmond Hamilton | 253.7 |
-| 9 | Randall Garrett | 259.5 | Randall Garrett | 242.1 |
-| 10 | George Chetwynd Griffith | 257.4 | Raymond Z. Gallun | 236.9 |
-| 11 | Raymond Z. Gallun | 254.8 | George Chetwynd Griffith | 219.2 |
-| 12 | Godfrey Sweven | 250.3 | Fritz Leiber | 214.5 |
-| 13 | Fritz Leiber | 226.8 | Godfrey Sweven | 214.5 |
-| 14 | H. Beam Piper | 217.2 | H. Beam Piper | 192.5 |
-| 15 | F. L. Wallace | 201.7 | F. L. Wallace | 168.8 |
-| 16 | Garrett Putman Serviss | 200.2 | Nelson S. Bond | 166.7 |
-| 17 | Edgar Rice Burroughs | 196.4 | Garrett Putman Serviss | 163.4 |
-| 18 | Nelson S. Bond | 186.1 | Edgar Rice Burroughs | 162.2 |
+| 6 | Ray Cummings | 317.1 | Ray Cummings | 262.3 |
+| 7 | John W. Campbell Jr | 290.2 | John W. Campbell Jr | 257.3 |
+| 8 | Edmond Hamilton | 285.6 | Edmond Hamilton | 256.9 |
+| 9 | Randall Garrett | 260.0 | Randall Garrett | 242.1 |
+| 10 | George Chetwynd Griffith | 257.7 | Raymond Z. Gallun | 236.9 |
+| 11 | Raymond Z. Gallun | 254.8 | George Chetwynd Griffith | 219.5 |
+| 12 | Godfrey Sweven | 246.6 | Fritz Leiber | 213.2 |
+| 13 | Fritz Leiber | 225.5 | Godfrey Sweven | 208.3 |
+| 14 | H. Beam Piper | 217.3 | H. Beam Piper | 192.6 |
+| 15 | F. L. Wallace | 206.2 | F. L. Wallace | 173.1 |
+| 16 | Edgar Rice Burroughs | 200.9 | Edgar Rice Burroughs | 166.7 |
+| 17 | Garrett Putman Serviss | 200.7 | Nelson S. Bond | 166.7 |
+| 18 | Nelson S. Bond | 186.1 | Garrett Putman Serviss | 163.9 |
 | 19 | Stephen Marlowe | 179.6 | Stephen Marlowe | 157.1 |
-| 20 | Bryce Walton | 162.1 | Hugo Gernsback | 148.2 |
+| 20 | Bryce Walton | 164.7 | Hugo Gernsback | 148.9 |
 
 ## The deciding concepts after tier 2 (PLAN §5)
 
-588 concepts carry a top entry or add 5+ points to the author totals now; tier 2 checked 588 of them (`runs/match/deciding.jsonl` lists every concept selected for it, by round). By criterion (a concept can meet several):
+590 concepts carry a top entry or add 5+ points to the author totals now; tier 2 checked 590 of them (`runs/match/deciding.jsonl` lists every concept selected for it, by round). By criterion (a concept can meet several):
 
-- adds 5+ points to the author totals: 585
+- adds 5+ points to the author totals: 587
 - best entry of a top-100 author: 64
 - best entry of a top-100 book: 71
-- lead over 40 years for 20+ claims: 64
+- lead over 40 years for 20+ claims: 65
 - top-300 prediction: 125
 - top-50 entry, 1900–1945: 30
 - top-50 entry, 1946–1979: 20
 - top-50 entry, 1980+: 1
 - top-50 entry, pre-1900: 38
 
-Their milestones: confidence high 117, low 158, medium 313; 483 have a contemporary source, 38 rest on Wikipedia alone, 149 are demonstrations only.
+Their milestones: confidence high 117, low 152, medium 321; 483 have a contemporary source, 40 rest on Wikipedia alone, 150 are demonstrations only.
 
 The 40 that carry the most points, and every one tier 2 did not check:
 
@@ -361,7 +361,7 @@ The 40 that carry the most points, and every one tier 2 did not check:
 | Space-suit helmet radio | 147.1 | 57 | 2 | 1965-03-18 †: Alexei Leonov, outside Voskhod 2 in his suit, stayed in radio contact… | medium | contemporary | Philip Francis Nowlan, *Armageddon—2419 A.D.* (1928) | checked |
 | Growing food in space | 145.0 | 54 | 8 | 1975-07-08 †: Salyut 4 cosmonauts Klimuk and Sevastyanov ate onions grown in the Oa… | medium | contemporary | Jules Verne, *The Moon-Voyage* (1872) | checked |
 | Service robot for the public | 144.2 | 51 | 2 | 1983: The Two Panda Deli (Two Panda Robot Restaurant) in Pasadena, Californ… | medium | contemporary | Lloyd Biggle Jr., *Cronus of the D. F. C.* (1957) | checked |
-| Machinery-disabling ray | 140.2 | 69 | 15 | 1962-07-09 †: The Starfish Prime high-altitude nuclear test (Johnston Atoll, 9 July… | low | reference | George Allan England, *The Flying Legion* (1919) | checked |
+| Machinery-disabling ray | 140.2 | 69 | 15 | 1962-07-09 †: Starfish Prime high-altitude nuclear test (Johnston Atoll, 9 July 196… | low | reference | George Allan England, *The Flying Legion* (1919) | checked |
 | Automated kitchen | 138.4 | 50 | 55 | 2016-04: Spyce's robotic kitchen, built by MIT students, was cooking and servi… | low | contemporary | Mrs. Loudon, *The Mummy! A Tale of the Twenty-Se…* (1827) | checked |
 | Nerve-attacking weapon | 138.2 | 57 | 11 | 1975-03: Taser Public Defender first marketed in March 1975 by Taser Systems /… | medium | contemporary | Owen Johnson, *The Coming of the Amazons* (1931) | checked |
 | Astronaut maneuvering gun or pack | 137.4 | 53 | 1 | 1966-07-19: Michael Collins used the nitrogen-fed HHMU on Gemini 10 to transfer f… | medium | contemporary | Edwin K. Sloat, *Loot of the Void* (1932) | checked |
