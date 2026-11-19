@@ -1,0 +1,9 @@
+agent	stage	model	total_tokens	tool_uses	seconds	note
+ae6253ed516630464	match	sonnet	81495	10	34	society-politics-007
+a2f741d36450f8e05	match	sonnet	75596	9	46	society-politics-003
+ae35e512e824e222e	match	sonnet	82250	9	53	society-politics-001
+a43e5a02e8b556018	match	sonnet	88399	9	71	society-politics-002
+afc181b4f379386a2	match	sonnet	92525	9	76	society-politics-005
+a1ed9525f103532b5	match	sonnet	93716	8	77	society-politics-004
+a2be8cb2e805538aa	match	sonnet	90025	8	91	society-politics-006
+a4a1e0a476a2b9cfd	match	sonnet	92203	10	95	society-politics-008

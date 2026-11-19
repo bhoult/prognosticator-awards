@@ -100,8 +100,34 @@ def rel(path):
     return os.path.relpath(path, ROOT)
 
 
+TRANCHE = 'A'  # use_run: the run `full` is tranche A, with its outputs in runs/match/; any other run is tranche B
+
+
+def use_run(run):
+    """Tranche B runs (PLAN §9) keep their outputs in runs/match/<run>/ and read prompts/b/<name> where one exists.
+    Their registry starts as tranche A's final one, so a book counts an idea once across both tranches."""
+    global OUT, TRANCHE, REVIEW, RECHECK
+    if run != 'full':
+        OUT, TRANCHE = os.path.join(ROOT, 'runs', 'match', run), 'B'
+        REVIEW, RECHECK = os.path.join(OUT, 'milestone_review.jsonl'), os.path.join(OUT, 'tier2_recheck.jsonl')
+
+
+def template(name):
+    b = os.path.join(PROMPTS, 'b', name)
+    return b if TRANCHE == 'B' and os.path.exists(b) else os.path.join(PROMPTS, name)
+
+
+def book_review():
+    """runs/match/book_review.jsonl: corrected years and credits by library path (report §6.7; DESIGN §1a's
+    composition dates for ancient texts). Applied on load, so the pinned claims export stays as written."""
+    path = os.path.join(ROOT, 'runs', 'match', 'book_review.jsonl')  # one file for both tranches
+    return {r['path']: r for r in read_jsonl(path)[0]} if os.path.exists(path) else {}
+
+
 def claims(run):
-    return [json.loads(l) for l in open(rd(run, 'claims.jsonl'), encoding='utf-8')]
+    year = {sha(p)[:12]: r['year'] for p, r in book_review().items() if 'year' in r}
+    rows = [json.loads(l) for l in open(rd(run, 'claims.jsonl'), encoding='utf-8')]
+    return [dict(c, year=year[c['book']], year_source='review') if c['book'] in year else c for c in rows]
 
 
 def seed_registry():
@@ -120,8 +146,8 @@ def config(run, stage, settings):
         write_atomic(path, json.dumps({**old, **settings}, indent=1) + '\n')
 
 
-def prompt(run, stage, name, template, **fields):
-    text = open(os.path.join(PROMPTS, template), encoding='utf-8').read()
+def prompt(run, stage, name, tpl_name, **fields):
+    text = open(template(tpl_name), encoding='utf-8').read()
     for k, v in fields.items():
         text = text.replace('{' + k + '}', str(v))
     path = rd(run, stage, 'prompts', name + '.md')
@@ -133,14 +159,14 @@ def prompt(run, stage, name, template, **fields):
 
 def concepts_plan(run):
     stage = 'concepts'
-    tpl = open(os.path.join(PROMPTS, 'concepts_propose.md'), encoding='utf-8').read()
-    config(run, stage, {'tranche': 'A', 'sample': SAMPLE, 'shard': SHARD, 'seed': SEED,
+    tpl = open(template('concepts_propose.md'), encoding='utf-8').read()
+    config(run, stage, {'tranche': TRANCHE, 'sample': SAMPLE, 'shard': SHARD, 'seed': SEED,
                         'claims_sha256': sha(open(rd(run, 'claims.jsonl'), 'rb').read()),
                         'prompt_sha256': sha(tpl), 'seed_concepts_sha256': sha(open(SEED_CONCEPTS, 'rb').read())})
     write_atomic(rd(run, stage, 'registry_seed.jsonl'), jsonl(seed_registry()))
     by = collections.defaultdict(list)
     for c in claims(run):
-        if c['tranche'] == 'A':
+        if c['tranche'] == TRANCHE:
             by[c['domain']].append(c)
     todo = []
     for dom in sorted(by):
@@ -209,7 +235,7 @@ def concepts_ingest(run, stage='concepts'):
 
 def consolidate_plan(run):
     stage = 'consolidate'
-    tpl = open(os.path.join(PROMPTS, 'concepts_consolidate.md'), encoding='utf-8').read()
+    tpl = open(template('concepts_consolidate.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'groups': GROUPS})
     groups = collections.defaultdict(list)
     for f in sorted(os.listdir(rd(run, 'concepts', 'in'))):
@@ -301,7 +327,7 @@ def consolidated(run):
 
 def global_plan(run):
     stage = 'global'
-    tpl = open(os.path.join(PROMPTS, 'concepts_global.md'), encoding='utf-8').read()
+    tpl = open(template('concepts_global.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl)})
     seed = [{**c, 'domains': ['computing'], 'est_claims': None} for c in seed_registry()]
     new = [{k: r.get(k) for k in ('concept_id', 'name', 'definition', 'domains', 'est_claims')}
@@ -429,7 +455,7 @@ def reviewer_rows():
 
 def audit_plan(run):
     stage = 'audit'
-    tpl = open(os.path.join(PROMPTS, 'concepts_audit.md'), encoding='utf-8').read()
+    tpl = open(template('concepts_audit.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'largest': 200})
     rows, _, merges, _ = registry(run, audit=False)
     defs = {}
@@ -506,6 +532,26 @@ def main_registry():
     return [json.loads(l) for l in open(os.path.join(OUT, 'concepts.jsonl'), encoding='utf-8')]
 
 
+def b_init(run, n=None):
+    """Start a tranche-B run (PLAN §9): work/match/<run>/claims.jsonl, tranche A's export (the tranche filter
+    picks B), or for a pilot a fixed-seed sample of `n` society-politics claims; and runs/match/<run>/concepts.jsonl,
+    tranche A's final registry, which B's matching uses and its gap pass extends."""
+    if TRANCHE != 'B' or os.path.exists(os.path.join(OUT, 'concepts.jsonl')):
+        sys.exit(f'{rel(OUT)} is tranche A or already started')
+    a_out = os.path.join(ROOT, 'runs', 'match')
+    hit = {k for l in open(rd('full', 'matches.jsonl'), encoding='utf-8') for k in json.loads(l)['concepts']}
+    reg = read_jsonl(os.path.join(a_out, 'concepts.jsonl'))[0] + \
+        [c for c in read_jsonl(os.path.join(a_out, 'concepts_gap.jsonl'))[0] if c['concept_id'] in hit]
+    rows = open(rd('full', 'claims.jsonl'), encoding='utf-8').read().splitlines(True)
+    if n:
+        pool = sorted(l for l in rows if json.loads(l)['tranche'] == 'B' and json.loads(l)['domain'] == 'society-politics')
+        rows = sorted(random.Random(f'{SEED}:{run}').sample(pool, int(n)))
+    write_atomic(rd(run, 'claims.jsonl'), ''.join(rows))
+    write_atomic(os.path.join(OUT, 'concepts.jsonl'), jsonl(dict(c, tranche='A') for c in reg))
+    print(f"{sum(json.loads(l)['tranche'] == 'B' for l in rows):,} tranche-B claims -> {rel(rd(run, 'claims.jsonl'))}; "
+          f"{len(reg):,} tranche-A concepts -> {rel(os.path.join(OUT, 'concepts.jsonl'))}")
+
+
 def registry_rows():
     """Every concept: the approved registry and the gap pass's (runs/match/concepts_gap.jsonl)."""
     gap = os.path.join(OUT, 'concepts_gap.jsonl')
@@ -519,7 +565,7 @@ def match_batches(run):
         return json.load(open(path, encoding='utf-8'))
     by = collections.defaultdict(list)
     for c in claims(run):
-        if c['tranche'] == 'A':
+        if c['tranche'] == TRANCHE:
             by[c['domain']].append(c['id'])
     batches = {}
     for dom in sorted(by):
@@ -536,7 +582,7 @@ def match_plan(run, limit=None):
     """Write the inputs and prompts of the batches with no valid output, and claim up to `limit`
     of them (printing their prompts) so that a later call doesn't hand them out again."""
     stage = 'match'
-    tpl = open(os.path.join(PROMPTS, 'match.md'), encoding='utf-8').read()
+    tpl = open(template('match.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'batch': BATCH, 'seed': SEED,
                         'claims_sha256': sha(open(rd(run, 'claims.jsonl'), 'rb').read()),
                         'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
@@ -643,7 +689,7 @@ def rematch_batches(run):
     path = rd(run, 'rematch', 'batches.json')
     if os.path.exists(path):
         return json.load(open(path, encoding='utf-8'))
-    left = sorted(i for i, r in first_pass(run).items() if r['code'] in RETRY)
+    left = sorted(i for i, r in first_pass(run).items() if r['code'] in RETRY)  # tranche B has no second pass (gap_ids)
     random.Random(f'{SEED}:rematch').shuffle(left)
     n = math.ceil(len(left) / BATCH)
     batches = {f'rematch-{i + 1:03d}': {'ids': left[i::n]} for i in range(n)}
@@ -654,7 +700,7 @@ def rematch_batches(run):
 def rematch_plan(run, limit=None):
     """Like match-plan, for the claims the first pass coded no_concept or too_vague."""
     stage = 'rematch'
-    tpl = open(os.path.join(PROMPTS, 'rematch.md'), encoding='utf-8').read()
+    tpl = open(template('rematch.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'batch': BATCH, 'seed': SEED, 'retry': sorted(RETRY),
                         'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
     reg = registry_rows()
@@ -705,7 +751,7 @@ def matches_collect(run):
     second pass's for claims it retried, or the gap pass's (3c) once it has run; more than two
     concepts are cut to the first two (logged)."""
     first = first_pass(run)
-    second = pass_rows(run, 'rematch', rematch_batches(run))
+    second = {} if TRANCHE == 'B' else pass_rows(run, 'rematch', rematch_batches(run))
     third = pass_rows(run, 'gapmatch', gapmatch_batches(run)) if os.path.exists(rd(run, 'gapmatch', 'batches.json')) else {}
     rows, cut = [], 0
     for i, r in first.items():
@@ -744,7 +790,8 @@ def gap_ids(run):
     rows = [json.loads(l) for l in open(src, encoding='utf-8')]
     if any(r.get('third_pass') for r in rows):
         sys.exit('matches.jsonl already holds the gap pass; gap/ids.json is missing')
-    ids = sorted(r['id'] for r in rows if r['code'] == 'no_concept')
+    # tranche B's first pass met a registry of mostly technology, so every claim it left unmatched gets the gap pass
+    ids = sorted(r['id'] for r in rows if r['code'] in (CODES if TRANCHE == 'B' else {'no_concept'}))
     write_atomic(path, json.dumps(ids))
     return ids
 
@@ -752,7 +799,7 @@ def gap_ids(run):
 def gap_plan(run):
     """Propose: the no_concept claims by domain group, in shards of about GAP_SHARD."""
     stage = 'gap'
-    tpl = open(os.path.join(PROMPTS, 'concepts_gap_propose.md'), encoding='utf-8').read()
+    tpl = open(template('concepts_gap_propose.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'shard': GAP_SHARD, 'seed': SEED, 'groups': GROUPS,
                         'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
     ids, main = set(gap_ids(run)), main_registry()
@@ -784,7 +831,7 @@ def gap_plan(run):
 def gapcons_plan(run):
     """Consolidate: one agent per domain group, against the whole approved registry."""
     stage = 'gapcons'
-    tpl = open(os.path.join(PROMPTS, 'concepts_gap_consolidate.md'), encoding='utf-8').read()
+    tpl = open(template('concepts_gap_consolidate.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'registry_sha256': sha(open(os.path.join(OUT, 'concepts.jsonl'), 'rb').read())})
     groups = collections.defaultdict(list)
     for f in sorted(os.listdir(rd(run, 'gap', 'in'))):
@@ -856,7 +903,7 @@ def gap_row(r, mapping, shard_domains):
 def gapglobal_plan(run):
     """The new concepts of every group, for one cross-group merge pass."""
     stage = 'gapglobal'
-    tpl = open(os.path.join(PROMPTS, 'concepts_gap_global.md'), encoding='utf-8').read()
+    tpl = open(template('concepts_gap_global.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl)})
     new, _ = gap_consolidated(run)
     write_atomic(rd(run, stage, 'in', 'concepts.jsonl'),
@@ -963,7 +1010,7 @@ def gapmatch_batches(run):
 def gapmatch_plan(run, limit=None):
     """Like rematch-plan: the no_concept claims against the gap concepts."""
     stage = 'gapmatch'
-    tpl = open(os.path.join(PROMPTS, 'gapmatch.md'), encoding='utf-8').read()
+    tpl = open(template('gapmatch.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'batch': BATCH, 'seed': SEED,
                         'gap_registry_sha256': sha(open(os.path.join(OUT, 'concepts_gap.jsonl'), 'rb').read())})
     claim_batches(run, stage, gapmatch_batches(run), 'gapmatch.md', gapmatch_registry(), limit)
@@ -1052,7 +1099,7 @@ def final_registry(run):
 
 def agree_plan(run):
     stage = 'agree'
-    tpl = open(os.path.join(PROMPTS, 'agree.md'), encoding='utf-8').read()
+    tpl = open(template('agree.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'n': AGREE_N, 'seed': SEED})
     path = rd(run, stage, 'batches.json')
     if not os.path.exists(path):
@@ -1115,6 +1162,9 @@ def research_concepts(run):
     path, review = rd(run, 'matches.jsonl'), os.path.join(OUT, 'concept_review.jsonl')
     if os.path.exists(review) and os.path.getmtime(review) > os.path.getmtime(path):
         sys.exit('concept_review.jsonl changed after matches.jsonl: run matches-collect first')
+    if TRANCHE == 'B':  # tranche A's concepts come with their verified milestones (verify)
+        a = {c['concept_id'] for c in main_registry()}
+        return [c for c in final_registry(run) if c['concept_id'] not in a]
     seed = {c['concept_id']: c['definition'] for c in seed_registry()}
     done = {json.loads(l)['concept_id'] for l in open(PILOT_MILESTONES, encoding='utf-8')}
     return [c for c in final_registry(run) if not (c['concept_id'] in done and seed.get(c['concept_id']) == c['definition'])]
@@ -1265,7 +1315,7 @@ def research_plan(run, limit=None, only=''):
     stage = 'research'
     files = {'tier1': 'milestones_tier1.md', 'check': 'milestones_check.md', 'recheck': 'milestones_recheck.md',
              'tier2': 'milestones_tier2.md'}
-    tpl = {k: open(os.path.join(PROMPTS, f), encoding='utf-8').read() for k, f in files.items()}
+    tpl = {k: open(template(f), encoding='utf-8').read() for k, f in files.items()}
     config(run, stage, {'tier1_prompt_sha256': sha(tpl['tier1']), 'check_prompt_sha256': sha(tpl['check']),
                         'recheck_prompt_sha256': sha(tpl['recheck']), 'tier2_prompt_sha256': sha(tpl['tier2']),
                         'batch': RESEARCH_BATCH, 'check_batch': CHECK_BATCH, 'recheck_batch': RECHECK_BATCH,
@@ -1420,6 +1470,8 @@ def verify(run):
     researched = {i for n, b in batches.items() if not n.startswith('tier2-') for i in b['ids']}
     pilot = [dict(r, tier='pilot') for r in map(json.loads, open(PILOT_MILESTONES, encoding='utf-8'))
              if r['concept_id'] not in researched]
+    if TRANCHE == 'B':  # tranche A's verified milestones (they include the pilot's) for its concepts
+        pilot = [r for r in read_jsonl(os.path.join(ROOT, 'runs', 'match', 'milestones.jsonl'))[0] if r['concept_id'] not in researched]
     keyed = {(r['concept_id'], r['kind']): r for r in pilot + list(best.values())}
     # tier 2 overrides (PLAN §5): its verdict replaces the milestone, `removed` drops it, and an answer
     # with no verified source leaves the earlier milestone in place, marked; checkpoint 3's review can
@@ -1735,7 +1787,7 @@ def judge_plan(run, limit=None, only=''):
     """Claim up to `limit` judging batches (whose names start with `only`) that aren't done or
     claimed in the last CLAIM_MINUTES and print their prompts."""
     stage = 'judge'
-    tpl = open(os.path.join(PROMPTS, 'judge.md'), encoding='utf-8').read()
+    tpl = open(template('judge.md'), encoding='utf-8').read()
     config(run, stage, {'prompt_sha256': sha(tpl), 'batch': JUDGE_BATCH, 'seed': SEED})
     batches = judge_batches(run)
     pairs = {p['pair']: p for r in judge_rounds(run) for p in r}
@@ -1859,6 +1911,7 @@ def book_index(run, cl):
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from export_claims import DATES, RUNS
     listed = {r['path']: r for r in csv.DictReader(open(DATES, encoding='utf-8'), delimiter='\t')}
+    review = book_review()
     years = {c['book']: c['year'] for c in cl}
     books = {}
     for r in RUNS:
@@ -1870,6 +1923,8 @@ def book_index(run, cl):
                 continue
             group, folder, base = path.split('/')
             names = listed[path]['author'].split(';') if path in listed else [folder]
+            if 'authors' in review.get(path, {}):
+                names = review[path]['authors'] or ['Various']
             prefix = f'{group}-{folder}-'
             title = base[:-3].split('-', 1)[1]
             title = listed[path]['title'] if path in listed else title[len(prefix):] if title.startswith(prefix) else title
@@ -1928,7 +1983,7 @@ def score(run):
     claims_of = collections.Counter()
     dl_stats = collections.Counter()
     for c in cl:
-        if c['tranche'] != 'A':
+        if c['tranche'] != TRANCHE:
             continue
         mt, will, ps = matches[c['id']], c['polarity'] == 'will', []
         claims_of[c['book']] += 1
@@ -1982,11 +2037,12 @@ def score(run):
         rows.append(row)
     if stale:
         sys.exit(f'{len(stale)} pairs are not judged (milestones or matches changed since judging), e.g. {stale[0]}')
-    write_atomic(rd(run, 'books.jsonl'), jsonl(books[b] for b in sorted(books)))
+    write_atomic(rd(run, 'books.jsonl'), jsonl(dict(books[b], claims=claims_of[b], strict=strict[b]) for b in sorted(books)))
     write_atomic(rd(run, 'resolutions.jsonl'), jsonl(rows))  # large: kept out of git, as the judgments (PLAN §11)
 
     entries, book_rank, author_rank, author_best = rankings(pairs, books, REALIZED_MIN)
-    quote = {c['id']: c['quote'] for c in cl if c['tranche'] == 'A'}
+    write_atomic(rd(run, 'entries.jsonl'), jsonl(entries))  # each book's best claim per concept, for pipeline/awards.py
+    quote = {c['id']: c['quote'] for c in cl if c['tranche'] == TRANCHE}
     nbooks, nclaims, nstrict = collections.Counter(), collections.Counter(), collections.Counter()
     for b, info in books.items():
         for a in info['authors']:
@@ -2121,10 +2177,10 @@ def score(run):
         rk = [(b, p) for b, p in book_rank if era(books[b]['year']) == name]
         out += [f'**{name}** ({len(rk)} books score)', '', '| # | book | author | points |', '|---|---|---|---|']
         out += [f'| {i} | {bk(b)} | {cell(who(b), 40)} | {p:.1f} |' for i, (b, p) in enumerate(rk[:10], 1)] + ['']
-    out += ['## Other corpus groups', '', 'The non-fiction, classics, prophecy and religious texts. Their years are '
-            'the library\'s, which for translations is the translation\'s year (lead is then understated); the '
-            'curated composition dates and the second-translation re-judging of DESIGN §1a are not built. Religious '
-            'texts rank by text, not by translator.', '', '| group | book | author | points | rank |', '|---|---|---|---|---|']
+    out += ['## Other corpus groups', '', 'The non-fiction, classics, prophecy and religious texts. Ancient and '
+            'translated texts are dated by composition, the end of the scholarly range in each text\'s English Wikipedia '
+            'article, pinned to a revision (DESIGN §1a; `runs/match/book_review.jsonl`); the second-translation '
+            're-judging of §1a is not built. Religious texts rank by text, not by translator.', '', '| group | book | author | points | rank |', '|---|---|---|---|---|']
     pos = {b: i for i, (b, _) in enumerate(book_rank, 1)}
     for g in sorted({v['group'] for v in books.values()} - {'Science-Fiction'}):
         for b, p in [(b, p) for b, p in book_rank if books[b]['group'] == g][:3]:
@@ -2200,6 +2256,8 @@ def status(run):
 
 if __name__ == '__main__':
     cmd, args = sys.argv[1], sys.argv[2:]
+    if args:
+        use_run(args[0])
     {'concepts-plan': concepts_plan, 'concepts-ingest': concepts_ingest, 'consolidate-plan': consolidate_plan,
      'consolidate-ingest': consolidate_ingest, 'global-plan': global_plan, 'audit-plan': audit_plan,
      'concepts-build': concepts_build, 'match-plan': match_plan, 'match-ingest': match_ingest,
@@ -2209,4 +2267,4 @@ if __name__ == '__main__':
      'gapmatch-plan': gapmatch_plan, 'gap-review': gap_review, 'agree-plan': agree_plan, 'agree-report': agree_report,
      'research-plan': research_plan, 'verify': verify, 'deciding-report': deciding_report, 'judge-plan': judge_plan,
      'judge-collect': judge_collect, 'score': score,
-     'log': log, 'status': status}[cmd](*args)
+     'b-init': b_init, 'log': log, 'status': status}[cmd](*args)

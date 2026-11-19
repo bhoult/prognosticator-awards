@@ -1,0 +1,3676 @@
+{
+ "run": "full",
+ "claims": 77436,
+ "books": 3224,
+ "resolutions": {
+  "open": 42412,
+  "not_a_prediction": 16411,
+  "realized": 15803,
+  "failed": 252,
+  "untestable": 2558
+ },
+ "points": 26129.2,
+ "entries": 11375,
+ "authors": 767,
+ "awards": [
+  {
+   "id": "grand",
+   "title": "Grand Prognosticator",
+   "rule": "The most points: each realized idea scores closeness × log2(1 + years of lead), counted once per author from their best book.",
+   "winner": {
+    "name": "E. E. Smith",
+    "key": "E. E. Smith",
+    "points": 426.8,
+    "stat": "426.8 points from 163 ideas in 20 books"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 360.2,
+     "stat": "360.2 points from 128 ideas in 27 books"
+    },
+    {
+     "name": "Murray Leinster",
+     "key": "Murray Leinster",
+     "points": 358.4,
+     "stat": "358.4 points from 152 ideas in 58 books"
+    },
+    {
+     "name": "Jules Verne",
+     "key": "Jules Verne",
+     "points": 344.2,
+     "stat": "344.2 points from 108 ideas in 16 books"
+    },
+    {
+     "name": "George O. Smith",
+     "key": "George O. Smith",
+     "points": 319.2,
+     "stat": "319.2 points from 131 ideas in 57 books"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Retina and iris recognition",
+     "concept_id": "iris-retina-recognition",
+     "definition": "A machine that identifies a person by scanning the patterns of the eye.",
+     "quote": "Kinnison dashed up to an apparently blank wall, turned his back upon four commissioned officers holding cocked forty-fives at the ready, and fitted his right eye into a cup. Unlike fingerprints, retinal patterns cannot be imitated, duplicated, or altered;",
+     "title": "Triplanetary",
+     "year": 1948,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "1984",
+     "kind": "first_practical_use",
+     "event": "EyeDentify began production and shipment of its retinal identification units (EyeDentification System 7.5) in 1984, used as an access-control device; about 50 units a month by the 1984 report.",
+     "confidence": "medium",
+     "lead": 36,
+     "score": 1.0,
+     "points": 5.21,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Three-dimensional telepresence",
+     "concept_id": "holographic-telepresence",
+     "definition": "A communication system that projects a life-size three-dimensional image of a distant person into the room so that the two can talk as if together.",
+     "quote": "You will see simply three-dimensional talking pictures of ourselves, transmitted by radio.",
+     "title": "Skylark Three",
+     "year": 1930,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2022",
+     "kind": "first_practical_use",
+     "event": "Google began testing Project Starline with partner companies such as Salesforce and T-Mobile from late 2022.",
+     "confidence": "low",
+     "lead": 92,
+     "score": 0.75,
+     "points": 4.9,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Self-driving car",
+     "concept_id": "self-driving-car",
+     "definition": "A road vehicle that drives itself to a destination without a human driver.",
+     "quote": "pressed down \"9-2-6-4-3-8\"—the location number of the airport—upon the banked keys of a numbering machine, and touched a red button, whereupon the machine glided off of itself.",
+     "title": "The Skylark of Valeron",
+     "year": 1934,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2020-10-08",
+     "kind": "first_practical_use",
+     "event": "Waymo opened its fully driverless ride-hailing service (Waymo One, no human in the car) to the general public in Phoenix, Arizona.",
+     "confidence": "medium",
+     "lead": 86,
+     "score": 0.75,
+     "points": 4.83,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Brain-to-brain link",
+     "concept_id": "brain-to-brain-link",
+     "definition": "A direct connection between human brains, by wires or headsets, that shares experiences or pools thinking between people.",
+     "quote": "Dunark clamped sets of multiple electrodes, connected to a set of instruments, upon the temples of his father, Dorothy, and Seaton. He pressed a lever, and instantly Dorothy and Seaton read each other's minds to the minutest detail",
+     "title": "The Skylark of Space",
+     "year": 1928,
+     "authors": [
+      "E. E. Smith",
+      "Lee Hawkins Garby"
+     ],
+     "came_true": "2013-08-12",
+     "kind": "first_demonstration",
+     "event": "At the University of Washington on 12 Aug 2013, Rajesh Rao's EEG-read motor imagery was sent over the Internet to trigger a TMS pulse in Andrea Stocco's brain, making his finger press a key.",
+     "confidence": "medium",
+     "lead": 85,
+     "score": 0.75,
+     "points": 4.82,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Thought-to-text and thought display",
+     "concept_id": "thought-to-text",
+     "definition": "A machine that writes down a person's thoughts as text, or shows their mental images or dreams on a screen.",
+     "quote": "the stereographic device, in parallel with Solon's own brain recorder, which projected a three-dimensional picture into the \"viewing-area\" or dark space of the cabinet.",
+     "title": "Skylark Three",
+     "year": 1930,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2006",
+     "kind": "first_demonstration",
+     "event": "Thirion, Duchesnay, Hubbard, Dubois, Poline, Lebihan and Dehaene (NeuroSpin, France) decoded fMRI activity to reconstruct the visual pattern that subjects were only imagining; paper accepted June 2006, online 9 October 2006 (NeuroImage 33(4)).",
+     "confidence": "medium",
+     "lead": 76,
+     "score": 0.75,
+     "points": 4.7,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
+   "id": "book",
+   "title": "Book of the Future",
+   "rule": "The single work with the most points.",
+   "winner": {
+    "name": "Limanora",
+    "by": "Godfrey Sweven",
+    "year": 1903,
+    "points": 226.9,
+    "stat": "226.9 points from 81 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Across the Zodiac",
+     "by": "Percy Greg",
+     "year": 1880,
+     "points": 147.0,
+     "stat": "147.0 points"
+    },
+    {
+     "name": "Ralph 124C 41+",
+     "by": "Hugo Gernsback",
+     "year": 1911,
+     "points": 143.4,
+     "stat": "143.4 points"
+    },
+    {
+     "name": "Spacehounds of IPC",
+     "by": "E. E. Smith",
+     "year": 1931,
+     "points": 117.7,
+     "stat": "117.7 points"
+    },
+    {
+     "name": "Olga Romanoff",
+     "by": "George Chetwynd Griffith",
+     "year": 1894,
+     "points": 114.0,
+     "stat": "114.0 points"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Tidal power",
+     "concept_id": "tidal-power",
+     "definition": "Generating electricity from tidal flow using barrages or turbines.",
+     "quote": "In another series of caves they cooped up the water of the full tides by means of gigantic dams and sluice-gates, and this during ebb drove huge wheels and turbines and thus sent the power of the moon into their treasure-house of power.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "1966-11-26",
+     "kind": "first_practical_use",
+     "event": "Same event: the Rance station, inaugurated 26 November 1966, supplied the French grid (EDF) from then on.",
+     "confidence": "high",
+     "lead": 63,
+     "score": 0.875,
+     "points": 5.25,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Liquid air as energy source or engine fuel",
+     "concept_id": "liquid-air-power",
+     "definition": "Liquefied air or oxygen used as a working fluid or power store for engines, power plants and boats.",
+     "quote": "Another that was near at hand was the use of the expansion of their liquefied and solidified air for purposes of power.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "2018-04",
+     "kind": "first_practical_use",
+     "event": "Highview Power and Viridor's 5 MW / 15 MWh Pilsworth plant at Bury, Greater Manchester, began operating in April 2018 (officially launched June 2018), storing off-peak electricity as liquid air and re-expanding it through a turbine to generate power and provide grid balancing services.",
+     "confidence": "low",
+     "lead": 115,
+     "score": 0.75,
+     "points": 5.14,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Sleep and incapacitating gas",
+     "concept_id": "incapacitating-gas",
+     "definition": "A gas or aerosol that knocks out or paralyzes people en masse or individually, delivered by grenade, vent, spray or aircraft.",
+     "quote": "by the whiff of a soporific which they diffused through the air, they steeped the systems of the sentinels in lethargy",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "2002-10-26",
+     "kind": "first_practical_use",
+     "event": "Russian special forces pumped an aerosol anesthetic (believed to be a fentanyl-derivative mixture, 'Kolokol-1') into the ventilation of the Dubrovka theater in Moscow, knocking out the hostages and hostage takers before the storming; many hostages died.",
+     "confidence": "high",
+     "lead": 99,
+     "score": 0.75,
+     "points": 4.98,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Levitating furniture and objects",
+     "concept_id": "levitating-furniture-objects",
+     "definition": "Furniture and display objects held floating in the air without visible support by magnetic or unknown force.",
+     "quote": "Up each side vibrated in the air tier upon tier of their automatic rests, enough to accommodate a nation.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "1989-01",
+     "kind": "first_practical_use",
+     "event": "The Levitating World Globe was on sale in 6-inch (about $100) and 9-inch (about $150) sizes.",
+     "confidence": "medium",
+     "lead": 86,
+     "score": 0.75,
+     "points": 4.83,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Electronic or digital wristwatch",
+     "concept_id": "digital-wristwatch",
+     "definition": "A watch worn on the wrist that keeps time by electronic or vibrating means and shows it on a lit or digital readout, often with extra features.",
+     "quote": "Another and more convenient clock, or rather watch, consisted of an electric battery that kept a light irelium tongue vibrating; this latter controlled a graduated mechanism which pointed out on a face the exact lenta in the time of day that it was.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "1972-04-04",
+     "kind": "first_practical_use",
+     "event": "Hamilton Pulsar went on sale in an 18-carat gold case at $2,100 with a red LED display; commercial quantities followed from Christmas 1972.",
+     "confidence": "medium",
+     "lead": 69,
+     "score": 0.75,
+     "points": 4.6,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "prediction",
+   "title": "Prediction of the Age",
+   "rule": "The single prediction worth the most points, the closest match with the longest lead, in a work published since 1500.",
+   "winner": {
+    "name": "Richard Adams Locke",
+    "points": 6.32,
+    "stat": "Meteorites that came from the Moon, 148 years early"
+   },
+   "runners_up": [
+    {
+     "name": "Cyrano de Bergerac",
+     "points": 6.13,
+     "stat": "Multistage rocket, 287 years early"
+    },
+    {
+     "name": "Voltaire",
+     "points": 6.11,
+     "stat": "Phobos and Deimos, the two moons of Mars, 125 years early"
+    },
+    {
+     "name": "Cyrano de Bergerac",
+     "points": 6.09,
+     "stat": "Audiobook player, 278 years early"
+    },
+    {
+     "name": "Cyrano de Bergerac",
+     "points": 6.07,
+     "stat": "Audiobook player, 273 years early"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Meteorites that came from the Moon",
+     "concept_id": "lunar-meteorites",
+     "definition": "Rocks blasted off the lunar surface by volcanism or impacts later fall to Earth as meteorites.",
+     "quote": "If we had before retained any doubt of the power of lunar volcanoes to throw fragments of their craters so far beyond the moon's attraction that they would necessarily gravitate to this earth",
+     "title": "The Moon Hoax",
+     "year": 1835,
+     "authors": [
+      "Richard Adams Locke"
+     ],
+     "came_true": "1983-03",
+     "kind": "first_demonstration",
+     "event": "Allan Hills A81005 (found 17 January 1982 in Antarctica) was identified as a piece of the Moon by Marvin and colleagues, announced at the Lunar and Planetary Science Conference in March 1983.",
+     "confidence": "high",
+     "lead": 148,
+     "score": 0.875,
+     "points": 6.32,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Multistage rocket",
+     "concept_id": "multistage-rocket",
+     "definition": "A rocket made of stacked stages that fire in turn and are dropped as their fuel is used, to reach space or high altitude.",
+     "quote": "For so soon as the Flame had devoured one tier of Squibs, which were ranked by six and six, by means of a Train that reached every half-dozen, another tier went off, and then another",
+     "title": "A Voyage to the Moon",
+     "year": 1657,
+     "authors": [
+      "Cyrano de Bergerac"
+     ],
+     "came_true": "1944-11",
+     "kind": "first_practical_use",
+     "event": "About 20 Rheinbote four-stage rockets were fired from Zwolle in the Netherlands against Antwerp, starting in autumn 1944 (Wikipedia gives December 1944 to January 1945; a 1948 BIS article says November 1944).",
+     "confidence": "medium",
+     "lead": 287,
+     "score": 0.75,
+     "points": 6.13,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Phobos and Deimos, the two moons of Mars",
+     "concept_id": "mars-two-moons",
+     "definition": "Mars is found, or reasoned, to have two very small, fast-orbiting moons, later identified as Phobos and Deimos, discovered by telescope.",
+     "quote": "they swung by two moons that cater to this planet but have escaped the notice of our astronomers.",
+     "title": "Micromegas",
+     "year": 1752,
+     "authors": [
+      "Voltaire"
+     ],
+     "came_true": "1877-08",
+     "kind": "first_demonstration",
+     "event": "Asaph Hall at the U.S. Naval Observatory found Deimos (first seen 11 Aug 1877) and Phobos (17-18 Aug) with the 26-inch refractor; the discovery was telegraphed on 19 Aug",
+     "confidence": "high",
+     "lead": 125,
+     "score": 0.875,
+     "points": 6.11,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Audiobook player",
+     "concept_id": "audiobook-player",
+     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
+     "quote": "it was a Book made wholly for the Ears, and not the Eyes. So that when any Body has a mind to read in it, he winds up that Machine with a great many Strings",
+     "title": "A Voyage to the Moon",
+     "year": 1657,
+     "authors": [
+      "Cyrano de Bergerac"
+     ],
+     "came_true": "1935",
+     "kind": "first_practical_use",
+     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
+     "confidence": "medium",
+     "lead": 278,
+     "score": 0.75,
+     "points": 6.09,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Audiobook player",
+     "concept_id": "audiobook-player",
+     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
+     "quote": "It is a book indeed, but a miraculous book without pages or letters; in fine, it is a book to learn from which eyes are useless, only ears are needed.",
+     "title": "Voyages to the Moon and the Sun",
+     "year": 1662,
+     "authors": [
+      "Cyrano de Bergerac"
+     ],
+     "came_true": "1935",
+     "kind": "first_practical_use",
+     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
+     "confidence": "medium",
+     "lead": 273,
+     "score": 0.75,
+     "points": 6.07,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "precision",
+   "title": "Sharpest Eye",
+   "rule": "The highest share of predictions that came true at a judged closeness of 0.5 or more, among authors with 50+ predictions.",
+   "winner": {
+    "name": "Edwin Balmer and William MacHarg",
+    "key": "Edwin Balmer",
+    "points": 13.1,
+    "stat": "46% of 54 predictions came true (score 0.5+)"
+   },
+   "runners_up": [
+    {
+     "name": "Harold L. Goodwin",
+     "key": "Harold L. Goodwin",
+     "points": 73.7,
+     "stat": "39% of 208 predictions came true (score 0.5+)"
+    },
+    {
+     "name": "Ignatius Donnelly",
+     "key": "Ignatius Donnelly",
+     "points": 64.6,
+     "stat": "34% of 90 predictions came true (score 0.5+)"
+    },
+    {
+     "name": "Walter M. Miller",
+     "key": "Walter M. Miller",
+     "points": 56.5,
+     "stat": "33% of 85 predictions came true (score 0.5+)"
+    },
+    {
+     "name": "Jeff Sutton",
+     "key": "Jeff Sutton",
+     "points": 37.4,
+     "stat": "32% of 85 predictions came true (score 0.5+)"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Lie detector",
+     "concept_id": "lie-detector",
+     "definition": "A device that detects deception by measuring physiological signals such as pulse, breathing and skin conductance.",
+     "quote": "for no matter how hardened a man may be, no matter how impossible it may have become to detect his feelings in his face or bearing, he cannot prevent the volume of blood in his hand from decreasing, and his breathing from becoming different, under the influence of emotions of fear or guilt.",
+     "title": "The Achievements of Luther Trant",
+     "year": 1910,
+     "authors": [
+      "Edwin Balmer",
+      "William MacHarg"
+     ],
+     "came_true": "1921",
+     "kind": "first_practical_use",
+     "event": "John A. Larson of the Berkeley Police Department, under chief August Vollmer, began using his continuous blood-pressure and breathing recorder (the cardio-pneumo-psychogram, later called the polygraph) to test suspects, in 1921.",
+     "confidence": "medium",
+     "lead": 11,
+     "score": 1.0,
+     "points": 3.58,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Mind-reading machine",
+     "concept_id": "mind-reading-machine",
+     "definition": "A machine that reads a person's specific thoughts, memories or images directly from their brain.",
+     "quote": "I read from the marks made upon minds by a crime, not from scrawls and thumbprints upon paper. And my means of reading those marks are fortunately in my possession this morning.",
+     "title": "The Achievements of Luther Trant",
+     "year": 1910,
+     "authors": [
+      "Edwin Balmer",
+      "William MacHarg"
+     ],
+     "came_true": "2006",
+     "kind": "first_demonstration",
+     "event": "Thirion et al. (NeuroSpin, France) decoded fMRI activity to reconstruct and identify the visual pattern subjects viewed and the pattern they imagined (one of six self-chosen patterns), NeuroImage 33(4), accepted June 2006, online October 2006.",
+     "confidence": "medium",
+     "lead": 96,
+     "score": 0.5,
+     "points": 3.3,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Psychological methods in crime detection",
+     "concept_id": "forensic-psychological-crime-detection",
+     "definition": "Scientific psychological examination of suspects, mind traces or behavior to determine guilt or identify the culprit instead of physical evidence.",
+     "quote": "I could tell within the hour if I could take you successively to the psychological laboratory and submit you to a test.",
+     "title": "The Achievements of Luther Trant",
+     "year": 1910,
+     "authors": [
+      "Edwin Balmer",
+      "William MacHarg"
+     ],
+     "came_true": "1921-04-19",
+     "kind": "first_practical_use",
+     "event": "John A. Larson's polygraph (blood pressure and breathing) was used by the Berkeley Police Department, under chief August Vollmer, to question the 90 residents of a UC Berkeley dormitory after thefts.",
+     "confidence": "low",
+     "lead": 11,
+     "score": 0.625,
+     "points": 2.24,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Traumatic amnesia and its cure",
+     "concept_id": "traumatic-amnesia-and-recovery",
+     "definition": "A person loses memory through shock or trauma and regains it by second shock, therapy, drug or recall of the original circumstances.",
+     "quote": "an emotion so intense as that she suffered divides itself off from the rest of her consciousness. It is so overpowering that it cannot connect itself with her daily life; ordinary sights and sounds cannot call it back to memory.",
+     "title": "The Achievements of Luther Trant",
+     "year": 1910,
+     "authors": [
+      "Edwin Balmer",
+      "William MacHarg"
+     ],
+     "came_true": "1917",
+     "kind": "first_demonstration",
+     "event": "British army physicians (M. D. Eder and others) treated war-shock soldiers who had lost their memory after the shock; recalling the circumstances under hypnosis brought the memory back.",
+     "confidence": "low",
+     "lead": 7,
+     "score": 0.625,
+     "points": 1.88,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Fast cure for mental illness",
+     "concept_id": "mental-illness-cure",
+     "definition": "A psychological, chemical or electrical treatment that quickly and reliably cures insanity and mental breakdown.",
+     "quote": "you have only to recount them to her, repeating them time after time if necessary, until she normally remembers them and you have drawn the two parts of her consciousness back again into one.",
+     "title": "The Achievements of Luther Trant",
+     "year": 1910,
+     "authors": [
+      "Edwin Balmer",
+      "William MacHarg"
+     ],
+     "came_true": "1934-01",
+     "kind": "first_practical_use",
+     "event": "The same hospital treatment of real psychiatric patients by Meduna from January 1934; by 1937 metrazol convulsive therapy was in use in hospitals in Britain and elsewhere and, according to a later history, within three years of 1934 was in use worldwide.",
+     "confidence": "medium",
+     "lead": 24,
+     "score": 0.25,
+     "points": 1.16,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "per_book",
+   "title": "Most Prescient per Book",
+   "rule": "Points per book in the corpus, among authors with 3+ books, so volume alone does not win.",
+   "winner": {
+    "name": "Richard M. Elam",
+    "key": "Richard M. Elam",
+    "points": 134.6,
+    "stat": "44.9 points per book over 3 books"
+   },
+   "runners_up": [
+    {
+     "name": "George Chetwynd Griffith",
+     "key": "George Chetwynd Griffith",
+     "points": 257.7,
+     "stat": "43.0 points per book over 6 books"
+    },
+    {
+     "name": "Garrett Putman Serviss",
+     "key": "Garrett Putman Serviss",
+     "points": 200.7,
+     "stat": "33.5 points per book over 6 books"
+    },
+    {
+     "name": "George Allan England",
+     "key": "George Allan England",
+     "points": 96.0,
+     "stat": "32.0 points per book over 3 books"
+    },
+    {
+     "name": "Camille Flammarion",
+     "key": "Camille Flammarion",
+     "points": 92.0,
+     "stat": "30.7 points per book over 3 books"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Using local resources in space",
+     "concept_id": "in-situ-resource-utilization",
+     "definition": "Extracting water, oxygen or building materials from the rock, ice or soil of the Moon, an asteroid or another world to supply a crew.",
+     "quote": "The whole colony is built of lunar rock, quarried near by.",
+     "title": "Young Visitor to Mars",
+     "year": 1953,
+     "authors": [
+      "Richard M. Elam"
+     ],
+     "came_true": "2021-04-20",
+     "kind": "first_demonstration",
+     "event": "NASA's MOXIE instrument on the Perseverance rover made 5.37 g of oxygen from Martian atmospheric carbon dioxide in Jezero Crater, the first extraction of a resource from another world's environment.",
+     "confidence": "medium",
+     "lead": 68,
+     "score": 0.75,
+     "points": 4.58,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Crewed suborbital rocket flight",
+     "concept_id": "crewed-suborbital-spaceflight",
+     "definition": "A small crewed rocket that lifts off, rises above the atmosphere and returns.",
+     "quote": "SPACE RIDES DAILY.  \nENJOY THE THRILL OF A LIFETIME A THOUSAND MILES ABOVE EARTH.",
+     "title": "Young Readers Science Fiction Stories",
+     "year": 1957,
+     "authors": [
+      "Richard M. Elam"
+     ],
+     "came_true": "2021-07-20",
+     "kind": "first_practical_use",
+     "event": "Blue Origin NS-16: New Shepard carried four people to space from West Texas, including Oliver Daemen, described by Blue Origin as its first paying customer (a seat bought for him at the company's auction).",
+     "confidence": "medium",
+     "lead": 64,
+     "score": 0.75,
+     "points": 4.52,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Inflatable space habitat",
+     "concept_id": "inflatable-space-habitat",
+     "definition": "A lightweight inflatable shelter or bubble that is deployed from a launch vehicle or set up on an airless world as a home or work space.",
+     "quote": "a plastic bubble began growing out of it. The bubble, which was slightly oblong and transparent, enlarged to about seven feet, then detached itself from the cartridge airtight.",
+     "title": "Young Readers Science Fiction Stories",
+     "year": 1957,
+     "authors": [
+      "Richard M. Elam"
+     ],
+     "came_true": "2016-06-06",
+     "kind": "first_practical_use",
+     "event": "After BEAM was expanded on the ISS on 28 May 2016, astronauts Jeff Williams and Oleg Skripochka first entered it on 6 June 2016 to collect air samples and begin sensor data downloads; it later served for storage.",
+     "confidence": "high",
+     "lead": 59,
+     "score": 0.75,
+     "points": 4.43,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Spacecraft emergency safety systems",
+     "concept_id": "spacecraft-compartment-safety",
+     "definition": "Sealed compartments, hull patches and cabin venting that protect a crew from leaks, fire or loss of pressure.",
+     "quote": "The outside meteor bumper and the inner buffer bulkheads had kept the destruction to a minimum. By automatically sealing themselves off from the rest of the ship at the moment of impact, the protective bulkheads had kept the ship from being decompressed.",
+     "title": "Young Readers Science Fiction Stories",
+     "year": 1957,
+     "authors": [
+      "Richard M. Elam"
+     ],
+     "came_true": "1997-06-25",
+     "kind": "first_practical_use",
+     "event": "Progress M-34 punctured Mir's Spektr module; the crew cut cables and closed Spektr's hatch, isolating the leak so station pressure held.",
+     "confidence": "medium",
+     "lead": 40,
+     "score": 0.75,
+     "points": 4.02,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Reusable winged spaceplane or shuttle",
+     "concept_id": "reusable-spaceplane-shuttle",
+     "definition": "A winged or reusable vehicle that flies between Earth's surface and orbit, or between a planet and a station, and glides back to land.",
+     "quote": "Marsh would begin the precarious journey back to Earth, in gliding flight.",
+     "title": "Teen-age Super Science Stories",
+     "year": 1957,
+     "authors": [
+      "Richard M. Elam"
+     ],
+     "came_true": "1982-11-11",
+     "kind": "first_practical_use",
+     "event": "STS-5 (Columbia), the first officially operational Shuttle flight, launched 1982-11-11 and deployed the commercial satellites SBS-3 (11 Nov) and Anik C-3 (12 Nov) before landing on 16 November.",
+     "confidence": "high",
+     "lead": 25,
+     "score": 0.75,
+     "points": 3.53,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "era-pre-1900",
+   "title": "Victorian visionary (before 1900)",
+   "rule": "The most points from books first published pre-1900.",
+   "winner": {
+    "name": "Jules Verne",
+    "key": "Jules Verne",
+    "points": 337.9,
+    "stat": "337.9 points from 105 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 178.2,
+     "stat": "178.2 points from 64 ideas"
+    },
+    {
+     "name": "George Chetwynd Griffith",
+     "key": "George Chetwynd Griffith",
+     "points": 170.9,
+     "stat": "170.9 points from 61 ideas"
+    },
+    {
+     "name": "Percy Greg",
+     "key": "Percy Greg",
+     "points": 147.0,
+     "stat": "147.0 points from 47 ideas"
+    },
+    {
+     "name": "John Jacob Astor",
+     "key": "John Jacob Astor",
+     "points": 105.6,
+     "stat": "105.6 points from 40 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Weightlessness in spaceflight",
+     "concept_id": "weightlessness-microgravity",
+     "definition": "People and objects float freely in the free fall of orbit or coasting flight, so they move by pushing off surfaces.",
+     "quote": "Nicholl having accidentally let a glass slip from his hand, the glass, instead of falling, remained suspended in the air.",
+     "title": "From the Earth to the Moon, Direct in Ninety-Seven Hours and Twenty Minutes",
+     "year": 1872,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1961-04-12",
+     "kind": "first_demonstration",
+     "event": "Yuri Gagarin orbited the Earth in Vostok 1 and floated weightless in the cabin.",
+     "confidence": "high",
+     "lead": 89,
+     "score": 0.875,
+     "points": 5.68,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Second natural moon of Earth",
+     "concept_id": "earth-second-moon",
+     "definition": "An additional small natural satellite of Earth besides the Moon, previously undiscovered or newly captured, is found orbiting the planet.",
+     "quote": "It is a simple bolide, but one of such enormous dimensions that the Earth's attraction has made it a satellite.",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "2006-09-14",
+     "kind": "first_demonstration",
+     "event": "Catalina Sky Survey (Arizona) discovered 6R10DB9, later 2006 RH120, a meter-size natural object captured into Earth orbit and making repeated loops until mid-2007.",
+     "confidence": "medium",
+     "lead": 136,
+     "score": 0.75,
+     "points": 5.32,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Gravity-neutral (Lagrange) point between two bodies",
+     "concept_id": "lagrange-point-parking",
+     "definition": "A spacecraft or station sits at a point between two worlds, such as Earth and Moon, where their gravitational pulls balance so it stays in place relative to them.",
+     "quote": "Suppose it to be animated by just sufficient velocity to reach the neutral point, but not to pass it. In that case, the Projectile would remain forever in the same spot, perfectly motionless as far as regards the Earth and the Moon",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1978-11-20",
+     "kind": "first_practical_use",
+     "event": "ISEE-3 in its L1 halo orbit began measuring the solar wind upstream of Earth, the station role later filled operationally by SOHO, Wind and DSCOVR.",
+     "confidence": "low",
+     "lead": 108,
+     "score": 0.75,
+     "points": 5.08,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Hydrogen and oxygen engines and heating",
+     "concept_id": "hydrogen-oxygen-combustion",
+     "definition": "Burning hydrogen with oxygen in engines, furnaces or turbines to give motive power, heat or electricity.",
+     "quote": "I decompose it by means of a powerful Buntzen battery. Water, as you know, consists of two parts of hydrogen to one of oxygen gas.",
+     "title": "Five Weeks in a Balloon",
+     "year": 1863,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1966-05-30",
+     "kind": "first_practical_use",
+     "event": "An Atlas-Centaur (AC-10), whose Centaur stage burned liquid hydrogen with liquid oxygen in two RL-10 engines, launched Surveyor 1 toward the Moon on 30 May 1966, the Centaur's first operational flight.",
+     "confidence": "medium",
+     "lead": 103,
+     "score": 0.75,
+     "points": 5.03,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Spacesuit",
+     "concept_id": "spacesuit",
+     "definition": "A sealed suit with its own air supply and communication that lets a person survive and work outside a spacecraft or on another world.",
+     "quote": "Why didn't you bring a scaphander and an air pump? I could then venture out of the Projectile as readily and as safely as the diver leaves his boat and walks about on the bottom of the river!",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1969-01-16",
+     "kind": "first_practical_use",
+     "event": "Yevgeny Khrunov and Alexei Yeliseyev, wearing Yastreb suits with chest-mounted regenerative life-support units, spacewalked from Soyuz 5 to Soyuz 4 to transfer crews between two docked spacecraft.",
+     "confidence": "high",
+     "lead": 99,
+     "score": 0.75,
+     "points": 4.98,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "era-1900–1945",
+   "title": "Pulp-era visionary (1900–1945)",
+   "rule": "The most points from books first published 1900–1945.",
+   "winner": {
+    "name": "E. E. Smith",
+    "key": "E. E. Smith",
+    "points": 351.5,
+    "stat": "351.5 points from 129 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 308.7,
+     "stat": "308.7 points from 125 ideas"
+    },
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 250.9,
+     "stat": "250.9 points from 95 ideas"
+    },
+    {
+     "name": "Godfrey Sweven",
+     "key": "Godfrey Sweven",
+     "points": 246.6,
+     "stat": "246.6 points from 88 ideas"
+    },
+    {
+     "name": "Edmond Hamilton",
+     "key": "Edmond Hamilton",
+     "points": 235.2,
+     "stat": "235.2 points from 86 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Three-dimensional telepresence",
+     "concept_id": "holographic-telepresence",
+     "definition": "A communication system that projects a life-size three-dimensional image of a distant person into the room so that the two can talk as if together.",
+     "quote": "You will see simply three-dimensional talking pictures of ourselves, transmitted by radio.",
+     "title": "Skylark Three",
+     "year": 1930,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2022",
+     "kind": "first_practical_use",
+     "event": "Google began testing Project Starline with partner companies such as Salesforce and T-Mobile from late 2022.",
+     "confidence": "low",
+     "lead": 92,
+     "score": 0.75,
+     "points": 4.9,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Self-driving car",
+     "concept_id": "self-driving-car",
+     "definition": "A road vehicle that drives itself to a destination without a human driver.",
+     "quote": "pressed down \"9-2-6-4-3-8\"—the location number of the airport—upon the banked keys of a numbering machine, and touched a red button, whereupon the machine glided off of itself.",
+     "title": "The Skylark of Valeron",
+     "year": 1934,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2020-10-08",
+     "kind": "first_practical_use",
+     "event": "Waymo opened its fully driverless ride-hailing service (Waymo One, no human in the car) to the general public in Phoenix, Arizona.",
+     "confidence": "medium",
+     "lead": 86,
+     "score": 0.75,
+     "points": 4.83,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Brain-to-brain link",
+     "concept_id": "brain-to-brain-link",
+     "definition": "A direct connection between human brains, by wires or headsets, that shares experiences or pools thinking between people.",
+     "quote": "Dunark clamped sets of multiple electrodes, connected to a set of instruments, upon the temples of his father, Dorothy, and Seaton. He pressed a lever, and instantly Dorothy and Seaton read each other's minds to the minutest detail",
+     "title": "The Skylark of Space",
+     "year": 1928,
+     "authors": [
+      "E. E. Smith",
+      "Lee Hawkins Garby"
+     ],
+     "came_true": "2013-08-12",
+     "kind": "first_demonstration",
+     "event": "At the University of Washington on 12 Aug 2013, Rajesh Rao's EEG-read motor imagery was sent over the Internet to trigger a TMS pulse in Andrea Stocco's brain, making his finger press a key.",
+     "confidence": "medium",
+     "lead": 85,
+     "score": 0.75,
+     "points": 4.82,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Thought-to-text and thought display",
+     "concept_id": "thought-to-text",
+     "definition": "A machine that writes down a person's thoughts as text, or shows their mental images or dreams on a screen.",
+     "quote": "the stereographic device, in parallel with Solon's own brain recorder, which projected a three-dimensional picture into the \"viewing-area\" or dark space of the cabinet.",
+     "title": "Skylark Three",
+     "year": 1930,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2006",
+     "kind": "first_demonstration",
+     "event": "Thirion, Duchesnay, Hubbard, Dubois, Poline, Lebihan and Dehaene (NeuroSpin, France) decoded fMRI activity to reconstruct the visual pattern that subjects were only imagining; paper accepted June 2006, online 9 October 2006 (NeuroImage 33(4)).",
+     "confidence": "medium",
+     "lead": 76,
+     "score": 0.75,
+     "points": 4.7,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Three-dimensional holographic display",
+     "concept_id": "holographic-3d-display",
+     "definition": "A display that shows images, maps or people as volumetric three-dimensional pictures viewable from several sides.",
+     "quote": "Simultaneously there appeared in the air above the machine a three-dimensional model of all the Galaxies there listed.",
+     "title": "The Skylark of Valeron",
+     "year": 1934,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2001-10",
+     "kind": "first_practical_use",
+     "event": "Actuality Systems announced that Structural GenomiX (San Diego) was the first beta customer for its spherical volumetric 3-D display, to use in protein and drug-design work and for presenting data to partners.",
+     "confidence": "medium",
+     "lead": 67,
+     "score": 0.75,
+     "points": 4.57,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "era-1946–1979",
+   "title": "Atomic-age visionary (1946–1979)",
+   "rule": "The most points from books first published 1946–1979.",
+   "winner": {
+    "name": "Murray Leinster",
+    "key": "Murray Leinster",
+    "points": 305.4,
+    "stat": "305.4 points from 134 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Randall Garrett",
+     "key": "Randall Garrett",
+     "points": 260.0,
+     "stat": "260.0 points from 111 ideas"
+    },
+    {
+     "name": "George O. Smith",
+     "key": "George O. Smith",
+     "points": 252.3,
+     "stat": "252.3 points from 112 ideas"
+    },
+    {
+     "name": "H. Beam Piper",
+     "key": "H. Beam Piper",
+     "points": 217.3,
+     "stat": "217.3 points from 100 ideas"
+    },
+    {
+     "name": "Fritz Leiber",
+     "key": "Fritz Leiber",
+     "points": 208.3,
+     "stat": "208.3 points from 87 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Sleep and incapacitating gas",
+     "concept_id": "incapacitating-gas",
+     "definition": "A gas or aerosol that knocks out or paralyzes people en masse or individually, delivered by grenade, vent, spray or aircraft.",
+     "quote": "I'd dumped some dextrethyl in the air-conditioning system. They keeled over.",
+     "title": "Med Service",
+     "year": 1957,
+     "authors": [
+      "Murray Leinster"
+     ],
+     "came_true": "2002-10-26",
+     "kind": "first_practical_use",
+     "event": "Russian special forces pumped an aerosol anesthetic (believed to be a fentanyl-derivative mixture, 'Kolokol-1') into the ventilation of the Dubrovka theater in Moscow, knocking out the hostages and hostage takers before the storming; many hostages died.",
+     "confidence": "high",
+     "lead": 45,
+     "score": 0.875,
+     "points": 4.83,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Private and personal spacecraft",
+     "concept_id": "private-spacecraft",
+     "definition": "A private citizen or company owns a spacecraft and uses it for personal or commercial flight.",
+     "quote": "I've bought me a little private spacecruiser, small but good. I'm shoving off for Moklin next week.",
+     "title": "If You Was a Moklin",
+     "year": 1951,
+     "authors": [
+      "Murray Leinster"
+     ],
+     "came_true": "2021-07-20",
+     "kind": "first_practical_use",
+     "event": "Blue Origin NS-16: New Shepard carried Bezos, his brother Mark, Wally Funk and Oliver Daemen, whose seat was paid for by his father, on its first crewed suborbital flight.",
+     "confidence": "medium",
+     "lead": 70,
+     "score": 0.75,
+     "points": 4.61,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Planetary defense battery",
+     "concept_id": "planetary-defense-battery",
+     "definition": "Ground-based weapons that destroy approaching or departing spacecraft.",
+     "quote": "There could be no conquests, because even a depopulated planet's projectors would still destroy all life in any approaching space-ship for as many years as the projectors were powered for.",
+     "title": "The Last Space Ship",
+     "year": 1949,
+     "authors": [
+      "Murray Leinster"
+     ],
+     "came_true": "2007-01-11",
+     "kind": "first_demonstration",
+     "event": "China destroyed its own Fengyun-1C weather satellite with a ground-launched kinetic kill vehicle.",
+     "confidence": "high",
+     "lead": 58,
+     "score": 0.75,
+     "points": 4.41,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Sleep learning",
+     "concept_id": "sleep-learning",
+     "definition": "Teaching people while they sleep or are hypnotized by playing recorded lessons.",
+     "quote": "the dream-broadcasts which supplied hypnotic, sleep-inducing rhythms to anybody who chose to listen to them. The price was that while asleep one would hear high praise of commercial products, and one might believe them when awake.",
+     "title": "Pariah Planet",
+     "year": 1961,
+     "authors": [
+      "Murray Leinster"
+     ],
+     "came_true": "2019-02",
+     "kind": "first_demonstration",
+     "event": "Zust et al. (University of Bern) played recorded pseudoword/German word pairs to young adults in slow-wave sleep and found they had formed and kept new word associations that showed up on an implicit test after waking.",
+     "confidence": "low",
+     "lead": 58,
+     "score": 0.75,
+     "points": 4.41,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Artificial sound in silent vehicles",
+     "concept_id": "artificial-sound-in-silent-vehicle",
+     "definition": "Artificial noise or vibration is played in a silent vehicle to reassure its occupants.",
+     "quote": "Very small and trivial noises came from the background tape, preventing utter silence from hanging intolerably in the ship. They were traffic-sounds, recorded on a world no one knew how many light-years distant",
+     "title": "Pariah Planet",
+     "year": 1961,
+     "authors": [
+      "Murray Leinster"
+     ],
+     "came_true": "2009-04",
+     "kind": "first_demonstration",
+     "event": "Lotus Engineering and Harman announced (April 2009) an Electronic Sound Synthesis system, shown on a Toyota Prius demonstrator, that adds engine-like sound through the in-car audio system to give the driver feedback on engine speed and throttle position, as well as an external pedestrian sound.",
+     "confidence": "low",
+     "lead": 48,
+     "score": 0.75,
+     "points": 4.21,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
+   "id": "group-futurism",
+   "title": "Best forecaster (non-fiction)",
+   "rule": "The most points among the futurist essays and forecasts.",
+   "winner": {
+    "name": "T. Baron Russell",
+    "key": "T. Baron Russell",
+    "points": 100.3,
+    "stat": "100.3 points from 32 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 63.9,
+     "stat": "63.9 points from 25 ideas"
+    },
+    {
+     "name": "Nikola Tesla",
+     "key": "Nikola Tesla",
+     "points": 37.0,
+     "stat": "37.0 points from 13 ideas"
+    },
+    {
+     "name": "J. B. S. Haldane",
+     "key": "J. B. S. Haldane",
+     "points": 25.6,
+     "stat": "25.6 points from 9 ideas"
+    },
+    {
+     "name": "Bertrand Russell",
+     "key": "Bertrand Russell",
+     "points": 5.3,
+     "stat": "5.3 points from 3 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Self-service rental cars",
+     "concept_id": "self-service-rental-car",
+     "definition": "Coin-, key- or wristband-activated cars are rented for anonymous short or intercity use.",
+     "quote": "automatic motor-cars will exist, coin-worked. A man who wishes to travel will step into a motor-car, drop into a slot-machine the coin which represents the hire of the car for the distance he wants to travel, and assume control.",
+     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
+     "year": 1905,
+     "authors": [
+      "T. Baron Russell"
+     ],
+     "came_true": "1971",
+     "kind": "first_practical_use",
+     "event": "Procotip in Montpellier, France: from mid-1971 members took one of the Simca cars from city parking spaces with a ten-franc token and a personal key, driving about 18 km per token, with 240 members and 35 cars reported by 18 August 1971.",
+     "confidence": "medium",
+     "lead": 66,
+     "score": 0.875,
+     "points": 5.31,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Automatic house cleaning",
+     "concept_id": "automated-housecleaning",
+     "definition": "Floors, dust, dishes, laundry and rooms clean themselves or are cleaned by built-in machinery without human work.",
+     "quote": "Of course, in the new age, these utensils will be simply dropped one by one into an automatic receptacle; swilled clean by water delivered with force and charged with nascent oxygen; dried by electric heat; and polished by electric force",
+     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
+     "year": 1905,
+     "authors": [
+      "T. Baron Russell"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "A floor-cleaning robot was in use in supermarkets, and the US Navy had tested it for scrubbing ship decks (per a 1985 book); the machine and maker are not named.",
+     "confidence": "low",
+     "lead": 80,
+     "score": 0.75,
+     "points": 4.75,
+     "demonstration_only": false
+    },
+    {
+     "concept": "High-speed train",
+     "concept_id": "high-speed-train",
+     "definition": "A passenger train running far faster than ordinary trains, at 150 to 300 mph or more on dedicated track.",
+     "quote": "With trains travelling at quite 200 miles an hour—and certainly nothing less will satisfy the remoter suburbanites of next century",
+     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
+     "year": 1905,
+     "authors": [
+      "T. Baron Russell"
+     ],
+     "came_true": "1981-09-27",
+     "kind": "first_practical_use",
+     "event": "The TGV began regular fare-paying service between Paris and Lyon on 27 September 1981 on the new dedicated LGV Sud-Est line, at up to 260 km/h (about 160 mph).",
+     "confidence": "high",
+     "lead": 76,
+     "score": 0.75,
+     "points": 4.7,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Automatic body-cleaning machine",
+     "concept_id": "automatic-bathing-machine",
+     "definition": "A household machine or booth that washes, rinses and dries a person with little effort, using jets, brushes, ultrasound, vapor, radiation or air, sometimes also shaving or massaging.",
+     "quote": "The bath of the next century will lave the body speedily with oxygenated water delivered with a force that will render rubbing unnecessary",
+     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
+     "year": 1905,
+     "authors": [
+      "T. Baron Russell"
+     ],
+     "came_true": "1970",
+     "kind": "first_demonstration",
+     "event": "Sanyo showed its Ultrasonic Bath (human washing machine) at its pavilion at Expo 70, Osaka: an egg-shaped chamber that sprayed water jets, ultrasonic bubbles and massage, then dried the occupant with warm air in about 15 minutes.",
+     "confidence": "medium",
+     "lead": 65,
+     "score": 0.75,
+     "points": 4.53,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Disposable paper clothing and strong paper",
+     "concept_id": "disposable-paper-clothing",
+     "definition": "Clothing and goods made from cheap, strong or tearproof paper that replaces cloth and is discarded after use.",
+     "quote": "The innermost garment will no doubt be made of some fabric not much unlike the soft silky papers now made in Japan, so that it can be destroyed as soon as it is taken off.",
+     "title": "A Hundred Years Hence (The Expectations of an Optimist)",
+     "year": 1905,
+     "authors": [
+      "T. Baron Russell"
+     ],
+     "came_true": "1966",
+     "kind": "first_practical_use",
+     "event": "Scott Paper Company offered a wear-it-once paper dress to the public by mail order in 1966, starting the paper dress fashion.",
+     "confidence": "medium",
+     "lead": 61,
+     "score": 0.75,
+     "points": 4.47,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "group-classics",
+   "title": "Best early-modern utopia",
+   "rule": "The most points among the classic utopias (More, Campanella, Bacon).",
+   "winner": {
+    "name": "Francis Bacon",
+    "key": "Francis Bacon",
+    "points": 63.9,
+    "stat": "63.9 points from 18 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Thomas More",
+     "key": "Thomas More",
+     "points": 5.0,
+     "stat": "5.0 points from 2 ideas"
+    },
+    {
+     "name": "Tommaso Campanella",
+     "key": "Tommaso Campanella",
+     "points": 3.8,
+     "stat": "3.8 points from 1 idea"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Hearing aid",
+     "concept_id": "hearing-aid",
+     "definition": "A device worn to amplify faint sounds or shift them into the audible range so a person can hear better.",
+     "quote": "We have certain helps which set to the ear do further the hearing greatly.",
+     "title": "New Atlantis",
+     "year": 1627,
+     "authors": [
+      "Francis Bacon"
+     ],
+     "came_true": "1900",
+     "kind": "first_practical_use",
+     "event": "The Akouphone Company of New York was selling the Akouphone, a portable electric instrument for the partially deaf, by December 1900 and exhibiting it to schools and otologists.",
+     "confidence": "low",
+     "lead": 273,
+     "score": 0.75,
+     "points": 6.07,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Supertall tower",
+     "concept_id": "supertall-tower",
+     "definition": "A free-standing tower or skyscraper far taller than the structures of its day, built for observation, restaurants or display.",
+     "quote": "We have high towers; the highest about half a mile in height; and some of them likewise set upon high mountains",
+     "title": "New Atlantis",
+     "year": 1627,
+     "authors": [
+      "Francis Bacon"
+     ],
+     "came_true": "1889-05-15",
+     "kind": "first_practical_use",
+     "event": "The Eiffel Tower opened to the public nine days after the Exposition opened on 6 May 1889; visitors climbed the stairs before lifts began on 26 May.",
+     "confidence": "medium",
+     "lead": 262,
+     "score": 0.625,
+     "points": 5.02,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Laboratory-created animal species",
+     "concept_id": "engineered-new-animal-species",
+     "definition": "Designing and producing new animal species or enhanced animals by genetic engineering or forced evolution.",
+     "quote": "By art likewise, we make them greater or taller than their kind is; and contrariwise dwarf them, and stay their growth: we make them more fruitful and bearing than their kind is; and contrariwise barren and not generative.",
+     "title": "New Atlantis",
+     "year": 1627,
+     "authors": [
+      "Francis Bacon"
+     ],
+     "came_true": "2003",
+     "kind": "first_practical_use",
+     "event": "Taikong Corp of Taiwan sold genetically modified fluorescent medaka (TK-1) as pets in 2003; about 100 reached Japanese pet shops in May 2003, and GloFish zebrafish followed in the US in December 2003 and January 2004.",
+     "confidence": "medium",
+     "lead": 376,
+     "score": 0.5,
+     "points": 4.28,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Artificial rainmaking",
+     "concept_id": "cloud-seeding-rainmaking",
+     "definition": "Producing rain or snow on demand by seeding clouds with chemicals, dry ice or other agents, or by shock and heat, so that precipitation falls where wanted.",
+     "quote": "We have also great and spacious houses where we imitate and demonstrate meteors; as snow, hail, rain, some artificial rains of bodies and not of water, thunders, lightnings",
+     "title": "New Atlantis",
+     "year": 1627,
+     "authors": [
+      "Francis Bacon"
+     ],
+     "came_true": "1948",
+     "kind": "first_practical_use",
+     "event": "Irving Krick's American Institute of Aerological Research ran 27 airborne dry-ice and silver-iodide seeding flights in summer 1948 over the Salt River watershed in Arizona to produce water for the drought.",
+     "confidence": "medium",
+     "lead": 321,
+     "score": 0.5,
+     "points": 4.17,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Faster-growing and engineered crops",
+     "concept_id": "crop-growth-engineering",
+     "definition": "Chemical or genetic treatment that makes plants grow faster, larger, sweeter or in designed shapes and varieties.",
+     "quote": "And we make (by art) in the same orchards and gardens, trees and flowers to come earlier or later than their seasons; and to come up and bear more speedily than by their natural course they do.",
+     "title": "New Atlantis",
+     "year": 1627,
+     "authors": [
+      "Francis Bacon"
+     ],
+     "came_true": "1945",
+     "kind": "first_practical_use",
+     "event": "Synthetic plant-hormone fruit-set sprays (p-chlorophenoxyacetic acid products such as Seed-less-Set) went on sale to US tomato growers and gardeners, producing earlier, seedless tomatoes.",
+     "confidence": "low",
+     "lead": 318,
+     "score": 0.5,
+     "points": 4.16,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "group-ancient",
+   "title": "Best ancient, sacred or prophetic text",
+   "rule": "The most points among the sacred and prophetic texts and the works written before 1500.",
+   "winner": {
+    "name": "The Mahabharata",
+    "key": "The Mahabharata",
+    "points": 62.6,
+    "stat": "62.6 points from 23 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Lucian of Samosata",
+     "key": "Lucian of Samosata",
+     "points": 33.6,
+     "stat": "33.6 points from 9 ideas"
+    },
+    {
+     "name": "The Elder Eddas and the Younger Eddas",
+     "key": "The Elder Eddas and the Younger Eddas",
+     "points": 15.7,
+     "stat": "15.7 points from 4 ideas"
+    },
+    {
+     "name": "The Sibylline Oracles",
+     "key": "The Sibylline Oracles",
+     "points": 7.8,
+     "stat": "7.8 points from 2 ideas"
+    },
+    {
+     "name": "Zand-i Vohuman Yasht (Bahman Yasht)",
+     "key": "Zand-i Vohuman Yasht (Bahman Yasht)",
+     "points": 3.4,
+     "stat": "3.4 points from 1 idea"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Voluntary control of body functions",
+     "concept_id": "voluntary-body-control",
+     "definition": "Training that lets a person consciously control involuntary functions such as pain, temperature, weight, pupils or metabolism.",
+     "quote": "Having, from affection, said these words unto Duryodhana in the midst of the kings, the son of the ocean-going (Ganga) became silent. Though his vital limbs were burning with the arrow-wounds, yet, prevailing over his agonies, he applied himself to yoga.",
+     "title": "The Mahabharata, Volume 2 (Books 4-7)",
+     "year": 400,
+     "authors": [],
+     "came_true": "1932",
+     "kind": "first_practical_use",
+     "event": "Johannes H. Schultz, a Berlin neurologist, published 'Das autogene Training' (Thieme, Leipzig, 1932), a clinical practice manual of a training method built over twenty years, in which patients learn by exercises of heaviness and warmth to bring body states under conscious influence.",
+     "confidence": "high",
+     "lead": 1532,
+     "score": 0.5,
+     "points": 4.48,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Sonic weapon",
+     "concept_id": "sonic-weapon",
+     "definition": "A device that uses focused or high-intensity sound, ultrasound or infrasound to injure, incapacitate, frighten or kill.",
+     "quote": "in consequence of the blare of those (two) conchs, all men, O sire, lost their strength.",
+     "title": "The Mahabharata, Volume 2 (Books 4-7)",
+     "year": 400,
+     "authors": [],
+     "came_true": "2005-11-05",
+     "kind": "first_practical_use",
+     "event": "The cruise ship Seabourn Spirit used a long-range acoustic device (LRAD), a directed beam of earsplitting sound, against pirates who attacked it off Somalia.",
+     "confidence": "medium",
+     "lead": 1605,
+     "score": 0.5,
+     "points": 4.48,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Non-lethal stun gun",
+     "concept_id": "nonlethal-stun-weapon",
+     "definition": "A handheld or mounted weapon that knocks out or incapacitates a person at range without killing, by shock, sleep ray, spray or gas-propelled dart, often with an adjustable setting.",
+     "quote": "Endued with energy and prowess and splendour, it is capable of sending the foe to sleep.",
+     "title": "The Mahabharata, Volume 1 (Books 1-3)",
+     "year": 400,
+     "authors": [],
+     "came_true": "1975-03",
+     "kind": "first_practical_use",
+     "event": "The Taser Public Defender, a flashlight-shaped dart stun gun made by Advanced Chemical Technology of Los Angeles, was first marketed in March 1975; more than 1,000 sold by November, mostly to the public.",
+     "confidence": "medium",
+     "lead": 1575,
+     "score": 0.5,
+     "points": 4.48,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Antidote for a drug or poison",
+     "concept_id": "antidote-for-poison-or-agent",
+     "definition": "A specific counteragent that reverses the effects of a paralytic, venom, truth drug or other chemical.",
+     "quote": "The vegetable poison, mingled in the blood of the son of the Wind god, was neutralised by the snake-poison.",
+     "title": "The Mahabharata, Volume 1 (Books 1-3)",
+     "year": 400,
+     "authors": [],
+     "came_true": "1895",
+     "kind": "first_practical_use",
+     "event": "Calmette's antivenom serum, made in donkeys and horses at the Pasteur Institute in Lille from 1895, was used on a bitten snake collector, the first person treated with antivenom; Calmette's March 1896 book also reports an Annamite bitten by a cobra at Saigon cured by a 12 cc serum injection.",
+     "confidence": "medium",
+     "lead": 1495,
+     "score": 0.5,
+     "points": 4.48,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Invisibility",
+     "concept_id": "invisibility",
+     "definition": "A person, craft or object is made unseeable to ordinary sight by a cloak, field, powder, chemical or process that bends or passes light.",
+     "quote": "Proceeding a little way, the son of Bhrigu disappeared in the very sight of the royal couple (making himself invisible by his Yoga-power).",
+     "title": "The Mahabharata, Volume 4 (Books 13-18)",
+     "year": 400,
+     "authors": [],
+     "came_true": "2010-12",
+     "kind": "first_demonstration",
+     "event": "Baile Zhang, Yuan Luo, Xiaogang Liu and George Barbastathis (MIT/SMART) reported a macroscopic two-piece calcite cloak that hid an object up to 2 mm tall under a bump on a mirror in visible light (arXiv 2010-12-10; Phys. Rev. Lett. 106, 033901, 2011-01-18).",
+     "confidence": "medium",
+     "lead": 1610,
+     "score": 0.375,
+     "points": 3.36,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
+   "id": "group-fiction",
+   "title": "Best general fiction",
+   "rule": "The most points among the general (not science) fiction.",
+   "winner": {
+    "name": "Rudyard Kipling",
+    "key": "Rudyard Kipling",
+    "points": 48.9,
+    "stat": "48.9 points from 23 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Morgan Robertson",
+     "key": "Morgan Robertson",
+     "points": 16.6,
+     "stat": "16.6 points from 6 ideas"
+    },
+    {
+     "name": "Jack London",
+     "key": "Jack London",
+     "points": 5.1,
+     "stat": "5.1 points from 2 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Flight data recorder",
+     "concept_id": "flight-data-recorder",
+     "definition": "An automatic recorder aboard a craft that logs the voyage for later investigation.",
+     "quote": "A postal packet's dip-dial records every yard of every run. The tapes then go to the A. B. C., which collates and makes composite photographs of them for the instruction of captains.",
+     "title": "Actions and Reactions",
+     "year": 1909,
+     "authors": [
+      "Rudyard Kipling"
+     ],
+     "came_true": "1954-03",
+     "kind": "first_practical_use",
+     "event": "General Mills (Ryan) announced its crash-surviving Flight Recorder, which embossed altitude, acceleration, airspeed and heading on aluminum foil for 300 hours, for aircraft in service; Flying listed it among newly announced aircraft safety aids in March 1954.",
+     "confidence": "low",
+     "lead": 45,
+     "score": 0.75,
+     "points": 4.14,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Sonic weapon",
+     "concept_id": "sonic-weapon",
+     "definition": "A device that uses focused or high-intensity sound, ultrasound or infrasound to injure, incapacitate, frighten or kill.",
+     "quote": "Ah, that is my new siren,' said Pirolo. 'You can break an iceberg in half, if you find the proper pitch.",
+     "title": "A Diversity of Creatures",
+     "year": 1917,
+     "authors": [
+      "Rudyard Kipling"
+     ],
+     "came_true": "2005-11-05",
+     "kind": "first_practical_use",
+     "event": "The cruise ship Seabourn Spirit used a long-range acoustic device (LRAD), a directed beam of earsplitting sound, against pirates who attacked it off Somalia.",
+     "confidence": "medium",
+     "lead": 88,
+     "score": 0.625,
+     "points": 4.05,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Moving-map navigation display",
+     "concept_id": "moving-map-navigation-display",
+     "definition": "A dashboard or cockpit display that shows the vehicle's live position on a map, so the driver or pilot can navigate without landmarks.",
+     "quote": "the transparent chart-table where the map of the summer-blue Atlantic slid along, degree by degree, in exact answer to our progress.",
+     "title": "A Diversity of Creatures",
+     "year": 1917,
+     "authors": [
+      "Rudyard Kipling"
+     ],
+     "came_true": "1954",
+     "kind": "first_practical_use",
+     "event": "The Decca Flight Log moving-map display was in airline service by 1954, in British European Airways Viscounts and the BEA Helicopter Unit's Sikorsky S-51, after BEA announced adoption in April 1952.",
+     "confidence": "low",
+     "lead": 37,
+     "score": 0.75,
+     "points": 3.94,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Zone that disables instruments, radio or engines",
+     "concept_id": "instrument-disrupting-space-zone",
+     "definition": "A region of space or a planet's surroundings whose fields, radiation or matter jams a spacecraft's instruments, compass, radio or engines.",
+     "quote": "the upper strata of the Aurora Borealis are practically one big electric “leak,” and that the paralysis of your engines was due to complete magnetization of all metallic parts.",
+     "title": "Actions and Reactions",
+     "year": 1909,
+     "authors": [
+      "Rudyard Kipling"
+     ],
+     "came_true": "1958-02",
+     "kind": "first_demonstration",
+     "event": "Explorer 1's Geiger counter read zero counts at high altitude over South America; Van Allen's group showed the counter was saturated by trapped radiation, the Van Allen belt.",
+     "confidence": "high",
+     "lead": 49,
+     "score": 0.625,
+     "points": 3.53,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Round-the-world flight",
+     "concept_id": "round-the-world-flight",
+     "definition": "A flight by aircraft or airship that circles the whole Earth, in a stated short time.",
+     "quote": "Trans-Asiatic Directs we met, soberly ringing the world round the Fiftieth Meridian at an honest seventy knots",
+     "title": "Actions and Reactions",
+     "year": 1909,
+     "authors": [
+      "Rudyard Kipling"
+     ],
+     "came_true": "1947-06-17",
+     "kind": "first_practical_use",
+     "event": "Pan American Clipper America left New York on the first commercial round-the-world flight; Pan Am's scheduled round-the-world service began that month.",
+     "confidence": "medium",
+     "lead": 38,
+     "score": 0.625,
+     "points": 3.3,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-computing",
+   "title": "Computing",
+   "rule": "The most points from ideas in computing.",
+   "winner": {
+    "name": "F. L. Wallace",
+    "key": "F. L. Wallace",
+    "points": 65.0,
+    "stat": "65.0 points from 25 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Randall Garrett",
+     "key": "Randall Garrett",
+     "points": 61.1,
+     "stat": "61.1 points from 26 ideas"
+    },
+    {
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 50.1,
+     "stat": "50.1 points from 20 ideas"
+    },
+    {
+     "name": "Fritz Leiber",
+     "key": "Fritz Leiber",
+     "points": 44.1,
+     "stat": "44.1 points from 18 ideas"
+    },
+    {
+     "name": "H. Beam Piper",
+     "key": "H. Beam Piper",
+     "points": 41.3,
+     "stat": "41.3 points from 17 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Robot nanny and child carer",
+     "concept_id": "childcare-robot",
+     "definition": "A robot or computer that looks after, supervises or entertains children.",
+     "quote": "I do nothing but watch babies. It's built into me.",
+     "title": "The Impossible Voyage Home",
+     "year": 1954,
+     "authors": [
+      "F. L. Wallace"
+     ],
+     "came_true": "2005-03",
+     "kind": "first_demonstration",
+     "event": "NEC publicly demonstrated the 'Childcare Robot PaPeRo' prototype, designed to entertain and watch over children aged 3 to 12.",
+     "confidence": "low",
+     "lead": 51,
+     "score": 0.75,
+     "points": 4.28,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Immersive virtual reality",
+     "concept_id": "virtual-reality",
+     "definition": "A machine that feeds a person's senses a computer-generated world convincing enough to feel real.",
+     "quote": "The tester clamped a mike inches away and adjusted the visio-recorders firmly on his head, where electron beams could sneak in and tap his optic centers.",
+     "title": "The Man Who Was Six",
+     "year": 1954,
+     "authors": [
+      "F. L. Wallace"
+     ],
+     "came_true": "1990",
+     "kind": "first_practical_use",
+     "event": "VPL Research sold complete head-mounted-display VR systems (EyePhone, DataGlove, Reality Built for Two) to outside customers (NASA centers, Pacific Bell, Matsushita, automotive and aircraft design firms), and W Industries launched and sold its Virtuality 1000SU systems the same year to corporations such as BT, Ford and IBM.",
+     "confidence": "medium",
+     "lead": 36,
+     "score": 0.75,
+     "points": 3.91,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Service robot for the public",
+     "concept_id": "service-robot",
+     "definition": "A robot that serves customers or the public as a waiter, bartender, clerk, receptionist or guide.",
+     "quote": "They signed at the desk, giving their baggage claim checks to the robot, who assured them that everything would be zipped straight to their room from the spaceport.",
+     "title": "Mezzerow Loves Company",
+     "year": 1956,
+     "authors": [
+      "F. L. Wallace"
+     ],
+     "came_true": "1983",
+     "kind": "first_practical_use",
+     "event": "The Two Panda Deli (Two Panda Robot Restaurant) in Pasadena, California put two Japanese-built robots, Tanbo R-1 and Tanbo R-2, to work in 1983 carrying trays of food to customers' tables, owned by Shayne Hayashi.",
+     "confidence": "medium",
+     "lead": 27,
+     "score": 0.75,
+     "points": 3.61,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Electronic paper and rewritable display surface",
+     "concept_id": "electronic-paper-display",
+     "definition": "A thin surface whose printed image can be changed electronically, like a sheet of paper that rewrites itself.",
+     "quote": "The front is a special plastic, susceptible to the influence of the visual projector. He doesn't need manual dexterity. He can make any value appear on any card he wants.",
+     "title": "Delay in Transit",
+     "year": 1952,
+     "authors": [
+      "F. L. Wallace"
+     ],
+     "came_true": "1999-05-03",
+     "kind": "first_practical_use",
+     "event": "E Ink Corp. debuted its Immedia electronic-ink sign at a J.C. Penney store in Marlborough, Massachusetts, a flexible ceiling-hung sign with a message changed remotely every few seconds.",
+     "confidence": "medium",
+     "lead": 47,
+     "score": 0.625,
+     "points": 3.49,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Artificial neural network",
+     "concept_id": "artificial-neural-network",
+     "definition": "A computer built or programmed as many interconnected neuron-like units that together compute and learn, modelled on the brain.",
+     "quote": "There was a brain and memory unit that operated much as the human counterpart did. Unlike the human brain, however, it had no body to control, hence more of it was available for thought processes. Entirely neuronic in construction, it was far smaller than an electronic brain of the same capacity.",
+     "title": "Delay in Transit",
+     "year": 1952,
+     "authors": [
+      "F. L. Wallace"
+     ],
+     "came_true": "1996-06",
+     "kind": "first_practical_use",
+     "event": "NCR deployed LeNet-based neural network cheque-reading machines in bank back offices from June 1996 (the Bell Labs group had earlier built ATMs that read cheque amounts with a LeNet on a DSP-32C).",
+     "confidence": "low",
+     "lead": 44,
+     "score": 0.625,
+     "points": 3.43,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-communication",
+   "title": "Communication",
+   "rule": "The most points from ideas in communication.",
+   "winner": {
+    "name": "E. E. Smith",
+    "key": "E. E. Smith",
+    "points": 84.4,
+    "stat": "84.4 points from 30 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 64.5,
+     "stat": "64.5 points from 25 ideas"
+    },
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 56.9,
+     "stat": "56.9 points from 23 ideas"
+    },
+    {
+     "name": "Godfrey Sweven",
+     "key": "Godfrey Sweven",
+     "points": 51.1,
+     "stat": "51.1 points from 19 ideas"
+    },
+    {
+     "name": "Edmond Hamilton",
+     "key": "Edmond Hamilton",
+     "points": 43.7,
+     "stat": "43.7 points from 17 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Three-dimensional telepresence",
+     "concept_id": "holographic-telepresence",
+     "definition": "A communication system that projects a life-size three-dimensional image of a distant person into the room so that the two can talk as if together.",
+     "quote": "You will see simply three-dimensional talking pictures of ourselves, transmitted by radio.",
+     "title": "Skylark Three",
+     "year": 1930,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2022",
+     "kind": "first_practical_use",
+     "event": "Google began testing Project Starline with partner companies such as Salesforce and T-Mobile from late 2022.",
+     "confidence": "low",
+     "lead": 92,
+     "score": 0.75,
+     "points": 4.9,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Brain-to-brain link",
+     "concept_id": "brain-to-brain-link",
+     "definition": "A direct connection between human brains, by wires or headsets, that shares experiences or pools thinking between people.",
+     "quote": "Dunark clamped sets of multiple electrodes, connected to a set of instruments, upon the temples of his father, Dorothy, and Seaton. He pressed a lever, and instantly Dorothy and Seaton read each other's minds to the minutest detail",
+     "title": "The Skylark of Space",
+     "year": 1928,
+     "authors": [
+      "E. E. Smith",
+      "Lee Hawkins Garby"
+     ],
+     "came_true": "2013-08-12",
+     "kind": "first_demonstration",
+     "event": "At the University of Washington on 12 Aug 2013, Rajesh Rao's EEG-read motor imagery was sent over the Internet to trigger a TMS pulse in Andrea Stocco's brain, making his finger press a key.",
+     "confidence": "medium",
+     "lead": 85,
+     "score": 0.75,
+     "points": 4.82,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Pocket wireless telephone",
+     "concept_id": "mobile-phone",
+     "definition": "A small portable phone or radio-telephone carried on the person that makes calls over a wide area without wires.",
+     "quote": "It was a tiny instrument, no larger than a watch, but of practically unlimited range.",
+     "title": "The Skylark of Space",
+     "year": 1928,
+     "authors": [
+      "E. E. Smith",
+      "Lee Hawkins Garby"
+     ],
+     "came_true": "1983-10-13",
+     "kind": "first_practical_use",
+     "event": "First commercial wireless call on a Motorola DynaTAC at Ameritech Mobile's Chicago cellular launch; the DynaTAC 8000X was the first commercially available handheld cellular phone.",
+     "confidence": "medium",
+     "lead": 55,
+     "score": 0.75,
+     "points": 4.36,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Video on demand",
+     "concept_id": "video-on-demand",
+     "definition": "A service that lets a viewer choose and play any recorded program or live feed from a catalogue at will.",
+     "quote": "Central Library of History, please.... Mrs. R. B. Seaton fourteen seventy. Please put on reel three of the 'Exploits.'",
+     "title": "The Skylark of Valeron",
+     "year": 1934,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "1988",
+     "kind": "first_practical_use",
+     "event": "British Telecom's Westminster Cable network in London operated an interactive video library, letting customers choose a film from videodisc players on request, described in June 1988 as the world's first commercially operational full-bandwidth video library service.",
+     "confidence": "low",
+     "lead": 54,
+     "score": 0.75,
+     "points": 4.34,
+     "demonstration_only": false
+    },
+    {
+     "concept": "See-through-wall imaging",
+     "concept_id": "see-through-wall-imaging",
+     "definition": "A ray or sensor that shows the inside of buildings, ships or rock, or detects living beings behind them.",
+     "quote": "Human beings, although of some foreign species!\" exclaimed the captain, as his vision-ray swept through the undamaged upper portion of the great liner",
+     "title": "Spacehounds of IPC",
+     "year": 1931,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "1970",
+     "kind": "first_demonstration",
+     "event": "Luis Alvarez's team produced the first muogram, using cosmic-ray muons to image the interior of the Pyramid of Khafre in search of hidden chambers.",
+     "confidence": "low",
+     "lead": 39,
+     "score": 0.75,
+     "points": 3.99,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
+   "id": "domain-transport",
+   "title": "Transport",
+   "rule": "The most points from ideas in transport.",
+   "winner": {
+    "name": "George Chetwynd Griffith",
+    "key": "George Chetwynd Griffith",
+    "points": 66.2,
+    "stat": "66.2 points from 21 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Luis Senarens",
+     "key": "Luis Senarens",
+     "points": 65.1,
+     "stat": "65.1 points from 21 ideas"
+    },
+    {
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 61.5,
+     "stat": "61.5 points from 25 ideas"
+    },
+    {
+     "name": "Jules Verne",
+     "key": "Jules Verne",
+     "points": 58.2,
+     "stat": "58.2 points from 19 ideas"
+    },
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 55.1,
+     "stat": "55.1 points from 20 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "High-speed train",
+     "concept_id": "high-speed-train",
+     "definition": "A passenger train running far faster than ordinary trains, at 150 to 300 mph or more on dedicated track.",
+     "quote": "Trains could travel at two hundred miles an hour along the hundreds of quadruple lines which covered the Continent with their gigantic network",
+     "title": "Olga Romanoff",
+     "year": 1894,
+     "authors": [
+      "George Chetwynd Griffith"
+     ],
+     "came_true": "1981-09-27",
+     "kind": "first_practical_use",
+     "event": "The TGV began regular fare-paying service between Paris and Lyon on 27 September 1981 on the new dedicated LGV Sud-Est line, at up to 260 km/h (about 160 mph).",
+     "confidence": "high",
+     "lead": 87,
+     "score": 0.75,
+     "points": 4.84,
+     "demonstration_only": false
+    },
+    {
+     "concept": "VTOL aircraft",
+     "concept_id": "vtol-convertiplane",
+     "definition": "An aircraft that takes off and lands vertically with rotors, fans or jets and then flies forward on wings like an airplane.",
+     "quote": "On her five masts she carried five fan-wheels, capable of raising her vertically to a height of ten thousand feet without the assistance of her air-planes, and her three propellers, each worked by duplex engines, were able to drive her through the air at a speed of two hundred miles an hour in a calm atmosphere.",
+     "title": "The Angel of the Revolution",
+     "year": 1893,
+     "authors": [
+      "George Chetwynd Griffith"
+     ],
+     "came_true": "1969-04-01",
+     "kind": "first_practical_use",
+     "event": "The Hawker Siddeley Harrier GR.1 officially entered RAF service on 1 April 1969, with No. 1 Squadron converting at RAF Wittering that month.",
+     "confidence": "medium",
+     "lead": 76,
+     "score": 0.75,
+     "points": 4.7,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Flying submarine",
+     "concept_id": "flying-submarine",
+     "definition": "A craft able both to fly and to dive and operate underwater.",
+     "quote": "Her side-fins inclined upwards, and, like a flash, she leapt from the water, and began to circle round the room.",
+     "title": "The World Peril of 1910",
+     "year": 1906,
+     "authors": [
+      "George Chetwynd Griffith"
+     ],
+     "came_true": "1964-06-09",
+     "kind": "first_demonstration",
+     "event": "Donald Reid's single-seat RFS-1 completed a full cycle over the Shrewsbury River, New Jersey: flew about 10 m up and submerged about 2 m, piloted by his son.",
+     "confidence": "medium",
+     "lead": 58,
+     "score": 0.75,
+     "points": 4.41,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Helicopter",
+     "concept_id": "helicopter",
+     "definition": "An aircraft lifted and driven by powered rotating rotor blades or screws, able to take off, hover and land vertically.",
+     "quote": "At nine o'clock the moon was high in the heavens. At that hour the fan-wheels of the little squadron rose from the decks, and at a signal from Arnold began to revolve.",
+     "title": "The Angel of the Revolution",
+     "year": 1893,
+     "authors": [
+      "George Chetwynd Griffith"
+     ],
+     "came_true": "1942-11",
+     "kind": "first_practical_use",
+     "event": "Kriegsmarine Flettner Fl 282 V6 flown as a reconnaissance craft over the Aegean from the minelayer Drache, November 1942 to early 1943.",
+     "confidence": "low",
+     "lead": 49,
+     "score": 0.75,
+     "points": 4.23,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Transparent vehicle body",
+     "concept_id": "transparent-vehicle-body",
+     "definition": "A vehicle whose body, canopy or hull is made of clear material, so occupants see out all around.",
+     "quote": "a sliding door opened in the after-part of the glass dome which covered the deck from stem to stern, a light metal stairway fell from it",
+     "title": "Olga Romanoff",
+     "year": 1894,
+     "authors": [
+      "George Chetwynd Griffith"
+     ],
+     "came_true": "1939-04",
+     "kind": "first_demonstration",
+     "event": "General Motors showed a Pontiac with a body of clear Plexiglas (the Ghost Car) at the New York World's Fair, opened 30 April 1939.",
+     "confidence": "medium",
+     "lead": 45,
+     "score": 0.75,
+     "points": 4.14,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
+   "id": "domain-energy",
+   "title": "Energy",
+   "rule": "The most points from ideas in energy.",
+   "winner": {
+    "name": "Jules Verne",
+    "key": "Jules Verne",
+    "points": 38.9,
+    "stat": "38.9 points from 12 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "George O. Smith",
+     "key": "George O. Smith",
+     "points": 34.5,
+     "stat": "34.5 points from 13 ideas"
+    },
+    {
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 32.9,
+     "stat": "32.9 points from 13 ideas"
+    },
+    {
+     "name": "John W. Campbell Jr",
+     "key": "John W. Campbell Jr",
+     "points": 29.7,
+     "stat": "29.7 points from 12 ideas"
+    },
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 27.6,
+     "stat": "27.6 points from 9 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Hydrogen and oxygen engines and heating",
+     "concept_id": "hydrogen-oxygen-combustion",
+     "definition": "Burning hydrogen with oxygen in engines, furnaces or turbines to give motive power, heat or electricity.",
+     "quote": "I decompose it by means of a powerful Buntzen battery. Water, as you know, consists of two parts of hydrogen to one of oxygen gas.",
+     "title": "Five Weeks in a Balloon",
+     "year": 1863,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1966-05-30",
+     "kind": "first_practical_use",
+     "event": "An Atlas-Centaur (AC-10), whose Centaur stage burned liquid hydrogen with liquid oxygen in two RL-10 engines, launched Surveyor 1 toward the Moon on 30 May 1966, the Centaur's first operational flight.",
+     "confidence": "medium",
+     "lead": 103,
+     "score": 0.75,
+     "points": 5.03,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Seasonal heat storage",
+     "concept_id": "thermal-energy-storage",
+     "definition": "Storing summer or solar heat in reservoirs, rock or underground for use in winter.",
+     "quote": "should a bold engineer conceive the idea of putting the excess of Summer temperature into large reservoirs for use during the Winter in our then frigid zones",
+     "title": "Topsy-Turvy",
+     "year": 1889,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "Lyckebo, near Uppsala, Sweden: solar heat stored in a roughly 100,000 m3 rock cavern for seasonal use, serving 550 apartments.",
+     "confidence": "low",
+     "lead": 96,
+     "score": 0.75,
+     "points": 4.95,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Electric-powered aircraft",
+     "concept_id": "electric-airship-or-aeroplane",
+     "definition": "An aircraft driven by electric motors fed from batteries, generators or atmospheric electricity.",
+     "quote": "Of the piles and accumulators and the machinery that drove the ship nothing was damaged.",
+     "title": "Robur the Conqueror",
+     "year": 1886,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "2004",
+     "kind": "first_practical_use",
+     "event": "Lange Aviation delivered the first production Antares 20E, a battery-electric self-launching glider with a 42 kW motor, to a customer in 2004, the first series-produced electric aircraft in service.",
+     "confidence": "low",
+     "lead": 118,
+     "score": 0.625,
+     "points": 4.31,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Airborne searchlight",
+     "concept_id": "airborne-searchlight",
+     "definition": "A powerful searchlight carried on an aircraft or airship to light the ground or sea or another craft at night.",
+     "quote": "In a twinkling, an intense and dazzling light was produced, with an insupportable glow between the two pointed ends of charcoal, and a huge jet of electric radiance literally broke the darkness of the night.",
+     "title": "Five Weeks in a Balloon",
+     "year": 1863,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1914",
+     "kind": "first_practical_use",
+     "event": "German military airships (the naval Zeppelin 'LL III' and, per the report, all German airships) carried an electric searchlight of 40,000 candle-power to light the ground from about 4,500 ft, for use in dropping bombs at night; reported in Scientific American, August 1914.",
+     "confidence": "low",
+     "lead": 51,
+     "score": 0.75,
+     "points": 4.28,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Cold light and glowing panel illumination",
+     "concept_id": "cold-light-luminous-panel",
+     "definition": "Lighting that gives bright, heatless or shadowless light from glowing walls, ceilings, panels, tubes or gas without a visible bulb.",
+     "quote": "A richly-ornamented room, quickly traversed by the colonists, was joined to a library, over which a luminous ceiling shed a flood of light.",
+     "title": "The Mysterious Island",
+     "year": 1874,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1904",
+     "kind": "first_practical_use",
+     "event": "Daniel McFarlan Moore's vacuum-tube lighting was first installed commercially, a 155-foot tube built in place as a permanent fixture around a hardware store in Newark, New Jersey.",
+     "confidence": "medium",
+     "lead": 30,
+     "score": 0.75,
+     "points": 3.72,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-medicine-biology",
+   "title": "Medicine and biology",
+   "rule": "The most points from ideas in medicine and biology.",
+   "winner": {
+    "name": "Godfrey Sweven",
+    "key": "Godfrey Sweven",
+    "points": 61.4,
+    "stat": "61.4 points from 22 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 53.1,
+     "stat": "53.1 points from 19 ideas"
+    },
+    {
+     "name": "F. L. Wallace",
+     "key": "F. L. Wallace",
+     "points": 44.0,
+     "stat": "44.0 points from 18 ideas"
+    },
+    {
+     "name": "Raymond Z. Gallun",
+     "key": "Raymond Z. Gallun",
+     "points": 41.3,
+     "stat": "41.3 points from 16 ideas"
+    },
+    {
+     "name": "Francis Bacon",
+     "key": "Francis Bacon",
+     "points": 30.6,
+     "stat": "30.6 points from 8 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "New or sharpened human senses",
+     "concept_id": "enhanced-or-extra-senses",
+     "definition": "Training, surgery, implants or evolution that give humans extra senses or hyper-acute ones, such as seeing infrared or radio waves.",
+     "quote": "a delicate fringe of hair upon the upper lip, too minute to be seen by ordinary eyes, revealed to them the movements and character of gases and vapours that were so faint in their impulse as to be unrecognisable by the other senses.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "2004",
+     "kind": "first_practical_use",
+     "event": "Neil Harbisson has worn a skull-anchored antenna since 2004 that gives him colour perception including infrared and ultraviolet through bone-conducted sound.",
+     "confidence": "low",
+     "lead": 101,
+     "score": 0.625,
+     "points": 4.17,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Sleep-inducing spray or device",
+     "concept_id": "sleep-inducing-device",
+     "definition": "A spray, bed or apparatus that induces restful sleep, prevents nightmares or soothes nerves.",
+     "quote": "I afterwards found that through the whole fabric of the pillow passed a mild current of positive electricity, that drew the energy from the nerve-centres of the head, and soothed every tissue to rest.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "1946",
+     "kind": "first_practical_use",
+     "event": "Tietz and colleagues in the US treated 47 schizophrenic patients with electronarcosis, an electric-current sleep produced by a head-electrode machine (1945-46); British trials (Paterson, 1947) followed, and by 1948 'prolonged electric sleep' was in use for mental patients in the US, Canada and Britain.",
+     "confidence": "low",
+     "lead": 43,
+     "score": 0.75,
+     "points": 4.09,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Non-lethal stun gun",
+     "concept_id": "nonlethal-stun-weapon",
+     "definition": "A handheld or mounted weapon that knocks out or incapacitates a person at range without killing, by shock, sleep ray, spray or gas-propelled dart, often with an adjustable setting.",
+     "quote": "a band of Limanorans set out on wings by night, armed with a new surgical instrument, called the idlumian, which could give an electric shock to any part of the human system and paralyse it either for a time or permanently",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "1975-03",
+     "kind": "first_practical_use",
+     "event": "The Taser Public Defender, a flashlight-shaped dart stun gun made by Advanced Chemical Technology of Los Angeles, was first marketed in March 1975; more than 1,000 sold by November, mostly to the public.",
+     "confidence": "medium",
+     "lead": 72,
+     "score": 0.625,
+     "points": 3.87,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Routine mass health screening",
+     "concept_id": "routine-health-screening",
+     "definition": "Regular, often compulsory, screening of whole populations with instruments to catch disease early.",
+     "quote": "They were used in the weekly medical inspection, which every member of the commonwealth underwent.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "1936",
+     "kind": "first_practical_use",
+     "event": "Abreugraphy was used from 1936 for screening of groups in Brazil, later required for public jobs and schools.",
+     "confidence": "low",
+     "lead": 33,
+     "score": 0.75,
+     "points": 3.82,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Sleep learning",
+     "concept_id": "sleep-learning",
+     "definition": "Teaching people while they sleep or are hypnotized by playing recorded lessons.",
+     "quote": "It was the beginning of my education, which was to go on even in sleep, moulding dreams that should modify my whole nature.",
+     "title": "Limanora",
+     "year": 1903,
+     "authors": [
+      "Godfrey Sweven"
+     ],
+     "came_true": "2019-02",
+     "kind": "first_demonstration",
+     "event": "Zust et al. (University of Bern) played recorded pseudoword/German word pairs to young adults in slow-wave sleep and found they had formed and kept new word associations that showed up on an implicit test after waking.",
+     "confidence": "low",
+     "lead": 116,
+     "score": 0.5,
+     "points": 3.44,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
+   "id": "domain-weapons-war",
+   "title": "Weapons and war",
+   "rule": "The most points from ideas in weapons and war.",
+   "winner": {
+    "name": "E. E. Smith",
+    "key": "E. E. Smith",
+    "points": 81.0,
+    "stat": "81.0 points from 31 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 69.6,
+     "stat": "69.6 points from 26 ideas"
+    },
+    {
+     "name": "George Chetwynd Griffith",
+     "key": "George Chetwynd Griffith",
+     "points": 66.4,
+     "stat": "66.4 points from 24 ideas"
+    },
+    {
+     "name": "John W. Campbell Jr",
+     "key": "John W. Campbell Jr",
+     "points": 64.5,
+     "stat": "64.5 points from 23 ideas"
+    },
+    {
+     "name": "Murray Leinster",
+     "key": "Murray Leinster",
+     "points": 54.3,
+     "stat": "54.3 points from 19 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Microwave and radio-wave weapon",
+     "concept_id": "microwave-radio-weapon",
+     "definition": "A transmitter that aims radio, microwave or electromagnetic waves at people or equipment to harm or disable them from a distance.",
+     "quote": "They produce heat by means of powerful wave-generators and by setting up heavy induced currents in the armor. They can melt arenak that way.",
+     "title": "The Skylark of Space",
+     "year": 1928,
+     "authors": [
+      "E. E. Smith",
+      "Lee Hawkins Garby"
+     ],
+     "came_true": "1988",
+     "kind": "first_demonstration",
+     "event": "The US Air Force Weapons Laboratory (Kirtland AFB) 'Gypsy' high-power microwave source, a gigawatt-class virtual-cathode emitter, was operating by early 1988 (aimed at animals at 1 to 4 m in bioeffects tests) and in the late 1980s in the Air Force's first unclassified microwave-weapon test took out a bank of personal computers.",
+     "confidence": "low",
+     "lead": 60,
+     "score": 0.75,
+     "points": 4.45,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Powered exoskeleton",
+     "concept_id": "powered-exoskeleton",
+     "definition": "A wearable rigid frame with power assistance that lets the wearer carry or bear loads beyond normal strength.",
+     "quote": "It was a powerhouse, built of dureum a quarter of an inch thick. Kinnison was not walking in it; he was merely the engineer of a battery of two-thousand-horsepower motors.",
+     "title": "Children of the Lens",
+     "year": 1947,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2004-03",
+     "kind": "first_demonstration",
+     "event": "UC Berkeley's BLEEX (DARPA-funded, Kazerooni) was shown in March 2004: a self-powered hydraulic leg exoskeleton on which a pilot carried a 70-pound backpack while feeling about 5 pounds.",
+     "confidence": "high",
+     "lead": 57,
+     "score": 0.75,
+     "points": 4.39,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Cutting beam or shearing ray",
+     "concept_id": "cutting-beam-weapon",
+     "definition": "A concentrated beam, plane of force or filament that slices through steel hulls and structures like a cutting tool.",
+     "quote": "Set his DeLameter to minimum aperture and at maximum blast, to throw a cutting pencil against which no material substance could stand.",
+     "title": "Galactic Patrol",
+     "year": 1937,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "1970",
+     "kind": "first_practical_use",
+     "event": "BOC supplied the first true laser cutting machine tool in 1970 to dieboard maker William Thynes in Scotland, a CO2 laser cutting in production.",
+     "confidence": "low",
+     "lead": 33,
+     "score": 0.75,
+     "points": 3.82,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Sleep and incapacitating gas",
+     "concept_id": "incapacitating-gas",
+     "definition": "A gas or aerosol that knocks out or paralyzes people en masse or individually, delivered by grenade, vent, spray or aircraft.",
+     "quote": "To drop into that duct his container of thionite, to drench that container with the reagent which would in sixty seconds dissolve completely that container's substance without affecting either its contents or the metal of the duct",
+     "title": "Galactic Patrol",
+     "year": 1937,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "2002-10-26",
+     "kind": "first_practical_use",
+     "event": "Russian special forces pumped an aerosol anesthetic (believed to be a fentanyl-derivative mixture, 'Kolokol-1') into the ventilation of the Dubrovka theater in Moscow, knocking out the hostages and hostage takers before the storming; many hostages died.",
+     "confidence": "high",
+     "lead": 65,
+     "score": 0.625,
+     "points": 3.78,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Nerve-attacking weapon",
+     "concept_id": "nerve-attacking-weapon",
+     "definition": "A directed weapon that kills or disables by destroying or overloading nerve tissue rather than by wounding.",
+     "quote": "Ray six, \"the softener,\" was a band of frequencies extending from violet far up into the ultra-violet. When driven with sufficient power, this ray destroyed eyesight and nervous tissue",
+     "title": "Skylark Three",
+     "year": 1930,
+     "authors": [
+      "E. E. Smith"
+     ],
+     "came_true": "1975-03",
+     "kind": "first_practical_use",
+     "event": "Taser Public Defender first marketed in March 1975 by Taser Systems / Advanced Chemical Technology of Los Angeles; over 1,000 sold by November 1975, mostly to civilians, a few to police.",
+     "confidence": "medium",
+     "lead": 45,
+     "score": 0.625,
+     "points": 3.45,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-space",
+   "title": "Space",
+   "rule": "The most points from ideas in space.",
+   "winner": {
+    "name": "Jules Verne",
+    "key": "Jules Verne",
+    "points": 149.5,
+    "stat": "149.5 points from 42 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Murray Leinster",
+     "key": "Murray Leinster",
+     "points": 141.0,
+     "stat": "141.0 points from 61 ideas"
+    },
+    {
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 116.8,
+     "stat": "116.8 points from 43 ideas"
+    },
+    {
+     "name": "George O. Smith",
+     "key": "George O. Smith",
+     "points": 114.6,
+     "stat": "114.6 points from 48 ideas"
+    },
+    {
+     "name": "Edmond Hamilton",
+     "key": "Edmond Hamilton",
+     "points": 107.3,
+     "stat": "107.3 points from 40 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Weightlessness in spaceflight",
+     "concept_id": "weightlessness-microgravity",
+     "definition": "People and objects float freely in the free fall of orbit or coasting flight, so they move by pushing off surfaces.",
+     "quote": "Nicholl having accidentally let a glass slip from his hand, the glass, instead of falling, remained suspended in the air.",
+     "title": "From the Earth to the Moon, Direct in Ninety-Seven Hours and Twenty Minutes",
+     "year": 1872,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1961-04-12",
+     "kind": "first_demonstration",
+     "event": "Yuri Gagarin orbited the Earth in Vostok 1 and floated weightless in the cabin.",
+     "confidence": "high",
+     "lead": 89,
+     "score": 0.875,
+     "points": 5.68,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Second natural moon of Earth",
+     "concept_id": "earth-second-moon",
+     "definition": "An additional small natural satellite of Earth besides the Moon, previously undiscovered or newly captured, is found orbiting the planet.",
+     "quote": "It is a simple bolide, but one of such enormous dimensions that the Earth's attraction has made it a satellite.",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "2006-09-14",
+     "kind": "first_demonstration",
+     "event": "Catalina Sky Survey (Arizona) discovered 6R10DB9, later 2006 RH120, a meter-size natural object captured into Earth orbit and making repeated loops until mid-2007.",
+     "confidence": "medium",
+     "lead": 136,
+     "score": 0.75,
+     "points": 5.32,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Gravity-neutral (Lagrange) point between two bodies",
+     "concept_id": "lagrange-point-parking",
+     "definition": "A spacecraft or station sits at a point between two worlds, such as Earth and Moon, where their gravitational pulls balance so it stays in place relative to them.",
+     "quote": "Suppose it to be animated by just sufficient velocity to reach the neutral point, but not to pass it. In that case, the Projectile would remain forever in the same spot, perfectly motionless as far as regards the Earth and the Moon",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1978-11-20",
+     "kind": "first_practical_use",
+     "event": "ISEE-3 in its L1 halo orbit began measuring the solar wind upstream of Earth, the station role later filled operationally by SOHO, Wind and DSCOVR.",
+     "confidence": "low",
+     "lead": 108,
+     "score": 0.75,
+     "points": 5.08,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Spacesuit",
+     "concept_id": "spacesuit",
+     "definition": "A sealed suit with its own air supply and communication that lets a person survive and work outside a spacecraft or on another world.",
+     "quote": "Why didn't you bring a scaphander and an air pump? I could then venture out of the Projectile as readily and as safely as the diver leaves his boat and walks about on the bottom of the river!",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1969-01-16",
+     "kind": "first_practical_use",
+     "event": "Yevgeny Khrunov and Alexei Yeliseyev, wearing Yastreb suits with chest-mounted regenerative life-support units, spacewalked from Soyuz 5 to Soyuz 4 to transfer crews between two docked spacecraft.",
+     "confidence": "high",
+     "lead": 99,
+     "score": 0.75,
+     "points": 4.98,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Walking and leaping in low gravity",
+     "concept_id": "low-gravity-leaping",
+     "definition": "On the Moon or small bodies, reduced gravity lets people take huge bounds and carry loads easily.",
+     "quote": "you can take a stride 15 feet in width as easily as you can now take one of ordinary length.",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1969-07-21",
+     "kind": "first_practical_use",
+     "event": "The same Apollo 11 moonwalk was real exploration work: the crew loped about the surface, set up experiments and collected samples, with loping becoming their preferred way to move.",
+     "confidence": "low",
+     "lead": 99,
+     "score": 0.75,
+     "points": 4.98,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-environment",
+   "title": "Environment",
+   "rule": "The most points from ideas in environment.",
+   "winner": {
+    "name": "Jules Verne",
+    "key": "Jules Verne",
+    "points": 32.1,
+    "stat": "32.1 points from 9 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 29.7,
+     "stat": "29.7 points from 12 ideas"
+    },
+    {
+     "name": "Murray Leinster",
+     "key": "Murray Leinster",
+     "points": 24.7,
+     "stat": "24.7 points from 11 ideas"
+    },
+    {
+     "name": "Ray Cummings",
+     "key": "Ray Cummings",
+     "points": 22.4,
+     "stat": "22.4 points from 10 ideas"
+    },
+    {
+     "name": "Garrett Putman Serviss",
+     "key": "Garrett Putman Serviss",
+     "points": 17.3,
+     "stat": "17.3 points from 6 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Astronomical cycles changing Earth's climate",
+     "concept_id": "orbital-cycles-climate",
+     "definition": "Slow astronomical cycles such as precession of the poles and equinoxes, orbital changes or varying interstellar gas that shift Earth's temperatures, polar ice and ice ages over long periods.",
+     "quote": "would it not require a lapse of twelve thousand years for Vega to become our pole-star, in accordance with the said phenomenon, and for the Arctic regions to undergo a change in climate?",
+     "title": "The Purchase of the North Pole",
+     "year": 1889,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1976-12",
+     "kind": "first_demonstration",
+     "event": "Hays, Imbrie and Shackleton (Science, 10 Dec 1976) showed 23,000, 42,000 and about 100,000 year cycles in Southern Ocean core climate records matching precession, obliquity and eccentricity.",
+     "confidence": "medium",
+     "lead": 87,
+     "score": 0.75,
+     "points": 4.84,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Continental-scale water engineering",
+     "concept_id": "megascale-water-engineering",
+     "definition": "Rivers, canals and aqueducts rebuilt on a continental scale to irrigate deserts, tame floods or reclaim land from the sea.",
+     "quote": "Those climates now so fatal to strangers will be purified by cultivation and by drainage of the soil, and those scattered water supplies will be gathered into one common bed to form an artery of navigation.",
+     "title": "Five Weeks in a Balloon",
+     "year": 1863,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "2013-11",
+     "kind": "first_practical_use",
+     "event": "Water diversion on the first phase of the East route started in November 2013, carrying Yangtze water to Shandong along the Grand Canal for supply.",
+     "confidence": "high",
+     "lead": 150,
+     "score": 0.625,
+     "points": 4.52,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Thinning atmosphere",
+     "concept_id": "atmosphere-loss-thin-air",
+     "definition": "A planet or fragment losing air, so that breathing is labored and sound weakens, or its air is locked up chemically.",
+     "quote": "they were unconscious that their respiration became forced and rapid, like that of a mountaineer when he has reached an altitude where the air has become less charged with oxygen.",
+     "title": "Off on a Comet! a Journey Through Planetary Space",
+     "year": 1877,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1989",
+     "kind": "first_demonstration",
+     "event": "Phobos 2's plasma instruments measured ions escaping from Mars's upper atmosphere into space (Lundin et al., Nature, October 1989).",
+     "confidence": "low",
+     "lead": 112,
+     "score": 0.625,
+     "points": 4.26,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Seasonal heat storage",
+     "concept_id": "thermal-energy-storage",
+     "definition": "Storing summer or solar heat in reservoirs, rock or underground for use in winter.",
+     "quote": "Mitigating the rigors of winter, by giving back to the atmosphere the surplus heat stored up during the summer, they have revolutionized agriculture.",
+     "title": "In the Year 2889",
+     "year": 1889,
+     "authors": [
+      "Michel Verne",
+      "Jules Verne"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "Lyckebo, near Uppsala, Sweden: solar heat stored in a roughly 100,000 m3 rock cavern for seasonal use, serving 550 apartments.",
+     "confidence": "low",
+     "lead": 96,
+     "score": 0.625,
+     "points": 4.12,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Change in Earth's rotation",
+     "concept_id": "earth-rotation-change",
+     "definition": "The Earth's spin speeding up, slowing or stopping, changing the length of the day or leaving one side permanently facing the sun.",
+     "quote": "Although the days and nights had become reduced from twenty-four hours to twelve, Captain Servadac would not accept the new condition of things",
+     "title": "Off on a Comet! a Journey Through Planetary Space",
+     "year": 1877,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1939",
+     "kind": "first_practical_use",
+     "event": "The Earth's rotation was shown to be changing in speed (day length varying and, over the long run, slowing), the first time the change was established as having happened.",
+     "confidence": "low",
+     "lead": 62,
+     "score": 0.625,
+     "points": 3.74,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-economy",
+   "title": "Economy",
+   "rule": "The most points from ideas in economy.",
+   "winner": {
+    "name": "Fritz Leiber",
+    "key": "Fritz Leiber",
+    "points": 16.9,
+    "stat": "16.9 points from 6 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Percy Greg",
+     "key": "Percy Greg",
+     "points": 13.0,
+     "stat": "13.0 points from 4 ideas"
+    },
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 11.6,
+     "stat": "11.6 points from 4 ideas"
+    },
+    {
+     "name": "F. L. Wallace",
+     "key": "F. L. Wallace",
+     "points": 11.2,
+     "stat": "11.2 points from 3 ideas"
+    },
+    {
+     "name": "Hugo Gernsback",
+     "key": "Hugo Gernsback",
+     "points": 11.1,
+     "stat": "11.1 points from 4 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Robot mannequin",
+     "concept_id": "robot-fashion-mannequin",
+     "definition": "A robot that models clothing or stands as a shop-window display figure.",
+     "quote": "The cab had just hummed past Monstro Multi-Products' blindingly bright basement show windows, behind which a file of dress-display robots marched in an endless figure eight",
+     "title": "The Green Millennium",
+     "year": 1953,
+     "authors": [
+      "Fritz Leiber"
+     ],
+     "came_true": "2009-06",
+     "kind": "first_practical_use",
+     "event": "Flower Robotics began renting and selling Palette and UT Palette robotic mannequins to customers in Japan for fashion shows and events; its robots had already appeared in some department stores.",
+     "confidence": "low",
+     "lead": 56,
+     "score": 0.75,
+     "points": 4.37,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Service robot for the public",
+     "concept_id": "service-robot",
+     "definition": "A robot that serves customers or the public as a waiter, bartender, clerk, receptionist or guide.",
+     "quote": "For Robie was the logical conclusion of the development of vending machines. All the earlier ones had stood in one place, on a floor or hanging on a wall, and blankly delivered merchandise in return for coins, whereas Robie searched for customers.",
+     "title": "A Bad Day for Sales",
+     "year": 1953,
+     "authors": [
+      "Fritz Leiber"
+     ],
+     "came_true": "1983",
+     "kind": "first_practical_use",
+     "event": "The Two Panda Deli (Two Panda Robot Restaurant) in Pasadena, California put two Japanese-built robots, Tanbo R-1 and Tanbo R-2, to work in 1983 carrying trays of food to customers' tables, owned by Shayne Hayashi.",
+     "confidence": "medium",
+     "lead": 30,
+     "score": 0.625,
+     "points": 3.1,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Humanoid robot",
+     "concept_id": "humanoid-robot",
+     "definition": "A robot with a human-shaped body that walks, talks and handles objects in human surroundings.",
+     "quote": "a host of dress-display robots, arrayed in everything from high collared sable evening cloaks to bathing jewelry. Their hair gleamed with a hundred tints, their suede-rubber skins glowed with a creamy seductiveness",
+     "title": "The Green Millennium",
+     "year": 1953,
+     "authors": [
+      "Fritz Leiber"
+     ],
+     "came_true": "2024-06",
+     "kind": "first_practical_use",
+     "event": "GXO Logistics and Agility Robotics signed a multi-year paid agreement (27 June 2024) to deploy the bipedal Digit in a live warehouse, moving totes, after a late-2023 pilot.",
+     "confidence": "low",
+     "lead": 71,
+     "score": 0.5,
+     "points": 3.08,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Disposable paper clothing and strong paper",
+     "concept_id": "disposable-paper-clothing",
+     "definition": "Clothing and goods made from cheap, strong or tearproof paper that replaces cloth and is discarded after use.",
+     "quote": "trying to make throwaway paper dresses last a month",
+     "title": "The Green Millennium",
+     "year": 1953,
+     "authors": [
+      "Fritz Leiber"
+     ],
+     "came_true": "1966",
+     "kind": "first_practical_use",
+     "event": "Scott Paper Company offered a wear-it-once paper dress to the public by mail order in 1966, starting the paper dress fashion.",
+     "confidence": "medium",
+     "lead": 13,
+     "score": 0.75,
+     "points": 2.86,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Automatic house cleaning",
+     "concept_id": "automated-housecleaning",
+     "definition": "Floors, dust, dishes, laundry and rooms clean themselves or are cleaned by built-in machinery without human work.",
+     "quote": "she'd be sweeping up after some sweeping robot",
+     "title": "The Green Millennium",
+     "year": 1953,
+     "authors": [
+      "Fritz Leiber"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "A floor-cleaning robot was in use in supermarkets, and the US Navy had tested it for scrubbing ship decks (per a 1985 book); the machine and maker are not named.",
+     "confidence": "low",
+     "lead": 32,
+     "score": 0.5,
+     "points": 2.52,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-society-politics",
+   "title": "Society and politics",
+   "rule": "The most points from ideas in society and politics.",
+   "winner": {
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 11.0,
+    "stat": "11.0 points from 4 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Fritz Leiber",
+     "key": "Fritz Leiber",
+     "points": 7.3,
+     "stat": "7.3 points from 3 ideas"
+    },
+    {
+     "name": "Murray Leinster",
+     "key": "Murray Leinster",
+     "points": 7.3,
+     "stat": "7.3 points from 3 ideas"
+    },
+    {
+     "name": "Stanley Mullen",
+     "key": "Stanley Mullen",
+     "points": 5.1,
+     "stat": "5.1 points from 2 ideas"
+    },
+    {
+     "name": "Katherine MacLean",
+     "key": "Katherine MacLean",
+     "points": 3.8,
+     "stat": "3.8 points from 1 idea"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Electronic voting and vote counting",
+     "concept_id": "electronic-voting",
+     "definition": "Votes cast or counted by electrical or computer machines, with totals reported automatically.",
+     "quote": "an electrician and an expert locksmith could in a few weeks, and for a few hundred pounds, devise and construct a member's desk and key, committee-room tapes and voting-desks, and a general recording apparatus",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1964-09",
+     "kind": "first_practical_use",
+     "event": "Fulton and DeKalb counties, Georgia, used punch-card ballots (Votomatic/Vote Master type) with computer tallying in the September 1964 primary, the first significant use of computers to count real votes in the US.",
+     "confidence": "medium",
+     "lead": 63,
+     "score": 0.625,
+     "points": 3.75,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Central citizen database and mass surveillance",
+     "concept_id": "mass-surveillance-database",
+     "definition": "A government computer that holds a dossier on every citizen and tracks them through their records.",
+     "quote": "a man or woman who has refused to work once is known by a thumb-marking system in the Company’s offices all over the world.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1964",
+     "kind": "first_practical_use",
+     "event": "Same event: the register was run for administration (replacing electorate and school lists) from 1964.",
+     "confidence": "medium",
+     "lead": 65,
+     "score": 0.5,
+     "points": 3.02,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Mathematical science of society",
+     "concept_id": "psychohistory-mathematical-social-science",
+     "definition": "A mathematical or statistical science that models the behavior of whole populations, institutions or societies from equations and predicts their future course.",
+     "quote": "as individuals increase in number they begin to average out",
+     "title": "The Discovery of the Future",
+     "year": 1902,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1939",
+     "kind": "first_demonstration",
+     "event": "Lewis F. Richardson published Generalized Foreign Politics (British Journal of Psychology Monograph Supplement 23, Cambridge University Press), modeling nations' armament behavior with differential equations and solving for when the arms race runs away or stabilizes.",
+     "confidence": "low",
+     "lead": 37,
+     "score": 0.5,
+     "points": 2.62,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Automated fingerprint recognition",
+     "concept_id": "fingerprint-recognition",
+     "definition": "A machine that identifies or authenticates a person by automatically reading and matching fingerprints.",
+     "quote": "a man or woman who has refused to work once is known by a thumb-marking system in the Department’s offices all over the world.",
+     "title": "The Sleeper Awakes",
+     "year": 1899,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1973",
+     "kind": "first_practical_use",
+     "event": "The FBI Identification Division used the Calspan (formerly Cornell Aeronautical Laboratory) FINDER automatic fingerprint reader, delivered as a prototype in fall 1972 and by Dec 1974 reported in operation for more than 1.5 years; Calspan's Fingerscan access-control terminal then verified identity from a finger in two seconds.",
+     "confidence": "medium",
+     "lead": 74,
+     "score": 0.25,
+     "points": 1.56,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "domain-other",
+   "title": "Everything else",
+   "rule": "The most points from ideas in everything else.",
+   "winner": {
+    "name": "H. G. Wells",
+    "key": "H. G. Wells",
+    "points": 44.6,
+    "stat": "44.6 points from 16 ideas"
+   },
+   "runners_up": [
+    {
+     "name": "Randall Garrett",
+     "key": "Randall Garrett",
+     "points": 38.6,
+     "stat": "38.6 points from 14 ideas"
+    },
+    {
+     "name": "E. E. Smith",
+     "key": "E. E. Smith",
+     "points": 34.0,
+     "stat": "34.0 points from 16 ideas"
+    },
+    {
+     "name": "George O. Smith",
+     "key": "George O. Smith",
+     "points": 31.6,
+     "stat": "31.6 points from 12 ideas"
+    },
+    {
+     "name": "Edmond Hamilton",
+     "key": "Edmond Hamilton",
+     "points": 30.5,
+     "stat": "30.5 points from 11 ideas"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Smart adaptive clothing",
+     "concept_id": "smart-adaptive-clothing",
+     "definition": "Garments sense or respond to the wearer or environment by heating, cooling, changing color, glowing, self-fitting or self-cleaning.",
+     "quote": "a costume of elastic material with distensible warts and horns, changing in colour as he walked, by an ingenious arrangement of versatile chromatophores",
+     "title": "Tales of Space and Time",
+     "year": 1899,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1989",
+     "kind": "first_practical_use",
+     "event": "Spyder sold ski wear in a new fabric that changes color with temperature fluctuations and is washable.",
+     "confidence": "low",
+     "lead": 90,
+     "score": 0.75,
+     "points": 4.88,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Synthetic diamond",
+     "concept_id": "synthetic-diamond",
+     "definition": "Manufacturing real-quality diamonds artificially so they are cheap or indistinguishable from natural stones.",
+     "quote": "Diamonds,” he began—and as he spoke his voice lost its faint flavour of the tramp and assumed something of the easy tone of an educated man—“are to be made by throwing carbon out of combination in a suitable flux and under a suitable pressure;",
+     "title": "The Door in the Wall, and Other Stories",
+     "year": 1911,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1957",
+     "kind": "first_practical_use",
+     "event": "General Electric's Detroit plant made man-made industrial diamonds in quantity (100,000 carats by Nov 1957) and began supplying them to industry for grinding wheels, lapping and dressing; by March 1958 GE offered them in unlimited quantities.",
+     "confidence": "medium",
+     "lead": 46,
+     "score": 0.75,
+     "points": 4.17,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Automated construction",
+     "concept_id": "automated-construction",
+     "definition": "Machines pour, place, weld or assemble buildings and structures rapidly with little manual labor.",
+     "quote": "An idle building machine, with lank arms of red painted metal that caught the still plastic blocks of mineral paste and swung them neatly into position, stretched gauntly across this green tinted picture.",
+     "title": "When the Sleeper Wakes",
+     "year": 1899,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1991",
+     "kind": "first_practical_use",
+     "event": "Shimizu Corporation introduced its SMART automated construction system on an office building in Nagoya (fall 1991, completed fall 1993): robots and hoists erected, welded and clad the steel frame.",
+     "confidence": "medium",
+     "lead": 92,
+     "score": 0.625,
+     "points": 4.09,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Time as a spatial dimension",
+     "concept_id": "time-as-spatial-dimension",
+     "definition": "The view that time is a dimension like space, so that past, present and future coexist as a four-dimensional continuum.",
+     "quote": "There is no difference between Time and any of the three dimensions of Space except that our consciousness moves along it",
+     "title": "The Time Machine",
+     "year": 1894,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1908",
+     "kind": "first_demonstration",
+     "event": "Hermann Minkowski presented his 'Space and Time' lecture at Cologne, treating time and space equally as a unified four-dimensional spacetime continuum.",
+     "confidence": "medium",
+     "lead": 14,
+     "score": 0.875,
+     "points": 3.42,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Automatic house cleaning",
+     "concept_id": "automated-housecleaning",
+     "definition": "Floors, dust, dishes, laundry and rooms clean themselves or are cleaned by built-in machinery without human work.",
+     "quote": "it should be possible to immerse all dirty table wear in a suitable solvent for a few minutes and then run that off for the articles to dry.",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1985",
+     "kind": "first_practical_use",
+     "event": "A floor-cleaning robot was in use in supermarkets, and the US Navy had tested it for scrubbing ship decks (per a 1985 book); the machine and maker are not named.",
+     "confidence": "low",
+     "lead": 84,
+     "score": 0.5,
+     "points": 3.2,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "long_view",
+   "title": "The Long View",
+   "rule": "The longest lead of any prediction judged 0.75 or closer, in a work published since 1500 (older texts have their own award).",
+   "winner": {
+    "name": "Cyrano de Bergerac",
+    "points": 6.13,
+    "stat": "287 years ahead"
+   },
+   "runners_up": [
+    {
+     "name": "Cyrano de Bergerac",
+     "points": 6.09,
+     "stat": "278 years ahead"
+    },
+    {
+     "name": "Cyrano de Bergerac",
+     "points": 6.07,
+     "stat": "273 years ahead"
+    },
+    {
+     "name": "Francis Bacon",
+     "points": 6.07,
+     "stat": "273 years ahead"
+    },
+    {
+     "name": "Richard Adams Locke",
+     "points": 6.32,
+     "stat": "148 years ahead"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Multistage rocket",
+     "concept_id": "multistage-rocket",
+     "definition": "A rocket made of stacked stages that fire in turn and are dropped as their fuel is used, to reach space or high altitude.",
+     "quote": "For so soon as the Flame had devoured one tier of Squibs, which were ranked by six and six, by means of a Train that reached every half-dozen, another tier went off, and then another",
+     "title": "A Voyage to the Moon",
+     "year": 1657,
+     "authors": [
+      "Cyrano de Bergerac"
+     ],
+     "came_true": "1944-11",
+     "kind": "first_practical_use",
+     "event": "About 20 Rheinbote four-stage rockets were fired from Zwolle in the Netherlands against Antwerp, starting in autumn 1944 (Wikipedia gives December 1944 to January 1945; a 1948 BIS article says November 1944).",
+     "confidence": "medium",
+     "lead": 287,
+     "score": 0.75,
+     "points": 6.13,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Audiobook player",
+     "concept_id": "audiobook-player",
+     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
+     "quote": "it was a Book made wholly for the Ears, and not the Eyes. So that when any Body has a mind to read in it, he winds up that Machine with a great many Strings",
+     "title": "A Voyage to the Moon",
+     "year": 1657,
+     "authors": [
+      "Cyrano de Bergerac"
+     ],
+     "came_true": "1935",
+     "kind": "first_practical_use",
+     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
+     "confidence": "medium",
+     "lead": 278,
+     "score": 0.75,
+     "points": 6.09,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Audiobook player",
+     "concept_id": "audiobook-player",
+     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
+     "quote": "It is a book indeed, but a miraculous book without pages or letters; in fine, it is a book to learn from which eyes are useless, only ears are needed.",
+     "title": "Voyages to the Moon and the Sun",
+     "year": 1662,
+     "authors": [
+      "Cyrano de Bergerac"
+     ],
+     "came_true": "1935",
+     "kind": "first_practical_use",
+     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
+     "confidence": "medium",
+     "lead": 273,
+     "score": 0.75,
+     "points": 6.07,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Hearing aid",
+     "concept_id": "hearing-aid",
+     "definition": "A device worn to amplify faint sounds or shift them into the audible range so a person can hear better.",
+     "quote": "We have certain helps which set to the ear do further the hearing greatly.",
+     "title": "New Atlantis",
+     "year": 1627,
+     "authors": [
+      "Francis Bacon"
+     ],
+     "came_true": "1900",
+     "kind": "first_practical_use",
+     "event": "The Akouphone Company of New York was selling the Akouphone, a portable electric instrument for the partially deaf, by December 1900 and exhibiting it to schools and otologists.",
+     "confidence": "low",
+     "lead": 273,
+     "score": 0.75,
+     "points": 6.07,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Meteorites that came from the Moon",
+     "concept_id": "lunar-meteorites",
+     "definition": "Rocks blasted off the lunar surface by volcanism or impacts later fall to Earth as meteorites.",
+     "quote": "If we had before retained any doubt of the power of lunar volcanoes to throw fragments of their craters so far beyond the moon's attraction that they would necessarily gravitate to this earth",
+     "title": "The Moon Hoax",
+     "year": 1835,
+     "authors": [
+      "Richard Adams Locke"
+     ],
+     "came_true": "1983-03",
+     "kind": "first_demonstration",
+     "event": "Allan Hills A81005 (found 17 January 1982 in Antarctica) was identified as a piece of the Moon by Marvin and colleagues, announced at the Lunar and Planetary Science Conference in March 1983.",
+     "confidence": "high",
+     "lead": 148,
+     "score": 0.875,
+     "points": 6.32,
+     "demonstration_only": true
+    }
+   ]
+  },
+  {
+   "id": "originator",
+   "title": "The Originator",
+   "rule": "The most ideas this author was the first in the corpus to predict (judged 0.5 or closer), that later came true.",
+   "winner": {
+    "name": "Jules Verne",
+    "key": "Jules Verne",
+    "points": 344.2,
+    "stat": "first to predict 61 ideas that came true"
+   },
+   "runners_up": [
+    {
+     "name": "H. G. Wells",
+     "key": "H. G. Wells",
+     "points": 360.2,
+     "stat": "first to predict 37 ideas that came true"
+    },
+    {
+     "name": "Godfrey Sweven",
+     "key": "Godfrey Sweven",
+     "points": 246.6,
+     "stat": "first to predict 29 ideas that came true"
+    },
+    {
+     "name": "George Chetwynd Griffith",
+     "key": "George Chetwynd Griffith",
+     "points": 257.7,
+     "stat": "first to predict 26 ideas that came true"
+    },
+    {
+     "name": "Percy Greg",
+     "key": "Percy Greg",
+     "points": 147.0,
+     "stat": "first to predict 24 ideas that came true"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Second natural moon of Earth",
+     "concept_id": "earth-second-moon",
+     "definition": "An additional small natural satellite of Earth besides the Moon, previously undiscovered or newly captured, is found orbiting the planet.",
+     "quote": "It is a simple bolide, but one of such enormous dimensions that the Earth's attraction has made it a satellite.",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "2006-09-14",
+     "kind": "first_demonstration",
+     "event": "Catalina Sky Survey (Arizona) discovered 6R10DB9, later 2006 RH120, a meter-size natural object captured into Earth orbit and making repeated loops until mid-2007.",
+     "confidence": "medium",
+     "lead": 136,
+     "score": 0.75,
+     "points": 5.32,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Gravity-neutral (Lagrange) point between two bodies",
+     "concept_id": "lagrange-point-parking",
+     "definition": "A spacecraft or station sits at a point between two worlds, such as Earth and Moon, where their gravitational pulls balance so it stays in place relative to them.",
+     "quote": "Suppose it to be animated by just sufficient velocity to reach the neutral point, but not to pass it. In that case, the Projectile would remain forever in the same spot, perfectly motionless as far as regards the Earth and the Moon",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1978-11-20",
+     "kind": "first_practical_use",
+     "event": "ISEE-3 in its L1 halo orbit began measuring the solar wind upstream of Earth, the station role later filled operationally by SOHO, Wind and DSCOVR.",
+     "confidence": "low",
+     "lead": 108,
+     "score": 0.75,
+     "points": 5.08,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Hydrogen and oxygen engines and heating",
+     "concept_id": "hydrogen-oxygen-combustion",
+     "definition": "Burning hydrogen with oxygen in engines, furnaces or turbines to give motive power, heat or electricity.",
+     "quote": "I decompose it by means of a powerful Buntzen battery. Water, as you know, consists of two parts of hydrogen to one of oxygen gas.",
+     "title": "Five Weeks in a Balloon",
+     "year": 1863,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1966-05-30",
+     "kind": "first_practical_use",
+     "event": "An Atlas-Centaur (AC-10), whose Centaur stage burned liquid hydrogen with liquid oxygen in two RL-10 engines, launched Surveyor 1 toward the Moon on 30 May 1966, the Centaur's first operational flight.",
+     "confidence": "medium",
+     "lead": 103,
+     "score": 0.75,
+     "points": 5.03,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Spacesuit",
+     "concept_id": "spacesuit",
+     "definition": "A sealed suit with its own air supply and communication that lets a person survive and work outside a spacecraft or on another world.",
+     "quote": "Why didn't you bring a scaphander and an air pump? I could then venture out of the Projectile as readily and as safely as the diver leaves his boat and walks about on the bottom of the river!",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1969-01-16",
+     "kind": "first_practical_use",
+     "event": "Yevgeny Khrunov and Alexei Yeliseyev, wearing Yastreb suits with chest-mounted regenerative life-support units, spacewalked from Soyuz 5 to Soyuz 4 to transfer crews between two docked spacecraft.",
+     "confidence": "high",
+     "lead": 99,
+     "score": 0.75,
+     "points": 4.98,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Walking and leaping in low gravity",
+     "concept_id": "low-gravity-leaping",
+     "definition": "On the Moon or small bodies, reduced gravity lets people take huge bounds and carry loads easily.",
+     "quote": "you can take a stride 15 feet in width as easily as you can now take one of ordinary length.",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "1969-07-21",
+     "kind": "first_practical_use",
+     "event": "The same Apollo 11 moonwalk was real exploration work: the crew loped about the surface, set up experiments and collected samples, with loping becoming their preferred way to move.",
+     "confidence": "low",
+     "lead": 99,
+     "score": 0.75,
+     "points": 4.98,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "last_words",
+   "title": "Famous Last Words",
+   "rule": "A confident \"it will never happen\" in the book's own narration, judged closest to what then happened, and proved wrong soonest (a check confirmed each skeptic was really proved wrong).",
+   "winner": {
+    "name": "Simon Newcomb",
+    "points": 0,
+    "stat": "Airplane, 4 years later"
+   },
+   "runners_up": [
+    {
+     "name": "Arthur Cheney Train and Robert Williams Wood",
+     "points": 0,
+     "stat": "Super-long-range gun, 4 years later"
+    },
+    {
+     "name": "Garrett Putman Serviss",
+     "points": 0,
+     "stat": "Nature and observation of the solar corona, 31 years later"
+    },
+    {
+     "name": "Sax Rohmer",
+     "points": 0,
+     "stat": "Wearable wings, 6 years later"
+    },
+    {
+     "name": "H. G. Wells",
+     "points": 0,
+     "stat": "Airplane, 9 years later"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Airplane",
+     "concept_id": "airplane",
+     "definition": "A powered, fixed-wing heavier-than-air flying machine that carries a pilot or passengers under control.",
+     "quote": "The demonstration that no possible combination of known substances, known forms of machinery, and known forms of force can be united in a practicable machine by which men shall fly long distances through the air, seems to the writer as complete as it is possible for the demonstration of any physical fact to be.",
+     "title": "Side-Lights on Astronomy",
+     "year": 1906,
+     "authors": [
+      "Simon Newcomb"
+     ],
+     "came_true": "1910-11-07",
+     "kind": "first_practical_use",
+     "event": "Philip Parmalee flew a Wright biplane from Dayton to Columbus, Ohio, carrying bolts of silk for a department store, the first commercial cargo flight (about 62 miles in under an hour).",
+     "confidence": "medium",
+     "lead": 4,
+     "score": 0.75,
+     "points": 0,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Super-long-range gun",
+     "concept_id": "super-long-range-gun",
+     "definition": "A huge gun able to shell targets scores of miles or leagues away.",
+     "quote": "For no shell could be hurled a distance of sixty miles",
+     "title": "The Man Who Rocked the Earth",
+     "year": 1914,
+     "authors": [
+      "Arthur Cheney Train",
+      "Robert Williams Wood"
+     ],
+     "came_true": "1918-03-23",
+     "kind": "first_practical_use",
+     "event": "The Paris Gun began its operational bombardment of Paris on 23 March 1918 (first campaign to 1 May 1918), killing people on the first day.",
+     "confidence": "high",
+     "lead": 4,
+     "score": 0.75,
+     "points": 0,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Nature and observation of the solar corona",
+     "concept_id": "solar-corona-nature",
+     "definition": "An explanation of the Sun's corona as radiation-driven particles or gas, and how it can be observed outside a total eclipse.",
+     "quote": "Although many attempts have been made to render the corona visible when there is no eclipse, all have failed, and it is to the moon alone that we owe its revelation.",
+     "title": "Curiosities of the Sky",
+     "year": 1909,
+     "authors": [
+      "Garrett Putman Serviss"
+     ],
+     "came_true": "1940-09",
+     "kind": "first_practical_use",
+     "event": "The Harvard High Altitude Observatory at Climax, Colorado opened 8 September 1940 with a Lyot-type coronagraph and obtained daily records of the corona's spectrum as an index of solar activity.",
+     "confidence": "low",
+     "lead": 31,
+     "score": 0.75,
+     "points": 0,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Wearable wings",
+     "concept_id": "wearable-wings",
+     "definition": "Large artificial wings strapped to the body, with or without a motor, that allow a person to fly like a bird.",
+     "quote": "The sensations of that flight—which I dare to predict no man will experience again for at least a generation—were indescribably pleasant.",
+     "title": "The Day the World Ended",
+     "year": 1929,
+     "authors": [
+      "Sax Rohmer"
+     ],
+     "came_true": "1935",
+     "kind": "first_practical_use",
+     "event": "Clem Sohn, the 'human bat', jumped from aircraft wearing canvas wings strapped to his arms and a web between the legs, gliding before opening his parachute (Daytona Beach, then US air races, 1935).",
+     "confidence": "medium",
+     "lead": 6,
+     "score": 0.5,
+     "points": 0,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Airplane",
+     "concept_id": "airplane",
+     "definition": "A powered, fixed-wing heavier-than-air flying machine that carries a pilot or passengers under control.",
+     "quote": "But I do not think it at all probable that aeronautics will ever come into play as a serious modification of transport and communication",
+     "title": "Anticipations",
+     "year": 1901,
+     "authors": [
+      "H. G. Wells"
+     ],
+     "came_true": "1910-11-07",
+     "kind": "first_practical_use",
+     "event": "Philip Parmalee flew a Wright biplane from Dayton to Columbus, Ohio, carrying bolts of silk for a department store, the first commercial cargo flight (about 62 miles in under an hour).",
+     "confidence": "medium",
+     "lead": 9,
+     "score": 0.5,
+     "points": 0,
+     "demonstration_only": false
+    }
+   ]
+  },
+  {
+   "id": "on_time",
+   "title": "Right on Schedule",
+   "rule": "A prediction that named its year and came true closest to it, judged 0.75 or closer, at least 10 years ahead.",
+   "winner": {
+    "name": "Neil R. Jones",
+    "points": 4.16,
+    "stat": "off by 1 year"
+   },
+   "runners_up": [
+    {
+     "name": "Edgar Rice Burroughs",
+     "points": 4.04,
+     "stat": "off by 3 years"
+    },
+    {
+     "name": "Judith Merril",
+     "points": 2.69,
+     "stat": "off by 3 years"
+    },
+    {
+     "name": "Murray Leinster",
+     "points": 2.69,
+     "stat": "off by 4 years"
+    },
+    {
+     "name": "Frank R. Stockton",
+     "points": 4.14,
+     "stat": "off by 5 years"
+    }
+   ],
+   "hits": [
+    {
+     "concept": "Artificial satellite",
+     "concept_id": "artificial-satellite",
+     "definition": "A man-made object placed in orbit around the Earth that stays up and circles it, including relay and communication satellites.",
+     "quote": "In the depths of space, some twenty thousand miles from the earth, the body of Professor Jameson within its rocket container cruised upon an endless journey, circling the gigantic sphere.",
+     "title": "The Jameson Satellite",
+     "year": 1931,
+     "authors": [
+      "Neil R. Jones"
+     ],
+     "came_true": "1957-10-04",
+     "kind": "first_practical_use",
+     "event": "Sputnik 1 in orbit transmitted radio signals; tracking its orbital drag and signal propagation gave the first data on upper-atmosphere density and the ionosphere.",
+     "confidence": "medium",
+     "lead": 26,
+     "score": 0.875,
+     "points": 4.16,
+     "demonstration_only": false,
+     "stated_time": "1958 launch, orbiting for forty million years",
+     "timing_error": -1
+    },
+    {
+     "concept": "Beamed-power vehicle",
+     "concept_id": "beamed-power-vehicle",
+     "definition": "A craft driven by power such as radio waves or microwaves sent to it from a distant station.",
+     "quote": "Its engines, motivated wirelessly from power plants thousands of miles distant, drove it noiselessly and swiftly along its overnight pathway between Chicago and Paris.",
+     "title": "The Moon Maid",
+     "year": 1923,
+     "authors": [
+      "Edgar Rice Burroughs"
+     ],
+     "came_true": "1964-10-28",
+     "kind": "first_demonstration",
+     "event": "William C. Brown's group at Raytheon's Spencer Laboratory, Burlington, Mass., flew a six-foot model helicopter powered only by a ground microwave beam, climbing to about 50 ft, on 28 October 1964.",
+     "confidence": "medium",
+     "lead": 41,
+     "score": 0.75,
+     "points": 4.04,
+     "demonstration_only": true,
+     "stated_time": "1967",
+     "timing_error": -3
+    },
+    {
+     "concept": "Crewed orbital space station",
+     "concept_id": "crewed-orbital-space-station",
+     "definition": "A large crewed station that stays in orbit around the Earth as a base for science, travel or observation.",
+     "quote": "Not till the orbiting of the *Messenger*, the giant wheel of space that rode the great ellipse from a 12,000-mile orbit around Earth out to the convenient dropping-distance of the Moon, carrying shuttle-ships of all three domes",
+     "title": "The Tomorrow People",
+     "year": 1960,
+     "authors": [
+      "Judith Merril"
+     ],
+     "came_true": "1971-06-07",
+     "kind": "first_practical_use",
+     "event": "Salyut 1 was used as a science station by the Soyuz 11 crew for 23 days from 7 June 1971.",
+     "confidence": "high",
+     "lead": 11,
+     "score": 0.75,
+     "points": 2.69,
+     "demonstration_only": false,
+     "stated_time": "orbited in 1974",
+     "timing_error": -3
+    },
+    {
+     "concept": "Robot vacuum cleaner and lawn mower",
+     "concept_id": "robot-vacuum-mower",
+     "definition": "A small autonomous machine that cleans floors or mows a lawn on its own.",
+     "quote": "It rolled across the grass from one path-edge to another. When it reached the second path it stopped, briskly moved itself its own width sidewise, and rolled back.",
+     "title": "The Machine That Saved The World",
+     "year": 1957,
+     "authors": [
+      "Murray Leinster"
+     ],
+     "came_true": "1968",
+     "kind": "first_practical_use",
+     "event": "MowBot was on sale to the public by December 1968 (about $800) and still advertised in 1969, when users wrote of seeing it in operation.",
+     "confidence": "medium",
+     "lead": 11,
+     "score": 0.75,
+     "points": 2.69,
+     "demonstration_only": false,
+     "stated_time": "1972",
+     "timing_error": -4
+    },
+    {
+     "concept": "Helicopter",
+     "concept_id": "helicopter",
+     "definition": "An aircraft lifted and driven by powered rotating rotor blades or screws, able to take off, hover and land vertically.",
+     "quote": "he sailed over the place in one of those air-screw machines, with a fan workin' under the car to keep it up.",
+     "title": "The Great Stone of Sardis",
+     "year": 1897,
+     "authors": [
+      "Frank R. Stockton"
+     ],
+     "came_true": "1942-11",
+     "kind": "first_practical_use",
+     "event": "Kriegsmarine Flettner Fl 282 V6 flown as a reconnaissance craft over the Aegean from the minelayer Drache, November 1942 to early 1943.",
+     "confidence": "low",
+     "lead": 45,
+     "score": 0.75,
+     "points": 4.14,
+     "demonstration_only": false,
+     "stated_time": "in 1947",
+     "timing_error": -5
+    }
+   ]
+  },
+  {
+   "id": "still_waiting",
+   "title": "Still Waiting",
+   "rule": "The ideas the most books predicted that have not come true, with the earliest book in the corpus to predict each.",
+   "waiting": [
+    {
+     "concept": "Telepathic communication",
+     "definition": "Mind-to-mind transfer of thoughts between people or other beings without speech or devices, sometimes across great distances.",
+     "books": 473,
+     "claims": 1062,
+     "first_title": "The Mahabharata, Volume 3 (Books 8-12)",
+     "first_by": "The Mahabharata",
+     "first_year": 400,
+     "quote": "Sulabha, endued with Yoga-power, entered the understanding of the king by her own understanding."
+    },
+    {
+     "concept": "Handheld energy blaster",
+     "definition": "A personal sidearm that fires a bolt or beam of concentrated energy to kill or burn a target at range, powered by a battery, atomic cell or similar charge.",
+     "books": 420,
+     "claims": 643,
+     "first_title": "Edison's Conquest of Mars",
+     "first_by": "Garrett Putman Serviss",
+     "first_year": 1898,
+     "quote": "Unknown to us the Martians carried hand engines, capable of launching bolts of death of the same character as those which emanated from the knobs of their larger machines."
+    },
+    {
+     "concept": "Native life on other worlds",
+     "definition": "Plants, animals and ecosystems native to Mercury, Jupiter, Saturn's moons, Pluto, asteroids or alien planets, strange in form.",
+     "books": 419,
+     "claims": 717,
+     "first_title": "Trips to the Moon",
+     "first_by": "Lucian of Samosata",
+     "first_year": 200,
+     "quote": "when a man grows old he does not die, but dissolves into smoke and turns to air."
+    },
+    {
+     "concept": "Intelligent extraterrestrial life",
+     "definition": "Intelligent beings of non-human form exist on planets of other stars or in unspecified places, and may be found.",
+     "books": 418,
+     "claims": 638,
+     "first_title": "A Voyage to the Moon",
+     "first_by": "Cyrano de Bergerac",
+     "first_year": 1657,
+     "quote": "For my part, I am so far from complying with their Insolence, that I believe the Planets are Worlds about the Sun, and that the fixed Stars are also Suns which have Planets about them"
+    },
+    {
+     "concept": "Interstellar spaceship travel",
+     "definition": "A crewed spacecraft that carries people from the solar system to planets of other stars, at sublight speed or by unspecified means.",
+     "books": 415,
+     "claims": 626,
+     "first_title": "The Moon-Voyage",
+     "first_by": "Jules Verne",
+     "first_year": 1872,
+     "quote": "Would a service of navigation ever be founded across space for the solar world? Will people ever go from planet to planet, from Jupiter to Mercury, and later on from one star to another"
+    },
+    {
+     "concept": "Routine commercial traffic between planets",
+     "definition": "Regularly scheduled passenger and cargo spaceship service between planets and moons of the solar system.",
+     "books": 366,
+     "claims": 507,
+     "first_title": "All Around the Moon",
+     "first_by": "Jules Verne",
+     "first_year": 1870,
+     "quote": "Will any Air Line of space navigation ever undertake to start a system of locomotion between the different members of the solar system?"
+    },
+    {
+     "concept": "Faster-than-light travel",
+     "definition": "A spacecraft travels between stars faster than the speed of light by some unspecified or generic drive.",
+     "books": 349,
+     "claims": 808,
+     "first_title": "Lumen",
+     "first_by": "Camille Flammarion",
+     "first_year": 1873,
+     "quote": "You start to-day for a star, and you arrive yesterday! What do I say—yesterday? You will arrive there seventy-two years ago, even a hundred years ago! The farther you go, the sooner you will arrive!"
+    },
+    {
+     "concept": "Telepathic mind reading",
+     "definition": "Perceiving what another person is thinking, feeling or remembering directly by mental power, with or without their consent.",
+     "books": 311,
+     "claims": 582,
+     "first_title": "Voyages to the Moon and the Sun",
+     "first_by": "Cyrano de Bergerac",
+     "first_year": 1662,
+     "quote": "I arrange all the parts of my body in an order similar to yours; for, by arranging all parts of me like you, I excite in myself by this disposal of my matter the same thought that is produced in you"
+    }
+   ]
+  }
+ ]
+}

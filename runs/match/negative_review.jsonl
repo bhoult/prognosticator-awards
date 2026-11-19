@@ -1,0 +1,82 @@
+{"id": "pilot-sonnet/p00006#13", "verdict": "contradicted", "reason": "Denies invisibility is possible; a visible-light cloak hid an object."}
+{"id": "pilot-sonnet/p00019#8", "verdict": "unrelated", "reason": "Doubts courier boats will become common; space sickness is a different matter."}
+{"id": "pilot-sonnet/p00028#11", "verdict": "unrelated", "reason": "Says raiders are impossible due to defense systems; a satellite shootdown does not address that."}
+{"id": "pilot-sonnet/p00040#12", "verdict": "unrelated", "reason": "A character's opinion about radio use by advanced cultures, not a denial of gravity messaging."}
+{"id": "stage1-sonnet/p00130#0", "verdict": "contradicted", "reason": "Says long-distance flight by machine is impossible; cargo flight of 62 miles happened."}
+{"id": "stage1-sonnet/p00179#6", "verdict": "unrelated", "reason": "Denies Mars radio contact is possible; milestone is an orbital satellite, not Mars."}
+{"id": "stage1-sonnet/p00226#19", "verdict": "unrelated", "reason": "Remark about lifeboat power in story world, not the lunar landing."}
+{"id": "stage1-sonnet/p00353#3", "verdict": "unrelated", "reason": "Claims a ship is unsinkable; milestone is bulkhead doors, not denial."}
+{"id": "stage1-sonnet/p00449#10", "verdict": "unrelated", "reason": "Doubts interplanetary-distance radio; milestone is Earth-orbit telemetry."}
+{"id": "stage1-sonnet/p00613#6", "verdict": "contradicted", "reason": "Says external devices cannot override senses; head-mounted VR systems were sold."}
+{"id": "stage1-sonnet/p00639#2", "verdict": "contradicted", "reason": "Doubts a globe circuit in under twenty days; commercial round-the-world flights did it."}
+{"id": "stage1-sonnet/p00691#2", "verdict": "contradicted", "reason": "Says the far side will not be seen for millions of years; Luna 3 photographed it in 1959."}
+{"id": "stage1-sonnet/p00727#5", "verdict": "vindicated", "reason": "Says Venus air is poisonous and prevents colonization; Mariner 2 found it extremely hot."}
+{"id": "stage1-sonnet/p00947#2", "verdict": "unrelated", "reason": "Claim about a fictional animal's sense of direction, not a prediction."}
+{"id": "stage1-sonnet/p01195#1", "verdict": "unrelated", "reason": "Claims immunity to a virus is impossible; engineered insulin is unrelated."}
+{"id": "stage1-sonnet/p01288#12", "verdict": "contradicted", "reason": "Says no shell could travel sixty miles; the Paris Gun shelled Paris."}
+{"id": "stage1-sonnet/p01581#11", "verdict": "unrelated", "reason": "Says flying machines played no part in a battle, not a denial of bombing."}
+{"id": "stage1-sonnet/p01590#7", "verdict": "contradicted", "reason": "Says there is no key to decipher Martian; an unsupervised model deciphered Ugaritic without parallel text."}
+{"id": "stage1-sonnet/p01823#8", "verdict": "unrelated", "reason": "A character denies self-driving as an explanation, not a prediction."}
+{"id": "stage1-sonnet/p02322#7", "verdict": "vindicated", "reason": "Says no animal life on Mars; Mariner 4 showed an arid cratered surface."}
+{"id": "stage1-sonnet/p02653#3", "verdict": "contradicted", "reason": "Says aeronautics will never be a serious transport mode; commercial cargo flight began."}
+{"id": "stage1-sonnet/p02890#5", "verdict": "unrelated", "reason": "Past failure of fictional scientists on shielding, not a prediction."}
+{"id": "stage1-sonnet/p03067#13", "verdict": "unrelated", "reason": "Claims pugnacity is inherited; milestone is epigenetic fear inheritance, not a denial."}
+{"id": "stage1-sonnet/p03162#10", "verdict": "unrelated", "reason": "Dismisses riding a cylinder in space; milestone is a maneuvering gun EVA."}
+{"id": "stage1-sonnet/p03689#0", "verdict": "contradicted", "reason": "Says steering balloons needs unavailable power; scheduled airship service followed."}
+{"id": "stage1-sonnet/p03689#11", "verdict": "contradicted", "reason": "Judges balloon steering unachievable; Zeppelin passenger service succeeded."}
+{"id": "stage1-sonnet/p03901#3", "verdict": "contradicted", "reason": "Predicts no one will wing-fly for a generation; Clem Sohn did so six years later."}
+{"id": "stage1-sonnet/p04194#5", "verdict": "unrelated", "reason": "Claims landing grids give absolute defense; the satellite shootdown does not address it."}
+{"id": "stage1-sonnet/p04432#6", "verdict": "unrelated", "reason": "Says fission cannot make interplanetary travel pay; a reactor test does not show that."}
+{"id": "stage1-sonnet/p04479#11", "verdict": "unrelated", "reason": "A character asserts the Machine is infallible, not a prediction denying anything the milestone shows."}
+{"id": "stage1-sonnet/p04523#9", "verdict": "vindicated", "reason": "Predicts few horses on roads; horse use did decline as the milestone shows."}
+{"id": "stage1-sonnet/p04768#6", "verdict": "vindicated", "reason": "Says nothing could live on Venus; Mariner 2 found a surface near 800 F."}
+{"id": "stage1-sonnet/p04789#3", "verdict": "unrelated", "reason": "Predicts no flying commutes for a century; a roadable autogiro delivery is not commuting."}
+{"id": "stage1-sonnet/p04880#9", "verdict": "contradicted", "reason": "Says a balloon can never be steered; passenger airship service followed."}
+{"id": "stage1-sonnet/p05256#17", "verdict": "unrelated", "reason": "Claims Mercury landings are impossible; milestone is about Venus temperature."}
+{"id": "stage1-sonnet/p05331#21", "verdict": "contradicted", "reason": "Calls nuclear power plants unlikely; Obninsk plant produced electricity in 1954."}
+{"id": "stage1-sonnet/p05381#9", "verdict": "unrelated", "reason": "Denies sound can make rain; milestone is chemical cloud seeding."}
+{"id": "stage1-sonnet/p05559#16", "verdict": "unrelated", "reason": "Present-tense remark about rockets in a story, not a prediction that none would exist."}
+{"id": "stage1-sonnet/p05584#14", "verdict": "unrelated", "reason": "Reasoning about aliens' ship heating, not a denial that thermal control is possible."}
+{"id": "stage1-sonnet/p06337#28", "verdict": "unrelated", "reason": "Says synthetic creatures lack brains; milestone is a synthetic genome cell, not that."}
+{"id": "stage1-sonnet/p06370#2", "verdict": "contradicted", "reason": "Says the moon voyage will remain imagination forever; Apollo 11 landed."}
+{"id": "stage1-sonnet/p06382#8", "verdict": "contradicted", "reason": "Calls balloon travel a delusion; scheduled passenger airship service began."}
+{"id": "stage1-sonnet/p06478#16", "verdict": "unrelated", "reason": "Character says robots cannot decide; a die-cast unloading robot does not address decision-making."}
+{"id": "stage1-sonnet/p06714#1", "verdict": "unrelated", "reason": "Story-world statement about a heredity block, not a prediction."}
+{"id": "stage1-sonnet/p06726#3", "verdict": "unrelated", "reason": "Claims a psychological timing impossibility; the polygraph measures physiology, not this."}
+{"id": "stage1-sonnet/p06907#13", "verdict": "unrelated", "reason": "In-story reason landing is not possible, not a prediction about real flights."}
+{"id": "stage1-sonnet/p06924#18", "verdict": "unrelated", "reason": "Judges direct synthetic food irrational for now, not impossible."}
+{"id": "stage1-sonnet/p07086#1", "verdict": "contradicted", "reason": "Says intra-atomic energy is virtually impossible; a nuclear power plant ran in 1954."}
+{"id": "stage1-sonnet/p07116#21", "verdict": "unrelated", "reason": "An energy being's in-story limit, not a prediction about real synthetic life."}
+{"id": "stage1-sonnet/p07178#8", "verdict": "unrelated", "reason": "Reports a finding about past biopsies, not a prediction."}
+{"id": "stage1-sonnet/p07188#9", "verdict": "vindicated", "reason": "Says no life on Mars; Mariner 4 showed an arid cratered surface."}
+{"id": "stage1-sonnet/p07244#5", "verdict": "unrelated", "reason": "In-story observation about lunar races, not a prediction."}
+{"id": "stage1-sonnet/p07392#17", "verdict": "contradicted", "reason": "Physiologists say life cannot be sustained on elemental nutrients; concentrated complete-nutrient products replaced meals."}
+{"id": "stage1-sonnet/p07577#14", "verdict": "unrelated", "reason": "Says orbit computation needs another reference point, unrelated to onboard guidance computers."}
+{"id": "stage1-sonnet/p07626#9", "verdict": "vindicated", "reason": "Says the asteroid belt is not crowded; Pioneer 10 found it sparse."}
+{"id": "stage1-sonnet/p07727#6", "verdict": "contradicted", "reason": "Says elements stay immutable; Rutherford transmuted nitrogen."}
+{"id": "stage1-sonnet/p07805#2", "verdict": "unrelated", "reason": "A story question about alien-disabled engines, not a denial."}
+{"id": "stage1-sonnet/p07906#7", "verdict": "unrelated", "reason": "Says this craft lacked air supply for landing; a limit of the craft, not a prediction."}
+{"id": "stage1-sonnet/p07910#9", "verdict": "contradicted", "reason": "Says propulsion is impossible outside the atmosphere; a rocket burned in near-vacuum to orbit."}
+{"id": "stage1-sonnet/p08657#5", "verdict": "unrelated", "reason": "Describes rain-maker limits in a story, not a denial of rainmaking."}
+{"id": "stage1-sonnet/p08678#7", "verdict": "unrelated", "reason": "Story-world remark about engine thrust ratings, not a denial of nuclear rockets."}
+{"id": "stage1-sonnet/p08839#10", "verdict": "unrelated", "reason": "In-story reason for not using fission drive, not a prediction."}
+{"id": "stage1-sonnet/p09219#11", "verdict": "contradicted", "reason": "Says every attempt to show the corona without an eclipse has failed; a coronagraph did it daily."}
+{"id": "stage1-sonnet/p09258#0", "verdict": "unrelated", "reason": "Concerns conception in space, while the milestone is rat pregnancy and birth."}
+{"id": "stage1-sonnet/p09282#17", "verdict": "unrelated", "reason": "Reports and rejects a prediction of hourly papers, not a denial of rapid news spread."}
+{"id": "stage1-sonnet/p09343#5", "verdict": "unrelated", "reason": "Fictional lunar inhabitants' limits, unrelated to spacecraft radio."}
+{"id": "stage1-sonnet/p09381#6", "verdict": "unrelated", "reason": "Story-world statement about shielding weight, not a prediction."}
+{"id": "stage1b-sonnet/p00080#3", "verdict": "unrelated", "reason": "Judges Mars wireless impracticable, but the milestone is Earth-orbit telemetry."}
+{"id": "stage1b-sonnet/p00280#1", "verdict": "contradicted", "reason": "Says balloons will never achieve anything; Zeppelin passenger service did."}
+{"id": "stage1b-sonnet/p00280#10", "verdict": "contradicted", "reason": "Says engines cannot resist wind so steering is impossible; airships regularly flew."}
+{"id": "stage1b-sonnet/p00295#12", "verdict": "contradicted", "reason": "Says a death ray is theoretically impossible; a vehicle laser destroyed munitions."}
+{"id": "stage1b-sonnet/p00304#20", "verdict": "unrelated", "reason": "In-story remark about measuring ship speed, not matched by navigation sextants."}
+{"id": "stage1b-sonnet/p00472#5", "verdict": "unrelated", "reason": "Describes thin air in the story at a mountain pass, not a prediction."}
+{"id": "stage1b-sonnet/p00503#4", "verdict": "unrelated", "reason": "Says no one will exceed a fictional speed; Mariner 2 did not test that."}
+{"id": "stage1b-sonnet/p00561#20", "verdict": "unrelated", "reason": "In-story remark about pressure on Saturn, not a prediction."}
+{"id": "stage1b-sonnet/p00617#11", "verdict": "unrelated", "reason": "A character judges fictional engines inadequate, not a denial."}
+{"id": "stage1b-sonnet/p00644#4", "verdict": "contradicted", "reason": "Says humans may never flap-fly on Earth; Schmid flew a flapping-wing aircraft."}
+{"id": "stage1b-sonnet/p00783#4", "verdict": "unrelated", "reason": "Limit of a fictional machine on terrain, not a prediction."}
+{"id": "stage1b-sonnet/p00824#12", "verdict": "unrelated", "reason": "Says spontaneous generation is ruled out at present, not that it will never be done."}
+{"id": "stage1b-sonnet/p00848#2", "verdict": "unrelated", "reason": "Aircraft impractical on Mars; the milestone concerns Venus."}
+{"id": "stage1b-sonnet/p00861#5", "verdict": "unrelated", "reason": "Narrator's remark about a fictional government's belief, not a prediction."}
+{"id": "stage1c-sonnet/p00015#2", "verdict": "vindicated", "reason": "Says terrible weapons make war impossible; the milestone confirms deterrence by massive retaliation."}

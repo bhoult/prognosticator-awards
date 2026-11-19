@@ -913,3 +913,11 @@ R-tier2-132	research	sonnet	155525	46	575
 R-tier2-133	research	sonnet	198911	69	845	
 J-A-122	judge	sonnet	97825	9	86	
 J-B-121	judge	sonnet	98447	9	88	
+a1ccdfda7a486a272	judge	sonnet	65704	5	38	A-123
+a287361b88a018c06	judge	sonnet	65487	5	35	B-122
+af51d8cc758e50c80	tier2	sonnet	58906	7	40	tier2-135
+aed624bfbf7ca9849	negative_check	sonnet	79311	11	55	negatives
+a7c1aa5adc277892e	tier2	sonnet	137408	32	1879	tier2-134
+a7c1aa5adc277892e	tier2	sonnet	186735	76	878	tier2-134-resumed
+aa2ded2f80c6d6fbe	judge	sonnet	51870	6	9	A-124
+af3021afdf1af5e87	judge	sonnet	51972	6	9	B-123

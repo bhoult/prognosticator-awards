@@ -1,6 +1,6 @@
 # Scoring after tier 2, tranche A (PLAN §8)
 
-Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 644 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).
+Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500))), the scoring milestone `first_practical_use` else `first_demonstration`, points from score 0.125 (every judged score above 0), precision from 0.5, `contradicted_negative` from 0.5, deadlines checked against 2026 with 10 years of grace. This scoring follows tier 2 (PLAN §5), which checked 650 deciding concepts, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).
 
 ## Resolutions
 
@@ -9,12 +9,12 @@ Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500)
 | resolution | claims | share |
 |---|---|---|
 | open: no_milestone | 31,442 | 40.6% |
-| not_a_prediction | 16,393 | 21.2% |
-| realized | 15,820 | 20.4% |
+| not_a_prediction | 16,411 | 21.2% |
+| realized | 15,803 | 20.4% |
 | open: no_concept | 6,795 | 8.8% |
 | open: too_vague | 3,897 | 5.0% |
 | untestable | 2,558 | 3.3% |
-| open: not_matched | 273 | 0.4% |
+| open: not_matched | 272 | 0.4% |
 | failed: missed_deadline | 170 | 0.2% |
 | failed: contradicted_negative | 82 | 0.1% |
 | open: no_year | 6 | 0.0% |
@@ -23,27 +23,27 @@ Deadlines: 1,741 `will` claims with a concept have a stated time naming a year, 
 
 ## The top 50 predictions
 
-11,374 book–concept entries earn points (each book counts its best claim once per concept).
+11,375 book–concept entries earn points (each book counts its best claim once per concept).
 
 | # | points | score | lead | author | book | concept | milestone | quote |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 6.32 | 0.875 | 148 | Richard Adams Locke; J. N. Ni… | *The Moon Hoax* (1835) | Meteorites that came from the Moon † | 1983-03 | If we had before retained any doubt of the power of lunar volcanoes to throw fragments of their craters so fa… |
-| 2 | 6.13 | 0.75 | 287 | Cyrano de Bergerac | *A Voyage to the Moon* (1657) | Multistage rocket | 1944-11 | For so soon as the Flame had devoured one tier of Squibs, which were ranked by six and six, by means of a Tra… |
-| 3 | 6.11 | 0.875 | 125 | Voltaire | *Micromegas* (1752) | Phobos and Deimos, the two moons of Mars † | 1877-08 | they swung by two moons that cater to this planet but have escaped the notice of our astronomers. |
-| 4 | 6.09 | 0.75 | 278 | Cyrano de Bergerac | *A Voyage to the Moon* (1657) | Audiobook player | 1935 | it was a Book made wholly for the Ears, and not the Eyes. So that when any Body has a mind to read in it, he… |
-| 5 | 6.07 | 0.75 | 273 | Cyrano de Bergerac | *Voyages to the Moon and the Sun* (1662) | Audiobook player | 1935 | It is a book indeed, but a miraculous book without pages or letters; in fine, it is a book to learn from whic… |
-| 6 | 6.07 | 0.75 | 273 | Francis Bacon | *New Atlantis* (1627) | Hearing aid | 1900 | We have certain helps which set to the ear do further the hearing greatly. |
-| 7 | 5.98 | 1 | 62 | Luis Senarens | *The Sunken Isthmus* (1896) | Submarine air supply | 1958-10 | Under the pilot-house there was placed a generator which was capable of manufacturing pure oxygen, and also o… |
-| 8 | 5.81 | 1 | 55 | Charles L. Fontenay | *Blow the Man Down* (1955) | Solar sail or solar-driven spacecraft † | 2010-06-09 | The wind that blows between the worlds," said Carrel solemnly. "Solar radiation. Its pressure will move a shi… |
-| 9 | 5.68 | 0.875 | 89 | Jules Verne; Henri Théophile… | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Weightlessness in spaceflight † | 1961-04-12 | Nicholl having accidentally let a glass slip from his hand, the glass, instead of falling, remained suspended… |
-| 10 | 5.68 | 0.875 | 89 | Jules Verne | *The Moon-Voyage* (1872) | Weightlessness in spaceflight † | 1961-04-12 | Nicholl having let a tumbler escape from his hand, instead of falling, it remained suspended in the air. |
-| 11 | 5.61 | 0.875 | 84 | Percy Greg | *Across the Zodiac* (1880) | Pressurized spacecraft cabin and atmosp… | 1964-10-12 | I had first, by means of the air pump, to fill the vessel with an atmosphere as dense as that in which I had… |
-| 12 | 5.58 | 1 | 47 | Edmond Hamilton | *The Sargasso of Space* (1931) | Refueling spacecraft in orbit | 1978-02 | A Pluto liner a quarter-mile back, and we can pump the fuel over here by connecting tube-lines. |
-| 13 | 5.58 | 0.875 | 82 | Garrett Putman Serviss | *Other Worlds* (1901) | Meteorites that came from the Moon † | 1983-03 | It has led to the theory that meteorites may have originally been shot out of the moon's great volcanoes, whe… |
-| 14 | 5.55 | 0.875 | 80 | Edgar Rice Burroughs | *A Fighting Man of Mars* (1930) | Invisibility † | 2010-12 | The compound of invisibility merely bows outward the reflected light, which, entering our eyes and impinging… |
-| 15 | 5.55 | 0.875 | 80 | (text) | *Astounding Stories of Super-Science September 1930* (1930) | Invisibility † | 2010-12 | The walls of the ship are double, the inner one of metal and the outer one of vitrolene or some similar perfe… |
-| 16 | 5.52 | 1 | 45 | Arthur Cheney Train; Robert W… | *The Moon Maker* (1916) | Black sky filled with stars seen from s… † | 1961-04-12 | Yet, in spite of the fact that the universe was filled with light, the sky remained as black as midnight and… |
-| 17 | 5.46 | 0.75 | 155 | of Samosata Lucian | *Trips to the Moon* (1780) | Wearable wings | 1935 | I took, you must know, a very large eagle and a vulture also, one of the strongest I could get, and cut off t… |
+| 1 | 6.73 | 0.75 | 1735 | Lucian of Samosata | *Trips to the Moon* (200) | Wearable wings | 1935 | I took, you must know, a very large eagle and a vulture also, one of the strongest I could get, and cut off t… |
+| 2 | 6.32 | 0.875 | 148 | Richard Adams Locke | *The Moon Hoax* (1835) | Meteorites that came from the Moon † | 1983-03 | If we had before retained any doubt of the power of lunar volcanoes to throw fragments of their craters so fa… |
+| 3 | 6.13 | 0.75 | 287 | Cyrano de Bergerac | *A Voyage to the Moon* (1657) | Multistage rocket | 1944-11 | For so soon as the Flame had devoured one tier of Squibs, which were ranked by six and six, by means of a Tra… |
+| 4 | 6.11 | 0.875 | 125 | Voltaire | *Micromegas* (1752) | Phobos and Deimos, the two moons of Mars † | 1877-08 | they swung by two moons that cater to this planet but have escaped the notice of our astronomers. |
+| 5 | 6.09 | 0.75 | 278 | Cyrano de Bergerac | *A Voyage to the Moon* (1657) | Audiobook player | 1935 | it was a Book made wholly for the Ears, and not the Eyes. So that when any Body has a mind to read in it, he… |
+| 6 | 6.07 | 0.75 | 273 | Cyrano de Bergerac | *Voyages to the Moon and the Sun* (1662) | Audiobook player | 1935 | It is a book indeed, but a miraculous book without pages or letters; in fine, it is a book to learn from whic… |
+| 7 | 6.07 | 0.75 | 273 | Francis Bacon | *New Atlantis* (1627) | Hearing aid | 1900 | We have certain helps which set to the ear do further the hearing greatly. |
+| 8 | 5.98 | 1 | 62 | Luis Senarens | *The Sunken Isthmus* (1896) | Submarine air supply | 1958-10 | Under the pilot-house there was placed a generator which was capable of manufacturing pure oxygen, and also o… |
+| 9 | 5.81 | 1 | 55 | Charles L. Fontenay | *Blow the Man Down* (1955) | Solar sail or solar-driven spacecraft † | 2010-06-09 | The wind that blows between the worlds," said Carrel solemnly. "Solar radiation. Its pressure will move a shi… |
+| 10 | 5.68 | 0.875 | 89 | Jules Verne | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Weightlessness in spaceflight † | 1961-04-12 | Nicholl having accidentally let a glass slip from his hand, the glass, instead of falling, remained suspended… |
+| 11 | 5.68 | 0.875 | 89 | Jules Verne | *The Moon-Voyage* (1872) | Weightlessness in spaceflight † | 1961-04-12 | Nicholl having let a tumbler escape from his hand, instead of falling, it remained suspended in the air. |
+| 12 | 5.61 | 0.875 | 84 | Percy Greg | *Across the Zodiac* (1880) | Pressurized spacecraft cabin and atmosp… | 1964-10-12 | I had first, by means of the air pump, to fill the vessel with an atmosphere as dense as that in which I had… |
+| 13 | 5.58 | 1 | 47 | Edmond Hamilton | *The Sargasso of Space* (1931) | Refueling spacecraft in orbit | 1978-02 | A Pluto liner a quarter-mile back, and we can pump the fuel over here by connecting tube-lines. |
+| 14 | 5.58 | 0.875 | 82 | Garrett Putman Serviss | *Other Worlds* (1901) | Meteorites that came from the Moon † | 1983-03 | It has led to the theory that meteorites may have originally been shot out of the moon's great volcanoes, whe… |
+| 15 | 5.55 | 0.875 | 80 | Edgar Rice Burroughs | *A Fighting Man of Mars* (1930) | Invisibility † | 2010-12 | The compound of invisibility merely bows outward the reflected light, which, entering our eyes and impinging… |
+| 16 | 5.55 | 0.875 | 80 | (text) | *Astounding Stories of Super-Science September 1930* (1930) | Invisibility † | 2010-12 | The walls of the ship are double, the inner one of metal and the outer one of vitrolene or some similar perfe… |
+| 17 | 5.52 | 1 | 45 | Arthur Cheney Train; Robert W… | *The Moon Maker* (1916) | Black sky filled with stars seen from s… † | 1961-04-12 | Yet, in spite of the fact that the universe was filled with light, the sky remained as black as midnight and… |
 | 18 | 5.45 | 0.875 | 74 | Garrett Putman Serviss | *Curiosities of the Sky* (1909) | Meteorites that came from the Moon † | 1983-03 | For similar reasons it seems not impossible that the theory mentioned in a former chapter—that some of the me… |
 | 19 | 5.43 | 0.875 | 73 | George Chetwynd Griffith | *The Angel of the Revolution* (1893) | Tidal power | 1966-11-26 | The ebb and flow in the Thames had at last been turned to account, and worked huge turbines which perpetually… |
 | 20 | 5.36 | 1 | 40 | Fritz Leiber | *The Green Millennium* (1953) | Orbital mirrors lighting cities † | 1993-02-04 | the false sunlight from the sodium mirror circling the earth to make evening light for this city |
@@ -80,7 +80,7 @@ Deadlines: 1,741 `will` claims with a concept have a stated time naming a year, 
 
 ## Authors: total points
 
-Each author counts a concept once, from their best book. 773 authors score.
+Each author counts a concept once, from their best book. 767 authors score.
 
 | # | author | points | concepts | books | points per book | precision |
 |---|---|---|---|---|---|---|
@@ -90,25 +90,25 @@ Each author counts a concept once, from their best book. 773 authors score.
 | 4 | Jules Verne | 344.2 | 108 | 16 | 21.5 | 19% of 1082 |
 | 5 | George O. Smith | 319.2 | 131 | 57 | 5.6 | 11% of 2076 |
 | 6 | Ray Cummings | 317.1 | 128 | 36 | 8.8 | 11% of 1907 |
-| 7 | John W. Campbell Jr | 290.2 | 117 | 12 | 24.2 | 15% of 1241 |
-| 8 | Edmond Hamilton | 285.6 | 106 | 34 | 8.4 | 16% of 959 |
-| 9 | Randall Garrett | 260.0 | 111 | 78 | 3.3 | 12% of 1590 |
-| 10 | George Chetwynd Griffith | 257.7 | 92 | 6 | 43.0 | 28% of 803 |
-| 11 | Raymond Z. Gallun | 254.8 | 99 | 17 | 15.0 | 22% of 701 |
+| 7 | Edmond Hamilton | 285.6 | 106 | 34 | 8.4 | 16% of 959 |
+| 8 | Randall Garrett | 260.0 | 111 | 78 | 3.3 | 12% of 1590 |
+| 9 | George Chetwynd Griffith | 257.7 | 92 | 6 | 43.0 | 28% of 803 |
+| 10 | Raymond Z. Gallun | 254.8 | 99 | 17 | 15.0 | 22% of 701 |
+| 11 | John W. Campbell Jr | 250.3 | 102 | 11 | 22.8 | 15% of 963 |
 | 12 | Godfrey Sweven | 246.6 | 88 | 2 | 123.3 | 17% of 568 |
 | 13 | Fritz Leiber | 225.5 | 94 | 29 | 7.8 | 18% of 657 |
 | 14 | H. Beam Piper | 217.3 | 100 | 32 | 6.8 | 14% of 1180 |
-| 15 | F. L. Wallace | 206.2 | 88 | 18 | 11.5 | 17% of 551 |
-| 16 | Edgar Rice Burroughs | 200.9 | 79 | 21 | 9.6 | 11% of 1200 |
-| 17 | Garrett Putman Serviss | 200.7 | 72 | 6 | 33.5 | 14% of 585 |
+| 15 | F. L. Wallace | 202.4 | 87 | 18 | 11.2 | 17% of 551 |
+| 16 | Garrett Putman Serviss | 200.7 | 72 | 6 | 33.5 | 14% of 585 |
+| 17 | Edgar Rice Burroughs | 196.4 | 78 | 21 | 9.4 | 10% of 1200 |
 | 18 | Nelson S. Bond | 186.1 | 74 | 37 | 5.0 | 15% of 741 |
 | 19 | Stephen Marlowe | 179.6 | 73 | 53 | 3.4 | 14% of 750 |
-| 20 | Bryce Walton | 164.7 | 70 | 38 | 4.3 | 15% of 536 |
-| 21 | Hugo Gernsback | 162.2 | 52 | 2 | 81.1 | 28% of 223 |
-| 22 | Robert Silverberg | 157.6 | 73 | 42 | 3.8 | 13% of 720 |
-| 23 | Jack Williamson | 156.1 | 59 | 11 | 14.2 | 15% of 391 |
-| 24 | Alan Edward Nourse | 150.9 | 70 | 33 | 4.6 | 15% of 541 |
-| 25 | Percy Greg | 147.0 | 47 | 1 | 147.0 | 27% of 248 |
+| 20 | Bryce Walton | 162.1 | 69 | 38 | 4.3 | 14% of 536 |
+| 21 | Robert Silverberg | 157.6 | 73 | 42 | 3.8 | 13% of 720 |
+| 22 | Jack Williamson | 156.1 | 59 | 11 | 14.2 | 15% of 391 |
+| 23 | Alan Edward Nourse | 150.9 | 70 | 33 | 4.6 | 15% of 541 |
+| 24 | Percy Greg | 147.0 | 47 | 1 | 147.0 | 27% of 248 |
+| 25 | Hugo Gernsback | 143.4 | 44 | 1 | 143.4 | 31% of 183 |
 | 26 | Carey Rockwell | 136.1 | 59 | 6 | 22.7 | 21% of 535 |
 | 27 | Richard M. Elam | 134.6 | 59 | 3 | 44.9 | 31% of 307 |
 | 28 | Roy Rockwood | 123.5 | 49 | 7 | 17.6 | 16% of 404 |
@@ -141,18 +141,18 @@ Each author counts a concept once, from their best book. 773 authors score.
 | 20 | *The Green Millennium* (1953) | Fritz Leiber | Science-Fiction | 80.5 | 33 |
 | 21 | *A Trip to Venus* (1897) | John Munro | Science-Fiction | 80.2 | 26 |
 | 22 | *Pharaoh's Broker* (1899) | Ellsworth Douglass | Science-Fiction | 79.8 | 26 |
-| 23 | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Jules Verne; Henri Théophile Hildibrand | Science-Fiction | 79.6 | 25 |
+| 23 | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Jules Verne | Science-Fiction | 79.6 | 25 |
 | 24 | *Tarrano the Conqueror* (1925) | Ray Cummings | Science-Fiction | 78.1 | 31 |
 | 25 | *The Angel of the Revolution* (1893) | George Chetwynd Griffith | Science-Fiction | 75.2 | 25 |
 | 26 | *To Mars Via the Moon* (1911) | Mark Wicks | Science-Fiction | 75.1 | 27 |
-| 27 | *Venus Equilateral* (1947) | George O. Smith; John W. Campbell Jr | Science-Fiction | 74.4 | 32 |
+| 27 | *Venus Equilateral* (1947) | George O. Smith | Science-Fiction | 74.4 | 32 |
 | 28 | *Triplanetary* (1948) | E. E. Smith | Science-Fiction | 73.7 | 33 |
 | 29 | *Last and First Men* (1930) | Olaf Stapledon | Science-Fiction | 73.3 | 29 |
 | 30 | *Voyages to the Moon and the Sun* (1662) | Cyrano de Bergerac | Science-Fiction | 73.2 | 21 |
 
 ## Precision
 
-Claims realized at a score of 0.5 or more, of all tranche-A claims by the author; authors with 50 or more (314).
+Claims realized at a score of 0.5 or more, of all tranche-A claims by the author; authors with 50 or more (309).
 
 | # | author | precision | claims | points |
 |---|---|---|---|---|
@@ -166,10 +166,10 @@ Claims realized at a score of 0.5 or more, of all tranche-A claims by the author
 | 8 | Arthur Cheney Train | 31% | 112 | 88.7 |
 | 9 | Robert Williams Wood | 31% | 112 | 88.7 |
 | 10 | Mary E. Bradley Lane | 31% | 104 | 58.8 |
-| 11 | Wilbur Finley Fauley | 29% | 80 | 37.2 |
-| 12 | John Munro | 28% | 95 | 80.2 |
-| 13 | George Chetwynd Griffith | 28% | 803 | 257.7 |
-| 14 | Hugo Gernsback | 28% | 223 | 162.2 |
+| 11 | Hugo Gernsback | 31% | 183 | 143.4 |
+| 12 | Wilbur Finley Fauley | 29% | 80 | 37.2 |
+| 13 | John Munro | 28% | 95 | 80.2 |
+| 14 | George Chetwynd Griffith | 28% | 803 | 257.7 |
 | 15 | Luis Senarens | 28% | 395 | 88.1 |
 | 16 | George Gordon Hastings | 27% | 73 | 33.4 |
 | 17 | Philip Francis Nowlan | 27% | 172 | 89.5 |
@@ -179,7 +179,7 @@ Claims realized at a score of 0.5 or more, of all tranche-A claims by the author
 
 ## Points per book
 
-Authors with 3 or more books in the corpus (257); every book counts, including those with no tranche-A points.
+Authors with 3 or more books in the corpus (256); every book counts, including those with no tranche-A points.
 
 | # | author | points per book | books | points |
 |---|---|---|---|---|
@@ -188,7 +188,7 @@ Authors with 3 or more books in the corpus (257); every book counts, including t
 | 3 | Garrett Putman Serviss | 33.5 | 6 | 200.7 |
 | 4 | George Allan England | 32.0 | 3 | 96.0 |
 | 5 | Camille Flammarion | 30.7 | 3 | 92.0 |
-| 6 | John W. Campbell Jr | 24.2 | 12 | 290.2 |
+| 6 | John W. Campbell Jr | 22.8 | 11 | 250.3 |
 | 7 | Carey Rockwell | 22.7 | 6 | 136.1 |
 | 8 | Charles Willard Diffin | 22.6 | 4 | 90.3 |
 | 9 | Otis Adelbert Kline | 22.3 | 5 | 111.6 |
@@ -199,16 +199,16 @@ Authors with 3 or more books in the corpus (257); every book counts, including t
 | 14 | E. Everett Evans | 20.1 | 4 | 80.4 |
 | 15 | Roy Rockwood | 17.6 | 7 | 123.5 |
 | 16 | Guy Thorne | 16.5 | 3 | 49.5 |
-| 17 | Anthony Gilmore | 15.7 | 4 | 62.9 |
-| 18 | Neil R. Jones | 15.7 | 5 | 78.4 |
-| 19 | Arthur J. Burks | 15.4 | 3 | 46.2 |
-| 20 | Leigh Richmond | 15.3 | 3 | 45.9 |
+| 17 | Leigh Richmond | 15.3 | 3 | 45.9 |
+| 18 | Neil R. Jones | 15.2 | 5 | 76.2 |
+| 19 | Anthony Gilmore | 15.0 | 4 | 60.0 |
+| 20 | Raymond Z. Gallun | 15.0 | 17 | 254.8 |
 
 ## By era
 
 The best books of each era, by publication year.
 
-**pre-1900** (119 books score)
+**pre-1900** (121 books score)
 
 | # | book | author | points |
 |---|---|---|---|
@@ -221,9 +221,9 @@ The best books of each era, by publication year.
 | 7 | *The Mummy! A Tale of the Twenty-Second Century* (1827) | Mrs. Loudon | 90.3 |
 | 8 | *A Trip to Venus* (1897) | John Munro | 80.2 |
 | 9 | *Pharaoh's Broker* (1899) | Ellsworth Douglass | 79.8 |
-| 10 | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Jules Verne; Henri Théophile Hildibrand | 79.6 |
+| 10 | *From the Earth to the Moon, Direct in Ninety-Seven Hours an…* (1872) | Jules Verne | 79.6 |
 
-**1900–1945** (628 books score)
+**1900–1945** (627 books score)
 
 | # | book | author | points |
 |---|---|---|---|
@@ -245,7 +245,7 @@ The best books of each era, by publication year.
 | 1 | *Space Tug* (1953) | Murray Leinster | 83.8 |
 | 2 | *Teen-age Super Science Stories* (1957) | Richard M. Elam | 82.8 |
 | 3 | *The Green Millennium* (1953) | Fritz Leiber | 80.5 |
-| 4 | *Venus Equilateral* (1947) | George O. Smith; John W. Campbell Jr | 74.4 |
+| 4 | *Venus Equilateral* (1947) | George O. Smith | 74.4 |
 | 5 | *Triplanetary* (1948) | E. E. Smith | 73.7 |
 | 6 | *The Planet Strappers* (1961) | Raymond Z. Gallun | 69.8 |
 | 7 | *People Minus X* (1957) | Raymond Z. Gallun | 61.9 |
@@ -253,37 +253,36 @@ The best books of each era, by publication year.
 | 9 | *Rip Foster in Ride the Gray Planet* (1952) | Harold L. Goodwin | 56.1 |
 | 10 | *Space Platform* (1953) | Murray Leinster | 55.8 |
 
-**1980+** (1 books score)
+**1980+** (0 books score)
 
 | # | book | author | points |
 |---|---|---|---|
-| 1 | *Astounding Stories of Super-Science January 1930* (2012) | Harry Bates | 1.9 |
 
 ## Other corpus groups
 
-The non-fiction, classics, prophecy and religious texts. Their years are the library's, which for translations is the translation's year (lead is then understated); the curated composition dates and the second-translation re-judging of DESIGN §1a are not built. Religious texts rank by text, not by translator.
+The non-fiction, classics, prophecy and religious texts. Ancient and translated texts are dated by composition, the end of the scholarly range in each text's English Wikipedia article, pinned to a revision (DESIGN §1a; `runs/match/book_review.jsonl`); the second-translation re-judging of §1a is not built. Religious texts rank by text, not by translator.
 
 | group | book | author | points | rank |
 |---|---|---|---|---|
 | Classics | *New Atlantis* (1627) | Francis Bacon | 63.9 | 42 |
 | Classics | *Utopia* (1516) | Thomas More | 5.0 | 1414 |
-| Classics | *The City of the Sun* (1602) | Tommaso Campanella | 3.8 | 1643 |
-| Fiction | *Actions and Reactions* (1909) | Rudyard Kipling | 26.2 | 215 |
-| Fiction | *A Diversity of Creatures* (1917) | Rudyard Kipling | 25.5 | 223 |
-| Fiction | *Futility (The Wreck of the Titan)* (1898) | Morgan Robertson | 16.6 | 396 |
+| Classics | *The City of the Sun* (1602) | Tommaso Campanella | 3.8 | 1645 |
+| Fiction | *Actions and Reactions* (1909) | Rudyard Kipling | 26.2 | 216 |
+| Fiction | *A Diversity of Creatures* (1917) | Rudyard Kipling | 25.5 | 224 |
+| Fiction | *Futility (The Wreck of the Titan)* (1898) | Morgan Robertson | 16.6 | 400 |
 | Futurism | *A Hundred Years Hence (The Expectations of an Optimist)* (1905) | T. Baron Russell | 100.3 | 12 |
 | Futurism | *Anticipations* (1901) | H. G. Wells | 52.2 | 62 |
-| Futurism | *The Problem of Increasing Human Energy* (1900) | Nikola Tesla | 37.0 | 123 |
-| Prophecy | *The Sibylline Oracles* (1899) | (text) | 2.3 | 2007 |
-| Prophecy | *The True Prophecies or Prognostications of Michael Nostrada…* (1672) | Nostradamus | 1.8 | 2153 |
-| Religion | *The Mahabharata, Volume 1 (Books 1-3)* (1896) | (text) | 16.8 | 389 |
-| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (1896) | (text) | 10.4 | 719 |
-| Religion | *The Elder Eddas and the Younger Eddas* (1866) | (text) | 9.8 | 785 |
+| Futurism | *The Problem of Increasing Human Energy* (1900) | Nikola Tesla | 37.0 | 122 |
+| Prophecy | *The Sibylline Oracles* (700) | (text) | 7.8 | 976 |
+| Prophecy | *The True Prophecies or Prognostications of Michael Nostrada…* (1568) | Nostradamus | 2.0 | 2104 |
+| Religion | *The Mahabharata, Volume 1 (Books 1-3)* (400) | (text) | 34.8 | 133 |
+| Religion | *The Mahabharata, Volume 2 (Books 4-7)* (400) | (text) | 19.1 | 330 |
+| Religion | *The Mahabharata, Volume 4 (Books 13-18)* (400) | (text) | 18.8 | 337 |
 | Science | *Side-Lights on Astronomy* (1906) | Simon Newcomb | 33.9 | 140 |
 
 ## Sensitivity: points only from a score of 0.5
 
-5,427 of 16,440 judged `will` pairs score below 0.5; without them 3,204 entries and 4,455 of 26,090 points go. Of the top 30 authors, 29 stay in the top 30; of the top 30 books, 27.
+5,434 of 16,421 judged `will` pairs score below 0.5; without them 3,210 entries and 4,490 of 26,129 points go. Of the top 30 authors, 29 stay in the top 30; of the top 30 books, 27.
 
 | # | author (default) | points | author (from 0.5) | points |
 |---|---|---|---|---|
@@ -293,50 +292,49 @@ The non-fiction, classics, prophecy and religious texts. Their years are the lib
 | 4 | Jules Verne | 344.2 | Jules Verne | 306.5 |
 | 5 | George O. Smith | 319.2 | George O. Smith | 279.2 |
 | 6 | Ray Cummings | 317.1 | Ray Cummings | 262.3 |
-| 7 | John W. Campbell Jr | 290.2 | John W. Campbell Jr | 257.3 |
-| 8 | Edmond Hamilton | 285.6 | Edmond Hamilton | 256.9 |
-| 9 | Randall Garrett | 260.0 | Randall Garrett | 242.1 |
-| 10 | George Chetwynd Griffith | 257.7 | Raymond Z. Gallun | 236.9 |
-| 11 | Raymond Z. Gallun | 254.8 | George Chetwynd Griffith | 219.5 |
+| 7 | Edmond Hamilton | 285.6 | Edmond Hamilton | 256.9 |
+| 8 | Randall Garrett | 260.0 | Randall Garrett | 242.1 |
+| 9 | George Chetwynd Griffith | 257.7 | Raymond Z. Gallun | 236.9 |
+| 10 | Raymond Z. Gallun | 254.8 | John W. Campbell Jr | 220.2 |
+| 11 | John W. Campbell Jr | 250.3 | George Chetwynd Griffith | 219.5 |
 | 12 | Godfrey Sweven | 246.6 | Fritz Leiber | 213.2 |
 | 13 | Fritz Leiber | 225.5 | Godfrey Sweven | 208.3 |
 | 14 | H. Beam Piper | 217.3 | H. Beam Piper | 192.6 |
-| 15 | F. L. Wallace | 206.2 | F. L. Wallace | 173.1 |
-| 16 | Edgar Rice Burroughs | 200.9 | Edgar Rice Burroughs | 166.7 |
-| 17 | Garrett Putman Serviss | 200.7 | Nelson S. Bond | 166.7 |
-| 18 | Nelson S. Bond | 186.1 | Garrett Putman Serviss | 163.9 |
+| 15 | F. L. Wallace | 202.4 | F. L. Wallace | 169.3 |
+| 16 | Garrett Putman Serviss | 200.7 | Nelson S. Bond | 166.7 |
+| 17 | Edgar Rice Burroughs | 196.4 | Garrett Putman Serviss | 163.9 |
+| 18 | Nelson S. Bond | 186.1 | Edgar Rice Burroughs | 162.2 |
 | 19 | Stephen Marlowe | 179.6 | Stephen Marlowe | 157.1 |
-| 20 | Bryce Walton | 164.7 | Hugo Gernsback | 148.9 |
+| 20 | Bryce Walton | 162.1 | Bryce Walton | 138.8 |
 
 ## The deciding concepts after tier 2 (PLAN §5)
 
-590 concepts carry a top entry or add 5+ points to the author totals now; tier 2 checked 590 of them (`runs/match/deciding.jsonl` lists every concept selected for it, by round). By criterion (a concept can meet several):
+592 concepts carry a top entry or add 5+ points to the author totals now; tier 2 checked 592 of them (`runs/match/deciding.jsonl` lists every concept selected for it, by round). By criterion (a concept can meet several):
 
-- adds 5+ points to the author totals: 587
-- best entry of a top-100 author: 64
-- best entry of a top-100 book: 71
-- lead over 40 years for 20+ claims: 65
-- top-300 prediction: 125
+- adds 5+ points to the author totals: 584
+- best entry of a top-100 author: 65
+- best entry of a top-100 book: 70
+- lead over 40 years for 20+ claims: 64
+- top-300 prediction: 129
 - top-50 entry, 1900–1945: 30
 - top-50 entry, 1946–1979: 20
-- top-50 entry, 1980+: 1
 - top-50 entry, pre-1900: 38
 
-Their milestones: confidence high 117, low 152, medium 321; 483 have a contemporary source, 40 rest on Wikipedia alone, 150 are demonstrations only.
+Their milestones: confidence high 119, low 154, medium 319; 483 have a contemporary source, 40 rest on Wikipedia alone, 148 are demonstrations only.
 
 The 40 that carry the most points, and every one tier 2 did not check:
 
 | concept | points | entries | lead > 40 | milestone | confidence | sources | best entry | tier 2 |
 |---|---|---|---|---|---|---|---|---|
-| Death ray | 502.9 | 189 | 333 | 2003-03: The US Army deployed the Zeus-HLONS, a Humvee-mounted laser, to Bagra… | medium | reference | Ray Cummings, *The Sea Girl* (1929) | checked |
+| Death ray | 506.0 | 190 | 340 | 2003-03: The US Army deployed the Zeus-HLONS, a Humvee-mounted laser, to Bagra… | medium | reference | Ray Cummings, *The Sea Girl* (1929) | checked |
 | Spacesuit | 406.7 | 177 | 11 | 1969-01-16: Yevgeny Khrunov and Alexei Yeliseyev, wearing Yastreb suits with ches… | high | contemporary | Jules Verne, *All Around the Moon* (1870) | checked |
 | Sleep and incapacitating gas | 376.5 | 104 | 144 | 2002-10-26: Russian special forces pumped an aerosol anesthetic (believed to be a… | high | contemporary | Manly Wade Wellman, *Warrior of Two Worlds* (1944) | checked |
 | Private and personal spacecraft | 351.8 | 133 | 153 | 2021-07-20: Blue Origin NS-16: New Shepard carried Bezos, his brother Mark, Wally… | medium | contemporary | Murray Leinster, *If You Was a Moklin* (1951) | checked |
 | Closed-loop life support | 337.2 | 138 | 72 | 1972-12 †: BIOS-3, Institute of Biophysics, Krasnoyarsk: crewed closure experime… | medium | reference | Hugo Gernsback, *Ralph 124C 41+* (1911) | checked |
 | Radio communication with spacecraft and… | 332.5 | 208 | 25 | 1957-11-03: Sputnik 2, carrying the dog Laika, radioed telemetry of her heartbeat… | medium | contemporary | Hugo Gernsback, *Ralph 124C 41+* (1911) | checked |
-| Sonic weapon | 324.5 | 99 | 155 | 2005-11-05: The cruise ship Seabourn Spirit used a long-range acoustic device (LR… | medium | contemporary | Sax Rohmer, *The Day the World Ended* (1929) | checked |
-| Non-lethal stun gun | 299.1 | 123 | 16 | 1975-03: The Taser Public Defender, a flashlight-shaped dart stun gun made by… | medium | contemporary | Garrett Putman Serviss, *Edison's Conquest of Mars* (1898) | checked |
-| Invisibility | 295.5 | 104 | 255 | 2010-12 †: Baile Zhang, Yuan Luo, Xiaogang Liu and George Barbastathis (MIT/SMAR… | medium | contemporary | Edgar Rice Burroughs, *A Fighting Man of Mars* (1930) | checked |
+| Sonic weapon | 325.6 | 99 | 155 | 2005-11-05: The cruise ship Seabourn Spirit used a long-range acoustic device (LR… | medium | contemporary | Sax Rohmer, *The Day the World Ended* (1929) | checked |
+| Invisibility | 300.8 | 105 | 263 | 2010-12 †: Baile Zhang, Yuan Luo, Xiaogang Liu and George Barbastathis (MIT/SMAR… | medium | contemporary | Edgar Rice Burroughs, *A Fighting Man of Mars* (1930) | checked |
+| Non-lethal stun gun | 300.4 | 123 | 16 | 1975-03: The Taser Public Defender, a flashlight-shaped dart stun gun made by… | medium | contemporary | Garrett Putman Serviss, *Edison's Conquest of Mars* (1898) | checked |
 | Spacecraft video cameras and viewscreens | 273.4 | 125 | 35 | 1973: Skylab crews used the Apollo Telescope Mount video monitors in real t… | low | contemporary | (text), *Astounding Stories of Super-Scienc…* (1931) | checked |
 | Crewed spaceship | 260.1 | 160 | 16 | 1961-04-12: Vostok 1 with Yuri Gagarin aboard was launched on a rocket from Baiko… | high | contemporary | Leigh Brackett, *A World Is Born* (1941) | checked |
 | Video link with spacecraft and other wo… | 252.4 | 104 | 24 | 1979-03-24: The same Salyut 6 two-way TV link was used for the crew to see ground… | medium | contemporary | Otis Adelbert Kline, *Maza of the Moon* (1929) | checked |
@@ -353,7 +351,7 @@ The 40 that carry the most points, and every one tier 2 did not check:
 | Powered rocket landing | 167.9 | 81 | 10 | 1966-06-02: NASA's Surveyor 1 landed on the Moon in Oceanus Procellarum on 2 June… | high | contemporary | Charles Willard Diffin, *Brood of the Dark Moon* (1931) | checked |
 | New or sharpened human senses | 167.3 | 74 | 124 | 2004: Neil Harbisson has worn a skull-anchored antenna since 2004 that give… | low | Wikipedia only | Camille Flammarion, *Lumen* (1873) | checked |
 | Brain-to-brain link | 161.4 | 54 | 67 | 2013-08-12 †: At the University of Washington on 12 Aug 2013, Rajesh Rao's EEG-read… | medium | contemporary | E. E. Smith; Lee Hawkins…, *The Skylark of Space* (1928) | checked |
-| Weightlessness in spaceflight | 159.0 | 63 | 36 | 1961-04-12 †: Yuri Gagarin orbited the Earth in Vostok 1 and floated weightless in… | high | contemporary | Jules Verne; Henri Théop…, *From the Earth to the Moon, Direct…* (1872) | checked |
+| Weightlessness in spaceflight | 159.0 | 63 | 36 | 1961-04-12 †: Yuri Gagarin orbited the Earth in Vostok 1 and floated weightless in… | high | contemporary | Jules Verne, *From the Earth to the Moon, Direct…* (1872) | checked |
 | Three-dimensional telepresence | 154.2 | 48 | 67 | 2022: Google began testing Project Starline with partner companies such as… | low | Wikipedia only | Frank Belknap Long, *Woman from Another Planet* (1960) | checked |
 | Self-driving car | 150.8 | 46 | 56 | 2020-10-08: Waymo opened its fully driverless ride-hailing service (Waymo One, no… | medium | contemporary | Robert Hugh Benson, *The Dawn of All* (1911) | checked |
 | Spaceport | 150.7 | 113 | 0 | 1957-10-04: Baikonur Cosmodrome (founded 1955) launched Sputnik 1, the first spac… | medium | contemporary | Raymond F. Jones, *The Seven Jewels of Chamar* (1946) | checked |

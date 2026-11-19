@@ -1,0 +1,201 @@
+<title>Prognosticator Awards</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an awards almanac. A masthead, the grand award as a wide plate, then plates in a wrapping grid;
+   every winning prediction is drawn as a span from the year it was written to the year it came true. */
+:root {
+  --paper: #e8ecee;       /* cool observatory-plate paper */
+  --plate: #f6f8f8;
+  --ink: #18203d;         /* deep indigo ink */
+  --muted: #4f5874;
+  --rule: #c3cad3;
+  --gold: #9a6a12;        /* medal brass */
+  --true: #17776b;        /* the year it came true */
+  --span: #c99a3c;
+  --display: "Big Shoulders Display", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0e1324; --plate: #161c33; --ink: #e5e8f1; --muted: #a3abc4; --rule: #2d3553;
+  --gold: #e2b45a; --true: #5cc6b4; --span: #b88d3a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #0e1324; --plate: #161c33; --ink: #e5e8f1; --muted: #a3abc4; --rule: #2d3553;
+  --gold: #e2b45a; --true: #5cc6b4; --span: #b88d3a; color-scheme: dark }
+body { background: var(--paper); color: var(--ink); font: 16px/1.55 var(--body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: var(--true); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.mast { display: grid; gap: 10px; border-bottom: 3px double var(--ink); padding-bottom: 18px; }
+.mast .eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.mast h1 { font: 900 clamp(48px, 10vw, 112px)/.86 var(--display); letter-spacing: .01em; text-transform: uppercase; margin: 0; text-wrap: balance; }
+.mast h1 span { color: var(--gold); }
+.mast .dek { font-size: 19px; max-width: 62ch; margin: 4px 0 0; color: var(--ink); text-wrap: pretty; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 22px; font: 13px/1.4 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.facts b { color: var(--ink); font-weight: 500; }
+.formula { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 24px; padding-block: 22px; border-bottom: 1px solid var(--rule); align-items: start; }
+.formula code { font: 500 clamp(15px, 2.2vw, 20px)/1.4 var(--mono); color: var(--ink); display: block; }
+.formula code em { font-style: normal; color: var(--gold); }
+.formula p { margin: 0; color: var(--muted); max-width: 62ch; font-size: 15px; }
+h2.section { font: 800 30px/1 var(--display); text-transform: uppercase; letter-spacing: .03em; margin: 46px 0 6px; display: flex; gap: 14px; align-items: baseline; }
+h2.section small { font: 400 14px/1.3 var(--body); text-transform: none; letter-spacing: 0; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 18px; margin-top: 16px; }
+.plate { background: var(--plate); border: 1px solid var(--rule); padding: 20px 20px 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.plate.grand { grid-column: 1 / -1; border-top: 4px solid var(--gold); padding: 26px 26px 20px; }
+.cat { font: 500 11.5px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.plate h3 { font: 800 24px/1 var(--display); text-transform: uppercase; letter-spacing: .03em; margin: 0; }
+.grand h3 { font-size: 30px; }
+.winner { font: 900 clamp(34px, 5vw, 44px)/.95 var(--display); margin: 2px 0 0; text-wrap: balance; }
+.grand .winner { font-size: clamp(44px, 8vw, 84px); }
+.stat { font: 13px/1.4 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.why { margin: 0; font-size: 15.5px; max-width: 70ch; text-wrap: pretty; }
+.grand .why { font-size: 17px; }
+.rule { font-size: 13px; color: var(--muted); margin: 0; font-style: italic; }
+.hits { display: grid; gap: 12px; margin: 2px 0 0; padding: 0; list-style: none; }
+.grand .hits { grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 16px 22px; }
+.hit { display: grid; gap: 6px; padding-top: 10px; border-top: 1px solid var(--rule); min-width: 0; }
+.hit .idea { font: 600 15px/1.3 var(--body); }
+.hit blockquote { margin: 0; font-style: italic; font-size: 14.5px; line-height: 1.5; color: var(--ink); overflow-wrap: anywhere; }
+.hit .src { font-size: 13px; color: var(--muted); }
+.hit .true { font-size: 13px; color: var(--ink); }
+.hit .true b { color: var(--true); font-weight: 600; }
+.chip { display: inline-block; font: 500 10.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 3px 6px 2px; border: 1px solid var(--rule); color: var(--muted); margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+.span { position: relative; height: 22px; margin-top: 2px; }
+.span .axis { position: absolute; left: 0; right: 0; top: 10px; border-top: 1px dotted var(--rule); }
+.span .bar { position: absolute; top: 7px; height: 7px; background: var(--span); border-radius: 0 4px 4px 0; }
+.span .end { position: absolute; top: 3px; width: 3px; height: 15px; background: var(--true); }
+.span .start { position: absolute; top: 3px; width: 2px; height: 15px; background: var(--ink); }
+.span .lab { position: absolute; top: 0; font: 11px/1 var(--mono); color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.span .lab.l { transform: translateX(calc(-100% - 5px)); top: 6px; }
+.span .lab.r { transform: translateX(6px); top: 6px; color: var(--true); }
+.ru { margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; font-size: 13.5px; }
+.ru li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dotted var(--rule); padding-bottom: 2px; }
+.ru li span:last-child { font: 12px/1.6 var(--mono); color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ru-h { font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.wait { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 14px 22px; margin-top: 16px; }
+.wait div { border-top: 2px solid var(--ink); padding-top: 8px; display: grid; gap: 4px; min-width: 0; }
+.wait .n { font: 800 34px/1 var(--display); color: var(--gold); }
+.wait .idea { font: 600 16px/1.25 var(--body); }
+.wait .src { font-size: 13px; color: var(--muted); }
+.wait blockquote { margin: 0; font-style: italic; font-size: 14px; overflow-wrap: anywhere; }
+.notes { margin-top: 46px; border-top: 3px double var(--ink); padding-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px 32px; font-size: 14px; color: var(--muted); }
+.notes h4 { font: 800 18px/1 var(--display); text-transform: uppercase; letter-spacing: .04em; color: var(--ink); margin: 0 0 6px; }
+.notes p { margin: 0 0 8px; }
+@media (max-width: 640px) { .formula { grid-template-columns: 1fr; } .plate.grand { padding: 20px 16px; } }
+@media (prefers-reduced-motion: no-preference) { .span .bar { transition: width .6s ease; } }
+</style>
+
+<div class="wrap" id="top">
+  <header class="mast">
+    <div class="eyebrow" id="edition"></div>
+    <h1>Prognosticator <span>Awards</span></h1>
+    <p class="dek" id="dek"></p>
+    <div class="facts" id="facts"></div>
+  </header>
+  <section class="formula">
+    <div><code>points = <em>closeness</em> × log<sub>2</sub>(1 + <em>years early</em>)</code></div>
+    <p id="method"></p>
+  </section>
+  <main id="awards"></main>
+  <footer class="notes" id="notes"></footer>
+</div>
+
+<script>
+const DATA = __AWARDS_JSON__;
+const $ = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h !== undefined) e.innerHTML = h; return e; };
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const yr = d => parseInt(String(d), 10) * (String(d).startsWith('-') ? 1 : 1);
+const fmtYear = y => y < 0 ? `${-y} BCE` : y < 1000 ? `${y} CE` : `${y}`;
+const fmtDate = d => { const s = String(d); const m = s.match(/^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/); if (!m) return s;
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return (m[3] ? `${+m[3]} ` : '') + (m[2] ? `${months[+m[2] - 1]} ` : '') + fmtYear(+m[1]); };
+const AXIS = [1620, 2030];  // one time axis for every modern plate, so spans compare across the page
+
+function span(h, axis) {
+  const [lo, hi] = axis, a = yr(h.year), b = yr(h.came_true), pct = y => Math.max(0, Math.min(100, (y - lo) / (hi - lo) * 100));
+  const s = $('div', 'span'); s.setAttribute('role', 'img');
+  s.setAttribute('aria-label', `Written ${fmtYear(a)}, came true ${fmtYear(b)}: ${b - a} years`);
+  s.innerHTML = `<div class="axis"></div><div class="bar" style="left:${pct(a)}%;width:${pct(b) - pct(a)}%"></div>` +
+    `<div class="start" style="left:${pct(a)}%"></div><div class="end" style="left:calc(${pct(b)}% - 1px)"></div>` +
+    `<span class="lab l" style="left:${pct(a)}%">${fmtYear(a)}</span><span class="lab r" style="left:${pct(b)}%">${fmtYear(b)}</span>`;
+  return s;
+}
+
+function hitEl(h, opts) {
+  const li = $('li', 'hit');
+  const flags = (h.demonstration_only ? '<span class="chip" title="Scored on a laboratory or trial demonstration">demo only</span>' : '') +
+    (h.confidence === 'low' ? '<span class="chip" title="The date rests on a low-confidence milestone">low confidence</span>' : '');
+  li.append($('div', 'idea', esc(h.concept) + flags));
+  li.append($('blockquote', '', '“' + esc(h.quote) + '”'));
+  const by = h.authors && h.authors.length ? ' — ' + esc(h.authors.join(' and ')) : '';
+  li.append($('div', 'src', `<i>${esc(h.title)}</i>, ${fmtYear(h.year)}${opts.by ? by : ''}${h.stated_time ? ` · said: “${esc(h.stated_time)}”` : ''}`));
+  const pts = opts.negative ? `judged ${h.score} the same thing` : `${h.lead} years early, judged ${h.score} → ${h.points} points`;
+  li.append($('div', 'true', `<b>${opts.negative ? 'Happened' : 'Came true'} ${fmtDate(h.came_true)}:</b> ${esc(h.event)} <span class="stat">(${pts})</span>`));
+  li.append(span(h, opts.axis || AXIS));
+  return li;
+}
+
+function plate(a, opts = {}) {
+  const p = $('article', 'plate' + (opts.grand ? ' grand' : '')); p.id = a.id;
+  p.append($('div', 'cat', esc(opts.cat || 'Award')));
+  p.append($('h3', '', esc(a.title)));
+  const w = a.winner;
+  p.append($('div', 'winner', esc(w.name)));
+  p.append($('div', 'stat', esc((w.by ? `by ${w.by}${w.year ? ', ' + fmtYear(w.year) : ''} · ` : '') + w.stat)));
+  if (a.why) p.append($('p', 'why', esc(a.why)));
+  p.append($('p', 'rule', esc(a.rule)));
+  const n = opts.grand ? 6 : (opts.hits ?? 2), ul = $('ul', 'hits');
+  const axis = opts.axis || (a.hits.some(h => yr(h.year) < AXIS[0]) ? [Math.min(...a.hits.map(h => yr(h.year))) - 60, 2030] : AXIS);
+  a.hits.slice(0, n).forEach(h => ul.append(hitEl(h, { ...opts, axis })));
+  p.append(ul);
+  if (a.runners_up && a.runners_up.length) {
+    p.append($('div', 'ru-h', 'Runners-up'));
+    const ru = $('ol', 'ru');
+    a.runners_up.forEach(r => ru.append($('li', '', `<span>${esc(r.name)}${r.by ? ` <i>(${esc(r.by)})</i>` : ''}</span><span>${esc(r.stat)}</span>`)));
+    p.append(ru);
+  }
+  return p;
+}
+
+function section(title, sub, items) {
+  const m = document.getElementById('awards');
+  m.append($('h2', 'section', esc(title) + (sub ? ` <small>${esc(sub)}</small>` : '')));
+  const g = $('div', 'grid'); items.forEach(i => i && g.append(i)); m.append(g);
+}
+
+const A = Object.fromEntries(DATA.awards.map(a => [a.id, a]));
+const pick = (prefix) => DATA.awards.filter(a => a.id.startsWith(prefix) && a.winner);
+const n = x => x.toLocaleString('en-US');
+document.getElementById('edition').textContent = `${DATA.edition} · scored ${DATA.scored}`;
+document.getElementById('dek').textContent = DATA.dek;
+const r = DATA.resolutions;
+document.getElementById('facts').innerHTML = [
+  [n(DATA.books), 'books and texts'], [n(DATA.claims), 'predictions read'], [n(r.realized || 0), 'came true'],
+  [n(r.not_a_prediction || 0), 'already real when written'], [n(DATA.authors), 'authors and texts score'], [n(Math.round(DATA.points)), 'points in all']]
+  .map(([v, l]) => `<span><b>${v}</b> ${l}</span>`).join('');
+document.getElementById('method').textContent = DATA.method;
+
+section('The top prize', '', [A.grand && plate(A.grand, { grand: true, cat: 'Grand award', by: true })]);
+section('Single predictions', 'one passage each', ['prediction', 'long_view', 'on_time', 'last_words'].map(id => A[id] && A[id].winner &&
+  plate(A[id], { cat: 'Prediction award', by: true, hits: 1, negative: id === 'last_words' })));
+section('Bodies of work', 'authors and books', ['book', 'originator', 'precision', 'per_book'].map(id => A[id] && A[id].winner &&
+  plate(A[id], { cat: 'Body of work', by: id === 'book' ? false : false })));
+section('By era', 'when the book was first published', pick('era-').map(a => plate(a, { cat: 'Era award' })));
+section('By field', 'what the idea is about', pick('domain-').map(a => plate(a, { cat: 'Field award' })));
+section('By kind of text', 'beyond science fiction', pick('group-').map(a => plate(a, { cat: 'Text award',
+  axis: a.id === 'group-ancient' ? [-200, 2030] : undefined })));
+if (A.still_waiting) {
+  const m = document.getElementById('awards');
+  m.append($('h2', 'section', 'Still waiting <small>' + esc(A.still_waiting.rule) + '</small>'));
+  const w = $('div', 'wait');
+  A.still_waiting.waiting.forEach(x => w.append($('div', '', `<span class="n">${n(x.books)}</span><span class="idea">${esc(x.concept)}</span>` +
+    `<span class="src">books predict it; first: <i>${esc(x.first_title)}</i>, ${fmtYear(x.first_year)} — ${esc(x.first_by)}</span>` +
+    `<blockquote>“${esc(x.quote)}”</blockquote>`)));
+  m.append(w);
+}
+document.getElementById('notes').innerHTML = DATA.notes.map(([h, t]) => `<div><h4>${esc(h)}</h4>${t.map(p => `<p>${p}</p>`).join('')}</div>`).join('');
+</script>
