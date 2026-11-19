@@ -31,12 +31,14 @@ your review. This version follows the later tier-2 rounds of 2026-11-18 (section
 - **The judges agree closely:** of the 16,335 current pairs two judges scored, 69% got the same
   score, 30% were one step apart and about 1% two or more (decided by a third judge). Each later
   round agrees the same way (round 4: 67%, 32%, 0.8%).
-- **Cost:** 881 subagents, 114.9M tokens and 71 agent-hours, inside the plan's 85–125M
-  estimate. The later tier-2 rounds, their re-judging and the review assist took 20.2M tokens on
-  2026-11-18, 66% to 76% of the week.
-- **For your review** (section 6): an independent second reading of the 309 milestones that the
-  last tier-2 round replaced or added suggests keeping the earlier one for 16 and is unsure of 52
-  ([`milestone_review_suggestions.md`](milestone_review_suggestions.md)). None is applied.
+- **Cost:** 910 subagents, 116.9M tokens and 71 agent-hours, inside the plan's 85–125M
+  estimate. The later tier-2 rounds, their re-judging and the review assist took 22.1M tokens on
+  2026-11-18, 66% to 77% of the week.
+- **For your review** (section 6): an independent second reading of the milestones the later
+  tier-2 rounds replaced or added suggests keeping the earlier one for 18 and is unsure of 55
+  ([`milestone_review_suggestions.md`](milestone_review_suggestions.md)); a reading of the ones
+  they confirmed names 10 to research again, and one of the concepts with no milestone looks like
+  a miss. None is applied.
 
 ## 1. How the run went
 
@@ -51,8 +53,8 @@ your review. This version follows the later tier-2 rounds of 2026-11-18 (section
 | Tier 2, rounds 2–4: newcomers and the widened set (§5) | 98 | 14.8M | 17.3 | 834 verdicts on 478 concepts |
 | Judging, rounds 1–2 (§7) | 207 | 26.5M | 9.1 | 17,201 pairs, then 3,166 new ones |
 | Judging, rounds 3–4 (§7) | 38 | 4.5M | 1.4 | 3,308 new pairs |
-| Review assist (section 6) | 11 | 0.9M | 0.2 | a second reading of 309 changed milestones |
-| **Total** | **881** | **114.9M** | **71.0** | |
+| Review assist (section 6) | 40 | 2.8M | 0.4 | second readings of 834 milestones and 242 concepts with none |
+| **Total** | **910** | **116.9M** | **71.2** | |
 
 Every batch ran as a background subagent with its own input and output file, so the run was
 stopped and restarted many times without losing work. Each stage pins its prompt by sha256, and
@@ -226,13 +228,15 @@ later move was checked against the definition; in round 4 they are in the review
    second reader, with no web access, every demonstration or practical use that round 4
    replaced, added or removed, beside the one before it and the concept's definition:
    241 accept, 16 keep the earlier milestone, 52 unsure
-   ([`milestone_review_suggestions.md`](milestone_review_suggestions.md)). The 16 include:
+   ([`milestone_review_suggestions.md`](milestone_review_suggestions.md); with rounds 2–3, 330
+   rows: 257 accept, 18 keep_previous, 55 unsure). Round 4's 16 include:
    - central and district heating dated by the Roman hypocaust (−80), which heats one building,
      not many through pipes; this would turn every claim on it into "not a prediction";
    - the large public video screen dated by an 1872 stereopticon projecting election returns;
    - tuberculosis cure moved later, from 1944–45 streptomycin trials to an inferred 1946;
    - closed-circuit video surveillance in 1927 on an inferred year;
-   - a practical use added for a natural impact (planet collision), which has none;
+   - a practical use added for a natural impact (planet collision), which has none (keep_previous
+     on a kind tier 2 added removes it);
    - transatlantic flight's practical use moved from the 1928 Graf Zeppelin passengers to the
      1919 Alcock and Brown mail bag.
 
@@ -241,22 +245,36 @@ later move was checked against the definition; in round 4 they are in the review
    decontamination of poisoned ground (1917 mustard-gas clean-up), the USB flash drive as compact
    crystal storage, and the cochlear implant as an implanted transmitter. A decision goes in
    `milestone_review.jsonl` as keep_previous or accept, and `verify` applies it.
-2. **Answers tier 2 confirmed but that look late:** electrification of homes and farms keeps its
-   1898 practical use, which the researcher called only an upper bound (Edison's Pearl Street
-   station served homes from 1882). The review assist read only changed milestones, so confirmed
-   ones like this were not reread.
-3. **Scored on a demonstration only:** 149 of the 588 deciding concepts have no practical use
+2. **Answers tier 2 confirmed:** a second pass of the review assist
+   ([`prompts/milestones_review_confirmed.md`](../../prompts/milestones_review_confirmed.md)) read
+   the 504 milestones rounds 2–4 confirmed: 419 accept, 6 earlier_exists, 4 does_not_fit, 75
+   unsure ([`milestone_review_confirmed.md`](milestone_review_confirmed.md)). The earlier events
+   it names: electrification's 1898 practical use (Pearl Street's customers ran motors from 1882),
+   geothermal power (Boise district heating 1892), the anti-satellite weapon (US Program 505 and
+   437, 1963–64), the seaplane (the Greek Navy's sortie of January 1913) and crash protection
+   (aircraft seat belts from 1910). The misfits: Starfish Prime as a machinery-disabling ray, a 1937
+   Meccano model as the industrial robot, Salyut 1 as a repurposed structure, and a couch test as
+   astronaut training. These need sourced research before a decision; keep_previous can't fix a
+   confirmed milestone.
+3. **Concepts with no milestone:** 31,493 claims (41%) are open because their concept has none. A
+   third pass ([`prompts/milestones_missing_check.md`](../../prompts/milestones_missing_check.md))
+   read the 242 such concepts with 30 or more open claims: 200 never happened, 41 unsure, 1
+   happened (brain transplant: Robert White's monkey head transplant, 1970)
+   ([`no_milestone_candidates.md`](no_milestone_candidates.md)). The unsure ones are close
+   relatives that may not fit (artificial gravity by Gemini 11's tethered spin, the Taser as a
+   paralysis ray, habitable-zone exoplanets); they are a research queue, not milestones.
+4. **Scored on a demonstration only:** 149 of the 588 deciding concepts have no practical use
    (marked † in the rankings, PLAN §14.5), among them invisibility (2010 metamaterial cloak),
    the crewed Moon landing and sleep learning. Tier 2 split these into discoveries (no use to
    find) and technologies whose use it searched for.
-4. **Low confidence:** 158 of the 588 deciding milestones are low confidence and 38 rest on
+5. **Low confidence:** 158 of the 588 deciding milestones are low confidence and 38 rest on
    Wikipedia alone.
-5. **Judgment calls accepted at checkpoint 3:**
+6. **Judgment calls accepted at checkpoint 3:**
    - the death ray dated by a laser that destroyed munitions rather than people;
    - the electric discharge weapon dated by the cattle prods Alabama troopers used in 1963;
    - increased human height dated by the start of a trend (1860);
    - aquaculture dated 1927, though the 1860s French oyster parks may be earlier.
-6. **Data issues from the first scoring, still open:**
+7. **Data issues from the first scoring, still open:**
    - The dating pass dates two books 2009 and 2012 (H. P. Lovecraft's *Writings in the United
      Amateur, 1915–1922* and Harry Bates's *Astounding Stories* of January 1930).
    - Translations carry the translation's year (Lucian 1780), which understates their lead
@@ -264,7 +282,7 @@ later move was checked against the definition; in round 4 they are in the review
    - 56 books credit more than one name, and some of the names are illustrators or writers of
      introductions (Henri Théophile Hildibrand appears in the top predictions, beside Jules
      Verne). They need review rows before publishing.
-7. **Points from every score above 0:** as DESIGN §8 has it. Counting only scores of 0.5 or more
+8. **Points from every score above 0:** as DESIGN §8 has it. Counting only scores of 0.5 or more
    drops 17% of the points (4,436 of 25,971) and keeps 29 of the top 30 authors and 27 of the top
    30 books (`scoring.md`, sensitivity).
 
@@ -296,5 +314,5 @@ later move was checked against the definition; in round 4 they are in the review
 | Tier 2 and the earliest-event check | 5–10M | 19.7M (643 concepts, not 150–300) |
 | Judging, two judges | 39–52M | 22.2M (17,201 pairs, not the ~42,000 estimated) |
 | Third judge and re-judging after tier 2 | 4–8M | 8.8M (the third judge decided 98 current pairs) |
-| Review assist | | 0.9M |
-| **Tranche A** | **85–125M** | **114.9M** |
+| Review assist | | 2.8M |
+| **Tranche A** | **85–125M** | **116.9M** |

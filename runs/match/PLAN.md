@@ -237,7 +237,13 @@ The researchers see concept definitions only, never claims.
   use a round replaced, added or removed, beside the milestone before it (from `<base>`'s
   milestones.jsonl) and the definition; `collect` writes `runs/match/milestone_review_suggestions.md`.
   Round 4: 309 rows, 241 accept, 16 keep_previous, 52 unsure; 11 agents, 0.9M tokens. Nothing is
-  applied: decisions go in `milestone_review.jsonl`. **Checkpoint 3 for rounds 2–4 (a stop).**
+  applied: decisions go in `milestone_review.jsonl`. With rounds 2–3 (`collect full 2,3,4`): 330 rows,
+  257 accept, 18 keep_previous, 55 unsure. `plan-confirmed` reads the confirmed answers
+  (`prompts/milestones_review_confirmed.md` -> `milestone_review_confirmed.md`: 504 rows, 419 accept,
+  6 earlier_exists, 4 does_not_fit, 75 unsure), and `plan-missing full 30` the 242 concepts with no
+  milestone and 30+ open claims (`prompts/milestones_missing_check.md` -> `no_milestone_candidates.md`:
+  200 never happened, 41 unsure, 1 happened). 40 agents, 2.8M tokens in all. **Checkpoint 3 for
+  rounds 2–4 (a stop).**
 - **Concepts with only a demonstration** (DESIGN §12, question 20): the pilot's rule scores
   them on that demonstration. Proposed: keep the rule, and flag those entries in the
   rankings.
