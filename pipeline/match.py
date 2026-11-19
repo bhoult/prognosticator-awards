@@ -1098,6 +1098,7 @@ VERDICTS = ('confirmed', 'replaced', 'removed', 'added')
 KINDS = ('first_demonstration', 'first_practical_use', 'mass_adoption')
 PILOT_MILESTONES = os.path.join(ROOT, 'pilot', 'computing', 'milestones3.jsonl')
 REVIEW = os.path.join(OUT, 'milestone_review.jsonl')  # checkpoint 3's decisions on tier 2's answers (PLAN §5)
+PILOT_REVIEW = os.path.join(ROOT, 'pilot', 'computing', 'raw', 'review3.jsonl')
 DATE = re.compile(r'^(-\d{4,}|\d{4})(-\d{2}(-\d{2})?)?$')  # a leading '-' for a year BC (-0602, -62000)
 
 
@@ -1126,7 +1127,8 @@ def research_batches(run):
     "yes" that it gave no demonstration or practical use go to `recheck-NNN` batches of RECHECK_BATCH,
     a second look with the first researcher's note. Once the first scoring has written
     runs/match/deciding.jsonl, its concepts go to `tier2-NNN` batches of TIER2_BATCH, most points
-    first (PLAN §5 tier 2)."""
+    first (PLAN §5 tier 2); when every tier2 batch is done, the concepts a later scoring added to
+    deciding.jsonl go to a new round of them, numbered on."""
     path = rd(run, 'research', 'batches.json')
     if os.path.exists(path):
         batches = json.load(open(path, encoding='utf-8'))
@@ -1154,12 +1156,15 @@ def research_batches(run):
         batches.update({f'recheck-{i // RECHECK_BATCH + 1:03d}': {'ids': miss[i:i + RECHECK_BATCH]}
                         for i in range(0, len(miss), RECHECK_BATCH)})
         write_atomic(path, json.dumps(batches, indent=0))
-    deciding = os.path.join(OUT, 'deciding.jsonl')
-    if not any(n.startswith('tier2-') for n in batches) and os.path.exists(deciding):
-        ids = [r['concept_id'] for r in read_jsonl(deciding)[0]]
-        batches.update({f'tier2-{i // TIER2_BATCH + 1:03d}': {'ids': ids[i:i + TIER2_BATCH]}
+    deciding, t2 = os.path.join(OUT, 'deciding.jsonl'), [n for n in batches if n.startswith('tier2-')]
+    if os.path.exists(deciding) and all(research_problems(run, n) is None for n in t2):
+        queued = {i for n in t2 for i in batches[n]['ids']}
+        ids = [r['concept_id'] for r in read_jsonl(deciding)[0] if r['concept_id'] not in queued]
+        rnd = 1 + max((batches[n].get('round', 1) for n in t2), default=0)
+        batches.update({f'tier2-{len(t2) + i // TIER2_BATCH + 1:03d}': {'ids': ids[i:i + TIER2_BATCH], **({'round': rnd} if rnd > 1 else {})}
                         for i in range(0, len(ids), TIER2_BATCH)})
-        write_atomic(path, json.dumps(batches, indent=0))
+        if ids:
+            write_atomic(path, json.dumps(batches, indent=0))
     return batches
 
 
@@ -1265,6 +1270,10 @@ def research_plan(run, limit=None, only=''):
         for r in read_jsonl(os.path.join(OUT, 'milestone_notes.jsonl'))[0]:
             if r.get('concept_note') and not r['batch'].startswith('tier2-'):
                 earlier[r['concept_id']].append(r['concept_note'])
+        # the reviews' decisions too: the first round went without the pilot's, and reopened them
+        for f in (PILOT_REVIEW, REVIEW):
+            for r in read_jsonl(f)[0] if os.path.exists(f) else []:
+                earlier[r['concept_id']].append(f"Review decision on {r['kind']}: {r['reason']}")
     first = {}  # recheck: the first researcher's concept note
     for n in batches:
         if n.startswith('tier1-') and research_problems(run, n) is None:
@@ -1464,9 +1473,9 @@ def deciding_report(run):
     for r in side:
         verdicts[r['concept_id']][r['kind']] = 'fell back' if r.get('fell_back') else \
             r['checked'] + ', overruled' if r.get('overruled') else 'removed'
-    first = read_jsonl(round_path(run, 1))[0]
-    old, pairs = {p['pair'] for p in first}, judge_pairs(run)
-    now, fresh = {p['pair'] for p in pairs}, [p for p in new_pairs([first], pairs) if 'reuse' not in p]
+    rounds = judge_rounds(run)
+    old, pairs = {p['pair'] for r in rounds for p in r}, judge_pairs(run)
+    now, fresh = {p['pair'] for p in pairs}, [p for p in new_pairs(rounds, pairs) if 'reuse' not in p]
     again = collections.Counter(p['concept_id'] for p in fresh)
     again_b = sum(1 for p in fresh if p['polarity'] == 'will')
     rv = read_jsonl(REVIEW)[0] if os.path.exists(REVIEW) else []
@@ -1482,42 +1491,47 @@ def deciding_report(run):
     changed, same, moves = [], [], collections.Counter()
     for i, d in enumerate(deciding, 1):
         c, m = d['concept_id'], new.get(d['concept_id'])
+        name = esc(d['name']) + (f" (round {d['round']})" if d.get('round', 1) > 1 else '')
         before = f"{d['milestone_date']} ({short[d['milestone_kind']]})"
         tier2 = '; '.join(f'{short[k]} {v}' for k, v in sorted(verdicts[c].items()))
         if m is None:
             moves['no scoring milestone left'] += 1
-            changed.append(f"| {esc(d['name'])} | {d['points']:.0f} | {before} | **none** | {tier2} | | | | | "
+            changed.append(f"| {name} | {d['points']:.0f} | {before} | **none** | {tier2} | | | | | "
                            f"{again[c]} |")
             continue
         after = f"{m['date']} ({short[m['kind']]})"
         unchanged = (m['kind'], m['date']) == (d['milestone_kind'], d['milestone_date'])
         (same if unchanged else changed).append(
-            f"| {esc(d['name'])} | {d['points']:.0f} | {before} | {after if unchanged else '**' + after + '**'} | {tier2} | "
+            f"| {name} | {d['points']:.0f} | {before} | {after if unchanged else '**' + after + '**'} | {tier2} | "
             f"{esc(m.get('what', ''))} | {srcs(m)} | {m['confidence']} | {esc(m.get('fit', ''))} | {again[c]} |")
         if not unchanged:
             dy = date_key(m['date'])[0] - date_key(d['milestone_date'])[0]
             moves['earlier' if dy < 0 else 'later' if dy > 0 else 'same year, other month or kind'] += 1
-    head = ['| Concept | Points | First scoring | After tier 2 | Tier 2 | Event | Sources | Confidence | Fit | Pairs to judge |',
+    head = ['| Concept | Points | Before tier 2 | After tier 2 | Tier 2 | Event | Sources | Confidence | Fit | Pairs to judge |',
             '|---|---|---|---|---|---|---|---|---|---|']
     tally = collections.Counter(v.split(',')[0] for c in ids for v in verdicts[c].values())
     overruled = sum(v.endswith('overruled') for c in ids for v in verdicts[c].values())
     contemporary = sum(1 for d in deciding if new.get(d['concept_id']) and
                        any(s['kind'] == 'contemporary' for s in new[d['concept_id']]['sources']))
+    nround = max((d.get('round', 1) for d in deciding), default=1)
     out = ['# The deciding milestones: checkpoint 3 (runs/match/PLAN.md §5)', '',
-           f'Tier 2 checked {len(deciding)} of the deciding concepts ({len(done)} of {len(t2)} batches): '
+           f'Tier 2 checked {len(deciding)} of the deciding concepts ({len(done)} of {len(t2)} batches'
+           + (f', in {nround} rounds' if nround > 1 else '') + '): '
            f'`prompts/milestones_tier2.md`, an adversarial earliest-event check of each concept\'s demonstration '
            f'and practical use with a search for contemporary sources, every quote fetched again by `match.py verify`. '
-           f"The concepts are in the first scoring's order (`runs/match/deciding.jsonl`); points are the concept's "
-           f'share of the first scoring.', '',
+           f"The concepts are in the order the scorings selected them (`runs/match/deciding.jsonl`: the first "
+           f"scoring's, then each later round's newcomers, marked with their round); points and the milestone before "
+           f"tier 2 are from the scoring that selected the concept.", '',
            f"- **Verdicts:** {', '.join(f'{v} {tally[v]}' for v in (*VERDICTS, 'fell back') if tally[v])}"
            + (' (fell back: no source of the answer verified, so the earlier milestone stays).' if tally['fell back'] else '.')
            + (f' {overruled} overruled on review, which keeps the earlier milestone.' if overruled else ''),
            f"- **Scoring milestone changed** for {len(changed)} of {len(deciding)} concepts: "
            f"{', '.join(f'{k} {v}' for k, v in moves.most_common())}.",
            f'- **Contemporary sources:** {contemporary} of {len(deciding)} scoring milestones have one now, '
-           f"{sum(d['contemporary'] for d in deciding)} had one at the first scoring.",
-           f'- **Judging again:** {len(now - old):,} pairs are new and {len(old - now):,} judged pairs drop out. '
-           f'{len(now - old) - len(fresh):,} of the new pairs copy the judgments of their first-round pair, since tier 2 '
+           f"{sum(d['contemporary'] for d in deciding)} had one before tier 2.",
+           f'- **Judging again:** {len(now - old):,} pairs are in no judging round yet, and {len(old - now):,} judged '
+           f'pairs are no longer current. {len(now - old) - len(fresh):,} of the new pairs copy the judgments of an '
+           f'earlier pair, since tier 2 '
            f'confirmed the same event in the same kind and year and only the date got more precise; the other '
            f'{len(fresh):,} go to both judges (judge A all, judge B the {again_b:,} `will` pairs).', '',
            (f"Checkpoint 3's decisions are in `runs/match/milestone_review.jsonl`: {len(rv)} rows, "
@@ -1872,7 +1886,8 @@ def score(run):
     """Resolutions, points and rankings of every tranche-A claim (PLAN §8; DESIGN §8, §8a), from the
     judgments and the scoring milestones. Writes work/match/<run>/books.jsonl and resolutions.jsonl (large,
     out of git), runs/match/scoring.md, and runs/match/deciding.jsonl (PLAN §5's tier-2 concepts; once
-    tier 2 has run it is kept, and the report lists the concepts that carry a top entry now but were not checked).
+    tier 2 has run, a scoring only appends the concepts that carry a top entry and were never selected, as
+    a new round, and the report lists the deciding concepts tier 2 has not checked).
 
     A claim takes the first of these that fits:
     - realized: a `will` pair with a positive lead scoring REALIZED_MIN or more; it earns points;
@@ -2000,13 +2015,18 @@ def score(run):
                                         'authors': books[top_e['book']]['authors'], 'year': books[top_e['book']]['year'],
                                         'points': top_e['points'], 'score': top_e['score'], 'lead': top_e['lead']}})
     deciding.sort(key=lambda d: (-d['points'], d['concept_id']))
-    # once tier 2 has run, deciding.jsonl stays the first scoring's selection: tier 2's input, and the
-    # "first scoring" column of the checkpoint-3 table
-    dpath = os.path.join(OUT, 'deciding.jsonl')
-    after = os.path.exists(dpath) and any(m.get('tier') == 2 for m in best.values())
-    checked = {d['concept_id'] for d in read_jsonl(dpath)[0]} if after else set()
-    if not after:
-        write_atomic(dpath, jsonl(deciding))
+    # deciding.jsonl is tier 2's input. Before tier 2 runs it is the first scoring's selection; after,
+    # a scoring only appends the concepts that carry a top entry and were never selected, as a new
+    # round, with their milestone as it was (the "before tier 2" column of the checkpoint-3 table)
+    dpath, npath = os.path.join(OUT, 'deciding.jsonl'), os.path.join(OUT, 'milestone_notes.jsonl')
+    checked = {r['concept_id'] for r in read_jsonl(npath)[0] if r.get('batch', '').startswith('tier2-')
+               and 'concept_note' in r} if os.path.exists(npath) else set()
+    after = bool(checked)
+    picked = read_jsonl(dpath)[0] if after else []
+    added = [dict(d, round=1 + max(p.get('round', 1) for p in picked)) for d in deciding
+             if d['concept_id'] not in {p['concept_id'] for p in picked}] if after else deciding
+    if added:
+        write_atomic(dpath, jsonl(picked + added))
 
     # the report
     def cell(s, n=None):
@@ -2030,8 +2050,8 @@ def score(run):
            f'scoring milestone `first_practical_use` else `first_demonstration`, points from score {REALIZED_MIN:g} '
            f'(every judged score above 0), precision from {STRICT_MIN:g}, `contradicted_negative` from {NEGATIVE_MIN:g}, '
            f'deadlines checked against {SCORE_YEAR} with {GRACE} years of grace. '
-           + (f"This scoring follows tier 2 (PLAN §5), which checked the {len(checked)} deciding concepts of the first "
-              f"scoring, and checkpoint 3's review (`runs/match/milestone_review.jsonl`). " if after else
+           + (f"This scoring follows tier 2 (PLAN §5), which checked {len(checked)} deciding concepts, and "
+              f"checkpoint 3's review (`runs/match/milestone_review.jsonl`). " if after else
               'This is the first scoring: tier 2 (PLAN §5) can still move the deciding milestones. ')
            + 'Tranche B is not scored. † = scored on a demonstration only (PLAN §14.5).', '',
            '## Resolutions', '', f'{len(rows):,} tranche-A claims from {len(claims_of):,} books.', '',
@@ -2102,8 +2122,8 @@ def score(run):
     crit = collections.Counter(r for d in deciding for r in d['reasons'])
     out += ['', f"## {'The deciding concepts after tier 2' if after else 'Tier 2: the deciding concepts'} (PLAN §5)", '',
             (f'{len(deciding)} concepts carry a top entry now, by the first scoring\'s criteria; tier 2 checked '
-             f'{sum(d["concept_id"] in checked for d in deciding)} of them (`runs/match/deciding.jsonl` keeps the '
-             f'first scoring\'s {len(checked)}). By criterion (a concept can meet several):' if after else
+             f'{sum(d["concept_id"] in checked for d in deciding)} of them (`runs/match/deciding.jsonl` lists every '
+             f'concept selected for it, by round). By criterion (a concept can meet several):' if after else
              f'{len(deciding)} concepts carry a top entry; `runs/match/deciding.jsonl` lists them all with their '
              f'scoring milestone. By criterion (a concept can meet several):'), '']
     out += [f'- {r}: {n}' for r, n in sorted(crit.items())]
@@ -2129,7 +2149,7 @@ def score(run):
     print(f'{len(rows):,} claims: ' + ', '.join(f"{res}{'/' + why if why else ''} {n:,}" for (res, why), n in res_n.most_common()))
     print(f'{len(entries):,} entries, {len(book_rank):,} books and {len(author_rank):,} authors score; '
           f'{len(deciding)} deciding concepts ({sum(d["concept_id"] not in checked for d in deciding)} not checked by tier 2) '
-          f'-> runs/match/scoring.md' + ('' if after else ', deciding.jsonl'))
+          f'-> runs/match/scoring.md' + (f', {len(added)} added to deciding.jsonl' if added else ''))
 
 
 def log(run, agent, stage, tokens, tools, seconds, *note):

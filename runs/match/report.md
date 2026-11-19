@@ -30,9 +30,7 @@ your review.
 - **Cost:** 734 subagents, 94.7M tokens and 52 agent-hours, inside the plan's 85–125M
   estimate. Re-judging after tier 2 took 4.3M tokens, 64% to 66% of the week.
 - **Still doubtful** (section 6): 26 concepts that carry a top entry after the re-scoring were
-  never checked by tier 2, and some of them are plainly wrong. For example, orbital rendezvous
-  and docking is dated by Apollo 11 (1969), but Gemini 8 docked with an Agena target in March
-  1966.
+  never checked by tier 2. Tier 2 has since checked them (see section 5).
 
 ## 1. How the run went
 
@@ -206,8 +204,9 @@ points; the others' longer leads were offset by their re-judged scores.
    them over a threshold. Most carry little (18 have under 35 points), but they include:
    - nerve-attacking weapon (138 points), dated by the 1975 Taser, the same event as the stun
      gun's;
-   - orbital rendezvous and docking (113), dated 1969 by Apollo 11, which is wrong: Gemini 8
-     docked in March 1966;
+   - orbital rendezvous and docking (113), dated 1969 by Apollo 11 (tier 2 later confirmed it:
+     the definition needs crew or cargo to pass between the craft, which Gemini 8's 1966 docking
+     did not do);
    - spacecraft thermal control (102), futuristic cosmetics (93) and the reusable spaceplane (82).
 
    All 26 are flagged **not checked** in `scoring.md` §"The deciding concepts after tier 2",
