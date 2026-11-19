@@ -94,8 +94,10 @@ def build(runs):
     last = runs[-1]
     match.use_run(last)
     reg = match.final_registry(last)
+    gap = {c['concept_id'] for c in rows(os.path.join(match.OUT, 'concepts_gap.jsonl'))}  # the last run's own new concepts
     put('concepts', [(c['concept_id'], c['name'], c['definition'], c.get('type'), text(c.get('domains')),
-                      text(c.get('aliases')), c.get('came_true_guess'), c.get('tranche', 'A')) for c in reg])
+                      text(c.get('aliases')), c.get('came_true_guess'),
+                      c.get('tranche') or (tranche[last] if c['concept_id'] in gap else 'A')) for c in reg])
     ms = rows(os.path.join(match.OUT, 'milestones.jsonl'))
     put('milestones', [(m['concept_id'], m['kind'], m['date'], m.get('what'), m.get('fit'), m.get('confidence'),
                         m.get('tier'), m.get('note')) for m in ms])

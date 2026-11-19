@@ -383,7 +383,7 @@ realized, 13,473 entries and 31,231 points from 801 authors and texts.
 
 The other 17 winners are unchanged. The reasons were rewritten for the new winners and updated for
 the others' new totals ([`awards_notes.jsonl`](awards_notes.jsonl)); tranche A's edition is in the
-git history (commit `ce84794`). The release database (`pipeline/export_db.py`: SQLite and CSV, both
+git history (commit `ce84794`). The negative check's input is built by `pipeline/negative_check.py`. The release database (`pipeline/export_db.py`: SQLite and CSV, both
 tranches, the books cited by title and author, never by library path) is attached to a draft GitHub
 release, not published.
 
