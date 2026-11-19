@@ -1097,7 +1097,8 @@ TIER2_KINDS = ('first_demonstration', 'first_practical_use')  # tier 2 checks th
 VERDICTS = ('confirmed', 'replaced', 'removed', 'added')
 KINDS = ('first_demonstration', 'first_practical_use', 'mass_adoption')
 PILOT_MILESTONES = os.path.join(ROOT, 'pilot', 'computing', 'milestones3.jsonl')
-REVIEW = os.path.join(OUT, 'milestone_review.jsonl')  # checkpoint 3's decisions on tier 2's answers (PLAN §5)
+REVIEW = os.path.join(OUT, 'milestone_review.jsonl')
+RECHECK = os.path.join(OUT, 'tier2_recheck.jsonl')  # concepts tier 2 checks again, with the review assist's objection  # checkpoint 3's decisions on tier 2's answers (PLAN §5)
 PILOT_REVIEW = os.path.join(ROOT, 'pilot', 'computing', 'raw', 'review3.jsonl')
 DATE = re.compile(r'^(-\d{4,}|\d{4})(-\d{2}(-\d{2})?)?$')  # a leading '-' for a year BC (-0602, -62000)
 
@@ -1162,6 +1163,17 @@ def research_batches(run):
         ids = [r['concept_id'] for r in read_jsonl(deciding)[0] if r['concept_id'] not in queued]
         rnd = 1 + max((batches[n].get('round', 1) for n in t2), default=0)
         batches.update({f'tier2-{len(t2) + i // TIER2_BATCH + 1:03d}': {'ids': ids[i:i + TIER2_BATCH], **({'round': rnd} if rnd > 1 else {})}
+                        for i in range(0, len(ids), TIER2_BATCH)})
+        if ids:
+            write_atomic(path, json.dumps(batches, indent=0))
+    # a later round checks again the concepts in runs/match/tier2_recheck.jsonl (the review assist's objections to
+    # confirmed answers, and its candidates for concepts with no milestone), once each, with the objection in hand
+    t2 = [n for n in batches if n.startswith('tier2-')]
+    if os.path.exists(RECHECK) and all(research_problems(run, n) is None for n in t2):
+        done = {i for n in t2 if batches[n].get('recheck') for i in batches[n]['ids']}
+        ids = list(dict.fromkeys(r['concept_id'] for r in read_jsonl(RECHECK)[0] if r['concept_id'] not in done))
+        rnd = 1 + max((batches[n].get('round', 1) for n in t2), default=0)
+        batches.update({f'tier2-{len(t2) + i // TIER2_BATCH + 1:03d}': {'ids': ids[i:i + TIER2_BATCH], 'round': rnd, 'recheck': True}
                         for i in range(0, len(ids), TIER2_BATCH)})
         if ids:
             write_atomic(path, json.dumps(batches, indent=0))
@@ -1263,8 +1275,9 @@ def research_plan(run, limit=None, only=''):
     # tier 2: each concept's verified milestones and the earlier notes, as tier 1 left them
     current, earlier = collections.defaultdict(list), collections.defaultdict(list)
     if any(n.startswith('tier2-') for n in batches):
+        again = {i for n, b in batches.items() if b.get('recheck') for i in b['ids']}  # these see tier 2's answer
         for m in read_jsonl(os.path.join(OUT, 'milestones.jsonl'))[0]:
-            if m['kind'] in TIER2_KINDS and m['tier'] != 2:
+            if m['kind'] in TIER2_KINDS and (m['tier'] != 2 or m['concept_id'] in again):
                 current[m['concept_id']].append({k: m[k] for k in ('kind', 'date', 'what', 'fit', 'sources', 'confidence',
                                                                    'note', 'searched') if m.get(k)})
         for r in read_jsonl(os.path.join(OUT, 'milestone_notes.jsonl'))[0]:
@@ -1274,6 +1287,9 @@ def research_plan(run, limit=None, only=''):
         for f in (PILOT_REVIEW, REVIEW):
             for r in read_jsonl(f)[0] if os.path.exists(f) else []:
                 earlier[r['concept_id']].append(f"Review decision on {r['kind']}: {r['reason']}")
+        for r in read_jsonl(RECHECK)[0] if os.path.exists(RECHECK) else []:
+            earlier[r['concept_id']].append(f"A second reader objected to {r['kind'] or 'the milestones'} ({r['objection']}): "
+                                            f"{r['reason']} Check this claim with sources before you confirm or replace.")
     first = {}  # recheck: the first researcher's concept note
     for n in batches:
         if n.startswith('tier1-') and research_problems(run, n) is None:
