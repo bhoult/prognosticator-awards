@@ -1409,7 +1409,7 @@ def verify(run):
     # with no verified source leaves the earlier milestone in place, marked; checkpoint 3's review can
     # keep the earlier milestone instead (`keep_previous`)
     review = {(r['concept_id'], r['kind']): r for r in read_jsonl(REVIEW)[0]} if os.path.exists(REVIEW) else {}
-    answers = {(m['concept_id'], m['kind']): m['date'] for m in ms2}
+    answers = {(m['concept_id'], m['kind']): m.get('date') for m in ms2}  # a `removed` verdict has no date
     for k, rv in review.items():
         if rv.get('decision') not in ('keep_previous', 'accept') or answers.get(k, '') != rv.get('tier2_date'):
             sys.exit(f'milestone_review.jsonl: {k} has no tier-2 answer dated {rv.get("tier2_date")!r}, '
