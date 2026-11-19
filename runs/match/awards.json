@@ -308,14 +308,14 @@
      "stat": "Phobos and Deimos, the two moons of Mars, 125 years early"
     },
     {
-     "name": "Cyrano de Bergerac",
-     "points": 6.09,
-     "stat": "Audiobook player, 278 years early"
+     "name": "Francis Bacon",
+     "points": 6.07,
+     "stat": "Hearing aid, 273 years early"
     },
     {
-     "name": "Cyrano de Bergerac",
-     "points": 6.07,
-     "stat": "Audiobook player, 273 years early"
+     "name": "Luis Senarens",
+     "points": 5.98,
+     "stat": "Submarine air supply, 62 years early"
     }
    ],
    "hits": [
@@ -377,41 +377,41 @@
      "demonstration_only": true
     },
     {
-     "concept": "Audiobook player",
-     "concept_id": "audiobook-player",
-     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
-     "quote": "it was a Book made wholly for the Ears, and not the Eyes. So that when any Body has a mind to read in it, he winds up that Machine with a great many Strings",
-     "title": "A Voyage to the Moon",
-     "year": 1657,
+     "concept": "Hearing aid",
+     "concept_id": "hearing-aid",
+     "definition": "A device worn to amplify faint sounds or shift them into the audible range so a person can hear better.",
+     "quote": "We have certain helps which set to the ear do further the hearing greatly.",
+     "title": "New Atlantis",
+     "year": 1627,
      "authors": [
-      "Cyrano de Bergerac"
+      "Francis Bacon"
      ],
-     "came_true": "1935",
+     "came_true": "1900",
      "kind": "first_practical_use",
-     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
-     "confidence": "medium",
-     "lead": 278,
-     "score": 0.75,
-     "points": 6.09,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Audiobook player",
-     "concept_id": "audiobook-player",
-     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
-     "quote": "It is a book indeed, but a miraculous book without pages or letters; in fine, it is a book to learn from which eyes are useless, only ears are needed.",
-     "title": "Voyages to the Moon and the Sun",
-     "year": 1662,
-     "authors": [
-      "Cyrano de Bergerac"
-     ],
-     "came_true": "1935",
-     "kind": "first_practical_use",
-     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
-     "confidence": "medium",
+     "event": "The Akouphone Company of New York was selling the Akouphone, a portable electric instrument for the partially deaf, by December 1900 and exhibiting it to schools and otologists.",
+     "confidence": "low",
      "lead": 273,
      "score": 0.75,
      "points": 6.07,
+     "demonstration_only": false
+    },
+    {
+     "concept": "Submarine air supply",
+     "concept_id": "submarine-life-support",
+     "definition": "Onboard machinery that makes oxygen and fresh air or water so a submarine can stay sealed and submerged for long periods.",
+     "quote": "Under the pilot-house there was placed a generator which was capable of manufacturing pure oxygen, and also of extracting and destroying the bad air or gases as fast as they were created.",
+     "title": "The Sunken Isthmus",
+     "year": 1896,
+     "authors": [
+      "Luis Senarens"
+     ],
+     "came_true": "1958-10",
+     "kind": "first_practical_use",
+     "event": "USS Seawolf completed a 60-day submerged cruise cut off from the atmosphere, with oxygen supplied and carbon dioxide scrubbed by onboard equipment; electrolytic oxygen generators were then entering fleet supply",
+     "confidence": "low",
+     "lead": 62,
+     "score": 1.0,
+     "points": 5.98,
      "demonstration_only": false
     }
    ]
@@ -3064,16 +3064,6 @@
    },
    "runners_up": [
     {
-     "name": "Cyrano de Bergerac",
-     "points": 6.09,
-     "stat": "278 years ahead"
-    },
-    {
-     "name": "Cyrano de Bergerac",
-     "points": 6.07,
-     "stat": "273 years ahead"
-    },
-    {
      "name": "Francis Bacon",
      "points": 6.07,
      "stat": "273 years ahead"
@@ -3082,6 +3072,16 @@
      "name": "Richard Adams Locke",
      "points": 6.32,
      "stat": "148 years ahead"
+    },
+    {
+     "name": "Jules Verne",
+     "points": 5.32,
+     "stat": "136 years ahead"
+    },
+    {
+     "name": "Voltaire",
+     "points": 6.11,
+     "stat": "125 years ahead"
     }
    ],
    "hits": [
@@ -3102,44 +3102,6 @@
      "lead": 287,
      "score": 0.75,
      "points": 6.13,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Audiobook player",
-     "concept_id": "audiobook-player",
-     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
-     "quote": "it was a Book made wholly for the Ears, and not the Eyes. So that when any Body has a mind to read in it, he winds up that Machine with a great many Strings",
-     "title": "A Voyage to the Moon",
-     "year": 1657,
-     "authors": [
-      "Cyrano de Bergerac"
-     ],
-     "came_true": "1935",
-     "kind": "first_practical_use",
-     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
-     "confidence": "medium",
-     "lead": 278,
-     "score": 0.75,
-     "points": 6.09,
-     "demonstration_only": false
-    },
-    {
-     "concept": "Audiobook player",
-     "concept_id": "audiobook-player",
-     "definition": "A machine that plays recorded books and lessons aloud so that a person listens in place of reading.",
-     "quote": "It is a book indeed, but a miraculous book without pages or letters; in fine, it is a book to learn from which eyes are useless, only ears are needed.",
-     "title": "Voyages to the Moon and the Sun",
-     "year": 1662,
-     "authors": [
-      "Cyrano de Bergerac"
-     ],
-     "came_true": "1935",
-     "kind": "first_practical_use",
-     "event": "Talking Books on long-playing discs, played on special reading machines, circulated free by the Library of Congress through libraries to blind readers; 892 talking-book volumes circulated in the year to June 1935.",
-     "confidence": "medium",
-     "lead": 273,
-     "score": 0.75,
-     "points": 6.07,
      "demonstration_only": false
     },
     {
@@ -3178,6 +3140,44 @@
      "lead": 148,
      "score": 0.875,
      "points": 6.32,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Second natural moon of Earth",
+     "concept_id": "earth-second-moon",
+     "definition": "An additional small natural satellite of Earth besides the Moon, previously undiscovered or newly captured, is found orbiting the planet.",
+     "quote": "It is a simple bolide, but one of such enormous dimensions that the Earth's attraction has made it a satellite.",
+     "title": "All Around the Moon",
+     "year": 1870,
+     "authors": [
+      "Jules Verne"
+     ],
+     "came_true": "2006-09-14",
+     "kind": "first_demonstration",
+     "event": "Catalina Sky Survey (Arizona) discovered 6R10DB9, later 2006 RH120, a meter-size natural object captured into Earth orbit and making repeated loops until mid-2007.",
+     "confidence": "medium",
+     "lead": 136,
+     "score": 0.75,
+     "points": 5.32,
+     "demonstration_only": true
+    },
+    {
+     "concept": "Phobos and Deimos, the two moons of Mars",
+     "concept_id": "mars-two-moons",
+     "definition": "Mars is found, or reasoned, to have two very small, fast-orbiting moons, later identified as Phobos and Deimos, discovered by telescope.",
+     "quote": "they swung by two moons that cater to this planet but have escaped the notice of our astronomers.",
+     "title": "Micromegas",
+     "year": 1752,
+     "authors": [
+      "Voltaire"
+     ],
+     "came_true": "1877-08",
+     "kind": "first_demonstration",
+     "event": "Asaph Hall at the U.S. Naval Observatory found Deimos (first seen 11 Aug 1877) and Phobos (17-18 Aug) with the 26-inch refractor; the discovery was telegraphed on 19 Aug",
+     "confidence": "high",
+     "lead": 125,
+     "score": 0.875,
+     "points": 6.11,
      "demonstration_only": true
     }
    ]

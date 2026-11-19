@@ -1210,6 +1210,8 @@ def research_batches(run):
     deciding, t2 = os.path.join(OUT, 'deciding.jsonl'), [n for n in batches if n.startswith('tier2-')]
     if os.path.exists(deciding) and all(research_problems(run, n) is None for n in t2):
         queued = {i for n in t2 for i in batches[n]['ids']}
+        if TRANCHE == 'B':  # tranche A's concepts keep tranche A's milestones (its own tier 2 checks them)
+            queued |= {c['concept_id'] for c in main_registry()}
         ids = [r['concept_id'] for r in read_jsonl(deciding)[0] if r['concept_id'] not in queued]
         rnd = 1 + max((batches[n].get('round', 1) for n in t2), default=0)
         batches.update({f'tier2-{len(t2) + i // TIER2_BATCH + 1:03d}': {'ids': ids[i:i + TIER2_BATCH], **({'round': rnd} if rnd > 1 else {})}

@@ -392,6 +392,13 @@ The researchers see concept definitions only, never claims.
   B-121); 15,820 realized, 16,393 not a prediction, 26,090 points; the top 30 authors and books
   unchanged from round 4; 590 deciding concepts, all checked (brain transplant joined).
   `runs/match/report.md` is updated. **Checkpoint 4 (a stop).**
+- **The remaining steps (2026-11-19, the user's goal to complete them):** `book_review.jsonl` (credits,
+  the Lovecraft and Bates years, DESIGN §1a's composition dates for 20 ancient and translated texts);
+  brain transplant's 1987 use removed by review; tier 2 on the six concepts the new dates made
+  deciding (tier2-134, tier2-135); judging rounds 6–7; 15,803 realized, 26,129 points, the top 30
+  unchanged. A check of the 82 `contradicted_negative` claims (`negative_review.jsonl`) found 24 real.
+  The awards (`pipeline/awards.py` -> `awards.json`, `awards.html`) name 28 winners by rule, with
+  hand-written reasons. Then the tranche-B pilot (§9). **Checkpoint: the pilot (a stop).**
 
 ## 9. Tranche B: events and social change
 
@@ -406,6 +413,24 @@ The researchers see concept definitions only, never claims.
     practice, and its `mass_adoption` is when it became widespread.
 - **A pilot first:** about 2,500 society-politics claims end to end, with a checkpoint, before
   the rest of B. The 17 religious and prophecy texts are in B.
+- **The pilot as built (2026-11-19, run `bpilot`; [`bpilot/report.md`](bpilot/report.md)):**
+  - `match.py use_run`: a run other than `full` is tranche B, with its outputs in
+    `runs/match/<run>/` and the prompts of `prompts/b/` where one exists. `pipeline/b_prompts.py`
+    writes them from tranche A's prompts by fixed substitutions (event and social milestone meanings,
+    a rule for story-internal events, the judge's scale read for events).
+  - `b-init <run> [n]`: the run's claims (for a pilot, a fixed-seed sample of `n` society-politics
+    claims) and `concepts.jsonl` = tranche A's final registry, so a book counts an idea once across
+    both tranches. Tranche A's concepts keep tranche A's verified milestones (verify seeds them) and
+    are never researched or tier-2 checked again in B.
+  - The first matching pass runs against tranche A's registry by domain. B skips the second pass:
+    the gap pass proposes concepts for every claim the first pass left unmatched (any code), the
+    consolidation maps duplicates of tranche-A concepts, and gap matching gives each claim its
+    final answer. Tranche A's three-claim minimum applies (`bpilot/concept_review.jsonl`).
+  - Then research (tier 1, checks, second look), verify, two judges, score and tier 2 on B's own
+    deciding concepts, as in tranche A.
+  - Open at the pilot checkpoint: whether to run the rest of B as piloted, only the event domains,
+    or with concepts proposed before matching (the first pass against a technology registry matched
+    3% and was coded carelessly), and how to read the prophecy texts (the second-translation rule).
 
 ## 10. Orchestration
 

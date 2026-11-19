@@ -143,7 +143,15 @@ def data(run):
                                    'points': round(p, 1), 'stat': f'{p:.1f} points'} for b, p in br[1:RUNNERS + 1]],
                    'hits': [H(e) for e in book_hits[br[0][0]][:TOP_HITS]]})
 
-    top = [e for e in entries if modern(books[e['book']])][:RUNNERS + 1]
+    def by_author(es):  # each author's best prediction once
+        seen, out = set(), []
+        for e in es:
+            if label(books[e['book']]) not in seen:
+                seen.add(label(books[e['book']]))
+                out.append(e)
+        return out
+
+    top = by_author(e for e in entries if modern(books[e['book']]))[:RUNNERS + 1]
     awards.append({'id': 'prediction', 'title': 'Prediction of the Age', 'rule': 'The single prediction worth the '
                    f'most points, the closest match with the longest lead, in a work published since {ANCIENT}.',
                    'winner': {'name': label(books[top[0]['book']]), 'points': round(top[0]['points'], 2),
@@ -187,8 +195,8 @@ def data(run):
         person('domain-' + d, title, f'The most points from ideas in {title.lower()}.', r, h,
                lambda a, p, h=h: f'{p:.1f} points from {ideas(len(h[a]))}')
 
-    longs = sorted((e for e in entries if e['score'] >= LONG_MIN and modern(books[e['book']])),
-                   key=lambda e: (-e['lead'], -e['score'], e['claim']))
+    longs = by_author(sorted((e for e in entries if e['score'] >= LONG_MIN and modern(books[e['book']])),
+                             key=lambda e: (-e['lead'], -e['score'], e['claim'])))
     if longs:
         awards.append({'id': 'long_view', 'title': 'The Long View', 'rule': f'The longest lead of any prediction judged '
                        f'{LONG_MIN:g} or closer, in a work published since {ANCIENT} (older texts have their own award).',

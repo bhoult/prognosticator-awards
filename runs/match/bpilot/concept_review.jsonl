@@ -1,0 +1,1 @@
+{"op": "gap_min_claims", "min": 3, "reason": "Tranche A's rule (decided 2026-11-05): each kept concept gets milestone research, so new concepts with fewer than 3 matched claims are cut and their claims are no_concept again.", "by": "orchestrating session, 2026-11-19, under the user's goal to complete the remaining steps"}

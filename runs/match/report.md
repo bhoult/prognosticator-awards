@@ -5,15 +5,18 @@ Sonnet subagents and no API calls. The full rankings and resolutions are in
 [`scoring.md`](scoring.md); this report says how they were made, what changed when the deciding
 milestones were checked, and what is still doubtful. It is checkpoint 4 (PLAN §13), a stop for
 your review. This version follows the later tier-2 rounds of 2026-11-18 and your review of them
-(2026-11-19: the review assist's suggestions taken, and a recheck round on its objections).
+(2026-11-19: the review assist's suggestions taken, and a recheck round on its objections), then the
+remaining steps of 2026-11-19: the data fixes, the composition dates of the ancient texts, the
+awards page ([`awards.html`](awards.html)) and the tranche-B pilot ([`bpilot/report.md`](bpilot/report.md)).
 
 ## Summary
 
 - **77,436 technology and science claims from 3,224 books** were matched against a registry of
-  1,756 concepts and scored against 2,047 verified milestones for 1,104 concepts. 15,820 claims
-  are realized (20.4%), 16,393 came after their milestone (not a prediction), 42,413 are open
-  (31,442 with no milestone, 6,795 with no concept, 3,897 too vague, 279 other), 2,558 are
-  untestable and 252 failed (170 missed a stated deadline, 82 denials were contradicted).
+  1,756 concepts and scored against 2,047 verified milestones for 1,104 concepts. 15,803 claims
+  are realized (20.4%), 16,411 came after their milestone (not a prediction), 42,412 are open
+  (31,442 with no milestone, 6,795 with no concept, 3,897 too vague, 278 other), 2,558 are
+  untestable and 252 failed (170 missed a stated deadline, 82 denials flagged as contradicted, of
+  which a check confirmed 24: section 6).
 - **The leaders:** E. E. Smith 427 points, H. G. Wells 360, Murray Leinster 358, Jules Verne 344,
   George O. Smith 319. The top book is *Limanora* (Godfrey Sweven, 1903) with 227, then *Across
   the Zodiac* (Percy Greg, 1880) and *Ralph 124C 41+* (Hugo Gernsback, 1911). The top single
@@ -27,11 +30,17 @@ your review. This version follows the later tier-2 rounds of 2026-11-18 and your
 - **The rankings held.** Against the first scoring, the top 9 authors keep their places, 29 of
   the top 30 stay (John Jacob Astor leaves, Alfred Coppel enters), and 27 of the top 30 books
   stay. Points fall 7% (27,931 to 26,090), mostly because 898 realized claims now come after an
-  earlier milestone.
+  earlier milestone. The fixes of 2026-11-19 (section 6) leave 26,129 points and the same top 30.
+- **The awards** ([`awards.html`](awards.html), from [`awards.json`](awards.json) by
+  `pipeline/awards.py`): 28 categories with a winner, each by a stated rule, with a hand-written
+  reason ([`awards_notes.jsonl`](awards_notes.jsonl)). E. E. Smith is the Grand Prognosticator;
+  *Limanora* the book; *The Moon Hoax*'s lunar meteorites the single prediction; Cyrano de
+  Bergerac's staged rocket the longest view; Simon Newcomb's 1906 "no flying machine" the famous
+  last words.
 - **The judges agree closely:** of the 16,335 current pairs two judges scored, 69% got the same
   score, 30% were one step apart and about 1% two or more (decided by a third judge). Each later
   round agrees the same way (round 4: 67%, 32%, 0.8%).
-- **Cost:** 914 subagents, 117.4M tokens and 72 agent-hours, inside the plan's 85–125M
+- **Cost:** 921 subagents, 118.1M tokens and 72 agent-hours, inside the plan's 85–125M
   estimate. The later tier-2 rounds, their re-judging and the review assist took 22.1M tokens on
   2026-11-18, 66% to 77% of that week; the recheck and its judging 0.6M on 2026-11-19.
 - **Your review** (section 2): the 18 keep_previous suggestions of the second reader are applied,
@@ -54,7 +63,8 @@ your review. This version follows the later tier-2 rounds of 2026-11-18 and your
 | Judging, rounds 1–2 (§7) | 207 | 26.5M | 9.1 | 17,201 pairs, then 3,166 new ones |
 | Judging, rounds 3–5 (§7) | 40 | 4.7M | 1.4 | 3,418 new pairs |
 | Review assist (section 6) | 40 | 2.8M | 0.4 | second readings of 834 milestones and 242 concepts with none |
-| **Total** | **914** | **117.4M** | **71.6** | |
+| Fixes of 2026-11-19: tier 2 round 6, judging rounds 6–7, the negative check | 7 | 0.7M | 0.9 | 6 concepts checked, 41 pairs, 82 denials read |
+| **Total** | **921** | **118.1M** | **72.5** | |
 
 Every batch ran as a background subagent with its own input and output file, so the run was
 stopped and restarted many times without losing work. Each stage pins its prompt by sha256, and
@@ -248,12 +258,11 @@ later move was checked against the definition; in round 4 they are in the review
 
 ## 6. What is still doubtful
 
-1. **Brain transplant, a judgment call from the recheck:** tier 2 dated it by Thompson's 1890
-   graft of brain tissue between animals and the first fetal brain-tissue graft into a Parkinson's
-   patient (Lund, 1987), reading the definition's "or part of one" literally. The novels mean
-   moving a mind, so this is generous: it adds 135 claim points. The stricter answers are White's
-   1970 monkey head transplant (the second reader's candidate) as a demonstration and no practical
-   use. A keep_previous row on either kind removes it.
+1. **Brain transplant, decided 2026-11-19:** tier 2 dated it by Thompson's 1890 graft of brain
+   tissue between animals and the first fetal brain-tissue graft into a Parkinson's patient (Lund,
+   1987), reading the definition's "or part of one" literally. A keep_previous row now removes the
+   1987 practical use; the 1890 demonstration stays, so the concept scores only for books before
+   1890 and is marked demonstration only.
 2. **The review assist's unsure rows were accepted.** Of the 55 changed answers the second reader
    was unsure of (`milestone_review_suggestions.md`), the review took tier 2's answer. Among them:
    personalized medicine (1907 crossmatched transfusion), self-spreading vaccine (Jenner's
@@ -281,19 +290,38 @@ later move was checked against the definition; in round 4 they are in the review
    - the electric discharge weapon dated by the cattle prods Alabama troopers used in 1963;
    - increased human height dated by the start of a trend (1860);
    - aquaculture dated 1927, though the 1860s French oyster parks may be earlier.
-7. **Data issues from the first scoring, still open:**
-   - The dating pass dates two books 2009 and 2012 (H. P. Lovecraft's *Writings in the United
-     Amateur, 1915–1922* and Harry Bates's *Astounding Stories* of January 1930).
-   - Translations carry the translation's year (Lucian 1780), which understates their lead
-     until DESIGN §1a's composition dates are built.
-   - 56 books credit more than one name, and some of the names are illustrators or writers of
-     introductions (Henri Théophile Hildibrand appears in the top predictions, beside Jules
-     Verne). They need review rows before publishing.
+7. **Data issues from the first scoring, fixed 2026-11-19** in [`book_review.jsonl`](book_review.jsonl),
+   which match.py applies when it loads claims and books (the pinned export is unchanged):
+   - Lovecraft's *Writings in the United Amateur* is dated 1922 (the last of its years) and the
+     January 1930 *Astounding Stories* 1930; magazine issues rank by text, not by their editor or
+     one contributor.
+   - Credits for illustrators and writers of introductions are removed (Hildibrand from Verne,
+     Campbell from *Venus Equilateral*, Emshwiller, Le Gallienne, Gernsback's editorial, Whibley from
+     Lucian), and J. N. Nicollet from *The Moon Hoax*, which Wikipedia attributes to Locke alone.
+   - **DESIGN §1a's composition dates are built** for the 20 ancient and translated texts: the end of
+     the scholarly range in each text's English Wikipedia article, with the revision pinned in the
+     row (the Mahabharata 400 CE, Lucian 200 CE, the Book of Enoch 100 BCE, the Avesta 600 CE,
+     Nostradamus 1568 and so on). The Nixon and Mother Shipton compilation has no date in any source
+     found and stays unscored. The second-translation re-judging of §1a is not built.
+   - With leads now reaching the 500-year cap, six concepts became deciding through ancient texts
+     (diet as a cure, body armor, antidotes, automated dining, an amnesia drug, organ transplants).
+     Tier 2 checked them (tier2-134, tier2-135): diet as a cure moved to 1601 and body armor to
+     1561/1569, among others. The ancient texts' points are many loose 0.5 matches; the Mahabharata
+     leads them with 63 points (rank about 130).
 8. **Points from every score above 0:** as DESIGN §8 has it. Counting only scores of 0.5 or more
    drops 17% of the points (4,455 of 26,090) and keeps 29 of the top 30 authors and 27 of the top
    30 books (`scoring.md`, sensitivity).
+9. **Contradicted denials:** the 82 claims resolved `contradicted_negative` (a "never" that
+   happened) were read again by one agent ([`negative_review.jsonl`](negative_review.jsonl),
+   `prompts/negative_check.md`): 24 are real, 7 were vindicated (the denial came true, as George O.
+   Smith's sparse asteroid belt) and 51 deny something else. The resolution rule takes the judge's
+   "same thing" score for a contradiction, which it isn't; the awards use only the 24, and the
+   resolutions table still counts 82 until the rule is fixed.
 
 ## 7. For tranche B
+
+The pilot of 2026-11-19 (2,500 society-politics claims end to end) is reported in
+[`bpilot/report.md`](bpilot/report.md). Lessons from tranche A:
 
 - **Select the checked set by its share of the author totals from the start,** not only by top
   entries: the first selection left half the author points unchecked. Re-select after re-judging
@@ -324,4 +352,5 @@ later move was checked against the definition; in round 4 they are in the review
 | Judging, two judges | 39–52M | 22.2M (17,201 pairs, not the ~42,000 estimated) |
 | Third judge and re-judging after tier 2 | 4–8M | 9.0M (the third judge decided 98 current pairs) |
 | Review assist | | 2.8M |
-| **Tranche A** | **85–125M** | **117.4M** |
+| Fixes of 2026-11-19 | | 0.7M |
+| **Tranche A** | **85–125M** | **118.1M** |
