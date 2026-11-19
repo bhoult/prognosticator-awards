@@ -3,11 +3,12 @@
  "claims": 77436,
  "books": 3224,
  "resolutions": {
-  "open": 42412,
+  "open": 42463,
   "not_a_prediction": 16411,
   "realized": 15803,
-  "failed": 252,
-  "untestable": 2558
+  "failed": 194,
+  "untestable": 2558,
+  "vindicated": 7
  },
  "points": 26129.2,
  "entries": 11375,
@@ -3670,7 +3671,12 @@
      "first_year": 1662,
      "quote": "I arrange all the parts of my body in an order similar to yours; for, by arranging all parts of me like you, I excite in myself by this disposal of my matter the same thought that is produced in you"
     }
-   ]
+   ],
+   "winner": {
+    "name": "Telepathic communication",
+    "points": 0,
+    "stat": "predicted in 473 books, first in The Mahabharata, Volume 3 (Books 8-12)"
+   }
   }
  ]
 }

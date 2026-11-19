@@ -13,10 +13,11 @@ awards page ([`awards.html`](awards.html)) and the tranche-B pilot ([`bpilot/rep
 
 - **77,436 technology and science claims from 3,224 books** were matched against a registry of
   1,756 concepts and scored against 2,047 verified milestones for 1,104 concepts. 15,803 claims
-  are realized (20.4%), 16,411 came after their milestone (not a prediction), 42,412 are open
-  (31,442 with no milestone, 6,795 with no concept, 3,897 too vague, 278 other), 2,558 are
-  untestable and 252 failed (170 missed a stated deadline, 82 denials flagged as contradicted, of
-  which a check confirmed 24: section 6).
+  are realized (20.4%), 16,411 came after their milestone (not a prediction), 42,463 are open
+  (31,442 with no milestone, 6,795 with no concept, 3,897 too vague, 51 denials of something else
+  that happened, 278 other), 2,558 are
+  untestable and 194 failed (170 missed a stated deadline, 24 denials were contradicted: section 6);
+  7 denials came true (vindicated).
 - **The leaders:** E. E. Smith 427 points, H. G. Wells 360, Murray Leinster 358, Jules Verne 344,
   George O. Smith 319. The top book is *Limanora* (Godfrey Sweven, 1903) with 227, then *Across
   the Zodiac* (Percy Greg, 1880) and *Ralph 124C 41+* (Hugo Gernsback, 1911). The top single
@@ -314,9 +315,9 @@ later move was checked against the definition; in round 4 they are in the review
 9. **Contradicted denials:** the 82 claims resolved `contradicted_negative` (a "never" that
    happened) were read again by one agent ([`negative_review.jsonl`](negative_review.jsonl),
    `prompts/negative_check.md`): 24 are real, 7 were vindicated (the denial came true, as George O.
-   Smith's sparse asteroid belt) and 51 deny something else. The resolution rule takes the judge's
-   "same thing" score for a contradiction, which it isn't; the awards use only the 24, and the
-   resolutions table still counts 82 until the rule is fixed.
+   Smith's sparse asteroid belt) and 51 deny something else. The resolution rule took the judge's
+   "same thing" score for a contradiction, which it isn't; `score` now applies the check: 24 are
+   `contradicted_negative`, 7 `vindicated` and 51 open (`not_contradicted`).
 
 ## 7. For tranche B
 

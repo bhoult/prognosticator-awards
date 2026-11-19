@@ -269,7 +269,9 @@ def data(run):
                       'claims': len(ids), 'first_title': books[e['book']]['title'], 'first_by': label(books[e['book']]),
                       'first_year': e['year'], 'quote': e['quote']})
     awards.append({'id': 'still_waiting', 'title': 'Still Waiting', 'rule': 'The ideas the most books predicted that '
-                   'have not come true, with the earliest book in the corpus to predict each.', 'waiting': still})
+                   'have not come true, with the earliest book in the corpus to predict each.', 'waiting': still,
+                   'winner': {'name': still[0]['concept'], 'points': 0,
+                              'stat': f"predicted in {still[0]['books']} books, first in {still[0]['first_title']}"}})
 
     counts = collections.Counter(r['resolution'] for r in res)
     out = {'run': run, 'claims': len(res), 'books': len({r['book'] for r in res}), 'resolutions': dict(counts),

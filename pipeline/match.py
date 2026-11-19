@@ -1965,7 +1965,8 @@ def score(run):
 
     A claim takes the first of these that fits:
     - realized: a `will` pair with a positive lead scoring REALIZED_MIN or more; it earns points;
-    - failed, contradicted_negative: a `will_not` pair with a positive lead scoring NEGATIVE_MIN or more;
+    - failed, contradicted_negative: a `will_not` pair with a positive lead scoring NEGATIVE_MIN or more, unless
+      negative_review.jsonl found the denial vindicated (resolution `vindicated`) or about something else (open);
     - not_a_prediction: a pair whose milestone is in or before the publication year (0 by rule, PLAN §6;
       DESIGN §8a has no status for it);
     - failed, missed_deadline: a `will` claim with a concept whose stated time names a year or century that
@@ -1977,6 +1978,10 @@ def score(run):
     if max(os.path.getmtime(os.path.join(out, f)) for f in os.listdir(out)) > os.path.getmtime(jpath):
         sys.exit('a judging output is newer than judgments.jsonl: run judge-collect first')
     judged = {r['pair']: r for r in read_jsonl(jpath)[0]}
+    # prompts/negative_check.md read every contradicted_negative claim again: only `contradicted` ones are a
+    # skeptic proved wrong; `vindicated` denials came true, and `unrelated` ones deny something else
+    npath = os.path.join(OUT, 'negative_review.jsonl')
+    negative = {r['id']: r['verdict'] for r in read_jsonl(npath)[0]} if os.path.exists(npath) else {}
     cl = claims(run)
     books, best = book_index(run, cl), scoring_milestones()
     reg = {c['concept_id']: c for c in final_registry(run)}
@@ -2010,7 +2015,8 @@ def score(run):
         pick = None
         if hit:
             pick = min(hit, key=lambda p: (-p['score'] * weight(p['lead']), p['concept_id']))
-            res, why = ('realized', None) if will else ('failed', 'contradicted_negative')
+            res, why = ('realized', None) if will else {'vindicated': ('vindicated', None), 'unrelated': ('open', 'not_contradicted')}.get(
+                negative.get(c['id']), ('failed', 'contradicted_negative'))
             strict[c['book']] += will and max(p['score'] for p in hit) >= STRICT_MIN
         elif any(p.get('lead', 1) <= 0 for p in ps):
             pick = min((p for p in ps if p.get('lead', 1) <= 0), key=lambda p: p['concept_id'])

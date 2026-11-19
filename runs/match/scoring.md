@@ -16,7 +16,9 @@ Written by `match.py score full`. Settings: weight log (w = log2(1 + min(L, 500)
 | untestable | 2,558 | 3.3% |
 | open: not_matched | 272 | 0.4% |
 | failed: missed_deadline | 170 | 0.2% |
-| failed: contradicted_negative | 82 | 0.1% |
+| open: not_contradicted | 51 | 0.1% |
+| failed: contradicted_negative | 24 | 0.0% |
+| vindicated | 7 | 0.0% |
 | open: no_year | 6 | 0.0% |
 
 Deadlines: 1,741 `will` claims with a concept have a stated time naming a year, decade or century after publication; 765 of those ended before 2016. Of these, 302 are realized anyway, 170 missed the deadline, and 293 are not a prediction. Of the 581 realized claims with a deadline, 511 came true by it and 70 after it (median 18 years late).
